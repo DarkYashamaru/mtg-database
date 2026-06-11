@@ -1,6 +1,5 @@
-from sqlalchemy import Integer, String
-from sqlalchemy.orm import Mapped, mapped_column
-
+from sqlalchemy import Integer, String, ForeignKey, UniqueConstraint
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from database.base import Base
 
 
@@ -13,5 +12,25 @@ class Color(Base):
     name: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
     symbol: Mapped[str] = mapped_column(String(1), nullable=False, unique=True)
 
+    color_identity: Mapped[list["Color_Identity"]] = relationship(
+        back_populates="color"
+    )
+
     def __repr__(self) -> str:
         return f"Color(id={self.id!r}, name={self.name!r}, symbol={self.symbol!r})"
+    
+class Color_Identity(Base):
+    __tablename__ = "color_identity"
+
+    color_id: Mapped[int] = mapped_column(
+        ForeignKey("colors.id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+
+    card_id: Mapped[str] = mapped_column(
+        ForeignKey("cards.oracle_id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+
+    card: Mapped["Card"] = relationship(back_populates="color_identity")
+    color: Mapped["Color"] = relationship(back_populates="color_identity")

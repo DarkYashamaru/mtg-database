@@ -4,15 +4,9 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Protocol
+from downloaders.scryfall_download_utility import REQUEST_HEADERS, BULK_DATA_URL
 
 import requests
-
-
-BULK_DATA_URL = "https://api.scryfall.com/bulk-data"
-REQUEST_HEADERS = {
-    "Accept": "application/json",
-    "User-Agent": "mtg-database/0.1",
-}
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 SCRYFALL_DATA_DIR = ROOT_DIR / "downloads" / "scryfall"

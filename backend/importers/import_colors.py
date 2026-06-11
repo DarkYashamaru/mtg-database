@@ -3,36 +3,26 @@ from database.create_database import create_database  # noqa: E402
 from database.session import session_scope  # noqa: E402
 from models.color import Color  # noqa: E402
 
-def create_color(name:str, symbol:str) -> Color:
-    return Color(name = name, symbol = symbol)
-
 def import_colors() -> int:
 
-    white = create_color("White", 'W')
-    blue = create_color("Blue", 'U')
-    black = create_color("Black", 'B')
-    red = create_color("Red", 'R')
-    green = create_color("Green", 'G')
-    colorless = create_color("Colorless", 'C')
+    white = Color(id=1, name="White", symbol='W')
+    blue = Color(id=2, name="Blue", symbol='U')
+    black = Color(id=3, name="Black", symbol='B')
+    red = Color(id=4, name="Red", symbol='R')
+    green = Color(id=5, name="Green", symbol='G')
+    colorless = Color(id=6, name="Colorless", symbol='C')
 
     colors = [white, blue, black, red, green, colorless]
 
-    create_database()
-
     imported_count = 0
 
-    try:
+    with session_scope() as session:
 
-        with session_scope() as session:
+        for color in colors:
+            session.merge(color)
+            imported_count += 1
 
-            for color in colors:
-                session.merge(color)
-                imported_count += 1
-
-            session.commit()            
-            session.expunge_all()
-
-    except Exception as e:
-        print(e)
+        session.commit()            
+        session.expunge_all()
 
     return imported_count

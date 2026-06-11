@@ -9,6 +9,39 @@ from database.session import session_scope  # noqa: E402
 from models.card import Card  # noqa: E402
 from models.card_face import Card_Face
 from downloaders.download_oracle_cards import ORACLE_CARDS_PATH  # noqa: E402
+from sqlalchemy import select
+from models.color import Color, Color_Identity
+from functools import cache
+from models.catalogs import KeywordAbility, KeywordAction, Supertype, CardType, Subtype
+from models.card_type import Card_Supertypes, Card_Subtypes, Card_Types
+
+unique_keywords = set()
+
+def parse_types(text, valid_subtypes):
+    words = text.split()
+
+    @cache
+    def parse_from(i):
+        if i >= len(words):
+            return ()
+
+        for j in range(len(words), i, -1):
+            candidate = " ".join(words[i:j])
+
+            if candidate in valid_subtypes:
+                rest = parse_from(j)
+
+                if rest is not None:
+                    return (candidate,) + rest
+
+        return None
+
+    result = parse_from(0)
+
+    if result is None:
+        raise ValueError(f"Could not parse: {text}")
+
+    return list(result)
 
 
 def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
@@ -19,26 +52,110 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
             "Run backend/services/scryfall.py first."
         )
 
-    create_database()
+    colors: list[Color] = []
+    supertypes: list[Supertype] = []
+    cardtypes: list[CardType] = []
+    subtypes: list[Subtype] = []
+
+    with session_scope() as session:
+        colors = session.scalars(select(Color)).all()
+        supertypes = session.scalars(select(Supertype)).all()
+        cardtypes = session.scalars(select(CardType)).all()
+        subtypes = session.scalars(select(Subtype)).all()
+
+    color_dict = {color.symbol: color.id for color in colors}
+
+    supertype_list = []
+    cardtype_list = []
+    subtype_list = []
+
+    for type in supertypes:
+        supertype_list.append(type.value)
+
+    for type in cardtypes:
+        cardtype_list.append(type.value)
+
+    for type in subtypes:
+        subtype_list.append(type.value)
 
     with source_path.open(encoding="utf-8") as file:
         payload = json.load(file)
+
+    limit = 10
+    current = 0
 
     imported_count = 0
     with session_scope() as session:
 
         for item in payload:
+
+            if current >= limit:
+                break
+
             card = _card_from_scryfall(item)
             if not card:
                 continue
+
+            oracle_id = item.get("oracle_id")
+
+            keywords = item.get('keywords')
+
+            color_identity = item.get('color_identity')
+
+            if color_identity:
+                for color in color_identity:
+                    identity = Color_Identity(color_id = color_dict[color], card_id = oracle_id)
+                    session.merge(identity)
+                    #print(identity)
+
+            if keywords:
+                unique_keywords.update(keywords)
 
             session.merge(card)
             car_faces = get_card_faces(item)
 
             for face in car_faces:
                 session.merge(face)
+                print(f"Importing {face.name}")
+
+            type_line = item.get("type_line")
+
+            print(type_line)
+
+            left, _, right = type_line.partition("—")
+
+            left = left.strip()
+            right = right.strip()
+            tokens = left.split()
+
+            supertypes_result = []
+            cardtypes_result = []
+            subtypes_result = []
+
+            supertypes_result = [t for t in tokens if t in supertype_list]
+            cardtypes_result = [t for t in tokens if t in cardtype_list]
+
+            if right:
+                subtypes_result = parse_types(right, subtype_list)
+
+            if supertypes_result:
+                print(f"Super Types: {supertypes_result}")
+
+                for type in supertypes_result:
+                    session.merge(Card_Supertypes(card_id=oracle_id, type_id=type))
+
+            if cardtypes_result:
+                print(f"Card Types: {cardtypes_result}")
+                for type in cardtypes_result:
+                    session.merge(Card_Types(card_id=oracle_id, type_id=type))
+
+            if subtypes_result:
+                print(f"Sub Types: {subtypes_result}")
+                for type in subtypes_result:
+                    session.merge(Card_Subtypes(card_id=oracle_id, type_id=type))
 
             imported_count += 1
+            current +=1
 
 
         session.commit()

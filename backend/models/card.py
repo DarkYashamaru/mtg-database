@@ -2,7 +2,6 @@ from datetime import date
 from typing import TYPE_CHECKING
 from sqlalchemy import Boolean, Date, Float, String, Text, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-
 from database.base import Base
 
 if TYPE_CHECKING:
@@ -28,6 +27,28 @@ class Card(Base):
     released_at: Mapped[date | None] = mapped_column(Date, index=True)
     
     taggings: Mapped[list["Tagging"]] = relationship(back_populates="card", cascade="all, delete-orphan", passive_deletes=True)
+
+    color_identity: Mapped[list["Color_Identity"]] = relationship(
+        back_populates="card",
+        cascade="all, delete-orphan",
+    )
+
+    supertypes: Mapped[list["Card_Supertypes"]] = relationship(
+        back_populates="card",
+        cascade="all, delete-orphan",
+    )
+
+    types: Mapped[list["Card_Types"]] = relationship(
+        back_populates="card",
+        cascade="all, delete-orphan",
+    )
+
+    subtypes: Mapped[list["Card_Subtypes"]] = relationship(
+        back_populates="card",
+        cascade="all, delete-orphan",
+    )
+
+
 
     def __repr__(self) -> str:
         return f"Card(oracle_id={self.oracle_id!r}, name={self.name!r})"
