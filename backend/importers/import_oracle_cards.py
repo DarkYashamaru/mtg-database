@@ -6,16 +6,17 @@ from pathlib import Path
 from typing import Any, Iterable
 from database.create_database import create_database  # noqa: E402
 from database.session import session_scope  # noqa: E402
-from models.card import Card  # noqa: E402
-from models.card_face import Card_Face
+from models.card import Card, Card_Face, Face_Supertypes, Face_Subtypes, Face_Types, Card_Type_Collection, Card_Keyword
 from downloaders.download_oracle_cards import ORACLE_CARDS_PATH  # noqa: E402
 from sqlalchemy import select
 from models.color import Color, Color_Identity
 from functools import cache
-from models.catalogs import KeywordAbility, KeywordAction, Supertype, CardType, Subtype
-from models.card_type import Card_Supertypes, Card_Subtypes, Card_Types
+from models.catalogs import Keyword, Supertype, CardType, Subtype
 
 unique_keywords = set()
+supertype_list = []
+cardtype_list = []
+subtype_list = []
 
 def parse_types(text, valid_subtypes):
     words = text.split()
@@ -45,17 +46,15 @@ def parse_types(text, valid_subtypes):
 
 
 def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
+    global supertype_list
+    global cardtype_list
+    global subtype_list
 
     if not source_path.exists():
         raise FileNotFoundError(
             f"Oracle cards JSON not found at {source_path}. "
             "Run backend/services/scryfall.py first."
         )
-
-    colors: list[Color] = []
-    supertypes: list[Supertype] = []
-    cardtypes: list[CardType] = []
-    subtypes: list[Subtype] = []
 
     with session_scope() as session:
         colors = session.scalars(select(Color)).all()
@@ -89,8 +88,8 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
 
         for item in payload:
 
-            if current >= limit:
-                break
+            #if current >= limit:
+             #   break
 
             card = _card_from_scryfall(item)
             if not card:
@@ -99,6 +98,10 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
             oracle_id = item.get("oracle_id")
 
             keywords = item.get('keywords')
+
+            if keywords:
+                for keyword in keywords:
+                    session.merge(Card_Keyword(card_id=oracle_id, keyword_value=keyword))
 
             color_identity = item.get('color_identity')
 
@@ -112,47 +115,28 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
                 unique_keywords.update(keywords)
 
             session.merge(card)
-            car_faces = get_card_faces(item)
+            card_faces = get_card_faces(item)
 
-            for face in car_faces:
+            for face in card_faces:
                 session.merge(face)
                 print(f"Importing {face.name}")
 
-            type_line = item.get("type_line")
+            types_to_add:list[Card_Type_Collection] = []
 
-            print(type_line)
+            if len(card_faces) == 1:
+                types_to_add.append(parse_card_types(item.get("type_line"), card_faces[0]))
 
-            left, _, right = type_line.partition("—")
+            else:                
+                for face in card_faces:
+                    types_to_add.append(parse_card_types(face.type_line, face))
 
-            left = left.strip()
-            right = right.strip()
-            tokens = left.split()
-
-            supertypes_result = []
-            cardtypes_result = []
-            subtypes_result = []
-
-            supertypes_result = [t for t in tokens if t in supertype_list]
-            cardtypes_result = [t for t in tokens if t in cardtype_list]
-
-            if right:
-                subtypes_result = parse_types(right, subtype_list)
-
-            if supertypes_result:
-                print(f"Super Types: {supertypes_result}")
-
-                for type in supertypes_result:
-                    session.merge(Card_Supertypes(card_id=oracle_id, type_id=type))
-
-            if cardtypes_result:
-                print(f"Card Types: {cardtypes_result}")
-                for type in cardtypes_result:
-                    session.merge(Card_Types(card_id=oracle_id, type_id=type))
-
-            if subtypes_result:
-                print(f"Sub Types: {subtypes_result}")
-                for type in subtypes_result:
-                    session.merge(Card_Subtypes(card_id=oracle_id, type_id=type))
+            for collection in types_to_add:
+                for type in collection.super_types:
+                    session.merge(type)
+                for type in collection.card_types:
+                    session.merge(type)
+                for type in collection.sub_types:
+                    session.merge(type)
 
             imported_count += 1
             current +=1
@@ -179,22 +163,54 @@ def _card_from_scryfall(item: dict[str, Any]) -> Card | None:
     if card_layout == "" or card_layout == "art_series" or card_layout == "token" or card_layout == "scheme":
         return None
 
-    front_face = _front_face(item)
-
     return Card(
         oracle_id=oracle_id,
-        name=item.get("name") or front_face.get("name") or "",
-        mana_cost=item.get("mana_cost") or front_face.get("mana_cost"),
+        name=item.get("name"),
         cmc=float(item.get("cmc") or 0),
-        oracle_text=item.get("oracle_text") or front_face.get("oracle_text"),
         layout=card_layout,
-        power=item.get("power") or front_face.get("power"),
-        toughness=item.get("toughness") or front_face.get("toughness"),
-        type_line=item.get("type_line") or front_face.get("type_line"),
         commander_legal=commander_legal,
         standard_legal=legalities.get("standard") == "legal",
         released_at=_parse_date(item.get("released_at")),
     )
+
+def parse_card_types(type_line:str, face:Card_Face)->Card_Type_Collection:
+
+    result: Card_Type_Collection = Card_Type_Collection()
+
+    left, _, right = type_line.partition("—")
+
+    left = left.strip()
+    right = right.strip()
+    tokens = left.split()
+
+    supertypes_result = []
+    cardtypes_result = []
+    subtypes_result = []
+
+    supertypes_result = [t for t in tokens if t in supertype_list]
+    cardtypes_result = [t for t in tokens if t in cardtype_list]
+
+    if right:
+        subtypes_result = parse_types(right, subtype_list)
+
+    if supertypes_result:
+        print(f"Super Types: {supertypes_result}")
+
+        for type in supertypes_result:
+            result.super_types.append(Face_Supertypes(card_id=face.parent_id, face_name=face.name, type_id=type))
+
+    if cardtypes_result:
+        print(f"Card Types: {cardtypes_result}")
+        for type in cardtypes_result:
+            result.card_types.append(Face_Types(card_id=face.parent_id, face_name=face.name, type_id=type))
+
+    if subtypes_result:
+        print(f"Sub Types: {subtypes_result}")
+        for type in subtypes_result:
+            result.sub_types.append(Face_Subtypes(card_id=face.parent_id, face_name=face.name, type_id=type))
+
+    return result
+    
 
 def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
 
@@ -227,17 +243,17 @@ def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
 
     if len(result) < 1:
             
-            face = Card_Face(
-                parent_id=oracle_id,
-                mana_cost=item.get("mana_cost"),
-                cmc=float(item.get("cmc") or 0),
-                name=item.get("name"),
-                oracle_text=item.get("oracle_text"),
-                power=item.get("power"),
-                toughness=item.get("toughness"),
-                type_line=item.get("type_line"),
-            )
-            result.append(face)
+        face = Card_Face(
+            parent_id=oracle_id,
+            mana_cost=item.get("mana_cost"),
+            cmc=float(item.get("cmc") or 0),
+            name=item.get("name"),
+            oracle_text=item.get("oracle_text"),
+            power=item.get("power"),
+            toughness=item.get("toughness"),
+            type_line=item.get("type_line"),
+        )
+        result.append(face)
 
     return result
 

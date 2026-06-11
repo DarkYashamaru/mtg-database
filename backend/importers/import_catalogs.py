@@ -10,38 +10,19 @@ from downloaders.scryfall_download_utility import BASE_URL, REQUEST_HEADERS
 from models.catalogs import (
     Supertype,
     CardType,
-    ArtifactType,
-    BattleType,
-    CreatureType,
-    EnchantmentType,
-    LandType,
-    PlaneswalkerType,
-    SpellType,
     Power,
     Toughness,
     Loyalty,
-    KeywordAbility,
-    KeywordAction,
-    AbilityWord,
+    Keyword,
     Subtype
 )
 
 CATALOG_SOURCES = [
     ("/catalog/supertypes", Supertype),
     ("/catalog/card-types", CardType),
-    ("/catalog/artifact-types", ArtifactType),
-    ("/catalog/battle-types", BattleType),
-    ("/catalog/creature-types", CreatureType),
-    ("/catalog/enchantment-types", EnchantmentType),
-    ("/catalog/land-types", LandType),
-    ("/catalog/planeswalker-types", PlaneswalkerType),
-    ("/catalog/spell-types", SpellType),
     ("/catalog/powers", Power),
     ("/catalog/toughnesses", Toughness),
     ("/catalog/loyalties", Loyalty),
-    ("/catalog/keyword-abilities", KeywordAbility),
-    ("/catalog/keyword-actions", KeywordAction),
-    ("/catalog/ability-words", AbilityWord),
 ]
 
 SUBTYPES_SOURCES = [
@@ -52,6 +33,12 @@ SUBTYPES_SOURCES = [
     "/catalog/land-types",
     "/catalog/planeswalker-types",
     "/catalog/spell-types",
+]
+
+KEYWORDS_SOURCES = [
+    "/catalog/keyword-abilities",
+    "/catalog/keyword-actions",
+    "/catalog/ability-words",
 ]
 
 
@@ -99,8 +86,31 @@ def download_subtypes():
             subtype = Subtype(value=type)
             session.merge(subtype)
 
+def download_keywords():
+
+    all_types = []
+
+    for endpoint in KEYWORDS_SOURCES:
+
+        response = requests.get(f"{BASE_URL}{endpoint}", headers=REQUEST_HEADERS, timeout=30)
+        response.raise_for_status()
+
+        payload = response.json()
+        values = payload["data"]
+
+        for v in values:
+            all_types.append(v)
+
+    
+    with session_scope() as session:
+
+        for type in all_types:
+            subtype = Keyword(value=type)
+            session.merge(subtype)
+
 def download_all_catalogs() -> None:
     for endpoint, model in CATALOG_SOURCES:
         download_catalog(endpoint, model)
 
     download_subtypes()
+    download_keywords()
