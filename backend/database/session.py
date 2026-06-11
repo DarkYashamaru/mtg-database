@@ -27,6 +27,25 @@ def get_session_factory() -> sessionmaker[Session]:
         expire_on_commit=False,
     )
 
+engine = create_engine(
+    database_url(),
+    future=True,
+)
+
+SessionLocal = sessionmaker(
+    bind=engine,
+    autoflush=False,
+    expire_on_commit=False,
+)
+
+def get_db():
+    db = SessionLocal()
+
+    try:
+        yield db
+    finally:
+        db.close()
+
 
 @contextmanager
 def session_scope() -> Iterator[Session]:

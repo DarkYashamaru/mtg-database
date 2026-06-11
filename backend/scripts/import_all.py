@@ -20,5 +20,5 @@ def import_data_to_database():
     print(f"Imported {imported} cards")
 
     print("Importing tags")
-    #imported = import_oracle_tags()
+    imported = import_oracle_tags()
     print(f"Imported {imported} tags")
