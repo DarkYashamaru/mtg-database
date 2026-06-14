@@ -220,6 +220,8 @@ If tags conflict with oracle text, prioritize oracle text.
 
 Tags should reinforce evidence rather than create unsupported archetype associations.
 
+Treat broad playability as weak evidence. A card being powerful, efficient, popular, or card-advantage-positive is not enough by itself to score highly in any archetype.
+
 ---
 
 ## Classification Process
@@ -242,12 +244,17 @@ Many cards will have zero, one, or two secondary archetypes.
 
 General guidelines:
 
-* Primary archetype: usually 70-100
-* Secondary archetypes: usually 20-60
-* Weak associations: usually 1-20
-* Unrelated archetypes: usually 0-10
+* 90-100: archetype staple, commander/build-around, or near-perfect enabler/payoff
+* 70-89: strong active support for the archetype
+* 40-69: clear secondary support or narrower archetype role
+* 15-39: minor or conditional support
+* 1-14: very weak incidental overlap
+* 0: no direct support
 
 Only exceptional cards should score above 70 in multiple archetypes.
+Most unrelated archetypes should be exactly 0, not a small nonzero value.
+
+Use the full 0-100 range, but be conservative. Prefer one high score plus a few meaningful secondary scores over many medium scores.
 
 ### Step 4: Validate Scores
 
@@ -261,12 +268,29 @@ Verify that:
 * Resource sharing is required for Group Hug.
 * Graveyard usage is required for Reanimator.
 * Land interaction is required for Landfall.
+* A strong standalone creature is Stompy only if its size, scaling, ramp payoff, or combat keywords are central to the card.
+* Protection/evasion alone is Voltron only when it clearly helps one threat connect or survive.
+* Removal/card draw alone is Control, not Goodstuff; there is no Goodstuff output field.
+
+### Archetype Separation Rules
+
+Use these tie-breakers when evidence overlaps:
+
+* Sacrificing creatures for value points to Aristocrats; sacrificing any permanent as a cost is not enough.
+* Creating one token is usually weak Go Wide evidence; repeated or mass token production is stronger.
+* Creature-type text points to Tribal / Kindred even when the card is aggressive or token-based.
+* Cost reduction for instants/sorceries points to Spellslinger / Storm; generic cost reduction only points to Combo when it enables loops.
+* Extra lands, land recursion, or land-entering triggers point to Landfall; generic ramp without land-specific text usually does not.
+* Symmetrical effects are Group Hug / Politics only when they give opponents resources or create table incentives.
+* Stax requires limiting, taxing, preventing, or denying actions/resources.
 
 ---
 
 ## Output Format
 
 Return only valid JSON.
+
+Each reasoning field must be one concise sentence based on visible evidence. If the score is 0, say "No direct evidence."
 
 ```json
 {
@@ -284,19 +308,19 @@ Return only valid JSON.
   "landfall": 0,
   "stompy": 0,
   "reasoning": {
-    "combo": "",
-    "voltron": "",
-    "control": "",
-    "stax": "",
-    "aristocrats": "",
-    "spellslinger_storm": "",
-    "go_wide_token_swarm": "",
-    "tribal_kindred": "",
-    "aggro": "",
-    "group_hug_politics": "",
-    "reanimator": "",
-    "landfall": "",
-    "stompy": ""
+    "combo": "No direct evidence.",
+    "voltron": "No direct evidence.",
+    "control": "No direct evidence.",
+    "stax": "No direct evidence.",
+    "aristocrats": "No direct evidence.",
+    "spellslinger_storm": "No direct evidence.",
+    "go_wide_token_swarm": "No direct evidence.",
+    "tribal_kindred": "No direct evidence.",
+    "aggro": "No direct evidence.",
+    "group_hug_politics": "No direct evidence.",
+    "reanimator": "No direct evidence.",
+    "landfall": "No direct evidence.",
+    "stompy": "No direct evidence."
   }
 }
 ```
