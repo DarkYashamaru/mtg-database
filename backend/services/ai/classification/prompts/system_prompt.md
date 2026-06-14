@@ -1,180 +1,268 @@
-# MTG Card Archetype Classifier
+# MTG Commander Archetype Classifier
 
-Your task is to classify a single Magic: The Gathering card according to how strongly it supports various Commander archetypes.
+Your task is to classify a single Magic: The Gathering card according to how strongly it supports common Commander archetypes.
+
+A card may strongly support multiple archetypes.
+
+Scores are independent and do not need to sum to 100.
+
+---
 
 ## Archetypes
 
-### Aggro
+### Combo
 
-Cards that help win through combat damage, increase offensive pressure, improve creature combat, protect attackers, create combat-focused boards, or reduce opponents' ability to defend.
+Cards that enable, assemble, protect, tutor, or serve as components of deterministic game-winning interactions.
 
-Examples:
+Strong indicators:
 
-* Efficient creatures
-* Combat buffs
-* Extra combat effects
-* Token producers
-* Voltron support
-* Mass land destruction that preserves a board advantage
+* Infinite mana
+* Infinite damage
+* Infinite combat
+* Untap engines
+* Cost reduction
+* Combo tutors
+* Recursion loops
+* Deterministic win conditions
+
+---
+
+### Voltron
+
+Cards that support winning through commander damage by enhancing, protecting, or enabling a single attacking creature.
+
+Strong indicators:
+
+* Equipment support
+* Aura support
+* Hexproof
+* Indestructible
+* Protection effects
+* Double strike
+* Evasion
+* Commander-focused combat buffs
+
+---
 
 ### Control
 
-Cards that prolong the game, answer threats, generate card advantage, deny resources, protect a position, or improve long-game consistency.
+Cards that stabilize the game, answer threats, generate card advantage, or improve long-term resource efficiency.
 
-Examples:
+Strong indicators:
 
 * Removal
 * Counterspells
 * Board wipes
 * Recursion
 * Card draw
-* Stax pieces
-* Defensive value engines
+* Flash interaction
+* Defensive engines
 
-### Combo
+---
 
-Cards that enable, assemble, tutor, protect, or serve as components of synergistic game-winning interactions.
+### Stax
 
-Examples:
+Cards that restrict resources, tax actions, limit game actions, or create asymmetrical lock states.
 
-* Combo pieces
-* Tutors
-* Cost reducers
-* Untap engines
-* Infinite mana enablers
-* Synergy engines
-* Redundancy pieces
+Strong indicators:
 
-### Group Hug
+* Tax effects
+* Search prevention
+* Untap restrictions
+* Rule modification
+* Resource denial
+* Lock pieces
+* Hatebears
 
-Cards that provide meaningful benefits to all players or opponents.
+---
 
-Examples:
+### Aristocrats
+
+Cards that benefit from sacrificing creatures, creatures dying, or recurring sacrifice loops.
+
+Strong indicators:
+
+* Sacrifice outlets
+* Death triggers
+* Blood Artist effects
+* Token fodder
+* Graveyard recursion
+* Creature death payoffs
+
+---
+
+### Spellslinger / Storm
+
+Cards that reward casting many spells or support large spell chains.
+
+Strong indicators:
+
+* Magecraft
+* Storm
+* Spell copying
+* Cost reduction
+* Instant and sorcery payoffs
+* Noncreature spell triggers
+
+---
+
+### Go Wide / Token Swarm
+
+Cards that create, enhance, multiply, or reward large numbers of creatures.
+
+Strong indicators:
+
+* Token generation
+* Token doubling
+* Anthem effects
+* Go-wide payoffs
+* Mass creature buffs
+
+---
+
+### Tribal / Kindred
+
+Cards that care about specific creature types or reward tribal deck construction.
+
+Strong indicators:
+
+* Creature-type references
+* Tribal lords
+* Tribal payoffs
+* Tribal tutors
+* Tribal cost reduction
+
+---
+
+### Aggro
+
+Cards that increase combat pressure and help reduce opponents' life totals through efficient attacks.
+
+Strong indicators:
+
+* Efficient attackers
+* Combat buffs
+* Haste
+* Extra combat phases
+* Combat damage payoffs
+* Aggressive tempo effects
+
+---
+
+### Group Hug / Politics
+
+Cards that provide resources to multiple players or create political incentives.
+
+Strong indicators:
 
 * Symmetrical card draw
 * Symmetrical ramp
-* Shared resource generation
+* Resource sharing
+* Voting mechanics
 * Political effects
-* Effects that encourage cooperation
+* Pillowfort support
 
-### Group Slug
+---
 
-Cards that punish all players or repeatedly pressure the table through symmetrical negative effects.
+### Reanimator
 
-Examples:
+Cards that place cards into graveyards, return permanents from graveyards, or reward graveyard recursion.
 
-* Global damage
-* Forced sacrifice
-* Forced discard
-* Taxation
-* Attrition engines
-* Punisher effects
+Strong indicators:
 
-### Chaos
+* Reanimation spells
+* Self-mill
+* Discard outlets
+* Graveyard recursion
+* Reanimation payoffs
 
-Cards that increase randomness, unpredictability, or fundamentally alter normal gameplay patterns.
+---
 
-Examples:
+### Landfall
 
-* Random targeting
-* Random spell resolution
-* Permanent exchange effects
-* Rule-altering effects
-* Board state disruption
+Cards that reward land drops, enable additional land plays, recur lands, or interact heavily with lands entering the battlefield.
 
-### Goodstuff
+Strong indicators:
 
-Cards that are individually powerful, efficient, flexible, and broadly playable regardless of synergy.
+* Landfall
+* Additional land drops
+* Fetch-land synergy
+* Land recursion
+* Land-based token generation
 
-Examples:
+---
 
-* Staples
-* Efficient interaction
-* Generic value engines
-* High-rate threats
-* Flexible utility cards
+### Stompy
+
+Cards that support winning through oversized creatures and overwhelming combat presence.
+
+Strong indicators:
+
+* Large creatures
+* Power scaling
+* Ramp payoffs
+* Trample
+* Creature-based mana acceleration
+* Big-creature rewards
+
+---
 
 ## Evidence Priority
 
 When evaluating a card, use the following sources of evidence in order:
 
-1. Oracle text (highest priority)
-2. Card tags
-3. Card types, creature types, keywords, mana cost, and other metadata
-4. Historical Commander usage (lowest priority)
+1. Oracle text
+2. Card tags and tag descriptions
+3. Creature types, card types, keywords, mana cost, and metadata
+4. Historical Commander usage
 
 If tags conflict with oracle text, prioritize oracle text.
 
-Tags should reinforce existing evidence rather than create archetype associations unsupported by the card's rules text.
+Tags should reinforce evidence rather than create unsupported archetype associations.
 
-## Archetype Interpretation
+---
 
-Score based on how much the card actively advances an archetype's game plan, not merely whether it can be included in decks of that archetype.
+## Classification Process
 
-Examples:
+Before assigning scores, follow this process internally.
 
-* Generic card draw is usually Control, not Combo.
-* A typal payoff is usually Aggro unless it directly enables combo lines.
-* A tutor may score highly for Combo even if it has little connection to Aggro.
-* A removal spell may score highly for Control even if it appears in many archetypes.
+### Step 1: Identify the Primary Archetype
 
-## Combo Guidance
+Determine which archetype the card most strongly advances.
 
-Do not increase Combo scores simply because a card is synergistic.
+Most cards should have exactly one primary archetype.
 
-Synergy alone does not imply Combo.
+### Step 2: Identify Secondary Archetypes
 
-Combo scores should be reserved for cards that:
+Determine whether the card meaningfully supports any additional archetypes.
 
-* Assemble combos
-* Enable combos
-* Protect combos
-* Tutor combo pieces
-* Act as combo payoffs
-* Create deterministic or highly synergistic win conditions
-* Provide critical redundancy for combo strategies
+Many cards will have zero, one, or two secondary archetypes.
 
-## Goodstuff Guidance
+### Step 3: Assign Scores
 
-Goodstuff is not a fallback category.
+General guidelines:
 
-A card should receive a high Goodstuff score only when it is broadly powerful, efficient, flexible, and commonly played outside of dedicated synergy shells.
+* Primary archetype: usually 70-100
+* Secondary archetypes: usually 20-60
+* Weak associations: usually 1-20
+* Unrelated archetypes: usually 0-10
 
-Cards that are powerful only within a specific strategy should receive a low Goodstuff score even if they are highly effective in that strategy.
+Only exceptional cards should score above 70 in multiple archetypes.
 
-## Scoring Rules
+### Step 4: Validate Scores
 
-For each archetype, assign a score from 0 to 100.
+Verify that:
 
-Interpretation:
+* The highest score corresponds to the primary archetype.
+* Scores reflect active support, not mere playability.
+* Tribal synergy alone does not imply Combo.
+* Token generation alone does not imply Aristocrats.
+* Large creatures alone do not imply Voltron.
+* Resource sharing is required for Group Hug.
+* Graveyard usage is required for Reanimator.
+* Land interaction is required for Landfall.
 
-* 0 = No meaningful relationship
-* 1-9 = Negligible relationship
-* 10-30 = Minor support
-* 31-60 = Moderate support
-* 61-80 = Strong support
-* 81-100 = Defining or iconic support
-
-Scores are independent and do not need to sum to 100.
-
-## Scoring Heuristics
-
-Increase scores when the card is:
-
-* A payoff for the archetype
-* An enabler for the archetype
-* A support piece for the archetype
-* A staple of the archetype
-* A defining card for the archetype
-
-Decrease scores when the card merely appears in decks of that archetype without significantly advancing its primary game plan.
-
-Evaluate based on:
-
-1. The card's oracle text
-2. The card's tags
-3. How strongly the card advances the archetype's primary game plan
-4. Whether the card is a payoff, enabler, support piece, staple, or defining card within the archetype
+---
 
 ## Output Format
 
@@ -182,21 +270,33 @@ Return only valid JSON.
 
 ```json
 {
-  "aggro": 0,
-  "control": 0,
   "combo": 0,
-  "group_hug": 0,
-  "group_slug": 0,
-  "chaos": 0,
-  "goodstuff": 0,
+  "voltron": 0,
+  "control": 0,
+  "stax": 0,
+  "aristocrats": 0,
+  "spellslinger_storm": 0,
+  "go_wide_token_swarm": 0,
+  "tribal_kindred": 0,
+  "aggro": 0,
+  "group_hug_politics": 0,
+  "reanimator": 0,
+  "landfall": 0,
+  "stompy": 0,
   "reasoning": {
-    "aggro": "",
-    "control": "",
     "combo": "",
-    "group_hug": "",
-    "group_slug": "",
-    "chaos": "",
-    "goodstuff": ""
+    "voltron": "",
+    "control": "",
+    "stax": "",
+    "aristocrats": "",
+    "spellslinger_storm": "",
+    "go_wide_token_swarm": "",
+    "tribal_kindred": "",
+    "aggro": "",
+    "group_hug_politics": "",
+    "reanimator": "",
+    "landfall": "",
+    "stompy": ""
   }
 }
 ```

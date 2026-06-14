@@ -1,5 +1,6 @@
 from pathlib import Path
 import sys
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -100,7 +101,7 @@ def direct_tag_ids_for_cards(cards: Iterable[Card]) -> set[str]:
         for tagging in card.taggings
     }
 
-oracle_id = "dfec65a0-6fb6-463d-aa62-e84a427db217"
+oracle_id = "3268251a-8292-44f9-9267-c961b182f739"
 
 db = next(get_db())
 create_database()
@@ -123,4 +124,11 @@ inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
 
 schema = card_to_schema(card, inherited_tags_by_direct_id)
 
+start_time = time.perf_counter()
+
 result = get_card_archetype_score(schema)
+
+end_time = time.perf_counter()
+
+execution_time = end_time - start_time
+print(f"Method took {execution_time:.6f} seconds to complete.")
