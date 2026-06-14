@@ -194,18 +194,18 @@ def parse_card_types(type_line:str, face:Card_Face)->Card_Type_Collection:
         subtypes_result = parse_types(right, subtype_list)
 
     if supertypes_result:
-        print(f"Super Types: {supertypes_result}")
+        #print(f"Super Types: {supertypes_result}")
 
         for type in supertypes_result:
             result.super_types.append(Face_Supertypes(card_id=face.parent_id, face_name=face.name, type_id=type))
 
     if cardtypes_result:
-        print(f"Card Types: {cardtypes_result}")
+        #print(f"Card Types: {cardtypes_result}")
         for type in cardtypes_result:
             result.card_types.append(Face_Types(card_id=face.parent_id, face_name=face.name, type_id=type))
 
     if subtypes_result:
-        print(f"Sub Types: {subtypes_result}")
+        #print(f"Sub Types: {subtypes_result}")
         for type in subtypes_result:
             result.sub_types.append(Face_Subtypes(card_id=face.parent_id, face_name=face.name, type_id=type))
 

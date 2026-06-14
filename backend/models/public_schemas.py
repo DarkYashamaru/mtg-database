@@ -1,3 +1,5 @@
+from collections.abc import Mapping, Sequence
+
 from pydantic import BaseModel
 from models.card import Card
 from models.tag import Tag
@@ -45,7 +47,32 @@ class CardSchema(BaseModel):
     keywords: list[KeywordSchema]
     color_identity: list[ColorSchema]
 
-def card_to_schema(card: Card) -> CardSchema:
+def _tag_schemas(tags: Sequence[Tag]) -> list[TagSchema]:
+    return [
+        TagSchema(slug=tag.slug)
+        for tag in sorted(tags, key=lambda tag: tag.slug)
+    ]
+
+
+def card_to_schema(
+    card: Card,
+    inherited_tags_by_direct_id: Mapping[str, Sequence[Tag]] | None = None,
+) -> CardSchema:
+    direct_tags = [
+        tagging.tag
+        for tagging in card.taggings
+        if tagging.tag is not None
+    ]
+    direct_tag_ids = {tag.id for tag in direct_tags}
+    inherited_tags_by_direct_id = inherited_tags_by_direct_id or {}
+
+    inherited_tags_by_id = {
+        inherited_tag.id: inherited_tag
+        for direct_tag in direct_tags
+        for inherited_tag in inherited_tags_by_direct_id.get(direct_tag.id, [])
+        if inherited_tag.id not in direct_tag_ids
+    }
+
     return CardSchema(
         oracle_id=card.oracle_id,
         name=card.name,
@@ -71,14 +98,10 @@ def card_to_schema(card: Card) -> CardSchema:
             if ci.color is not None
         ],
 
-        tags=[
-            TagSchema(
-                #id=t.tag.id,
-                #label=t.tag.label,
-                slug=t.tag.slug,
-            )
-            for t in card.taggings
-        ],
+        tags=TagCollectionSchema(
+            direct=_tag_schemas(direct_tags),
+            inherited=_tag_schemas(list(inherited_tags_by_id.values())),
+        ),
 
         faces=[
             FaceSchema(
