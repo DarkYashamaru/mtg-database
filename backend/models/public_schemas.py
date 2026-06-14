@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from models.card import Card
+from models.tag import Tag
 
 
 class FaceSchema(BaseModel):
@@ -10,16 +11,24 @@ class FaceSchema(BaseModel):
     supertypes: list[str]
     card_types: list[str]
     subtypes: list[str]
+    small_image: str | None
+    normal_image: str | None
+    large_image: str | None
 
 
 class TagSchema(BaseModel):
-    #id: str
-    #label: str
     slug: str
+
+class TagCollectionSchema(BaseModel):
+    direct: list[TagSchema]
+    inherited: list[TagSchema]
 
 class KeywordSchema(BaseModel):
     #id: str
     label: str
+
+class ColorSchema(BaseModel):
+    symbol: str
 
 
 class CardSchema(BaseModel):
@@ -31,9 +40,10 @@ class CardSchema(BaseModel):
     commander_legal: bool
     standard_legal: bool
 
-    tags: list[TagSchema]
+    tags: TagCollectionSchema
     faces: list[FaceSchema]
     keywords: list[KeywordSchema]
+    color_identity: list[ColorSchema]
 
 def card_to_schema(card: Card) -> CardSchema:
     return CardSchema(
@@ -50,6 +60,15 @@ def card_to_schema(card: Card) -> CardSchema:
                 label=t.keyword.value,
             )
             for t in card.keywords
+            if t.keyword is not None
+        ],
+
+        color_identity=[
+            ColorSchema(
+                symbol=ci.color.symbol,
+            )
+            for ci in card.color_identity
+            if ci.color is not None
         ],
 
         tags=[
@@ -81,6 +100,10 @@ def card_to_schema(card: Card) -> CardSchema:
                     st.type.value
                     for st in face.subtypes
                 ],
+
+                small_image=face.small_image,
+                normal_image=face.normal_image,
+                large_image=face.large_image,
             )
             for face in card.faces
         ]

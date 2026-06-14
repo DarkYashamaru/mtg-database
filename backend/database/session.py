@@ -7,8 +7,7 @@ from sqlalchemy.orm import Session, sessionmaker
 
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
-DATABASE_DIR = BACKEND_DIR / "data"
-DATABASE_PATH = DATABASE_DIR / "cards.sqlite"
+DATABASE_PATH = BACKEND_DIR / "cards.sqlite"
 
 
 def database_url() -> str:

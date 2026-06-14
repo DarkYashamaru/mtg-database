@@ -20,7 +20,7 @@ if TYPE_CHECKING:
 
 
 class Card(Base):
-    """A unique MTG game object plus its front-face summary fields."""
+    """A unique MTG game object."""
 
     __tablename__ = "cards"
 
@@ -93,6 +93,10 @@ class Card_Face(Base):
     power: Mapped[str | None] = mapped_column(String(20))
     toughness: Mapped[str | None] = mapped_column(String(20))
     type_line: Mapped[str] = mapped_column(String(255))
+
+    small_image: Mapped[str | None] = mapped_column(String(255))
+    normal_image: Mapped[str | None] = mapped_column(String(255))
+    large_image: Mapped[str | None] = mapped_column(String(255))
 
     parent: Mapped["Card"] = relationship(
         back_populates="faces"

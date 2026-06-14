@@ -228,6 +228,12 @@ def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
 
     for valid_face in valid_faces:
 
+        image_uris = valid_face.get("image_uris") or {}
+
+        small_image = image_uris.get("small")
+        normal_image = image_uris.get("normal")
+        large_image = image_uris.get("large")
+
         face = Card_Face(
             parent_id=oracle_id,
             mana_cost=valid_face.get("mana_cost"),
@@ -237,11 +243,20 @@ def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
             power=valid_face.get("power"),
             toughness=valid_face.get("toughness"),
             type_line=valid_face.get("type_line"),
+            small_image=small_image,
+            normal_image=normal_image,
+            large_image=large_image
         )
 
         result.append(face)
 
     if len(result) < 1:
+
+        image_uris = item.get("image_uris") or {}
+
+        small_image = image_uris.get("small")
+        normal_image = image_uris.get("normal")
+        large_image = image_uris.get("large")
             
         face = Card_Face(
             parent_id=oracle_id,
@@ -252,6 +267,9 @@ def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
             power=item.get("power"),
             toughness=item.get("toughness"),
             type_line=item.get("type_line"),
+            small_image=small_image,
+            normal_image=normal_image,
+            large_image=large_image,
         )
         result.append(face)
 
