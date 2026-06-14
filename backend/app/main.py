@@ -58,8 +58,8 @@ async def lifespan(app: FastAPI):
     create_database()
 
     # Uncomment ONLY when you want to refresh data
-    download_data()
-    import_data()
+    #download_data()
+    #import_data()
 
     print("Startup complete")
 
