@@ -20,6 +20,7 @@ class FaceSchema(BaseModel):
 
 class TagSchema(BaseModel):
     slug: str
+    description: str | None = None
 
 class TagCollectionSchema(BaseModel):
     direct: list[TagSchema]
@@ -49,7 +50,7 @@ class CardSchema(BaseModel):
 
 def _tag_schemas(tags: Sequence[Tag]) -> list[TagSchema]:
     return [
-        TagSchema(slug=tag.slug)
+        TagSchema(slug=tag.slug, description=tag.description)
         for tag in sorted(tags, key=lambda tag: tag.slug)
     ]
 
