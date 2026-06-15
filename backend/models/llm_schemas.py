@@ -1,143 +1,45 @@
 
-from pydantic import BaseModel
-
-class ArchetypeReasoningSchema(BaseModel):
-    combo: str
-    voltron: str
-    control: str
-    stax_taxes: str
-    aristocrats: str
-    spellslinger: str
-    storm: str
-    go_wide_tokens: str
-    tribal_kindred: str
-    aggro_combats: str
-    burn_slug: str
-    group_hug_politics: str
-    pillowfort: str
-    reanimator: str
-    landfall: str
-    lands_matter: str
-    stompy: str
-    blink_flicker: str
-    artifacts: str
-    enchantments: str
-    superfriends: str
-    wheels_discard: str
-    counters: str
-    theft_clones_aikido: str
-    cheat_cascade: str
-    alt_win: str
-    lifegain_drain: str
-    mill: str
-    tribal_plus: str
-    relentless_colony: str
+from pydantic import BaseModel, Field
 
 class CardArchetypeScoreSchema(BaseModel):
     card_analysis: str
-    reasoning: ArchetypeReasoningSchema
-    combo: int
-    voltron: int
-    control: int
-    stax_taxes: int
-    aristocrats: int
-    spellslinger: int
-    storm: int
-    go_wide_tokens: int
-    tribal_kindred: int
-    aggro_combats: int
-    burn_slug: int
-    group_hug_politics: int
-    pillowfort: int
-    reanimator: int
-    landfall: int
-    lands_matter: int
-    stompy: int
-    blink_flicker: int
-    artifacts: int
-    enchantments: int
-    superfriends: int
-    wheels_discard: int
-    counters: int
-    theft_clones_aikido: int
-    cheat_cascade: int
-    alt_win: int
-    lifegain_drain: int
-    mill: int
-    tribal_plus: int
-    relentless_colony: int
+    
+    # Setting default=0 allows Pydantic to recognize it as the fallback
+    combo: int = Field(default=0)
+    voltron: int = Field(default=0)
+    control: int = Field(default=0)
+    stax_taxes: int = Field(default=0)
+    aristocrats: int = Field(default=0)
+    spellslinger: int = Field(default=0)
+    storm: int = Field(default=0)
+    go_wide_tokens: int = Field(default=0)
+    tribal_kindred: int = Field(default=0)
+    aggro_combats: int = Field(default=0)
+    burn_slug: int = Field(default=0)
+    group_hug_politics: int = Field(default=0)
+    pillowfort: int = Field(default=0)
+    reanimator: int = Field(default=0)
+    landfall: int = Field(default=0)
+    lands_matter: int = Field(default=0)
+    stompy: int = Field(default=0)
+    blink_flicker: int = Field(default=0)
+    artifacts: int = Field(default=0)
+    enchantments: int = Field(default=0)
+    superfriends: int = Field(default=0)
+    wheels_discard: int = Field(default=0)
+    counters: int = Field(default=0)
+    theft_clones_aikido: int = Field(default=0)
+    cheat_cascade: int = Field(default=0)
+    alt_win: int = Field(default=0)
+    lifegain_drain: int = Field(default=0)
+    mill: int = Field(default=0)
+    tribal_plus: int = Field(default=0)
+    relentless_colony: int = Field(default=0)
 
 ARCHETYPE_SCHEMA = {
     "type": "object",
     "properties": {
         "card_analysis": {"type": "string"},
-        "reasoning": {
-            "type": "object",
-            "properties": {
-                "combo": {"type": "string"},
-                "voltron": {"type": "string"},
-                "control": {"type": "string"},
-                "stax_taxes": {"type": "string"},
-                "aristocrats": {"type": "string"},
-                "spellslinger": {"type": "string"},
-                "storm": {"type": "string"},
-                "go_wide_tokens": {"type": "string"},
-                "tribal_kindred": {"type": "string"},
-                "aggro_combats": {"type": "string"},
-                "burn_slug": {"type": "string"},
-                "group_hug_politics": {"type": "string"},
-                "pillowfort": {"type": "string"},
-                "reanimator": {"type": "string"},
-                "landfall": {"type": "string"},
-                "lands_matter": {"type": "string"},
-                "stompy": {"type": "string"},
-                "blink_flicker": {"type": "string"},
-                "artifacts": {"type": "string"},
-                "enchantments": {"type": "string"},
-                "superfriends": {"type": "string"},
-                "wheels_discard": {"type": "string"},
-                "counters": {"type": "string"},
-                "theft_clones_aikido": {"type": "string"},
-                "cheat_cascade": {"type": "string"},
-                "alt_win": {"type": "string"},
-                "lifegain_drain": {"type": "string"},
-                "mill": {"type": "string"},
-                "tribal_plus": {"type": "string"},
-                "relentless_colony": {"type": "string"},
-            },
-            "required": [
-                "combo",
-                "voltron",
-                "control",
-                "stax_taxes",
-                "aristocrats",
-                "spellslinger",
-                "storm",
-                "go_wide_tokens",
-                "tribal_kindred",
-                "aggro_combats",
-                "burn_slug",
-                "group_hug_politics",
-                "pillowfort",
-                "reanimator",
-                "landfall",
-                "lands_matter",
-                "stompy",
-                "blink_flicker",
-                "artifacts",
-                "enchantments",
-                "superfriends",
-                "wheels_discard",
-                "counters",
-                "theft_clones_aikido",
-                "cheat_cascade",
-                "alt_win",
-                "lifegain_drain",
-                "mill",
-                "tribal_plus",
-                "relentless_colony",
-            ],
-        },
         "combo": {"type": "integer"},
         "voltron": {"type": "integer"},
         "control": {"type": "integer"},

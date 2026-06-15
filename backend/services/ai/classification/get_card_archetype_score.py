@@ -1,255 +1,79 @@
-# backend/services/ai/classification/get_card_archetype_score.py
-
-import json
+# card_classifier.py
 from pathlib import Path
-import requests
+import litellm
+from services.ai.llm_factory import get_llm_config 
 from models.public_schemas import CardSchema
-from pydantic import BaseModel
-
-# llama.cpp native completion endpoint
-LLAMA_CPP_URL = "http://localhost:8080/completion"
+from models.llm_schemas import CardArchetypeScoreSchema
+import json
 
 PROMPT_PATH = Path("D:/Repositories/mtg-database/backend/services/ai/classification/prompts/system_prompt.md")
-
-class ArchetypeReasoningSchema(BaseModel):
-    combo: str
-    voltron: str
-    control: str
-    stax_taxes: str
-    aristocrats: str
-    spellslinger: str
-    storm: str
-    go_wide_tokens: str
-    tribal_kindred: str
-    aggro_combats: str
-    burn_slug: str
-    group_hug_politics: str
-    pillowfort: str
-    reanimator: str
-    landfall: str
-    lands_matter: str
-    stompy: str
-    blink_flicker: str
-    artifacts: str
-    enchantments: str
-    superfriends: str
-    wheels_discard: str
-    counters: str
-    theft_clones_aikido: str
-    cheat_cascade: str
-    alt_win: str
-    lifegain_drain: str
-    mill: str
-    tribal_plus: str
-    relentless_colony: str
-
-class CardArchetypeScoreSchema(BaseModel):
-    card_analysis: str
-    reasoning: ArchetypeReasoningSchema
-    combo: int
-    voltron: int
-    control: int
-    stax_taxes: int
-    aristocrats: int
-    spellslinger: int
-    storm: int
-    go_wide_tokens: int
-    tribal_kindred: int
-    aggro_combats: int
-    burn_slug: int
-    group_hug_politics: int
-    pillowfort: int
-    reanimator: int
-    landfall: int
-    lands_matter: int
-    stompy: int
-    blink_flicker: int
-    artifacts: int
-    enchantments: int
-    superfriends: int
-    wheels_discard: int
-    counters: int
-    theft_clones_aikido: int
-    cheat_cascade: int
-    alt_win: int
-    lifegain_drain: int
-    mill: int
-    tribal_plus: int
-    relentless_colony: int
-
-ARCHETYPE_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "card_analysis": {"type": "string"},
-        "reasoning": {
-            "type": "object",
-            "properties": {
-                "combo": {"type": "string"},
-                "voltron": {"type": "string"},
-                "control": {"type": "string"},
-                "stax_taxes": {"type": "string"},
-                "aristocrats": {"type": "string"},
-                "spellslinger": {"type": "string"},
-                "storm": {"type": "string"},
-                "go_wide_tokens": {"type": "string"},
-                "tribal_kindred": {"type": "string"},
-                "aggro_combats": {"type": "string"},
-                "burn_slug": {"type": "string"},
-                "group_hug_politics": {"type": "string"},
-                "pillowfort": {"type": "string"},
-                "reanimator": {"type": "string"},
-                "landfall": {"type": "string"},
-                "lands_matter": {"type": "string"},
-                "stompy": {"type": "string"},
-                "blink_flicker": {"type": "string"},
-                "artifacts": {"type": "string"},
-                "enchantments": {"type": "string"},
-                "superfriends": {"type": "string"},
-                "wheels_discard": {"type": "string"},
-                "counters": {"type": "string"},
-                "theft_clones_aikido": {"type": "string"},
-                "cheat_cascade": {"type": "string"},
-                "alt_win": {"type": "string"},
-                "lifegain_drain": {"type": "string"},
-                "mill": {"type": "string"},
-                "tribal_plus": {"type": "string"},
-                "relentless_colony": {"type": "string"},
-            },
-            "required": [
-                "combo",
-                "voltron",
-                "control",
-                "stax_taxes",
-                "aristocrats",
-                "spellslinger",
-                "storm",
-                "go_wide_tokens",
-                "tribal_kindred",
-                "aggro_combats",
-                "burn_slug",
-                "group_hug_politics",
-                "pillowfort",
-                "reanimator",
-                "landfall",
-                "lands_matter",
-                "stompy",
-                "blink_flicker",
-                "artifacts",
-                "enchantments",
-                "superfriends",
-                "wheels_discard",
-                "counters",
-                "theft_clones_aikido",
-                "cheat_cascade",
-                "alt_win",
-                "lifegain_drain",
-                "mill",
-                "tribal_plus",
-                "relentless_colony",
-            ],
-        },
-        "combo": {"type": "integer"},
-        "voltron": {"type": "integer"},
-        "control": {"type": "integer"},
-        "stax_taxes": {"type": "integer"},
-        "aristocrats": {"type": "integer"},
-        "spellslinger": {"type": "integer"},
-        "storm": {"type": "integer"},
-        "go_wide_tokens": {"type": "integer"},
-        "tribal_kindred": {"type": "integer"},
-        "aggro_combats": {"type": "integer"},
-        "burn_slug": {"type": "integer"},
-        "group_hug_politics": {"type": "integer"},
-        "pillowfort": {"type": "integer"},
-        "reanimator": {"type": "integer"},
-        "landfall": {"type": "integer"},
-        "lands_matter": {"type": "integer"},
-        "stompy": {"type": "integer"},
-        "blink_flicker": {"type": "integer"},
-        "artifacts": {"type": "integer"},
-        "enchantments": {"type": "integer"},
-        "superfriends": {"type": "integer"},
-        "wheels_discard": {"type": "integer"},
-        "counters": {"type": "integer"},
-        "theft_clones_aikido": {"type": "integer"},
-        "cheat_cascade": {"type": "integer"},
-        "alt_win": {"type": "integer"},
-        "lifegain_drain": {"type": "integer"},
-        "mill": {"type": "integer"},
-        "tribal_plus": {"type": "integer"},
-        "relentless_colony": {"type": "integer"},
-    },
-    "required": [
-        "card_analysis",
-        "reasoning",
-        "combo",
-        "voltron",
-        "control",
-        "stax_taxes",
-        "aristocrats",
-        "spellslinger",
-        "storm",
-        "go_wide_tokens",
-        "tribal_kindred",
-        "aggro_combats",
-        "burn_slug",
-        "group_hug_politics",
-        "pillowfort",
-        "reanimator",
-        "landfall",
-        "lands_matter",
-        "stompy",
-        "blink_flicker",
-        "artifacts",
-        "enchantments",
-        "superfriends",
-        "wheels_discard",
-        "counters",
-        "theft_clones_aikido",
-        "cheat_cascade",
-        "alt_win",
-        "lifegain_drain",
-        "mill",
-        "tribal_plus",
-        "relentless_colony",
-    ],
-}
+litellm._turn_on_debug()
 
 
 def _load_system_prompt() -> str:
     return PROMPT_PATH.read_text(encoding="utf-8")
 
+def clean_card_for_llm(raw_card_dict):
+    cleaned = {
+        "name": raw_card_dict.get("name"),
+        "tags": {
+            "direct": [t["slug"] for t in raw_card_dict.get("tags", {}).get("direct", [])],
+            "inherited": [t["slug"] for t in raw_card_dict.get("tags", {}).get("inherited", [])]
+        },
+        "faces": [
+            {
+                "name": f.get("name"),
+                "mana_cost": f.get("mana_cost"),
+                "oracle_text": f.get("oracle_text"),
+                "card_types": f.get("card_types"),
+                "subtypes": f.get("subtypes")
+            }
+            for f in raw_card_dict.get("faces", [])
+        ],
+        "keywords": [k.get("label") for k in raw_card_dict.get("keywords", [])]
+    }
+    return cleaned
+
 
 def get_card_archetype_score(card: CardSchema) -> CardArchetypeScoreSchema:
+    # 1. Prepare standard payload instructions
+
+    cleaned_dict = clean_card_for_llm(card.model_dump())
+    card_json = json.dumps(cleaned_dict, ensure_ascii=False)
+
+    print("Cleaned Payload Sent to LLM:")
+    print(card_json)
+
     system_prompt = _load_system_prompt()
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {
+            "role": "user", 
+            "content": f"Classify the following MTG card.\n\n{card_json}"
+        }
+    ]
 
-    # Consolidated single prompt string for llama.cpp native completion endpoint
-    prompt = (
-        f"{system_prompt}\n\n"
-        "Classify the following MTG card.\n\n"
-        f"{card.model_dump_json(indent=2)}"
-    )
+    # 2. Grab the environment configuration dictionary
+    completion_kwargs = get_llm_config()
 
-    print(prompt)
-
-    response = requests.post(
-        LLAMA_CPP_URL,
-        json={
-            "prompt": prompt,
+    completion_kwargs.update({
+            "messages": messages,
             "temperature": 0.1,
-            "stream": False,
-            "json_schema": ARCHETYPE_SCHEMA,
-        },
-        timeout=1200,
-    )
+            "response_format": CardArchetypeScoreSchema,
+            "timeout": 600,
+        })
 
-    response.raise_for_status()
+    # 3. Merge runtime execution parameters into the configuration dictionary
+    completion_kwargs.update({
+        "messages": messages,
+        "temperature": 0.1,
+        "response_format": CardArchetypeScoreSchema,
+    })
 
-    data = response.json()
+    # 4. Fire the request
+    print(f"Executing request with target model target: {completion_kwargs.get('model')}")
+    response = litellm.completion(**completion_kwargs)
 
-    # Print raw generated string content
-    print(data["content"])
-
-    return CardArchetypeScoreSchema.model_validate_json(
-        data["content"]
-    )
+    # 5. Extract and validate string responses directly into your target schema
+    content = response.choices[0].message.content
+    return CardArchetypeScoreSchema.model_validate_json(content)
