@@ -2,327 +2,548 @@
 
 Your task is to classify a single Magic: The Gathering card according to how strongly it supports common Commander archetypes.
 
-A card may strongly support multiple archetypes.
-
-Scores are independent and do not need to sum to 100.
+Scores are **independent**, reflect **active strategic support** rather than generic playability, and **do not need to sum to 100**.
 
 ---
 
-## Archetypes
+# Archetypes & Indicators
 
-### Combo
+## 1. Combo & Loops (`combo`)
 
-Cards that enable, assemble, protect, tutor, or serve as components of deterministic game-winning interactions.
-
-Strong indicators:
+Cards that enable, assemble, protect, tutor, or serve as essential components of deterministic, game-winning loops.
+**Strong indicators:**
 
 * Infinite mana
 * Infinite damage
-* Infinite combat
+* Infinite combat phases
 * Untap engines
-* Cost reduction
-* Combo tutors
+* Generic cost reduction
+* Combo-specific tutors
 * Recursion loops
 * Deterministic win conditions
 
 ---
 
-### Voltron
+## 2. Voltron (`voltron`)
 
 Cards that support winning through commander damage by enhancing, protecting, or enabling a single attacking creature.
-
-Strong indicators:
+**Strong indicators:**
 
 * Equipment support
 * Aura support
 * Hexproof
 * Indestructible
-* Protection effects
+* Protection
 * Double strike
 * Evasion
 * Commander-focused combat buffs
 
 ---
 
-### Control
+## 3. Control & Draw-Go (`control`)
 
-Cards that stabilize the game, answer threats, generate card advantage, or improve long-term resource efficiency.
+Cards that stabilize the game state, answer threats reactively, generate card advantage, or prioritize instant-speed interaction.
+**Strong indicators:**
 
-Strong indicators:
-
-* Removal
+* Spot removal
 * Counterspells
 * Board wipes
-* Recursion
 * Card draw
 * Flash interaction
 * Defensive engines
+* Draw-go payoffs
 
 ---
 
-### Stax
+## 4. Stax & Taxes (`stax_taxes`)
 
-Cards that restrict resources, tax actions, limit game actions, or create asymmetrical lock states.
-
-Strong indicators:
+Cards that restrict resources, tax actions, limit gameplay choices, or create asymmetrical lock states.
+**Strong indicators:**
 
 * Tax effects
 * Search prevention
 * Untap restrictions
 * Rule modification
+
 * Resource denial
 * Lock pieces
 * Hatebears
+* Mass land destruction
 
 ---
 
-### Aristocrats
+## 5. Aristocrats (`aristocrats`)
 
 Cards that benefit from sacrificing creatures, creatures dying, or recurring sacrifice loops.
-
-Strong indicators:
+**Strong indicators:**
 
 * Sacrifice outlets
 * Death triggers
-* Blood Artist effects
-* Token fodder
-* Graveyard recursion
+* Blood Artist-style drain effects
+* Token sacrifice fodder
+* Graveyard sacrifice loops
 * Creature death payoffs
 
 ---
 
-### Spellslinger / Storm
+## 6. Spellslinger (`spellslinger`)
 
-Cards that reward casting many spells or support large spell chains.
-
-Strong indicators:
+Cards that reward casting instant and sorcery spells or lower their casting barriers.
+**Strong indicators:**
 
 * Magecraft
-* Storm
 * Spell copying
-* Cost reduction
-* Instant and sorcery payoffs
-* Noncreature spell triggers
+* Cost reduction for instants/sorceries
+* Instant/sorcery-specific triggers
+* Noncreature spell payoffs
 
 ---
 
-### Go Wide / Token Swarm
+## 7. Storm (`storm`)
 
-Cards that create, enhance, multiply, or reward large numbers of creatures.
+Cards that reward or enable casting a high volume of spells in a single explosive turn.
+**Strong indicators:**
 
-Strong indicators:
+* Storm
+* High spell counts
+* Mana-producing rituals
+* Spell-copying loops
+* Low-cost card velocity
+
+---
+
+## 8. Go Wide & Tokens (`go_wide_tokens`)
+
+Cards that create, enhance, multiply, or reward controlling large quantities of creatures.
+**Strong indicators:**
 
 * Token generation
 * Token doubling
-* Anthem effects
+* Creature anthems
 * Go-wide payoffs
-* Mass creature buffs
+* Mass creature combat buffs
+* Overrun effects
 
 ---
 
-### Tribal / Kindred
+## 9. Tribal / Kindred (`tribal_kindred`)
 
 Cards that care about specific creature types or reward tribal deck construction.
-
-Strong indicators:
+**Strong indicators:**
 
 * Creature-type references
 * Tribal lords
 * Tribal payoffs
 * Tribal tutors
 * Tribal cost reduction
+* Specific tribal rewards (Elves, Goblins, etc.)
 
 ---
 
-### Aggro
+## 10. Aggro & Extra Combats (`aggro_combats`)
 
-Cards that increase combat pressure and help reduce opponents' life totals through efficient attacks.
+Cards that increase combat pressure, deal direct damage, or manipulate combat phases.
+**Strong indicators:**
 
-Strong indicators:
-
-* Efficient attackers
-* Combat buffs
-* Haste
+* Efficient low-cost attackers
 * Extra combat phases
-* Combat damage payoffs
-* Aggressive tempo effects
+* Haste
+* Aggressive tempo
 
 ---
 
-### Group Hug / Politics
+## 11. Burn & Group Slug (`burn_slug`)
 
-Cards that provide resources to multiple players or create political incentives.
+Cards that deal direct damage, trigger symmetrical damage, or punish life totals.
+**Strong indicators:**
 
-Strong indicators:
+* Direct damage spells
+* Symmetrical damage triggers
+* Group slug punishers
+
+---
+
+## 12. Group Hug & Politics (`group_hug_politics`)
+
+Cards that provide resources to multiple players, incentivize political choices, or force opponents to attack each other.
+**Strong indicators:**
 
 * Symmetrical card draw
 * Symmetrical ramp
-* Resource sharing
 * Voting mechanics
 * Political effects
+* Goad
 * Pillowfort support
 
 ---
 
-### Reanimator
+## 13. Pillow Fort (`pillowfort`)
 
-Cards that place cards into graveyards, return permanents from graveyards, or reward graveyard recursion.
+Cards that prevent opponents from attacking, tax attacks, or reduce damage taken.
+**Strong indicators:**
 
-Strong indicators:
+* Taxing attacks
+* Damage prevention
+* Defensive structures
+
+---
+
+## 14. Reanimator & Graveyard (`reanimator`)
+
+Cards that place cards into graveyards, return cards from graveyards to play, or reward graveyard density.
+**Strong indicators:**
 
 * Reanimation spells
 * Self-mill
 * Discard outlets
-* Graveyard recursion
+* Graveyard value loops
 * Reanimation payoffs
+* Dredge
 
 ---
 
-### Landfall
+## 15. Landfall (`landfall`)
 
-Cards that reward land drops, enable additional land plays, recur lands, or interact heavily with lands entering the battlefield.
-
-Strong indicators:
+Cards that reward lands entering the battlefield or facilitate playing extra lands.
+**Strong indicators:**
 
 * Landfall
-* Additional land drops
-* Fetch-land synergy
+* Extra land plays
+* Fetch-land triggers
+* Land-entry token generation
+
+---
+
+## 16. Lands Matter & Utility (`lands_matter`)
+
+Cards that leverage land abilities, non-basic land structures, land sacrifice, or graveyard land loops.
+**Strong indicators:**
+
+* Non-basic utility land synergy
 * Land recursion
-* Land-based token generation
+* Sacrificing lands for value
+* Non-ramp land strategies
 
 ---
 
-### Stompy
+## 17. Stompy (`stompy`)
 
-Cards that support winning through oversized creatures and overwhelming combat presence.
+Cards that support winning through oversized creatures, power scaling, and raw creature presence.
+**Strong indicators:**
 
-Strong indicators:
-
-* Large creatures
-* Power scaling
-* Ramp payoffs
+* Large base creatures
+* Power-doubling effects
+* Creature-based ramp
 * Trample
-* Creature-based mana acceleration
-* Big-creature rewards
+* Power-scaling rewards
 
 ---
 
-## Evidence Priority
+## 18. Blink & Flicker (`blink_flicker`)
 
-When evaluating a card, use the following sources of evidence in order:
+Cards that abuse enters-the-battlefield abilities by exiling and returning permanents.
+**Strong indicators:**
 
-1. Oracle text
-2. Card tags and tag descriptions
-3. Creature types, card types, keywords, mana cost, and metadata
-4. Historical Commander usage
-
-If tags conflict with oracle text, prioritize oracle text.
-
-Tags should reinforce evidence rather than create unsupported archetype associations.
-
-Treat broad playability as weak evidence. A card being powerful, efficient, popular, or card-advantage-positive is not enough by itself to score highly in any archetype.
+* Exile-and-return effects
+* Flicker engines
+* Temporary exile
+* ETB-focused value
 
 ---
 
-## Classification Process
+## 19. Artifacts Matter (`artifacts`)
 
-Before assigning scores, follow this process internally.
+Cards that synergize with artifacts, care about artifact counts, or leverage cheap artifact loops.
+**Strong indicators:**
 
-### Step 1: Identify the Primary Archetype
-
-Determine which archetype the card most strongly advances.
-
-Most cards should have exactly one primary archetype.
-
-### Step 2: Identify Secondary Archetypes
-
-Determine whether the card meaningfully supports any additional archetypes.
-
-Many cards will have zero, one, or two secondary archetypes.
-
-### Step 3: Assign Scores
-
-General guidelines:
-
-* 90-100: archetype staple, commander/build-around, or near-perfect enabler/payoff
-* 70-89: strong active support for the archetype
-* 40-69: clear secondary support or narrower archetype role
-* 15-39: minor or conditional support
-* 1-14: very weak incidental overlap
-* 0: no direct support
-
-Only exceptional cards should score above 70 in multiple archetypes.
-Most unrelated archetypes should be exactly 0, not a small nonzero value.
-
-Use the full 0-100 range, but be conservative. Prefer one high score plus a few meaningful secondary scores over many medium scores.
-
-### Step 4: Validate Scores
-
-Verify that:
-
-* The highest score corresponds to the primary archetype.
-* Scores reflect active support, not mere playability.
-* Tribal synergy alone does not imply Combo.
-* Token generation alone does not imply Aristocrats.
-* Large creatures alone do not imply Voltron.
-* Resource sharing is required for Group Hug.
-* Graveyard usage is required for Reanimator.
-* Land interaction is required for Landfall.
-* A strong standalone creature is Stompy only if its size, scaling, ramp payoff, or combat keywords are central to the card.
-* Protection/evasion alone is Voltron only when it clearly helps one threat connect or survive.
-* Removal/card draw alone is Control, not Goodstuff; there is no Goodstuff output field.
-
-### Archetype Separation Rules
-
-Use these tie-breakers when evidence overlaps:
-
-* Sacrificing creatures for value points to Aristocrats; sacrificing any permanent as a cost is not enough.
-* Creating one token is usually weak Go Wide evidence; repeated or mass token production is stronger.
-* Creature-type text points to Tribal / Kindred even when the card is aggressive or token-based.
-* Cost reduction for instants/sorceries points to Spellslinger / Storm; generic cost reduction only points to Combo when it enables loops.
-* Extra lands, land recursion, or land-entering triggers point to Landfall; generic ramp without land-specific text usually does not.
-* Symmetrical effects are Group Hug / Politics only when they give opponents resources or create table incentives.
-* Stax requires limiting, taxing, preventing, or denying actions/resources.
+* Metalcraft
+* Affinity
+* Artifact token generation
+* Artifact sacrifice engines (eggs)
+* Artifact recursion
 
 ---
 
-## Output Format
+## 20. Enchantments Matter (`enchantments`)
 
-Return only valid JSON.
+Cards that reward casting, controlling, or sacrificing enchantments and auras.
+**Strong indicators:**
 
-Each reasoning field must be one concise sentence based on visible evidence. If the score is 0, say "No direct evidence."
+* Enchantress triggers
+* Constellation
+* Shrine synergies
+* Enchantment-focused ramp
+* Aura payoffs
+
+---
+
+## 21. Superfriends (`superfriends`)
+
+Cards that support or directly synergize with controlling multiple planeswalkers.
+**Strong indicators:**
+
+* Planeswalker-centric interaction
+* Loyalty counter manipulation
+* Planeswalker search
+* Proliferation
+
+---
+
+## 22. Wheels & Discard (`wheels_discard`)
+
+Cards that force players to discard and redraw hands or reward discarding cards.
+**Strong indicators:**
+
+* Wheel effects
+* Discard triggers
+* Madness
+* Cycling
+* Draw-pain mechanics
+
+---
+
+## 23. Counters Matter (`counters`)
+
+Cards that place, amplify, or reward controlling physical counters on permanents.
+**Strong indicators:**
+
+* +1/+1 counters
+* -1/-1 counters
+* Charge counters
+* Proliferation
+* Counter-scaling rewards
+
+---
+
+## 24. Theft, Clones & Aikido (`theft_clones_aikido`)
+
+Cards that copy opponents' spells or permanents, redirect resources, or gain control of opposing cards.
+**Strong indicators:**
+
+* Clone effects
+* Opponent spell copying
+* Temporary or permanent theft
+* Deflection effects
+
+---
+
+## 25. Cheat & Cascade (`cheat_cascade`)
+
+Cards that bypass normal casting costs, cascade, discover, or cast cards from the top of libraries.
+**Strong indicators:**
+
+* Cascade
+* Discover
+* Miracle
+* Free casting
+* Cheating permanents into play
+
+---
+
+## 26. Alternate Win Conditions (`alt_win`)
+
+Cards that deploy alternative game-winning parameters.
+**Strong indicators:**
+
+* "You win the game"
+* "Opponents lose the game"
+* Non-damage victory conditions
+
+---
+
+## 27. Life Gain & Drain (`lifegain_drain`)
+
+Cards that focus heavily on lifegain, lifedrain, or using life as a resource.
+**Strong indicators:**
+
+* Lifegain triggers
+* Mass lifedrain
+* Paying life as a resource
+
+---
+
+## 28. Mill (`mill`)
+
+Cards that directly reduce the number of cards remaining in a player's library.
+**Strong indicators:**
+
+* Library milling
+* Self-mill win conditions
+* Mill payoffs
+
+---
+
+## 29. Tribal+ & Typal Mechanics (`tribal_plus`)
+
+Cards that reward non-standard creature groupings or alternative structural traits.
+**Strong indicators:**
+
+* Defenders
+* Morph
+* Face-down cards
+* Historic
+* Legends
+
+---
+
+## 30. Relentless & Colony (`relentless_colony`)
+
+Cards that bypass standard Commander deck-building restrictions.
+**Strong indicators:**
+
+* "A deck may contain any number..."
+* Shadowborn Apostle
+* Relentless Rats
+* Persistent Petitioners
+
+---
+
+# Evidence Priority & Input Tags
+
+Evaluate cards using the following sources of evidence in order:
+
+1. **Oracle text** (Primary driver of mechanics)
+2. **Card tags and tag descriptions** (Direct indicators of archetype alignment)
+3. **Keywords, types, and metadata** (Creature types, card types, keywords, mana cost)
+4. **Historical Commander usage**
+
+### Rules
+
+> * **Tag Cross-Referencing:** If the input data contains explicit tags (e.g., `group-slug`, `drain-life`, `synergy-equipment`, `lifegain`), the corresponding archetypes (`burn_slug`, `lifegain_drain`, `voltron`/`artifacts`) **must** actively reflect those mechanics with appropriate non-zero scores. Do not ignore the provided tags.
+> * If tags conflict with Oracle text, prioritize Oracle text.
+> * Treat broad playability as weak evidence.
+> * A card being powerful or card-advantage-positive is not sufficient by itself to score highly in any archetype.
+> 
+> 
+
+---
+
+# Classification Process
+
+## Step 1: Analyze the Card (Runway)
+
+Before assigning any numerical scores or archetype-specific reasoning, write a brief 2-3 sentence mechanical breakdown of the card's text, keywords, and tags in the `card_analysis` field. Identify whether the card is a dedicated single-theme card or a hybrid card supporting multiple strategies simultaneously.
+
+## Step 2: Identify Primary & Secondary Archetypes
+
+Determine which archetypes the card actively advances based on your analysis.
+
+* **Dedicated Cards:** Will typically have one primary archetype scoring 70 or above.
+* **Hybrid / Multi-Faceted Cards:** (e.g., cards that trigger off noncreature spells to deal damage or gain life) will naturally have multiple secondary or co-primary scores in the **40–89** range. Do not force a hybrid card to fit only one active archetype.
+
+## Step 3: Assign Scores
+
+Assign secondary scores (**40–69**) only for meaningful, intentional mechanics.
+
+| Score Range | Meaning |
+| --- | --- |
+| 90–100 | Archetype staple, build-around commander, or near-perfect enabler/payoff |
+| 70–89 | Strong active support for the archetype |
+| 40–69 | Clear secondary support or narrower archetype role |
+| 15–39 | Minor or conditional support |
+| 1–14 | Very weak incidental overlap |
+| 0 | No direct support |
+
+### Important
+
+Most unrelated archetypes must be scored **exactly 0**, not a small non-zero value.
+
+## Step 4: Validate Scores & Resolve Overlaps
+
+* Sacrificing creatures for value points to **Aristocrats**; sacrificing any permanent is not enough.
+* Generic land-ramp cards that do not trigger Landfall or utilize non-basic lands must score **0** in both **Landfall** and **Lands Matter**.
+* **Spellslinger** focuses on instant/sorcery counts or noncreature triggers; **Storm** requires explicit high spell-chain support.
+* Creating tokens is **Go Wide**; it is only **Aristocrats** if sacrifice or death triggers are explicitly present.
+
+---
+
+# Output Requirements
+
+Return **only valid JSON**.
+Do not include any text, explanations, or markdown code fences outside the JSON object.
+The `card_analysis` key **must** be the very first field in the JSON object to guide the model's logic.
+Each reasoning field must be **one concise sentence based on visible evidence**.
+
+If the score is `0`, use exactly:
+
+```json
+"No direct evidence."
+
+```
+
+---
+
+# Output Schema
 
 ```json
 {
-  "combo": 0,
-  "voltron": 0,
-  "control": 0,
-  "stax": 0,
-  "aristocrats": 0,
-  "spellslinger_storm": 0,
-  "go_wide_token_swarm": 0,
-  "tribal_kindred": 0,
-  "aggro": 0,
-  "group_hug_politics": 0,
-  "reanimator": 0,
-  "landfall": 0,
-  "stompy": 0,
+  "card_analysis": "Write a 2-3 sentence mechanical analysis of the card and its tags here first.",
   "reasoning": {
     "combo": "No direct evidence.",
     "voltron": "No direct evidence.",
     "control": "No direct evidence.",
-    "stax": "No direct evidence.",
+    "stax_taxes": "No direct evidence.",
     "aristocrats": "No direct evidence.",
-    "spellslinger_storm": "No direct evidence.",
-    "go_wide_token_swarm": "No direct evidence.",
+    "spellslinger": "No direct evidence.",
+    "storm": "No direct evidence.",
+    "go_wide_tokens": "No direct evidence.",
     "tribal_kindred": "No direct evidence.",
-    "aggro": "No direct evidence.",
+    "aggro_combats": "No direct evidence.",
+    "burn_slug": "No direct evidence.",
     "group_hug_politics": "No direct evidence.",
+    "pillowfort": "No direct evidence.",
     "reanimator": "No direct evidence.",
     "landfall": "No direct evidence.",
-    "stompy": "No direct evidence."
-  }
+    "lands_matter": "No direct evidence.",
+    "stompy": "No direct evidence.",
+    "blink_flicker": "No direct evidence.",
+    "artifacts": "No direct evidence.",
+    "enchantments": "No direct evidence.",
+    "superfriends": "No direct evidence.",
+    "wheels_discard": "No direct evidence.",
+    "counters": "No direct evidence.",
+    "theft_clones_aikido": "No direct evidence.",
+    "cheat_cascade": "No direct evidence.",
+    "alt_win": "No direct evidence.",
+    "lifegain_drain": "No direct evidence.",
+    "mill": "No direct evidence.",
+    "tribal_plus": "No direct evidence.",
+    "relentless_colony": "No direct evidence."
+  },
+  "combo": 0,
+  "voltron": 0,
+  "control": 0,
+  "stax_taxes": 0,
+  "aristocrats": 0,
+  "spellslinger": 0,
+  "storm": 0,
+  "go_wide_tokens": 0,
+  "tribal_kindred": 0,
+  "aggro_combats": 0,
+  "burn_slug": 0,
+  "group_hug_politics": 0,
+  "pillowfort": 0,
+  "reanimator": 0,
+  "landfall": 0,
+  "lands_matter": 0,
+  "stompy": 0,
+  "blink_flicker": 0,
+  "artifacts": 0,
+  "enchantments": 0,
+  "superfriends": 0,
+  "wheels_discard": 0,
+  "counters": 0,
+  "theft_clones_aikido": 0,
+  "cheat_cascade": 0,
+  "alt_win": 0,
+  "lifegain_drain": 0,
+  "mill": 0,
+  "tribal_plus": 0,
+  "relentless_colony": 0
 }
+
 ```
 
-Do not include any text outside the JSON object.
+## Final Rule
+
+**Return only the JSON object. Do not include explanations, markdown, code fences, or any text before or after the JSON.**

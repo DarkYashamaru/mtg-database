@@ -1,6 +1,8 @@
 import argparse
 from collections import defaultdict
 from collections.abc import Iterable
+from contextlib import nullcontext
+from dataclasses import replace
 from pathlib import Path
 import sys
 import time
@@ -24,9 +26,8 @@ from models.card import (
 from models.color import Color_Identity
 from models.public_schemas import card_to_schema
 from models.tag import Tag, TagRelation, Tagging
+from services.ai.llm.config import LlmConfig, load_llm_config
 from services.ai.classification.get_card_archetype_score import (
-    DEFAULT_MODEL,
-    DEFAULT_OLLAMA_URL,
     get_card_archetype_score,
 )
 
@@ -61,15 +62,73 @@ def parse_args() -> argparse.Namespace:
         "--name",
         help="Exact card name to classify. Falls back to a contains match.",
     )
-    parser.add_argument("--model", default=DEFAULT_MODEL)
-    parser.add_argument("--ollama-url", default=DEFAULT_OLLAMA_URL)
+    parser.add_argument(
+        "--provider",
+        choices=("ollama", "llamacpp"),
+        help="LLM provider override. Defaults to LLM_PROVIDER from .env.",
+    )
+    parser.add_argument(
+        "--model",
+        help="Provider model override. For llama.cpp this is the OpenAI model alias.",
+    )
+    parser.add_argument("--ollama-url", help="Ollama generate endpoint override.")
+    parser.add_argument("--llamacpp-base-url", help="llama.cpp server URL override.")
+    parser.add_argument("--llamacpp-model-path", help="llama.cpp GGUF model path override.")
+    parser.add_argument("--llamacpp-server-path", help="llama-server executable path override.")
+    parser.add_argument("--llamacpp-start-timeout", type=int, help="llama.cpp startup timeout override.")
     parser.add_argument("--timeout", type=int, default=300)
+    parser.add_argument(
+        "--keep-llamacpp-running",
+        action="store_true",
+        help="Leave a llama.cpp server running if this script started it.",
+    )
     parser.add_argument(
         "--verbose",
         action="store_true",
-        help="Print the Ollama prompt and raw model JSON.",
+        help="Print the LLM prompt and raw model JSON.",
     )
     return parser.parse_args()
+
+
+def build_llm_config(args: argparse.Namespace) -> LlmConfig:
+    config = load_llm_config()
+    provider = args.provider or config.provider
+    llamacpp_model_path = (
+        Path(args.llamacpp_model_path)
+        if args.llamacpp_model_path
+        else config.llamacpp_model_path
+    )
+    ollama_model = config.ollama_model
+    llamacpp_model = config.llamacpp_model
+
+    if args.model and provider == "ollama":
+        ollama_model = args.model
+
+    if args.model and provider == "llamacpp":
+        llamacpp_model = args.model
+
+    if args.llamacpp_model_path and not args.model:
+        llamacpp_model = llamacpp_model_path.stem
+
+    return replace(
+        config,
+        provider=provider,
+        ollama_model=ollama_model,
+        ollama_url=args.ollama_url or config.ollama_url,
+        llamacpp_base_url=args.llamacpp_base_url or config.llamacpp_base_url,
+        llamacpp_model_path=llamacpp_model_path,
+        llamacpp_server_path=(
+            Path(args.llamacpp_server_path)
+            if args.llamacpp_server_path
+            else config.llamacpp_server_path
+        ),
+        llamacpp_model=llamacpp_model,
+        llamacpp_start_timeout_seconds=(
+            args.llamacpp_start_timeout
+            if args.llamacpp_start_timeout is not None
+            else config.llamacpp_start_timeout_seconds
+        ),
+    )
 
 
 def load_inherited_tags_by_direct_id(
@@ -169,6 +228,7 @@ def load_card_by_name(db: Session, name: str) -> Card | None:
 
 def main() -> int:
     args = parse_args()
+    llm_config = build_llm_config(args)
 
     create_database()
     db = next(get_db())
@@ -191,16 +251,13 @@ def main() -> int:
         schema = card_to_schema(card, inherited_tags_by_direct_id)
 
         start_time = time.perf_counter()
-        result = get_card_archetype_score(
-            schema,
-            model=args.model,
-            ollama_url=args.ollama_url,
-            timeout_seconds=args.timeout,
-            verbose=args.verbose,
-        )
+
+        result = get_card_archetype_score(schema)
+
         execution_time = time.perf_counter() - start_time
 
         print(f"Card: {schema.name}")
+        print(f"Provider: {llm_config.provider}")
         print(result.model_dump_json(indent=2))
         print(f"Method took {execution_time:.3f} seconds.")
         return 0

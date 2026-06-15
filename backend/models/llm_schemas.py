@@ -1,15 +1,5 @@
-# backend/services/ai/classification/get_card_archetype_score.py
 
-import json
-from pathlib import Path
-import requests
-from models.public_schemas import CardSchema
 from pydantic import BaseModel
-
-# llama.cpp native completion endpoint
-LLAMA_CPP_URL = "http://localhost:8080/completion"
-
-PROMPT_PATH = Path("D:/Repositories/mtg-database/backend/services/ai/classification/prompts/system_prompt.md")
 
 class ArchetypeReasoningSchema(BaseModel):
     combo: str
@@ -214,42 +204,3 @@ ARCHETYPE_SCHEMA = {
         "relentless_colony",
     ],
 }
-
-
-def _load_system_prompt() -> str:
-    return PROMPT_PATH.read_text(encoding="utf-8")
-
-
-def get_card_archetype_score(card: CardSchema) -> CardArchetypeScoreSchema:
-    system_prompt = _load_system_prompt()
-
-    # Consolidated single prompt string for llama.cpp native completion endpoint
-    prompt = (
-        f"{system_prompt}\n\n"
-        "Classify the following MTG card.\n\n"
-        f"{card.model_dump_json(indent=2)}"
-    )
-
-    print(prompt)
-
-    response = requests.post(
-        LLAMA_CPP_URL,
-        json={
-            "prompt": prompt,
-            "temperature": 0.1,
-            "stream": False,
-            "json_schema": ARCHETYPE_SCHEMA,
-        },
-        timeout=1200,
-    )
-
-    response.raise_for_status()
-
-    data = response.json()
-
-    # Print raw generated string content
-    print(data["content"])
-
-    return CardArchetypeScoreSchema.model_validate_json(
-        data["content"]
-    )
