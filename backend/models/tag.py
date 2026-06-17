@@ -41,6 +41,12 @@ class Tag(Base):
         passive_deletes=True,
     )
 
+    categories = relationship(
+        "ArchetypeCategory",
+        secondary="archetype_category_tags",
+        back_populates="tags"
+    )
+
     def __repr__(self) -> str:
         return f"Tag(id={self.id!r}, label={self.label!r}, type={self.type!r})"
 

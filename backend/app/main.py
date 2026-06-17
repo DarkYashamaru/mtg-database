@@ -1,12 +1,10 @@
 from contextlib import asynccontextmanager
 from collections import defaultdict
 from collections.abc import Iterable
-
 import uvicorn
 from fastapi import APIRouter, Depends, FastAPI, HTTPException
 from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
-
 from database.create_database import create_database
 from database.session import get_db
 
@@ -19,9 +17,17 @@ from models.card import (
     Face_Types,
 )
 from models.color import Color_Identity
-from models.public_schemas import CardSchema, card_to_schema
+from models.public_schemas import (
+    CardSchema, 
+    card_to_schema, 
+    TagSchema, 
+    tag_to_schema, 
+    ArchetypeSchema, 
+    archetype_to_schema, 
+    ARCHETYPE_LOAD_OPTIONS
+)
 from models.tag import Tag, TagRelation, Tagging
-
+from models.archetypes import Archetype, ArchetypeCategory
 from scripts.download_all_data import download_from_scryfall
 from scripts.import_all import import_data_to_database
 import re
@@ -58,8 +64,8 @@ async def lifespan(app: FastAPI):
     create_database()
 
     # Uncomment ONLY when you want to refresh data
-    #download_data()
-    #import_data()
+    download_data()
+    import_data()
 
     print("Startup complete")
 
@@ -254,6 +260,52 @@ def get_cards_bulk(request: DecklistRequest, db: Session = Depends(get_db),):
         card_to_schema(cards_by_name[name], inherited_tags_by_direct_id)
         for name in names
     ]
+
+@router.get("/tags", response_model=list[TagSchema])
+def get_all_tags(db: Session = Depends(get_db)):
+    stmt = select(Tag)
+
+    tags = db.execute(stmt).scalars().all()
+
+    return [tag_to_schema(tag) for tag in tags]
+
+@router.get("/archetypes/id/{archetype_id}", response_model=ArchetypeSchema,)
+def get_archetype(archetype_id: int, db: Session = Depends(get_db),):
+
+    stmt = (
+        select(Archetype)
+        .options(*ARCHETYPE_LOAD_OPTIONS)
+        .where(Archetype.id == archetype_id)
+    )
+
+    archetype = db.execute(stmt).scalar_one_or_none()
+
+    if archetype is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Archetype not found",
+        )
+
+    return archetype_to_schema(archetype)
+
+@router.get("/archetypes/by-name", response_model=ArchetypeSchema,)
+def get_archetype_by_name(name: str, db: Session = Depends(get_db),):
+
+    stmt = (
+        select(Archetype)
+        .options(*ARCHETYPE_LOAD_OPTIONS)
+        .where(Archetype.name == name)
+    )
+
+    archetype = db.execute(stmt).scalar_one_or_none()
+
+    if archetype is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Archetype not found",
+        )
+
+    return archetype_to_schema(archetype)
 
 
 # Register router

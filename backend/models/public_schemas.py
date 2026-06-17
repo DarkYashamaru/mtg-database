@@ -3,6 +3,8 @@ from collections.abc import Mapping, Sequence
 from pydantic import BaseModel
 from models.card import Card
 from models.tag import Tag
+from models.archetypes import Archetype, ArchetypeCategory
+from sqlalchemy.orm import selectinload
 
 
 class FaceSchema(BaseModel):
@@ -47,6 +49,26 @@ class CardSchema(BaseModel):
     faces: list[FaceSchema]
     keywords: list[KeywordSchema]
     color_identity: list[ColorSchema]
+
+class ArchetypeTagSchema(BaseModel):
+    slug: str
+
+
+class ArchetypeCategorySchema(BaseModel):
+    id: int
+    name: str
+    tags: list[ArchetypeTagSchema]
+
+
+class ArchetypeSchema(BaseModel):
+    id: int
+    name: str
+    categories: list[ArchetypeCategorySchema]
+
+def archetype_tag_to_schema(tag: Tag) -> ArchetypeTagSchema:
+    return ArchetypeTagSchema(
+        slug=tag.slug
+    )
 
 def _tag_schemas(tags: Sequence[Tag]) -> list[TagSchema]:
     return [
@@ -130,5 +152,40 @@ def card_to_schema(
                 large_image=face.large_image,
             )
             for face in card.faces
+        ]
+    )
+
+
+def tag_to_schema (tag: Tag):
+    return TagSchema(slug=tag.slug, description=tag.description)
+
+ARCHETYPE_LOAD_OPTIONS = [
+    selectinload(Archetype.categories)
+    .selectinload(ArchetypeCategory.tags)
+]
+
+def archetype_to_schema(archetype: Archetype) -> ArchetypeSchema:
+
+    return ArchetypeSchema(
+        id=archetype.id,
+        name=archetype.name,
+
+        categories=[
+            ArchetypeCategorySchema(
+                id=category.id,
+                name=category.name,
+
+                tags=[
+                    archetype_tag_to_schema(tag)
+                    for tag in sorted(
+                        category.tags,
+                        key=lambda t: t.label
+                    )
+                ]
+            )
+            for category in sorted(
+                archetype.categories,
+                key=lambda c: c.name
+            )
         ]
     )
