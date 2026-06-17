@@ -1,24 +1,35 @@
 import re
+import unicodedata
 
 def card_name_to_slug(name: str) -> str:
     """
     Transforms an MTG card name into a clean, URL-friendly slug.
     
+    - Strips accents/diacritics (e.g., ñ -> n, í -> i)
     - Converts to lowercase
     - Removes punctuation like apostrophes completely (e.g., Death's -> deaths)
     - Replaces spaces, commas, and other special characters with a single hyphen
     - Strips leading/trailing hyphens
     """
-    # 1. Convert to lowercase
-    slug = name.lower()
+    if not name:
+        return ""
+
+    # 1. Decompose unicode characters (e.g., 'ñ' becomes 'n' + 'Combining Tilde')
+    normalized = unicodedata.normalize('NFD', name)
     
-    # 2. Remove apostrophes completely so "Death's" becomes "deaths"
+    # 2. Encode to ASCII while ignoring errors (drops the accents), then decode back to a string
+    slug = normalized.encode('ascii', 'ignore').decode('utf-8')
+    
+    # 3. Convert to lowercase
+    slug = slug.lower()
+    
+    # 4. Remove apostrophes completely so "Death's" becomes "deaths"
     slug = slug.replace("'", "")
     
-    # 3. Replace any non-alphanumeric character sequences with a single hyphen
+    # 5. Replace any remaining non-alphanumeric character sequences with a single hyphen
     slug = re.sub(r'[^a-z0-9]+', '-', slug)
     
-    # 4. Clean up any trailing or leading hyphens left over from step 3
+    # 6. Clean up any trailing or leading hyphens
     return slug.strip('-')
 
 def get_primary_card_name(card_name: str) -> str:
@@ -28,12 +39,18 @@ def get_primary_card_name(card_name: str) -> str:
     """
     if not card_name:
         return ""
-        
-    # Split by the double slash and take the first part, stripping trailing spaces
     return card_name.split("//")[0].strip()
 
-# --- Example Usage ---
-full_name = "Growing Rites of Itlimoc // Itlimoc, Cradle of the Sun"
-clean_name = get_primary_card_name(full_name)
+# --- Verification ---
 
-print(clean_name)  # Output: Growing Rites of Itlimoc
+test_cards = [
+    "Clavileño, First of the Blessed",
+    "Círdan the Shipwright",
+    "Death's Shadow",
+    "Growing Rites of Itlimoc // Itlimoc, Cradle of the Sun"
+]
+
+for card in test_cards:
+    primary = get_primary_card_name(card)
+    slug = card_name_to_slug(primary)
+    print(f"Original: {card:<55} -> Slug: {slug}")

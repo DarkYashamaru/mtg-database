@@ -39,7 +39,7 @@ def main() -> int:
     for card in all_cards:
         primary = get_primary_card_name(card.name)
         card_dict[primary] = card.oracle_id
-        card_dict[card.name] = card.oracle_id  
+        card_dict[card.name] = card.oracle_id
 
     current = 0
     max_loop = 1

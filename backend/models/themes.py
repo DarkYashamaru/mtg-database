@@ -49,3 +49,15 @@ class CardTheme(Base):
 
     card = relationship("Card")
     theme = relationship("Theme")
+
+class CommanderTheme(Base):
+    __tablename__ = "commander_theme"
+
+    oracle_id: Mapped[str] = mapped_column(ForeignKey("cards.oracle_id", ondelete="CASCADE"), primary_key=True,)
+
+    theme_id: Mapped[int] = mapped_column(ForeignKey("themes.id", ondelete="CASCADE"), primary_key=True,)
+
+    score: Mapped[int] = mapped_column(Integer, nullable=False, default=0,)
+
+    card = relationship("Card")
+    theme = relationship("Theme")

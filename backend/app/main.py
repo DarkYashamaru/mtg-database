@@ -26,11 +26,13 @@ from models.public_schemas import (
     theme_to_schema, 
     THEME_LOAD_OPTIONS,
     CardThemeSchema,
+    commandertheme_to_schema,
+    CommanderThemeSchema,
     cardtheme_to_schema,
     CardThemeMinimalSchema
 )
 from models.tag import Tag, TagRelation, Tagging
-from models.themes import Theme, ThemeCategory, CardTheme
+from models.themes import Theme, ThemeCategory, CardTheme, CommanderTheme
 from scripts.download_all_data import download_from_scryfall
 from scripts.import_all import import_data_to_database
 import re
@@ -326,19 +328,19 @@ def get_archetype_by_name(name: str, db: Session = Depends(get_db),):
     return theme_to_schema(archetype)
 
 
-@router.get("/themes/by-card/{oracle_id}", response_model=list[CardThemeSchema])
+@router.get("/themes/by-commander/{oracle_id}", response_model=list[CommanderThemeSchema])
 def get_theme_by_card(oracle_id: str, db: Session = Depends(get_db)):
     # 1. Select properties explicitly across both tables
     stmt = (
         select(
-            CardTheme.oracle_id,
-            CardTheme.theme_id,
-            CardTheme.score,
+            CommanderTheme.oracle_id,
+            CommanderTheme.theme_id,
+            CommanderTheme.score,
             Theme.name,
             Theme.curated
         )
-        .join(Theme, CardTheme.theme_id == Theme.id) # Join tracking foreign keys
-        .where(CardTheme.oracle_id == oracle_id)
+        .join(Theme, CommanderTheme.theme_id == Theme.id) # Join tracking foreign keys
+        .where(CommanderTheme.oracle_id == oracle_id)
     )
 
     # 2. Fetch the flat data tuples
@@ -346,7 +348,7 @@ def get_theme_by_card(oracle_id: str, db: Session = Depends(get_db)):
 
     # 3. Map the dataset entries straight into the revised response schema list
     return [
-        CardThemeSchema(
+        CommanderThemeSchema(
             oracle_id=row.oracle_id,
             theme_id=row.theme_id,
             score=row.score,

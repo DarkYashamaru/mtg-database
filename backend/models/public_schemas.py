@@ -3,7 +3,7 @@ from collections.abc import Mapping, Sequence
 from pydantic import BaseModel
 from models.card import Card
 from models.tag import Tag
-from models.themes import Theme, ThemeCategory, CardTheme
+from models.themes import Theme, ThemeCategory, CardTheme, CommanderTheme
 from sqlalchemy.orm import selectinload
 from sqlalchemy import select
 
@@ -79,8 +79,18 @@ class CardThemeSchema(BaseModel):
     name: str
     curated: bool
 
+class CommanderThemeSchema(BaseModel):
+    oracle_id: str
+    theme_id: int
+    score: int
+    name: str
+    curated: bool
+
 def cardtheme_to_schema(cardtheme: CardTheme):
     return CardThemeSchema(oracle_id=cardtheme.oracle_id, theme_id=cardtheme.theme_id, score=cardtheme.score)
+
+def commandertheme_to_schema(commanderTheme: CommanderTheme):
+    return CardThemeSchema(oracle_id=commanderTheme.oracle_id, theme_id=commanderTheme.theme_id, score=commanderTheme.score)
 
 def theme_tag_to_schema(tag: Tag) -> ThemeTagSchema:
     return ThemeTagSchema(
