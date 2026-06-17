@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from typing import TYPE_CHECKING
 
 from sqlalchemy import (
@@ -31,7 +31,6 @@ class Card(Base):
 
     commander_legal: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False, index=True,)
     standard_legal: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False, index=True,)
-    released_at: Mapped[date | None] = mapped_column(Date, index=True)
 
     taggings: Mapped[list["Tagging"]] = relationship(
         back_populates="card",

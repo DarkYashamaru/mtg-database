@@ -3,7 +3,7 @@ from collections.abc import Mapping, Sequence
 from pydantic import BaseModel
 from models.card import Card
 from models.tag import Tag
-from models.archetypes import Archetype, ArchetypeCategory
+from models.themes import Theme, ThemeCategory
 from sqlalchemy.orm import selectinload
 
 
@@ -50,23 +50,23 @@ class CardSchema(BaseModel):
     keywords: list[KeywordSchema]
     color_identity: list[ColorSchema]
 
-class ArchetypeTagSchema(BaseModel):
+class ThemeTagSchema(BaseModel):
     slug: str
 
 
-class ArchetypeCategorySchema(BaseModel):
+class ThemeCategorySchema(BaseModel):
     id: int
     name: str
-    tags: list[ArchetypeTagSchema]
+    tags: list[ThemeTagSchema]
 
 
-class ArchetypeSchema(BaseModel):
+class ThemeypeSchema(BaseModel):
     id: int
     name: str
-    categories: list[ArchetypeCategorySchema]
+    categories: list[ThemeCategorySchema]
 
-def archetype_tag_to_schema(tag: Tag) -> ArchetypeTagSchema:
-    return ArchetypeTagSchema(
+def theme_tag_to_schema(tag: Tag) -> ThemeTagSchema:
+    return ThemeTagSchema(
         slug=tag.slug
     )
 
@@ -159,24 +159,24 @@ def card_to_schema(
 def tag_to_schema (tag: Tag):
     return TagSchema(slug=tag.slug, description=tag.description)
 
-ARCHETYPE_LOAD_OPTIONS = [
-    selectinload(Archetype.categories)
-    .selectinload(ArchetypeCategory.tags)
+THEME_LOAD_OPTIONS = [
+    selectinload(Theme.categories)
+    .selectinload(ThemeCategory.tags)
 ]
 
-def archetype_to_schema(archetype: Archetype) -> ArchetypeSchema:
+def theme_to_schema(theme: Theme) -> ThemeypeSchema:
 
-    return ArchetypeSchema(
-        id=archetype.id,
-        name=archetype.name,
+    return ThemeypeSchema(
+        id=theme.id,
+        name=theme.name,
 
         categories=[
-            ArchetypeCategorySchema(
+            ThemeCategorySchema(
                 id=category.id,
                 name=category.name,
 
                 tags=[
-                    archetype_tag_to_schema(tag)
+                    theme_tag_to_schema(tag)
                     for tag in sorted(
                         category.tags,
                         key=lambda t: t.label
@@ -184,7 +184,7 @@ def archetype_to_schema(archetype: Archetype) -> ArchetypeSchema:
                 ]
             )
             for category in sorted(
-                archetype.categories,
+                theme.categories,
                 key=lambda c: c.name
             )
         ]

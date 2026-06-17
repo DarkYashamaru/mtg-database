@@ -8,6 +8,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 from database.create_database import create_database  # noqa: E402
 from database.session import DATABASE_PATH, session_scope  # noqa: E402
 from models.tag import Tag, TagRelation, Tagging  # noqa: E402
+from sqlalchemy import select
 
 DEFAULT_BATCH_SIZE = 500
 
@@ -40,7 +41,20 @@ def import_oracle_tags(
         #
         # Pass 1: Tags
         #
+
+        all_tags = session.scalars(select(Tag)).all()
+
+        all_ids = set()
+        for tag in all_tags:
+            all_ids.add(tag.id)
+
         for item in payload:
+
+            id = item.get("id")
+
+            if id in all_ids:
+                continue
+
             tag = _tag_from_scryfall(item)
 
             if tag is None:

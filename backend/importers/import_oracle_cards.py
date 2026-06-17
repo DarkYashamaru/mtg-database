@@ -1,28 +1,36 @@
 from __future__ import annotations
 
 import json
-from datetime import date
-from pathlib import Path
-from typing import Any, Iterable
-from database.create_database import create_database  # noqa: E402
-from database.session import session_scope  # noqa: E402
-from models.card import Card, Card_Face, Face_Supertypes, Face_Subtypes, Face_Types, Card_Type_Collection, Card_Keyword
-from downloaders.download_oracle_cards import ORACLE_CARDS_PATH  # noqa: E402
-from sqlalchemy import select
-from models.color import Color, Color_Identity
+from datetime import datetime, timezone
 from functools import cache
-from models.catalogs import Keyword, Supertype, CardType, Subtype
+from pathlib import Path
+from typing import Any
 
-unique_keywords = set()
-supertype_list = []
-cardtype_list = []
-subtype_list = []
+from database.session import session_scope
+from downloaders.download_oracle_cards import ORACLE_CARDS_PATH
+from models.card import (
+    Card,
+    Card_Face,
+    Card_Keyword,
+    Card_Type_Collection,
+    Face_Subtypes,
+    Face_Supertypes,
+    Face_Types,
+)
+from models.catalogs import CardType, Subtype, Supertype
+from models.color import Color, Color_Identity
+from sqlalchemy import select
 
-def parse_types(text, valid_subtypes):
+supertype_list: list[str] = []
+cardtype_list: list[str] = []
+subtype_list: list[str] = []
+
+
+def parse_types(text: str, valid_subtypes: list[str]) -> list[str]:
     words = text.split()
 
     @cache
-    def parse_from(i):
+    def parse_from(i: int):
         if i >= len(words):
             return ()
 
@@ -62,85 +70,75 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
         cardtypes = session.scalars(select(CardType)).all()
         subtypes = session.scalars(select(Subtype)).all()
 
+        all_cards = session.scalars(select(Card)).all()
+
     color_dict = {color.symbol: color.id for color in colors}
+    supertype_list = [type_.value for type_ in supertypes]
+    cardtype_list = [type_.value for type_ in cardtypes]
+    subtype_list = [type_.value for type_ in subtypes]
 
-    supertype_list = []
-    cardtype_list = []
-    subtype_list = []
+    oracle_ids = set()
 
-    for type in supertypes:
-        supertype_list.append(type.value)
-
-    for type in cardtypes:
-        cardtype_list.append(type.value)
-
-    for type in subtypes:
-        subtype_list.append(type.value)
+    for card in all_cards:
+        oracle_ids.add(card.oracle_id)
 
     with source_path.open(encoding="utf-8") as file:
         payload = json.load(file)
 
-    limit = 10
-    current = 0
-
     imported_count = 0
+
     with session_scope() as session:
-
         for item in payload:
+            oracle_id = item.get("oracle_id")
+            if not oracle_id:
+                continue
 
-            #if current >= limit:
-             #   break
+            if oracle_id in oracle_ids:
+                continue
 
             card = _card_from_scryfall(item)
             if not card:
                 continue
 
-            oracle_id = item.get("oracle_id")
-
-            keywords = item.get('keywords')
-
+            keywords = item.get("keywords")
             if keywords:
                 for keyword in keywords:
                     session.merge(Card_Keyword(card_id=oracle_id, keyword_value=keyword))
 
-            color_identity = item.get('color_identity')
-
+            color_identity = item.get("color_identity")
             if color_identity:
                 for color in color_identity:
-                    identity = Color_Identity(color_id = color_dict[color], card_id = oracle_id)
+                    identity = Color_Identity(
+                        color_id=color_dict[color],
+                        card_id=oracle_id,
+                    )
                     session.merge(identity)
-                    #print(identity)
-
-            if keywords:
-                unique_keywords.update(keywords)
 
             session.merge(card)
+
             card_faces = get_card_faces(item)
 
             for face in card_faces:
                 session.merge(face)
                 print(f"Importing {face.name}")
 
-            types_to_add:list[Card_Type_Collection] = []
+            types_to_add: list[Card_Type_Collection] = []
 
             if len(card_faces) == 1:
-                types_to_add.append(parse_card_types(item.get("type_line"), card_faces[0]))
-
-            else:                
+                types_to_add.append(parse_card_types(item.get("type_line") or "", card_faces[0]))
+            else:
                 for face in card_faces:
-                    types_to_add.append(parse_card_types(face.type_line, face))
+                    types_to_add.append(parse_card_types(face.type_line or "", face))
 
             for collection in types_to_add:
-                for type in collection.super_types:
-                    session.merge(type)
-                for type in collection.card_types:
-                    session.merge(type)
-                for type in collection.sub_types:
-                    session.merge(type)
+                for type_ in collection.super_types:
+                    session.merge(type_)
+                for type_ in collection.card_types:
+                    session.merge(type_)
+                for type_ in collection.sub_types:
+                    session.merge(type_)
 
             imported_count += 1
-            current +=1
-
 
         session.commit()
         session.expunge_all()
@@ -152,15 +150,15 @@ def _card_from_scryfall(item: dict[str, Any]) -> Card | None:
     oracle_id = item.get("oracle_id")
     if not oracle_id:
         return None
-    
+
     legalities = item.get("legalities") or {}
     commander_legal = legalities.get("commander") == "legal"
 
     if not commander_legal:
         return None
-    
+
     card_layout = item.get("layout") or ""
-    if card_layout == "" or card_layout == "art_series" or card_layout == "token" or card_layout == "scheme":
+    if card_layout in {"", "art_series", "token", "scheme"}:
         return None
 
     return Card(
@@ -170,56 +168,51 @@ def _card_from_scryfall(item: dict[str, Any]) -> Card | None:
         layout=card_layout,
         commander_legal=commander_legal,
         standard_legal=legalities.get("standard") == "legal",
-        released_at=_parse_date(item.get("released_at")),
     )
 
-def parse_card_types(type_line:str, face:Card_Face)->Card_Type_Collection:
 
+def parse_card_types(type_line: str, face: Card_Face) -> Card_Type_Collection:
     result: Card_Type_Collection = Card_Type_Collection()
 
     left, _, right = type_line.partition("—")
-
     left = left.strip()
     right = right.strip()
     tokens = left.split()
 
-    supertypes_result = []
-    cardtypes_result = []
-    subtypes_result = []
-
     supertypes_result = [t for t in tokens if t in supertype_list]
     cardtypes_result = [t for t in tokens if t in cardtype_list]
+    subtypes_result: list[str] = []
 
     if right:
         subtypes_result = parse_types(right, subtype_list)
 
     if supertypes_result:
-        #print(f"Super Types: {supertypes_result}")
-
-        for type in supertypes_result:
-            result.super_types.append(Face_Supertypes(card_id=face.parent_id, face_name=face.name, type_id=type))
+        for type_ in supertypes_result:
+            result.super_types.append(
+                Face_Supertypes(card_id=face.parent_id, face_name=face.name, type_id=type_)
+            )
 
     if cardtypes_result:
-        #print(f"Card Types: {cardtypes_result}")
-        for type in cardtypes_result:
-            result.card_types.append(Face_Types(card_id=face.parent_id, face_name=face.name, type_id=type))
+        for type_ in cardtypes_result:
+            result.card_types.append(
+                Face_Types(card_id=face.parent_id, face_name=face.name, type_id=type_)
+            )
 
     if subtypes_result:
-        #print(f"Sub Types: {subtypes_result}")
-        for type in subtypes_result:
-            result.sub_types.append(Face_Subtypes(card_id=face.parent_id, face_name=face.name, type_id=type))
+        for type_ in subtypes_result:
+            result.sub_types.append(
+                Face_Subtypes(card_id=face.parent_id, face_name=face.name, type_id=type_)
+            )
 
     return result
-    
+
 
 def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
-
     oracle_id = item.get("oracle_id")
     card_faces = item.get("card_faces")
 
-    result:list[Card_Face] = []
-
-    valid_faces = []
+    result: list[Card_Face] = []
+    valid_faces: list[dict[str, Any]] = []
 
     if isinstance(card_faces, list) and card_faces:
         for face in card_faces:
@@ -227,12 +220,7 @@ def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
                 valid_faces.append(face)
 
     for valid_face in valid_faces:
-
         image_uris = valid_face.get("image_uris") or {}
-
-        small_image = image_uris.get("small")
-        normal_image = image_uris.get("normal")
-        large_image = image_uris.get("large")
 
         face = Card_Face(
             parent_id=oracle_id,
@@ -243,21 +231,16 @@ def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
             power=valid_face.get("power"),
             toughness=valid_face.get("toughness"),
             type_line=valid_face.get("type_line"),
-            small_image=small_image,
-            normal_image=normal_image,
-            large_image=large_image
+            small_image=image_uris.get("small"),
+            normal_image=image_uris.get("normal"),
+            large_image=image_uris.get("large"),
         )
 
         result.append(face)
 
-    if len(result) < 1:
-
+    if not result:
         image_uris = item.get("image_uris") or {}
 
-        small_image = image_uris.get("small")
-        normal_image = image_uris.get("normal")
-        large_image = image_uris.get("large")
-            
         face = Card_Face(
             parent_id=oracle_id,
             mana_cost=item.get("mana_cost"),
@@ -267,27 +250,31 @@ def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
             power=item.get("power"),
             toughness=item.get("toughness"),
             type_line=item.get("type_line"),
-            small_image=small_image,
-            normal_image=normal_image,
-            large_image=large_image,
+            small_image=image_uris.get("small"),
+            normal_image=image_uris.get("normal"),
+            large_image=image_uris.get("large"),
         )
         result.append(face)
 
     return result
 
 
-def _front_face(item: dict[str, Any]) -> dict[str, Any]:
-    card_faces = item.get("card_faces")
-    if isinstance(card_faces, list) and card_faces:
-        first_face = card_faces[0]
-        if isinstance(first_face, dict):
-            return first_face
+def _normalize_datetime(value: datetime | None) -> datetime | None:
+    if value is None:
+        return None
 
-    return {}
+    if value.tzinfo is not None:
+        return value.astimezone(timezone.utc).replace(tzinfo=None)
+
+    return value
 
 
-def _parse_date(value: str | None) -> date | None:
+def _parse_datetime(value: str | None) -> datetime | None:
     if not value:
         return None
 
-    return date.fromisoformat(value)
+    if value.endswith("Z"):
+        value = value[:-1] + "+00:00"
+
+    parsed = datetime.fromisoformat(value)
+    return _normalize_datetime(parsed)

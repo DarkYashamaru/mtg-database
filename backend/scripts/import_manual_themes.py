@@ -1,17 +1,18 @@
-from importers.archetype_importer import import_archetype
-from data.archetypes.voltron_data import VOLTRON_DATA
+from importers.theme_importer import import_theme
+from data.themes.voltron_data import VOLTRON_DATA
 from database.create_database import create_database
 from database.session import get_db
 from sqlalchemy.orm import Session
 
 def import_voltron() -> int:
-    return import_archetype(
-        archetype_id=1,
-        archetype_name="Voltron",
+    return import_theme(
+        theme_id=1,
+        theme_name="Voltron",
         categories_data=VOLTRON_DATA,
+        curated=True
     )
 
-def import_all_archetypes():
+def import_all_themes():
     import_voltron()
 
 def main() -> int:

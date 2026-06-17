@@ -22,12 +22,12 @@ from models.public_schemas import (
     card_to_schema, 
     TagSchema, 
     tag_to_schema, 
-    ArchetypeSchema, 
-    archetype_to_schema, 
-    ARCHETYPE_LOAD_OPTIONS
+    ThemeypeSchema, 
+    theme_to_schema, 
+    THEME_LOAD_OPTIONS
 )
 from models.tag import Tag, TagRelation, Tagging
-from models.archetypes import Archetype, ArchetypeCategory
+from models.themes import Theme, ThemeCategory
 from scripts.download_all_data import download_from_scryfall
 from scripts.import_all import import_data_to_database
 import re
@@ -269,13 +269,13 @@ def get_all_tags(db: Session = Depends(get_db)):
 
     return [tag_to_schema(tag) for tag in tags]
 
-@router.get("/archetypes/id/{archetype_id}", response_model=ArchetypeSchema,)
+@router.get("/archetypes/id/{archetype_id}", response_model=ThemeypeSchema,)
 def get_archetype(archetype_id: int, db: Session = Depends(get_db),):
 
     stmt = (
-        select(Archetype)
-        .options(*ARCHETYPE_LOAD_OPTIONS)
-        .where(Archetype.id == archetype_id)
+        select(Theme)
+        .options(*THEME_LOAD_OPTIONS)
+        .where(Theme.id == archetype_id)
     )
 
     archetype = db.execute(stmt).scalar_one_or_none()
@@ -286,15 +286,15 @@ def get_archetype(archetype_id: int, db: Session = Depends(get_db),):
             detail="Archetype not found",
         )
 
-    return archetype_to_schema(archetype)
+    return theme_to_schema(archetype)
 
-@router.get("/archetypes/by-name", response_model=ArchetypeSchema,)
+@router.get("/archetypes/by-name", response_model=ThemeypeSchema,)
 def get_archetype_by_name(name: str, db: Session = Depends(get_db),):
 
     stmt = (
-        select(Archetype)
-        .options(*ARCHETYPE_LOAD_OPTIONS)
-        .where(Archetype.name == name)
+        select(Theme)
+        .options(*THEME_LOAD_OPTIONS)
+        .where(Theme.name == name)
     )
 
     archetype = db.execute(stmt).scalar_one_or_none()
@@ -305,7 +305,7 @@ def get_archetype_by_name(name: str, db: Session = Depends(get_db),):
             detail="Archetype not found",
         )
 
-    return archetype_to_schema(archetype)
+    return theme_to_schema(archetype)
 
 
 # Register router

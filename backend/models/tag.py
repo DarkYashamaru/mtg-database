@@ -42,8 +42,8 @@ class Tag(Base):
     )
 
     categories = relationship(
-        "ArchetypeCategory",
-        secondary="archetype_category_tags",
+        "ThemeCategory",
+        secondary="theme_category_tags",
         back_populates="tags"
     )
 

@@ -1,29 +1,24 @@
 from sqlalchemy import select
-
 from database.session import session_scope
-
-from models.archetypes import (
-    Archetype,
-    ArchetypeCategory,
+from models.themes import (
+    Theme,
+    ThemeCategory,
 )
 
 from models.tag import Tag
 
 
-def import_archetype(
-    archetype_id: int,
-    archetype_name: str,
-    categories_data: dict[str, list[str]]
-) -> int:
+def import_theme(theme_id: int, theme_name: str, categories_data: dict[str, list[str]], curated: bool) -> int:
 
     imported_count = 0
 
     with session_scope() as session:
 
-        archetype = session.merge(
-            Archetype(
-                id=archetype_id,
-                name=archetype_name,
+        theme = session.merge(
+            Theme(
+                id=theme_id,
+                name=theme_name,
+                curated=curated
             )
         )
 
@@ -34,19 +29,19 @@ def import_archetype(
         for category_name, tag_slugs in categories_data.items():
 
             category = (
-                session.query(ArchetypeCategory)
+                session.query(ThemeCategory)
                 .filter(
-                    ArchetypeCategory.archetype_id == archetype.id,
-                    ArchetypeCategory.name == category_name,
+                    ThemeCategory.theme_id == theme.id,
+                    ThemeCategory.name == category_name,
                 )
                 .first()
             )
 
             if category is None:
 
-                category = ArchetypeCategory(
+                category = ThemeCategory(
                     id=category_id,
-                    archetype_id=archetype.id,
+                    theme_id=theme.id,
                     name=category_name,
                 )
 
@@ -65,7 +60,7 @@ def import_archetype(
 
             if missing:
                 raise ValueError(
-                    f"Missing tags for archetype '{archetype_name}' "
+                    f"Missing tags for theme '{theme_name}' "
                     f"category '{category_name}': "
                     f"{sorted(missing)}"
                 )
