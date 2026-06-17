@@ -4,7 +4,7 @@ from collections.abc import Iterable
 import uvicorn
 from fastapi import APIRouter, Depends, FastAPI, HTTPException
 from sqlalchemy import select
-from sqlalchemy.orm import Session, selectinload
+from sqlalchemy.orm import Session, selectinload, joinedload
 from database.create_database import create_database
 from database.session import get_db
 
@@ -24,10 +24,13 @@ from models.public_schemas import (
     tag_to_schema, 
     ThemeypeSchema, 
     theme_to_schema, 
-    THEME_LOAD_OPTIONS
+    THEME_LOAD_OPTIONS,
+    CardThemeSchema,
+    cardtheme_to_schema,
+    CardThemeMinimalSchema
 )
 from models.tag import Tag, TagRelation, Tagging
-from models.themes import Theme, ThemeCategory
+from models.themes import Theme, ThemeCategory, CardTheme
 from scripts.download_all_data import download_from_scryfall
 from scripts.import_all import import_data_to_database
 import re
@@ -64,8 +67,8 @@ async def lifespan(app: FastAPI):
     create_database()
 
     # Uncomment ONLY when you want to refresh data
-    download_data()
-    import_data()
+    #download_data()
+    #import_data()
 
     print("Startup complete")
 
@@ -212,52 +215,67 @@ def get_card_by_name(name: str, db: Session = Depends(get_db),):
 
     return card_to_schema(card, inherited_tags_by_direct_id)
 
-@router.post("/cards/bulk", response_model=list[CardSchema],)
-def get_cards_bulk(request: DecklistRequest, db: Session = Depends(get_db),):
+def get_themes_for_cards_map(oracle_ids: list[str], db) -> dict[str, list[CardThemeMinimalSchema]]:
 
+    stmt = (
+        select(CardTheme.oracle_id, CardTheme.theme_id, CardTheme.score, Theme.name, Theme.curated)
+        .join(Theme, CardTheme.theme_id == Theme.id)
+        .where(CardTheme.oracle_id.in_(oracle_ids))
+    )
+    results = db.execute(stmt).all()
+    
+    theme_map = {}
+    for row in results:
+        if row.oracle_id not in theme_map:
+            theme_map[row.oracle_id] = []
+        theme_map[row.oracle_id].append(
+            CardThemeMinimalSchema(
+                theme_id=row.theme_id,
+                name=row.name,
+                curated=row.curated,
+                score=row.score
+            )
+        )
+    return theme_map
+
+@router.post("/cards/bulk", response_model=list[CardSchema])
+def get_cards_bulk(request: DecklistRequest, db: Session = Depends(get_db)):
     try:
         names = parse_decklist(request.decklist)
-
     except ValueError as exc:
-        raise HTTPException(
-            status_code=400,
-            detail=str(exc),
-        )
+        raise HTTPException(status_code=400, detail=str(exc))
 
     stmt = (
         select(Card)
         .options(*CARD_LOAD_OPTIONS)
         .where(Card.name.in_(names))
     )
-
     cards = db.execute(stmt).scalars().all()
 
-    cards_by_name = {
-        card.name: card
-        for card in cards
-    }
-
-    missing = [
-        name
-        for name in names
-        if name not in cards_by_name
-    ]
+    cards_by_name = {card.name: card for card in cards}
+    missing = [name for name in names if name not in cards_by_name]
 
     if missing:
         raise HTTPException(
             status_code=400,
-            detail={
-                "missing_cards": missing,
-            },
+            detail={"missing_cards": missing},
         )
 
+    # 1. Extract unique oracle IDs from the found cards
+    oracle_ids = list({card.oracle_id for card in cards if card.oracle_id})
+
+    # 2. Batch-fetch the themes map in a single query
+    themes_map = get_themes_for_cards_map(oracle_ids, db)
+
+    # Existing logic for inherited tags
     inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
         db,
         direct_tag_ids_for_cards(cards),
     )
 
+    # 3. Pass the themes_map into your schema mapping engine
     return [
-        card_to_schema(cards_by_name[name], inherited_tags_by_direct_id)
+        card_to_schema(cards_by_name[name], inherited_tags_by_direct_id, themes_map)
         for name in names
     ]
 
@@ -269,7 +287,7 @@ def get_all_tags(db: Session = Depends(get_db)):
 
     return [tag_to_schema(tag) for tag in tags]
 
-@router.get("/archetypes/id/{archetype_id}", response_model=ThemeypeSchema,)
+@router.get("/themes/id/{archetype_id}", response_model=ThemeypeSchema,)
 def get_archetype(archetype_id: int, db: Session = Depends(get_db),):
 
     stmt = (
@@ -288,7 +306,7 @@ def get_archetype(archetype_id: int, db: Session = Depends(get_db),):
 
     return theme_to_schema(archetype)
 
-@router.get("/archetypes/by-name", response_model=ThemeypeSchema,)
+@router.get("/themes/by-name", response_model=ThemeypeSchema,)
 def get_archetype_by_name(name: str, db: Session = Depends(get_db),):
 
     stmt = (
@@ -306,6 +324,37 @@ def get_archetype_by_name(name: str, db: Session = Depends(get_db),):
         )
 
     return theme_to_schema(archetype)
+
+
+@router.get("/themes/by-card/{oracle_id}", response_model=list[CardThemeSchema])
+def get_theme_by_card(oracle_id: str, db: Session = Depends(get_db)):
+    # 1. Select properties explicitly across both tables
+    stmt = (
+        select(
+            CardTheme.oracle_id,
+            CardTheme.theme_id,
+            CardTheme.score,
+            Theme.name,
+            Theme.curated
+        )
+        .join(Theme, CardTheme.theme_id == Theme.id) # Join tracking foreign keys
+        .where(CardTheme.oracle_id == oracle_id)
+    )
+
+    # 2. Fetch the flat data tuples
+    results = db.execute(stmt).all()
+
+    # 3. Map the dataset entries straight into the revised response schema list
+    return [
+        CardThemeSchema(
+            oracle_id=row.oracle_id,
+            theme_id=row.theme_id,
+            score=row.score,
+            name=row.name,
+            curated=row.curated
+        )
+        for row in results
+    ]
 
 
 # Register router

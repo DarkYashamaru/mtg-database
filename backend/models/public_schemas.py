@@ -3,8 +3,9 @@ from collections.abc import Mapping, Sequence
 from pydantic import BaseModel
 from models.card import Card
 from models.tag import Tag
-from models.themes import Theme, ThemeCategory
+from models.themes import Theme, ThemeCategory, CardTheme
 from sqlalchemy.orm import selectinload
+from sqlalchemy import select
 
 
 class FaceSchema(BaseModel):
@@ -35,6 +36,11 @@ class KeywordSchema(BaseModel):
 class ColorSchema(BaseModel):
     symbol: str
 
+class CardThemeMinimalSchema(BaseModel):
+    theme_id: int
+    name: str
+    curated: bool
+    score: int
 
 class CardSchema(BaseModel):
     oracle_id: str
@@ -49,6 +55,7 @@ class CardSchema(BaseModel):
     faces: list[FaceSchema]
     keywords: list[KeywordSchema]
     color_identity: list[ColorSchema]
+    themes: list[CardThemeMinimalSchema]
 
 class ThemeTagSchema(BaseModel):
     slug: str
@@ -65,6 +72,16 @@ class ThemeypeSchema(BaseModel):
     name: str
     categories: list[ThemeCategorySchema]
 
+class CardThemeSchema(BaseModel):
+    oracle_id: str
+    theme_id: int
+    score: int
+    name: str
+    curated: bool
+
+def cardtheme_to_schema(cardtheme: CardTheme):
+    return CardThemeSchema(oracle_id=cardtheme.oracle_id, theme_id=cardtheme.theme_id, score=cardtheme.score)
+
 def theme_tag_to_schema(tag: Tag) -> ThemeTagSchema:
     return ThemeTagSchema(
         slug=tag.slug
@@ -76,11 +93,7 @@ def _tag_schemas(tags: Sequence[Tag]) -> list[TagSchema]:
         for tag in sorted(tags, key=lambda tag: tag.slug)
     ]
 
-
-def card_to_schema(
-    card: Card,
-    inherited_tags_by_direct_id: Mapping[str, Sequence[Tag]] | None = None,
-) -> CardSchema:
+def card_to_schema(card: Card, inherited_tags_by_direct_id: Mapping[str, Sequence[Tag]] | None = None, themes_map = None,) -> CardSchema:
     direct_tags = [
         tagging.tag
         for tagging in card.taggings
@@ -95,6 +108,8 @@ def card_to_schema(
         for inherited_tag in inherited_tags_by_direct_id.get(direct_tag.id, [])
         if inherited_tag.id not in direct_tag_ids
     }
+
+    card_themes = themes_map.get(card.oracle_id, [])
 
     return CardSchema(
         oracle_id=card.oracle_id,
@@ -120,6 +135,8 @@ def card_to_schema(
             for ci in card.color_identity
             if ci.color is not None
         ],
+
+        themes=card_themes,
 
         tags=TagCollectionSchema(
             direct=_tag_schemas(direct_tags),
