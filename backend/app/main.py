@@ -2,37 +2,18 @@ from contextlib import asynccontextmanager
 from collections import defaultdict
 from collections.abc import Iterable
 import uvicorn
-from fastapi import APIRouter, Depends, FastAPI, HTTPException
-from sqlalchemy import select
+from fastapi import APIRouter, Depends, FastAPI, HTTPException, Query
+from sqlalchemy import func, select, exists, not_, or_, distinct
 from sqlalchemy.orm import Session, selectinload, joinedload
 from database.create_database import create_database
 from database.session import get_db
-
-from models.card import (
-    Card,
-    Card_Face,
-    Card_Keyword,
-    Face_Subtypes,
-    Face_Supertypes,
-    Face_Types,
-)
-from models.color import Color_Identity
-from models.public_schemas import (
-    CardSchema, 
-    card_to_schema, 
-    TagSchema, 
-    tag_to_schema, 
-    ThemeypeSchema, 
-    theme_to_schema, 
-    THEME_LOAD_OPTIONS,
-    CardThemeSchema,
-    commandertheme_to_schema,
-    CommanderThemeSchema,
-    cardtheme_to_schema,
-    CardThemeMinimalSchema
-)
-from models.tag import Tag, TagRelation, Tagging
-from models.themes import Theme, ThemeCategory, CardTheme, CommanderTheme
+from pydantic import BaseModel, Field
+from typing import Optional, List
+from models.card import *
+from models.color import *
+from models.public_schemas import *
+from models.tag import *
+from models.themes import *
 from scripts.download_all_data import download_from_scryfall
 from scripts.import_all import import_data_to_database
 import re
@@ -357,6 +338,134 @@ def get_theme_by_card(oracle_id: str, db: Session = Depends(get_db)):
         )
         for row in results
     ]
+
+
+class SearchOptions(BaseModel):
+    name: Optional[str] = Field(None, description="Partial name match")
+    colors: Optional[List[str]] = Field(None, description="List of color symbols (e.g., ['W', 'U'])")
+    exact_colors: bool = Field(False, description="If True, matches identity exactly. If False, checks if identity is subset.")
+    tags: Optional[List[str]] = Field(None, description="List of tag slugs or labels")
+    card_type: Optional[str] = Field(None, description="Card type matching (e.g., 'Creature', 'Artifact')")
+    oracle_text: Optional[str] = Field(None, description="Text contained within oracle text")
+
+@router.get("/advanced/", response_model=list[CardSchema])
+def advanced_search(
+    name: str | None = None,
+    colors: list[str] = Query(default_factory=list),
+    exact_colors: bool = False,
+    tags: list[str] = Query(default_factory=list),
+    card_type: str | None = None,
+    oracle_text: str | None = None,
+    db: Session = Depends(get_db),
+):
+    stmt = select(Card).options(*CARD_LOAD_OPTIONS)
+
+    if name:
+        stmt = stmt.where(Card.name.ilike(f"%{name}%"))
+
+    if oracle_text:
+        stmt = stmt.where(
+            exists(
+                select(1)
+                .select_from(Card_Face)
+                .where(
+                    Card_Face.parent_id == Card.oracle_id,
+                    Card_Face.oracle_text.ilike(f"%{oracle_text}%"),
+                )
+            )
+        )
+
+    if card_type:
+        stmt = stmt.where(
+            exists(
+                select(1)
+                .select_from(Card_Face)
+                .where(
+                    Card_Face.parent_id == Card.oracle_id,
+                    Card_Face.type_line.ilike(f"%{card_type}%"),
+                )
+            )
+        )
+
+    if tags:
+        stmt = stmt.where(
+            exists(
+                select(1)
+                .select_from(Tagging)
+                .join(Tag, Tagging.tag_id == Tag.id)
+                .where(
+                    Tagging.oracle_id == Card.oracle_id,
+                    or_(
+                        Tag.slug.in_(tags),
+                        Tag.label.in_(tags),
+                    ),
+                )
+            )
+        )
+
+    if colors:
+        allowed = {c.upper() for c in colors}
+        valid = {"W", "U", "B", "R", "G"}
+
+        invalid = allowed - valid
+        if invalid:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Invalid color(s): {sorted(invalid)}",
+            )
+
+        forbidden = valid - allowed
+
+        if forbidden:
+            stmt = stmt.where(
+                ~exists(
+                    select(1)
+                    .select_from(Color_Identity)
+                    .join(Color, Color_Identity.color_id == Color.id)
+                    .where(
+                        Color_Identity.card_id == Card.oracle_id,
+                        Color.symbol.in_(list(forbidden)),
+                    )
+                )
+            )
+
+        if exact_colors:
+            stmt = stmt.where(
+                exists(
+                    select(1)
+                    .select_from(Color_Identity)
+                    .join(Color, Color_Identity.color_id == Color.id)
+                    .where(Color_Identity.card_id == Card.oracle_id)
+                    .group_by(Color_Identity.card_id)
+                    .having(func.count(distinct(Color.symbol)) == len(allowed))
+                )
+            )
+
+    cards = db.execute(stmt.distinct()).scalars().all()
+
+    inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
+        db,
+        direct_tag_ids_for_cards(cards),
+    )
+
+    oracle_ids = list({card.oracle_id for card in cards if card.oracle_id})
+    themes_map = get_themes_for_cards_map(oracle_ids, db) if oracle_ids else {}
+
+    return [
+        card_to_schema(card, inherited_tags_by_direct_id, themes_map)
+        for card in cards
+    ]
+
+
+
+# @router.get("/categories", response_model=list[CategorySchema])
+# def get_categories(db: Session = Depends(get_db)):
+
+#     stmt = select(Category)
+
+#     categories = db.execute(stmt).scalars().all()
+
+#     return [category_to_schema(category) for category in categories]
 
 
 # Register router
