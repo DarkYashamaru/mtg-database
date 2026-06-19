@@ -149,10 +149,20 @@ def direct_tag_ids_for_cards(cards: Iterable[Card]) -> set[str]:
 
 router = APIRouter(prefix="/api")
 
+def card_to_full_schema(card: Card, db: Session) -> CardSchema:
+    inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
+        db,
+        direct_tag_ids_for_cards([card]),
+    )
 
-@router.get("/cards/id/{oracle_id}", response_model=CardSchema,)
-def get_card(oracle_id: str, db: Session = Depends(get_db),):
+    oracle_ids = [card.oracle_id] if card.oracle_id else []
+    themes_map = get_themes_for_cards_map(oracle_ids, db) if oracle_ids else {}
 
+    return card_to_schema(card, inherited_tags_by_direct_id, themes_map)
+
+
+@router.get("/cards/id/{oracle_id}", response_model=CardSchema)
+def get_card(oracle_id: str, db: Session = Depends(get_db)):
     stmt = (
         select(Card)
         .options(*CARD_LOAD_OPTIONS)
@@ -167,16 +177,10 @@ def get_card(oracle_id: str, db: Session = Depends(get_db),):
             detail="Card not found",
         )
 
-    inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
-        db,
-        direct_tag_ids_for_cards([card]),
-    )
+    return card_to_full_schema(card, db)
 
-    return card_to_schema(card, inherited_tags_by_direct_id)
-
-@router.get("/cards/by-name", response_model=CardSchema,)
-def get_card_by_name(name: str, db: Session = Depends(get_db),):
-
+@router.get("/cards/by-name", response_model=CardSchema)
+def get_card_by_name(name: str, db: Session = Depends(get_db)):
     stmt = (
         select(Card)
         .options(*CARD_LOAD_OPTIONS)
@@ -191,12 +195,9 @@ def get_card_by_name(name: str, db: Session = Depends(get_db),):
             detail="Card not found",
         )
 
-    inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
-        db,
-        direct_tag_ids_for_cards([card]),
-    )
+    return card_to_full_schema(card, db)
 
-    return card_to_schema(card, inherited_tags_by_direct_id)
+
 
 def get_themes_for_cards_map(oracle_ids: list[str], db) -> dict[str, list[CardThemeMinimalSchema]]:
 
@@ -342,35 +343,59 @@ def get_theme_by_card(oracle_id: str, db: Session = Depends(get_db)):
 
 class SearchOptions(BaseModel):
     name: Optional[str] = Field(None, description="Partial name match")
-    colors: Optional[List[str]] = Field(None, description="List of color symbols (e.g., ['W', 'U'])")
-    exact_colors: bool = Field(False, description="If True, matches identity exactly. If False, checks if identity is subset.")
-    tags: Optional[List[str]] = Field(None, description="List of tag slugs or labels")
-    card_type: Optional[str] = Field(None, description="Card type matching (e.g., 'Creature', 'Artifact')")
-    oracle_text: Optional[str] = Field(None, description="Text contained within oracle text")
+    colors: Optional[List[str]] = Field(None, description="Color symbols, e.g. ['W', 'U']")
+    exact_colors: bool = Field(False, description="Match exact color identity")
+
+    tags: Optional[List[str]] = Field(None, description="Included tags")
+    exclude_tags: Optional[List[str]] = Field(None, description="Excluded tags")
+
+    card_type: Optional[str] = Field(None, description="Type line match")
+
+    oracle_text: Optional[List[str]] = Field(None, description="Included oracle text terms")
+    exclude_oracle_text: Optional[List[str]] = Field(None, description="Excluded oracle text terms")
 
 @router.get("/advanced/", response_model=list[CardSchema])
 def advanced_search(
     name: str | None = None,
     colors: list[str] = Query(default_factory=list),
     exact_colors: bool = False,
+
     tags: list[str] = Query(default_factory=list),
+    exclude_tags: list[str] = Query(default_factory=list),
+
     card_type: str | None = None,
-    oracle_text: str | None = None,
+
+    oracle_text: list[str] = Query(default_factory=list),
+    exclude_oracle_text: list[str] = Query(default_factory=list),
+
     db: Session = Depends(get_db),
 ):
+     
     stmt = select(Card).options(*CARD_LOAD_OPTIONS)
 
     if name:
         stmt = stmt.where(Card.name.ilike(f"%{name}%"))
 
-    if oracle_text:
+    for text in oracle_text:
         stmt = stmt.where(
             exists(
                 select(1)
                 .select_from(Card_Face)
                 .where(
                     Card_Face.parent_id == Card.oracle_id,
-                    Card_Face.oracle_text.ilike(f"%{oracle_text}%"),
+                    Card_Face.oracle_text.ilike(f"%{text}%"),
+                )
+            )
+        )
+
+    for text in exclude_oracle_text:
+        stmt = stmt.where(
+            ~exists(
+                select(1)
+                .select_from(Card_Face)
+                .where(
+                    Card_Face.parent_id == Card.oracle_id,
+                    Card_Face.oracle_text.ilike(f"%{text}%"),
                 )
             )
         )
@@ -387,7 +412,7 @@ def advanced_search(
             )
         )
 
-    if tags:
+    for tag_value in tags:
         stmt = stmt.where(
             exists(
                 select(1)
@@ -396,8 +421,24 @@ def advanced_search(
                 .where(
                     Tagging.oracle_id == Card.oracle_id,
                     or_(
-                        Tag.slug.in_(tags),
-                        Tag.label.in_(tags),
+                        Tag.slug == tag_value,
+                        Tag.label == tag_value,
+                    ),
+                )
+            )
+        )
+
+    for tag_value in exclude_tags:
+        stmt = stmt.where(
+            ~exists(
+                select(1)
+                .select_from(Tagging)
+                .join(Tag, Tagging.tag_id == Tag.id)
+                .where(
+                    Tagging.oracle_id == Card.oracle_id,
+                    or_(
+                        Tag.slug == tag_value,
+                        Tag.label == tag_value,
                     ),
                 )
             )
@@ -455,8 +496,6 @@ def advanced_search(
         card_to_schema(card, inherited_tags_by_direct_id, themes_map)
         for card in cards
     ]
-
-
 
 # @router.get("/categories", response_model=list[CategorySchema])
 # def get_categories(db: Session = Depends(get_db)):
