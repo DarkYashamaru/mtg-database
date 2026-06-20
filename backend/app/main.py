@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 from collections import defaultdict
 from collections.abc import Iterable
+import csv
 import uvicorn
 from fastapi import APIRouter, Depends, FastAPI, HTTPException, Query
 from sqlalchemy import func, select, exists, not_, or_, distinct
@@ -18,6 +19,14 @@ from scripts.download_all_data import download_from_scryfall
 from scripts.import_all import import_data_to_database
 import re
 from pydantic import BaseModel
+import logging
+
+logging.basicConfig(
+    filename="app.log",
+    encoding="utf-8",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 class DecklistRequest(BaseModel):
     decklist: str
@@ -50,8 +59,8 @@ async def lifespan(app: FastAPI):
     create_database()
 
     # Uncomment ONLY when you want to refresh data
-    #download_data()
-    #import_data()
+    download_data()
+    import_data()
 
     print("Startup complete")
 
@@ -340,6 +349,27 @@ def get_theme_by_card(oracle_id: str, db: Session = Depends(get_db)):
         for row in results
     ]
 
+def parse_search_terms(text_list: list[str]) -> list[str]:
+    """
+    Parses search terms by splitting on commas, while keeping text inside 
+    double quotes completely intact as a single exact phrase.
+    """
+    if not text_list:
+        return []
+    
+    # Re-join incoming elements with commas to catch both array variations 
+    # and single raw query strings sent from the client
+    combined_string = ",".join(text_list)
+    
+    # skipinitialspace handles arbitrary whitespace gracefully after commas
+    reader = csv.reader([combined_string], skipinitialspace=True)
+    
+    try:
+        return [term.strip() for row in reader for term in row if term.strip()]
+    except Exception:
+        # Fallback to a basic string cleanup if an anomalous parsing error occurs
+        return [t.strip() for t in text_list if t.strip()]
+
 
 class SearchOptions(BaseModel):
     name: Optional[str] = Field(None, description="Partial name match")
@@ -371,12 +401,19 @@ def advanced_search(
     db: Session = Depends(get_db),
 ):
      
+    logging.info(f"Advanced Search: name: {name}\ncolors: {colors}\nexact_colors: {exact_colors}\ntags:{tags}\nexclude_tags: {exclude_tags}\ncard_type: {card_type}\noracle_text: {oracle_text}\nexclude_oracle_text: {exclude_oracle_text}")
+
     stmt = select(Card).options(*CARD_LOAD_OPTIONS)
 
     if name:
         stmt = stmt.where(Card.name.ilike(f"%{name}%"))
 
-    for text in oracle_text:
+    # Parse inputs to isolate quoted text phrases from basic comma splits
+    parsed_oracle_text = parse_search_terms(oracle_text)
+    parsed_exclude_oracle_text = parse_search_terms(exclude_oracle_text)
+
+    # Each phrase/word in this list gets executed as an AND statement
+    for text in parsed_oracle_text:
         stmt = stmt.where(
             exists(
                 select(1)
@@ -388,7 +425,7 @@ def advanced_search(
             )
         )
 
-    for text in exclude_oracle_text:
+    for text in parsed_exclude_oracle_text:
         stmt = stmt.where(
             ~exists(
                 select(1)
