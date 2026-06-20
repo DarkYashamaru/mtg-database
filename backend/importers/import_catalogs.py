@@ -64,6 +64,8 @@ def download_catalog(endpoint: str, model: type) -> None:
 
         session.add_all(new_values)
 
+        session.commit()
+
 def download_subtypes():
 
     all_types = []
@@ -86,6 +88,11 @@ def download_subtypes():
             subtype = Subtype(value=type)
             session.merge(subtype)
 
+
+        session.merge(Subtype(value="Plan")) # manual patch because scryfall catalogs are outdated
+        
+        session.commit()
+
 def download_keywords():
 
     all_types = []
@@ -107,6 +114,8 @@ def download_keywords():
         for type in all_types:
             subtype = Keyword(value=type)
             session.merge(subtype)
+
+        session.commit()
 
 def download_all_catalogs() -> None:
     for endpoint, model in CATALOG_SOURCES:

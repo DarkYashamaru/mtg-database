@@ -6,7 +6,7 @@ from dataclasses import replace
 from pathlib import Path
 import sys
 import time
-
+from tools.logger import logger
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session, selectinload
 
@@ -198,7 +198,7 @@ def main() -> int:
         )
 
         if card is None:
-            print("Card not found.")
+            logger.info("Card not found.")
             return 1
 
         inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
@@ -213,9 +213,9 @@ def main() -> int:
 
         execution_time = time.perf_counter() - start_time
 
-        print(f"Card: {schema.name}")
-        print(result.model_dump_json(indent=2))
-        print(f"Method took {execution_time:.3f} seconds.")
+        logger.info(f"Card: {schema.name}")
+        logger.info(result.model_dump_json(indent=2))
+        logger.info(f"Method took {execution_time:.3f} seconds.")
         return 0
     finally:
         db.close()

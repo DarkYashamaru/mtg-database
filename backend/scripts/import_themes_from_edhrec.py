@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any
 import requests
 from sqlalchemy import select
-
+from tools.logger import logger
 from database.create_database import create_database
 from database.session import session_scope
 from models.themes import Theme
@@ -85,7 +85,7 @@ def import_edhrec_themes() -> int:
 
             if inserted:
                 imported_count += 1
-                print(f"Imported theme: {display_name} -> {slug}")
+                logger.info(f"Imported theme: {display_name} -> {slug}")
 
         session.commit()
         session.expunge_all()
@@ -96,7 +96,7 @@ def import_edhrec_themes() -> int:
 def main() -> int:
     create_database()
     count = import_edhrec_themes()
-    print(f"Imported {count} themes.")
+    logger.info(f"Imported {count} themes.")
     return 0
 
 

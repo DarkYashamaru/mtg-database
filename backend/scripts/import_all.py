@@ -5,28 +5,29 @@ from importers.import_catalogs import download_all_catalogs
 from scripts.import_manual_themes import import_all_themes
 from scripts.compute_card_to_themes import import_card_themes
 from scripts.import_themes_from_edhrec import import_edhrec_themes
+from tools.logger import logger
 
 def import_data_to_database():
 
-    print("Importing catalogs")
+    logger.info("Importing catalogs")
     download_all_catalogs()
 
-    print("Importing colors")
+    logger.info("Importing colors")
     imported = import_colors()
-    print(f"Imported {imported} colors")
+    logger.info(f"Imported {imported} colors")
 
-    print("Importing cards")
+    logger.info("Importing cards")
     imported = import_oracle_cards()
-    print(f"Imported {imported} cards")
+    logger.info(f"Imported {imported} cards")
 
-    print("Importing tags")
+    logger.info("Importing tags")
     imported = import_oracle_tags()
-    print(f"Imported {imported} tags")
+    logger.info(f"Imported {imported} tags")
 
-    print("Importing themes")
+    logger.info("Importing themes")
     imported = import_edhrec_themes()
-    print(f"Imported {imported} themes")
+    logger.info(f"Imported {imported} themes")
 
-    print("Calculating card to themes score")
+    logger.info("Calculating card to themes score")
     
     

@@ -42,11 +42,7 @@ def import_oracle_tags(
         # Pass 1: Tags
         #
 
-        all_tags = session.scalars(select(Tag)).all()
-
-        all_ids = set()
-        for tag in all_tags:
-            all_ids.add(tag.id)
+        all_ids = set(session.scalars( select(Tag.id)).all() )
 
         for item in payload:
 
@@ -73,6 +69,17 @@ def import_oracle_tags(
         #
         # Pass 2: Relationships
         #
+
+        existing_relations = {
+            (r.parent_id, r.child_id)
+            for r in session.scalars(select(TagRelation)).all()
+        }
+
+        existing_taggings = {
+            (t.tag_id, t.oracle_id)
+            for t in session.scalars(select(Tagging)).all()
+        }
+
         processed = 0
 
         for item in payload:
@@ -87,12 +94,20 @@ def import_oracle_tags(
             # Parent relationships
             #
             for parent_id in item.get("parent_ids") or []:
-                session.merge(
+
+                key = (parent_id, tag_id)
+
+                if key in existing_relations:
+                    continue
+
+                session.add(
                     TagRelation(
                         parent_id=parent_id,
                         child_id=tag_id,
                     )
                 )
+
+                existing_relations.add(key)
 
             #
             # Card taggings
@@ -103,13 +118,20 @@ def import_oracle_tags(
                 if not oracle_id:
                     continue
 
-                session.merge(
+                key = (tag_id, oracle_id)
+
+                if key in existing_taggings:
+                    continue
+
+                session.add(
                     Tagging(
                         tag_id=tag_id,
                         oracle_id=oracle_id,
                         annotation=tagging.get("annotation"),
                     )
                 )
+
+                existing_taggings.add(key)
 
             processed += 1
 

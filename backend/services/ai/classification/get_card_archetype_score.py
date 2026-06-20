@@ -5,6 +5,7 @@ from services.ai.llm_factory import get_llm_config
 from models.public_schemas import CardSchema
 from models.llm_schemas import CardArchetypeScoreSchema
 import json
+from tools.logger import logger
 
 PROMPT_PATH = Path("D:/Repositories/mtg-database/backend/services/ai/classification/prompts/system_prompt.md")
 litellm._turn_on_debug()
@@ -41,8 +42,8 @@ def get_card_archetype_score(card: CardSchema) -> CardArchetypeScoreSchema:
     cleaned_dict = clean_card_for_llm(card.model_dump())
     card_json = json.dumps(cleaned_dict, ensure_ascii=False)
 
-    print("Cleaned Payload Sent to LLM:")
-    print(card_json)
+    logger.info("Cleaned Payload Sent to LLM:")
+    logger.info(card_json)
 
     system_prompt = _load_system_prompt()
     messages = [
@@ -71,7 +72,7 @@ def get_card_archetype_score(card: CardSchema) -> CardArchetypeScoreSchema:
     })
 
     # 4. Fire the request
-    print(f"Executing request with target model target: {completion_kwargs.get('model')}")
+    logger.info(f"Executing request with target model target: {completion_kwargs.get('model')}")
     response = litellm.completion(**completion_kwargs)
 
     # 5. Extract and validate string responses directly into your target schema

@@ -19,14 +19,9 @@ from scripts.download_all_data import download_from_scryfall
 from scripts.import_all import import_data_to_database
 import re
 from pydantic import BaseModel
-import logging
-
-logging.basicConfig(
-    filename="app.log",
-    encoding="utf-8",
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
+from scripts.precompute_card_theme_edhrec import precompute_card_theme_from_edhrec
+from scripts.precompute_commander_theme_edhrec import precompute_commander_theme_edhrec
+from tools.logger import logger
 
 class DecklistRequest(BaseModel):
     decklist: str
@@ -54,7 +49,7 @@ CARD_LOAD_OPTIONS = (
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print("Starting MTG Database API...")
+    logger.info("Starting MTG Database API...")
 
     create_database()
 
@@ -62,11 +57,21 @@ async def lifespan(app: FastAPI):
     download_data()
     import_data()
 
-    print("Startup complete")
+    db: Session = next(get_db())
+
+    # try:
+
+    #     precompute_card_theme_from_edhrec(db)
+    #     precompute_commander_theme_edhrec(db)
+    
+    # except:
+    #     logger.exception("EDHREC imports failed")
+
+    logger.info("Startup complete")
 
     yield
 
-    print("Shutting down...")
+    logger.info("Shutting down...")
 
 app = FastAPI(
     title="MTG Database API",
@@ -401,7 +406,7 @@ def advanced_search(
     db: Session = Depends(get_db),
 ):
      
-    logging.info(f"Advanced Search: name: {name}\ncolors: {colors}\nexact_colors: {exact_colors}\ntags:{tags}\nexclude_tags: {exclude_tags}\ncard_type: {card_type}\noracle_text: {oracle_text}\nexclude_oracle_text: {exclude_oracle_text}")
+    logger.info(f"Advanced Search: name: {name}\ncolors: {colors}\nexact_colors: {exact_colors}\ntags:{tags}\nexclude_tags: {exclude_tags}\ncard_type: {card_type}\noracle_text: {oracle_text}\nexclude_oracle_text: {exclude_oracle_text}")
 
     stmt = select(Card).options(*CARD_LOAD_OPTIONS)
 
@@ -553,15 +558,15 @@ app.include_router(router)
 # --------------------------------------------------
 
 def download_data():
-    print("Downloading bulk data from Scryfall...")
+    logger.info("Downloading bulk data from Scryfall...")
     download_from_scryfall()
-    print("Download complete")
+    logger.info("Download complete")
 
 
 def import_data():
-    print("Importing data into database...")
+    logger.info("Importing data into database...")
     import_data_to_database()
-    print("Import complete")
+    logger.info("Import complete")
 
 
 # --------------------------------------------------

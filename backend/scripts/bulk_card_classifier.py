@@ -4,7 +4,7 @@ import re
 import sys
 import time
 from pathlib import Path
-
+from tools.logger import logger
 from sqlalchemy.orm import Session
 
 # Ensure the backend root is in the python path
@@ -99,7 +99,7 @@ def load_json_cache(filepath: Path) -> dict:
             with open(filepath, "r", encoding="utf-8") as f:
                 return json.load(f)
         except json.JSONDecodeError:
-            print(f"Warning: {filepath.name} was corrupted or empty. Starting fresh.")
+            logger.info(f"Warning: {filepath.name} was corrupted or empty. Starting fresh.")
             return {}
     return {}
 
@@ -117,7 +117,7 @@ def main() -> int:
     output_path = Path(args.output)
 
     if not input_path.exists():
-        print(f"Error: Input file not found at {input_path}")
+        logger.info(f"Error: Input file not found at {input_path}")
         return 1
 
     # 1. Parse unique card names from the file
@@ -128,18 +128,18 @@ def main() -> int:
             if name and name not in card_names:
                 card_names.append(name)
 
-    print(f"Found {len(card_names)} unique card names in {input_path.name}.")
+    logger.info(f"Found {len(card_names)} unique card names in {input_path.name}.")
 
     # 2. Load existing progress from JSON
     cache = load_json_cache(output_path)
-    print(f"Loaded {len(cache)} already-classified cards from cache.")
+    logger.info(f"Loaded {len(cache)} already-classified cards from cache.")
 
     # Filter out what's already done
     queue = [name for name in card_names if name not in cache]
-    print(f"Cards remaining to classify: {len(queue)}")
+    logger.info(f"Cards remaining to classify: {len(queue)}")
 
     if not queue:
-        print("All cards are already classified!")
+        logger.info("All cards are already classified!")
         return 0
 
     # 3. Initialize Database
@@ -150,19 +150,19 @@ def main() -> int:
 
     try:
         for i, name in enumerate(queue, 1):
-            print(f"\n[{i}/{len(queue)}] Processing: {name}...", end="", flush=True)
+            logger.info(f"\n[{i}/{len(queue)}] Processing: {name}...", end="", flush=True)
 
             # Retrieve from DB
             try:
                 card = load_card_by_name(db, name)
             except ValueError as ve:
-                print(f"\n  Skipping due to DB error: {ve}")
+                logger.info(f"\n  Skipping due to DB error: {ve}")
                 cache[name] = {"error": f"Database resolution error: {str(ve)}"}
                 save_json_cache(output_path, cache)
                 continue
 
             if card is None:
-                print("\n  Skipping: Card not found in local database.")
+                logger.info("\n  Skipping: Card not found in local database.")
                 cache[name] = {"error": "Not found in local database"}
                 save_json_cache(output_path, cache)
                 continue
@@ -188,7 +188,7 @@ def main() -> int:
 
                     # Save immediately to the JSON file
                     save_json_cache(output_path, cache)
-                    print(" Success!")
+                    logger.info(" Success!")
                     processed_count += 1
 
                     # Polite pause to mitigate rapid rate-limits
@@ -204,7 +204,7 @@ def main() -> int:
                         attempt += 1
                         wait_time = retry_after + 0.5  # small safety buffer
 
-                        print(
+                        logger.info(
                             f"\n  Rate limit hit "
                             f"(attempt {attempt}/{MAX_RETRIES}). "
                             f"Waiting {wait_time:.2f}s and retrying..."
@@ -213,13 +213,13 @@ def main() -> int:
                         time.sleep(wait_time)
                         continue
 
-                    print("\n  Skipping this card due to unexpected LLM error.")
-                    print(f"  Details: {llm_error}")
-                    print(f"  Error: {llm_error}")
+                    logger.info("\n  Skipping this card due to unexpected LLM error.")
+                    logger.info(f"  Details: {llm_error}")
+                    logger.info(f"  Error: {llm_error}")
                     break
 
             else:
-                print(
+                logger.info(
                     f"\n  Rate limit retries exceeded after {MAX_RETRIES} attempts. "
                     f"Skipping card."
                 )
@@ -231,7 +231,7 @@ def main() -> int:
     finally:
         db.close()
 
-    print(f"\nRun complete. Processed {processed_count} cards.")
+    logger.info(f"\nRun complete. Processed {processed_count} cards.")
     return 0
 
 

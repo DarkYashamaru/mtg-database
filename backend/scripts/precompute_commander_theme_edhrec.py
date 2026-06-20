@@ -23,14 +23,27 @@ from models.color import Color_Identity
 from models.tag import Tag, TagRelation, Tagging
 from models.themes import Theme, ThemeCategory, ThemeCategoryTag, CommanderTheme
 import re
+from tools.logger import logger
 
-headers = ["New Commanders", "Top Commanders", "New Cards", "High Synergy Cards", "Top Cards", "Game Changers", "Creatures", "Instants", "Sorceries", "Utility Artifacts", "Enchantments", "Planeswalkers", "Utility Lands", "Mana Artifacts", "Lands"]
+HEADERS = {
+    "New Commanders",
+    "Top Commanders", 
+    "New Cards", 
+    "High Synergy Cards", 
+    "Top Cards", 
+    "Game Changers", 
+    "Creatures", 
+    "Instants", 
+    "Sorceries", 
+    "Utility Artifacts", 
+    "Enchantments", 
+    "Planeswalkers", 
+    "Utility Lands", 
+    "Mana Artifacts", 
+    "Lands"
+}
 
-
-def main() -> int:
-    # 3. Initialize Database
-    create_database()
-    db: Session = next(get_db())
+def precompute_commander_theme_edhrec(db: Session )->None:
 
     all_themes = db.scalars(select(Theme)).all()
     all_cards = db.scalars(select(Card)).all()
@@ -54,7 +67,6 @@ def main() -> int:
     max_loop = 1
 
     commanders:list[Card] = []
-
 
     for card in all_cards:
 
@@ -89,7 +101,7 @@ def main() -> int:
     for commander in commanders:
 
         if commander.oracle_id in commander_theme_set:
-            print(f"{commander.name} Already in database, skipping")
+            logger.info(f"{commander.name} Already in database, skipping")
             continue
 
         #if current > max_loops:
@@ -99,7 +111,7 @@ def main() -> int:
             slug = card_name_to_slug(get_primary_card_name(commander.name))
             url = f"https://json.edhrec.com/pages/commanders/{slug}.json"
 
-            print(f"Getting data for {commander.name} slug: {slug}")
+            logger.info(f"Getting data for {commander.name} slug: {slug}")
 
             response = requests.get(url, timeout=120, allow_redirects=True)
             item = response.json()
@@ -112,12 +124,12 @@ def main() -> int:
                 key_pair = (id, theme_dict[slug])
 
                 if key_pair in commander_theme_set:
-                    print(f"Already in database, skipping")
+                    logger.info(f"Already in database, skipping")
                     continue
 
                 pending_commander_themes[key_pair] = tag_links["count"]
         except Exception as e:
-            print(e)
+            logger.info(e)
 
         current += 1
 
@@ -132,12 +144,19 @@ def main() -> int:
 
     db.commit()
 
+
+
+def main() -> int:
+    # 3. Initialize Database
+    create_database()
+    db: Session = next(get_db())
+    precompute_commander_theme_edhrec(db)
     # # Temporary storage to deduplicate: {(oracle_id, theme_id): score}
     # pending_card_themes = {}
 
     # for theme in all_themes:
     #     slug = card_name_to_slug(theme.name)
-    #     print(f"Working on theme {slug}")
+    #     logger.info(f"Working on theme {slug}")
 
     #     #if current > max_loop:
     #      #   break
@@ -153,7 +172,7 @@ def main() -> int:
     #                 name = card["name"]
     #                 primary_name = get_primary_card_name(name)
 
-    #                 print(f"Card: {name}")
+    #                 logger.info(f"Card: {name}")
 
     #                 matched_name = None
     #                 if name in card_dict:

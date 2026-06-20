@@ -1,5 +1,6 @@
 import re
 import unicodedata
+from tools.logger import logger
 
 def card_name_to_slug(name: str) -> str:
     """
@@ -53,4 +54,4 @@ test_cards = [
 for card in test_cards:
     primary = get_primary_card_name(card)
     slug = card_name_to_slug(primary)
-    print(f"Original: {card:<55} -> Slug: {slug}")
+    logger.info(f"Original: {card:<55} -> Slug: {slug}")

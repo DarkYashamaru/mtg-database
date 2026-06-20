@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 import re
 import requests
-
+from tools.logger import logger
 from models.public_schemas import CardSchema
 from models.llm_schemas import CardArchetypeScoreSchema
 
@@ -96,8 +96,8 @@ def get_card_archetype_score(
         ensure_ascii=False,
     )
 
-    print("\n--- Cleaned Payload Sent to LLM ---")
-    print(card_json)
+    logger.info("\n--- Cleaned Payload Sent to LLM ---")
+    logger.info(card_json)
 
     system_prompt = _load_system_prompt()
 
@@ -131,7 +131,7 @@ def get_card_archetype_score(
         "json_schema": CardArchetypeScoreSchema.model_json_schema()
     }
 
-    print("Firing direct HTTP request to llama-server context window...")
+    logger.info("Firing direct HTTP request to llama-server context window...")
 
     # 3. Fire the request directly over native HTTP (no abstraction layer)
     # 600-second timeout to accommodate heavy multi-archetype evaluation
@@ -152,9 +152,9 @@ def get_card_archetype_score(
     content = message_obj.get("content", "")
 
     if reasoning_content:
-        print("\n=== QWEN INTERNAL REASONING ===")
-        print(reasoning_content.strip())
-        print("================================\n")
+        logger.info("\n=== QWEN INTERNAL REASONING ===")
+        logger.info(reasoning_content.strip())
+        logger.info("================================\n")
 
     elif "<think>" in content:
         think_match = re.search(
@@ -164,9 +164,9 @@ def get_card_archetype_score(
         )
 
         if think_match:
-            print("\n=== QWEN INTERNAL REASONING ===")
-            print(think_match.group(1).strip())
-            print("================================\n")
+            logger.info("\n=== QWEN INTERNAL REASONING ===")
+            logger.info(think_match.group(1).strip())
+            logger.info("================================\n")
 
     # 5. Mine out the final JSON block and pass it to your Pydantic Schema
     clean_json_string = extract_pure_json(content)
@@ -177,9 +177,9 @@ def get_card_archetype_score(
         )
 
     except Exception as e:
-        print("\n!!! Pydantic Parsing Failed !!!")
-        print("Raw text returned by model that caused failure:")
-        print(content)
-        print("\nExtracted JSON:")
-        print(clean_json_string)
+        logger.info("\n!!! Pydantic Parsing Failed !!!")
+        logger.info("Raw text returned by model that caused failure:")
+        logger.info(content)
+        logger.info("\nExtracted JSON:")
+        logger.info(clean_json_string)
         raise e

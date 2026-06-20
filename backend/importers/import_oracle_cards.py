@@ -20,6 +20,7 @@ from models.card import (
 from models.catalogs import CardType, Subtype, Supertype
 from models.color import Color, Color_Identity
 from sqlalchemy import select
+from tools.logger import logger
 
 supertype_list: list[str] = []
 cardtype_list: list[str] = []
@@ -120,7 +121,7 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
 
             for face in card_faces:
                 session.merge(face)
-                print(f"Importing {face.name}")
+                logger.info(f"Importing {face.name}")
 
             types_to_add: list[Card_Type_Collection] = []
 

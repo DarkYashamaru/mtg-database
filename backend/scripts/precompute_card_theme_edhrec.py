@@ -23,14 +23,27 @@ from models.color import Color_Identity
 from models.tag import Tag, TagRelation, Tagging
 from models.themes import Theme, ThemeCategory, ThemeCategoryTag, CardTheme
 import re
+from tools.logger import logger
 
-headers = ["New Commanders", "Top Commanders", "New Cards", "High Synergy Cards", "Top Cards", "Game Changers", "Creatures", "Instants", "Sorceries", "Utility Artifacts", "Enchantments", "Planeswalkers", "Utility Lands", "Mana Artifacts", "Lands"]
+HEADERS = {
+    "New Commanders",
+    "Top Commanders",
+    "New Cards",
+    "High Synergy Cards",
+    "Top Cards",
+    "Game Changers",
+    "Creatures",
+    "Instants",
+    "Sorceries",
+    "Utility Artifacts",
+    "Enchantments",
+    "Planeswalkers",
+    "Utility Lands",
+    "Mana Artifacts",
+    "Lands",
+}
 
-
-def main() -> int:
-    # 3. Initialize Database
-    create_database()
-    db: Session = next(get_db())
+def precompute_card_theme_from_edhrec(db: Session)->None:
 
     all_themes = db.scalars(select(Theme)).all()
     all_cards = db.scalars(select(Card)).all()
@@ -49,23 +62,23 @@ def main() -> int:
 
     for theme in all_themes:
         slug = card_name_to_slug(theme.name)
-        print(f"Working on theme {slug}")
+        logger.info(f"Working on theme {slug}")
 
         #if current > max_loop:
          #   break
 
         url = f"https://json.edhrec.com/pages/tags/{slug}.json"
-        response = requests.get(url, timeout=5, allow_redirects=True)
+        response = requests.get(url, timeout=120, allow_redirects=True)
         item = response.json()
 
         for cardlist in item["container"]["json_dict"]["cardlists"]:
-            if cardlist["header"] in headers:
+            if cardlist["header"] in HEADERS:
                 target = cardlist["cardviews"]
                 for card in target:
                     name = card["name"]
                     primary_name = get_primary_card_name(name)
 
-                    print(f"Card: {name}")
+                    logger.info(f"Card: {name}")
 
                     matched_name = None
                     if name in card_dict:
@@ -99,6 +112,14 @@ def main() -> int:
         db.merge(card_theme)
 
     db.commit()
+
+
+def main() -> int:
+    # 3. Initialize Database
+    create_database()
+    db: Session = next(get_db())
+    precompute_card_theme_from_edhrec(db=db)
+
     return 0
 
 if __name__ == "__main__":
