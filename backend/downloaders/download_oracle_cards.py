@@ -9,7 +9,7 @@ from downloaders.scryfall_bulk_data import (  # noqa: E402
 )
 
 ORACLE_CARDS_TYPE = "oracle_cards"
-ORACLE_CARDS_PATH = SCRYFALL_DATA_DIR / "oracle_cards.json"
+ORACLE_CARDS_PATH = SCRYFALL_DATA_DIR / "oracle_cards.jsonl.gz"
 ORACLE_CARDS_METADATA_PATH = SCRYFALL_DATA_DIR / "oracle_cards.meta.json"
 
 def create_oracle_cards_downloader(session: HttpSession | None = None,) -> ScryfallBulkDataDownloader:

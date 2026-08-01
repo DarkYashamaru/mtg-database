@@ -89,11 +89,12 @@ class ScryfallBulkDataDownloader:
 
     def _parse_bulk_data_file(self, item: dict[str, Any]) -> BulkDataFile:
         try:
+            download_uri = item.get("jsonl_download_uri") or item["download_uri"]
             return BulkDataFile(
                 type=item["type"],
                 updated_at=item["updated_at"],
-                download_uri=item["download_uri"],
-                size=item.get("size"),
+                download_uri=download_uri,
+                size=item.get("compressed_size") or item.get("size"),
                 content_type=item.get("content_type"),
                 content_encoding=item.get("content_encoding"),
             )

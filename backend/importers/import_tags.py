@@ -1,21 +1,17 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
 from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 from database.create_database import create_database  # noqa: E402
+from downloaders.download_oracle_tags import ORACLE_TAGS_PATH  # noqa: E402
+from importers.scryfall_bulk_reader import load_scryfall_bulk_items  # noqa: E402
 from database.session import DATABASE_PATH, session_scope  # noqa: E402
 from models.tag import Tag, TagRelation, Tagging  # noqa: E402
 from sqlalchemy import select
 
 DEFAULT_BATCH_SIZE = 500
-
-ORACLE_TAGS_PATH = (
-    PROJECT_ROOT / "downloads" / "scryfall" / "oracle_tags.json"
-)
-
 
 def import_oracle_tags(
     source_path: Path = ORACLE_TAGS_PATH,
@@ -26,13 +22,12 @@ def import_oracle_tags(
 
     if not source_path.exists():
         raise FileNotFoundError(
-            f"Oracle tags JSON not found at {source_path}."
+            f"Oracle tags bulk file not found at {source_path}."
         )
 
     create_database()
 
-    with source_path.open(encoding="utf-8") as file:
-        payload = json.load(file)
+    payload = load_scryfall_bulk_items(source_path)
 
     imported_count = 0
 

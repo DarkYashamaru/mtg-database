@@ -9,7 +9,7 @@ from downloaders.scryfall_bulk_data import (  # noqa: E402
 )
 
 ORACLE_TAGS_TYPE = "oracle_tags"
-ORACLE_TAGS_PATH = SCRYFALL_DATA_DIR / "oracle_tags.json"
+ORACLE_TAGS_PATH = SCRYFALL_DATA_DIR / "oracle_tags.jsonl.gz"
 ORACLE_TAGS_METADATA_PATH = SCRYFALL_DATA_DIR / "oracle_tags.meta.json"
 
 def create_oracle_tags_downloader(session: HttpSession | None = None,) -> ScryfallBulkDataDownloader:

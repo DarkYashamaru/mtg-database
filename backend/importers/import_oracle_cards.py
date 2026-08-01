@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 from datetime import datetime, timezone
 from functools import cache
 from pathlib import Path
@@ -8,6 +7,7 @@ from typing import Any
 
 from database.session import session_scope
 from downloaders.download_oracle_cards import ORACLE_CARDS_PATH
+from importers.scryfall_bulk_reader import load_scryfall_bulk_items
 from models.card import (
     Card,
     Card_Face,
@@ -61,7 +61,7 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
 
     if not source_path.exists():
         raise FileNotFoundError(
-            f"Oracle cards JSON not found at {source_path}. "
+            f"Oracle cards bulk file not found at {source_path}. "
             "Run backend/services/scryfall.py first."
         )
 
@@ -83,8 +83,7 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
     for card in all_cards:
         oracle_ids.add(card.oracle_id)
 
-    with source_path.open(encoding="utf-8") as file:
-        payload = json.load(file)
+    payload = load_scryfall_bulk_items(source_path)
 
     imported_count = 0
 
