@@ -12,6 +12,8 @@ class FaceSchema(BaseModel):
     name: str
     mana_cost: str | None
     oracle_text: str | None
+    power: str | None
+    toughness: str | None
 
     supertypes: list[str]
     card_types: list[str]
@@ -158,6 +160,8 @@ def card_to_schema(card: Card, inherited_tags_by_direct_id: Mapping[str, Sequenc
                 name=face.name,
                 mana_cost=face.mana_cost,
                 oracle_text=face.oracle_text,
+                power=face.power,
+                toughness=face.toughness,
 
                 supertypes=[
                     st.type.value
