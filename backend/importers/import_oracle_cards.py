@@ -25,6 +25,7 @@ from tools.logger import logger
 supertype_list: list[str] = []
 cardtype_list: list[str] = []
 subtype_list: list[str] = []
+SHARED_FRONT_IMAGE_LAYOUTS = {"prepare", "prepared", "room"}
 
 
 def parse_types(text: str, valid_subtypes: list[str]) -> list[str]:
@@ -146,6 +147,64 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
     return imported_count
 
 
+def backfill_shared_front_face_images(source_path: Path = ORACLE_CARDS_PATH) -> int:
+    if not source_path.exists():
+        raise FileNotFoundError(
+            f"Oracle cards bulk file not found at {source_path}. "
+            "Run backend/services/scryfall.py first."
+        )
+
+    payload = load_scryfall_bulk_items(source_path)
+    updated_faces = 0
+
+    with session_scope() as session:
+        for item in payload:
+            oracle_id = item.get("oracle_id")
+            if not oracle_id:
+                continue
+
+            layout = (item.get("layout") or "").strip().lower()
+            if layout not in SHARED_FRONT_IMAGE_LAYOUTS:
+                continue
+
+            legalities = item.get("legalities") or {}
+            if legalities.get("commander") != "legal":
+                continue
+
+            root_image_uris = item.get("image_uris") or {}
+            if not root_image_uris:
+                continue
+
+            faces = session.scalars(
+                select(Card_Face).where(Card_Face.parent_id == oracle_id)
+            ).all()
+
+            if not faces:
+                continue
+
+            for face in faces:
+                changed = False
+
+                if not face.small_image and root_image_uris.get("small"):
+                    face.small_image = root_image_uris.get("small")
+                    changed = True
+
+                if not face.normal_image and root_image_uris.get("normal"):
+                    face.normal_image = root_image_uris.get("normal")
+                    changed = True
+
+                if not face.large_image and root_image_uris.get("large"):
+                    face.large_image = root_image_uris.get("large")
+                    changed = True
+
+                if changed:
+                    updated_faces += 1
+
+        session.commit()
+
+    return updated_faces
+
+
 def _card_from_scryfall(item: dict[str, Any]) -> Card | None:
     oracle_id = item.get("oracle_id")
     if not oracle_id:
@@ -210,6 +269,8 @@ def parse_card_types(type_line: str, face: Card_Face) -> Card_Type_Collection:
 def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
     oracle_id = item.get("oracle_id")
     card_faces = item.get("card_faces")
+    layout = (item.get("layout") or "").strip().lower()
+    root_image_uris = item.get("image_uris") or {}
 
     result: list[Card_Face] = []
     valid_faces: list[dict[str, Any]] = []
@@ -221,6 +282,13 @@ def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
 
     for valid_face in valid_faces:
         image_uris = valid_face.get("image_uris") or {}
+
+        if layout in SHARED_FRONT_IMAGE_LAYOUTS and root_image_uris:
+            image_uris = {
+                "small": image_uris.get("small") or root_image_uris.get("small"),
+                "normal": image_uris.get("normal") or root_image_uris.get("normal"),
+                "large": image_uris.get("large") or root_image_uris.get("large"),
+            }
 
         face = Card_Face(
             parent_id=oracle_id,
