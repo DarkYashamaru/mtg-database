@@ -179,6 +179,35 @@ def card_to_full_schema(card: Card, db: Session) -> CardSchema:
     return card_to_schema(card, inherited_tags_by_direct_id, themes_map)
 
 
+def commanders_stmt():
+    return (
+        select(Card)
+        .options(*CARD_LOAD_OPTIONS)
+        .where(
+            or_(
+                exists(
+                    select(1)
+                    .select_from(Card_Face)
+                    .where(
+                        Card_Face.parent_id == Card.oracle_id,
+                        Card_Face.type_line.ilike("%Legendary%Creature%"),
+                    )
+                ),
+                exists(
+                    select(1)
+                    .select_from(Card_Face)
+                    .where(
+                        Card_Face.parent_id == Card.oracle_id,
+                        Card_Face.oracle_text.ilike("%can be your commander%"),
+                    )
+                ),
+            )
+        )
+        .order_by(Card.name)
+        .distinct()
+    )
+
+
 @router.get("/cards/id/{oracle_id}", response_model=CardSchema)
 def get_card(oracle_id: str, db: Session = Depends(get_db)):
     stmt = (
@@ -214,6 +243,24 @@ def get_card_by_name(name: str, db: Session = Depends(get_db)):
         )
 
     return card_to_full_schema(card, db)
+
+
+@router.get("/commanders", response_model=list[CardSchema])
+def get_commanders(db: Session = Depends(get_db)):
+    cards = db.execute(commanders_stmt()).scalars().all()
+
+    inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
+        db,
+        direct_tag_ids_for_cards(cards),
+    )
+
+    oracle_ids = [card.oracle_id for card in cards if card.oracle_id]
+    themes_map = get_themes_for_cards_map(oracle_ids, db) if oracle_ids else {}
+
+    return [
+        card_to_schema(card, inherited_tags_by_direct_id, themes_map)
+        for card in cards
+    ]
 
 
 
