@@ -168,13 +168,16 @@ def parse_modal_block(text: str, card_name: str) -> dict[str, Any] | None:
 
     lowered = header.lower()
     selection_match = re.search(
-        r"choose (?P<count>\w+)(?P<or_both> or both)?(?P<at_random> at random)?\s+[—-]$",
+        r"choose (?:(?P<count>\w+)(?P<or_both> or both)?|(?P<one_or_more>one or more))(?P<at_random> at random)?\s+[—-]$",
         lowered,
     )
     if not selection_match:
         return None
 
-    choose_count = parse_number(selection_match.group("count")) or selection_match.group("count")
+    if selection_match.group("one_or_more"):
+        choose_count: Any = {"min": 1, "max": "any"}
+    else:
+        choose_count = parse_number(selection_match.group("count")) or selection_match.group("count")
     payload: dict[str, Any] = {
         "mode_selection": {
             "choose_count": choose_count,
@@ -663,6 +666,9 @@ def parse_trigger_header(header: str, card_name: str) -> tuple[dict[str, Any], l
     if lowered == "at the beginning of the upkeep of enchanted creature's controller":
         return {"type": "beginning_of_upkeep_of_enchanted_creatures_controller"}, []
 
+    if lowered == "at the beginning of each of enchanted player's postcombat main phases":
+        return {"type": "beginning_of_each_enchanted_players_postcombat_main_phase"}, []
+
     match = re.fullmatch(r"at the beginning of your ([a-z ]+)", lowered)
     if match:
         step = match.group(1).replace(" ", "_")
@@ -692,11 +698,55 @@ def parse_trigger_header(header: str, card_name: str) -> tuple[dict[str, Any], l
         if body == "you attack":
             return {"type": "attack_declared", "subject": "you"}, []
 
+        if body == "you attack with two or more creatures":
+            return {"type": "attack_declared", "subject": "you"}, [{"attacking_creatures_you_control_gte": 2}]
+
+        if body == "you attack with one or more birds":
+            return {
+                "type": "attack_declared",
+                "subject": "you",
+            }, [{
+                "attacking_creatures_you_control_match": {
+                    "subtypes": ["Bird"],
+                    "count_gte": 1,
+                }
+            }]
+
         if body == "you gain life":
             return {"type": "gain_life", "subject": "you"}, []
 
+        if body == "an opponent attacks you":
+            return {"type": "attacks_you", "subject": "an_opponent"}, []
+
+        if body == "a player attacks one of your opponents":
+            return {"type": "attacks_one_of_your_opponents", "subject": "a_player"}, []
+
+        if body == "another player attacks with two or more creatures":
+            return {"type": "attack_declared", "subject": "another_player"}, [{"attacking_creatures_gte": 2}]
+
+        if body == "an opponent attacks with creatures":
+            return {"type": "attack_declared", "subject": "an_opponent"}, []
+
+        if body == "hraesvelgr enters and whenever you cast a noncreature spell":
+            return {"type": "enters_or_cast_spell", "subject": "self"}, [{"spell_types_excluded": ["Creature"]}]
+
+        if body == "eye of nidhogg is put into a graveyard from the battlefield":
+            return {"type": "put_into_graveyard_from_battlefield", "subject": "self"}, []
+
+        if body == "this class becomes level 2":
+            return {"type": "class_becomes_level", "subject": "self"}, [{"level": 2}]
+
         if body == "you draw your second card each turn":
             return {"type": "draw_card", "subject": "you"}, [{"draw_count_each_turn": 2}]
+
+        if body == "the twelfth hour counter is put on this artifact":
+            return {"type": "counter_put", "subject": "self"}, [{"counter_type": "hour"}, {"counter_count_on_self_eq": 12}]
+
+        if body == "an opponent draws their second card each turn":
+            return {"type": "draw_card", "subject": "an_opponent"}, [{"draw_count_each_turn": 2}]
+
+        if body == "you lose life for the first time each turn":
+            return {"type": "lose_life", "subject": "you"}, [{"first_time_each_turn": True}]
 
         if body == "an opponent casts their second spell each turn":
             return {"type": "cast_spell", "subject": "an_opponent"}, [{"spell_cast_count_each_turn": 2}]
@@ -709,6 +759,26 @@ def parse_trigger_header(header: str, card_name: str) -> tuple[dict[str, Any], l
 
         if body == "you draw a card":
             return {"type": "draw_card", "subject": "you"}, []
+
+        if body == "one or more tokens you control enter":
+            return {
+                "type": "enters_battlefield",
+                "subject": {"selector": "tokens_you_control"},
+            }, []
+
+        if body == "enchanted land is tapped for mana":
+            return {"type": "tapped_for_mana", "subject": "enchanted_land"}, []
+
+        if body == "you sacrifice a nontoken elemental":
+            return {
+                "type": "sacrifice_permanent",
+                "subject": "you",
+            }, [{
+                "sacrificed_object": {
+                    "subtypes": ["Elemental"],
+                    "is_token": False,
+                }
+            }]
 
         if body == "an opponent casts a spell":
             return {"type": "cast_spell", "subject": "an_opponent"}, []
@@ -832,6 +902,62 @@ def parse_trigger_header(header: str, card_name: str) -> tuple[dict[str, Any], l
         if body.endswith(" enters or attacks"):
             subject = parse_subject_or_group(body[:-18], card_name)
             return {"type": "enters_or_attacks", "subject": subject}, []
+
+        if body == "a creature you control deals combat damage to an opponent":
+            return {
+                "type": "deals_combat_damage_to_player",
+                "subject": {"selector": "creatures_you_control"},
+            }, []
+
+        if body == "this creature deals combat damage to a player or planeswalker":
+            return {"type": "deals_combat_damage_to_player_or_planeswalker", "subject": "self"}, []
+
+        if body == "another permanent you control is put into a graveyard from the battlefield":
+            return {"type": "permanent_put_into_graveyard_from_battlefield", "subject": {"selector": "other_permanents_you_control"}}, []
+
+        if body == "you put one or more counters on a creature":
+            return {"type": "put_counters", "subject": "you"}, [{"target_is_creature": True, "count_gte": 1}]
+
+        if body == "a +1/+1 counter is put on this creature":
+            return {"type": "counter_put", "subject": "self"}, [{"counter_type": "+1/+1"}]
+
+        if body == "one or more creatures an opponent controls attack you and aren't blocked":
+            return {"type": "attack_unblocked_against_you", "subject": {"selector": "creatures_an_opponent_controls"}}, []
+
+        if body == "one or more opponents lose life":
+            return {"type": "lose_life", "subject": "one_or_more_opponents"}, []
+
+        if body == "you attack with four or more creatures":
+            return {"type": "attack_declared", "subject": "you"}, [{"attacking_creatures_you_control_gte": 4}]
+
+        if body == "you attack with eight or more creatures":
+            return {"type": "attack_declared", "subject": "you"}, [{"attacking_creatures_you_control_gte": 8}]
+
+        if body == "you play a land from exile or cast a spell from exile":
+            return {"type": "play_land_from_exile_or_cast_spell_from_exile", "subject": "you"}, []
+
+        if body == "this equipment becomes attached to a creature":
+            return {"type": "becomes_attached_to_creature", "subject": "self"}, []
+
+        if body == "enchanted permanent dies or is put into exile":
+            return {"type": "dies_or_is_exiled", "subject": "enchanted_permanent"}, []
+
+        if body == "this aura is put into a graveyard from the battlefield":
+            return {"type": "put_into_graveyard_from_battlefield", "subject": "self"}, []
+
+        if body == "an enchantment you control is put into a graveyard from the battlefield":
+            return {"type": "put_into_graveyard_from_battlefield", "subject": {"selector": "permanents_you_control", "card_types": ["Enchantment"]}}, []
+
+        if body == "an enchantment you control enters and whenever you fully unlock a room":
+            return {
+                "type": "enters_battlefield_or_fully_unlock_room",
+                "subject": "you",
+            }, [{
+                "any_of": [
+                    {"subject": {"selector": "permanents_you_control", "card_types": ["Enchantment"]}, "event": "enters_battlefield"},
+                    {"event": "fully_unlock_room", "controller": "you"},
+                ]
+            }]
 
         if body.endswith(" is turned face up"):
             subject = parse_subject_or_group(body[:-17], card_name)
@@ -1295,20 +1421,46 @@ def parse_effect_atom(text: str, card_name: str) -> list[dict[str, Any]]:
 
     exact_effects: dict[str, list[dict[str, Any]]] = {
         "this land deals 1 damage to you": [{"action": "deal_damage", "source": "self", "target": "you", "amount": 1}],
+        "this land enters tapped unless you control a plains or an island": [{"action": "enters_tapped_unless", "target": "self", "condition": [{"you_control_subtypes_any": ["Plains", "Island"]}]}],
+        "this land enters tapped unless you control a plains or a swamp": [{"action": "enters_tapped_unless", "target": "self", "condition": [{"you_control_subtypes_any": ["Plains", "Swamp"]}]}],
+        "this land enters tapped unless you control a forest or an island": [{"action": "enters_tapped_unless", "target": "self", "condition": [{"you_control_subtypes_any": ["Forest", "Island"]}]}],
+        "this land enters tapped unless you control two or fewer other lands": [{"action": "enters_tapped_unless", "target": "self", "condition": [{"you_control_other_lands_lte": 2}]}],
         "this land enters tapped unless you control two or more basic lands": [{"action": "enters_tapped_unless", "target": "self", "condition": [{"you_control_basic_lands_gte": 2}]}],
         "this land enters tapped unless you control a mountain or a plains": [{"action": "enters_tapped_unless", "target": "self", "condition": [{"you_control_subtypes_any": ["Mountain", "Plains"]}]}],
         "this land enters tapped unless you control a mountain or a forest": [{"action": "enters_tapped_unless", "target": "self", "condition": [{"you_control_subtypes_any": ["Mountain", "Forest"]}]}],
         "this land enters tapped unless you control a forest or a plains": [{"action": "enters_tapped_unless", "target": "self", "condition": [{"you_control_subtypes_any": ["Forest", "Plains"]}]}],
+        "as this land enters, you may reveal a plains or island card from your hand": [{"action": "as_enters_optional_reveal", "target": "self", "from_zone": "hand", "filter": {"subtypes_any": ["Plains", "Island"]}}],
         "as this land enters, you may reveal a forest or plains card from your hand": [{"action": "as_enters_optional_reveal", "target": "self", "from_zone": "hand", "filter": {"subtypes_any": ["Forest", "Plains"]}}],
+        "as this land enters, you may reveal a forest or island card from your hand": [{"action": "as_enters_optional_reveal", "target": "self", "from_zone": "hand", "filter": {"subtypes_any": ["Forest", "Island"]}}],
         "as this land enters, you may reveal a mountain or plains card from your hand": [{"action": "as_enters_optional_reveal", "target": "self", "from_zone": "hand", "filter": {"subtypes_any": ["Mountain", "Plains"]}}],
         "as this land enters, you may reveal a mountain or forest card from your hand": [{"action": "as_enters_optional_reveal", "target": "self", "from_zone": "hand", "filter": {"subtypes_any": ["Mountain", "Forest"]}}],
+        "add {w}, {u}, or {b}": [{"action": "add_mana", "choices": [["{W}"], ["{U}"], ["{B}"]], "distribution": "choose_one_group"}],
+        "add {w}{w}, {w}{b}, or {b}{b}": [{"action": "add_mana", "choices": [["{W}", "{W}"], ["{W}", "{B}"], ["{B}", "{B}"]], "distribution": "choose_one_group"}],
+        "add {g}, {w}, or {u}": [{"action": "add_mana", "choices": [["{G}"], ["{W}"], ["{U}"]], "distribution": "choose_one_group"}],
+        "add {g}{g}, {g}{u}, or {u}{u}": [{"action": "add_mana", "choices": [["{G}", "{G}"], ["{G}", "{U}"], ["{U}", "{U}"]], "distribution": "choose_one_group"}],
+        "add {g}, {u}, or {r}": [{"action": "add_mana", "choices": [["{G}"], ["{U}"], ["{R}"]], "distribution": "choose_one_group"}],
+        "add {b}, {g}, or {u}": [{"action": "add_mana", "choices": [["{B}"], ["{G}"], ["{U}"]], "distribution": "choose_one_group"}],
+        "add {w}, {b}, or {g}": [{"action": "add_mana", "choices": [["{W}"], ["{B}"], ["{G}"]], "distribution": "choose_one_group"}],
+        "add {b}, {r}, or {g}": [{"action": "add_mana", "choices": [["{B}"], ["{R}"], ["{G}"]], "distribution": "choose_one_group"}],
         "equipped creature gets +2/+2 and has trample and lifelink": [{"action": "modify_stats", "target": "equipped_creature", "power_delta": 2, "toughness_delta": 2, "keywords": ["trample", "lifelink"]}],
+        "enchanted creature gets +4/+4, has flying and first strike, and is an angel in addition to its other types": [{"action": "modify_characteristics", "target": "enchanted_creature", "power_delta": 4, "toughness_delta": 4, "keywords": ["flying", "first_strike"], "add_subtypes": ["Angel"]}],
+        "enchanted creature gets +10/+10 and has trample and annihilator 2": [{"action": "modify_stats", "target": "enchanted_creature", "power_delta": 10, "toughness_delta": 10, "keywords": ["trample"], "granted_abilities": [{"keyword": "annihilator", "amount": 2}]}],
+        "enchanted creature gets +1/+1 and is goaded": [{"action": "modify_stats", "target": "enchanted_creature", "power_delta": 1, "toughness_delta": 1, "goaded": True}],
+        "enchanted creature gets +1/+1, has deathtouch, and is goaded": [{"action": "modify_stats", "target": "enchanted_creature", "power_delta": 1, "toughness_delta": 1, "keywords": ["deathtouch"], "goaded": True}],
+        "enchanted creature gets +2/+2 and is goaded": [{"action": "modify_stats", "target": "enchanted_creature", "power_delta": 2, "toughness_delta": 2, "goaded": True}],
+        "enchanted creature gets +1/+1 and has vigilance": [{"action": "modify_stats", "target": "enchanted_creature", "power_delta": 1, "toughness_delta": 1, "keywords": ["vigilance"]}],
+        "enchanted creature gets +1/+1 and has protection from creatures": [{"action": "modify_stats", "target": "enchanted_creature", "power_delta": 1, "toughness_delta": 1, "keywords": ["protection_from_creatures"]}],
+        "enchanted creature gets -1/-0": [{"action": "modify_stats", "target": "enchanted_creature", "power_delta": -1, "toughness_delta": 0}],
+        "enchanted creature has ward {2}": [{"action": "grant_keyword", "target": "enchanted_creature", "keyword": "ward", "amount": 2}],
+        "enchanted creature has indestructible": [{"action": "grant_keyword", "target": "enchanted_creature", "keyword": "indestructible"}],
+        "equipped creature has haste and shroud": [{"action": "grant_keywords", "target": "equipped_creature", "keywords": ["haste", "shroud"]}],
         "equipped creature gets +10/+10 and loses flying": [{"action": "modify_stats", "target": "equipped_creature", "power_delta": 10, "toughness_delta": 10, "lose_keywords": ["flying"]}],
         "equipped creature has indestructible": [{"action": "grant_keyword", "target": "equipped_creature", "keyword": "indestructible"}],
         "equipped creature has double strike": [{"action": "grant_keyword", "target": "equipped_creature", "keyword": "double_strike"}],
         "equipped creature has nonbasic landwalk": [{"action": "grant_keyword", "target": "equipped_creature", "keyword": "nonbasic_landwalk"}],
         "equipped creature can't be blocked except by walls": [{"action": "combat_restriction", "target": "equipped_creature", "restriction": "cant_be_blocked_except_by", "except_by": "Wall"}],
         "equipped creature gets +1/+1 for each artifact you control": [{"action": "modify_stats", "target": "equipped_creature", "power_delta": {"kind": "count", "object": {"selector": "permanents_you_control", "card_types": ["Artifact"]}}, "toughness_delta": {"kind": "count", "object": {"selector": "permanents_you_control", "card_types": ["Artifact"]}}}],
+        "equipped creature gets +1/+1 for each charge counter on this equipment and has vigilance": [{"action": "modify_stats", "target": "equipped_creature", "power_delta": {"kind": "count_counters_on", "counter_type": "charge", "object": "self"}, "toughness_delta": {"kind": "count_counters_on", "counter_type": "charge", "object": "self"}, "keywords": ["vigilance"]}],
         "equipped creature gets +1/+1 for each land you control": [{"action": "modify_stats", "target": "equipped_creature", "power_delta": {"kind": "count", "object": {"selector": "permanents_you_control", "card_types": ["Land"]}}, "toughness_delta": {"kind": "count", "object": {"selector": "permanents_you_control", "card_types": ["Land"]}}}],
         "equipped creature gets +1/+1 for each color among permanents you control": [{"action": "modify_stats", "target": "equipped_creature", "power_delta": {"kind": "count_colors_among", "object": {"selector": "permanents_you_control"}}, "toughness_delta": {"kind": "count_colors_among", "object": {"selector": "permanents_you_control"}}}],
         "equipped creature has base power and toughness x/x, where x is your life total": [{"action": "set_base_power_toughness", "target": "equipped_creature", "power": {"kind": "player_life_total", "player": "you"}, "toughness": {"kind": "player_life_total", "player": "you"}}],
@@ -1324,13 +1476,25 @@ def parse_effect_atom(text: str, card_name: str) -> list[dict[str, Any]]:
         "your opponents can't cast spells during your turn": [{"action": "casting_restriction", "target": "your_opponents", "restriction": "cant_cast_spells", "condition": [{"turn_scope": "your_turn"}]}],
         "any number of target nonland permanents you control phase out": [{"action": "phase_out", "target": {"selector": "target_nonland_permanents_you_control"}, "target_count": "any"}],
         "put your commander into your hand from the command zone": [{"action": "move_card", "target": "your_commander", "source_zone": "command_zone", "destination_zone": "hand"}],
+        "return a land you control to its owner's hand": [{"action": "move_card", "target": {"selector": "land_you_control"}, "destination_zone": "hand", "owner": "its_owner"}],
+        "return up to one target creature to its owner's hand": [{"action": "move_card", "target": {"selector": "target_creature"}, "destination_zone": "hand", "owner": "its_owner", "max_targets": 1, "optional": True}],
+        "return this aura to its owner's hand": [{"action": "move_card", "target": "self", "destination_zone": "hand", "owner": "its_owner"}],
+        "return this card to its owner's hand": [{"action": "move_card", "target": "self", "destination_zone": "hand", "owner": "its_owner"}],
+        "return it to the battlefield under your control": [{"action": "move_card", "target": "it", "destination_zone": "battlefield", "controller": "you"}],
+        "return that card to the battlefield under your control": [{"action": "move_card", "target": "that_card", "destination_zone": "battlefield", "controller": "you"}],
+        "return it to the battlefield under its owner's control with a flying counter on it": [{"action": "move_card", "target": "it", "destination_zone": "battlefield", "controller": "its_owner", "with_counters": [{"counter_type": "flying", "amount": 1}]}],
+        "return that card to the battlefield under its owner's control at the beginning of the next end step": [{"action": "create_delayed_trigger", "trigger": {"type": "beginning_of_next_end_step"}, "effects": [{"action": "move_card", "target": "that_card", "destination_zone": "battlefield", "controller": "its_owner"}]}],
+        "return this card to the battlefield attached to that creature at the beginning of the next end step": [{"action": "create_delayed_trigger", "trigger": {"type": "beginning_of_next_end_step"}, "effects": [{"action": "move_card", "target": "self", "destination_zone": "battlefield", "attach_to": "that_creature"}]}],
         "search your library for an aura or equipment card, reveal it, put it into your hand": [{"action": "search_library", "player": "you", "filter": {"card_types_any": ["Aura", "Equipment"]}, "reveal": True, "destination": "hand"}],
         "search your library for an aura card and/or an equipment card, reveal them, put them into your hand": [{"action": "search_library", "player": "you", "filter": {"card_types_any": ["Aura", "Equipment"]}, "reveal": True, "destination": "hand", "selected_count": {"min": 1, "max": 2}}],
         "search your library for an equipment card, reveal it, put it into your hand": [{"action": "search_library", "player": "you", "filter": {"card_types": ["Equipment"]}, "reveal": True, "destination": "hand"}],
         "search your library for an equipment card, put it onto the battlefield": [{"action": "search_library", "player": "you", "filter": {"card_types": ["Equipment"]}, "destination": "battlefield", "optional": True}],
+        "search your library for an enchantment card with mana value 3 or less, put it onto the battlefield": [{"action": "search_library", "player": "you", "filter": {"card_types": ["Enchantment"], "mana_value_lte": 3}, "destination": "battlefield", "optional": True}],
+        "search your library for a plains, island, swamp, or mountain card, put it onto the battlefield tapped": [{"action": "search_library", "player": "you", "filter": {"subtypes_any": ["Plains", "Island", "Swamp", "Mountain"]}, "destination": "battlefield", "tapped": True}],
         "search your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand": [{"action": "search_library", "player": "you", "filter": {"card_types": ["Land"], "supertypes": ["Basic"]}, "selected_count": {"min": 0, "max": 2}, "distribution": [{"destination": "battlefield", "tapped": True, "count": 1}, {"destination": "hand", "count": 1}], "reveal": True}],
         "search your library for a basic land card, put that card onto the battlefield tapped": [{"action": "search_library", "player": "you", "filter": {"card_types": ["Land"], "supertypes": ["Basic"]}, "destination": "battlefield", "tapped": True}],
         "search your library for a forest card, put that card onto the battlefield": [{"action": "search_library", "player": "you", "filter": {"subtypes_any": ["Forest"]}, "destination": "battlefield"}],
+        "search your library for a plains card and reveal it": [{"action": "search_library", "player": "you", "filter": {"subtypes_any": ["Plains"]}, "reveal": True, "hold_result_as": "that_card"}],
         "return target equipment card from your graveyard to the battlefield": [{"action": "return_from_graveyard_to_battlefield", "player": "you", "target": {"card_types": ["Equipment"], "zone": "graveyard"}, "destination": "battlefield"}],
         "return target aura or equipment card from your graveyard to your hand": [{"action": "move_card", "target": {"selector": "target_card_in_your_graveyard", "card_types_any": ["Aura", "Equipment"]}, "destination_zone": "hand"}],
         "return up to two target aura and/or equipment cards from your graveyard to the battlefield attached to that creature": [{"action": "return_from_graveyard_to_battlefield_attached", "player": "you", "target": {"card_types_any": ["Aura", "Equipment"], "zone": "graveyard"}, "max_targets": 2, "attach_to": "that_creature"}],
@@ -1404,6 +1568,417 @@ def parse_effect_atom(text: str, card_name: str) -> list[dict[str, Any]]:
         "untap that land": [{"action": "untap", "target": "that_land"}],
         "equip abilities you activate cost {2} less to activate": [{"action": "equip_cost_reduction", "target": "you", "amount": 2}],
         "attach this equipment to it": [{"action": "attach_equipment", "source": "self", "target": "it", "optional": True}],
+        "untap this artifact during each other player's untap step": [{"action": "untap_during_each_other_players_untap_step", "target": "self"}],
+        "creatures your opponents control attack this turn if able": [{"action": "force_attack_this_turn_if_able", "target": {"selector": "creatures_your_opponents_control"}}],
+        "destroy all artifacts and enchantments": [{"action": "destroy", "target": {"selector": "all_permanents", "card_types_any": ["Artifact", "Enchantment"]}}],
+        "destroy target artifact, enchantment, or planeswalker": [{"action": "destroy", "target": {"selector": "target_permanent", "card_types_any": ["Artifact", "Enchantment", "Planeswalker"]}}],
+        "destroy all creatures with no counters on them": [{"action": "destroy", "target": {"selector": "all_creatures", "has_no_counters": True}}],
+        "destroy target creature with power 4 or greater": [{"action": "destroy", "target": {"selector": "target_creature", "power_gte": 4}}],
+        "destroy target creature with toughness 4 or greater": [{"action": "destroy", "target": {"selector": "target_creature", "toughness_gte": 4}}],
+        "destroy target permanent": [{"action": "destroy", "target": {"selector": "target_permanent"}}],
+        "destroy all creatures that aren't enchanted": [{"action": "destroy", "target": {"selector": "all_creatures", "not_enchanted": True}}],
+        "exile all artifacts": [{"action": "exile", "target": {"selector": "all_permanents", "card_types": ["Artifact"]}}],
+        "exile all creatures": [{"action": "exile", "target": {"selector": "all_creatures"}}],
+        "exile all enchantments": [{"action": "exile", "target": {"selector": "all_permanents", "card_types": ["Enchantment"]}}],
+        "exile target player's graveyard": [{"action": "exile_zone", "target": {"selector": "target_player"}, "zone": "graveyard"}],
+        "exile all graveyards": [{"action": "exile_zone", "target": {"selector": "all_players"}, "zone": "graveyard"}],
+        "enchanted creature loses all abilities and is a blue frog creature with base power and toughness 1/1": [{"action": "set_characteristics", "target": "enchanted_creature", "remove_all_abilities": True, "colors": ["blue"], "card_types": ["Creature"], "subtypes": ["Frog"], "base_power": 1, "base_toughness": 1}],
+        "enchanted creature is an insect artifact creature with base power and toughness 0/1 and has indestructible, and it loses all other abilities, card types, and creature types": [{"action": "set_characteristics", "target": "enchanted_creature", "colors": [], "card_types": ["Artifact", "Creature"], "subtypes": ["Insect"], "base_power": 0, "base_toughness": 1, "keywords": ["indestructible"], "remove_all_other_abilities": True, "remove_all_other_card_types": True, "remove_all_other_creature_types": True}],
+        "as this enchantment enters, choose a creature type": [{"action": "choose_creature_type", "target": "self", "timing": "as_enters"}],
+        "creatures you control of the chosen type get +1/+1": [{"action": "modify_stats", "target": {"selector": "creatures_you_control", "matches_chosen_creature_type_of": "self"}, "power_delta": 1, "toughness_delta": 1}],
+        "create a token that's a copy of another target nonland permanent you control": [{"action": "create_token_copy", "object": {"selector": "another_target_nonland_permanent_you_control"}}],
+        "its controller manifests dread": [{"action": "manifest_dread", "player": "its_controller"}],
+        "as this aura enters, choose a color": [{"action": "choose_color", "target": "self", "timing": "as_enters"}],
+        "enchanted creature has protection from the chosen color": [{"action": "grant_keyword", "target": "enchanted_creature", "keyword": "protection", "quality": "chosen_color"}],
+        "this effect doesn't remove this aura": [{"action": "ignored_effect"}],
+        "return up to one target aura or equipment card from your graveyard to the battlefield attached to that token": [{"action": "return_from_graveyard_to_battlefield_attached", "player": "you", "target": {"selector": "target_card_in_your_graveyard", "card_types_any": ["Aura", "Equipment"]}, "max_targets": 1, "attach_to": "that_token", "optional": True}],
+        "return an enchantment card from your graveyard to your hand or unlock a locked door of a room you control": [{"action": "mode_selection", "choose_count": 1, "modes": [{"effects": [{"action": "move_card", "target": {"selector": "target_card_in_your_graveyard", "card_types": ["Enchantment"]}, "destination_zone": "hand"}]}, {"effects": [{"action": "unlock_locked_door", "target": {"selector": "room_you_control"}}]}]}],
+        "for each opponent, exile up to one target nonland permanent that player controls until this enchantment leaves the battlefield": [{"action": "exile_for_each_opponent_until_source_leaves_battlefield", "target": {"selector": "target_permanent", "not_card_types": ["Land"], "controller": "that_opponent"}, "source": "self", "max_targets_per_opponent": 1, "optional": True}],
+        "add {c}\" and loses all other card types and abilities": [{"action": "set_characteristics", "target": "enchanted_permanent", "card_types": ["Land"], "granted_abilities": [{"action": "add_mana", "choices": [["{C}"]], "distribution": "choose_one_group"}], "remove_all_other_card_types": True, "remove_all_other_abilities": True}],
+        "create a 0/1 green plant creature token for each land you control": [{"action": "create_token", "amount": {"kind": "count", "object": {"selector": "permanents_you_control", "card_types": ["Land"]}}, "token": {"raw": "0/1 green Plant creature token", "colors": ["green"], "power_toughness": "0/1", "card_types": ["creature"], "subtypes": ["Plant"]}}],
+        "for each opponent, create a token copy that attacks that opponent this turn if able": [{"action": "encore_create_token_copies_for_each_opponent"}],
+        "this spell costs {1} less to cast for each creature on the battlefield": [{"action": "cost_reduction", "player": "you", "object": {"kind": "this_spell"}, "amount": {"kind": "count", "object": {"selector": "all_creatures"}}}],
+        "blasphemous act deals 13 damage to each creature": [{"action": "deal_damage", "source": "self", "target": {"selector": "all_creatures"}, "amount": 13}],
+        "reveal the top five cards of your library": [{"action": "look_at_top_cards", "count": 5}],
+        "put a land card from among them onto the battlefield and the rest into your graveyard": [{"action": "move_selected_looked_at_cards", "selected_count": 1, "filter": {"card_types": ["Land"]}, "destination": "battlefield"}, {"action": "move_unselected_looked_at_cards", "destination": "graveyard"}],
+        "put another target card from your graveyard on top of your library": [{"action": "move_card", "target": {"selector": "another_target_card_in_your_graveyard"}, "destination_zone": "top_of_library"}],
+        "look at the top x cards of your library, where x is that creature's power": [{"action": "look_at_top_cards", "count": {"kind": "attribute", "object": "that_creature", "attribute": "power"}}],
+        "put one of those cards on top of your library and the rest on the bottom of your library in any order": [{"action": "move_selected_looked_at_cards", "selected_count": 1, "destination": "top_of_library"}, {"action": "move_unselected_looked_at_cards", "destination": "bottom_of_library", "order": "any"}],
+        "its controller creates a 1/1 colorless shapeshifter creature token with changeling": [{"action": "create_token", "target_player": "its_controller", "amount": 1, "token": {"raw": "1/1 colorless Shapeshifter creature token with changeling", "colors": [], "power_toughness": "1/1", "card_types": ["creature"], "subtypes": ["Shapeshifter"], "keywords": ["changeling"]}}],
+        "reveal cards from the top of your library until you reveal a creature card that shares a creature type with the sacrificed creature": [{"action": "reveal_cards_until", "source_zone": "library", "until_filter": {"card_types": ["Creature"], "shares_creature_type_with": "the_sacrificed_creature"}, "hold_revealed_as": "those_cards"}],
+        "put that card onto the battlefield and the rest on the bottom of your library in a random order": [{"action": "move_card", "target": "that_card", "destination_zone": "battlefield"}, {"action": "move_unselected_revealed_cards", "destination": "bottom_of_library", "order": "random"}],
+        "choose a creature type": [{"action": "choose_creature_type"}],
+        "vivid — create a number of 5/5 red and green elemental creature tokens equal to the number of colors among permanents you control": [{"action": "create_token", "amount": {"kind": "count_colors_among", "object": {"selector": "permanents_you_control"}}, "token": {"raw": "5/5 red and green Elemental creature token", "colors": ["red", "green"], "power_toughness": "5/5", "card_types": ["creature"], "subtypes": ["Elemental"]}}],
+        "then you gain life equal to the number of creatures you control": [{"action": "gain_life", "player": "you", "amount": {"kind": "count", "object": {"selector": "creatures_you_control"}}}],
+        "up to one target player puts all the cards from their graveyard on the bottom of their library in a random order": [{"action": "move_zone", "target": {"selector": "target_player", "optional": True}, "source_zone": "graveyard", "destination_zone": "bottom_of_library", "order": "random"}],
+        "evoke—exile a green card from your hand": [{"action": "evoke_alternate_cost", "cost": {"action": "exile_card_from_hand", "filter": {"colors_include": ["green"]}}}],
+        "for each color among permanents you control, add one mana of that color": [{"action": "add_mana", "amount": {"kind": "count_colors_among", "object": {"selector": "permanents_you_control"}}, "distribution": "each_color_among_permanents_you_control"}],
+        "this creature gets +1/+1 for each color among permanents you control": [{"action": "modify_stats", "target": "self", "power_delta": {"kind": "count_colors_among", "object": {"selector": "permanents_you_control"}}, "toughness_delta": {"kind": "count_colors_among", "object": {"selector": "permanents_you_control"}}}],
+        "its controller adds an additional one mana of any color": [{"action": "add_mana", "player": "its_controller", "amount": 1, "distribution": "any_color", "additional": True}],
+        "add two mana in any combination of colors": [{"action": "add_mana", "amount": 2, "distribution": "any_combination_of_colors"}],
+        "spend this mana only to cast elemental spells or activate abilities of elemental sources": [{"action": "mana_spend_restriction", "applies_to": "this_mana", "allowed_use": {"actions_any": [{"action": "cast_spell", "filter": {"spell_subtypes_all": ["Elemental"]}}, {"action": "activate_ability", "filter": {"source_subtypes": ["Elemental"]}}]}}],
+        "as this land enters, you may reveal an elemental card from your hand": [{"action": "as_enters_optional_reveal", "target": "self", "from_zone": "hand", "filter": {"spell_subtypes_all": ["Elemental"]}}],
+        "evoke {1}{g}": [{"action": "evoke", "cost": "{1}{G}"}],
+        "evoke {r}": [{"action": "evoke", "cost": "{R}"}],
+        "evoke {2}{u}": [{"action": "evoke", "cost": "{2}{U}"}],
+        "evoke {1}{b}": [{"action": "evoke", "cost": "{1}{B}"}],
+        "evoke {3}{u}": [{"action": "evoke", "cost": "{3}{U}"}],
+        "evoke—exile a red card from your hand": [{"action": "evoke_alternate_cost", "cost": {"action": "exile_card_from_hand", "filter": {"colors_include": ["red"]}}}],
+        "you may return target card from your graveyard to your hand": [{"action": "move_card", "target": {"selector": "target_card_in_your_graveyard"}, "destination_zone": "hand", "optional": True}],
+        "return target card from your graveyard to your hand": [{"action": "move_card", "target": {"selector": "target_card_in_your_graveyard"}, "destination_zone": "hand"}],
+        "return up to two creature cards of that type from your graveyard to the battlefield": [{"action": "move_card", "target": {"selector": "creature_cards_in_your_graveyard_of_chosen_type", "max_targets": 2, "optional_targets": True}, "destination_zone": "battlefield"}],
+        "return all creature cards of that type from your graveyard to the battlefield instead": [{"action": "move_all_matching_cards", "target": {"selector": "creature_cards_in_your_graveyard_of_chosen_type"}, "destination_zone": "battlefield", "condition": [{"this_spell_was_foretold": True}]}],
+        "foretell {5}{b}{b}": [{"action": "foretell", "cost": "{5}{B}{B}"}],
+        "put a hoofprint counter on this enchantment": [{"action": "put_counters", "counter_type": "hoofprint", "target": "self", "amount": 1}],
+        "play target elemental card from your graveyard without paying its mana cost": [{"action": "cast_from_graveyard_without_paying_mana_cost", "target": {"selector": "target_card_in_your_graveyard", "spell_subtypes_all": ["Elemental"]}}],
+        "cast target instant or sorcery card from a graveyard without paying its mana cost": [{"action": "cast_card_without_paying_mana_cost", "target": {"selector": "target_card_in_graveyard", "card_types_any": ["Instant", "Sorcery"]}}],
+        "other elemental creatures you control get +1/+1": [{"action": "modify_stats", "target": {"selector": "creatures_you_control", "subtypes": ["Elemental"], "exclude_self": True}, "power_delta": 1, "toughness_delta": 1}],
+        "add {w}{u}{b}{r}{g}": [{"action": "add_mana", "choices": [["{W}", "{U}", "{B}", "{R}", "{G}"]], "distribution": "fixed_sequence"}],
+        "this mana can't be spent to pay generic mana costs": [{"action": "mana_spend_restriction", "applies_to": "this_mana", "restriction": "cant_pay_generic_costs"}],
+        "companion — no card in your starting deck has more than one of the same mana symbol in its mana cost": [{"action": "companion_condition", "restriction": "no_duplicate_mana_symbols_in_mana_costs"}],
+        "reveal cards from the top of your library until you reveal x creature cards of the chosen type, where x is the number of creatures you control of that type": [{"action": "reveal_cards_until_count", "source_zone": "library", "count": {"kind": "count", "object": {"selector": "creatures_you_control_of_chosen_type"}}, "filter": {"card_types": ["Creature"], "matches_chosen_creature_type": True}, "hold_revealed_as": "those_cards"}],
+        "put those cards onto the battlefield": [{"action": "move_card", "target": "those_cards", "destination_zone": "battlefield"}],
+        "shuffle the rest of the revealed cards into your library": [{"action": "move_unselected_revealed_cards", "destination": "library", "shuffle": True}],
+        "it deals damage to any target equal to the number of elementals you control": [{"action": "deal_damage", "source": "self", "target": "any_target", "amount": {"kind": "count", "object": {"selector": "creatures_you_control", "subtypes": ["Elemental"]}}}],
+        "it enters with a number of additional +1/+1 counters on it equal to the number of times it's been cast from the command zone this game": [{"action": "enters_with_additional_counters", "target": "it", "counter_type": "+1/+1", "amount": {"kind": "times_cast_from_command_zone_this_game", "object": "it"}}],
+        "spend this mana only to cast an elemental spell or activate an ability of an elemental": [{"action": "mana_spend_restriction", "applies_to": "this_mana", "allowed_use": {"actions_any": [{"action": "cast_spell", "filter": {"spell_subtypes_all": ["Elemental"]}}, {"action": "activate_ability", "filter": {"source_subtypes": ["Elemental"]}}]}}],
+        "until end of turn, this land becomes a 3/3 red and green elemental creature with \"whenever this creature attacks, put a +1/+1 counter on it.\" it's still a land": [{"action": "animate_until_end_of_turn", "target": "self", "colors": ["red", "green"], "card_types": ["Land", "Creature"], "subtypes": ["Elemental"], "power": 3, "toughness": 3, "granted_abilities": [{"trigger": {"type": "attacks", "subject": "self"}, "effects": [{"action": "put_counters", "counter_type": "+1/+1", "target": "self", "amount": 1}]}]}],
+        "its controller manifests the top card of their library": [{"action": "manifest_top_card_of_library", "player": "its_controller"}],
+        "as this creature enters, choose a creature type": [{"action": "choose_creature_type", "target": "self", "timing": "as_enters"}],
+        "cast creature spells of the chosen type from the top of your library": [{"action": "allow_cast_from_top_of_library", "filter": {"card_types": ["Creature"], "matches_chosen_creature_type_of": "self"}}],
+        "draw cards equal to the greatest power among non-human creatures you control": [{"action": "draw_cards", "amount": {"kind": "greatest_power_among", "object": {"selector": "creatures_you_control", "not_subtypes": ["Human"]}}}],
+        "non-human creatures you control get +3/+3 until end of turn": [{"action": "modify_stats_until_end_of_turn", "target": {"selector": "creatures_you_control", "not_subtypes": ["Human"]}, "power_delta": 3, "toughness_delta": 3}],
+        "look at the top card of your library": [{"action": "look_at_top_cards", "count": 1}],
+        "put it onto the battlefield tapped": [{"action": "move_card", "target": "it", "destination_zone": "battlefield", "tapped": True}],
+        "spend this mana only to cast a creature spell of the chosen type or activate an ability of a creature source of the chosen type": [{"action": "mana_spend_restriction", "applies_to": "this_mana", "allowed_use": {"actions_any": [{"action": "cast_spell", "filter": {"card_types": ["Creature"], "matches_chosen_creature_type": True}}, {"action": "activate_ability", "filter": {"source_card_types": ["Creature"], "matches_chosen_creature_type": True}}]}}],
+        "spend this mana only to cast a creature spell of the chosen type": [{"action": "mana_spend_restriction", "applies_to": "this_mana", "allowed_use": {"actions_any": [{"action": "cast_spell", "filter": {"card_types": ["Creature"], "matches_chosen_creature_type": True}}]}}],
+        "as this land enters, choose a creature type": [{"action": "choose_creature_type", "target": "self", "timing": "as_enters"}],
+        "spend this mana only to cast elemental spells or activate abilities of elementals": [{"action": "mana_spend_restriction", "applies_to": "this_mana", "allowed_use": {"actions_any": [{"action": "cast_spell", "filter": {"spell_subtypes_all": ["Elemental"]}}, {"action": "activate_ability", "filter": {"source_subtypes": ["Elemental"]}}]}}],
+        "elemental permanent spells you cast from your hand gain evoke {4} as you cast them": [{"action": "grant_keyword", "target": {"kind": "spells_you_cast_from_hand", "subtypes": ["Elemental"], "permanent_spells_only": True}, "keyword": "evoke", "cost": "{4}"}],
+        "create a token that's a copy of it": [{"action": "create_token_copy", "object": "it"}],
+        "at the beginning of your next end step, sacrifice it unless you pay {w}{u}{b}{r}{g}": [{"action": "create_delayed_trigger", "trigger": {"type": "beginning_of_your_next_end_step"}, "effects": [{"action": "sacrifice", "target": "it", "condition": [{"unless_paid_mana_cost": "{W}{U}{B}{R}{G}"}]}]}],
+        "it deals 4 damage divided as you choose among any number of target creatures and/or planeswalkers": [{"action": "deal_divided_damage", "source": "it", "total_amount": 4, "target": {"selector": "target_creatures_and_or_planeswalkers", "target_count": "any"}}],
+        "put an elemental creature card from your hand onto the battlefield": [{"action": "move_card", "target": {"selector": "target_card_in_your_hand", "card_types": ["Creature"], "subtypes": ["Elemental"]}, "destination_zone": "battlefield"}],
+        "destroy target creature an opponent controls": [{"action": "destroy", "target": {"selector": "target_creature", "controller": "an_opponent"}}],
+        "cast a creature spell of the chosen type": [{"action": "cast_spell", "filter": {"card_types": ["Creature"], "matches_chosen_creature_type": True}}],
+        "its controller may draw a card if its power is greater than each other creature's power": [{"action": "draw_cards", "player": "its_controller", "amount": 1, "optional": True, "condition": [{"subject_power_gt_each_other_creature_power": True}]}],
+        "add x mana in any combination of colors, where x is the greatest power among creatures you control": [{"action": "add_mana", "amount": {"kind": "greatest_power_among", "object": {"selector": "creatures_you_control"}}, "distribution": "any_combination_of_colors"}],
+        "each player who controls a creature with power 4 or greater draws a card": [{"action": "draw_cards", "player": "each_player_who_controls_creature_with_power_gte_4", "amount": 1}],
+        "then destroy all creatures": [{"action": "destroy", "target": {"selector": "all_creatures"}}],
+        "each opponent loses x life and you gain x life, where x is the number of colors among permanents you control": [{"action": "lose_life", "target": "each_opponent", "amount": {"kind": "count_colors_among", "object": {"selector": "permanents_you_control"}}}, {"action": "gain_life", "player": "you", "amount": {"kind": "count_colors_among", "object": {"selector": "permanents_you_control"}}}],
+        "destroy target nonartifact, nonblack creature": [{"action": "destroy", "target": {"selector": "target_creature", "not_card_types": ["Artifact"], "colors_excluded": ["black"]}}],
+        "choose an opponent": [{"action": "choose_target", "target": {"selector": "opponent"}, "hold_as": "that_player"}],
+        "draw cards equal to the difference": [{"action": "draw_cards", "amount": {"kind": "difference"}}],
+        "target creature gains flying and \"whenever this creature deals combat damage to a player, draw that many cards\" until end of turn": [{"action": "grant_temporary_ability_bundle", "target": "target_creature", "duration": "until_end_of_turn", "abilities": [{"keyword": "flying"}, {"trigger": {"type": "deals_combat_damage_to_player", "subject": "self"}, "effects": [{"action": "draw_cards", "amount": {"kind": "that_much_damage"}}]}]}],
+        "add {r} or one mana of the chosen color": [{"action": "add_mana", "choices": [["{R}"], ["chosen_color"]], "distribution": "choose_one_group"}],
+        "add {g} or one mana of the chosen color": [{"action": "add_mana", "choices": [["{G}"], ["chosen_color"]], "distribution": "choose_one_group"}],
+        "add {w} or one mana of the chosen color": [{"action": "add_mana", "choices": [["{W}"], ["chosen_color"]], "distribution": "choose_one_group"}],
+        "add {u} or one mana of the chosen color": [{"action": "add_mana", "choices": [["{U}"], ["chosen_color"]], "distribution": "choose_one_group"}],
+        "add {b} or one mana of the chosen color": [{"action": "add_mana", "choices": [["{B}"], ["chosen_color"]], "distribution": "choose_one_group"}],
+        "as it enters, choose a color other than red": [{"action": "choose_color", "target": "self", "exclude_colors": ["red"], "timing": "as_enters"}],
+        "as it enters, choose a color other than green": [{"action": "choose_color", "target": "self", "exclude_colors": ["green"], "timing": "as_enters"}],
+        "as it enters, choose a color other than white": [{"action": "choose_color", "target": "self", "exclude_colors": ["white"], "timing": "as_enters"}],
+        "as it enters, choose a color other than blue": [{"action": "choose_color", "target": "self", "exclude_colors": ["blue"], "timing": "as_enters"}],
+        "as it enters, choose a color other than black": [{"action": "choose_color", "target": "self", "exclude_colors": ["black"], "timing": "as_enters"}],
+        "timeless lotus enters tapped": [{"action": "enters_tapped", "target": "self"}],
+        "target player gains 5 life": [{"action": "gain_life", "player": "target_player", "amount": 5}],
+        "put a shield counter on a creature you control": [{"action": "put_counters", "counter_type": "shield", "target": {"selector": "target_creature_you_control"}, "amount": 1}],
+        "that ability triggers an additional time": [{"action": "trigger_additional_time", "target": "that_ability"}],
+        "add x mana of any one color, where x is doc samson's power": [{"action": "add_mana", "amount": {"kind": "attribute", "object": "self", "attribute": "power"}, "distribution": "single_chosen_color"}],
+        "put that many plus one of each of those kinds of counters on that permanent instead": [{"action": "counter_replacement", "target": {"selector": "permanent_you_control"}, "modifier": {"plus_one_each_kind": True}}], 
+        "you lose 3 life": [{"action": "lose_life", "target": "you", "amount": 3}],
+        "until end of turn, creatures your opponents control lose hexproof and shroud and can't have hexproof or shroud": [{"action": "remove_and_prevent_keywords_until_end_of_turn", "target": {"selector": "creatures_your_opponents_control"}, "keywords": ["hexproof", "shroud"]}],
+        "that attacking player draws a card and you put two +1/+1 counters on a creature you control": [{"action": "draw_cards", "player": "that_attacking_player", "amount": 1}, {"action": "put_counters", "counter_type": "+1/+1", "target": {"selector": "target_creature_you_control"}, "amount": 2}],
+        "it loses \"enchant creature card in a graveyard\" and gains \"enchant creature put onto the battlefield with this aura.\" return enchanted creature card to the battlefield under your control and attach this aura to it": [{"action": "animate_reanimation_aura_setup", "target": "self", "new_enchant_clause": "creature_put_onto_battlefield_with_this_aura"}, {"action": "return_from_graveyard_to_battlefield", "target": "enchanted_creature_card", "destination": "battlefield", "controller": "you"}, {"action": "attach_aura", "source": "self", "target": "it"}],
+        "this aura enters, if it's on the battlefield, it loses \"enchant creature card in a graveyard\" and gains \"enchant creature put onto the battlefield with this aura.\" return enchanted creature card to the battlefield under your control and attach this aura to it": [{"action": "animate_reanimation_aura_setup", "target": "self", "new_enchant_clause": "creature_put_onto_battlefield_with_this_aura"}, {"action": "return_from_graveyard_to_battlefield", "target": "enchanted_creature_card", "destination": "battlefield", "controller": "you"}, {"action": "attach_aura", "source": "self", "target": "it"}],
+        "when this aura leaves the battlefield, that creature's controller sacrifices it": [{"action": "create_linked_leave_battlefield_trigger", "source": "self", "effects": [{"action": "sacrifice", "target": "that_creature", "player": "that_creatures_controller"}]}],
+        "return this card to the battlefield at the beginning of the next end step": [{"action": "create_delayed_trigger", "trigger": {"type": "beginning_of_next_end_step"}, "effects": [{"action": "move_card", "target": "self", "destination_zone": "battlefield"}]}],
+        "you draw a card and lose 1 life": [{"action": "draw_cards", "amount": 1}, {"action": "lose_life", "target": "you", "amount": 1}],
+        "that attacking player creates a tapped 2/1 white and black inkling creature token with flying that's attacking that opponent": [{"action": "create_token", "target_player": "that_attacking_player", "amount": 1, "token": {"raw": "2/1 white and black Inkling creature token with flying", "colors": ["white", "black"], "power_toughness": "2/1", "card_types": ["creature"], "subtypes": ["Inkling"], "keywords": ["flying"]}, "tapped": True, "attacking": "that_opponent"}],
+        "inklings can't attack you or planeswalkers you control": [{"action": "attack_restriction", "target": {"selector": "all_creatures", "subtypes": ["Inkling"]}, "restriction": "cant_attack_you_or_your_planeswalkers"}],
+        "this creature becomes prepared": [{"action": "becomes_prepared", "target": "self"}],
+        "each player loses 2 life": [{"action": "lose_life", "target": "each_player", "amount": 2}],
+        "creatures your opponents control get -1/-1 until end of turn": [{"action": "modify_stats_until_end_of_turn", "target": {"selector": "creatures_your_opponents_control"}, "power_delta": -1, "toughness_delta": -1}],
+        "bestow {2}{w}{w}": [{"action": "bestow", "cost": "{2}{W}{W}"}],
+        "this creature and enchanted creature each get +1/+1 for each creature you control and +1/+1 for each aura you control": [{"action": "modify_stats", "target": ["self", "enchanted_creature"], "power_delta": {"kind": "sum", "parts": [{"kind": "count", "object": {"selector": "creatures_you_control"}}, {"kind": "count", "object": {"selector": "permanents_you_control", "card_types": ["Aura"]}}]}, "toughness_delta": {"kind": "sum", "parts": [{"kind": "count", "object": {"selector": "creatures_you_control"}}, {"kind": "count", "object": {"selector": "permanents_you_control", "card_types": ["Aura"]}}]}}],
+        "return all enchantment cards from your graveyard to the battlefield": [{"action": "move_all_matching_cards", "target": {"selector": "cards_in_your_graveyard", "card_types": ["Enchantment"]}, "destination_zone": "battlefield"}],
+        "each opponent loses x life and you gain x life, where x is the number of auras you control": [{"action": "lose_life", "target": "each_opponent", "amount": {"kind": "count", "object": {"selector": "permanents_you_control", "card_types": ["Aura"]}}}, {"action": "gain_life", "player": "you", "amount": {"kind": "count", "object": {"selector": "permanents_you_control", "card_types": ["Aura"]}}}],
+        "each creature that's enchanted by an aura you control can't attack you or planeswalkers you control": [{"action": "attack_restriction", "target": {"selector": "creatures_enchanted_by_auras_you_control"}, "restriction": "cant_attack_you_or_your_planeswalkers"}],
+        "they draw a card if none of those creatures attacked you": [{"action": "draw_cards", "player": "they", "amount": 1, "condition": [{"none_of_those_creatures_attacked_you": True}]}],
+        "exile the top eight cards of your library": [{"action": "exile_top_cards_of_library", "count": 8}],
+        "you may cast an aura spell from among them without paying its mana cost": [{"action": "cast_selected_exiled_card_without_paying_mana_cost", "filter": {"card_types": ["Aura"]}, "optional": True}],
+        "it gets +x/+x until end of turn, where x is the number of auras you control": [{"action": "modify_stats_until_end_of_turn", "target": "self", "power_delta": {"kind": "count", "object": {"selector": "permanents_you_control", "card_types": ["Aura"]}}, "toughness_delta": {"kind": "count", "object": {"selector": "permanents_you_control", "card_types": ["Aura"]}}}],
+        "prevent all combat damage that would be dealt to you this turn": [{"action": "prevent_all_combat_damage_to_you_this_turn"}],
+        "for each 1 damage prevented this way, create a 2/1 white and black inkling creature token with flying": [{"action": "create_token", "amount": {"kind": "damage_prevented_this_way"}, "token": {"raw": "2/1 white and black Inkling creature token with flying", "colors": ["white", "black"], "power_toughness": "2/1", "card_types": ["creature"], "subtypes": ["Inkling"], "keywords": ["flying"]}}],
+        "you and target opponent each reveal the top card of your library": [{"action": "reveal_top_cards_of_libraries", "players": ["you", "target_opponent"], "count": 1}],
+        "you each lose life equal to the mana value of the card revealed by the other player": [{"action": "lose_life_equal_to_other_revealed_card_mana_value", "players": ["you", "target_opponent"]}],
+        "you each put the card you revealed into your hand": [{"action": "move_revealed_cards_to_hand", "players": ["you", "target_opponent"]}],
+        "tap up to one target creature and goad it": [{"action": "tap", "target": "up_to_one_target_creature", "optional_target": True}, {"action": "goad", "target": "it"}],
+        "spells you cast that target a creature cost {2} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spells", "targets_creature": True}, "amount": 2}],
+        "this creature gets +2/+2 for each aura attached to it": [{"action": "modify_stats", "target": "self", "power_delta": {"kind": "count_attached", "object": "self", "card_types": ["Aura"]}, "toughness_delta": {"kind": "count_attached", "object": "self", "card_types": ["Aura"]}}],
+        "search your library for up to three basic land cards, reveal them, put them into your hand": [{"action": "search_library", "player": "you", "filter": {"card_types": ["Land"], "supertypes": ["Basic"]}, "selected_count": {"min": 0, "max": 3}, "reveal": True, "destination": "hand"}],
+        "for each player, put a +1/+1 counter on up to one target creature that player controls": [{"action": "for_each_player_put_counters", "counter_type": "+1/+1", "target": {"selector": "up_to_one_target_creature_that_player_controls"}, "amount": 1}],
+        "each creature with one or more counters on it can't attack you or planeswalkers you control unless its controller pays {x}, where x is the number of counters on that creature": [{"action": "attack_tax", "target": {"selector": "creatures_with_counters"}, "defender": "you_or_your_planeswalkers", "cost_per_attacker": {"kind": "number_of_counters_on_that_creature"}}],
+        "its controller loses 2 life and you gain 2 life": [{"action": "lose_life", "target": "its_controller", "amount": 2}, {"action": "gain_life", "player": "you", "amount": 2}],
+        "enchantment spells you cast have affinity for auras": [{"action": "grant_affinity", "target": {"kind": "spells_you_cast", "card_types": ["Enchantment"]}, "affinity_for": {"card_types": ["Aura"]}}],
+        "each player puts a vow counter on a creature they control and sacrifices the rest": [{"action": "each_player_choose_creature_put_counter_and_sacrifice_others", "counter_type": "vow"}],
+        "each of those creatures can't attack you or planeswalkers you control for as long as it has a vow counter on it": [{"action": "attack_restriction_while_has_counter", "target": "those_creatures", "restriction": "cant_attack_you_or_your_planeswalkers", "counter_type": "vow"}],
+        "cast this card from your graveyard by paying {2}{w} rather than paying its mana cost": [{"action": "cast_from_graveyard_with_alternative_cost", "target": "self", "cost": "{2}{W}"}],
+        "exile enchanted creature": [{"action": "exile", "target": "enchanted_creature"}],
+        "draw a card for each aura you control that's attached to a creature": [{"action": "draw_cards", "amount": {"kind": "count", "object": {"selector": "auras_you_control_attached_to_creatures"}}}],
+        "enchanted creature gets +1/+1 for each aura you control that's attached to a creature": [{"action": "modify_stats", "target": "enchanted_creature", "power_delta": {"kind": "count", "object": {"selector": "auras_you_control_attached_to_creatures"}}, "toughness_delta": {"kind": "count", "object": {"selector": "auras_you_control_attached_to_creatures"}}}],
+        "create a white aura enchantment token named contract attached to target creature an opponent controls": [{"action": "create_token", "amount": 1, "token": {"raw": "white Aura enchantment token named Contract", "name": "Contract", "colors": ["white"], "card_types": ["Enchantment"], "subtypes": ["Aura"]}, "attach_to": {"selector": "target_creature", "controller": "an_opponent"}}],
+        "the token has enchant creature and \"whenever enchanted creature attacks, it gets +2/+0 until end of turn if it's attacking one of your opponents": [{"action": "grant_token_ability_bundle", "object": "last_created_token", "abilities": [{"action": "enchant_restriction", "target": "creature"}, {"trigger": {"type": "attacks", "subject": "enchanted_creature"}, "effects": [{"action": "modify_stats_until_end_of_turn", "target": "enchanted_creature", "power_delta": 2, "toughness_delta": 0, "condition": [{"enchanted_creature_attacking_one_of_your_opponents": True}]}]}]}],
+        "you and target opponent each draw three cards": [{"action": "draw_cards", "player": "you", "amount": 3}, {"action": "draw_cards", "player": "target_opponent", "amount": 3}],
+        "escape—{w}, exile two other cards from your graveyard": [{"action": "escape", "cost": "{W}", "additional_cost": {"action": "exile_cards_from_graveyard", "count": 2, "exclude_self": True}}],
+        "choose two": [{"action": "mode_selection", "choose_count": 2}],
+        "each mode must target a different player": [{"action": "mode_targeting_restriction", "restriction": "different_players"}],
+        "• target player creates a 2/1 white and black inkling creature token with flying": [{"action": "create_token", "target_player": "target_player", "amount": 1, "token": {"raw": "2/1 white and black Inkling creature token with flying", "colors": ["white", "black"], "power_toughness": "2/1", "card_types": ["creature"], "subtypes": ["Inkling"], "keywords": ["flying"]}}],
+        "• target player draws a card and loses 1 life": [{"action": "draw_cards", "player": "target_player", "amount": 1}, {"action": "lose_life", "target": "target_player", "amount": 1}],
+        "• target player puts a +1/+1 counter on each creature they control": [{"action": "put_counters", "counter_type": "+1/+1", "target": {"selector": "creatures_target_player_controls"}, "amount": 1}],
+        "attach this aura to that creature": [{"action": "attach_aura", "source": "self", "target": "that_creature"}],
+        "reveal cards from the top of your library until you reveal an aura card": [{"action": "reveal_cards_until", "source_zone": "library", "until_filter": {"card_types": ["Aura"]}, "hold_revealed_as": "those_cards"}],
+        "put that card onto the battlefield": [{"action": "move_card", "target": "that_card", "destination_zone": "battlefield"}],
+        "attach it to the token": [{"action": "attach_aura", "source": "it", "target": "the_token"}],
+        "replicate {2}": [{"action": "replicate", "cost": "{2}"}],
+        "creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you": [{"action": "attack_tax", "target": "all_creatures", "defender": "you", "cost_per_attacker": "{2}"}],
+        "cast an aura spell from among them without paying its mana cost": [{"action": "cast_selected_exiled_card_without_paying_mana_cost", "filter": {"card_types": ["Aura"]}}],
+        "then put the rest on the bottom of your library in a random order": [{"action": "move_unselected_looked_at_cards", "destination": "bottom_of_library", "order": "random"}],
+        "enchanted creature has indestructible and is goaded": [{"action": "grant_keyword", "target": "enchanted_creature", "keyword": "indestructible"}, {"action": "goad", "target": "enchanted_creature"}],
+        "its controller loses 2 life": [{"action": "lose_life", "target": "its_controller", "amount": 2}],
+        "as this land enters, you may reveal a plains or swamp card from your hand": [{"action": "as_enters_optional_reveal", "target": "self", "from_zone": "hand", "filter": {"subtypes_any": ["Plains", "Swamp"]}}],
+        "that opponent loses 3 life and you draw a card": [{"action": "lose_life", "target": "that_opponent", "amount": 3}, {"action": "draw_cards", "amount": 1}],
+        "this land enters tapped unless your opponents control eight or more lands": [{"action": "enters_tapped_unless", "target": "self", "condition": [{"opponents_control_lands_gte": 8}]}],
+        "when you spend this mana to cast your commander, scry x, where x is the number of times it's been cast from the command zone this game": [{"action": "mana_spend_trigger", "trigger": {"type": "cast_spell", "subject": "you"}, "condition": [{"cast_your_commander": True}], "effects": [{"action": "scry", "amount": {"kind": "times_cast_from_command_zone_this_game", "object": "your_commander"}}]}],
+        "this artifact deals 1 damage to you": [{"action": "deal_damage", "source": "self", "target": "you", "amount": 1}],
+        "aura spells you cast cost {1} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spells", "card_types": ["Aura"]}, "amount": 1}],
+        "exile target monocolored permanent": [{"action": "exile", "target": {"selector": "target_permanent", "colors_count_eq": 1}}],
+        "they can't be regenerated": [{"action": "cant_be_regenerated", "target": "those_creatures"}],
+        "partner with alphinaud leveilleur": [{"action": "partner_with", "partner": "Alphinaud Leveilleur"}],
+        "partner with alisaie leveilleur": [{"action": "partner_with", "partner": "Alisaie Leveilleur"}],
+        "dualcast — the second spell you cast each turn costs {2} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spell_you_cast"}, "amount": 2, "scope": "second_each_turn"}],
+        "you may put a land card from your hand onto the battlefield": [{"action": "move_card", "target": {"selector": "target_land_card_in_your_hand"}, "destination_zone": "battlefield", "optional": True}],
+        "put a land card from your hand onto the battlefield": [{"action": "move_card", "target": {"selector": "target_land_card_in_your_hand"}, "destination_zone": "battlefield"}],
+        "instant and sorcery spells you cast cost {1} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spells", "card_types_any": ["Instant", "Sorcery"]}, "amount": 1}],
+        "exile up to one target creature until this equipment leaves the battlefield": [{"action": "exile_until_source_leaves_battlefield", "target": {"selector": "target_creature"}, "source": "self", "max_targets": 1, "optional": True}],
+        "for as long as this equipment remains attached to it, that creature becomes a copy of a creature card exiled with this equipment": [{"action": "continuous_copy_while_attached", "target": "that_creature", "source": "self", "copy_from": {"selector": "creature_card_exiled_with_self"}}],
+        "job select": [{"action": "job_select"}],
+        "equipped creature is a wizard in addition to its other types and has \"whenever you cast a noncreature spell and whenever you draw your third card each turn, put a +1/+1 counter on this creature.": [{"action": "modify_characteristics", "target": "equipped_creature", "add_subtypes": ["Wizard"], "granted_abilities": [{"trigger": {"type": "cast_noncreature_spell_or_draw_third_card_each_turn", "subject": "you"}, "effects": [{"action": "put_counters", "counter_type": "+1/+1", "target": "this_creature", "amount": 1}]}]}],
+        "equipped creature is a wizard in addition to its other types and has \"whenever you cast a noncreature spell and whenever you draw your third card each turn, put a +1/+1 counter on this creature": [{"action": "modify_characteristics", "target": "equipped_creature", "add_subtypes": ["Wizard"], "granted_abilities": [{"trigger": {"type": "cast_noncreature_spell_or_draw_third_card_each_turn", "subject": "you"}, "effects": [{"action": "put_counters", "counter_type": "+1/+1", "target": "this_creature", "amount": 1}]}]}],
+        "diana — equip {2}": [{"action": "equip", "target": {"selector": "target_creature_you_control"}, "cost": "{2}", "timing": "sorcery_speed"}],
+        "creatures your opponents control enter tapped": [{"action": "enters_tapped_modifier", "target": {"selector": "creatures_your_opponents_control"}}],
+        "foretell {1}{u}": [{"action": "foretell", "cost": "{1}{U}"}],
+        "equipped creature gets +0/+2, is a wizard in addition to its other types, and has \"whenever this creature attacks, exile up to one target instant or sorcery card from defending player's graveyard": [{"action": "modify_characteristics", "target": "equipped_creature", "power_delta": 0, "toughness_delta": 2, "add_subtypes": ["Wizard"], "granted_abilities": [{"trigger": {"type": "attacks", "subject": "this_creature"}, "effects": [{"action": "exile", "target": {"selector": "target_card_in_graveyard", "card_types_any": ["Instant", "Sorcery"], "owner": "defending_player"}, "max_targets": 1, "optional": True}]}]}],
+        "copy it": [{"action": "copy_spell_or_card", "target": "it"}],
+        "you may cast the copy by paying {3} rather than paying its mana cost.": [{"action": "cast_copy_with_alternative_cost", "target": "the_copy", "cost": "{3}", "optional": True}],
+        "spirit of the whalaqee — equip {2}": [{"action": "equip", "target": {"selector": "target_creature_you_control"}, "cost": "{2}", "timing": "sorcery_speed"}],
+        "you may cast the copy by paying {3} rather than paying its mana cost": [{"action": "cast_copy_with_alternative_cost", "target": "the_copy", "cost": "{3}", "optional": True}],
+        "cast the copy by paying {3} rather than paying its mana cost": [{"action": "cast_copy_with_alternative_cost", "target": "the_copy", "cost": "{3}"}],
+        "each of its controller's opponents draws a card and gains 2 life": [{"action": "draw_cards", "player": "each_opponent_of_its_controller", "amount": 1}, {"action": "gain_life", "player": "each_opponent_of_its_controller", "amount": 2}],
+        "put a bounty counter on target creature": [{"action": "put_counters", "counter_type": "bounty", "target": "target_creature", "amount": 1}],
+        "target player draws two cards": [{"action": "draw_cards", "player": "target_player", "amount": 2}],
+        "target player draws three cards": [{"action": "draw_cards", "player": "target_player", "amount": 3}],
+        "then that player discards two cards unless they discard a land card": [{"action": "discard_cards_unless_discard_land", "player": "that_player", "discard_count": 2}],
+        "target opponent sacrifices a creature of their choice": [{"action": "sacrifice", "player": "target_opponent", "target": {"selector": "creature_target_opponent_controls", "chosen_by": "target_opponent"}, "amount": 1}],
+        "destroy all dragon creatures": [{"action": "destroy", "target": {"selector": "all_creatures", "subtypes": ["Dragon"]}}],
+        "destroy all non-dragon creatures": [{"action": "destroy", "target": {"selector": "all_creatures", "not_subtypes": ["Dragon"]}}],
+        "that player draws three cards and gains control of this artifact": [{"action": "draw_cards", "player": "that_player", "amount": 3}, {"action": "gain_control", "target": "self", "player": "that_player"}],
+        "each opponent draws a card": [{"action": "draw_cards", "player": "each_opponent", "amount": 1}],
+        "you draw a card for each opponent who drew a card this way": [{"action": "draw_cards", "player": "you", "amount": {"kind": "count_opponents_who_drew_this_way"}}],
+        "copy target activated or triggered ability you control from a creature source": [{"action": "copy_ability", "target": {"selector": "target_activated_or_triggered_ability_you_control", "source_card_types": ["Creature"]}}],
+        "cast target instant or sorcery card from your graveyard": [{"action": "cast_from_graveyard", "target": {"selector": "target_card_in_your_graveyard", "card_types_any": ["Instant", "Sorcery"]}, "optional": True}],
+        "spells you cast from your graveyard cost {2} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spells_cast_from_graveyard"}, "amount": 2}],
+        "you draw x cards and lose x life, where x is the number of your opponents who were dealt combat damage by estinien varlineau or a dragon this turn": [{"action": "draw_cards", "amount": {"kind": "count_opponents_dealt_combat_damage_by_self_or_dragons_this_turn"}}, {"action": "lose_life", "target": "you", "amount": {"kind": "count_opponents_dealt_combat_damage_by_self_or_dragons_this_turn"}}],
+        "each opponent loses x life": [{"action": "lose_life", "target": "each_opponent", "amount": "X"}],
+        "you gain life equal to the life lost this way": [{"action": "gain_life", "player": "you", "amount": {"kind": "life_lost_this_way"}}],
+        "an opponent separates those cards into two piles": [{"action": "opponent_separates_revealed_cards_into_piles", "player": "an_opponent", "pile_count": 2}],
+        "put one pile into your hand and the other into your graveyard": [{"action": "choose_pile_and_move", "destination_zone": "hand", "other_destination_zone": "graveyard"}],
+        "each opponent may sacrifice a nontoken creature of their choice": [{"action": "each_opponent_may_sacrifice", "target": {"selector": "nontoken_creature_they_control", "chosen_by": "that_opponent"}}],
+        "each opponent who doesn't loses 2 life for each instant and sorcery card in your graveyard": [{"action": "lose_life", "target": "each_opponent_who_didnt", "amount": {"kind": "multiply", "value": 2, "count": {"kind": "count", "object": {"selector": "cards_in_your_graveyard", "card_types_any": ["Instant", "Sorcery"]}}}}],
+        "return up to two target creature cards from your graveyard to your hand": [{"action": "move_card", "target": {"selector": "target_card_in_your_graveyard", "card_types": ["Creature"], "max_targets": 2, "optional_targets": True}, "destination_zone": "hand"}],
+        "you may pay x life, where x is that spell's mana value": [{"action": "pay_life", "amount": {"kind": "mana_value_of_that_spell"}, "optional": True}],
+        "destroy target nonbasic land an opponent controls": [{"action": "destroy", "target": {"selector": "target_land", "is_basic": False, "controller": "an_opponent"}}],
+        "haughty djinn's power is equal to the number of instant and sorcery cards in your graveyard": [{"action": "set_power", "target": "self", "power": {"kind": "count", "object": {"selector": "cards_in_your_graveyard", "card_types_any": ["Instant", "Sorcery"]}}}],
+        "you may cast it from your graveyard as an adventure until the end of your next turn": [{"action": "allow_cast_from_graveyard_as_adventure_until_end_of_your_next_turn", "target": "it", "optional": True}],
+        "creature tokens you control get +1/+1": [{"action": "modify_stats", "target": {"selector": "creature_tokens_you_control"}, "power_delta": 1, "toughness_delta": 1}],
+        "target creature gets +1/+0 until end of turn and can't be blocked this turn": [{"action": "modify_stats_until_end_of_turn", "target": "target_creature", "power_delta": 1, "toughness_delta": 0}, {"action": "combat_restriction_until_end_of_turn", "target": "target_creature", "restriction": "cant_be_blocked"}],
+        "for each card type among noncreature spells you've cast this turn, you may put a card of that type from among the revealed cards into your hand": [{"action": "select_revealed_cards_by_spell_types_cast_this_turn_and_put_into_hand", "optional": True}],
+        "counter target spell with mana value 3 or less": [{"action": "counter_spell", "target": {"selector": "target_spell", "mana_value_lte": 3}}],
+        "this spell costs {3} less to cast if an opponent has seven or more cards in their graveyard": [{"action": "cost_reduction", "player": "you", "object": {"kind": "this_spell"}, "amount": 3, "condition": [{"an_opponent_has_cards_in_graveyard_gte": 7}]}],
+        "flashback {1}{b}": [{"action": "flashback", "cost": "{1}{B}"}],
+        "noncreature spells you cast cost {1} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spells", "not_card_types": ["Creature"]}, "amount": 1}],
+        "as long as you've cast two or more noncreature spells this turn, lyse hext has double strike": [{"action": "grant_keyword", "target": "self", "keyword": "double_strike", "condition": [{"you_cast_noncreature_spells_this_turn_gte": 2}]}],
+        "put one of them into your hand": [{"action": "move_selected_looked_at_cards", "selected_count": 1, "destination": "hand"}],
+        "then choose an opponent": [{"action": "choose_target", "target": {"selector": "opponent"}, "hold_as": "that_opponent"}],
+        "they put one on the bottom of your library": [{"action": "chosen_player_puts_selected_looked_at_card_on_bottom_of_your_library", "player": "they", "selected_count": 1}],
+        "then they put one on the bottom of your library": [{"action": "chosen_player_puts_selected_looked_at_card_on_bottom_of_your_library", "player": "they", "selected_count": 1}],
+        "then you put one into your hand": [{"action": "move_selected_looked_at_cards", "selected_count": 1, "destination": "hand"}],
+        "put the other into your hand": [{"action": "move_remaining_looked_at_card_to_hand"}],
+        "flashback {7}{u}{u}": [{"action": "flashback", "cost": "{7}{U}{U}"}],
+        "put an hour counter on this artifact": [{"action": "put_counters", "counter_type": "hour", "target": "self", "amount": 1}],
+        "shuffle your hand and graveyard into your library": [{"action": "shuffle_hand_and_graveyard_into_library", "player": "you"}],
+        "exile this artifact": [{"action": "exile", "target": "self"}],
+        "for as long as it remains exiled, it has \"you may cast this card from exile as long as you've cast another spell this turn.": [{"action": "grant_exiled_card_cast_permission_if_cast_another_spell_this_turn", "target": "it"}],
+        "for as long as it remains exiled, it has \"you may cast this card from exile as long as you've cast another spell this turn": [{"action": "grant_exiled_card_cast_permission_if_cast_another_spell_this_turn", "target": "it"}],
+        "for as long as it remains exiled, it has \"you may cast this card from exile as long as you've cast another spell this turn.\"": [{"action": "grant_exiled_card_cast_permission_if_cast_another_spell_this_turn", "target": "it"}],
+        "the second spell you cast each turn costs {1} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spell_you_cast"}, "amount": 1, "scope": "second_each_turn"}],
+        "put it on the bottom of its owner's library": [{"action": "move_card", "target": "it", "destination_zone": "bottom_of_library", "owner": "its_owner"}],
+        "return up to one target nonland permanent to its owner's hand": [{"action": "move_card", "target": {"selector": "target_permanent", "not_card_types": ["Land"]}, "destination_zone": "hand", "owner": "its_owner", "max_targets": 1, "optional": True}],
+        "remove enchanted creature from combat": [{"action": "remove_from_combat", "target": "enchanted_creature"}],
+        "then draw a card for each tapped creature its controller controls": [{"action": "draw_cards", "amount": {"kind": "count", "object": {"selector": "tapped_creatures_controlled_by_its_controller"}}}],
+        "enchanted creature loses all abilities and can't attack or block": [{"action": "set_characteristics", "target": "enchanted_creature", "remove_all_abilities": True, "cant_attack": True, "cant_block": True}],
+        "you may play lands and cast spells from the top of your library": [{"action": "play_lands_and_cast_spells_from_top_of_library", "optional": True}],
+        "once during each of your turns, you may cast a spell from your hand or the top of your library without paying its mana cost": [{"action": "free_cast_once_each_of_your_turns", "source_zones_any": ["hand", "top_of_library"]}],
+        "each opponent who lost life this turn sacrifices a creature with the greatest power among creatures they control": [{"action": "each_opponent_who_lost_life_this_turn_sacrifices_creature_with_greatest_power"}],
+        "draw two cards instead": [{"action": "replacement_effect", "replacement": "draw_two_instead"}],
+        "you gain twice that much life instead": [{"action": "replacement_effect", "replacement": "gain_twice_that_much_life_instead"}],
+        "cast target instant or sorcery card from a graveyard, and mana of any type can be spent to cast that spell": [{"action": "cast_card_from_graveyard_with_any_mana_type", "target": {"selector": "target_card_in_graveyard", "card_types_any": ["Instant", "Sorcery"]}, "optional": True}],
+        "put a soul counter on this equipment for each player who lost life this turn": [{"action": "put_counters", "counter_type": "soul", "target": "self", "amount": {"kind": "count_players_who_lost_life_this_turn"}}],
+        "equipped creature gets +1/+1 for each soul counter on this equipment and is an assassin in addition to its other types": [{"action": "modify_characteristics", "target": "equipped_creature", "power_delta": {"kind": "count_counters_on", "counter_type": "soul", "object": "self"}, "toughness_delta": {"kind": "count_counters_on", "counter_type": "soul", "object": "self"}, "add_subtypes": ["Assassin"]}],
+        "death sickle — equip {2}": [{"action": "equip", "target": {"selector": "target_creature_you_control"}, "cost": "{2}", "timing": "sorcery_speed"}],
+        "you have no maximum hand size": [{"action": "no_maximum_hand_size", "player": "you"}],
+        "create a token that's a copy of target artifact, creature, or land": [{"action": "create_token_copy", "object": {"selector": "target_permanent", "card_types_any": ["Artifact", "Creature", "Land"]}}],
+        "tap target nonland permanent": [{"action": "tap", "target": {"selector": "target_permanent", "not_card_types": ["Land"]}}],
+        "kicker {5}": [{"action": "kicker", "cost": "{5}"}],
+        "create a token that's a copy of target creature": [{"action": "create_token_copy", "object": "target_creature"}],
+        "create five of those tokens instead": [{"action": "replacement_effect", "replacement": "create_five_of_those_tokens_instead"}],
+        "equipped creature gets +1/+0, has \"whenever this creature attacks, untap target attacking creature,\" and is a cleric in addition to its other types": [{"action": "modify_characteristics", "target": "equipped_creature", "power_delta": 1, "toughness_delta": 0, "add_subtypes": ["Cleric"], "granted_abilities": [{"trigger": {"type": "attacks", "subject": "this_creature"}, "effects": [{"action": "untap", "target": {"selector": "target_attacking_creature"}}]}]}],
+        "hagneia — equip {3}": [{"action": "equip", "target": {"selector": "target_creature_you_control"}, "cost": "{3}", "timing": "sorcery_speed"}],
+        "you may pay 4 life rather than pay this spell's mana cost": [{"action": "alternative_cost", "cost": {"action": "pay_life", "amount": 4}, "optional": True}],
+        "counter target activated or triggered ability": [{"action": "counter_ability", "target": {"selector": "target_activated_or_triggered_ability"}}],
+        "target player draws a card": [{"action": "draw_cards", "player": "target_player", "amount": 1}],
+        "whenever you cast a noncreature spell this turn, create a token that's a copy of a non-saga token you control": [{"action": "create_delayed_trigger", "trigger": {"type": "cast_spell", "subject": "you"}, "condition": [{"spell_types_excluded": ["Creature"]}, {"turn_scope": "this_turn"}], "effects": [{"action": "create_token_copy", "object": {"selector": "non_saga_token_you_control"}}]}],
+        "choose target spell": [{"action": "choose_target", "target": {"selector": "target_spell"}, "hold_as": "the_chosen_spell"}],
+        "counter the chosen spell unless its controller pays {1} for each card in your graveyard": [{"action": "counter_spell_unless_pay", "target": "the_chosen_spell", "cost": {"base_per_count": "{1}", "count_object": {"selector": "cards_in_your_graveyard"}}}],
+        "equipped creature has hexproof and haste": [{"action": "grant_keywords", "target": "equipped_creature", "keywords": ["hexproof", "haste"]}],
+        "each other player discards a card": [{"action": "discard_cards", "player": "each_other_player", "amount": 1}],
+        "you draw a card for each card discarded this way": [{"action": "draw_cards", "player": "you", "amount": {"kind": "count_cards_discarded_this_way"}}],
+        "you draw a card and target opponent may draw a card": [{"action": "draw_cards", "player": "you", "amount": 1}, {"action": "draw_cards", "player": "target_opponent", "amount": 1, "optional": True}],
+        "when you next cast an instant or sorcery spell this turn, copy it for each time you've cast your commander from the command zone this game": [{"action": "create_delayed_trigger", "trigger": {"type": "cast_spell", "subject": "you"}, "condition": [{"spell_types_any": ["Instant", "Sorcery"]}, {"next_time_this_turn": True}], "effects": [{"action": "copy_spell", "target": "it", "amount": {"kind": "times_cast_from_command_zone_this_game", "object": "your_commander"}}]}],
+        "you may choose new targets for the copies": [{"action": "allow_new_targets_for_copies"}],
+        "choose new targets for the copies": [{"action": "allow_new_targets_for_copies"}],
+        "add {u}{u}, {u}{b}, or {b}{b}": [{"action": "add_mana", "choices": [["{U}", "{U}"], ["{U}", "{B}"], ["{B}", "{B}"]], "distribution": "choose_one_group"}],
+        "put a page counter on this artifact": [{"action": "put_counters", "counter_type": "page", "target": "self", "amount": 1}],
+        "this artifact enters with a page counter on it": [{"action": "enters_with_counters", "target": "self", "counter_type": "page", "amount": 1}],
+        "cast target instant card from your graveyard without paying its mana cost": [{"action": "cast_from_graveyard_without_paying_mana_cost", "target": {"selector": "target_card_in_your_graveyard", "card_types": ["Instant"]}, "optional": True}],
+        "prevent all damage that would be dealt to you this turn": [{"action": "prevent_all_damage_to_you_this_turn"}],
+        "foretell {2}{w}": [{"action": "foretell", "cost": "{2}{W}"}],
+        "you may exile it face down": [{"action": "exile_face_down", "target": "it", "optional": True}],
+        "until end of turn, you may play cards exiled with urianger augurelt": [{"action": "play_cards_exiled_with_source_until_end_of_turn", "source": "self"}],
+        "spells you cast this way cost {2} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spells_cast_this_way"}, "amount": 2}],
+        "exile all creatures with power 4 or greater": [{"action": "exile", "target": {"selector": "all_creatures", "power_gte": 4}}],
+        "then discard a card unless you waterbend {2}": [{"action": "discard_card_unless_paid_mana_cost", "cost": "{2}"}],
+        "target player sacrifices an attacking creature of their choice": [{"action": "sacrifice", "player": "target_player", "target": {"selector": "attacking_creature_target_player_controls", "chosen_by": "target_player"}, "amount": 1}],
+        "xande gets +1/+1 for each noncreature, nonland card in your graveyard": [{"action": "modify_stats", "target": "self", "power_delta": {"kind": "count", "object": {"selector": "cards_in_your_graveyard", "not_card_types": ["Creature", "Land"]}}, "toughness_delta": {"kind": "count", "object": {"selector": "cards_in_your_graveyard", "not_card_types": ["Creature", "Land"]}}}],
+        "search your library for up to two basic plains cards, reveal them, put them into your hand": [{"action": "search_library", "player": "you", "filter": {"supertypes": ["Basic"], "subtypes_any": ["Plains"]}, "selected_count": {"min": 0, "max": 2}, "reveal": True, "destination": "hand"}],
+        "exile target nonland permanent an opponent controls until this enchantment leaves the battlefield": [{"action": "exile_until_source_leaves_battlefield", "target": {"selector": "target_permanent", "not_card_types": ["Land"], "controller": "an_opponent"}, "source": "self"}],
+        "equipped creature is a wizard in addition to its other types and has \"whenever you cast a noncreature spell and whenever you draw your third card each turn, put a +1/+1 counter on this creature.\"": [{"action": "modify_characteristics", "target": "equipped_creature", "add_subtypes": ["Wizard"], "granted_abilities": [{"trigger": {"type": "cast_noncreature_spell_or_draw_third_card_each_turn", "subject": "you"}, "effects": [{"action": "put_counters", "counter_type": "+1/+1", "target": "this_creature", "amount": 1}]}]}],
+        "you may cast the copy by paying {3} rather than paying its mana cost": [{"action": "cast_copy_with_alternative_cost", "target": "the_copy", "cost": "{3}", "optional": True}],
+        "those creatures get +4/+4 until end of turn": [{"action": "modify_stats_until_end_of_turn", "target": "those_creatures", "power_delta": 4, "toughness_delta": 4}],
+        "as this land enters, you may reveal an island or swamp card from your hand": [{"action": "as_enters_optional_reveal", "target": "self", "from_zone": "hand", "filter": {"subtypes_any": ["Island", "Swamp"]}}],
+        "add three mana of any one color": [{"action": "add_mana", "amount": 3, "distribution": "single_chosen_color"}],
+        "equipped creature gets +2/+2, has lifelink and \"other commanders you control get +2/+2 and have lifelink,\" and is a performer in addition to its other types": [{"action": "modify_characteristics", "target": "equipped_creature", "power_delta": 2, "toughness_delta": 2, "keywords": ["lifelink"], "add_subtypes": ["Performer"], "granted_abilities": [{"action": "modify_stats", "target": {"selector": "commanders_you_control", "exclude_self": True}, "power_delta": 2, "toughness_delta": 2, "keywords": ["lifelink"]}]}],
+        "krishna — equip {3}": [{"action": "equip", "target": {"selector": "target_creature_you_control"}, "cost": "{3}", "timing": "sorcery_speed"}],
+        "that land's controller may search their library for a basic land card, put it onto the battlefield": [{"action": "search_library", "player": "that_lands_controller", "filter": {"card_types": ["Land"], "supertypes": ["Basic"]}, "destination": "battlefield", "optional": True}],
+        "search your library for a basic land card, put it onto the battlefield": [{"action": "search_library", "player": "you", "filter": {"card_types": ["Land"], "supertypes": ["Basic"]}, "destination": "battlefield", "optional": True}],
+        "this land enters tapped unless you control an island or a swamp": [{"action": "enters_tapped_unless", "target": "self", "condition": [{"you_control_subtypes_any": ["Island", "Swamp"]}]}],
+        "enchanted creature is a black dragon with base power and toughness 4/2, has flying and deathtouch, and is goaded": [{"action": "set_characteristics", "target": "enchanted_creature", "colors": ["black"], "card_types": ["Creature"], "subtypes": ["Dragon"], "base_power": 4, "base_toughness": 2, "keywords": ["flying", "deathtouch"], "goaded": True}],
+        "pay x life, where x is that spell's mana value": [{"action": "pay_life", "amount": {"kind": "mana_value_of_that_spell"}}],
+        "cast it from your graveyard as an adventure until the end of your next turn": [{"action": "allow_cast_from_graveyard_as_adventure_until_end_of_your_next_turn", "target": "it"}],
+        "return target creature card with mana value equal to that spell's mana value from your graveyard to your hand": [{"action": "move_card", "target": {"selector": "target_card_in_your_graveyard", "card_types": ["Creature"], "mana_value_eq": {"kind": "mana_value_of_that_spell"}}, "destination_zone": "hand", "optional": True}],
+        "they put one on the bottom of your library": [{"action": "chosen_player_puts_selected_looked_at_card_on_bottom_of_your_library", "player": "they", "selected_count": 1}],
+        "put a lore counter on this enchantment": [{"action": "put_counters", "counter_type": "lore", "target": "self", "amount": 1}],
+        "play lands and cast spells from the top of your library": [{"action": "play_lands_and_cast_spells_from_top_of_library"}],
+        "put it into its owner's hand instead of into that player's graveyard": [{"action": "replacement_effect", "replacement": "return_to_owners_hand_instead_of_graveyard", "target": "it"}],
+        "enchanted creature is a turtle with base power and toughness 0/1": [{"action": "set_characteristics", "target": "enchanted_creature", "card_types": ["Creature"], "subtypes": ["Turtle"], "base_power": 0, "base_toughness": 1}],
+        "it can't attack and loses all abilities": [{"action": "set_characteristics", "target": "enchanted_creature", "cant_attack": True, "remove_all_abilities": True}],
+        "pay 4 life rather than pay this spell's mana cost": [{"action": "alternative_cost", "cost": {"action": "pay_life", "amount": 4}}],
+        "create a token that's a copy of target creature you control": [{"action": "create_token_copy", "object": {"selector": "target_creature_you_control"}}],
+        "another target legendary permanent you control gains indestructible for as long as you control thancred waters": [{"action": "grant_keyword_while_condition", "target": {"selector": "another_target_legendary_permanent_you_control"}, "keyword": "indestructible", "condition": [{"you_control_self": True}]}],
+        "exile it face down": [{"action": "exile_face_down", "target": "it"}],
+        "each creature you control with a +1/+1 counter on it has trample": [{"action": "grant_keyword", "target": {"selector": "creatures_you_control", "has_counters": [{ "counter_type": "+1/+1" }]}, "keyword": "trample"}],
+        "the owner of target spell, nonland permanent, or card in a graveyard puts it on their choice of the top or bottom of their library": [{"action": "move_card", "target": {"selector": "target_object", "any_of": [{"kind": "spell"}, {"kind": "permanent", "not_card_types": ["Land"]}, {"kind": "card_in_graveyard"}]}, "destination_zone": "top_or_bottom_of_library_of_its_owner", "chooser": "its_owner"}],
+        "multikicker {2}": [{"action": "multikicker", "cost": "{2}"}],
+        "this artifact enters with a charge counter on it for each time it was kicked": [{"action": "enters_with_counters_per_times_kicked", "target": "self", "counter_type": "charge", "amount_per_kick": 1}],
+        "add {c} for each charge counter on this artifact": [{"action": "add_mana", "mana": "{C}", "amount": {"kind": "count_counters_on", "counter_type": "charge", "object": "self"}}],
+        "choose target commander that entered this turn": [{"action": "choose_target", "target": {"selector": "target_commander", "entered_this_turn": True}, "hold_as": "it"}],
+        "put a +1/+1 counter on it if it's a creature and a loyalty counter on it if it's a planeswalker": [{"action": "conditional_put_counters", "target": "it", "branches": [{"condition": [{"target_card_types_include": ["Creature"]}], "counter_type": "+1/+1", "amount": 1}, {"condition": [{"target_card_types_include": ["Planeswalker"]}], "counter_type": "loyalty", "amount": 1}]}],
+        "move any number of +1/+1 counters from this creature onto other creatures": [{"action": "move_counters", "source": "self", "counter_type": "+1/+1", "destination": {"selector": "other_creatures"}, "amount": "any"}],
+        "choose target creature you control": [{"action": "choose_target", "target": {"selector": "target_creature_you_control"}, "hold_as": "that_creature"}],
+        "prevent that damage and put that many +1/+1 counters on it": [{"action": "prevent_damage_and_put_counters", "target": "that_creature", "counter_type": "+1/+1", "amount": {"kind": "prevented_damage"}}],
+        "its controller creates a 3/3 green elephant creature token": [{"action": "create_token", "target_player": "its_controller", "amount": 1, "token": {"raw": "3/3 green Elephant creature token", "colors": ["green"], "power_toughness": "3/3", "card_types": ["creature"], "subtypes": ["Elephant"]}}],
+        "add {g} for each +1/+1 counter on this creature": [{"action": "add_mana", "mana": "{G}", "amount": {"kind": "count_counters_on", "counter_type": "+1/+1", "object": "self"}}],
+        "that many plus one +1/+1 counters are put on it instead": [{"action": "counter_replacement", "target": {"selector": "creature_you_control"}, "counter_type": "+1/+1", "modifier": {"add": 1}}],
+        "add one mana of any type that a land you control could produce": [{"action": "add_mana", "amount": 1, "distribution": "any_type_land_you_control_could_produce"}],
+        "add three mana of that type instead": [{"action": "mana_replacement", "amount": 3, "distribution": "same_type_as_previous_mana"}],
+        "adapt 3": [{"action": "adapt", "amount": 3}],
+        "each creature you control that you've put one or more +1/+1 counters on this turn has hexproof": [{"action": "grant_keyword", "target": {"selector": "creatures_you_control", "received_counter_type_this_turn": "+1/+1"}, "keyword": "hexproof"}],
+        "then you may have kimahri become a copy of that creature, except its name is kimahri, valiant guardian and it has vigilance and this ability": [{"action": "become_copy", "target": "self", "object": "that_creature", "optional": True, "except": {"name": "Kimahri, Valiant Guardian", "keywords": ["vigilance"], "retain_this_ability": True}}],
+        "put a stun counter on that creature": [{"action": "put_counters", "counter_type": "stun", "target": "that_creature", "amount": 1}],
+        "put a number of +1/+1 counters equal to maester seymour's power on another target creature you control": [{"action": "put_counters", "counter_type": "+1/+1", "target": {"selector": "another_target_creature_you_control"}, "amount": {"kind": "attribute", "object": "self", "attribute": "power"}}],
+        "monstrosity x, where x is the number of counters among creatures you control": [{"action": "monstrosity", "amount": {"kind": "count_all_counters_among", "object": {"selector": "creatures_you_control"}}}],
+        "remove a counter from a creature you control": [{"action": "remove_counter", "target": {"selector": "creature_you_control"}, "amount": 1}],
+        "for each kind of counter on target permanent or player, give that permanent or player another counter of that kind": [{"action": "duplicate_each_kind_of_counter", "target": {"selector": "target_permanent_or_player"}}],
+        "put a shield counter on each of up to three target creatures": [{"action": "put_counters", "counter_type": "shield", "target": {"selector": "target_creatures", "max_targets": 3, "optional_targets": True}, "amount": 1}],
+        "put those counters on target permanent you control": [{"action": "put_transferred_counters", "target": {"selector": "target_permanent_you_control"}, "source": "previous_object"}],
+        "move any number of counters from target permanent you control onto a second target permanent you control": [{"action": "move_counters", "source": {"selector": "target_permanent_you_control"}, "destination": {"selector": "second_target_permanent_you_control"}, "amount": "any"}],
+        "move a counter from target permanent you control onto a second target permanent": [{"action": "move_counter", "source": {"selector": "target_permanent_you_control"}, "destination": {"selector": "second_target_permanent"}, "counter_count": 1}],
+        "until end of turn, that creature can't be blocked by creatures your opponents control": [{"action": "combat_restriction_until_end_of_turn", "target": "that_creature", "restriction": "cant_be_blocked_by_creatures_controlled_by", "controller": "your_opponents"}],
+        "put that card onto the battlefield tapped": [{"action": "move_card", "target": "that_card", "destination_zone": "battlefield", "tapped": True}],
+        "if an opponent controls more lands than you, you may put that card onto the battlefield tapped": [{"action": "move_card", "target": "that_card", "destination_zone": "battlefield", "tapped": True, "optional": True, "condition": [{"opponent_controls_more_lands_than_you": True}]}],
+        "if you don't put the card onto the battlefield, put it into your hand": [{"action": "move_card", "target": "that_card", "destination_zone": "hand", "condition": [{"not": {"moved_that_card_to_battlefield": True}}]}],
+        "put its counters on target creature you control": [{"action": "move_all_counters", "source": "self", "destination": {"selector": "target_creature_you_control"}}],
+        "shuffle this card into its owner's library": [{"action": "move_card", "target": "self", "destination_zone": "library", "owner": "its_owner", "shuffle_into_library": True}],
+        "as sin enters, remove all counters from any number of artifacts, creatures, and enchantments": [{"action": "remove_all_counters_from_selected", "target": {"selector": "artifacts_creatures_and_enchantments", "target_count": "any"}, "store_removed_counter_total_as": "x"}],
+        "sin enters with x +1/+1 counters on it, where x is twice the number of counters removed this way": [{"action": "enters_with_counters", "target": "self", "counter_type": "+1/+1", "amount": {"kind": "twice_removed_counter_total"}}],
+        "aerospark — exile target creature an opponent controls until this saga leaves the battlefield": [{"action": "exile_until_source_leaves_battlefield", "target": {"selector": "target_creature", "controller": "an_opponent"}, "source": "self"}],
+        "combine powers! — put three +1/+1 counters on target creature": [{"action": "put_counters", "counter_type": "+1/+1", "target": "target_creature", "amount": 3}],
+        "defense! — put a shield counter on target creature": [{"action": "put_counters", "counter_type": "shield", "target": "target_creature", "amount": 1}],
+        "fight! — this creature fights up to one target creature an opponent controls": [{"action": "fight", "source": "self", "target": {"selector": "up_to_one_target_creature", "controller": "an_opponent"}, "optional_target": True}],
+        "sonic wings — each opponent chooses a creature with the greatest mana value among creatures they control": [{"action": "each_opponent_chooses_creature_with_greatest_mana_value", "hold_as": "those_creatures"}],
+        "return those creatures to their owners' hands": [{"action": "move_card", "target": "those_creatures", "destination_zone": "hand", "owner": "their_owners"}],
+        "when that creature dies this turn, return that card to its owner's hand": [{"action": "create_delayed_trigger", "trigger": {"type": "dies_this_turn", "subject": "that_creature"}, "effects": [{"action": "move_card", "target": "that_card", "destination_zone": "hand", "owner": "its_owner"}]}],
+        "support x": [{"action": "support", "amount": "X"}],
+        "support 2": [{"action": "support", "amount": 2}],
+        "proliferate x times, where x is the number of nontoken creatures you control that entered this turn": [{"action": "proliferate_times", "amount": {"kind": "count", "object": {"selector": "nontoken_creatures_you_control", "entered_this_turn": True}}}],
+        "each other nontoken creature you control enters with an additional +1/+1 counter on it": [{"action": "enters_with_additional_counters", "target": {"selector": "other_nontoken_creatures_you_control"}, "counter_type": "+1/+1", "amount": 1}],
+        "destroy up to one target artifact that player controls and put a +1/+1 counter on wakka": [{"action": "destroy", "target": {"selector": "target_artifact", "controller": "that_player"}, "max_targets": 1, "optional": True}, {"action": "put_counters", "counter_type": "+1/+1", "target": "self", "amount": 1}],
+        "put a quest counter on this enchantment": [{"action": "put_counters", "counter_type": "quest", "target": "self", "amount": 1}],
+        "fear gas — wraith can't be blocked": [{"action": "combat_restriction", "target": "self", "restriction": "cant_be_blocked"}],
+        "exile target creature defending player controls with power less than auron's power until auron leaves the battlefield": [{"action": "exile_until_source_leaves_battlefield", "target": {"selector": "target_creature", "controller": "defending_player", "power_lt": {"kind": "attribute", "object": "self", "attribute": "power"}}, "source": "self"}],
+        "until end of turn, target creature gains \"whenever this creature deals combat damage to a player, draw a card for each kind of counter on it\" and it can't be blocked this turn": [{"action": "grant_temporary_ability_bundle", "target": "target_creature", "duration": "until_end_of_turn", "abilities": [{"trigger": {"type": "deals_combat_damage_to_player", "subject": "self"}, "effects": [{"action": "draw_cards", "amount": {"kind": "count_kinds_of_counters_on", "object": "self"}}]}, {"action": "combat_restriction_until_end_of_turn", "target": "self", "restriction": "cant_be_blocked"}]}],
+        "escalate—tap an untapped creature you control": [{"action": "escalate", "additional_cost": {"action": "tap", "target": {"selector": "untapped_creature_you_control"}}}],
+        "choose target creature attacking you": [{"action": "choose_target", "target": {"selector": "target_creature", "attacking": "you"}, "hold_as": "that_creature"}],
+        "its controller may search their library for a basic land card, put that card onto the battlefield tapped": [{"action": "search_library", "player": "its_controller", "filter": {"card_types": ["Land"], "supertypes": ["Basic"]}, "destination": "battlefield", "tapped": True, "optional": True}],
+        "move a counter from target creature an opponent controls onto target creature you control": [{"action": "move_counter", "source": {"selector": "target_creature", "controller": "an_opponent"}, "destination": {"selector": "target_creature_you_control"}, "counter_count": 1}],
+        "tap up to one target creature and put a stun counter on it": [{"action": "tap", "target": "up_to_one_target_creature", "optional_target": True}, {"action": "put_counters", "counter_type": "stun", "target": "it", "amount": 1}],
+        "search your library for a forest card, put it onto the battlefield": [{"action": "search_library", "player": "you", "filter": {"subtypes_any": ["Forest"]}, "destination": "battlefield"}],
+        "choose target creature with a counter on it": [{"action": "choose_target", "target": {"selector": "target_creature", "has_any_counter": True}, "hold_as": "that_creature"}],
+        "put that number of +1/+1 counters on target creature": [{"action": "put_counters", "counter_type": "+1/+1", "target": "target_creature", "amount": {"kind": "that_number"}}],
+        "when you next cast a creature spell this turn, that creature enters with two additional +1/+1 counters on it": [{"action": "create_delayed_trigger", "trigger": {"type": "cast_spell", "subject": "you"}, "condition": [{"spell_types_any": ["Creature"]}, {"next_time_this_turn": True}], "effects": [{"action": "enters_with_additional_counters", "target": "that_creature", "counter_type": "+1/+1", "amount": 2}]}],
+        "enchantment spells you cast cost {1} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spells", "card_types": ["Enchantment"]}, "amount": 1}],
+        "unlock costs you pay cost {1} less": [{"action": "cost_reduction", "player": "you", "object": {"kind": "unlock_costs"}, "amount": 1}],
+        "commander creatures you own have \"creature tokens you control get +2/+2": [{"action": "grant_static_ability", "target": {"selector": "commander_creatures_you_own"}, "ability": {"action": "modify_stats", "target": {"selector": "creature_tokens_you_control"}, "power_delta": 2, "toughness_delta": 2}}],
+        "return up to two target artifact and/or enchantment cards from your graveyard to your hand": [{"action": "move_card", "target": {"selector": "target_card_in_your_graveyard", "card_types_any": ["Artifact", "Enchantment"]}, "destination_zone": "hand", "max_targets": 2, "optional": True}],
+        "exile another target creature you control": [{"action": "exile", "target": {"selector": "another_target_creature_you_control"}}],
+        "put a charge counter on this equipment": [{"action": "put_counters", "counter_type": "charge", "target": "self", "amount": 1}],
+        "white spells you cast cost {1} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spells", "colors_include": ["white"]}, "amount": 1}],
+        "blue spells you cast cost {1} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spells", "colors_include": ["blue"]}, "amount": 1}],
+        "creatures you control with flying get +2/+2 until end of turn": [{"action": "modify_stats_until_end_of_turn", "target": {"selector": "creatures_you_control", "keywords": ["flying"]}, "power_delta": 2, "toughness_delta": 2}],
+        "there is an additional beginning phase after this phase": [{"action": "add_beginning_phase_after_this_phase"}],
+        "exile target nonland permanent an opponent controls until this aura leaves the battlefield": [{"action": "exile_until_source_leaves_battlefield", "target": {"selector": "target_permanent", "not_card_types": ["Land"], "controller": "an_opponent"}, "source": "self"}],
+        "enchanted creature gets +1/+0 and has lifelink and ward {2}": [{"action": "modify_stats", "target": "enchanted_creature", "power_delta": 1, "toughness_delta": 0, "keywords": ["lifelink"], "granted_abilities": [{"keyword": "ward", "amount": 2}]}],
+        "destroy target creature that dealt damage to you this turn": [{"action": "destroy", "target": {"selector": "target_creature", "dealt_damage_to": "you", "turn_scope": "this_turn"}}],
+        "counter target noncreature spell": [{"action": "counter_spell", "target": {"selector": "target_spell", "not_card_types": ["Creature"]}}],
+        "counter target spell unless its controller pays {2} plus an additional {1} for each faerie you control": [{"action": "counter_spell_unless_pay", "target": {"selector": "target_spell"}, "cost": {"base": "{2}", "additional_per_count": "{1}", "count_object": {"selector": "creatures_you_control", "subtypes": ["Faerie"]}}}],
+        "choose creatures you control one at a time until each creature you control has been chosen": [{"action": "ordered_choose_creatures_you_control"}],
+        "each of those creatures gets +1/+1 until end of turn for each creature chosen before it": [{"action": "ordered_choice_progressive_stat_bonus_until_end_of_turn", "target": "those_creatures", "power_delta_per_previous_choice": 1, "toughness_delta_per_previous_choice": 1}],
+        "artifact and enchantment spells you cast cost {1} less to cast": [{"action": "cost_reduction", "player": "you", "object": {"kind": "spells", "card_types_any": ["Artifact", "Enchantment"]}, "amount": 1}],
+        "counter target spell unless its controller pays {x}": [{"action": "counter_spell_unless_pay", "target": {"selector": "target_spell"}, "cost": "{X}"}],
+        "exile it instead of putting it into its owner's graveyard": [{"action": "replacement_effect", "replacement": "exile_instead_of_graveyard", "target": "it"}],
+        "target opponent creates the void, a legendary 5/5 black horror villain creature token with flying, indestructible, and \"the void attacks each combat if able": [{"action": "create_token", "target_player": "target_opponent", "amount": 1, "token": {"raw": "The Void", "name": "The Void", "colors": ["black"], "power_toughness": "5/5", "supertypes": ["Legendary"], "card_types": ["Creature"], "subtypes": ["Horror", "Villain"], "keywords": ["flying", "indestructible"], "granted_abilities": [{"action": "force_attack_each_combat_if_able", "target": "self"}]}}],
+        "• technopathy — draw a card": [{"action": "draw_cards", "amount": 1}],
+        "untap up to three lands": [{"action": "untap", "target": {"selector": "lands", "max_targets": 3, "optional_targets": True}}],
         "exile up to one other target artifact or enchantment": [{"action": "exile", "target": {"selector": "target_permanent", "card_types_any": ["Artifact", "Enchantment"], "exclude_previous_target": True}, "max_targets": 1, "optional": True}],
         "choose one": [{"action": "mode_selection", "choose_count": 1}],
         "choose both instead": [{"action": "mode_selection_modifier", "choose_count": 2, "condition": [{"you_control_commander": True}], "optional": True}],
