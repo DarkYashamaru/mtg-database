@@ -1,0 +1,1 @@
+23f01235-b5a5-4b2e-a90b-b49fc0c7b18d|Mirror-Shield Hoplite|Vigilance Whenever a creature you control becomes the target of a backup ability, copy that ability. You may choose new targets for the copy. This ability triggers only once each turn.

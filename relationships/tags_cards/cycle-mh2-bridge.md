@@ -1,0 +1,10 @@
+2065cada-4078-41c4-9e06-2460d2a2e8ee|Darkmoss Bridge|This land enters tapped. Indestructible {T}: Add {B} or {G}.
+44b83535-fdbf-4307-bf53-ca20470a768d|Drossforge Bridge|This land enters tapped. Indestructible {T}: Add {B} or {R}.
+c9b7ea9c-3bcb-4538-aa25-cdb82a52037e|Goldmire Bridge|This land enters tapped. Indestructible {T}: Add {W} or {B}.
+33ee23bc-6327-4a54-a704-dfd83be36bb5|Mistvault Bridge|This land enters tapped. Indestructible {T}: Add {U} or {B}.
+6cb37ac1-dd11-4a8c-bca5-ef44d828059f|Razortide Bridge|This land enters tapped. Indestructible {T}: Add {W} or {U}.
+a3faf70d-c034-4692-9e92-1922029e3852|Rustvale Bridge|This land enters tapped. Indestructible {T}: Add {R} or {W}.
+081bfd50-a436-463b-9d2c-5bc8a32b387c|Silverbluff Bridge|This land enters tapped. Indestructible {T}: Add {U} or {R}.
+e040a8e6-b90c-42d1-a1b1-771d954c61ab|Slagwoods Bridge|This land enters tapped. Indestructible {T}: Add {R} or {G}.
+29cd8a7c-108a-43d1-af63-f603a27c24f2|Tanglepool Bridge|This land enters tapped. Indestructible {T}: Add {G} or {U}.
+99720c65-be96-4220-8ed4-720660bf6928|Thornglint Bridge|This land enters tapped. Indestructible {T}: Add {G} or {W}.

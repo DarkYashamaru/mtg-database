@@ -1,0 +1,10 @@
+1c371003-e4f0-4d7c-b021-273176772f97|April, Reporter of the Weird|Whenever April deals combat damage to a player, draw that many cards, then discard a card.
+f33cd975-ab70-4209-a6d8-e0d727772bf2|Cold-Eyed Selkie|Islandwalk (This creature can't be blocked as long as defending player controls an Island.) Whenever this creature deals combat damage to a player, you may draw that many cards.
+911b8849-dd0a-4383-8403-ea80227c5d7d|Diviner Spirit|Whenever this creature deals combat damage to a player, you and that player each draw that many cards.
+34fd461b-a913-4a60-9477-ce2bd5c6fc5a|Fear of Failed Tests|Whenever this creature deals combat damage to a player, draw that many cards.
+d6b6d965-1401-4566-adb3-90b03218af8d|Glint-Eye Nephilim|Whenever this creature deals combat damage to a player, draw that many cards. {1}, Discard a card: This creature gets +1/+1 until end of turn.
+0b64da77-ca1c-427b-b48b-b919f0fe08e9|Gregor, Shrewd Magistrate|Skulk (This creature can't be blocked by creatures with greater power.) Whenever Gregor, Shrewd Magistrate deals combat damage to a player, draw cards equal to its power.
+70fbb378-d905-47cf-8c54-cc166a7867b3|Kain, Traitorous Dragoon|Jump — During your turn, Kain has flying. Whenever Kain deals combat damage to a player, that player gains control of Kain. If they do, you draw that many cards, create that many tapped Treasure tokens, then lose that much life.
+41f7e725-bdb8-4c3a-adc7-a8184ec7c394|Kosei, Penitent Warlord|As long as Kosei is enchanted, equipped, and has a counter on it, Kosei has "Whenever Kosei deals combat damage to an opponent, you draw that many cards and Kosei deals that much damage to each other opponent."
+b8a627a1-d6d7-45d1-aeea-ff7b834cbb29|Professor Hulk|Trample Whenever Professor Hulk deals combat damage to a player, draw that many cards.
+987a0b61-2ce4-47bd-8f5e-1e7bf01d0869|Sergeant John Benton|Trample, haste Share Intelligence — Whenever Sergeant John Benton deals combat damage to a player, you and that player each draw that many cards.

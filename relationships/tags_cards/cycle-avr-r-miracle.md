@@ -1,0 +1,4 @@
+4245ee98-2d4c-49d1-8d07-80760cae2bf9|Devastation Tide|Return all nonland permanents to their owners' hands. Miracle {1}{U} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)
+ece854f8-8c60-4f30-894f-2286d3dd61b9|Reforge the Soul|Each player discards their hand, then draws seven cards. Miracle {1}{R} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)
+6292edfc-d75b-465e-9e10-9d259551b1a5|Revenge of the Hunted|Until end of turn, target creature gets +6/+6 and gains trample, and all creatures able to block it this turn do so. Miracle {G} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)
+3dd196b6-a85a-4e3e-bb57-ec34241f8117|Terminus|Put all creatures on the bottom of their owners' libraries. Miracle {W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)

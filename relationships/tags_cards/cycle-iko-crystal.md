@@ -1,0 +1,5 @@
+3617c4ec-dc70-4fa8-94f3-fbc48abcaeea|Indatha Crystal|{T}: Add {W}, {B}, or {G}. Cycling {2} ({2}, Discard this card: Draw a card.)
+3ee5d7b6-0263-4239-a5fb-de1e1a220c55|Ketria Crystal|{T}: Add {G}, {U}, or {R}. Cycling {2} ({2}, Discard this card: Draw a card.)
+ae4a8470-4517-42c7-a7f6-ef7635e10fe5|Raugrin Crystal|{T}: Add {U}, {R}, or {W}. Cycling {2} ({2}, Discard this card: Draw a card.)
+cd0c1165-673d-4936-8254-deedd0ebbe97|Savai Crystal|{T}: Add {R}, {W}, or {B}. Cycling {2} ({2}, Discard this card: Draw a card.)
+87edb566-8929-4961-9c03-d3657a8c6feb|Zagoth Crystal|{T}: Add {B}, {G}, or {U}. Cycling {2} ({2}, Discard this card: Draw a card.)

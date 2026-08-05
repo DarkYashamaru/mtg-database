@@ -1,0 +1,4 @@
+1c9e1f75-73f0-4846-b53f-458a0984b1bb|Teferi's Ageless Insight|If you would draw a card except the first one you draw in each of your draw steps, draw two cards instead.
+e84f1727-ce01-44be-aebf-8a0c4e032c9a|Teferi's Protege|{1}{U}, {T}: Draw a card, then discard a card.
+c6b94e03-61c0-4077-b3da-a70795e97278|Teferi's Tutelage|When this enchantment enters, draw a card, then discard a card. Whenever you draw a card, target opponent mills two cards. (They put the top two cards of their library into their graveyard.)
+e802fb53-7cf5-46bc-8a0b-f99cf5c20f74|Teferi, Master of Time|You may activate loyalty abilities of Teferi on any player's turn any time you could cast an instant. +1: Draw a card, then discard a card. −3: Target creature you don't control phases out. (Treat it and anything attached to it as though they don't exist until its controller's next turn.) −10: Take two extra turns after this one.

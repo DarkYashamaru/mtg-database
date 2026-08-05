@@ -1,0 +1,1 @@
+62511d43-8eaf-405a-9c81-7bd593d3a01e|Ygra, Eater of All|Ward—Sacrifice a Food. Other creatures are Food artifacts in addition to their other types and have "{2}, {T}, Sacrifice this permanent: You gain 3 life." Whenever a Food is put into a graveyard from the battlefield, put two +1/+1 counters on Ygra.

@@ -1,0 +1,5 @@
+02765930-e15e-4cc1-ac0d-040334a9c5bc|Chainbreaker|This creature enters with two -1/-1 counters on it. {3}, {T}: Remove a -1/-1 counter from target creature.
+ee152ffa-9c39-48ed-9aca-e53c8ebb0231|Defiant Greatmaw|When this creature enters, put two -1/-1 counters on target creature you control. Whenever you put one or more -1/-1 counters on this creature, remove a -1/-1 counter from another target creature you control.
+143d3fcf-2152-4911-b95a-d23b91662f33|Hapatra's Mark|Target creature you control gains hexproof until end of turn. Remove all -1/-1 counters from it. (A creature with hexproof can't be the target of spells or abilities your opponents control.)
+ab4cf0ba-617f-4ef6-a831-eb3b41b4ab34|Heartmender|At the beginning of your upkeep, remove a -1/-1 counter from each creature you control. Persist (When this creature dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner's control with a -1/-1 counter on it.)
+e3390776-66cc-4e0a-a034-701793b05db8|Shed Weakness|Target creature gets +2/+2 until end of turn. You may remove a -1/-1 counter from it.

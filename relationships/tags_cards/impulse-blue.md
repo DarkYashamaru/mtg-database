@@ -1,0 +1,1 @@
+eb35d7e5-eddd-4e02-99ac-1a42cd575041|Tezzeret's Gatebreaker|When this artifact enters, look at the top five cards of your library. You may reveal a blue or artifact card from among them and put it into your hand. Put the rest on the bottom of your library in a random order. {5}{U}, {T}, Sacrifice this artifact: Creatures you control can't be blocked this turn.

@@ -1,0 +1,10 @@
+aba0f637-2d8d-43df-9002-08541ab42944|Anthem of Rakdos|Whenever a creature you control attacks, it gets +2/+0 until end of turn and this enchantment deals 1 damage to you. Hellbent — As long as you have no cards in hand, if a source you control would deal damage to a permanent or player, it deals double that damage to that permanent or player instead.
+837e4452-3002-41e3-890b-3d54b469e7b9|Firemane Angel|Flying, first strike At the beginning of your upkeep, if Firemane Angel is in your graveyard or on the battlefield, you may gain 1 life. {6}{R}{R}{W}{W}: Return this card from your graveyard to the battlefield. Activate only during your upkeep.
+7c3171da-7a95-4f8e-ba30-c31af21c1828|Goblin Flectomancer|Sacrifice this creature: You may change the targets of target instant or sorcery spell.
+9d954def-0045-4860-b154-cb64b6835fe0|Grave-Shell Scarab|{1}, Sacrifice this creature: Draw a card. Dredge 1 (If you would draw a card, you may mill a card instead. If you do, return this card from your graveyard to your hand.)
+facc2d6f-3f28-4b87-b643-44fdf939a2b5|Mindleech Mass|Trample Whenever this creature deals combat damage to a player, you may look at that player's hand. If you do, you may cast a spell from among those cards without paying its mana cost.
+4f5a7b65-b7f4-4bad-acfd-35edfb8f86a7|Phytohydra|If damage would be dealt to this creature, put that many +1/+1 counters on it instead.
+77275fc5-5f70-4d7f-938e-f32b5c19c532|Rumbling Slum|At the beginning of your upkeep, this creature deals 1 damage to each player.
+5a12e989-d6bc-441e-88dd-779e68a9fee3|Souls of the Faultless|Defender (This creature can't attack.) Whenever this creature is dealt combat damage, you gain that much life and attacking player loses that much life.
+ec45caf7-2051-463d-bf70-3dda671d6ce2|Swift Silence|Counter all other spells. Draw a card for each spell countered this way.
+c4851768-e210-4aaf-935e-715942e198f9|Voidslime|Counter target spell, activated ability, or triggered ability. (Mana abilities can't be targeted.)

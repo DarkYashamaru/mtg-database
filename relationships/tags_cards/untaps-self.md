@@ -1,0 +1,10 @@
+ac143b8e-f993-4989-8833-e26dc9faffa4|Altar Golem|Trample Altar Golem's power and toughness are each equal to the number of creatures on the battlefield. This creature doesn't untap during your untap step. Tap five untapped creatures you control: Untap this creature.
+75070eaf-c931-46e5-9aa1-b849e33580c6|Ambling Stormshell|Ward {2} Whenever this creature attacks, put three stun counters on it and draw three cards. (If a permanent with a stun counter would become untapped, remove one from it instead.) Whenever you cast a Turtle spell, untap this creature.
+4dab6a96-4376-4aea-983d-406167993214|Anje Falkenrath|Haste {T}, Discard a card: Draw a card. Whenever you discard a card, if it has madness, untap Anje Falkenrath.
+867aa0b7-b814-4d33-a677-f6368c8e93c0|Aphetto Alchemist|{T}: Untap target artifact or creature. Morph {U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)
+d0d4ab83-8b9b-49cd-86b8-720abd0550f4|Axgard Braggart|Boast — {1}{W}: Untap this creature. Put a +1/+1 counter on it. (Activate only if this creature attacked this turn and only once each turn.)
+96232342-3ec7-4740-a114-969537b8f2fc|Ballynock Trapper|{T}: Tap target creature. Whenever you cast a white spell, you may untap this creature.
+dba3dcc1-2177-4a8c-8cf3-7d4fb83c7a16|Baloth Prime|This creature enters tapped with six stun counters on it. (If a permanent with a stun counter would become untapped, remove one from it instead.) Whenever you sacrifice a land, create a tapped 4/4 green Beast creature token and untap this creature. {4}, Sacrifice a land: You gain 2 life.
+17661062-928c-4e33-a4f3-92ddc9d8c817|Barrenton Medic|{T}: Prevent the next 1 damage that would be dealt to any target this turn. Put a -1/-1 counter on this creature: Untap this creature.
+6b8cf2a0-b045-4d91-9d91-c602d40c6237|Basalt Monolith|This artifact doesn't untap during your untap step. {T}: Add {C}{C}{C}. {3}: Untap this artifact.
+066dfefd-eef5-4c81-8e8a-310bac01674f|Battered Golem|This creature doesn't untap during your untap step. Whenever an artifact enters, you may untap this creature.

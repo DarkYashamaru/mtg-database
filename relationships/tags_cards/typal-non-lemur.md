@@ -1,0 +1,1 @@
+a3c56e71-0de6-447a-a9b4-0971f56c2362|Momo, Friendly Flier|Flying The first non-Lemur creature spell with flying you cast during each of your turns costs {1} less to cast. Whenever another creature you control with flying enters, Momo gets +1/+1 until end of turn.

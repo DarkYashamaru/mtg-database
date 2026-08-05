@@ -1,0 +1,1 @@
+789b7af5-ac15-40b6-b5b7-f3fcdcfb52e1|Thrun, Breaker of Silence|This spell can't be countered. Trample Thrun can't be the target of nongreen spells your opponents control or abilities from nongreen sources your opponents control. During your turn, Thrun has indestructible.

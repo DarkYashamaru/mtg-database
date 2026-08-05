@@ -1,0 +1,2 @@
+68adbc52-34dd-47c4-bb1c-0c51033fe7cc|Ruin in Their Wake|Devoid (This card has no color.) Search your library for a basic land card and reveal it. You may put that card onto the battlefield tapped if you control a land named Wastes. Otherwise, put that card into your hand. Then shuffle.
+fb818376-6e87-4aa3-a050-4b5f82942593|Walker of the Wastes|({C} represents colorless mana.) Trample This creature gets +1/+1 for each land you control named Wastes.

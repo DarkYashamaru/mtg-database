@@ -1,0 +1,5 @@
+2b34b361-7b0e-4464-874c-ceb501bc5ecc|Careful Consideration|Target player draws four cards, then discards three cards. If you cast this spell during your main phase, instead that player draws four cards, then discards two cards.
+b9a0977a-6364-4358-bab1-112898a1b942|Haunting Hymn|Target player discards two cards. If you cast this spell during your main phase, that player discards four cards instead.
+b50a6db0-16ce-4e98-afbd-ec37e1653e7c|Might of Old Krosa|Target creature gets +2/+2 until end of turn. If you cast this spell during your main phase, that creature gets +4/+4 until end of turn instead.
+3029df1d-d02a-4fed-8ab4-000a2096f823|Return to Dust|Exile target artifact or enchantment. If you cast this spell during your main phase, you may exile up to one other target artifact or enchantment.
+f2b4f37b-270b-4746-83b3-51ff88ee3491|Sulfurous Blast|Sulfurous Blast deals 2 damage to each creature and each player. If you cast this spell during your main phase, Sulfurous Blast deals 3 damage to each creature and each player instead.

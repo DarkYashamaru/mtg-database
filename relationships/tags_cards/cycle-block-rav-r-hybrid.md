@@ -1,0 +1,10 @@
+3f806353-592e-431c-a7dd-a4c64034f94d|Avatar of Discord|({B/R} can be paid with either {B} or {R}.) Flying When this creature enters, sacrifice it unless you discard two cards.
+c302d64b-8026-401a-a8dd-52cf01160046|Biomantic Mastery|Draw a card for each creature target player controls, then draw a card for each creature another target player controls.
+a9ff368b-5208-4ada-bb99-eccbf8eaea28|Debtors' Knell|({W/B} can be paid with either {W} or {B}.) At the beginning of your upkeep, put target creature card from a graveyard onto the battlefield under your control.
+d7dcf1be-2779-419d-8c90-03800f9e7ea2|Djinn Illuminatus|({U/R} can be paid with either {U} or {R}.) Flying Each instant and sorcery spell you cast has replicate. The replicate cost is equal to its mana cost. (When you cast it, copy it for each time you paid its replicate cost. You may choose new targets for the copies.)
+d9f4af37-c85e-44ab-9fea-3c67e2f3cf27|Dovescape|({W/U} can be paid with either {W} or {U}.) Whenever a player casts a noncreature spell, counter that spell. That player creates X 1/1 white and blue Bird creature tokens with flying, where X is the spell's mana value.
+c590c1bd-430c-4515-9343-ba818c02bc5f|Giant Solifuge|({R/G} can be paid with either {R} or {G}.) Trample; haste; shroud (This creature can't be the target of spells or abilities.)
+bb7389fa-ab01-4ca2-bd18-03cf5b4cedf6|Gleancrawler|({B/G} can be paid with either {B} or {G}.) Trample At the beginning of your end step, return to your hand all creature cards in your graveyard that were put there from the battlefield this turn.
+f9bca7af-29b6-46ba-b847-56715d09d1da|Master Warcraft|Cast this spell only before attackers are declared. You choose which creatures attack this turn. You choose which creatures block this turn and how those creatures block.
+abd62af0-c17d-4f62-af15-9ea83037b990|Privileged Position|({G/W} can be paid with either {G} or {W}.) Other permanents you control have hexproof. (They can't be the targets of spells or abilities your opponents control.)
+b4b724bb-4c1c-4002-8eb8-bc8dd3f88e62|Shadow of Doubt|({U/B} can be paid with either {U} or {B}.) Players can't search libraries this turn. Draw a card.

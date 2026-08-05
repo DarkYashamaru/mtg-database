@@ -1,0 +1,10 @@
+6f81bef3-6ca0-4cf4-aa99-7b2813eeef04|Assemble the Legion|At the beginning of your upkeep, put a muster counter on this enchantment. Then create a 1/1 red and white Soldier creature token with haste for each muster counter on this enchantment.
+92d95e12-fa51-4360-88e4-9078ccc5d8d3|Cindervines|Whenever an opponent casts a noncreature spell, this enchantment deals 1 damage to that player. {1}, Sacrifice this enchantment: Destroy target artifact or enchantment. This enchantment deals 2 damage to that permanent's controller.
+22f1a4a4-c423-4d1c-8775-0ed604a9fa51|Deathrite Shaman|{T}: Exile target land card from a graveyard. Add one mana of any color. {B}, {T}: Exile target instant or sorcery card from a graveyard. Each opponent loses 2 life. {G}, {T}: Exile target creature card from a graveyard. You gain 2 life.
+d685799f-cc1a-40d6-9df6-d05b8b1f5b13|Dreadbore|Destroy target creature or planeswalker.
+7dd4a1a1-d5f4-4ac7-a9f6-34af411f070b|Kaya, Orzhov Usurper|+1: Exile up to two target cards from a single graveyard. You gain 2 life if at least one creature card was exiled this way. −1: Exile target nonland permanent with mana value 1 or less. −5: Kaya deals damage to target player equal to the number of cards that player owns in exile and you gain that much life.
+facc2d6f-3f28-4b87-b643-44fdf939a2b5|Mindleech Mass|Trample Whenever this creature deals combat damage to a player, you may look at that player's hand. If you do, you may cast a spell from among those cards without paying its mana cost.
+4f5a7b65-b7f4-4bad-acfd-35edfb8f86a7|Phytohydra|If damage would be dealt to this creature, put that many +1/+1 counters on it instead.
+71d83fca-e40e-4d0e-956d-d0d6da9cc472|Sphinx's Revelation|You gain X life and draw X cards.
+59b2a90e-542f-4fb0-b290-ac79dc2892a4|Stitch in Time|Flip a coin. If you win the flip, take an extra turn after this one.
+c4851768-e210-4aaf-935e-715942e198f9|Voidslime|Counter target spell, activated ability, or triggered ability. (Mana abilities can't be targeted.)

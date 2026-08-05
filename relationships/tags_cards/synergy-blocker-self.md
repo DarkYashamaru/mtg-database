@@ -1,0 +1,10 @@
+2c57c4e9-0a46-45d6-92db-9203fb722b60|Abomination|Whenever this creature blocks or becomes blocked by a green or white creature, destroy that creature at end of combat.
+a2404d88-0621-49ae-9908-052c23a96ac6|Abu Ja'far|When this creature dies, destroy all creatures blocking or blocked by it. They can't be regenerated.
+5efea57b-937d-46ac-999e-490316e0f820|Aether Membrane|Defender; reach (This creature can block creatures with flying.) Whenever this creature blocks a creature, return that creature to its owner's hand at end of combat.
+6bb24767-687e-4ff6-b7ac-3bf969f4dfeb|Aetherflame Wall|Defender This creature can block creatures with shadow as though they didn't have shadow. {R}: This creature gets +1/+0 until end of turn.
+0cd99210-8d34-4112-8e41-7e8c5d2a95b9|Aetherplasm|Whenever this creature blocks a creature, you may return this creature to its owner's hand. If you do, you may put a creature card from your hand onto the battlefield blocking that creature.
+9023c530-f329-4301-8b24-4cf676194265|Ageless Sentinels|Defender (This creature can't attack.) Flying When this creature blocks, it becomes a Bird Giant, and it loses defender. (It's no longer a Wall. This effect lasts indefinitely.)
+5456f00c-0bef-4c14-902f-f5c14475f284|Aisling Leprechaun|Whenever this creature blocks or becomes blocked by a creature, that creature becomes green. (This effect lasts indefinitely.)
+0d0d97dd-2653-4d37-b475-ac3b50c5ee53|Alaborn Zealot|When this creature blocks a creature, destroy both creatures.
+fd275ea7-9ccc-4148-9b33-392a612486dd|Anurid Swarmsnapper|Reach (This creature can block creatures with flying.) {1}{G}: This creature can block an additional creature this turn.
+9cc69ea5-42a2-4306-ac6d-cff5adb20bcb|Ashcoat of the Shadow Swarm|Whenever Ashcoat attacks or blocks, other Rats you control get +X/+X until end of turn, where X is the number of Rats you control. At the beginning of your end step, you may mill four cards. If you do, return up to two Rat creature cards from your graveyard to your hand. (To mill a card, put the top card of your library into your graveyard.)

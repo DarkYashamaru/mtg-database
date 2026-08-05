@@ -1,0 +1,1 @@
+d8c4312e-03ae-43f3-b92c-4adb6875534c|Garth One-Eye|{T}: Choose a card name that hasn't been chosen from among Disenchant, Braingeyser, Terror, Shivan Dragon, Regrowth, and Black Lotus. Create a copy of the card with the chosen name. You may cast the copy. (You still pay its costs.)

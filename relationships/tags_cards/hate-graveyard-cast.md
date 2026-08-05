@@ -1,0 +1,10 @@
+ab9f03b4-eb67-4709-904d-abf4d491f0ee|Ash Zealot|First strike, haste Whenever a player casts a spell from a graveyard, this creature deals 3 damage to that player.
+a75d5b54-5cc9-49c4-8e8c-3bef22d4c01c|Ashes of the Abhorrent|Players can't cast spells from graveyards or activate abilities of cards in graveyards. Whenever a creature dies, you gain 1 life.
+d31fd12f-b4dd-4bc3-ace4-703dabd0f607|Aven Interrupter|Flash Flying When this creature enters, exile target spell. It becomes plotted. (Its owner may cast it as a sorcery on a later turn without paying its mana cost.) Spells your opponents cast from graveyards or from exile cost {2} more to cast.
+753cb2b2-24ce-484f-a2d0-be6fd2c67ebd|Grafdigger's Cage|Creature cards in graveyards and libraries can't enter the battlefield. Players can't cast spells from graveyards or libraries.
+d297ce39-da98-4351-be9d-24f4d09bee7f|Kunoros, Hound of Athreos|Vigilance, menace, lifelink Creature cards in graveyards can't enter the battlefield. Players can't cast spells from graveyards.
+68f330ca-8279-46c5-900d-a9b443676104|Laquatus's Disdain|Counter target spell cast from a graveyard. Draw a card.
+ef5c93ae-91e0-4edb-b8a3-1171a3694bb8|River Kelpie|Whenever this creature or another permanent enters from a graveyard, draw a card. Whenever a player casts a spell from a graveyard, draw a card. Persist (When this creature dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner's control with a -1/-1 counter on it.)
+619d8d81-9e10-4353-b30d-a0f9c3451cd2|Shaman's Trance|Other players can't play lands or cast spells from their graveyards this turn. You may play lands and cast spells from other players' graveyards this turn as though those cards were in your graveyard.
+7866ab01-22f3-4d87-bdb0-c0ae0e91ffc9|Soulless Jailer|Permanent cards in graveyards can't enter the battlefield. Players can't cast noncreature spells from graveyards or exile.
+4386ae4e-560a-4251-942c-0f84ba7448fa|Weathered Runestone|Nonland permanent cards in graveyards and libraries can't enter the battlefield. Players can't cast spells from graveyards or libraries.

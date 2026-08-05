@@ -1,0 +1,3 @@
+9955885b-fad7-4ee6-bd62-48d8a7731044|Blades of Velis Vel|Changeling (This card is every creature type.) Up to two target creatures each get +2/+0 and gain all creature types until end of turn.
+7ad6be4e-5c3c-4633-a641-beb06e4129b9|Shields of Velis Vel|Changeling (This card is every creature type.) Creatures target player controls get +0/+1 and gain all creature types until end of turn.
+0bb2b3cc-d3e6-40e9-a5da-d589e8e8f0bd|Wings of Velis Vel|Changeling (This card is every creature type.) Until end of turn, target creature has base power and toughness 4/4, gains all creature types, and gains flying.

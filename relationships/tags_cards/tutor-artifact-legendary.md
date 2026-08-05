@@ -1,0 +1,1 @@
+f9453fe2-fadf-4cd4-8d2c-0eaa0e2d78d6|Templar Knight|Vigilance {W}, Tap five untapped attacking creatures you control named Templar Knight: Search your library for a legendary artifact card, put it onto the battlefield, then shuffle. A deck can have any number of cards named Templar Knight.

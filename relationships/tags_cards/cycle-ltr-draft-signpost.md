@@ -1,0 +1,10 @@
+5ffbbce1-fe38-40dc-a7c3-2055ae86c6c5|Arwen Undómiel|Whenever you scry, put a +1/+1 counter on target creature. {4}{G}{U}: Scry 2.
+2e7e3be5-04dd-4ff4-b121-3e65b3e00699|Bilbo, Retired Burglar|When Bilbo enters or leaves the battlefield, the Ring tempts you. Whenever Bilbo deals combat damage to a player, create a Treasure token.
+ec136f6f-015b-4200-97b6-a2c1bf39e135|Butterbur, Bree Innkeeper|At the beginning of your end step, if you don't control a Food, create a Food token. (It's an artifact with "{2}, {T}, Sacrifice this token: You gain 3 life.")
+1b82312c-f748-4c36-8934-ecbcfc10cc7d|Denethor, Ruling Steward|At the beginning of your end step, if a creature died under your control this turn, create a 1/1 white Human Soldier creature token. {2}, Sacrifice another creature: Each opponent loses 1 life and you gain 1 life.
+e6850561-3c57-4354-8850-c467a6449563|Friendly Rivalry|Target creature you control and up to one other target legendary creature you control each deal damage equal to their power to target creature you don't control.
+d4dd6edf-1e9e-46fa-92b5-5df9aa0e4338|Frodo Baggins|Whenever Frodo Baggins or another legendary creature you control enters, the Ring tempts you. As long as Frodo Baggins is your Ring-bearer, it must be blocked if able.
+6696d2e4-28ee-4ba7-8710-c1b735745270|Gandalf's Sanction|Gandalf's Sanction deals X damage to target creature, where X is the number of instant and sorcery cards in your graveyard. Excess damage is dealt to that creature's controller instead.
+b967fbb8-ddc8-485b-bd18-cbf3ef6b1bf8|Gwaihir the Windlord|This spell costs {2} less to cast as long as you've drawn two or more cards this turn. Flying, vigilance Other Birds you control have vigilance.
+ddc12487-f577-4def-acdb-491f7ba6dc51|Legolas, Counter of Kills|Reach Whenever you scry, if Legolas is tapped, you may untap it. Do this only once each turn. Whenever a creature an opponent controls dies, put a +1/+1 counter on Legolas.
+9966cac0-331f-4627-be5a-5060a6ac5a32|Mauhúr, Uruk-hai Captain|Menace If one or more +1/+1 counters would be put on an Army, Goblin, or Orc you control, that many plus one +1/+1 counters are put on it instead.

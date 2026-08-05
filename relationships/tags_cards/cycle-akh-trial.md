@@ -1,0 +1,5 @@
+bf614953-bd62-4000-a960-e2c26e1f7bb0|Trial of Ambition|When this enchantment enters, target opponent sacrifices a creature of their choice. When a Cartouche you control enters, return this enchantment to its owner's hand.
+6155908a-0079-42c7-ae81-326a6faccb89|Trial of Knowledge|When this enchantment enters, draw three cards, then discard a card. When a Cartouche you control enters, return this enchantment to its owner's hand.
+cbcc2577-7556-4174-83ff-9e00611412b3|Trial of Solidarity|When this enchantment enters, creatures you control get +2/+1 and gain vigilance until end of turn. When a Cartouche you control enters, return this enchantment to its owner's hand.
+b272cb56-dcba-479e-9fba-5b31e616a95f|Trial of Strength|When this enchantment enters, create a 4/2 green Beast creature token. When a Cartouche you control enters, return this enchantment to its owner's hand.
+0798eb13-83f1-4b7c-b537-83a9da2915a6|Trial of Zeal|When this enchantment enters, it deals 3 damage to any target. When a Cartouche you control enters, return this enchantment to its owner's hand.

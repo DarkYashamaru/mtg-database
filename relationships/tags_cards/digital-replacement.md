@@ -1,0 +1,1 @@
+acee1d16-1651-4e2c-8138-cc6456c4ee71|"Name Sticker" Goblin|When this creature enters from anywhere other than a graveyard or exile, if it's on the battlefield and you control 9 or fewer creatures named "Name Sticker" Goblin, roll a 20-sided die. 1-6 \| Add {R}{R}{R}{R}. 7-14 \| Add {R}{R}{R}{R}{R}. 15-20 \| Add {R}{R}{R}{R}{R}{R}.

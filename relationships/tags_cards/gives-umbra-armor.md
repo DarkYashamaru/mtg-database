@@ -1,0 +1,1 @@
+c0a4f47c-c7f9-4b95-aa1b-30580e4cf030|Umbra Mystic|Auras attached to permanents you control have umbra armor. (If an enchanted permanent you control would be destroyed, instead remove all damage from it and destroy an Aura attached to it.)

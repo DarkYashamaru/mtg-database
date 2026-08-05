@@ -1,0 +1,10 @@
+0a90d1fb-7a76-4b62-b001-4a539a8e5df1|Aether Tunnel|Enchant creature Enchanted creature gets +1/+0 and can't be blocked.
+a26432ff-ae60-454d-a6de-fec3feafa669|Alora, Merry Thief|Whenever you attack, up to one target attacking creature can't be blocked this turn. Return that creature to its owner's hand at the beginning of the next end step. Choose a Background (You can have a Background as a second commander.)
+53e4273c-3292-47a0-90d1-8a0eb0eaf381|Amphin Pathmage|{2}{U}: Target creature can't be blocked this turn.
+e4212b05-d397-49fb-af8b-9e52a60e6d1e|Aquatic Incursion|When this enchantment enters, create two 1/1 blue Merfolk creature tokens with hexproof. (They can't be the targets of spells or abilities your opponents control.) {3}{U}: Target Merfolk can't be blocked this turn.
+3378fef3-4d8c-4d9e-a338-4abb6f70d410|Aqueous Form|Enchant creature Enchanted creature can't be blocked. Whenever enchanted creature attacks, scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+be97c400-c690-426d-a39e-4082080a3823|Aragorn, King of Gondor|Vigilance, lifelink When Aragorn enters, you become the monarch. Whenever Aragorn attacks, up to one target creature can't block this turn. If you're the monarch, creatures can't block this turn.
+c174dcbb-03a0-439c-b3d8-ed61bd46dc67|Artful Dodge|Target creature can't be blocked this turn. Flashback {U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+826274fd-9831-4122-a5d9-0d1caa3d3a85|Assassin Den|Defender (This creature can't attack.) {3}{U}: Put a +1/+1 counter on target creature you control. It can't be blocked this turn. Activate only as a sorcery.
+048c3b0b-48ef-42f5-a2af-90aa1d133296|Atomic Microsizer|Equipped creature gets +1/+0. Whenever equipped creature attacks, choose up to one target creature. That creature can't be blocked this turn and has base power and toughness 1/1 until end of turn. Equip {2}
+7e079dd3-3397-491f-a6c5-7be5ade687d3|Become the Pilot|Enchant noncommander creature You control enchanted creature. Enchanted creature gets +2/+2 and can't be blocked unless it's attacking its owner or a permanent its owner controls.

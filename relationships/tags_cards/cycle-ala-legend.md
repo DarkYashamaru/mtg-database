@@ -1,0 +1,5 @@
+6343cf6f-b1e3-49ce-8933-8fe6c9dc83f3|Kresh the Bloodbraided|Whenever another creature dies, you may put X +1/+1 counters on Kresh, where X is that creature's power.
+7f546d54-584d-4bec-8fbb-1ea2f8ab277e|Mayael the Anima|{3}{R}{G}{W}, {T}: Look at the top five cards of your library. You may put a creature card with power 5 or greater from among them onto the battlefield. Put the rest on the bottom of your library in any order.
+c6e17443-2379-419d-8c32-13ea9bf52993|Rafiq of the Many|Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.) Whenever a creature you control attacks alone, it gains double strike until end of turn.
+48054407-b5e1-431c-ad03-c12a31d0d9a8|Sedris, the Traitor King|Each creature card in your graveyard has unearth {2}{B}. ({2}{B}: Return the card to the battlefield. The creature gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)
+037e7fc9-3aa6-484c-a2c8-43009e45f1d8|Sharuum the Hegemon|Flying When Sharuum enters, you may return target artifact card from your graveyard to the battlefield.

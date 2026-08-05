@@ -1,0 +1,1 @@
+d8c16a3a-dd9d-410c-a5d5-06339a89970f|Zinnia, Valley's Voice|Flying Zinnia gets +X/+0, where X is the number of other creatures you control with base power 1. Creature spells you cast gain offspring {2} as you cast them. (You may pay an additional {2} as you cast a creature spell. If you do, when that creature enters, create a 1/1 token copy of it.)

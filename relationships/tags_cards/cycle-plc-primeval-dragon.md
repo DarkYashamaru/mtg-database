@@ -1,0 +1,5 @@
+9518ffbc-bb3d-4f48-a900-f5bad8302a87|Intet, the Dreamer|Flying Whenever Intet deals combat damage to a player, you may pay {2}{U}. If you do, exile the top card of your library face down. You may look at that card for as long as it remains exiled. You may play that card without paying its mana cost for as long as Intet remains on the battlefield.
+1c6d4322-1588-4fc2-a60a-5b5e724638c5|Numot, the Devastator|Flying Whenever Numot deals combat damage to a player, you may pay {2}{R}. If you do, destroy up to two target lands.
+454b898f-b134-4d63-ae7b-1e736964cd48|Oros, the Avenger|Flying Whenever Oros deals combat damage to a player, you may pay {2}{W}. If you do, Oros deals 3 damage to each nonwhite creature.
+d41f0357-f1d6-45cc-b8ea-4efa41da1448|Teneb, the Harvester|Flying Whenever Teneb deals combat damage to a player, you may pay {2}{B}. If you do, put target creature card from a graveyard onto the battlefield under your control.
+fda3c312-1a76-425c-8b23-0196452c4a5e|Vorosh, the Hunter|Flying Whenever Vorosh deals combat damage to a player, you may pay {2}{G}. If you do, put six +1/+1 counters on Vorosh.

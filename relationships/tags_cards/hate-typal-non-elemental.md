@@ -1,0 +1,2 @@
+e1feea85-2f06-43aa-9b3c-eb63085276f5|Consuming Bonfire|Choose one — • Consuming Bonfire deals 4 damage to target non-Elemental creature. • Consuming Bonfire deals 7 damage to target Treefolk creature.
+c01b221f-3993-43ab-8cde-b42fb344e2a7|Sunderflock|This spell costs {X} less to cast, where X is the greatest mana value among Elementals you control. Flying When this creature enters, if you cast it, return all non-Elemental creatures to their owners' hands.

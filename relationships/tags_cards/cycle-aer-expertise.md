@@ -1,0 +1,5 @@
+a1cdcb8c-1e12-4d39-aa4a-db678a80df9c|Baral's Expertise|Return up to three target artifacts and/or creatures to their owners' hands. You may cast a spell with mana value 4 or less from your hand without paying its mana cost.
+e0de0121-6185-45c5-9d88-a415b07347e0|Kari Zev's Expertise|Gain control of target creature or Vehicle until end of turn. Untap it. It gains haste until end of turn. You may cast a spell with mana value 2 or less from your hand without paying its mana cost.
+97407cd0-2bd2-4074-94d3-4ec3d243fa78|Rishkar's Expertise|Draw cards equal to the greatest power among creatures you control. You may cast a spell with mana value 5 or less from your hand without paying its mana cost.
+5cd17347-5558-46f9-b8bb-ae5deeb1f229|Sram's Expertise|Create three 1/1 colorless Servo artifact creature tokens. You may cast a spell with mana value 3 or less from your hand without paying its mana cost.
+692babfa-9b74-415e-a560-abae4ccb006b|Yahenni's Expertise|All creatures get -3/-3 until end of turn. You may cast a spell with mana value 3 or less from your hand without paying its mana cost.

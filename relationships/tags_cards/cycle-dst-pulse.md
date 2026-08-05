@@ -1,0 +1,5 @@
+95846070-7b35-4689-a56c-5b32b6264013|Pulse of the Dross|Target player reveals three cards from their hand and you choose one of them. That player discards that card. Then if that player has more cards in hand than you, return Pulse of the Dross to its owner's hand.
+fc401c08-514d-43ea-9f57-6c3afe7c2652|Pulse of the Fields|You gain 4 life. Then if an opponent has more life than you, return Pulse of the Fields to its owner's hand.
+f1c05ba3-7225-4d29-96aa-9d9c0b54de53|Pulse of the Forge|Pulse of the Forge deals 4 damage to target player or planeswalker. Then if that player or that planeswalker's controller has more life than you, return Pulse of the Forge to its owner's hand.
+73ea32e4-72c5-42ee-8ed5-21dee83d7eec|Pulse of the Grid|Draw two cards, then discard a card. Then if an opponent has more cards in hand than you, return Pulse of the Grid to its owner's hand.
+26f034b1-9a96-4371-a28e-be00b02d9d60|Pulse of the Tangle|Create a 3/3 green Beast creature token. Then if an opponent controls more creatures than you, return Pulse of the Tangle to its owner's hand.

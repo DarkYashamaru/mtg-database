@@ -1,0 +1,5 @@
+5bf39f9e-4f06-4637-b0fc-5d21b926f6f4|Dauthi Ghoul|Shadow (This creature can block or be blocked by only creatures with shadow.) Whenever a creature with shadow dies, put a +1/+1 counter on this creature.
+42bb6537-fa54-43b7-84f2-dea41adc35fd|Dauthi Warlord|Shadow (This creature can block or be blocked by only creatures with shadow.) Dauthi Warlord's power is equal to the number of creatures on the battlefield with shadow.
+b7b51ab1-403e-4640-8827-b04965aa6760|Maze of Shadows|{T}: Add {C}. {T}: Untap target attacking creature with shadow. Prevent all combat damage that would be dealt to and dealt by that creature this turn.
+4433a5fd-2daa-440a-b9cc-4ad028358cbc|Phyrexian Splicer|{2}, {T}, Choose flying, first strike, trample, or shadow: Until end of turn, target creature with the chosen ability loses it and another target creature gains it.
+bb77b63f-e679-463c-b983-4f2a4ef7bafe|Stronghold Overseer|Flying Shadow (This creature can block or be blocked by only creatures with shadow.) {B}{B}: Creatures with shadow get +1/+0 until end of turn and creatures without shadow get -1/-0 until end of turn.

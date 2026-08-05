@@ -1,0 +1,4 @@
+022e97af-2a3a-4e13-9b6b-d34fcc8cf168|Archangel of Wrath|Kicker {B} and/or {R} (You may pay an additional {B} and/or {R} as you cast this spell.) Flying, lifelink When this creature enters, if it was kicked, it deals 2 damage to any target. When this creature enters, if it was kicked twice, it deals 2 damage to any target.
+6f067bfd-1c59-463f-99e1-61161b43b405|Bounty of Might|Target creature gets +3/+3 until end of turn. Target creature gets +3/+3 until end of turn. Target creature gets +3/+3 until end of turn.
+d52e9255-62e7-479f-8def-e92b96efdb89|Common Bond|Put a +1/+1 counter on target creature. Put a +1/+1 counter on target creature.
+dd3d4d96-1e88-49e1-8276-7f62c22ad91a|Seeds of Strength|Target creature gets +1/+1 until end of turn. Target creature gets +1/+1 until end of turn. Target creature gets +1/+1 until end of turn.

@@ -1,0 +1,6 @@
+9ae778b4-f8dd-4dec-b949-5b8c29120512|Clowning Around|Create two 1/1 white Clown Robot artifact creature tokens, then roll a six-sided die. If the result is equal to or less than the number of Robots you control, create a 1/1 white Clown Robot artifact creature token.
+2a248d6a-aa83-4e59-848b-46de8204b538|Done for the Day|At the beginning of your end step, if you control an Employee, a Performer, or a Robot, you may get {TK} or create a Treasure token. If you control all three, you may put a sticker on a nonland permanent you own.
+fb68c1ae-a129-4c17-81fa-be5da2c32ec5|Dr. Eggman|Flying At the beginning of your end step, draw a card. Then each opponent faces a villainous choice — That player discards a card, or you may put a Construct, Robot, or Vehicle card from your hand onto the battlefield.
+eeaa03c9-533f-4067-a2c8-86f3b9e58583|One-Clown Band|{2}{R}: Target Robot gets +2/+0 until end of turn.
+19fd953c-b6d4-457f-b85f-b681c5b0e341|Ultron, Machine Overlord|Flying Other Robots and Constructs you control get +2/+2.
+1a44261a-2b6a-45dc-91a4-b2eb219ba6fb|Vision, Spectral Synthezoid|Flying Once during each of your turns, you may cast a noncreature or Robot spell from your hand without paying its mana cost.

@@ -1,0 +1,1 @@
+6307ec34-bef6-4ac6-a363-f9bef0d03b3b|Kaalia, Zenith Seeker|Flying, vigilance When Kaalia enters, look at the top six cards of your library. You may reveal an Angel card, a Demon card, and/or a Dragon card from among them and put them into your hand. Put the rest on the bottom of your library in a random order.

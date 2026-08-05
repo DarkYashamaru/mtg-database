@@ -1,0 +1,2 @@
+56b0cb64-b886-413e-bb20-392bf12d3926|Crystal Dragon // Rob the Hoard|Flying, vigilance // Return target artifact, enchantment, or legendary card from your graveyard to your hand. (Then exile this card. You may cast the creature later from exile.)
+438be2fa-5f8d-42ff-894a-671ba4221196|Yomiji, Who Bars the Way|Whenever a legendary permanent other than Yomiji is put into a graveyard from the battlefield, return that card to its owner's hand.

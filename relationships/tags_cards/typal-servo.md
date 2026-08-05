@@ -1,0 +1,2 @@
+aa57f607-c5eb-45a7-bfb1-adce0aef49c7|Master Trinketeer|Servos and Thopters you control get +1/+1. {3}{W}: Create a 1/1 colorless Servo artifact creature token.
+aaadfe41-b2be-4183-b45e-a70e53a59d2e|Retrofitter Foundry|{3}: Untap this artifact. {2}, {T}: Create a 1/1 colorless Servo artifact creature token. {1}, {T}, Sacrifice a Servo: Create a 1/1 colorless Thopter artifact creature token with flying. {T}, Sacrifice a Thopter: Create a 4/4 colorless Construct artifact creature token.

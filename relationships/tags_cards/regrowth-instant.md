@@ -1,0 +1,10 @@
+753ead8c-f3f8-42fe-931d-79f5ee3ece54|Aberrant Mind Sorcerer|Psionic Spells — When this creature enters, choose target instant or sorcery card in your graveyard, then roll a d20. 1—9 \| You may put that card on top of your library. 10—20 \| Return that card to your hand.
+a91a3266-cadd-47a0-9b20-160307f14c07|Archaeomancer|When this creature enters, return target instant or sorcery card from your graveyard to your hand.
+1edd4f50-05ee-43e0-a288-c26666910c8b|Ardent Elementalist|When this creature enters, return target instant or sorcery card from your graveyard to your hand.
+3a877718-ff90-4d6e-9f95-47b06adad7f8|Bond of Insight|Each player mills four cards. Return up to two instant and/or sorcery cards from your graveyard to your hand. Exile Bond of Insight.
+72e2b883-a284-4ab6-8174-1ca289141a49|Call to Mind|Return target instant or sorcery card from your graveyard to your hand.
+12c57ebe-35a7-4cb3-936b-99c148a3cfed|Chakra Meditation|When this enchantment enters, return up to one target instant or sorcery card from your graveyard to your hand. Whenever you cast an instant or sorcery spell, draw a card. Then discard a card unless there are three or more Lesson cards in your graveyard.
+1b9df437-6988-4ddc-80c4-893e11076067|Charmbreaker Devils|At the beginning of your upkeep, return an instant or sorcery card at random from your graveyard to your hand. Whenever you cast an instant or sorcery spell, this creature gets +4/+0 until end of turn.
+3cd9bac9-0abc-43d8-9f84-94f965f7a2e0|Cormela, Glamour Thief|Haste {1}, {T}: Add {U}{B}{R}. Spend this mana only to cast instant and/or sorcery spells. When Cormela dies, return up to one target instant or sorcery card from your graveyard to your hand.
+84681f12-2978-4f62-ab89-b579033c5192|Divergent Equation|Return up to X target instant and/or sorcery cards from your graveyard to your hand. Exile Divergent Equation.
+7b33368f-0668-4233-8bbf-725c66c771cb|Donnie & April, Adorkable Duo|When Donnie & April enter, choose one or both. Each mode must target a different player. • Target player draws two cards. • Target player returns an artifact, instant, or sorcery card from their graveyard to their hand.

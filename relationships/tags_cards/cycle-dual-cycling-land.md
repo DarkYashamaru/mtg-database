@@ -1,0 +1,5 @@
+0e25faa2-efb0-4ca5-b280-18c38faa860c|Coastal Peak|({T}: Add {U} or {R}.) This land enters tapped. Cycling {2} ({2}, Discard this card: Draw a card.)
+bdb9b2ce-342c-4935-8943-d0c3971b1e38|Festering Thicket|({T}: Add {B} or {G}.) This land enters tapped. Cycling {2} ({2}, Discard this card: Draw a card.)
+23732d20-aba6-46cc-89d0-0542629bc6b5|Glittering Massif|({T}: Add {R} or {W}.) This land enters tapped. Cycling {2} ({2}, Discard this card: Draw a card.)
+633a41f0-3889-49a0-b2fc-9baf59f4ddc2|Rain-Slicked Copse|({T}: Add {G} or {U}.) This land enters tapped. Cycling {2} ({2}, Discard this card: Draw a card.)
+5a1dfc60-645d-4bc0-8883-e06ed9c80706|Umbral Expanse|({T}: Add {W} or {B}.) This land enters tapped. Cycling {2} ({2}, Discard this card: Draw a card.)

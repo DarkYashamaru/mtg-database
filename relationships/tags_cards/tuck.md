@@ -1,0 +1,9 @@
+6e93cb9a-44c8-49fb-b6a7-bfdf7bd725fe|Civic Guildmage|{G}, {T}: Target creature gets +0/+1 until end of turn. {U}, {T}: Put target creature you control on top of its owner's library.
+e81da4a7-4b03-4107-b7d9-4b635faa615d|Lich's Mirror|If you would lose the game, instead shuffle your hand, your graveyard, and all permanents you own into your library, then draw seven cards and your life total becomes 20.
+429de3c3-3f2e-4d55-a04a-f414912aff3a|Nightscape Apprentice|{U}, {T}: Put target creature you control on top of its owner's library. {R}, {T}: Target creature gains first strike until end of turn.
+acc74d59-f587-46a2-a90b-865f721d494d|Nulltread Gargantuan|When this creature enters, put a creature you control on top of its owner's library.
+afad2e76-4b53-4884-8f96-ba68b0808990|Reality Scramble|Put target permanent you own on the bottom of your library. Reveal cards from the top of your library until you reveal a card that shares a card type with that permanent. Put that card onto the battlefield and the rest on the bottom of your library in a random order. Retrace (You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.)
+9eef1d16-4405-40e0-8b8b-008e08aac4ac|Rishadan Pawnshop|{2}, {T}: Shuffle target nontoken permanent you control into its owner's library.
+cdda63d7-e3ea-455c-b7d4-c6cfdda2703c|Shadow Guildmage|{U}, {T}: Put target creature you control on top of its owner's library. {R}, {T}: This creature deals 1 damage to any target and 1 damage to you.
+4ab1411e-b255-4a6e-b81a-5de7b2d4ea12|Sunscape Apprentice|{G}, {T}: Target creature gets +1/+1 until end of turn. {U}, {T}: Put target creature you control on top of its owner's library.
+75a7fdd4-046a-433b-b16f-a0424a05c904|Tel-Jilad Stylus|{T}: Put target permanent you own on the bottom of your library.

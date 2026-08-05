@@ -1,0 +1,5 @@
+08842aa3-f923-46e9-a106-f542331e9cc1|Chaoslace|Target spell or permanent becomes red. (Its mana symbols remain unchanged.)
+fb80aaba-352a-4b58-8db2-1e02d542819c|Deathlace|Target spell or permanent becomes black. (Mana symbols on that permanent remain unchanged.)
+eec1de80-4b3d-481d-a235-c299e0381830|Lifelace|Target spell or permanent becomes green. (Mana symbols on that permanent remain unchanged.)
+3773001a-8868-49ec-a406-298cf72359c2|Purelace|Target spell or permanent becomes white. (Mana symbols on that permanent remain unchanged.)
+6452b6a6-6235-46a3-a712-a26592450438|Thoughtlace|Target spell or permanent becomes blue. (Mana symbols on that permanent remain unchanged.)

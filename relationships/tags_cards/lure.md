@@ -1,0 +1,10 @@
+ad218276-a44b-4a61-8e42-26a27929bbbb|Alluring Scent|All creatures able to block target creature this turn do so.
+a0593a5b-6f76-4eb3-a1b1-9794d2d36c92|Armed // Dangerous|Target creature gets +1/+1 and gains double strike until end of turn. Fuse (You may cast one or both halves of this card from your hand.) // All creatures able to block target creature this turn do so. Fuse (You may cast one or both halves of this card from your hand.)
+b2aabfaf-5996-4b41-987a-6bd941f6ae88|Bloodscent|All creatures able to block target creature this turn do so.
+0be1ace3-2b3d-4465-b63a-be523f73df36|Breaker of Armies|All creatures able to block this creature do so.
+db640c5b-4548-44b1-a9cd-cc6838707dbb|Declare Dominance|Target creature gets +3/+3 until end of turn. All creatures able to block it this turn do so.
+7ebde396-6672-491a-a6ce-1de49b12379b|Destined // Lead|Target creature gets +1/+0 and gains indestructible until end of turn. // Aftermath (Cast this spell only from your graveyard. Then exile it.) All creatures able to block target creature this turn do so.
+094b778f-95a0-436f-a9d0-20a46a674486|Elvish Bard|All creatures able to block this creature do so.
+3548489b-053e-4f81-a0be-07422cbe357d|Gift of the Deity|Enchant creature As long as enchanted creature is black, it gets +1/+1 and has deathtouch. (Any amount of damage it deals to a creature is enough to destroy that creature.) As long as enchanted creature is green, it gets +1/+1 and all creatures able to block it do so.
+9fb2eb66-d33b-40e8-9d0d-06d73650a9ac|Golgari Decoy|All creatures able to block this creature do so. Scavenge {3}{G}{G} ({3}{G}{G}, Exile this card from your graveyard: Put a number of +1/+1 counters equal to this card's power on target creature. Scavenge only as a sorcery.)
+b585c218-1793-49a0-8a16-cb23b6efcc3c|Indrik Umbra|Enchant creature Enchanted creature gets +4/+4 and has first strike, and all creatures able to block it do so. Umbra armor (If enchanted creature would be destroyed, instead remove all damage from it and destroy this Aura.)

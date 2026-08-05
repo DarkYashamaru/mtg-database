@@ -1,0 +1,10 @@
+11f17f85-ca97-4551-838f-7cb32f0e5f10|Argothian Enchantress|Shroud (This creature can't be the target of spells or abilities.) Whenever you cast an enchantment spell, draw a card.
+77ccbea1-70af-4194-adad-39a904221c75|Eidolon of Blossoms|Constellation — Whenever this creature or another enchantment you control enters, draw a card.
+d7035db0-4bde-4ba3-9028-dd14191c8126|Elvish Archivist|Whenever one or more artifacts you control enter, put two +1/+1 counters on this creature. This ability triggers only once each turn. Whenever one or more enchantments you control enter, draw a card. This ability triggers only once each turn.
+795b096a-2bce-4588-a2c9-abc5ea40dc0c|Enchantress's Presence|Whenever you cast an enchantment spell, draw a card.
+c9db5293-4866-46ec-9ae8-059d27bd50fc|Entity Tracker|Flash Eerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, draw a card.
+ba5f7f37-352a-4b9c-b648-0ba5c8d842fc|Invasion of Theros // Ephara, Ever-Sheltering|Ephara has lifelink and indestructible as long as you control at least three other enchantments. Whenever another enchantment you control enters, draw a card. // (As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.) When this Siege enters, search your library for an Aura, God, or Demigod card, reveal it, put it into your hand, then shuffle.
+2bfc7467-1316-43d3-9ca6-ff36cc2de607|Kor Spiritdancer|This creature gets +2/+2 for each Aura attached to it. Whenever you cast an Aura spell, you may draw a card.
+8f4b8a19-72f4-48ed-ac05-62a7c7525797|Mesa Enchantress|Whenever you cast an enchantment spell, you may draw a card.
+af94fd87-ea37-49eb-b5e6-0b1846f23859|Rite of Harmony|Whenever a creature or enchantment you control enters this turn, draw a card. Flashback {2}{G}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+aa321138-b1a7-4b8e-a2ca-b9ce65704e92|Satyr Enchanter|Whenever you cast an enchantment spell, draw a card.

@@ -1,0 +1,2 @@
+ab44c6fe-6a66-42f0-9e75-8b25641e1f13|Font of Agonies|Whenever you pay life, put that many blood counters on this enchantment. {1}{B}, Remove four blood counters from this enchantment: Destroy target creature.
+04853f06-3fd2-445d-9b0d-d68d0f116635|Verrak, Warped Sengir|Flying, deathtouch, lifelink Whenever you activate an ability that isn't a mana ability, if life was paid to activate it, you may pay that much life again. If you do, copy that ability. You may choose new targets for the copy.

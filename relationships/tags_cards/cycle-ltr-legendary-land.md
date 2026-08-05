@@ -1,0 +1,5 @@
+88159872-d37d-4847-b048-e4a9af6437bd|Barad-dûr|Barad-dûr enters tapped unless you control a legendary creature. {T}: Add {B}. {X}{X}{B}, {T}: Amass Orcs X. Activate only if a creature died this turn.
+7b0d7e62-0287-454a-8702-b0bfa7b41245|Minas Tirith|Minas Tirith enters tapped unless you control a legendary creature. {T}: Add {W}. {1}{W}, {T}: Draw a card. Activate only if you attacked with two or more creatures this turn.
+583cdebe-0195-45be-bd2e-5765f07cb902|Mines of Moria|Mines of Moria enters tapped unless you control a legendary creature. {T}: Add {R}. {3}{R}, {T}, Exile three cards from your graveyard: Create two Treasure tokens.
+2550099d-b3e2-4eb6-9f36-0fc412828ca6|Rivendell|Rivendell enters tapped unless you control a legendary creature. {T}: Add {U}. {1}{U}, {T}: Scry 2. Activate only if you control a legendary creature.
+9abf9a0e-8e7d-406b-a01d-d4870b30134e|The Shire|The Shire enters tapped unless you control a legendary creature. {T}: Add {G}. {1}{G}, {T}, Tap an untapped creature you control: Create a Food token.

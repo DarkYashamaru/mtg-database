@@ -1,0 +1,5 @@
+c9949a5a-13d4-41ca-80fe-902b0ae71204|Advancing the Spirit|When this enchantment enters, draw a card. You may pay {0} rather than pay the power-up cost of the first power-up ability you activate during each of your turns.
+3508fd7d-ca02-47f9-8b0a-525f7bde4f57|Hulk, Gamma Goliath|Reach, trample Power-up abilities of other creatures you control cost {3} less to activate. Power-up — {6}{R}{G}: Put five +1/+1 counters on Hulk. (Activate each power-up ability only once. Reduce the cost by his mana cost if he entered this turn.)
+7a315db3-e66c-4648-b7a0-5aef2ce9b580|Marvel Boy, Noh-Varr|Whenever another creature you control enters and whenever you activate a power-up ability, put a +1/+1 counter on Marvel Boy.
+e8025c63-80b4-4cce-bf2d-df294450070d|Quinjet Technician|{T}: Add {R}. {T}: Add {R}{R}. Spend this mana only to activate power-up abilities.
+e2c49754-711e-43b3-82f1-5376a4d99701|Wonder Man, Hollywood Hero|Flying Each power-up ability of permanents you control can be activated an additional time. Power-up — {5}{R}{R}: Put two +1/+1 counters on Wonder Man. (Activate each power-up ability only . . . once? Reduce the cost by his mana cost if he entered this turn.)

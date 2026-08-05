@@ -1,0 +1,5 @@
+c70526a6-9071-4f34-b5fb-9d075021f667|Cutthroat il-Dal|Hellbent — This creature has shadow as long as you have no cards in hand. (It can block or be blocked by only creatures with shadow.)
+c1b4a6cf-ac9c-410f-9982-31e371d49aed|Jodah's Avenger|{0}: Until end of turn, this creature gets -1/-1 and gains your choice of double strike, protection from red, vigilance, or shadow. (A creature with shadow can block or be blocked by only creatures with shadow.)
+a8211eb1-332d-41c0-8086-4a18cd7a5832|Soltari Emissary|{W}: This creature gains shadow until end of turn. (It can block or be blocked by only creatures with shadow.)
+1afa006b-1190-4047-a9fe-4215f20df8f2|Thalakos Drifters|Discard a card: This creature gains shadow until end of turn. (It can block or be blocked by only creatures with shadow.)
+90980841-4994-453c-a076-6cdf8d85c809|Trespasser il-Vec|Discard a card: This creature gains shadow until end of turn. (It can block or be blocked by only creatures with shadow.)

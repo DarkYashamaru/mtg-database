@@ -1,0 +1,5 @@
+717152c3-2082-49aa-9274-a1a6abe54b65|Chartooth Cougar|{R}: This creature gets +1/+0 until end of turn. Mountaincycling {2} ({2}, Discard this card: Search your library for a Mountain card, reveal it, put it into your hand, then shuffle.)
+1d25b831-c1de-4f79-bbb3-1582eda96452|Elvish Aberration|{T}: Add {G}{G}{G}. Forestcycling {2} ({2}, Discard this card: Search your library for a Forest card, reveal it, put it into your hand, then shuffle.)
+e7079969-8d88-4f18-a872-2661bed6ff74|Noble Templar|Vigilance Plainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)
+606fbf99-d3e3-4131-b991-3cb71c003834|Shoreline Ranger|Flying Islandcycling {2} ({2}, Discard this card: Search your library for an Island card, reveal it, put it into your hand, then shuffle.)
+139af10d-a3e5-4ade-b876-87324e6c8017|Twisted Abomination|{B}: Regenerate this creature. (The next time this creature would be destroyed this turn, instead tap it, remove it from combat, and heal all damage on it.) Swampcycling {2} ({2}, Discard this card: Search your library for a Swamp card, reveal it, put it into your hand, then shuffle.)

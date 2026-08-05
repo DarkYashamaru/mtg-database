@@ -1,0 +1,1 @@
+fcb1caea-e1ac-48f0-a67a-d4aadad490d9|The Masters of Evil|Other Villains you control get +2/+1. {1}{B}, Discard this card: Search your library for a Plan card, reveal it, put it into your hand, then shuffle.

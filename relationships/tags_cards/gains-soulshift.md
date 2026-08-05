@@ -1,0 +1,1 @@
+88188cc1-3211-4bf8-a591-613b66192695|Kodama of the Center Tree|Kodama of the Center Tree's power and toughness are each equal to the number of Spirits you control. Kodama of the Center Tree has soulshift X, where X is the number of Spirits you control. (When this creature dies, you may return target Spirit card with mana value X or less from your graveyard to your hand.)

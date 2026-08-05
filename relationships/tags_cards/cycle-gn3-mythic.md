@@ -1,0 +1,5 @@
+ef6eb92f-93e6-40e4-a7a6-8e826bb6a5e0|Imaryll, Elfhame Elite|Whenever Imaryll attacks, it gets +X/+X until end of turn, where X is the number of other Elves you control. You may have Imaryll assign its combat damage as though it weren't blocked.
+2494daad-c81d-4a80-ba5d-e7011af8de46|Maeve, Insidious Singer|{2}{U}: Goad target creature. Whenever that creature attacks one of your opponents this turn, you draw a card. (A goaded creature attacks each combat if able and attacks a player other than you if able, until your next turn.)
+3d04aa8c-7bff-42c6-bed3-0b18d2cb1529|Nogi, Draco-Zealot|Dragon spells you cast cost {1} less to cast. Whenever Nogi attacks, if you control three or more Dragons, until end of turn, Nogi becomes a Dragon with base power and toughness 5/5 and gains flying.
+1d704c2f-cd24-4a04-a51a-da7984dcd358|Vogar, Necropolis Tyrant|Menace Whenever another creature dies during your turn, put a +1/+1 counter on Vogar. When Vogar dies, draw a card for each +1/+1 counter on it.
+acb0fa6a-89c8-4957-881e-c61659e86f97|Zamriel, Seraph of Steel|Flying During your turn, equipped creatures you control have indestructible.

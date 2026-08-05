@@ -1,0 +1,5 @@
+60654004-7d9a-47ac-a70d-b246dd1728d3|Valley Flamecaller|If a Lizard, Mouse, Otter, or Raccoon you control would deal damage to a permanent or player, it deals that much damage plus 1 instead.
+4879c8f0-8832-4290-bc71-9838940f75cd|Valley Floodcaller|Flash You may cast noncreature spells as though they had flash. Whenever you cast a noncreature spell, Birds, Frogs, Otters, and Rats you control get +1/+1 until end of turn. Untap them.
+16e9c452-6288-4da8-813d-2eb6b7a538c3|Valley Mightcaller|Trample Whenever another Frog, Rabbit, Raccoon, or Squirrel you control enters, put a +1/+1 counter on this creature.
+81c509b2-3164-47e9-94b3-bdba0487d2f1|Valley Questcaller|Whenever one or more other Rabbits, Bats, Birds, and/or Mice you control enter, scry 1. Other Rabbits, Bats, Birds, and Mice you control get +1/+1.
+8da0599a-8f63-4dba-857f-b4e10b7191b6|Valley Rotcaller|Menace Whenever this creature attacks, each opponent loses X life and you gain X life, where X is the number of other Squirrels, Bats, Lizards, and Rats you control.

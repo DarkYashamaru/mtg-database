@@ -1,0 +1,1 @@
+aebfdcc0-c5b9-4737-8498-764a5021b087|Graaz, Unstoppable Juggernaut|Juggernauts you control attack each combat if able. Juggernauts you control can't be blocked by Walls. Other creatures you control have base power and toughness 5/3 and are Juggernauts in addition to their other creature types.

@@ -1,0 +1,1 @@
+76243b38-cab1-465f-aa7d-5bc617541753|Herigast, Erupting Nullkite|Emerge {6}{R}{R} (You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature's mana value.) When you cast this spell, you may exile your hand. If you do, draw three cards. Flying Each creature spell you cast has emerge. The emerge cost is equal to its mana cost.

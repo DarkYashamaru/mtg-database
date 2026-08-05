@@ -1,0 +1,2 @@
+68af06fd-a715-47c6-b439-c9fcb1b01a1d|Form of the Dinosaur|When this enchantment enters, your life total becomes 15. At the beginning of your upkeep, this enchantment deals 15 damage to target creature an opponent controls and that creature deals damage equal to its power to you.
+7b389f2b-fddc-46fb-85d5-4470565323f3|Form of the Dragon|At the beginning of your upkeep, this enchantment deals 5 damage to any target. At the beginning of each end step, your life total becomes 5. Creatures without flying can't attack you.

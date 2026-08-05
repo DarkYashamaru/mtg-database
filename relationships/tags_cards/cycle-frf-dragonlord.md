@@ -1,0 +1,5 @@
+c0b3bbce-977c-42a9-afcb-dabdfc717c97|Atarka, World Render|Flying, trample Whenever a Dragon you control attacks, it gains double strike until end of turn.
+73520b5a-3d55-40c9-af60-90fdd811934f|Dromoka, the Eternal|Flying Whenever a Dragon you control attacks, bolster 2. (Choose a creature with the least toughness among creatures you control and put two +1/+1 counters on it.)
+f6e160c1-b29f-4f3d-ab55-43ffe3ab4acf|Kolaghan, the Storm's Fury|Flying Whenever a Dragon you control attacks, creatures you control get +1/+0 until end of turn. Dash {3}{B}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)
+27d7f737-59a4-4948-9b2e-599ae848e054|Ojutai, Soul of Winter|Flying, vigilance Whenever a Dragon you control attacks, tap target nonland permanent an opponent controls. That permanent doesn't untap during its controller's next untap step.
+b26c91d9-87de-45f7-a24c-bbe0cef3a35c|Silumgar, the Drifting Death|Flying, hexproof Whenever a Dragon you control attacks, creatures defending player controls get -1/-1 until end of turn.

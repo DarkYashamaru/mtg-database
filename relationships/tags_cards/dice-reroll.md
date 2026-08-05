@@ -1,0 +1,1 @@
+f59fe075-f507-4a2c-a65c-725ff3084bd0|Monitor Monitor|When this creature enters, open an Attraction. (Put the top card of your Attraction deck onto the battlefield.) Once each turn, you may pay {1} to reroll one or more dice you rolled.

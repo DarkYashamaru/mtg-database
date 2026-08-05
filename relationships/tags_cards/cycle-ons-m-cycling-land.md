@@ -1,0 +1,5 @@
+326ba371-124c-4949-a048-3a0c8962e567|Barren Moor|This land enters tapped. {T}: Add {B}. Cycling {B} ({B}, Discard this card: Draw a card.)
+394c6de5-7957-4a0b-a6b9-ee0c707cd022|Forgotten Cave|This land enters tapped. {T}: Add {R}. Cycling {R} ({R}, Discard this card: Draw a card.)
+765863c8-1be0-4bb1-9e9c-db7701cffde3|Lonely Sandbar|This land enters tapped. {T}: Add {U}. Cycling {U} ({U}, Discard this card: Draw a card.)
+8dec6fcf-1254-4b1b-ba23-7a3e492a7241|Secluded Steppe|This land enters tapped. {T}: Add {W}. Cycling {W} ({W}, Discard this card: Draw a card.)
+9f8fe514-77ed-41b4-a6f3-c6f095bb97be|Tranquil Thicket|This land enters tapped. {T}: Add {G}. Cycling {G} ({G}, Discard this card: Draw a card.)

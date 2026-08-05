@@ -1,0 +1,2 @@
+b4d23acf-ff1f-4a6a-9ede-2667a99e9665|Multiple Choice|If X is 1, scry 1, then draw a card. If X is 2, you may choose a player. They return a creature they control to its owner's hand. If X is 3, create a 4/4 blue and red Elemental creature token. If X is 4 or more, do all of the above.
+2b0b4fc1-9ad6-4259-a0a2-9a14484c246e|Silver Scrutiny|You may cast this spell as though it had flash if X is 3 or less. Draw X cards.

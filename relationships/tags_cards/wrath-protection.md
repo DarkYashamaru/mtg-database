@@ -1,0 +1,1 @@
+8e04a5e0-e22c-430b-a39a-c9f38e16ea86|Guardian of Faith|Flash Vigilance When this creature enters, any number of other target creatures you control phase out. (Treat them and anything attached to them as though they don't exist until their controller's next turn.)

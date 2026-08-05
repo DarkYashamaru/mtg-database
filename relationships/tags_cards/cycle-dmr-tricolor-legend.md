@@ -1,0 +1,5 @@
+8ead94c5-8447-4f20-87ec-efdccde689fc|Arcades Sabboth|Flying At the beginning of your upkeep, sacrifice Arcades Sabboth unless you pay {G}{W}{U}. Each untapped creature you control gets +0/+2 as long as it's not attacking. {W}: Arcades Sabboth gets +0/+1 until end of turn.
+97e5d788-2dd3-4c8e-9ab6-f4ea9c7a9a3d|Rith, the Awakener|Flying Whenever Rith deals combat damage to a player, you may pay {2}{G}. If you do, choose a color, then create a 1/1 green Saproling creature token for each permanent of that color.
+b8aac8e8-4588-4cb9-8b95-5c4abab1c48b|Sol'kanar the Swamp King|Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.) Whenever a player casts a black spell, you gain 1 life.
+4a6e367c-7bc9-44a3-8ede-f2d0651abad3|Xira Arien|Flying {B}{R}{G}, {T}: Target player draws a card.
+d7950018-d744-48a8-81aa-0d8384703f48|Zur the Enchanter|Flying Whenever Zur attacks, you may search your library for an enchantment card with mana value 3 or less, put it onto the battlefield, then shuffle.

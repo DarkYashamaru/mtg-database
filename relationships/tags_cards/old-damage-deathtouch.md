@@ -1,0 +1,10 @@
+bf034a20-e362-4f38-9bf9-857777c62598|Acidic Dagger|{4}, {T}: Whenever target creature deals combat damage to a non-Wall creature this turn, destroy that non-Wall creature. When the targeted creature leaves the battlefield this turn, sacrifice this artifact. Activate only before blockers are declared.
+f9c8f9e1-a3a8-47f7-8d29-f954d14ad37b|Creepy Doll|Indestructible Whenever this creature deals combat damage to a creature, flip a coin. If you win the flip, destroy that creature.
+e0256da6-21f3-4019-9da0-75962b7f295c|Cruel Deceiver|{1}: Look at the top card of your library. {2}: Reveal the top card of your library. If it's a land card, this creature gains "Whenever this creature deals damage to a creature, destroy that creature" until end of turn. Activate only once each turn.
+aead53ef-ffcf-4ae2-ab81-40aa9627adc9|Death Pits of Rath|Whenever a creature is dealt damage, destroy it. It can't be regenerated.
+bf0c85d7-16a0-46a5-a3a6-5591849bef60|Dripping Dead|This creature can't block. Whenever this creature deals combat damage to a creature, destroy that creature. It can't be regenerated.
+c2a4c6c7-e5b4-4cc8-91d8-5de8cc95ed00|Green Dragon|Flying Poison Breath — When this creature enters, until end of turn, whenever a creature an opponent controls is dealt damage, destroy it.
+c37e69a7-5596-4dce-a3c9-41f899e05f24|Grotesque Hybrid|Whenever this creature deals combat damage to a creature, destroy that creature. It can't be regenerated. Discard a card: This creature gains flying and protection from green and from white until end of turn.
+effe239e-ade0-4ee2-99d7-f93b2f5ef585|Lowland Basilisk|Whenever this creature deals damage to a creature, destroy that creature at end of combat.
+230e0bf3-3f17-4968-8723-3fb6a0909816|Mephitic Ooze|This creature gets +1/+0 for each artifact you control. Whenever this creature deals combat damage to a creature, destroy that creature. The creature can't be regenerated.
+879fdcd8-62ea-4d39-abd4-44e6d82adf4d|Ohran Viper|Whenever this creature deals combat damage to a creature, destroy that creature at end of combat. Whenever this creature deals combat damage to a player, you may draw a card.

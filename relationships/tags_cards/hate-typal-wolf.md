@@ -1,0 +1,1 @@
+d2f693d9-f338-41d6-b7e2-ddaa5f4bcc3b|Lunar Rejection|Cleave {3}{U} (You may cast this spell for its cleave cost. If you do, remove the words in square brackets.) Return target [Wolf or Werewolf] creature to its owner's hand. Draw a card.

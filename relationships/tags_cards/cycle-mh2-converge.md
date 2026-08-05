@@ -1,0 +1,5 @@
+0e252f94-7731-45e1-bdbb-1bd11441577e|Glinting Creeper|Converge — This creature enters with two +1/+1 counters on it for each color of mana spent to cast it. This creature can't be blocked by creatures with power 2 or less.
+b02bd695-ec7f-47be-b797-e2b4b309cc2a|Kaleidoscorch|Converge — Kaleidoscorch deals X damage to any target, where X is the number of colors of mana spent to cast this spell. Flashback {4}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+2cb98ca9-d7bb-416b-a17e-ee5f8e4d78f2|Prismatic Ending|Converge — Exile target nonland permanent if its mana value is less than or equal to the number of colors of mana spent to cast this spell.
+cdea4344-24b6-4659-a830-c51d4b348af5|Radiant Epicure|Converge — When this creature enters, each opponent loses X life and you gain X life, where X is the number of colors of mana spent to cast this spell.
+7596fe49-c9cf-4415-ac1b-156cbbf9604e|Sweep the Skies|Converge — Create a 1/1 colorless Thopter artifact creature token with flying for each color of mana spent to cast this spell.

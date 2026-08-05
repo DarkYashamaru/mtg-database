@@ -1,0 +1,1 @@
+b0a0c17b-87c8-4610-adca-5e7f5ced49f6|Tidal Courier|When this creature enters, reveal the top four cards of your library. Put all Merfolk cards revealed this way into your hand and the rest on the bottom of your library in any order. {3}{U}: This creature gains flying until end of turn.

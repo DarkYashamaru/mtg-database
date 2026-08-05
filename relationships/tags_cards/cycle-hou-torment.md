@@ -1,0 +1,3 @@
+30a0a6c2-1fbb-4784-ab96-22611d57e62c|Torment of Hailfire|Repeat the following process X times. Each opponent loses 3 life unless that player sacrifices a nonland permanent of their choice or discards a card.
+4ba5bcee-fc95-4d05-965e-b1762529ec5f|Torment of Scarabs|Enchant player At the beginning of enchanted player's upkeep, that player loses 3 life unless they sacrifice a nonland permanent of their choice or discard a card.
+9e9a7f0b-ffba-43d6-892a-95fd0b8b39f8|Torment of Venom|Put three -1/-1 counters on target creature. Its controller loses 3 life unless they sacrifice another nonland permanent of their choice or discard a card.

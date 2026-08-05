@@ -1,0 +1,5 @@
+b9ea0d4c-cd71-4817-8213-96899e1a14bb|Hour of Devastation|All creatures lose indestructible until end of turn. Hour of Devastation deals 5 damage to each creature and each non-Bolas planeswalker.
+6fbaac3b-37ec-4815-a4ea-544c547e90b1|Hour of Eternity|Exile X target creature cards from your graveyard. For each card exiled this way, create a token that's a copy of that card, except it's a 4/4 black Zombie.
+d97fd43b-146f-4d13-9c45-51bceaff742e|Hour of Glory|Exile target creature. If that creature was a God, its controller reveals their hand and exiles all cards from it with the same name as that creature.
+51ff3e53-90bb-41bf-80e4-bb3fd51d574a|Hour of Promise|Search your library for up to two land cards, put them onto the battlefield tapped, then shuffle. Then if you control three or more Deserts, create two 2/2 black Zombie creature tokens.
+920c1dd4-c3f6-4020-a6f0-2e8acad2c212|Hour of Revelation|This spell costs {3} less to cast if there are ten or more nonland permanents on the battlefield. Destroy all nonland permanents.

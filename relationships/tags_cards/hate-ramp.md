@@ -1,0 +1,5 @@
+63c1eda1-3e6f-4e9c-adf3-a43164df98bb|Ankh of Mishra|Whenever a land enters, this artifact deals 2 damage to that land's controller.
+f86b9a01-62fc-4120-8914-5054ed48d37e|Confounding Conundrum|When this enchantment enters, draw a card. Whenever a land an opponent controls enters, if that player had another land enter the battlefield under their control this turn, they return a land they control to its owner's hand.
+d4e3440d-4e34-40d7-8a42-c673225c0332|Deep Gnome Terramancer|Flash Mold Earth — Whenever one or more lands enter under an opponent's control without being played, you may search your library for a Plains card, put it onto the battlefield tapped, then shuffle. Do this only once each turn.
+41353001-eba4-45b5-8dd2-09d49b63b6b1|Tunnel Ignus|Whenever a land enters under an opponent's control, if that player had another land enter the battlefield under their control this turn, this creature deals 3 damage to that player.
+0e412b68-9179-4094-960a-95692428855b|Zo-Zu the Punisher|Whenever a land enters, Zo-Zu deals 2 damage to that land's controller.

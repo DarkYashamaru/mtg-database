@@ -1,0 +1,1 @@
+00b50215-e832-417f-9c80-2bc3050b6ebb|Spider-Ham, Peter Porker|When Spider-Ham enters, create a Food token. (It's an artifact with "{2}, {T}, Sacrifice this token: You gain 3 life.") Animal May-Ham — Other Spiders, Boars, Bats, Bears, Birds, Cats, Dogs, Frogs, Jackals, Lizards, Mice, Otters, Rabbits, Raccoons, Rats, Squirrels, Turtles, and Wolves you control get +1/+1.

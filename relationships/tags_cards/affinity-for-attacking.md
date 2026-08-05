@@ -1,0 +1,8 @@
+5f981cca-5cd9-49e4-ab1a-bbbf6fc7e737|Ancient Stone Idol|Flash This spell costs {1} less to cast for each attacking creature. Trample When this creature dies, create a 6/12 colorless Construct artifact creature token with trample.
+4d6120d6-fcce-40bc-9fc6-e1f5beb6c728|Embercleave|Flash This spell costs {1} less to cast for each attacking creature you control. When Embercleave enters, attach it to target creature you control. Equipped creature gets +1/+1 and has double strike and trample. Equip {3}
+1a33a5c2-5aa1-48e5-95a8-d52cdce980de|Rowdy Research|This spell costs {1} less to cast for each creature that attacked this turn. Draw three cards.
+8721b0a6-52ff-4749-92db-82bb36f5a73e|Search Party Captain|This spell costs {1} less to cast for each creature you attacked with this turn. When this creature enters, draw a card.
+b5b742d2-f19b-47c9-84bd-e85d975900e6|Static Snare|Flash This spell costs {1} less to cast for each attacking creature. When this enchantment enters, exile target artifact or creature an opponent controls until this enchantment leaves the battlefield.
+47cd98e2-0eaf-4292-a840-c5e8d035c83c|Stone Idol Trap|This spell costs {1} less to cast for each attacking creature. Create a 6/12 colorless Construct artifact creature token with trample. Exile it at the beginning of your next end step.
+f2f4e14d-1ce8-41b3-b907-03ff561b42f7|The Mary Janes|This spell costs {1} less to cast for each creature that attacked this turn. Menace (This creature can't be blocked except by two or more creatures.)
+f46befcb-6a7f-4f5e-8634-393cbf4b3308|Witchstalker Frenzy|This spell costs {1} less to cast for each creature that attacked this turn. Witchstalker Frenzy deals 5 damage to target creature.

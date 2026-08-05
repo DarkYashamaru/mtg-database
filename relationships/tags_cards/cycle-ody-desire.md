@@ -1,0 +1,5 @@
+95db05eb-2c25-43f2-8e18-dfc64f490634|Aboshan's Desire|Enchant creature Enchanted creature has flying. Threshold — Enchanted creature has shroud as long as there are seven or more cards in your graveyard. (It can't be the target of spells or abilities.)
+6cbe54e0-5d62-4aad-ad9c-98b70defbf96|Kamahl's Desire|Enchant creature Enchanted creature has first strike. Threshold — Enchanted creature gets +3/+0 as long as there are seven or more cards in your graveyard.
+4f21a664-96e3-49be-ba9f-4af4b6bd7475|Kirtar's Desire|Enchant creature Enchanted creature can't attack. Threshold — Enchanted creature can't block as long as there are seven or more cards in your graveyard.
+23b518ab-561f-4551-8270-082cde99b993|Patriarch's Desire|Enchant creature Enchanted creature gets +2/-2. Threshold — Enchanted creature gets an additional +2/-2 as long as there are seven or more cards in your graveyard.
+76fe7cfa-c3db-4122-b262-f7c5c90fcdd7|Seton's Desire|Enchant creature Enchanted creature gets +2/+2. Threshold — As long as there are seven or more cards in your graveyard, all creatures able to block enchanted creature do so.

@@ -1,0 +1,1 @@
+97bb1589-2941-4a75-a5f6-916871e51e9e|Alandra, Sky Dreamer|Whenever you draw your second card each turn, create a 2/2 blue Drake creature token with flying. Whenever you draw your fifth card each turn, Alandra and Drakes you control each get +X/+X until end of turn, where X is the number of cards in your hand.

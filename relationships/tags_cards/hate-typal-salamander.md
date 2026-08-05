@@ -1,0 +1,1 @@
+9abdd53a-aa62-447b-9525-02a2227cc44b|Gor Muldrak, Amphinologist|You and permanents you control have protection from Salamanders. At the beginning of your end step, each player who controls the fewest creatures creates a 4/3 blue Salamander Warrior creature token.

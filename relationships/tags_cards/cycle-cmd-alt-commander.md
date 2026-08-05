@@ -1,0 +1,5 @@
+725880b2-1675-414f-b61b-cf6533797dbf|Animar, Soul of Elements|Protection from white and from black Whenever you cast a creature spell, put a +1/+1 counter on Animar. Creature spells you cast cost {1} less to cast for each +1/+1 counter on Animar.
+eb7ae3e8-0489-4f3a-8343-7e7ec2fe3f01|Damia, Sage of Stone|Deathtouch Skip your draw step. At the beginning of your upkeep, if you have fewer than seven cards in hand, draw cards equal to the difference.
+304c194f-fa0b-42e5-93ca-8c587181d33c|Karador, Ghost Chieftain|This spell costs {1} less to cast for each creature card in your graveyard. Once during each of your turns, you may cast a creature spell from your graveyard.
+82d109ea-3421-46eb-9bbf-f7f28b548ea6|Ruhan of the Fomori|At the beginning of combat on your turn, choose an opponent at random. Ruhan attacks that player this combat if able.
+9c00b503-ae5e-4ce3-ad6a-92b541b2e3cd|Tariel, Reckoner of Souls|Flying, vigilance {T}: Choose a creature card at random from target opponent's graveyard. Put that card onto the battlefield under your control.

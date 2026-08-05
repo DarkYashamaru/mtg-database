@@ -1,0 +1,1 @@
+39c813e1-0e26-440a-b9bd-e781f7576b8b|Bebop, Warthog Warrior|Menace (This creature can't be blocked except by two or more creatures.) Rhinos you control have menace. Swampcycling {2} ({2}, Discard this card: Search your library for a Swamp card, reveal it, put it into your hand, then shuffle.)

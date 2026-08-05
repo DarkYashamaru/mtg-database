@@ -1,0 +1,1 @@
+64ca54ee-1502-4fae-b919-7e4457e641c0|Swimmer in Nightmares|This creature gets +3/+0 as long as there are ten or more cards in a single graveyard. This creature can't be blocked as long as you control an Ashiok planeswalker.

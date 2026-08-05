@@ -1,0 +1,4 @@
+ebb68e03-b2a5-4c5c-8e3b-968cd241d1f0|Thornscape Apprentice|{R}, {T}: Target creature gains first strike until end of turn. {W}, {T}: Tap target creature.
+8d4d6806-cb01-49e3-91cc-fb0e7f7a8684|Thornscape Battlemage|Kicker {R} and/or {W} (You may pay an additional {R} and/or {W} as you cast this spell.) When this creature enters, if it was kicked with its {R} kicker, it deals 2 damage to any target. When this creature enters, if it was kicked with its {W} kicker, destroy target artifact.
+3f92c684-f2fd-4fe5-bfb5-e27061d2c45b|Thornscape Familiar|Red spells and white spells you cast cost {1} less to cast.
+ea802eda-fc8d-45c7-b5a3-238a2cdc4dcb|Thornscape Master|{R}{R}, {T}: This creature deals 2 damage to target creature. {W}{W}, {T}: Target creature gains protection from the color of your choice until end of turn.

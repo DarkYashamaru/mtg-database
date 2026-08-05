@@ -1,0 +1,10 @@
+1208cb6e-34b4-4a23-9a5b-a01229113e38|Advocate of the Beast|At the beginning of your end step, put a +1/+1 counter on target Beast creature you control.
+15e83068-6253-4c65-8679-7295f3dc2075|Aether Charge|Whenever a Beast you control enters, you may have it deal 4 damage to target opponent or planeswalker.
+a762e8cb-9d33-41fc-b2e8-0c5ad4d7268e|Berserk Murlodont|Whenever a Beast becomes blocked, it gets +1/+1 until end of turn for each creature blocking it.
+41fa3954-119b-4ff2-ad56-9105482f6b7c|Bloodstoke Howler|Morph {6}{R} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.) When this creature is turned face up, Beast creatures you control get +3/+0 until end of turn.
+7fc60ae2-75fc-49e1-9d56-aa5a43844210|Canopy Crawler|Amplify 1 (As this creature enters, put a +1/+1 counter on it for each Beast card you reveal in your hand.) {T}: Target creature gets +1/+1 until end of turn for each +1/+1 counter on this creature.
+b891a683-2ebc-4e9c-b402-5dd9c1b42b69|Contested Cliffs|{T}: Add {C}. {R}{G}, {T}: Target Beast creature you control fights target creature an opponent controls. (Each deals damage equal to its power to the other.)
+edb2d86f-d2c6-4230-a37d-b01210a99a32|Feral Throwback|Amplify 2 (As this creature enters, put two +1/+1 counters on it for each Beast card you reveal in your hand.) Provoke (Whenever this creature attacks, you may have target creature defending player controls untap and block it if able.)
+e9ed7322-53d4-419a-809f-78824aeaf99e|Glowering Rogon|Amplify 1 (As this creature enters, put a +1/+1 counter on it for each Beast card you reveal in your hand.)
+35428c77-9731-4d4d-8f75-e939a491cf86|Kaheera, the Orphanguard|Companion — Each creature card in your starting deck is a Cat, Elemental, Nightmare, Dinosaur, or Beast card. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.) Vigilance Each other creature you control that's a Cat, Elemental, Nightmare, Dinosaur, or Beast gets +1/+1 and has vigilance.
+1300dc30-a089-41f5-b1a7-e4779ebb73ef|Krosan Groundshaker|{G}: Target Beast creature gains trample until end of turn.

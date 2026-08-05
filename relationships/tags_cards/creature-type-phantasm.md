@@ -1,0 +1,5 @@
+821ce349-5379-4415-89e2-224e21dda24b|Phantasmal Fiend|{B}: This creature gets +1/-1 until end of turn. {1}{U}: Switch this creature's power and toughness until end of turn.
+06a158c6-7e36-49f8-a8e0-a7b7df5fd7ed|Phantasmal Forces|Flying At the beginning of your upkeep, sacrifice this creature unless you pay {U}.
+8c7723a5-04c7-4241-b0ba-6a821449ca43|Phantasmal Mount|Flying {T}: Target creature you control with toughness 2 or less gets +1/+1 and gains flying until end of turn. When this creature leaves the battlefield this turn, sacrifice that creature. When the creature leaves the battlefield this turn, sacrifice this creature.
+4230c7a3-4591-411e-afab-d2bfb58446de|Phantasmal Sphere|Flying At the beginning of your upkeep, put a +1/+1 counter on this creature, then sacrifice this creature unless you pay {1} for each +1/+1 counter on it. When this creature leaves the battlefield, target opponent creates an X/X blue Orb creature token with flying, where X is the number of +1/+1 counters on this creature.
+bbd30183-524c-4b93-b953-90853ec3f39f|Phantom Monster|Flying

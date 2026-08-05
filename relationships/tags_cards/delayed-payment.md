@@ -1,0 +1,5 @@
+9f9882f5-2338-4881-b418-b15348a462b4|Intervention Pact|The next time a source of your choice would deal damage to you this turn, prevent that damage. You gain life equal to the damage prevented this way. At the beginning of your next upkeep, pay {1}{W}{W}. If you don't, you lose the game.
+f3e213a4-ba5a-468a-93b3-c0a34e1bd725|Pact of Negation|Counter target spell. At the beginning of your next upkeep, pay {3}{U}{U}. If you don't, you lose the game.
+cf4959bf-92ae-4c9b-b631-724ce100cbb8|Pact of the Titan|Create a 4/4 red Giant creature token. At the beginning of your next upkeep, pay {4}{R}. If you don't, you lose the game.
+67c4b1d5-757c-46cf-8bb1-9889d9ed1a1f|Slaughter Pact|Destroy target nonblack creature. At the beginning of your next upkeep, pay {2}{B}. If you don't, you lose the game.
+782dcbc4-5a11-42f5-b8d9-4572e36d45b3|Summoner's Pact|Search your library for a green creature card, reveal it, put it into your hand, then shuffle. At the beginning of your next upkeep, pay {2}{G}{G}. If you don't, you lose the game.

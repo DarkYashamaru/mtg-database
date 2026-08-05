@@ -1,0 +1,5 @@
+ec2b3779-55f7-4169-aa66-6312fb52721f|Indatha Triome|({T}: Add {W}, {B}, or {G}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+6bae00e8-06cf-4ac4-a1cc-757e454109fe|Ketria Triome|({T}: Add {G}, {U}, or {R}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+c7fa1dda-9312-4ec8-82cd-a1ba7bc33497|Raugrin Triome|({T}: Add {U}, {R}, or {W}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+00625242-9348-4ef4-b975-f2ac82fee21d|Savai Triome|({T}: Add {R}, {W}, or {B}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+fdd46004-eaba-4024-8687-39b23dc6a58c|Zagoth Triome|({T}: Add {B}, {G}, or {U}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)

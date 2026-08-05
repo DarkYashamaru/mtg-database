@@ -1,0 +1,5 @@
+306593b0-6ea8-476f-a3f2-e17876c1bab4|Ancient Grudge|Destroy target artifact. Flashback {G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+a3ec6b5d-08ec-4ae0-b1db-c4b87a1849c7|Momentary Blink|Exile target creature you control, then return it to the battlefield under its owner's control. Flashback {3}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+81d72511-88b4-45ec-a5a9-e722caf55577|Mystical Teachings|Search your library for an instant card or a card with flash, reveal it, put it into your hand, then shuffle. Flashback {5}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+6c9d3ad0-1ede-41de-a1b4-15de9c728216|Strangling Soot|Destroy target creature with toughness 3 or less. Flashback {5}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+7b1f0b78-806f-4a7d-809b-d2bc60cf1b01|Thrill of the Hunt|Target creature gets +1/+2 until end of turn. Flashback {W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)

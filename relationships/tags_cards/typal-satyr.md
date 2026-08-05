@@ -1,0 +1,1 @@
+43f135b5-d33e-4873-bc5a-8c939582d624|Gallia of the Endless Dance|Haste Other Satyrs you control get +1/+1 and have haste. Whenever you attack with three or more creatures, you may discard a card at random. If you do, draw two cards.

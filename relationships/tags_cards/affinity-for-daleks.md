@@ -1,0 +1,1 @@
+07799012-7051-400e-adde-b54b41b80c70|The Dalek Emperor|Affinity for Daleks (This spell costs {1} less to cast for each Dalek you control.) Other Daleks you control have haste. At the beginning of combat on your turn, each opponent faces a villainous choice — That player sacrifices a creature of their choice, or you create a 3/3 black Dalek artifact creature token with menace.

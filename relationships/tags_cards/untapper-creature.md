@@ -1,0 +1,10 @@
+d0e1904e-1a37-41f6-8582-b9ea794bb886|Abduction|Enchant creature When this Aura enters, untap enchanted creature. You control enchanted creature. When enchanted creature dies, return that card to the battlefield under its owner's control.
+1347224f-421e-4270-8e50-cf25c875909c|Acrobatic Leap|Target creature gets +1/+3 and gains flying until end of turn. Untap it.
+9d7624ea-ffff-470b-928b-bbac66ddbd1c|Act of Aggression|({R/P} can be paid with either {R} or 2 life.) Gain control of target creature an opponent controls until end of turn. Untap that creature. It gains haste until end of turn.
+25edb501-11b5-4617-8a65-2eb4869cccd5|Act of Heroism|Untap target creature. It gets +2/+2 until end of turn and can block an additional creature this turn.
+9d08af23-9f4a-4097-9abc-3b17475ab744|Act of Treason|Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn. (It can attack and {T} this turn.)
+20129459-a386-41eb-899d-1aede3427300|Aggravated Assault|{3}{R}{R}: Untap all creatures you control. After this main phase, there is an additional combat phase followed by an additional main phase. Activate only as a sorcery.
+c03d073e-ea59-4873-952a-bcf2730f1115|Ahn-Crop Champion|You may exert this creature as it attacks. When you do, untap all other creatures you control. (An exerted creature won't untap during your next untap step.)
+c169929a-850b-4d46-9f14-a922f4465d85|Aim High|Untap target creature. It gets +2/+2 and gains reach until end of turn.
+cb666ea8-55e3-4e27-ae6d-806677dfc17a|Airtight Alibi|Flash Enchant creature When this Aura enters, untap enchanted creature. It gains hexproof until end of turn. If it's suspected, it's no longer suspected. Enchanted creature gets +2/+2 and can't become suspected.
+5bd81d2f-46a1-4536-92e7-28c7e1892735|Akki Battle Squad|Whenever one or more modified creatures you control attack, untap all modified creatures you control. After this phase, there is an additional combat phase. This ability triggers only once each turn. (Equipment, Auras you control, and counters are modifications.)

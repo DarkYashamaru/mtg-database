@@ -1,0 +1,1 @@
+42c5c1aa-10a4-4cd5-b1f8-a393ed553f99|Grave Defiler|When this creature enters, reveal the top four cards of your library. Put all Zombie cards revealed this way into your hand and the rest on the bottom of your library in any order. {1}{B}: Regenerate this creature.

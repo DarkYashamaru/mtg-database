@@ -1,0 +1,1 @@
+29a12f75-d66d-457f-85c4-6b9450adc0d8|Balduvian Hydra|This creature enters with X +1/+0 counters on it. Remove a +1/+0 counter from this creature: Prevent the next 1 damage that would be dealt to it this turn. {R}{R}{R}: Put a +1/+0 counter on this creature. Activate only during your upkeep.

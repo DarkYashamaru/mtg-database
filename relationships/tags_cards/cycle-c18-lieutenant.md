@@ -1,0 +1,5 @@
+7f268b15-ac92-4e98-821b-78d15d9285d9|Loyal Apprentice|Haste Lieutenant — At the beginning of combat on your turn, if you control your commander, create a 1/1 colorless Thopter artifact creature token with flying. That token gains haste until end of turn.
+daebf011-ec85-4cbd-9445-02ac59675c58|Loyal Drake|Flying Lieutenant — At the beginning of combat on your turn, if you control your commander, draw a card.
+de1cfa83-2049-48ab-b093-2f120a3ef4f2|Loyal Guardian|Trample Lieutenant — At the beginning of combat on your turn, if you control your commander, put a +1/+1 counter on each creature you control.
+76f405a1-242a-47e6-9aa6-261e49a85b45|Loyal Subordinate|Menace (This creature can't be blocked except by two or more creatures.) Lieutenant — At the beginning of combat on your turn, if you control your commander, each opponent loses 3 life.
+6cf8191c-acca-4145-86c2-53a138b3fe4a|Loyal Unicorn|Vigilance Lieutenant — At the beginning of combat on your turn, if you control your commander, prevent all combat damage that would be dealt to creatures you control this turn. Other creatures you control gain vigilance until end of turn.

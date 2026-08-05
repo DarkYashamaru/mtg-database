@@ -1,0 +1,1 @@
+e475c96f-6cf8-4139-92fd-f68ecaae4893|Dog Umbra|Flash Enchant creature As long as another player controls enchanted creature, it can't attack or block. Otherwise, this Aura has umbra armor. (If enchanted creature would be destroyed, instead remove all damage from it and destroy this Aura.)

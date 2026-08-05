@@ -1,0 +1,1 @@
+7aa39b85-6646-4365-99c3-9de31ab0594f|Isperia the Inscrutable|Flying Whenever Isperia deals combat damage to a player, choose a card name. That player reveals their hand. If a card with the chosen name is revealed this way, search your library for a creature card with flying, reveal it, put it into your hand, then shuffle.

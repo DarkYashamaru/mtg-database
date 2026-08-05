@@ -11,9 +11,11 @@ from database.session import get_db
 from pydantic import BaseModel, Field
 from typing import Optional, List
 from models.card import *
+from models.archetype import *
 from models.color import *
 from models.public_schemas import *
 from models.tag import *
+from models.category import *
 from models.themes import *
 from scripts.download_all_data import download_from_scryfall
 from scripts.import_all import import_data_to_database
@@ -31,6 +33,8 @@ CARD_LOAD_OPTIONS = (
     selectinload(Card.taggings).selectinload(Tagging.tag),
     selectinload(Card.color_identity).selectinload(Color_Identity.color),
     selectinload(Card.keywords).selectinload(Card_Keyword.keyword),
+    selectinload(Card.categories),
+    selectinload(Card.archetypes),
     selectinload(Card.faces)
     .selectinload(Card_Face.supertypes)
     .selectinload(Face_Supertypes.type),
@@ -284,6 +288,24 @@ def get_all_tags(db: Session = Depends(get_db)):
     tags = db.execute(stmt).scalars().all()
 
     return [tag_to_schema(tag) for tag in tags]
+
+
+@router.get("/categories", response_model=list[CategorySchema])
+def get_all_categories(db: Session = Depends(get_db)):
+    stmt = select(Category).order_by(Category.name)
+
+    categories = db.execute(stmt).scalars().all()
+
+    return [category_to_schema(category) for category in categories]
+
+
+@router.get("/archetypes", response_model=list[ArchetypeSchema])
+def get_all_archetypes(db: Session = Depends(get_db)):
+    stmt = select(Archetype).order_by(Archetype.name)
+
+    archetypes = db.execute(stmt).scalars().all()
+
+    return [archetype_to_schema(archetype) for archetype in archetypes]
 
 @router.get("/themes/id/{archetype_id}", response_model=ThemeypeSchema,)
 def get_archetype(archetype_id: int, db: Session = Depends(get_db),):

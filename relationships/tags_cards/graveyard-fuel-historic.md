@@ -1,0 +1,2 @@
+e0321049-a3ed-4378-b607-7fb190b6f0fd|The Capitoline Triad|Those Who Came Before — This spell costs {1} less to cast for each historic card in your graveyard. (Artifacts, legendaries, and Sagas are historic.) Exile any number of historic cards from your graveyard with total mana value 30 or greater: You get an emblem with "Creatures you control have base power and toughness 9/9."
+4734b73e-104c-4b25-ab52-0145f361c9d1|Urza's Tome|{3}, {T}: Draw a card. Then discard a card unless you exile a historic card from your graveyard. (Artifacts, legendaries, and Sagas are historic.)

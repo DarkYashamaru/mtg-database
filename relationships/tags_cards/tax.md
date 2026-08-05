@@ -1,0 +1,1 @@
+5b04a337-3152-481e-973f-a11dbd615f93|Nullhide Ferox|Hexproof You can't cast noncreature spells. {2}: This creature loses all abilities until end of turn. Any player may activate this ability. If a spell or ability an opponent controls causes you to discard this card, put it onto the battlefield instead of putting it into your graveyard.

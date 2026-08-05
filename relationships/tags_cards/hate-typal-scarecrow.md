@@ -1,0 +1,1 @@
+54831951-2cd3-41bb-8326-6cfce48feb34|Boggart Arsonists|Plainswalk (This creature can't be blocked as long as defending player controls a Plains.) {2}{R}, Sacrifice this creature: Destroy target Scarecrow or Plains.

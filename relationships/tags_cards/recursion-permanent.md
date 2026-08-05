@@ -1,0 +1,1 @@
+34161ec4-5d99-45e6-b43c-c8d28958660a|Treasury Thrull|Extort (Whenever you cast a spell, you may pay {W/B}. If you do, each opponent loses 1 life and you gain that much life.) Whenever this creature attacks, you may return target artifact, creature, or enchantment card from your graveyard to your hand.

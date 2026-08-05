@@ -1,0 +1,1 @@
+981138d0-bf61-406a-85be-68cc5e58796c|Tapestry Warden|Vigilance Each creature you control with toughness greater than its power assigns combat damage equal to its toughness rather than its power. Each creature you control with toughness greater than its power stations permanents using its toughness rather than its power.

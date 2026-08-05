@@ -1,0 +1,5 @@
+4fe8af73-c84a-44bd-9739-ee5c8b027874|Crypt of Agadeem|This land enters tapped. {T}: Add {B}. {2}, {T}: Add {B} for each black creature card in your graveyard.
+cc999cf2-c99b-4911-8c52-6cc4a99fcc7b|Emeria, the Sky Ruin|This land enters tapped. At the beginning of your upkeep, if you control seven or more Plains, you may return target creature card from your graveyard to the battlefield. {T}: Add {W}.
+4bdffa67-e6b3-4588-b76e-c11db6f043ca|Magosi, the Waterveil|This land enters tapped. {T}: Add {U}. {U}, {T}: Put an eon counter on this land. Skip your next turn. {T}, Remove an eon counter from this land and return it to its owner's hand: Take an extra turn after this one.
+e88027a6-24cc-4a8b-86db-734f26149ea8|Oran-Rief, the Vastwood|This land enters tapped. {T}: Add {G}. {T}: Put a +1/+1 counter on each green creature that entered this turn.
+1bc44216-4e06-4f66-89b7-5c327004604e|Valakut, the Molten Pinnacle|This land enters tapped. Whenever a Mountain you control enters, if you control at least five other Mountains, you may have this land deal 3 damage to any target. {T}: Add {R}.

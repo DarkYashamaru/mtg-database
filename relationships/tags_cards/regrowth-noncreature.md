@@ -1,0 +1,3 @@
+506667b1-7922-4959-a5b3-0f8abe8c3615|Deadbridge Chant|When this enchantment enters, mill ten cards. At the beginning of your upkeep, choose a card at random in your graveyard. If it's a creature card, put it onto the battlefield. Otherwise, put it into your hand.
+157a4cba-b2e6-4c42-b7dc-62db19625c9c|Retrieve|Return up to one target creature card and up to one target noncreature permanent card from your graveyard to your hand. Exile Retrieve.
+6ad4d181-21ce-47f3-9c00-2aa8c307e7fe|Unassuming Gelatinous Serpent|{TK}{TK} — When this permanent dies, return target noncreature, nonland card from your graveyard to your hand. {TK}{TK}{TK}{TK} — Whenever this creature deals combat damage to a player, that player mills twice that many cards. {TK}{TK} — 2/3 {TK}{TK}{TK} — 7/2

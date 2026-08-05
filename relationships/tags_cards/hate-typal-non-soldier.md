@@ -1,0 +1,1 @@
+6e202114-48f3-46d2-bc54-df766d149d9d|Frontline Strategist|Morph {W} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.) When this creature is turned face up, prevent all combat damage non-Soldier creatures would deal this turn.

@@ -1,0 +1,1 @@
+049d8b06-db90-4b9c-8195-d987b3ef1005|Courier of Comestibles|When this creature enters, you may search your library for a Food card, reveal it, put it into your hand, then shuffle. If you don't put a card into your hand this way, create a Food token. (It's an artifact with "{2}, {T}, Sacrifice this token: You gain 3 life.")

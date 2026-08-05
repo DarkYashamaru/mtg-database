@@ -1,0 +1,5 @@
+3cd9bac9-0abc-43d8-9f84-94f965f7a2e0|Cormela, Glamour Thief|Haste {1}, {T}: Add {U}{B}{R}. Spend this mana only to cast instant and/or sorcery spells. When Cormela dies, return up to one target instant or sorcery card from your graveyard to your hand.
+6a98b586-5187-48a1-bde3-f6141f3e9cb1|Lagrella, the Magpie|When Lagrella enters, exile any number of other target creatures controlled by different players until Lagrella leaves the battlefield. When an exiled card enters under your control this way, put two +1/+1 counters on it.
+58447f16-1df9-4e9a-bb22-b9aad042055a|Mr. Orfeo, the Boulder|Whenever you attack, double target creature's power until end of turn.
+c983338d-ae6b-4a15-9931-daa20fca8269|Queza, Augur of Agonies|Whenever you draw a card, target opponent loses 1 life and you gain 1 life.
+41c765a4-a9c9-4169-a9f1-74ededeb793c|Rocco, Cabaretti Caterer|When Rocco enters, if you cast it, you may search your library for a creature card with mana value X or less, put it onto the battlefield, then shuffle.

@@ -1,0 +1,5 @@
+49f0b317-6b06-482e-ab64-e02713e6c7e8|Battlewing Mystic|Kicker {R} (You may pay an additional {R} as you cast this spell.) Flying When this creature enters, if it was kicked, discard your hand, then draw two cards.
+158aaeab-1646-4160-9615-bc8747620a03|Choking Miasma|Kicker {G} (You may pay an additional {G} as you cast this spell.) If this spell was kicked, put a +1/+1 counter on a creature you control. All creatures get -2/-2 until end of turn.
+9a708f82-a4a1-47f9-8ff3-65608269eebd|Elvish Hydromancer|Kicker {3}{U} (You may pay an additional {3}{U} as you cast this spell.) When this creature enters, if it was kicked, create a token that's a copy of target creature you control.
+2f541bf9-1e5b-4d16-8558-a5cfce7e93ad|Hurloon Battle Hymn|Kicker {W} (You may pay an additional {W} as you cast this spell.) Hurloon Battle Hymn deals 4 damage to target creature or planeswalker. If this spell was kicked, you gain 4 life.
+be04f54f-59fa-4f0a-b8b5-790d568932b6|Phyrexian Missionary|Kicker {1}{B} (You may pay an additional {1}{B} as you cast this spell.) Lifelink When this creature enters, if it was kicked, return target creature card from your graveyard to your hand.

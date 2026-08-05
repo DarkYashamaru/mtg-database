@@ -1,0 +1,1 @@
+788d3cfa-7706-4728-9c48-cf7bc963d002|Skycoach Conductor // All Aboard|Exile target non-Pilot creature you control, then return that card to the battlefield under its owner's control. // Flash Flying, vigilance This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)

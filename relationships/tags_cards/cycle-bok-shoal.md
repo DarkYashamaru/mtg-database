@@ -1,0 +1,5 @@
+ccba143d-ed9b-4044-bdad-f010a0e38e47|Blazing Shoal|You may exile a red card with mana value X from your hand rather than pay this spell's mana cost. Target creature gets +X/+0 until end of turn.
+2912d93d-ed51-41ef-b64f-3cb6581c09e5|Disrupting Shoal|You may exile a blue card with mana value X from your hand rather than pay this spell's mana cost. Counter target spell if its mana value is X.
+2aa0e0e5-cb6d-4518-8eff-d29f935486e0|Nourishing Shoal|You may exile a green card with mana value X from your hand rather than pay this spell's mana cost. You gain X life.
+9937dae8-e639-46ad-849b-7e7be93bbbad|Shining Shoal|You may exile a white card with mana value X from your hand rather than pay this spell's mana cost. The next X damage that a source of your choice would deal to you and/or creatures you control this turn is dealt to any target instead.
+2da8e9d6-e8a8-46a5-a478-3e81098d2a08|Sickening Shoal|You may exile a black card with mana value X from your hand rather than pay this spell's mana cost. Target creature gets -X/-X until end of turn.

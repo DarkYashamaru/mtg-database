@@ -1,0 +1,1 @@
+c75f8365-71f1-415f-8bbc-9bacb8ddba0b|Fumulus, the Infestation|Flying, deathtouch Whenever a player sacrifices a nontoken creature, create a 1/1 black Insect creature token with flying. Whenever an Insect, Leech, Slug, or Worm you control attacks, defending player loses 1 life and you gain 1 life.

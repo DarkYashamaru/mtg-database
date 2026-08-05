@@ -1,0 +1,5 @@
+49fe9f5a-5821-4586-b913-7d8aef1f8669|Cenn's Enlistment|Create two 1/1 white Kithkin Soldier creature tokens. Retrace (You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.)
+05eccdee-84f8-42d5-b79c-36d081656915|Flame Jab|Flame Jab deals 1 damage to any target. Retrace (You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.)
+0f58f791-469a-4a22-996e-4906c0914858|Monstrify|Target creature gets +4/+4 until end of turn. Retrace (You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.)
+380e9992-b5d2-4fbe-a8c3-c37220846e0a|Oona's Grace|Target player draws a card. Retrace (You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.)
+a21c85f3-482b-47e5-9321-0ca21e110bd8|Raven's Crime|Target player discards a card. Retrace (You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.)

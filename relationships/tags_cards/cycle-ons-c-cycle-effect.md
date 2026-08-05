@@ -1,0 +1,5 @@
+a60348fa-b182-4667-9e38-15bdf3511f82|Choking Tethers|Tap up to four target creatures. Cycling {1}{U} ({1}{U}, Discard this card: Draw a card.) When you cycle this card, you may tap target creature.
+be7b16ef-32aa-40d5-b287-c5e79d52d6b9|Dirge of Dread|All creatures gain fear until end of turn. (They can't be blocked except by artifact creatures and/or black creatures.) Cycling {1}{B} ({1}{B}, Discard this card: Draw a card.) When you cycle this card, you may have target creature gain fear until end of turn.
+82406175-63b3-4972-be8b-db0e70c908cb|Krosan Tusker|Cycling {2}{G} ({2}{G}, Discard this card: Draw a card.) When you cycle this card, you may search your library for a basic land card, reveal that card, put it into your hand, then shuffle. (Do this before you draw.)
+aa4ecefa-808e-4706-af16-4ea5af9743fc|Renewed Faith|You gain 6 life. Cycling {1}{W} ({1}{W}, Discard this card: Draw a card.) When you cycle this card, you may gain 2 life.
+ece3e379-c586-48bd-8742-472b5deccc35|Solar Blast|Solar Blast deals 3 damage to any target. Cycling {1}{R}{R} ({1}{R}{R}, Discard this card: Draw a card.) When you cycle this card, you may have it deal 1 damage to any target.

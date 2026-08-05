@@ -1,0 +1,5 @@
+93dd5f2e-aa13-4616-bfe6-466524b274ff|Gilded Cerodon|Whenever this creature attacks, if you control a Desert or there is a Desert card in your graveyard, target creature can't block this turn.
+92247856-35a4-4c1d-90bc-fa0d28524ecd|Sidewinder Naga|As long as you control a Desert or there is a Desert card in your graveyard, this creature gets +1/+0 and has trample.
+2eac0c6a-b289-4b75-9571-59869e62d180|Solitary Camel|This creature has lifelink as long as you control a Desert or there is a Desert card in your graveyard. (Damage dealt by this creature also causes you to gain that much life.)
+5f55d41a-ef93-4d4f-ab55-13ea887e7af2|Unquenchable Thirst|Enchant creature When this Aura enters, if you control a Desert or there is a Desert card in your graveyard, tap enchanted creature. Enchanted creature doesn't untap during its controller's untap step.
+525d1562-4fb6-4df3-ab6d-ab6a94c866e0|Wretched Camel|When this creature dies, if you control a Desert or there is a Desert card in your graveyard, target player discards a card.

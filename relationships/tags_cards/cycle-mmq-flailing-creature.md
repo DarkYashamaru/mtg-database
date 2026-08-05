@@ -1,0 +1,3 @@
+044a169e-32ae-464a-a642-8d3409e82d9f|Flailing Manticore|Flying, first strike {1}: This creature gets +1/+1 until end of turn. Any player may activate this ability. {1}: This creature gets -1/-1 until end of turn. Any player may activate this ability.
+e81fe764-8b26-40b3-8e17-741ab5e231b4|Flailing Ogre|{1}: This creature gets +1/+1 until end of turn. Any player may activate this ability. {1}: This creature gets -1/-1 until end of turn. Any player may activate this ability.
+2c1dd6f4-2db5-449d-9ed8-579d98cfcfb8|Flailing Soldier|{1}: This creature gets +1/+1 until end of turn. Any player may activate this ability. {1}: This creature gets -1/-1 until end of turn. Any player may activate this ability.

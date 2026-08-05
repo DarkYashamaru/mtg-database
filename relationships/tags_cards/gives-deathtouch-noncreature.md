@@ -1,0 +1,2 @@
+e86c965b-ac10-4fff-b682-dddd6d9747c6|Judith, Carnage Connoisseur|Whenever you cast an instant or sorcery spell, choose one — • That spell gains deathtouch and lifelink. • Create a 2/2 red Imp creature token with "When this token dies, it deals 2 damage to each opponent."
+83930f98-5596-4713-998c-732d5ecedf72|Pestilent Spirit|Menace, deathtouch Instant and sorcery spells you control have deathtouch. (Any amount of damage they deal to a creature is enough to destroy it.)

@@ -1,0 +1,5 @@
+33fa949c-f29e-4a98-9381-ecfa9e5c3f6d|Council of Reeds|The "legend rule" doesn't apply to creatures you control. At the beginning of combat on your turn, if you've cast a noncreature spell this turn, create a token that's a copy of Council of Reeds.
+3bed1944-58dc-4679-9aee-7be4d94fb55c|Mirror Box|The "legend rule" doesn't apply to permanents you control. Each legendary creature you control gets +1/+1. Each nontoken creature you control gets +1/+1 for each other creature you control with the same name as that creature.
+7c9c3060-ca9d-4868-84c6-2a95b0fa8885|Mirror Gallery|The "legend rule" doesn't apply.
+8ecdaf4b-4442-42da-9714-4257a83faf50|Sakashima of a Thousand Faces|You may have Sakashima enter as a copy of another creature you control, except it has Sakashima's other abilities. The "legend rule" doesn't apply to permanents you control. Partner (You can have two commanders if both have partner.)
+0741e5b5-35c8-4f4d-b49f-c53e960240b9|The Master, Multiplied|Myriad The "legend rule" doesn't apply to creature tokens you control. Triggered abilities you control can't cause you to sacrifice or exile creature tokens you control.

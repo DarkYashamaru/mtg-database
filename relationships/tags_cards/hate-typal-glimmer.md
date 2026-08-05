@@ -1,0 +1,1 @@
+9d5ff568-1c55-4757-94d0-5743ca674bab|Cynical Loner|This creature can't be blocked by Glimmers. Survival — At the beginning of your second main phase, if this creature is tapped, you may search your library for a card, put it into your graveyard, then shuffle.

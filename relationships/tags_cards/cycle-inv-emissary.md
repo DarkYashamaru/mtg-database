@@ -1,0 +1,5 @@
+99f2e195-5da5-4239-87e0-ed552643e7b5|Benalish Emissary|Kicker {1}{G} (You may pay an additional {1}{G} as you cast this spell.) When this creature enters, if it was kicked, destroy target land.
+1b885600-def1-4b2c-a6cb-02df34d58a1b|Shivan Emissary|Kicker {1}{B} (You may pay an additional {1}{B} as you cast this spell.) When this creature enters, if it was kicked, destroy target nonblack creature. It can't be regenerated.
+8042ade2-f589-4c3e-a461-a4c284a67ee4|Tolarian Emissary|Kicker {1}{W} (You may pay an additional {1}{W} as you cast this spell.) Flying When this creature enters, if it was kicked, destroy target enchantment.
+f30943f1-473f-4fa4-b6a7-3dfbd1995ba9|Urborg Emissary|Kicker {1}{U} (You may pay an additional {1}{U} as you cast this spell.) When this creature enters, if it was kicked, return target permanent to its owner's hand.
+915bd598-c3dd-4982-bdcc-5904a6f17436|Verduran Emissary|Kicker {1}{R} (You may pay an additional {1}{R} as you cast this spell.) When this creature enters, if it was kicked, destroy target artifact. It can't be regenerated.

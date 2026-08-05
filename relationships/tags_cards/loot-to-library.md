@@ -1,0 +1,6 @@
+0f623e23-81ae-4c35-b68b-e0a2f431cbad|Amass the Components|Draw three cards, then put a card from your hand on the bottom of your library.
+81338d64-8fc3-41ac-afc8-e2a79df1159b|Dream Cache|Draw three cards, then put two cards from your hand both on top of your library or both on the bottom of your library.
+00749bad-dded-4fec-bf34-ff14cf561c26|Errand-Rider of Gondor|When this creature enters, draw a card. Then if you don't control a legendary creature, put a card from your hand on the bottom of your library.
+6be0bf15-fdcb-4425-9bd8-3c39039cab7d|Mordenkainen|+2: Draw two cards, then put a card from your hand on the bottom of your library. −2: Create a blue Dog Illusion creature token with "This token's power and toughness are each equal to twice the number of cards in your hand." −10: Exchange your hand and library, then shuffle. You get an emblem with "You have no maximum hand size."
+b917e472-2550-4381-b756-45487c2c187a|Sawtooth Loon|Flying When this creature enters, return a white or blue creature you control to its owner's hand. When this creature enters, draw two cards, then put two cards from your hand on the bottom of your library.
+4f9942ee-d3fd-4c01-93eb-870d642ebd83|See Beyond|Draw two cards, then shuffle a card from your hand into your library.

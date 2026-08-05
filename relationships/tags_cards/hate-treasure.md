@@ -1,0 +1,1 @@
+7446c013-63b0-402b-b8b9-dd25ccc553df|Vazi, Keen Negotiator|Haste {T}: Target opponent creates X Treasure tokens, where X is the number of Treasure tokens you created this turn. Whenever an opponent casts a spell or activates an ability, if mana from a Treasure was spent to cast it or activate it, put a +1/+1 counter on target creature, then draw a card.

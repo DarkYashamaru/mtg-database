@@ -1,0 +1,1 @@
+1cf27d78-d6ae-4fa2-9c8d-c277913f821c|Baru, Wurmspeaker|Wurms you control get +2/+2 and have trample. {7}{G}, {T}: Create a 4/4 green Wurm creature token. This ability costs {X} less to activate, where X is the greatest power among Wurms you control.

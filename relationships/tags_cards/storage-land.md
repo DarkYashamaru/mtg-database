@@ -1,0 +1,5 @@
+043192d8-6077-46c3-b43f-b7caf6762869|City of Shadows|{T}, Exile a creature you control: Put a storage counter on this land. {T}: Add {C} for each storage counter on this land.
+ecfbebc9-7fc7-474e-8c59-8ede800e082e|Crucible of the Spirit Dragon|{T}: Add {C}. {1}, {T}: Put a storage counter on this land. {T}, Remove X storage counters from this land: Add X mana in any combination of colors. Spend this mana only to cast Dragon spells or activate abilities of Dragons.
+136596a0-b179-40be-b42d-c0b992621c95|Mage-Ring Network|{T}: Add {C}. {1}, {T}: Put a storage counter on this land. {T}, Remove any number of storage counters from this land: Add {C} for each storage counter removed this way.
+ea53adbe-3f9a-4847-87c7-723ac2789918|Mirrodin's Core|{T}: Add {C}. {T}: Put a charge counter on this land. {T}, Remove a charge counter from this land: Add one mana of any color.
+7e8198e9-0f3b-420b-ab09-74f13f4fd548|Throne of Makindi|{T}: Add {C}. {1}, {T}: Put a charge counter on this land. {T}, Remove a charge counter from this land: Add two mana of any one color. Spend this mana only to cast kicked spells.

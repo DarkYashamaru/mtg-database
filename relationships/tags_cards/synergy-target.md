@@ -1,0 +1,9 @@
+99c8647f-e08d-4217-b637-3f8f2bffdaa3|Elderwood Scion|Trample, lifelink Spells you cast that target this creature cost {2} less to cast. Spells your opponents cast that target this creature cost {2} more to cast.
+aee473c7-c659-421c-96b5-05f57ca2ed97|Hinata, Dawn-Crowned|Flying, trample Spells you cast cost {1} less to cast for each target. Spells your opponents cast cost {1} more to cast for each target.
+d70d4686-2c35-4149-aed1-7e3b9e022702|Imodane, the Pyrohammer|Whenever an instant or sorcery spell you control that targets only a single creature deals damage to that creature, Imodane deals that much damage to each opponent.
+e233cb5b-7237-4271-8157-9179cc897b6c|Killian, Ink Duelist|Lifelink Menace (This creature can't be blocked except by two or more creatures.) Spells you cast that target a creature cost {2} less to cast.
+40ed32a6-ad56-48c7-aecf-b4238c34c212|Shiko and Narset, Unified|Flying, vigilance Flurry — Whenever you cast your second spell each turn, copy that spell if it targets a permanent or player, and you may choose new targets for the copy. If you don't copy a spell this way, draw a card.
+13979fb6-91ba-4dd2-9bb9-8dbc7307d433|Spellwild Ouphe|Spells that target this creature cost {2} less to cast.
+097992a9-7b88-4c3f-8191-1ff10a4a735d|Strong Back|Enchant creature Equip abilities you activate that target enchanted creature cost {3} less to activate. Aura spells you cast that target enchanted creature cost {3} less to cast. Enchanted creature gets +2/+2 for each Aura and Equipment attached to it.
+b6d2f392-5637-49ec-b6cb-603edd89e788|Tiller of Flesh|Whenever you cast a spell that targets one or more permanents, incubate 2. (Create an Incubator token with two +1/+1 counters on it and "{2}: Transform this token." It transforms into a 0/0 Phyrexian artifact creature.)
+dcc323d6-ddae-4fd9-9c9e-466b07895d73|Voracious Bibliophile|Flying, vigilance Whenever you cast a spell with one or more targets, draw that many cards.

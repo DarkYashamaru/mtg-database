@@ -1,0 +1,5 @@
+4fc8a155-4eb8-4b86-8ccc-2569630d3bfa|Aurora Eidolon|{W}, Sacrifice this creature: Prevent the next 3 damage that would be dealt to any target this turn. Whenever you cast a multicolored spell, you may return this card from your graveyard to your hand.
+4489a526-0e07-4d37-9e83-628f7eb256c6|Enigma Eidolon|{U}, Sacrifice this creature: Target player mills three cards. Whenever you cast a multicolored spell, you may return this card from your graveyard to your hand.
+be5f788a-8a2e-447c-9e65-f9fc197ddfc9|Entropic Eidolon|{B}, Sacrifice this creature: Target player loses 1 life and you gain 1 life. Whenever you cast a multicolored spell, you may return this card from your graveyard to your hand.
+84fe1c59-3f7b-4c1c-9bc4-78a185cfcc0c|Sandstorm Eidolon|{R}, Sacrifice this creature: Target creature can't block this turn. Whenever you cast a multicolored spell, you may return this card from your graveyard to your hand.
+a3acc388-4015-42e4-88ff-b35a91134d12|Verdant Eidolon|{G}, Sacrifice this creature: Add three mana of any one color. Whenever you cast a multicolored spell, you may return this card from your graveyard to your hand.

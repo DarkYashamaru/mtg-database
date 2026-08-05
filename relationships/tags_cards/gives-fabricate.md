@@ -1,0 +1,1 @@
+d18a014e-16a0-4641-9546-ff3729437eed|Cayth, Famed Mechanist|Fabricate 1 (When this creature enters, put a +1/+1 counter on it or create a 1/1 colorless Servo artifact creature token.) Other nontoken creatures you control have fabricate 1. {2}, {T}: Choose one — • Populate. • Proliferate.

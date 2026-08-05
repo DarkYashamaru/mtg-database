@@ -1,0 +1,2 @@
+52d04c36-9d38-42b2-9e47-905ab06cb708|Cement Shoes|Equipped creature gets +3/+3 and has "At the beginning of your end step, tap this creature." Equipped creature doesn't untap during its controller's untap step. Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)
+748fd75b-c61b-4e02-889d-b7dab23319ef|Heavy Arbalest|Equipped creature doesn't untap during its controller's untap step. Equipped creature has "{T}: This creature deals 2 damage to any target." Equip {4}

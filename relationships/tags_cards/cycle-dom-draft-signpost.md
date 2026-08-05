@@ -1,0 +1,10 @@
+850eb3c3-029b-49b0-91a9-6daeb1b3a9e8|Adeliz, the Cinder Wind|Flying, haste Whenever you cast an instant or sorcery spell, Wizards you control get +1/+1 until end of turn.
+d561dcff-0a19-46ac-9dee-f374c840d532|Arvad the Cursed|Deathtouch, lifelink Other legendary creatures you control get +2/+2.
+97cb993c-90ae-49ff-8ccb-b4fe317a43ef|Garna, the Bloodflame|Flash When Garna enters, return to your hand all creature cards in your graveyard that were put there from anywhere this turn. Other creatures you control have haste.
+04559759-1afd-4785-badc-c3416041f016|Hallar, the Firefletcher|Trample Whenever you cast a spell, if that spell was kicked, put a +1/+1 counter on Hallar, then Hallar deals damage equal to the number of +1/+1 counters on it to each opponent.
+13044ca1-76a3-43b2-a8e4-3bbc692c30c5|Raff Capashen, Ship's Mage|Flash Flying You may cast historic spells as though they had flash. (Artifacts, legendaries, and Sagas are historic.)
+409305b3-5373-4376-8096-c04a73184cef|Rona, Disciple of Gix|When Rona enters, you may exile target historic card from your graveyard. (Artifacts, legendaries, and Sagas are historic.) You may cast spells from among cards exiled with Rona. {4}, {T}: Exile the top card of your library.
+546201d0-3fa5-44e4-a526-ab0945711e49|Shanna, Sisay's Legacy|Shanna can't be the target of abilities your opponents control. Shanna gets +1/+1 for each creature you control.
+fd541139-de13-4b32-93ba-070ecf711d33|Slimefoot, the Stowaway|Whenever a Saproling you control dies, Slimefoot deals 1 damage to each opponent and you gain 1 life. {4}: Create a 1/1 green Saproling creature token.
+0715e860-3b3b-4331-9718-207973e94fee|Tatyova, Benthic Druid|Landfall — Whenever a land you control enters, you gain 1 life and draw a card.
+80f8fb4c-cc6d-4b41-abb3-471dc96d4b2a|Tiana, Ship's Caretaker|Flying, first strike Whenever an Aura or Equipment you control is put into a graveyard from the battlefield, you may return that card to its owner's hand at the beginning of the next end step.

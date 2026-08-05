@@ -1,0 +1,2 @@
+b8645fe4-884b-4511-b138-ea4ba2eee943|Bamboozling Beeble|Protection from Robots {1}, {T}: The next time target player would roll one or more dice this turn, instead they roll that many dice plus one and you choose one of those rolls to ignore.
+23a265ef-d651-4d8d-94dd-0072f83541f9|Cybernetica Datasmith|Protection from Robots Field Reprogramming — {U}, {T}: Target player draws a card. Another target player creates a 4/4 colorless Robot artifact creature token with "This token can't block."

@@ -1,0 +1,2 @@
+1d60e2a7-2059-48cb-a6ab-36ba25b80b3a|Memory Theft|Target opponent reveals their hand. You choose a nonland card from it. That player discards that card. You may put a card that has an Adventure that player owns from exile into that player's graveyard.
+683775ac-481e-4c26-ab2f-5d2813af0268|Sentinel of Lost Lore|When this creature enters, choose one or more — • Return target card you own in exile that has an Adventure to your hand. • Put target card you don't own in exile that has an Adventure on the bottom of its owner's library. • Exile target player's graveyard.

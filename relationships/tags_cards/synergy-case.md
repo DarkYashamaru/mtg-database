@@ -1,0 +1,1 @@
+8c612741-2b30-43b3-bd3f-7df19662d298|Case File Auditor|When this creature enters and whenever you solve a Case, look at the top six cards of your library. You may reveal an enchantment card from among them and put it into your hand. Put the rest on the bottom of your library in a random order. You may spend mana as though it were mana of any color to cast Case spells.

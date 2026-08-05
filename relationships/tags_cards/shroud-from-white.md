@@ -1,0 +1,2 @@
+1d9b8859-14e3-4bbe-ad92-916b25a37b31|Raiding Party|This enchantment can't be the target of white spells or abilities from white sources. Sacrifice an Orc: Each player may tap any number of untapped white creatures they control. For each creature tapped this way, that player chooses up to two Plains. Then destroy all Plains that weren't chosen this way by any player.
+85ef10fd-4a48-4a37-baad-f663fb5439e0|Rebel Informer|This creature can't be the target of white spells or abilities from white sources. {3}: Put target nontoken Rebel on the bottom of its owner's library.

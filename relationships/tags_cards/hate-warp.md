@@ -1,0 +1,1 @@
+33042d12-f08b-4b3e-b106-c424ef868c13|Blade of the Swarm|When this creature enters, choose one — • Put two +1/+1 counters on this creature. • Put target exiled card with warp on the bottom of its owner's library.

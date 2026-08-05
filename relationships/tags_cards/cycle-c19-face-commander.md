@@ -1,0 +1,4 @@
+4dab6a96-4376-4aea-983d-406167993214|Anje Falkenrath|Haste {T}, Discard a card: Draw a card. Whenever you discard a card, if it has madness, untap Anje Falkenrath.
+ce08fbfb-5d51-4dfc-80ae-87d5d9c7726f|Ghired, Conclave Exile|When Ghired enters, create a 4/4 green Rhino creature token with trample. Whenever Ghired attacks, populate. The token enters tapped and attacking. (To populate, create a token that's a copy of a creature token you control.)
+4da13eb8-ca18-43f1-b54b-d3ddceb980d2|Kadena, Slinking Sorcerer|The first face-down creature spell you cast each turn costs {3} less to cast. Whenever a face-down creature you control enters, draw a card.
+869c9bc4-2b21-40c3-8b1c-c83269c856d0|Sevinne, the Chronoclasm|Prevent all damage that would be dealt to Sevinne. Whenever you cast your first instant or sorcery spell from your graveyard each turn, copy that spell. You may choose new targets for the copy.

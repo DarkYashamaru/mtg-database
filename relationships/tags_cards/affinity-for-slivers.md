@@ -1,0 +1,1 @@
+04ea21b3-084b-4746-9b49-99b6ef4f0885|Thrumming Hivepool|Affinity for Slivers (This spell costs {1} less to cast for each Sliver you control.) Slivers you control have double strike and haste. At the beginning of your upkeep, create two 1/1 colorless Sliver creature tokens.

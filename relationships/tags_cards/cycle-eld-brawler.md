@@ -1,0 +1,4 @@
+936ae5dc-9838-47f3-ba1f-66523a7f5b76|Alela, Artful Provocateur|Flying, deathtouch, lifelink Other creatures you control with flying get +1/+0. Whenever you cast an artifact or enchantment spell, create a 1/1 blue Faerie creature token with flying.
+ebf7ce9b-9e5e-4557-9e28-76556997f0ee|Chulane, Teller of Tales|Vigilance Whenever you cast a creature spell, draw a card, then you may put a land card from your hand onto the battlefield. {3}, {T}: Return target creature you control to its owner's hand.
+9ae669dd-7e60-4649-b96e-35da28be641a|Korvold, Fae-Cursed King|Flying Whenever Korvold enters or attacks, sacrifice another permanent. Whenever you sacrifice a permanent, put a +1/+1 counter on Korvold and draw a card.
+ca411184-3413-492c-ab87-08c9fa1d4806|Syr Gwyn, Hero of Ashvale|Vigilance, menace Whenever an equipped creature you control attacks, you draw a card and you lose 1 life. Equipment you control have equip Knight {0}.

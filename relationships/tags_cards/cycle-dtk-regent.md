@@ -1,0 +1,5 @@
+71b5fdf2-4475-4102-85eb-9be164a9ae29|Deathbringer Regent|Flying When this creature enters, if you cast it from your hand and there are five or more other creatures on the battlefield, destroy all other creatures.
+e7dd3e2c-34a5-4097-b6d1-2ccd097fe57f|Foe-Razer Regent|Flying When this creature enters, you may have it fight target creature you don't control. Whenever a creature you control fights, put two +1/+1 counters on it at the beginning of the next end step.
+0cf18002-1bbe-40b3-ae15-fa51e61e9391|Icefall Regent|Flying When this creature enters, tap target creature an opponent controls. That creature doesn't untap during its controller's untap step for as long as you control this creature. Spells your opponents cast that target this creature cost {2} more to cast.
+c8ff464f-0059-4055-a2f2-556fe6db8fbf|Sunscorch Regent|Flying Whenever an opponent casts a spell, put a +1/+1 counter on this creature and you gain 1 life.
+bb04f927-0348-4a14-9e74-381f18083f6a|Thunderbreak Regent|Flying Whenever a Dragon you control becomes the target of a spell or ability an opponent controls, this creature deals 3 damage to that player.

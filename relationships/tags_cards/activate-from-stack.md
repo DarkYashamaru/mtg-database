@@ -1,0 +1,1 @@
+2c0fceb6-d92d-4f4a-85a2-0af5be5bba81|Lightning Storm|Lightning Storm deals X damage to any target, where X is 3 plus the number of charge counters on Lightning Storm. Discard a land card: Put two charge counters on Lightning Storm. You may choose a new target for it. Any player may activate this ability but only if Lightning Storm is on the stack.

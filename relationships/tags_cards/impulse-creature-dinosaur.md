@@ -1,0 +1,1 @@
+27ca27f0-95a5-4292-b30b-1db3e9d639f8|Commune with Dinosaurs|Look at the top five cards of your library. You may reveal a Dinosaur or land card from among them and put it into your hand. Put the rest on the bottom of your library in any order.

@@ -1,0 +1,2 @@
+f3c40943-1d7c-4ea2-b34f-8df8b6775701|Animal Sanctuary|{T}: Add {C}. {2}, {T}: Put a +1/+1 counter on target Bird, Cat, Dog, Goat, Ox, or Snake.
+c22589e1-1721-43a3-897e-990af6ebcffa|Bruse Tarl, Roving Rancher|Oxen you control have double strike. Whenever Bruse Tarl enters or attacks, exile the top card of your library. If it's a land card, create a 2/2 white Ox creature token. Otherwise, you may cast it until the end of your next turn.

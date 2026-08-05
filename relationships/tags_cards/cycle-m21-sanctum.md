@@ -1,0 +1,6 @@
+63f60dfc-2bc4-411f-ae53-504156fe0102|Sanctum of All|At the beginning of your upkeep, you may search your library and/or graveyard for a Shrine card and put it onto the battlefield. If you search your library this way, shuffle. If a triggered ability of another Shrine you control triggers while you control six or more Shrines, that ability triggers an additional time.
+1cd1e3a8-e09d-4b61-8244-92b317132d6a|Sanctum of Calm Waters|At the beginning of your first main phase, you may draw X cards, where X is the number of Shrines you control. If you do, discard a card.
+132859dd-de66-45c6-8af4-ab5e202a17b0|Sanctum of Fruitful Harvest|At the beginning of your first main phase, add X mana of any one color, where X is the number of Shrines you control.
+5e39d311-efb5-4f51-82cd-e8079e32907a|Sanctum of Shattered Heights|{1}, Discard a land card or Shrine card: Sanctum of Shattered Heights deals X damage to target creature or planeswalker, where X is the number of Shrines you control.
+a1d8fcb9-26b2-4d09-9db7-e644294749f8|Sanctum of Stone Fangs|At the beginning of your first main phase, each opponent loses X life and you gain X life, where X is the number of Shrines you control.
+1818b0b1-0104-4673-9be8-acfc773ef87d|Sanctum of Tranquil Light|{5}{W}: Tap target creature. This ability costs {1} less to activate for each Shrine you control.

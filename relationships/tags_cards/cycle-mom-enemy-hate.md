@@ -1,0 +1,5 @@
+aba7e9e2-8df8-454e-a332-9abae1d95b6f|Change the Equation|Choose one — • Counter target spell with mana value 2 or less. • Counter target red or green spell with mana value 6 or less.
+706833f7-af50-45bf-8f1d-d3a5a31cf2c8|Glistening Deluge|All creatures get -1/-1 until end of turn. Creatures that are green and/or white get an additional -2/-2 until end of turn.
+5e414dc2-d0ff-43e5-9aa2-cd9d96de6d89|Lithomantic Barrage|This spell can't be countered. Lithomantic Barrage deals 1 damage to target creature or planeswalker. It deals 5 damage instead if that target is white and/or blue.
+f2a6dc8d-3c98-44ae-aff0-b838d7aee0b7|Sandstalker Moloch|Flash When this creature enters, if an opponent cast a blue and/or black spell this turn, look at the top four cards of your library. You may reveal a permanent card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.
+b9a62c6b-5848-44b1-932b-8d5de2560976|Surge of Salvation|You and permanents you control gain hexproof until end of turn. Prevent all damage that black and/or red sources would deal to creatures you control this turn.

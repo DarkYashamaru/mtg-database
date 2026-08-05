@@ -1,0 +1,10 @@
+0e9551ef-8aee-46ed-b21f-162c64213437|Atomwheel Acrobats|Whenever you roll a 1 or 2, put that many +1/+1 counters on this creature. {2}{G}: Roll a six-sided die.
+256ab1e2-0c6a-41c1-ba01-021f3c90cfa2|Brazen Dwarf|Whenever you roll one or more dice, this creature deals 1 damage to each opponent.
+018627e1-ba32-4452-b3d1-6c2a39759aff|Complaints Clerk|When this creature enters, open an Attraction. (Put the top card of your Attraction deck onto the battlefield.) Whenever you roll a 1, create a 1/1 white Clown Robot artifact creature token.
+992e6845-1c6c-4b74-839c-317823bde15b|Critical Hit|Target creature gains double strike until end of turn. When you roll a natural 20, return this card from your graveyard to your hand. (A natural 20 is a roll that displays 20 on the die.)
+e4a338d5-8cd5-4583-893b-ebbede2280c6|Dee Kay, Finder of the Lost|When Dee Kay enters, open an Attraction. Whenever you roll a 2, each opponent loses 1 life and you gain 1 life. Whenever you roll a 4, you may tap or untap target artifact or creature. Whenever you roll a 6, return target creature card from your graveyard to your hand.
+54c4fd18-adf5-408b-a529-019ebc24ca8d|Drop Tower|Visit — Target creature gains flying until end of turn, or until any player rolls a 1, whichever comes first.
+8c56530b-098a-4afd-9022-76bfaa1f6a7c|Eelectrocute|Eelectrocute deals 2 damage to any target. You may cast this card from your graveyard as long as you've rolled a 6 this turn. If you cast it this way and it would be put into your graveyard, exile it instead.
+faf5c18c-2642-4df3-a21f-3b237527e6a6|Farideh, Devil's Chosen|Dark One's Own Luck — Whenever you roll one or more dice, Farideh gains flying and menace until end of turn. If any of those results was 10 or higher, draw a card.
+9a41a4ad-944f-4326-b53b-1176f98bcce4|Ferris Wheel|Visit — Choose target creature that hasn't been phased out with this Attraction. That creature phases out until you roll a 3 or less while rolling to visit your Attractions.
+b385edc3-c897-48e3-b251-242c77159fa0|Feywild Trickster|Whenever you roll one or more dice, create a 1/1 blue Faerie Dragon creature token with flying.

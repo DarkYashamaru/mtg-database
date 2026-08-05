@@ -1,0 +1,5 @@
+d740dbd9-8e90-4121-8d53-c6ddf5178d58|Chomping Changeling|Changeling (This card is every creature type.) When this creature enters, destroy up to one target artifact or enchantment.
+6522070b-7002-44fd-8deb-832fe67ef9a9|Flock Impostor|Changeling (This card is every creature type.) Flash Flying When this creature enters, return up to one other target creature you control to its owner's hand.
+1eebc02a-9a64-49b0-8322-c5ce671457ce|Graveshifter|Changeling (This card is every creature type.) When this creature enters, you may return target creature card from your graveyard to your hand.
+66d4370e-19b9-4680-9b1e-a192537bc002|Omni-Changeling|Changeling (This card is every creature type.) Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.) You may have this creature enter as a copy of any creature on the battlefield, except it has changeling.
+60ad7aaa-8ce6-4449-8e8d-4ccf925010db|Sizzling Changeling|Changeling (This card is every creature type.) When this creature dies, exile the top card of your library. Until the end of your next turn, you may play that card.

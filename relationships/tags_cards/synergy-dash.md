@@ -1,0 +1,1 @@
+0636090b-49e0-45b4-a68d-48b1cdc0c54d|Warbringer|Dash costs you pay cost {2} less (as long as this creature is on the battlefield). Dash {2}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)

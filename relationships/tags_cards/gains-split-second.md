@@ -1,0 +1,1 @@
+21390513-1ed0-48f2-a7fa-020da8f803c0|Molten Disaster|Kicker {R} (You may pay an additional {R} as you cast this spell.) If this spell was kicked, it has split second. (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.) Molten Disaster deals X damage to each creature without flying and each player.

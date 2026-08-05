@@ -1,0 +1,10 @@
+48a773d0-c433-4463-b50f-b6d4604a042c|Abigale, Eloquent First-Year|Flying, first strike, lifelink When Abigale enters, up to one other target creature loses all abilities. Put a flying counter, a first strike counter, and a lifelink counter on that creature.
+95db05eb-2c25-43f2-8e18-dfc64f490634|Aboshan's Desire|Enchant creature Enchanted creature has flying. Threshold — Enchanted creature has shroud as long as there are seven or more cards in your graveyard. (It can't be the target of spells or abilities.)
+2b22cf44-7b03-4919-9812-6796bf193484|Abuelo's Awakening|Return target artifact or non-Aura enchantment card from your graveyard to the battlefield with X additional +1/+1 counters on it. It's a 1/1 Spirit creature with flying in addition to its other types.
+8b972819-507a-40a9-ab1f-1a674ea56083|Abzan Falconer|Outlast {W} ({W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.) Each creature you control with a +1/+1 counter on it has flying.
+1347224f-421e-4270-8e50-cf25c875909c|Acrobatic Leap|Target creature gets +1/+3 and gains flying until end of turn. Untap it.
+d7fa5c42-7cd5-42e7-a42e-724c1a3df96a|Aerial Boost|Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.) Target creature gets +2/+2 and gains flying until end of turn.
+b0168b7e-a8b8-4ce3-af12-a43f3818b6a1|Aerial Formation|Strive — This spell costs {2}{U} more to cast for each target beyond the first. Any number of target creatures each get +1/+1 and gain flying until end of turn.
+d4ccc319-db23-4ef4-8129-317426f3a794|Aerial Maneuver|Target creature gets +1/+1 and gains flying and first strike until end of turn.
+290cd0b1-55d6-4b30-962d-075a6f75d562|Aerial Modification|Enchant creature or Vehicle As long as enchanted permanent is a Vehicle, it's a creature in addition to its other types. Enchanted creature gets +2/+2 and has flying.
+dcde1a62-33a5-4454-a389-9bf7a3521a4c|Aeronaut Admiral|Flying Vehicles you control have flying.

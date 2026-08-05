@@ -1,0 +1,10 @@
+e05efd01-0202-4bd6-bac6-c6210819d463|Abby, Merciless Soldier|When you cast this spell, create a number of 1/1 black Fungus Zombie creature tokens named Cordyceps Infected equal to the amount of mana spent to cast it. Abby enters under the control of an opponent of your choice. Partner—Survivors (You can have two commanders if both have this ability.)
+3a92b235-196b-4f46-9d20-06f4d3653d36|Aberrant Return|Put one, two, or three target creature cards from graveyards onto the battlefield under your control. Each of them enters with an additional -1/-1 counter on it.
+b1a0e129-27f0-4a09-b00d-497e18777306|Abhorrent Oculus|As an additional cost to cast this spell, exile six cards from your graveyard. Flying At the beginning of each opponent's upkeep, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)
+28f70f86-19a9-4811-bc10-423a05842d39|Aboroth|Cumulative upkeep—Put a -1/-1 counter on this creature. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)
+7282f643-191b-41be-9f6f-82360c915d6d|Abyssal Persecutor|Flying, trample You can't win the game and your opponents can't lose the game.
+0cd77ee1-408c-4c51-ac87-24f4fc50083d|Academy Wall|Defender Whenever you cast an instant or sorcery spell, you may draw a card. If you do, discard a card. This ability triggers only once each turn.
+b1e6921e-e460-4e58-82b0-d98ee31c279d|Accursed Centaur|When this creature enters, sacrifice a creature.
+c6d0f1bc-b82a-4e64-a4bc-11ad3f54c71a|Acridian|Echo {1}{G} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)
+99dcde0b-4f4d-4d7a-89aa-8a89c256e38f|Aesthir Glider|Flying This creature can't block.
+5efea57b-937d-46ac-999e-490316e0f820|Aether Membrane|Defender; reach (This creature can block creatures with flying.) Whenever this creature blocks a creature, return that creature to its owner's hand at end of combat.

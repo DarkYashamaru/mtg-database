@@ -1,0 +1,10 @@
+5c641df8-97d7-484b-8d0e-790279fd6177|Artifact Possession|Enchant artifact Whenever enchanted artifact becomes tapped or a player activates an ability of enchanted artifact without {T} in its activation cost, this Aura deals 2 damage to that artifact's controller.
+e04fa58e-be7a-4c9c-98d0-48241742a41b|Backfire|Enchant creature Whenever enchanted creature deals damage to you, this Aura deals that much damage to that creature's controller.
+dcd41ed1-4a12-416b-8ba0-51a9c0927ddb|Binding Agony|Enchant creature Whenever enchanted creature is dealt damage, this Aura deals that much damage to that creature's controller.
+947bd180-ee95-4db4-b5d9-432428018eb8|Brand of Ill Omen|Enchant creature Cumulative upkeep {R} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) Enchanted creature's controller can't cast creature spells.
+da164485-c985-42fa-819e-42f0d33237c5|Captured by the Consulate|Enchant creature you don't control Enchanted creature can't attack. Whenever an opponent casts a spell, if it has a single target, change the target to enchanted creature if able.
+474db5db-914e-474d-b0c2-7987d5986dc3|Chronic Flooding|Enchant land Whenever enchanted land becomes tapped, its controller mills three cards.
+0ac5c149-f6af-46b6-974e-14689e9a583d|Clawing Torment|Enchant artifact or creature As long as enchanted permanent is a creature, it gets -1/-1 and can't block. Enchanted permanent has "At the beginning of your upkeep, you lose 1 life."
+56aeaee8-e014-485e-b7ad-e26ade663bcf|Contaminated Bond|Enchant creature (Target a creature as you cast this. This card enters attached to that creature.) Whenever enchanted creature attacks or blocks, its controller loses 3 life.
+55e04860-f4f5-445b-81f2-b500fa9b456a|Contaminated Ground|Enchant land Enchanted land is a Swamp. Whenever enchanted land becomes tapped, its controller loses 2 life.
+20b8911e-6701-485c-ac62-2b3cc79ec288|Coral Net|Enchant green or white creature Enchanted creature has "At the beginning of your upkeep, sacrifice this creature unless you discard a card."

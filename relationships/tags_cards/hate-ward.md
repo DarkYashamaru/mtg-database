@@ -1,0 +1,1 @@
+da82ca96-a613-4d00-9e6b-1fece4fc23d0|Nowhere to Run|Flash When this enchantment enters, target creature an opponent controls gets -3/-3 until end of turn. Creatures your opponents control can be the targets of spells and abilities as though they didn't have hexproof. Ward abilities of those creatures don't trigger.

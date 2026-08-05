@@ -1,0 +1,5 @@
+43057d84-b424-489c-abec-3fb4cb823d80|Basilica Skullbomb|{1}, Sacrifice this artifact: Draw a card. {2}{W}, Sacrifice this artifact: Target creature you control gets +2/+2 and gains flying until end of turn. Draw a card. Activate only as a sorcery.
+0c43e9b4-013a-47ee-9805-f41afb0a3bde|Dross Skullbomb|{1}, Sacrifice this artifact: Draw a card. {2}{B}, Sacrifice this artifact: Return target creature card from your graveyard to your hand. Draw a card. Activate only as a sorcery.
+77e0c121-724c-43a0-84e3-1800e2d94a34|Furnace Skullbomb|{1}, Sacrifice this artifact: Draw a card. {1}{R}, Sacrifice this artifact: Put two oil counters on target artifact or creature you control. Draw a card. Activate only as a sorcery.
+3cb91e96-285d-4191-97cd-ee7ce5d86eb2|Maze Skullbomb|{1}, Sacrifice this artifact: Draw a card. {2}{G}, Sacrifice this artifact: Target creature you control gets +3/+3 and gains trample until end of turn. Draw a card. Activate only as a sorcery.
+6d364283-617a-4661-865d-abd9c304b2f9|Surgical Skullbomb|{1}, Sacrifice this artifact: Draw a card. {2}{U}, Sacrifice this artifact: Return target creature to its owner's hand. Draw a card. Activate only as a sorcery.

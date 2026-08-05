@@ -1,0 +1,10 @@
+acee1d16-1651-4e2c-8138-cc6456c4ee71|"Name Sticker" Goblin|When this creature enters from anywhere other than a graveyard or exile, if it's on the battlefield and you control 9 or fewer creatures named "Name Sticker" Goblin, roll a 20-sided die. 1-6 \| Add {R}{R}{R}{R}. 7-14 \| Add {R}{R}{R}{R}{R}. 15-20 \| Add {R}{R}{R}{R}{R}{R}.
+d06eedb4-bd5a-4864-9505-a570a745d165|Apex of Power|Exile the top seven cards of your library. Until end of turn, you may cast spells from among them. If this spell was cast from your hand, add ten mana of any one color.
+43827acb-70cf-44a3-8560-e9f7330c835e|Ardent Electromancer|When this creature enters, add {R} for each creature in your party. (Your party consists of up to one each of Cleric, Rogue, Warrior, and Wizard.)
+6b8cf2a0-b045-4d91-9d91-c602d40c6237|Basalt Monolith|This artifact doesn't untap during your untap step. {T}: Add {C}{C}{C}. {3}: Untap this artifact.
+44661108-d72f-4d02-9303-7e4b0ecf7e9c|Bear Umbra|Enchant creature Enchanted creature gets +2/+2 and has "Whenever this creature attacks, untap all lands you control." Umbra armor (If enchanted creature would be destroyed, instead remove all damage from it and destroy this Aura.)
+90194ff1-db61-463f-b5a3-15cd85311d0e|Beledros Witherbloom|Flying At the beginning of each upkeep, create a 1/1 black and green Pest creature token with "When this token dies, you gain 1 life." Pay 10 life: Untap all lands you control. Activate only once each turn.
+e05c6c80-a91a-45e0-b991-0014fd5a6472|Blood Pet|Sacrifice this creature: Add {B}.
+cb3edb86-ddd5-461c-98b5-ffb4df437a39|Boommobile|When this Vehicle enters, add four mana of any one color. Spend this mana only to activate abilities. Exhaust — {X}{2}{R}: This Vehicle deals X damage to any target. Put a +1/+1 counter on this Vehicle. (Activate each exhaust ability only once.) Crew 2
+63b0538e-aa94-4e23-adf1-704cbf5bc3e5|Brass's Bounty|For each land you control, create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.")
+327d9679-0049-4401-8dab-e0fb362306bd|Burning-Tree Emissary|When this creature enters, add {R}{G}.

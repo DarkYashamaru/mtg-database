@@ -1,0 +1,2 @@
+55bc5d06-7dd1-4403-af32-0e10d8bbe327|Bucky Barnes, Eager Ally|Vigilance When Bucky Barnes dies, look at the top four cards of your library. You may reveal an Equipment, Hero, or Soldier card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.
+e9517fc3-d1bc-42f7-b052-9f629b302735|Enlistment Officer|First strike When this creature enters, reveal the top four cards of your library. Put all Soldier cards revealed this way into your hand and the rest on the bottom of your library in any order.

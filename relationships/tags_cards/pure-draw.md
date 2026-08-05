@@ -1,0 +1,10 @@
+46535f8e-1bcd-4588-ac6c-a4bc89c379c8|Abzan Banner|{T}: Add {W}, {B}, or {G}. {W}{B}{G}, {T}, Sacrifice this artifact: Draw a card.
+4137a22c-f793-4e27-a9b2-72740a6e2121|Abzan Charm|Choose one — • Exile target creature with power 3 or greater. • You draw two cards and you lose 2 life. • Distribute two +1/+1 counters among one or two target creatures.
+1ca25379-d194-4670-a7bf-525ad11cf436|Accumulated Knowledge|Draw a card, then draw cards equal to the number of cards named Accumulated Knowledge in all graveyards.
+a9d68cf5-3055-4ec9-9893-244bfd7046be|Action News Crew|Vigilance Channel — {6}, Discard this card: Put a +1/+1 counter on each creature you control. Draw a card.
+a1399cb8-f22a-487e-b539-2db47b09a790|Aeon Chronicler|Aeon Chronicler's power and toughness are each equal to the number of cards in your hand. Suspend X—{X}{3}{U}. X can't be 0. Whenever a time counter is removed from this card while it's exiled, draw a card.
+4b033a0a-c1ae-44d7-9662-72cbbfda024b|Aether Spellbomb|{U}, Sacrifice this artifact: Return target creature to its owner's hand. {1}, Sacrifice this artifact: Draw a card.
+a87abe7a-fee9-45fd-b3d8-896e43ed6b3c|Agent's Toolkit|This artifact enters with a +1/+1 counter, a flying counter, a deathtouch counter, and a shield counter on it. (If it would be dealt damage or destroyed, remove a shield counter from it instead.) Whenever a creature you control enters, you may move a counter from this artifact onto that creature. {2}, Sacrifice this artifact: Draw a card.
+1ad5766b-9ae3-437b-bd91-c4c988a8b095|Agonasaur Rex|Trample Cycling {2}{G} ({2}{G}, Discard this card: Draw a card.) When you cycle this card, put two +1/+1 counters on up to one target creature or Vehicle. It gains trample and indestructible until end of turn.
+9e830359-ab92-4bfd-82b3-d9c67ac80cf7|Air Nomad Legacy|When this enchantment enters, create a Clue token. (It's an artifact with "{2}, Sacrifice this token: Draw a card.") Creatures you control with flying get +1/+1.
+7f715f72-5444-4ab3-a6ca-3d5bfd0d4851|Airborne Aid|Draw a card for each Bird on the battlefield.

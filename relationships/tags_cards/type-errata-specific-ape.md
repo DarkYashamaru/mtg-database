@@ -1,0 +1,6 @@
+8314bdf5-1539-4215-949e-f46584cb43bb|Gargantuan Gorilla|At the beginning of your upkeep, you may sacrifice a Forest. If you sacrifice a snow Forest this way, this creature gains trample until end of turn. If you don't sacrifice a Forest, sacrifice this creature and it deals 7 damage to you. {T}: This creature deals damage equal to its power to another target creature. That creature deals damage equal to its power to this creature.
+6373c66d-edfc-44cb-af2a-2273e0ba53e0|Gorilla Berserkers|Trample; rampage 2 (Whenever this creature becomes blocked, it gets +2/+2 until end of turn for each creature blocking it beyond the first.) This creature can't be blocked except by three or more creatures.
+4137ee86-bbf0-49dc-87c5-b48a384baac4|Gorilla Chieftain|{1}{G}: Regenerate this creature.
+f2c8814b-581b-483b-a7ae-d3d7b962aec1|Gorilla Pack|This creature can't attack unless defending player controls a Forest. When you control no Forests, sacrifice this creature.
+9f53b691-da24-4264-a2a0-d0b95a385963|Gorilla Shaman|{X}{X}{1}: Destroy target noncreature artifact with mana value X.
+1dd6df3f-eac4-4f30-b832-4a3f3a97632f|Raging Gorilla|Whenever this creature blocks or becomes blocked, it gets +2/-2 until end of turn.

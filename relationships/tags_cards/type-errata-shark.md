@@ -1,0 +1,4 @@
+3d0c1301-4fa7-4245-a13f-f613188eb638|Battering Krasis|Trample Evolve (Whenever a creature you control enters, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.)
+ce176172-6c7b-40b0-a6d0-68e9c32b3402|Hammerhead Shark|This creature can't attack unless defending player controls an Island.
+0e235b96-9507-4f4b-9578-4fb8ed854cc2|Shambleshark|Flash (You may cast this spell any time you could cast an instant.) Evolve (Whenever a creature you control enters, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.)
+fb8e43f2-41d5-4ffb-a61e-940477749e00|Sharktocrab|{2}{G}{U}: Adapt 1. (If this creature has no +1/+1 counters on it, put a +1/+1 counter on it.) Whenever one or more +1/+1 counters are put on this creature, tap target creature an opponent controls. That creature doesn't untap during its controller's next untap step.

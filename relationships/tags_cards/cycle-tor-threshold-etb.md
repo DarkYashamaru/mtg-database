@@ -1,0 +1,5 @@
+3010ff0c-8ee6-4df3-96c1-a58096586469|Centaur Chieftain|Haste Threshold — As long as there are seven or more cards in your graveyard, this creature has "When this creature enters, creatures you control get +1/+1 and gain trample until end of turn."
+29182a24-3bdb-4fd0-8a1d-a196340c0858|Cephalid Sage|Threshold — As long as there are seven or more cards in your graveyard, this creature has "When this creature enters, draw three cards, then discard two cards."
+cfc1156c-b787-4212-96e0-a8e3609069b7|Gloomdrifter|Flying Threshold — As long as there are seven or more cards in your graveyard, this creature has "When this creature enters, nonblack creatures get -2/-2 until end of turn."
+9ece4b78-9554-4e4e-8491-68a6091f9c6a|Pardic Arsonist|Threshold — As long as there are seven or more cards in your graveyard, this creature has "When this creature enters, it deals 3 damage to any target."
+32b0fc43-b5ce-4869-a780-946289305e5a|Teroh's Vanguard|Flash Threshold — As long as there are seven or more cards in your graveyard, this creature has "When this creature enters, creatures you control gain protection from black until end of turn."

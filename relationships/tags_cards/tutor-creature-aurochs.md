@@ -1,0 +1,1 @@
+b07bd1cd-4000-4e6b-b16b-283c76593377|Aurochs Herd|Trample When this creature enters, you may search your library for an Aurochs card, reveal it, put it into your hand, then shuffle. Whenever this creature attacks, it gets +1/+0 until end of turn for each other attacking Aurochs.

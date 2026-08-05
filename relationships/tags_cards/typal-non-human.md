@@ -1,0 +1,10 @@
+787e6cc6-d97a-4229-97d1-ec2377d138d3|Animal Attendant|{T}: Add one mana of any color. If that mana is spent to cast a non-Human creature spell, that creature enters with an additional +1/+1 counter on it.
+32eb5d30-f4e7-48ef-b5f6-051ddddd4175|Barge In|Target attacking creature gets +2/+2 until end of turn. Each attacking non-Human creature gains trample until end of turn.
+6a84a8a4-c8b0-45ce-af6f-605fcffc395b|Diligent Zookeeper|Each non-Human creature you control gets +1/+1 for each of its creature types, to a maximum of 10.
+d1f10cca-8dfa-4ea5-b227-4446cd8514a8|Drannith Ruins|{T}: Add {C}. {2}, {T}: Put two +1/+1 counters on target non-Human creature that entered this turn.
+d8b770c2-0406-4a2d-95d9-e14bb5d3bdc6|Duskfang Mentor|When this creature enters, put a lifelink counter on target non-Human creature you control. {1}{B}, {T}: Put a +1/+1 counter on each creature you control with lifelink.
+c75bdc5f-22f2-4558-bb8f-5a53ff7ab1ac|Ferocity of the Wilds|Attacking non-Human creatures you control get +1/+0 and have trample.
+16f93781-6740-40c7-a727-7911beac4e74|Fight as One|Choose one or both — • Target Human creature you control gets +1/+1 and gains indestructible until end of turn. • Target non-Human creature you control gets +1/+1 and gains indestructible until end of turn.
+3c9d217e-d7f8-43df-9bb6-58d29f93e2c4|Frillscare Mentor|When this creature enters, put a menace counter on target non-Human creature you control. (It can't be blocked except by two or more creatures.) {2}{R}, {T}: Put a +1/+1 counter on each creature you control with menace.
+fa4afcf7-9cf7-4f67-95b9-1f7fe66bf332|Grumgully, the Generous|Each other non-Human creature you control enters with an additional +1/+1 counter on it.
+d94a792f-a48b-4181-b656-86fe452a4875|Henry Wu, InGen Geneticist|Henry Wu and other Human creatures you control have exploit. (When a creature with exploit enters, you may sacrifice a creature.) Whenever a creature you control exploits a non-Human creature, draw a card. If the exploited creature had power 3 or greater, create a Treasure token.

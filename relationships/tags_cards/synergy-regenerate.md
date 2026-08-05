@@ -1,0 +1,1 @@
+663d6c61-e269-4f2f-9d8f-49c4c23f05d8|Spiny Starfish|{U}: Regenerate this creature. At the beginning of each end step, if this creature regenerated this turn, create a 0/1 blue Starfish creature token for each time it regenerated this turn.

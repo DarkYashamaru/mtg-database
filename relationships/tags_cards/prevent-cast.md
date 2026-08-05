@@ -1,0 +1,10 @@
+ff4297d3-3d96-4bd6-a606-1bdc20a6df2b|Aether Storm|Creature spells can't be cast. Pay 4 life: Destroy this enchantment. It can't be regenerated. Any player may activate this ability.
+34dd789c-4d80-4ccc-a4f7-2e5388a9689d|Angelic Arbiter|Flying Each opponent who cast a spell this turn can't attack with creatures. Each opponent who attacked with a creature this turn can't cast spells.
+baff00b8-b109-4e31-942b-38aeb1e45ab2|Archon of Valor's Reach|Flying, vigilance, trample As this creature enters, choose artifact, enchantment, instant, sorcery, or planeswalker. Players can't cast spells of the chosen type.
+a75d5b54-5cc9-49c4-8e8c-3bef22d4c01c|Ashes of the Abhorrent|Players can't cast spells from graveyards or activate abilities of cards in graveyards. Whenever a creature dies, you gain 1 life.
+ceaa0e02-2dec-412d-86aa-c1129fd0fb08|Aurelia's Fury|Aurelia's Fury deals X damage divided as you choose among any number of targets. Tap each creature dealt damage this way. Players dealt damage this way can't cast noncreature spells this turn.
+e3431dae-969c-4896-9f9e-a80e7bec4bdf|Avatar's Wrath|Choose up to one target creature, then airbend all other creatures. (Exile them. While each one is exiled, its owner may cast it for {2} rather than its mana cost.) Until your next turn, your opponents can't cast spells from anywhere other than their hands. Exile Avatar's Wrath.
+4a480736-4cdc-4e3a-a8cb-d1c726982f9f|Basandra, Battle Seraph|Flying Players can't cast spells during combat. {R}: Target creature attacks this turn if able.
+947bd180-ee95-4db4-b5d9-432428018eb8|Brand of Ill Omen|Enchant creature Cumulative upkeep {R} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) Enchanted creature's controller can't cast creature spells.
+b23587e0-9fb7-492e-8bb4-f218e8e4ce6c|Brisela, Voice of Nightmares|Flying, first strike, vigilance, lifelink Your opponents can't cast spells with mana value 3 or less.
+a6436330-f35a-4d31-9230-03e0c62f9e7e|Calamity's Wake|Exile all graveyards. Players can't cast noncreature spells this turn. Exile Calamity's Wake.

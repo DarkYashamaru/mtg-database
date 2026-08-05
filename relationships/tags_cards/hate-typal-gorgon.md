@@ -1,0 +1,1 @@
+f41b1a5b-bc99-4c51-9665-e251f04ad83f|Masked Gorgon|Green creatures and white creatures have protection from Gorgons. Threshold — This creature has protection from green and from white as long as there are seven or more cards in your graveyard.

@@ -1,0 +1,5 @@
+205bcab6-8b6b-4d09-9890-0b7391d59788|Fires of Undeath|Fires of Undeath deals 2 damage to any target. Flashback {5}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+4620bfa8-7198-44ae-a162-51a19ca0f555|Ray of Revelation|Destroy target enchantment. Flashback {G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+95ff3ba5-cbd2-4723-9498-3fc6df5be973|Reap the Seagraf|Create a 2/2 black Zombie creature token. Flashback {4}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+f7a4458a-7e8a-46bb-b62d-991c606c7a15|Saving Grasp|Return target creature you own to your hand. Flashback {W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+9d250088-d5f2-40ed-bdb7-a6decce0fb67|Wild Hunger|Target creature gets +3/+1 and gains trample until end of turn. Flashback {3}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)

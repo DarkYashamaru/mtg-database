@@ -1,0 +1,5 @@
+fe8c2b7e-f80d-4acb-a976-edcf436a78a9|Kogla and Yidaro|When Kogla and Yidaro enters, choose one — • It gains trample and haste until end of turn. • It fights target creature you don't control. {2}{R}{G}, Discard this card: Destroy up to one target artifact or enchantment. Shuffle this card into your library from your graveyard, then draw a card.
+53bfffae-b99e-44bd-8954-6cf236f93f26|Mnemonic Sphere|{1}{U}, Sacrifice this artifact: Draw two cards. Channel — {U}, Discard this card: Draw a card.
+5e891927-b6cb-40ae-8270-0e72820fd7f5|Reinforced Ronin|Haste At the beginning of your end step, return this creature to its owner's hand. Channel — {1}{R}, Discard this card: Draw a card.
+c9f35490-462a-4c8f-9d8b-d8abca6596f7|Visionary's Dance|Create two 3/3 blue and red Elemental creature tokens with flying. {2}, Discard this card: Look at the top two cards of your library. Put one of them into your hand and the other into your graveyard.
+3a19a959-ea83-404b-89f7-e5dbf4cb7995|Waker of Waves|Creatures your opponents control get -1/-0. {1}{U}, Discard this card: Look at the top two cards of your library. Put one of them into your hand and the other into your graveyard.

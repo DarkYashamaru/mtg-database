@@ -1,0 +1,2 @@
+32ebb029-9f03-49c9-b9bb-cb1954e2a324|Conflux|Search your library for a white card, a blue card, a black card, a red card, and a green card. Reveal those cards, put them into your hand, then shuffle.
+83c8f1ca-194e-4cb6-9d5f-029133c1edbc|Lotuslight Dancers|Lifelink When this creature enters, search your library for a black card, a green card, and a blue card. Put those cards into your graveyard, then shuffle.

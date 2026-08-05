@@ -1,0 +1,5 @@
+4f2d4538-dc1d-4c09-964b-b0d7c240fb7d|Archangel of Thune|Flying Lifelink (Damage dealt by this creature also causes you to gain that much life.) Whenever you gain life, put a +1/+1 counter on each creature you control.
+7bd36106-04fe-481f-b16e-e076dcbb183b|Kalonian Hydra|Trample This creature enters with four +1/+1 counters on it. Whenever this creature attacks, double the number of +1/+1 counters on each creature you control.
+0a147009-a57c-4ac1-ab81-d8bd8b737631|Scourge of Valkas|Flying Whenever this creature or another Dragon you control enters, it deals X damage to any target, where X is the number of Dragons you control. {R}: This creature gets +1/+0 until end of turn.
+7dacc5aa-ea4d-414e-8324-6a7d24bb7671|Shadowborn Demon|Flying When this creature enters, destroy target non-Demon creature. At the beginning of your upkeep, if there are fewer than six creature cards in your graveyard, sacrifice a creature.
+5e038a3a-fbab-46c2-8773-1327d953da16|Windreader Sphinx|Flying Whenever a creature with flying attacks, you may draw a card.

@@ -1,0 +1,10 @@
+1c69fdcf-ba87-480a-88df-70aa4ec9fff0|Amber Prison|You may choose not to untap this artifact during your untap step. {4}, {T}: Tap target artifact, creature, or land. That permanent doesn't untap during its controller's untap step for as long as this artifact remains tapped.
+c062bd12-34cf-4177-92d4-8ce91206989d|Coma Veil|Enchant artifact or creature Enchanted permanent doesn't untap during its controller's untap step.
+2e056743-78ff-45b6-80df-7486d52d5df6|Encrust|Enchant artifact or creature Enchanted permanent doesn't untap during its controller's untap step and its activated abilities can't be activated.
+80f8a64e-b22e-413e-a143-f1943be3a574|Ice Over|Enchant artifact or creature Enchanted permanent doesn't untap during its controller's untap step.
+864c7575-4589-416c-b143-310d5ef238c5|Inertia Bubble|Enchant artifact Enchanted artifact doesn't untap during its controller's untap step.
+0cd5eef6-6830-4c6d-8578-2726900c39a5|Kill Switch|{2}, {T}: Tap all other artifacts. They don't untap during their controllers' untap steps for as long as this artifact remains tapped.
+d2f98983-f395-4166-aa5a-309b4769baab|Malfunction|Enchant artifact or creature When this Aura enters, tap enchanted permanent. Enchanted permanent doesn't untap during its controller's untap step.
+e42d087e-c999-4f9a-bdc5-4327e8ce94b6|Numbing Dose|Enchant artifact or creature Enchanted permanent doesn't untap during its controller's untap step. At the beginning of the upkeep of enchanted permanent's controller, that player loses 1 life.
+407a0761-7ccc-4607-8df6-e744d30a81a0|Phyrexian Gremlins|You may choose not to untap this creature during your untap step. {T}: Tap target artifact. It doesn't untap during its controller's untap step for as long as this creature remains tapped.
+c7f20899-2625-4b3a-8bd8-0bcee07ed86e|Rust Tick|You may choose not to untap this creature during your untap step. {1}, {T}: Tap target artifact. It doesn't untap during its controller's untap step for as long as this creature remains tapped.

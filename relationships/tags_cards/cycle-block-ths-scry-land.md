@@ -1,0 +1,10 @@
+3baa8e38-ef93-435d-b63e-f781d5bfcc68|Temple of Abandon|This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {R} or {G}.
+33b9b3bd-33ca-46f3-b8bb-a978bc3d1085|Temple of Deceit|This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {U} or {B}.
+89f43e27-790b-4ca1-8ba7-0882b31e0783|Temple of Enlightenment|This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {W} or {U}.
+79f94050-d850-41ca-b1db-5ae0cf743f0a|Temple of Epiphany|This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {U} or {R}.
+dc55421f-dee8-4263-9df0-2365df5f14bb|Temple of Malady|This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {B} or {G}.
+7c439c18-31dc-41fe-b03d-3fca06e6fc0b|Temple of Malice|This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {B} or {R}.
+7e26f0b7-20e6-46d5-8130-d98c14d6aa29|Temple of Mystery|This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {G} or {U}.
+e521322b-0e83-458c-8936-7021a80ee279|Temple of Plenty|This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {G} or {W}.
+e6e6fce8-0f6a-4b84-865e-d4e4a4182f9f|Temple of Silence|This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {W} or {B}.
+6f0d94d9-64bb-4175-83bc-301e8f79f54f|Temple of Triumph|This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {R} or {W}.

@@ -1,0 +1,3 @@
+628f2deb-519e-4810-a7e5-e31316e9a4e0|Arcus Acolyte|Reach, lifelink Outlast {G/W} ({G/W}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.) Each other creature you control without a +1/+1 counter on it has outlast {G/W}.
+13d9822f-0398-4915-818b-b9fbaf63b93c|Demonic Tourist Laser|{TK}{TK} — Outlast {1} ({1}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.) {TK}{TK}{TK} — When this permanent dies, you get seven {TK}. {TK}{TK} — 1/4 {TK}{TK}{TK}{TK}{TK} — 9/6
+f9726123-f87b-41bb-9b6f-6d2fbcf0eae2|Enduring Sliver|Outlast {2} ({2}, {T}: Put a +1/+1 counter on this creature. Outlast only as a sorcery.) Other Sliver creatures you control have outlast {2}.

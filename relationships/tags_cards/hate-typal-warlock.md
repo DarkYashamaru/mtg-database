@@ -1,0 +1,1 @@
+d262f3e1-b5bc-4dab-86c2-cd89c2419e54|Caught in the Crossfire|Spree (Choose one or more additional costs.) + {1} — Caught in the Crossfire deals 2 damage to each outlaw creature. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.) + {1} — Caught in the Crossfire deals 2 damage to each non-outlaw creature.

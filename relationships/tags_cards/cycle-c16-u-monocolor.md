@@ -1,0 +1,5 @@
+f9837988-a097-4f00-a94f-4856d5d9894e|Evolutionary Escalation|At the beginning of your upkeep, put three +1/+1 counters on target creature you control and three +1/+1 counters on target creature an opponent controls.
+b3f9bd29-8dd6-4915-8ffd-02e02f26fed8|Frenzied Fugue|Enchant permanent When this Aura enters and at the beginning of your upkeep, gain control of enchanted permanent until end of turn. Untap that permanent. It gains haste until end of turn.
+4c95b2fe-d107-44f9-b877-8bd4799f5a65|Grip of Phyresis|Gain control of target Equipment, then create a 0/0 black Phyrexian Germ creature token and attach that Equipment to it.
+d5e9942e-096f-433f-8668-4b594f3c1b02|Orzhov Advokist|At the beginning of your upkeep, each player may put two +1/+1 counters on a creature they control. If a player does, creatures that player controls can't attack you or planeswalkers you control until your next turn.
+57fd34d3-3e30-4467-bace-3f4dc2a85c80|Parting Thoughts|Destroy target creature. You draw X cards and you lose X life, where X is the number of counters on that creature.

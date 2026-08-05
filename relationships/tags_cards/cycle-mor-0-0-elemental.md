@@ -1,0 +1,5 @@
+21f1c6d7-8289-44b2-b88f-c09e202be200|Fertilid|This creature enters with two +1/+1 counters on it. {1}{G}, Remove a +1/+1 counter from this creature: Target player searches their library for a basic land card, puts it onto the battlefield tapped, then shuffles.
+0f7f841a-1913-4396-9c94-bbd49dfdb9d1|Festercreep|This creature enters with a +1/+1 counter on it. {1}{B}, Remove a +1/+1 counter from this creature: All other creatures get -1/-1 until end of turn.
+1bf97485-191b-466c-9590-3449466b348c|Floodchaser|This creature enters with six +1/+1 counters on it. This creature can't attack unless defending player controls an Island. {U}, Remove a +1/+1 counter from this creature: Target land becomes an Island until end of turn.
+8b3c4a6c-44ac-4718-ac1e-9d503523e89d|Shinewend|Flying This creature enters with a +1/+1 counter on it. {1}{W}, Remove a +1/+1 counter from this creature: Destroy target enchantment.
+e868028f-4c6f-43d1-9cc6-6f3ce2df2ec3|Stingmoggie|This creature enters with two +1/+1 counters on it. {3}{R}, Remove a +1/+1 counter from this creature: Destroy target artifact or land.

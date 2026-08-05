@@ -1,0 +1,5 @@
+d3a0b660-358c-41bd-9cd2-41fbf3491b1a|Birds of Paradise|Flying {T}: Add one mana of any color.
+7d1769d0-d942-45b3-a31c-2bbe45e68661|Island Sanctuary|If you would draw a card during your draw step, instead you may skip that draw. If you do, until your next turn, you can't be attacked except by creatures with flying and/or islandwalk.
+a6a43190-cca2-4f07-afe9-8af681d777da|Sedge Troll|This creature gets +1/+1 as long as you control a Swamp. {B}: Regenerate this creature.
+a8cf1379-0195-4e11-b994-481ef1284245|Stasis|Players skip their untap steps. At the beginning of your upkeep, sacrifice this enchantment unless you pay {U}.
+e8ad3a77-b293-4d69-b080-27ca9f95d443|Word of Command|Look at target opponent's hand and choose a card from it. You control that player until Word of Command finishes resolving. The player plays that card if able. While doing so, the player can activate mana abilities only if they're from lands that player controls and only if mana they produce is spent to activate other mana abilities of lands the player controls and/or to play that card. If the chosen card is cast as a spell, you control the player while that spell is resolving.

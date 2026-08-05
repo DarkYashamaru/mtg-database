@@ -1,0 +1,1 @@
+7b18cfad-a1cf-46c2-bcdd-7762c13d50e5|Thornvault Forager|{T}: Add {G}. {T}, Forage: Add two mana in any combination of colors. (To forage, exile three cards from your graveyard or sacrifice a Food.) {3}{G}, {T}: Search your library for a Squirrel card, reveal it, put it into your hand, then shuffle.

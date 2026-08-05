@@ -1,0 +1,5 @@
+940ba435-7abc-40f8-a5af-c1c653b3284e|Bontu's Monument|Black creature spells you cast cost {1} less to cast. Whenever you cast a creature spell, each opponent loses 1 life and you gain 1 life.
+f02a4cbf-f0bb-4bc7-99c2-6afa1b41ebb8|Hazoret's Monument|Red creature spells you cast cost {1} less to cast. Whenever you cast a creature spell, you may discard a card. If you do, draw a card.
+b6294891-79e6-4f2a-a82d-6cffce968356|Kefnet's Monument|Blue creature spells you cast cost {1} less to cast. Whenever you cast a creature spell, target creature an opponent controls doesn't untap during its controller's next untap step.
+0370afa0-07d3-4787-8a5b-10272cb3a486|Oketra's Monument|White creature spells you cast cost {1} less to cast. Whenever you cast a creature spell, create a 1/1 white Warrior creature token with vigilance.
+b9a7c722-6b24-4383-ac6e-2a30f7834269|Rhonas's Monument|Green creature spells you cast cost {1} less to cast. Whenever you cast a creature spell, target creature you control gets +2/+2 and gains trample until end of turn.

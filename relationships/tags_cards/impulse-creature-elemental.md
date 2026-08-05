@@ -1,0 +1,1 @@
+48c641df-d511-4e35-b623-9d1fdb5240da|Eclipsed Flamekin|When this creature enters, look at the top four cards of your library. You may reveal an Elemental, Island, or Mountain card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.

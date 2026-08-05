@@ -1,0 +1,3 @@
+386c5895-9713-4c28-9ba8-8ca0caa06c13|Gate Colossus|Affinity for Gates (This spell costs {1} less to cast for each Gate you control.) This creature can't be blocked by creatures with power 2 or less. Whenever a Gate you control enters, you may put this card from your graveyard on top of your library.
+66c227f2-0e74-43e2-ab24-3866d15c5eef|Gateway Sneak|Whenever a Gate you control enters, this creature can't be blocked this turn. Whenever this creature deals combat damage to a player, draw a card.
+38a3e144-93ad-497b-9b29-7040b6f337e1|Guild Summit|When this enchantment enters, you may tap any number of untapped Gates you control. Draw a card for each Gate tapped this way. Whenever a Gate you control enters, draw a card.

@@ -1,0 +1,10 @@
+4b4c76e1-c480-4d10-93d4-483ef2debc4b|Akki Ronin|Whenever a Samurai or Warrior you control attacks alone, you may discard a card. If you do, draw a card.
+13a9b9fd-20fa-4734-9d95-3ab41ab9c7a0|Ancestral Katana|Whenever a Samurai or Warrior you control attacks alone, you may pay {1}. When you do, attach this Equipment to it. Equipped creature gets +2/+1. Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+32e7385e-525e-4925-8cfd-bfea21fcd1bf|Asari Captain|Haste Whenever a Samurai or Warrior you control attacks alone, it gets +1/+0 until end of turn for each Samurai or Warrior you control.
+8e0f4e22-0677-4246-a4c5-6fcc74cb54a3|Eiganjo Exemplar|Whenever a Samurai or Warrior you control attacks alone, it gets +1/+1 until end of turn.
+a4d67f2d-6b0f-4feb-bf7d-90ab4f2e46ab|Heiko Yamazaki, the General|Trample Whenever a Samurai or Warrior you control attacks alone, you may cast target artifact card from your graveyard this turn.
+bedf1dd5-b133-455b-bc3d-c7b1f469d91f|Imperial Subduer|Whenever a Samurai or Warrior you control attacks alone, tap target creature you don't control.
+6f143c8f-cb5c-4abc-a01b-b6813f5a524c|Norika Yamazaki, the Poet|Vigilance Whenever a Samurai or Warrior you control attacks alone, you may cast target enchantment card from your graveyard this turn.
+fe3b0393-dc50-4fa6-9b3f-1175a6a825e4|Peerless Samurai|Menace (This creature can't be blocked except by two or more creatures.) Whenever a Samurai or Warrior you control attacks alone, the next spell you cast this turn costs {1} less to cast.
+9028f726-50c7-49f3-8386-e584415dcba2|Raiyuu, Storm's Edge|First strike Whenever a Samurai or Warrior you control attacks alone, untap it. If it's the first combat phase of the turn, there is an additional combat phase after this phase.
+20c9fb06-3941-456f-ba02-4fbde9deb1e2|Selfless Samurai|Whenever a Samurai or Warrior you control attacks alone, it gains lifelink until end of turn. Sacrifice this creature: Another target creature you control gains indestructible until end of turn. (Damage and effects that say "destroy" don't destroy it.)

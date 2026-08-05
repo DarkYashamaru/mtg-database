@@ -1,0 +1,10 @@
+c15e5cb8-b94c-4157-9327-410e66606b82|Arms of Hadar|Creatures target player controls get -2/-2 until end of turn.
+9c9b3bf7-afb7-4e9b-bdbc-e2b4d5ba477f|Banishment|Flash When this enchantment enters, exile target nonland permanent an opponent controls and all other nonland permanents your opponents control with the same name as that permanent until this enchantment leaves the battlefield.
+00b36996-43c6-42a5-892c-c7c8864cf973|Blur|Exile target creature you control, then return that card to the battlefield under its owner's control. Draw a card.
+0d6507b0-c986-49d1-aea3-77b2cf2a7433|Borrowed Knowledge|Choose one — • Discard your hand, then draw cards equal to the number of cards in target opponent's hand. • Discard your hand, then draw cards equal to the number of cards discarded this way.
+a5f10b54-10db-4c92-a596-8afea4e470f5|Bull's Strength|Target creature gets +2/+2 and gains trample until end of turn. Untap it.
+51a0d1c2-ff29-4ac9-84a2-ad4f566fee8d|Burning Hands|Burning Hands deals 2 damage to target creature or planeswalker. If that permanent is green, Burning Hands deals 6 damage instead.
+1941239b-e131-4bde-b493-1c8c805b6a3c|Cloudkill|All creatures get -X/-X until end of turn, where X is the greatest mana value of a commander you own on the battlefield or in the command zone.
+256cc907-2a13-4f43-9d37-2e52034cdaf4|Compelled Duel|Target creature gets +3/+3 until end of turn and must be blocked this turn if able.
+56fd0752-9fb0-4c05-90e5-c3b268b57c6f|Cone of Cold|Roll a d20. 1—9 \| Tap all creatures your opponents control. 10—19 \| Tap all creatures your opponents control. Those creatures don't untap during their controllers' next untap steps. 20 \| Tap all creatures your opponents control. Those creatures don't untap during their controllers' next untap steps. Until your next turn, creatures your opponents control enter tapped.
+a352cc67-eae8-4fa5-abba-507821c4cf47|Contact Other Plane|Roll a d20. 1—9 \| Draw two cards. 10—19 \| Scry 2, then draw two cards. 20 \| Scry 3, then draw three cards.

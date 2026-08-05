@@ -1,0 +1,4 @@
+b3b8c7d0-46b9-4519-808a-154e503a58b6|Liliana's Devotee|Zombies you control get +1/+0. At the beginning of your end step, if a creature died this turn, you may pay {1}{B}. If you do, create a 2/2 black Zombie creature token.
+7b600c0e-5ad2-48a2-a147-346ca78c8629|Liliana's Standard Bearer|Flash When this creature enters, draw X cards, where X is the number of creatures that died under your control this turn.
+cc1203cb-6758-4454-b78b-341930ff4da1|Liliana's Steward|{T}, Sacrifice this creature: Target opponent discards a card. Activate only as a sorcery.
+e0df8e2a-96d2-4e4d-b065-aa2e162abbfe|Liliana, Waker of the Dead|+1: Each player discards a card. Each opponent who can't loses 3 life. −3: Target creature gets -X/-X until end of turn, where X is the number of cards in your graveyard. −7: You get an emblem with "At the beginning of combat on your turn, put target creature card from a graveyard onto the battlefield under your control. It gains haste."

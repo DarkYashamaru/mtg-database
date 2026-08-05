@@ -1,0 +1,1 @@
+82f18e7d-5c42-47c4-8e74-3fccc9b7b1f0|Ancient Stirrings|Look at the top five cards of your library. You may reveal a colorless card from among them and put it into your hand. Then put the rest on the bottom of your library in any order.

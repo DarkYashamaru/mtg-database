@@ -1,0 +1,4 @@
+cf2bacd3-b1ac-4863-b9c7-1e0a8d4854f3|Stormscape Apprentice|{W}, {T}: Tap target creature. {B}, {T}: Target player loses 1 life.
+38ee748d-adcd-41df-9b23-d2a34829784c|Stormscape Battlemage|Kicker {W} and/or {2}{B} (You may pay an additional {W} and/or {2}{B} as you cast this spell.) When this creature enters, if it was kicked with its {W} kicker, you gain 3 life. When this creature enters, if it was kicked with its {2}{B} kicker, destroy target nonblack creature. That creature can't be regenerated.
+a8f5a11f-3291-4ee9-a96d-4fa38af14932|Stormscape Familiar|Flying White spells and black spells you cast cost {1} less to cast.
+bfcd6c5d-7189-4d84-b0df-0a5ce5f43528|Stormscape Master|{W}{W}, {T}: Target creature gains protection from the color of your choice until end of turn. {B}{B}, {T}: Target player loses 2 life and you gain 2 life.

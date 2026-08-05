@@ -1,0 +1,1 @@
+2b04b60b-0c4c-4fee-a54b-7052ca5190e1|Charging War Boar|Haste (This creature can attack and {T} as soon as it comes under your control.) As long as you control a Domri planeswalker, this creature gets +1/+1 and has trample. (It can deal excess damage to the player or planeswalker it's attacking.)

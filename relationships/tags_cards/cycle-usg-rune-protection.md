@@ -1,0 +1,7 @@
+469c4b77-733e-472b-aeae-6015b409beb2|Rune of Protection: Artifacts|{W}: The next time an artifact source of your choice would deal damage to you this turn, prevent that damage. Cycling {2} ({2}, Discard this card: Draw a card.)
+b027302f-80c2-441d-a9fd-bbe64bf5cf8a|Rune of Protection: Black|{W}: The next time a black source of your choice would deal damage to you this turn, prevent that damage. Cycling {2} ({2}, Discard this card: Draw a card.)
+092dd5be-da62-4198-b7fa-0813f075047c|Rune of Protection: Blue|{W}: The next time a blue source of your choice would deal damage to you this turn, prevent that damage. Cycling {2} ({2}, Discard this card: Draw a card.)
+c7fca3f3-b48e-4ac5-be31-ce7ae3c7432c|Rune of Protection: Green|{W}: The next time a green source of your choice would deal damage to you this turn, prevent that damage. Cycling {2} ({2}, Discard this card: Draw a card.)
+605dd1b5-8946-4bd0-b31b-e99bf63a1bc4|Rune of Protection: Lands|{W}: The next time a land source of your choice would deal damage to you this turn, prevent that damage. Cycling {2} ({2}, Discard this card: Draw a card.)
+9b3f6b29-675a-4153-9582-03318851b20e|Rune of Protection: Red|{W}: The next time a red source of your choice would deal damage to you this turn, prevent that damage. Cycling {2} ({2}, Discard this card: Draw a card.)
+6f214a42-e38f-4923-8afc-832efdde7975|Rune of Protection: White|{W}: The next time a white source of your choice would deal damage to you this turn, prevent that damage. Cycling {2} ({2}, Discard this card: Draw a card.)

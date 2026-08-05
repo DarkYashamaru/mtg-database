@@ -1,0 +1,7 @@
+2e61e9c0-a2b9-4a24-8cb0-5160accce183|Circle of Protection: Artifacts|{2}: The next time an artifact source of your choice would deal damage to you this turn, prevent that damage.
+07c42f46-800e-4d2a-b844-c125ab93190d|Circle of Protection: Shadow|{1}: The next time a creature of your choice with shadow would deal damage to you this turn, prevent that damage.
+14ebedd1-7a2d-413b-9b76-8610511292a4|Circle of Solace|As this enchantment enters, choose a creature type. {1}{W}: The next time a creature of the chosen type would deal damage to you this turn, prevent that damage.
+b03eb0c4-89a4-420d-8a23-1a868a07d9cf|Greater Realm of Preservation|{1}{W}: The next time a black or red source of your choice would deal damage to you this turn, prevent that damage.
+022dae2e-7fc3-486e-9168-59652d9ab21c|Prismatic Circle|Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) As this enchantment enters, choose a color. {1}: The next time a source of your choice of the chosen color would deal damage to you this turn, prevent that damage.
+bffb7d30-b9a4-4529-a3fc-c82d6cd4b599|Rhystic Circle|{1}: Any player may pay {1}. If no one does, the next time a source of your choice would deal damage to you this turn, prevent that damage.
+7071aee8-b5ca-4be5-9ba0-2df7e3af303b|Story Circle|As this enchantment enters, choose a color. {W}: The next time a source of your choice of the chosen color would deal damage to you this turn, prevent that damage.

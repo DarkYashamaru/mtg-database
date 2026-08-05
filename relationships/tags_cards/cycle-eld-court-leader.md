@@ -1,0 +1,5 @@
+388168b3-ec68-4af2-b88c-6a5ec88c15f6|Ayara, First of Locthwain|Whenever Ayara or another black creature you control enters, each opponent loses 1 life and you gain 1 life. {T}, Sacrifice another black creature: Draw a card.
+c7530ecd-e22f-41e7-a76b-de32809901c8|Gadwick, the Wizened|When Gadwick enters, draw X cards. Whenever you cast a blue spell, tap target nonland permanent an opponent controls.
+dbc56f3b-83b3-41c8-a8ae-d3774fe6ee01|Linden, the Steadfast Queen|Vigilance (Attacking doesn't cause this creature to tap.) Whenever a white creature you control attacks, you gain 1 life.
+8c3495bf-02e7-4ad9-949d-92eb3d2b662a|Torbran, Thane of Red Fell|If a red source you control would deal damage to an opponent or a permanent an opponent controls, it deals that much damage plus 2 instead.
+00a15abc-bdac-4977-90a0-f08d41941d01|Yorvo, Lord of Garenbrig|Yorvo enters with four +1/+1 counters on it. Whenever another green creature you control enters, put a +1/+1 counter on Yorvo. Then if that creature's power is greater than Yorvo's power, put another +1/+1 counter on Yorvo.

@@ -1,0 +1,1 @@
+8019e879-cfea-40a2-ac0d-86b47ec02b48|Pulsar Squadron Ace|When this creature enters, look at the top five cards of your library. You may reveal a Spacecraft card from among them and put it into your hand. Put the rest on the bottom of your library in a random order. If you didn't put a card into your hand this way, put a +1/+1 counter on this creature.

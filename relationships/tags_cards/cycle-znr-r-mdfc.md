@@ -1,0 +1,5 @@
+c178953c-3888-4edd-9d0c-265bd82b1d24|Glasspool Mimic // Glasspool Shore|You may have this creature enter as a copy of a creature you control, except it's a Shapeshifter Rogue in addition to its other types. // This land enters tapped. {T}: Add {U}.
+37783ce6-af58-4ef6-8ab4-587079970307|Hagra Mauling // Hagra Broodpit|This land enters tapped. {T}: Add {B}. // This spell costs {1} less to cast if an opponent controls no basic lands. Destroy target creature.
+2ac1c95c-2a9d-40bc-9cad-9cadfa3f19f7|Kazandu Mammoth // Kazandu Valley|Landfall — Whenever a land you control enters, this creature gets +2/+2 until end of turn. // This land enters tapped. {T}: Add {G}.
+15fc4e74-300e-4c2d-8ed7-004553b2f7c2|Ondu Inversion // Ondu Skyruins|Destroy all nonland permanents. // This land enters tapped. {T}: Add {W}.
+ff0ab867-b710-4b1a-baed-95fc3cf68f79|Valakut Awakening // Valakut Stoneforge|Put any number of cards from your hand on the bottom of your library, then draw that many cards plus one. // This land enters tapped. {T}: Add {R}.

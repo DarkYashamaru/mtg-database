@@ -1,0 +1,6 @@
+710dc9b1-7d32-4330-95a8-3e91a668202a|Ghirapur Gearcrafter|When this creature enters, create a 1/1 colorless Thopter artifact creature token with flying. (A creature with flying can't be blocked except by creatures with flying or reach.)
+364e8bd6-52e5-4397-8d2a-10c4706e5a45|Hag Hedge-Mage|When this creature enters, if you control two or more Swamps, you may have target player discard a card. When this creature enters, if you control two or more Forests, you may put target card from your graveyard on top of your library.
+05abc57a-839d-4376-986c-8e3855e34239|Irreverent Revelers|When this creature enters, choose one — • Destroy target artifact. • This creature gains haste until end of turn.
+2acb15bd-6c89-4ff3-ab32-beac67e9c88a|Quina, Qu Gourmet|If one or more tokens would be created under your control, those tokens plus a 1/1 green Frog creature token are created instead. {2}, Sacrifice a Frog: Put a +1/+1 counter on Quina.
+fda06d9e-d17f-4bb6-916b-06116e47c8e8|Rural Recruit|Training (Whenever this creature attacks with another creature with greater power, put a +1/+1 counter on this creature.) When this creature enters, create a 3/1 green Boar creature token.
+f53f33ed-5c8c-4835-bc5f-65a8acfa3f5b|Steeple Creeper|{3}{U}: This creature gains flying until end of turn.

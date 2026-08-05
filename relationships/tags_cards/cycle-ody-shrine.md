@@ -1,0 +1,5 @@
+09c450cf-5f22-45c2-86ed-21b85552a96f|Aven Shrine|Whenever a player casts a spell, that player gains X life, where X is the number of cards in all graveyards with the same name as that spell.
+3a1b4d0f-7051-4913-bced-bf7596b36668|Cabal Shrine|Whenever a player casts a spell, that player discards X cards, where X is the number of cards in all graveyards with the same name as that spell.
+95f05f77-bdc3-4799-910b-5ca7ffadffe3|Cephalid Shrine|Whenever a player casts a spell, counter that spell unless that player pays {X}, where X is the number of cards in all graveyards with the same name as the spell.
+ecf613a7-a3df-4da6-b3db-4626b5ae8df6|Dwarven Shrine|Whenever a player casts a spell, this enchantment deals X damage to that player, where X is twice the number of cards in all graveyards with the same name as that spell.
+fc32ec2b-5432-41cc-ab4c-d9f986126392|Nantuko Shrine|Whenever a player casts a spell, that player creates X 1/1 green Squirrel creature tokens, where X is the number of cards in all graveyards with the same name as that spell.

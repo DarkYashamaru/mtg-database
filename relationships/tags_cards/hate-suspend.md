@@ -1,0 +1,7 @@
+3e1b32a9-27a4-4550-a644-ebe254e1f512|Clockspinning|Buyback {3} (You may pay an additional {3} as you cast this spell. If you do, put this card into your hand as it resolves.) Choose a counter on target permanent or suspended card. Remove that counter from that permanent or card or put another of those counters on it.
+41ccd197-aaec-45cb-9e8f-919c0fb54bb0|Dust of Moments|Choose one — • Remove two time counters from each permanent and each suspended card. • Put two time counters on each permanent with a time counter on it and each suspended card.
+2903bd66-6948-445b-a18a-12e2ce1a86c3|Pull from Eternity|Put target face-up exiled card into its owner's graveyard.
+3afe854a-7daa-4745-a5d9-04879e5d940a|Shivan Sand-Mage|When this creature enters, choose one — • Remove two time counters from target permanent or suspended card. • Put two time counters on target permanent with a time counter on it or suspended card. Suspend 4—{R}
+efa3e524-1591-4036-81ec-74199cee25aa|Timebender|Morph {U} When this creature is turned face up, choose one — • Remove two time counters from target permanent or suspended card. • Put two time counters on target permanent with a time counter on it or suspended card.
+57939644-6f9a-4653-920b-f2d28559a9ca|Timecrafting|Choose one — • Remove X time counters from target permanent or suspended card. • Put X time counters on target permanent with a time counter on it or suspended card.
+048f4bb9-c5da-42d4-9af0-bd8754afce1a|Venser's Diffusion|Return target nonland permanent or suspended card to its owner's hand.

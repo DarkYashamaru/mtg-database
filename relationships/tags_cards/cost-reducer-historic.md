@@ -1,0 +1,2 @@
+e8e15ab4-e4c7-4faf-b469-288451ddee02|Ballad of the Black Flag|(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.) I, II, III — Mill three cards. You may put a historic card from among them into your hand. (Artifacts, legendaries, and Sagas are historic.) IV — Historic spells you cast this turn cost {2} less to cast.
+df4b5f7b-9d83-49b1-bd5e-77d0652eb34c|Jhoira's Familiar|Flying Historic spells you cast cost {1} less to cast. (Artifacts, legendaries, and Sagas are historic.)

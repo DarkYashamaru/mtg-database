@@ -1,0 +1,1 @@
+d3bdfb25-dfb2-4df4-b502-ef0909a39f86|Cid, Freeflier Pilot|Equipment and Vehicle spells you cast cost {1} less to cast. Jump — During your turn, Cid has flying. {2}, {T}: Return target Equipment or Vehicle card from your graveyard to your hand.

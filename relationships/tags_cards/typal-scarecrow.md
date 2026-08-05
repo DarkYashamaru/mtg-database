@@ -1,0 +1,2 @@
+70034860-5198-421f-871d-7c1676337b6e|Reaper King|({2/W} can be paid with any two mana or with {W}. This card's mana value is 10.) Other Scarecrow creatures you control get +1/+1. Whenever another Scarecrow you control enters, destroy target permanent.
+f45716dc-c613-4b14-865d-419395fb02f6|Scarecrone|{1}, Sacrifice a Scarecrow: Draw a card. {4}, {T}: Return target artifact creature card from your graveyard to the battlefield.

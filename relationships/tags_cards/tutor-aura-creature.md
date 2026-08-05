@@ -1,0 +1,1 @@
+25187c05-ed6a-4690-b92b-89c532fdb780|Tallowisp|Whenever you cast a Spirit or Arcane spell, you may search your library for an Aura card with enchant creature, reveal it, put it into your hand, then shuffle.

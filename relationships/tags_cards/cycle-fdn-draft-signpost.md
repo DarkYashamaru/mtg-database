@@ -1,0 +1,10 @@
+7da19fc5-cb85-4ec7-beea-95210378bbfe|Balmor, Battlemage Captain|Flying Whenever you cast an instant or sorcery spell, creatures you control get +1/+0 and gain trample until end of turn.
+bbfd0de0-3558-4833-bae4-8efae44b7fff|Dreadwing Scavenger|Flying Whenever this creature enters or attacks, draw a card, then discard a card. Threshold — This creature gets +1/+1 and has deathtouch as long as there are seven or more cards in your graveyard.
+270d14b2-07bc-46bc-918f-658102265ccf|Empyrean Eagle|Flying Other creatures you control with flying get +1/+1.
+b5d64271-4478-4c55-8c71-ba8f02b47fac|Fiendish Panda|Whenever you gain life, put a +1/+1 counter on this creature. When this creature dies, return another target non-Bear creature card with mana value less than or equal to this creature's power from your graveyard to the battlefield.
+1e0cdff3-3ec5-41fc-8053-f072bae156b3|Good-Fortune Unicorn|Whenever another creature you control enters, put a +1/+1 counter on that creature.
+c442e8b0-a0a4-4839-8049-125b91b15c99|Heroic Reinforcements|Create two 1/1 white Soldier creature tokens. Until end of turn, creatures you control get +1/+1 and gain haste. (They can attack and {T} this turn.)
+a3643f66-dfa2-4275-a093-23e162496354|Perforating Artist|Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.) Raid — At the beginning of your end step, if you attacked this turn, each opponent loses 3 life unless that player sacrifices a nonland permanent of their choice or discards a card.
+5d1b0eee-3a7a-4f22-a40d-7658a368962a|Ruby, Daring Tracker|Haste (This creature can attack and {T} as soon as it comes under your control.) Whenever Ruby attacks while you control a creature with power 4 or greater, Ruby gets +2/+2 until end of turn. {T}: Add {R} or {G}.
+0715e860-3b3b-4331-9718-207973e94fee|Tatyova, Benthic Druid|Landfall — Whenever a land you control enters, you gain 1 life and draw a card.
+fa7d09aa-2ebc-4571-81da-836cd80cf554|Wardens of the Cycle|Morbid — At the beginning of your end step, if a creature died this turn, choose one — • You gain 2 life. • You draw a card and you lose 1 life.

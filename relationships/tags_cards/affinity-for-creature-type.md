@@ -1,0 +1,3 @@
+efd2a4ca-1bd0-4762-a997-f099326b1746|Polliwallop|Affinity for Frogs (This spell costs {1} less to cast for each Frog you control.) Target creature you control deals damage equal to twice its power to target creature you don't control.
+655a2b78-6a6c-4b9e-b7c0-48d3768978f5|Scales of Shale|Affinity for Lizards (This spell costs {1} less to cast for each Lizard you control.) Target creature gets +2/+0 and gains lifelink and indestructible until end of turn.
+65d9b8b6-5215-4037-8e50-e0ca80c5dc9e|Valiant Changeling|This spell costs {1} less to cast for each creature type among creatures you control. This effect can't reduce the amount of mana this spell costs by more than {5}. Changeling (This card is every creature type.) Double strike

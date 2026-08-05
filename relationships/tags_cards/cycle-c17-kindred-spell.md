@@ -1,0 +1,5 @@
+f04441b0-755c-4e7b-a9e4-4e03b8175ab6|Kindred Boon|As this enchantment enters, choose a creature type. {1}{W}: Put a divinity counter on target creature you control of the chosen type. Each creature you control with a divinity counter on it has indestructible.
+eb0b5b5f-54d3-49c6-9ad8-d44a5551acdb|Kindred Charge|Choose a creature type. For each creature you control of the chosen type, create a token that's a copy of that creature. Those tokens gain haste. Exile them at the beginning of the next end step.
+005ee549-1bf5-478f-bc3f-3e791bd7eecf|Kindred Discovery|As this enchantment enters, choose a creature type. Whenever a creature you control of the chosen type enters or attacks, draw a card.
+ccaa44f2-96be-44e2-884f-c31baa3908d5|Kindred Dominance|Choose a creature type. Destroy all creatures that aren't of the chosen type.
+b488e75f-af9c-43e2-8aca-f269fa2c720e|Kindred Summons|Choose a creature type. Reveal cards from the top of your library until you reveal X creature cards of the chosen type, where X is the number of creatures you control of that type. Put those cards onto the battlefield, then shuffle the rest of the revealed cards into your library.

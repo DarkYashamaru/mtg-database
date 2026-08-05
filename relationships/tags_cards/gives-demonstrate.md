@@ -1,0 +1,2 @@
+ac230b68-f945-4a1a-bd89-33e6d62e3c36|Silverquill Lecturer|Creature spells you cast have demonstrate. (Whenever you cast a creature spell, you may copy it. If you do, choose an opponent to also copy it. Each copy becomes a token.)
+9ecf19ba-754e-4bb3-b526-fe9df87a0f08|The Twelfth Doctor|The first spell you cast from anywhere other than your hand each turn has demonstrate. (When you cast that spell, you may copy it. If you do, choose an opponent to also copy it. A copy of a permanent spell becomes a token.) Whenever you copy a spell, put a +1/+1 counter on The Twelfth Doctor.

@@ -1,0 +1,5 @@
+557dda97-c9e6-4d3d-95d8-8180ab9d87b3|Claim of Erebos|Enchant creature Enchanted creature has "{1}{B}, {T}: Target player loses 2 life."
+0870e9f8-9e02-4997-9554-41a4e8eec4cb|Ephara's Radiance|Enchant creature Enchanted creature has "{1}{W}, {T}: You gain 3 life."
+833fe5f4-cfab-46ce-a4fe-250673896350|Epiphany Storm|Enchant creature Enchanted creature has "{R}, {T}, Discard a card: Draw a card."
+e766b774-eaf3-41ce-bc23-fd29fd22bc39|Evanescent Intellect|Enchant creature Enchanted creature has "{1}{U}, {T}: Target player mills three cards."
+fc3e48c9-e303-435c-bdb1-7dc7881a9858|Karametra's Favor|Enchant creature When this Aura enters, draw a card. Enchanted creature has "{T}: Add one mana of any color."

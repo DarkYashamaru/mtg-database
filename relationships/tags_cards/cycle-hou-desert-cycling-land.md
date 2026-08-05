@@ -1,0 +1,5 @@
+311f38a6-f68f-4d30-bc4e-62339f1e0d88|Desert of the Fervent|This land enters tapped. {T}: Add {R}. Cycling {1}{R} ({1}{R}, Discard this card: Draw a card.)
+190e664b-9875-4335-af46-353886ed18ff|Desert of the Glorified|This land enters tapped. {T}: Add {B}. Cycling {1}{B} ({1}{B}, Discard this card: Draw a card.)
+852d4dc3-404d-4565-99e9-1eac8f6eca5e|Desert of the Indomitable|This land enters tapped. {T}: Add {G}. Cycling {1}{G} ({1}{G}, Discard this card: Draw a card.)
+508f9e7e-2ff7-4593-b0a9-0612d7b5d646|Desert of the Mindful|This land enters tapped. {T}: Add {U}. Cycling {1}{U} ({1}{U}, Discard this card: Draw a card.)
+2672e0ca-8d5c-449f-8483-35d0e697fbb2|Desert of the True|This land enters tapped. {T}: Add {W}. Cycling {1}{W} ({1}{W}, Discard this card: Draw a card.)

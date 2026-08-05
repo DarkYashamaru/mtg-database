@@ -1,0 +1,10 @@
+1c69fdcf-ba87-480a-88df-70aa4ec9fff0|Amber Prison|You may choose not to untap this artifact during your untap step. {4}, {T}: Tap target artifact, creature, or land. That permanent doesn't untap during its controller's untap step for as long as this artifact remains tapped.
+0ad5f4c5-f6d2-4e96-af65-5488d9711113|Auriok Transfixer|{W}, {T}: Tap target artifact.
+9bdd68e7-7787-4579-a128-09e78fdbf0e2|Berg Strider|When this creature enters, tap target artifact or creature an opponent controls. If {S} was spent to cast this spell, that permanent doesn't untap during its controller's next untap step. ({S} is mana from a snow source.)
+5adc9d0d-3393-4d91-be85-1f9dd344698b|Binding Mummy|Whenever another Zombie you control enters, you may tap target artifact or creature.
+5d998c09-7d89-4265-ada4-6d80cbf56dae|Blind Obedience|Extort (Whenever you cast a spell, you may pay {W/B}. If you do, each opponent loses 1 life and you gain that much life.) Artifacts and creatures your opponents control enter tapped.
+dd3fd7cd-d8a1-48e2-861d-c7c40086dc75|Blinkmoth Well|{T}: Add {C}. {2}, {T}: Tap target noncreature artifact.
+6ff995f9-080d-4316-8fbe-39bf195db91b|Bola Slinger|Backup 1 (When this creature enters, put a +1/+1 counter on target creature. If that's another creature, it gains the following ability until end of turn.) Whenever this creature attacks, tap target artifact or creature an opponent controls.
+3dcc35f3-74dc-46a8-8aa9-3411189f0547|Charismatic Conqueror|Vigilance Whenever an artifact or creature an opponent controls enters untapped, they may tap that permanent. If they don't, you create a 1/1 white Vampire creature token with lifelink.
+7129bdec-83e0-4c1e-a87b-ac0da1a714b3|Dauntless Dismantler|Artifacts your opponents control enter tapped. {X}{X}{W}, Sacrifice this creature: Destroy each artifact with mana value X.
+e4a338d5-8cd5-4583-893b-ebbede2280c6|Dee Kay, Finder of the Lost|When Dee Kay enters, open an Attraction. Whenever you roll a 2, each opponent loses 1 life and you gain 1 life. Whenever you roll a 4, you may tap or untap target artifact or creature. Whenever you roll a 6, return target creature card from your graveyard to your hand.

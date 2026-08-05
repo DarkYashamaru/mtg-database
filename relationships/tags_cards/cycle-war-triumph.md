@@ -1,0 +1,5 @@
+c0cc881c-b63b-44dd-8157-67680c65fc3d|Chandra's Triumph|Chandra's Triumph deals 3 damage to target creature or planeswalker an opponent controls. Chandra's Triumph deals 5 damage instead if you control a Chandra planeswalker.
+daec03b6-e3f8-4e44-9766-c64dc23fa3dc|Gideon's Triumph|Target opponent sacrifices a creature of their choice that attacked or blocked this turn. If you control a Gideon planeswalker, that player sacrifices two of those creatures of their choice instead.
+bfcffe67-7db6-41bb-bfcc-400cbb8c8a9c|Jace's Triumph|Draw two cards. If you control a Jace planeswalker, draw three cards instead.
+c2e68ac5-cfff-4b76-8062-25a82fdf9a5c|Liliana's Triumph|Each opponent sacrifices a creature of their choice. If you control a Liliana planeswalker, each opponent also discards a card.
+8d4ef98d-228e-41ff-9133-53f0987e58d8|Nissa's Triumph|Search your library for up to two basic Forest cards. If you control a Nissa planeswalker, instead search your library for up to three land cards. Reveal those cards, put them into your hand, then shuffle.

@@ -1,0 +1,2 @@
+77a43c24-398f-42c6-a0d3-b28b33a0ce12|Bounty of the Hunt|You may exile a green card from your hand rather than pay this spell's mana cost. Distribute three +1/+1 counters among one, two, or three target creatures. For each +1/+1 counter you put on a creature this way, remove a +1/+1 counter from that creature at the beginning of the next cleanup step.
+d5e48041-5f21-48e6-bd0c-000f02dfbe8a|Cunning|Enchant creature Enchanted creature gets +3/+3. When enchanted creature attacks or blocks, sacrifice this Aura at the beginning of the next cleanup step.

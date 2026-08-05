@@ -1,0 +1,1 @@
+2a3e3f3b-1f74-4ac7-b5ac-7c3cb9cc38a6|Ajani's Influence|Put two +1/+1 counters on target creature. Look at the top five cards of your library. You may reveal a white card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.

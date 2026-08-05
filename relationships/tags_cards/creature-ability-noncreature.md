@@ -1,0 +1,10 @@
+056a98aa-f3f7-4ac9-9755-3e8a60a59abb|Afiya Grove|This enchantment enters with three +1/+1 counters on it. At the beginning of your upkeep, move a +1/+1 counter from this enchantment onto target creature. When this enchantment has no +1/+1 counters on it, sacrifice it.
+a87abe7a-fee9-45fd-b3d8-896e43ed6b3c|Agent's Toolkit|This artifact enters with a +1/+1 counter, a flying counter, a deathtouch counter, and a shield counter on it. (If it would be dealt damage or destroyed, remove a shield counter from it instead.) Whenever a creature you control enters, you may move a counter from this artifact onto that creature. {2}, Sacrifice this artifact: Draw a card.
+a8abc5db-4e0b-488d-898a-8109690d5099|Avacyn's Memorial|Indestructible Other legendary permanents you control have indestructible.
+8255a797-ddd3-4db0-a3f5-dd8f38c3b908|Captain America's Shield|Indestructible Equipped creature gets +0/+8 and has vigilance. Whenever equipped creature attacks, tap target creature defending player controls. Equip {2}
+d98b4250-3492-4864-9c4c-42db09b3ccd4|Cascading Cataracts|Indestructible {T}: Add {C}. {5}, {T}: Add five mana in any combination of colors.
+072d05c4-e0d7-47af-b2a9-16b90810fd30|Costume Closet|This artifact enters with two +1/+1 counters on it. {T}: Move a +1/+1 counter from this artifact onto target creature you control. Activate only as a sorcery. Whenever a modified creature you control leaves the battlefield, put a +1/+1 counter on this artifact. (Equipment, Auras you control, and counters are modifications.)
+2065cada-4078-41c4-9e06-2460d2a2e8ee|Darkmoss Bridge|This land enters tapped. Indestructible {T}: Add {B} or {G}.
+3b7ea3ac-ac0a-40aa-b743-d153e1c47d8c|Darksteel Axe|Indestructible (Effects that say "destroy" don't destroy this Equipment.) Equipped creature gets +2/+0. Equip {2}
+4f7d2774-2aec-4992-b35b-e03265e517af|Darksteel Brute|Indestructible (Damage and effects that say "destroy" don't destroy this artifact.) {3}: This artifact becomes a 2/2 Beast artifact creature until end of turn.
+8dc067bf-f78f-4ac4-b6e7-b305c42cf0bc|Darksteel Citadel|Indestructible {T}: Add {C}.

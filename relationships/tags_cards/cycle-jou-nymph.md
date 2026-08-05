@@ -1,0 +1,5 @@
+e65fa865-3f60-41f2-8b14-b0333c897b93|Dreadbringer Lampads|Constellation — Whenever this creature or another enchantment you control enters, target creature gains intimidate until end of turn. (It can't be blocked except by artifact creatures and/or creatures that share a color with it.)
+8289190c-b180-48e3-b92f-7dccbca61b39|Forgeborn Oreads|Constellation — Whenever this creature or another enchantment you control enters, this creature deals 1 damage to any target.
+ad88bf37-bbb4-46f0-9994-1863c7c31a2a|Harvestguard Alseids|Constellation — Whenever this creature or another enchantment you control enters, prevent all damage that would be dealt to target creature this turn.
+60bac6e8-0c72-4665-9b01-d07c99dd1716|Oakheart Dryads|Constellation — Whenever this creature or another enchantment you control enters, target creature gets +1/+1 until end of turn.
+6c73e533-9ed1-4df0-af12-c0174c0b52b9|Whitewater Naiads|Constellation — Whenever this creature or another enchantment you control enters, target creature can't be blocked this turn.

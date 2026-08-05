@@ -1,0 +1,4 @@
+55bc7f55-f73b-40b5-8912-9bf76c129ccc|Azlask, the Swelling Scourge|Whenever Azlask or another colorless creature you control dies, you get an experience counter. {W}{U}{B}{R}{G}: Creatures you control get +X/+X until end of turn, where X is the number of experience counters you have. Scions and Spawns you control gain indestructible and annihilator 1 until end of turn.
+e7d1c762-69d0-401d-8035-6e9744baf9d8|Brood Birthing|If you control an Eldrazi Spawn, create three 0/1 colorless Eldrazi Spawn creature tokens. They have "Sacrifice this token: Add {C}." Otherwise, create one of those tokens.
+14537413-3628-4152-b23f-78b0e9c416ac|Broodwarden|Eldrazi Spawn creatures you control get +2/+1.
+b206d3bc-1203-4f00-997e-5da706346a24|Hand of Emrakul|You may sacrifice four Eldrazi Spawn rather than pay this spell's mana cost. Annihilator 1 (Whenever this creature attacks, defending player sacrifices a permanent of their choice.)

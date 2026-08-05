@@ -1,0 +1,3 @@
+06432957-decc-4ba2-95b1-cc9536a576d4|Guardian of Tazeem|Flying Landfall — Whenever a land you control enters, tap target creature an opponent controls. If that land is an Island, that creature doesn't untap during its controller's next untap step.
+fbf074b2-d650-43b2-b8b8-d7a778dfd27e|Jokulmorder|Trample This creature enters tapped. When this creature enters, sacrifice it unless you sacrifice five lands. This creature doesn't untap during your untap step. Whenever you play an Island, you may untap this creature.
+1466687f-cfe1-4e6e-ad8e-dca5e8e4c06d|Staff of the Mind Magus|Whenever you cast a blue spell or an Island you control enters, you gain 1 life.

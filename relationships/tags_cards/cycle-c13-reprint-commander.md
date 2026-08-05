@@ -1,0 +1,5 @@
+7f546d54-584d-4bec-8fbb-1ea2f8ab277e|Mayael the Anima|{3}{R}{G}{W}, {T}: Look at the top five cards of your library. You may put a creature card with power 5 or greater from among them onto the battlefield. Put the rest on the bottom of your library in any order.
+bd3eeaba-964b-49ea-bb11-5875a78b8a4c|Rubinia Soulsinger|You may choose not to untap Rubinia Soulsinger during your untap step. {T}: Gain control of target creature for as long as you control Rubinia Soulsinger and Rubinia Soulsinger remains tapped.
+94426127-65c2-435e-ba92-423a3c102061|Sek'Kuar, Deathkeeper|Whenever another nontoken creature you control dies, create a 3/1 black and red Graveborn creature token with haste.
+037e7fc9-3aa6-484c-a2c8-43009e45f1d8|Sharuum the Hegemon|Flying When Sharuum enters, you may return target artifact card from your graveyard to the battlefield.
+9e0e4217-fefe-48dd-9153-032460192b19|Thraximundar|Haste Whenever Thraximundar attacks, defending player sacrifices a creature of their choice. Whenever a player sacrifices a creature, you may put a +1/+1 counter on Thraximundar.

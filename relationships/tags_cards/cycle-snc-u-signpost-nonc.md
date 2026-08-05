@@ -1,0 +1,5 @@
+5bb05573-7e8f-471f-908d-04bccead79e3|Ceremonial Groundbreaker|Equipped creature gets +2/+1 and has trample. Equip Citizen {1} Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+497cb281-e057-42fc-937d-512855b74159|Exotic Pets|Create two 1/1 blue Fish creature tokens with "This token can't be blocked." Then for each kind of counter among creatures you control, put a counter of that kind on either of those tokens.
+37114872-9804-4ee8-a443-21ea6eaddb0c|Fatal Grudge|As an additional cost to cast this spell, sacrifice a nonland permanent. Each opponent chooses a permanent they control that shares a card type with the sacrificed permanent and sacrifices it. Draw a card.
+ce76d17e-d536-46f0-98e2-3e1b1b4f61a4|Stimulus Package|When this enchantment enters, create two Treasure tokens. (They're artifacts with "{T}, Sacrifice this token: Add one mana of any color.") Sacrifice a Treasure: Create a 1/1 green and white Citizen creature token.
+6944092f-22c6-4b65-840d-8c1b70883127|Tainted Indulgence|Draw two cards. Then discard a card unless there are five or more mana values among cards in your graveyard.

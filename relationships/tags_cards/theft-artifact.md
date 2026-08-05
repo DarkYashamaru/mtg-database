@@ -1,0 +1,10 @@
+f1c3d749-5cdb-4af2-967f-6413d6cb04fe|Acquire|Search target opponent's library for an artifact card and put that card onto the battlefield under your control. Then that player shuffles.
+9a410f83-ed92-4b55-834a-c7cec8f5d1e2|Aladdin|{1}{R}{R}, {T}: Gain control of target artifact for as long as you control this creature.
+aef874fa-93c0-4f86-8b0d-dc24ec51467d|Beacon of Unrest|Put target artifact or creature card from a graveyard onto the battlefield under your control. Shuffle Beacon of Unrest into its owner's library.
+e0d221da-16cd-4399-830f-eecc9a0912eb|Broadcast Takeover|Gain control of all artifacts your opponents control until end of turn. Untap them. They gain haste until end of turn.
+cfb23c6b-6e4a-4fc9-b3bb-a3ddc2ba06b8|Captain N'ghathrod|Horrors you control have menace. Whenever a Horror you control deals combat damage to a player, that player mills that many cards. At the beginning of your end step, choose target artifact or creature card in an opponent's graveyard that was put there from their library this turn. Put it onto the battlefield under your control.
+c246cdb4-2fd8-487e-944e-3e52fbd1bbaa|Confiscation Coup|Choose target artifact or creature. You get {E}{E}{E}{E} (four energy counters), then you may pay an amount of {E} equal to that permanent's mana value. If you do, gain control of it.
+e477abb9-9b99-48a8-8c09-07b120b72540|Confusion in the Ranks|Whenever an artifact, creature, or enchantment enters, its controller chooses target permanent another player controls that shares a card type with it. Exchange control of those permanents.
+9d4b1e44-3c66-4b1b-8a1d-308aa4f841f8|Dack Fayden|+1: Target player draws two cards, then discards two cards. −2: Gain control of target artifact. −6: You get an emblem with "Whenever you cast a spell that targets one or more permanents, gain control of those permanents."
+ee3d1f44-e0ca-4ce9-be76-4b675a115156|Desertion|Counter target spell. If an artifact or creature spell is countered this way, put that card onto the battlefield under your control instead of into its owner's graveyard.
+ca283839-864f-4252-8452-480e3ba29b20|Domineer|Enchant artifact creature You control enchanted artifact creature.

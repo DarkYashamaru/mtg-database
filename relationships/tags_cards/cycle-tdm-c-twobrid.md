@@ -1,0 +1,5 @@
+fde50a0d-9bc6-45f4-873e-3de81a513fac|Gurmag Nightwatch|When this creature enters, look at the top three cards of your library. You may put one of those cards back on top of your library. Put the rest into your graveyard.
+325b88e1-ec7f-4d22-887c-a7f18a868bb0|Monastery Messenger|Flying, vigilance When this creature enters, put up to one target noncreature, nonland card from your graveyard on top of your library.
+b8c5e481-371c-4999-bb2c-347a2aa33171|Reigning Victor|Mobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.) When this creature enters, target creature gets +1/+0 and gains indestructible until end of turn. (Damage and effects that say "destroy" don't destroy it.)
+62f09a5b-d7fb-44f4-9fab-719185b735ab|Reputable Merchant|When this creature enters or dies, put a +1/+1 counter on target creature you control.
+889d26d6-9e6c-4cc0-8e8e-dd932f705a20|Temur Tawnyback|When this creature enters, draw a card, then discard a card.

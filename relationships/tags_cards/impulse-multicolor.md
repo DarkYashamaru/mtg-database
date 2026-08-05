@@ -1,0 +1,1 @@
+10764b35-5c6c-4161-8579-1124d5963a0e|Niv-Mizzet Reborn|Flying When Niv-Mizzet enters, reveal the top ten cards of your library. For each color pair, choose a card that's exactly those colors from among them. Put the chosen cards into your hand and the rest on the bottom of your library in a random order.

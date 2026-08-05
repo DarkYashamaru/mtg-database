@@ -1,0 +1,1 @@
+b5ae8016-92ed-4ae8-83a8-65068defc616|Tannuk, Steadfast Second|Other creatures you control have haste. Artifact cards and red creature cards in your hand have warp {2}{R}. (You may cast a card from your hand for its warp cost. Exile that permanent at the beginning of the next end step, then you may cast it from exile on a later turn.)

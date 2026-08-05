@@ -1,0 +1,1 @@
+fd29fdbd-b4c5-4d23-9388-df0a798fbbba|Space Fungus Snickerdoodle|{TK}{TK} — Skulk (This creature can't be blocked by creatures with greater power.) {TK}{TK}{TK} — Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.) {TK}{TK} — 3/2 {TK}{TK}{TK}{TK}{TK} — 6/8

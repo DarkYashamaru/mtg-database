@@ -1,0 +1,1 @@
+26e4b49e-77e7-41d9-94c5-924669a82591|Gallifrey Council Chamber|When Gallifrey Council Chamber enters, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.) {T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast a Time Lord or Alien spell or activate an ability of a Time Lord or Alien.

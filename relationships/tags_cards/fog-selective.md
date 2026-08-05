@@ -1,0 +1,10 @@
+0f5b0c77-1e3d-46a1-ae0e-03ed79196cd9|Al-abara's Carpet|{5}, {T}: Prevent all damage that would be dealt to you this turn by attacking creatures without flying.
+b655bee5-52d3-467e-b16c-cfc2edf2b1a1|Arachnogenesis|Create X 1/2 green Spider creature tokens with reach, where X is the number of creatures attacking you. Prevent all combat damage that would be dealt this turn by non-Spider creatures.
+6da0b6d2-3c5e-49ef-9264-076269c04744|Avacyn, Guardian Angel|Flying, vigilance {1}{W}: Prevent all damage that would be dealt to another target creature this turn by sources of the color of your choice. {5}{W}{W}: Prevent all damage that would be dealt to target player or planeswalker this turn by sources of the color of your choice.
+6ac8ac31-02ce-48e0-98b9-1c5858e1f593|Chameleon Blur|Prevent all damage that creatures would deal to players this turn.
+4b3d1cfb-9f1d-4e4e-a15a-2e248ff5bdfc|Channel Harm|Prevent all damage that would be dealt to you and permanents you control this turn by sources you don't control. If damage is prevented this way, you may have Channel Harm deal that much damage to target creature.
+01f29158-2dc9-4b9d-b726-add5d3fd5782|Comeuppance|Prevent all damage that would be dealt to you and planeswalkers you control this turn by sources you don't control. If damage from a creature source is prevented this way, Comeuppance deals that much damage to that creature. If damage from a noncreature source is prevented this way, Comeuppance deals that much damage to the source's controller.
+56ea8f6b-a765-44e7-bf0e-4d4a2405684b|Commencement of Festivities|Prevent all combat damage that would be dealt to players this turn.
+3f01f627-9fbd-470b-8001-974784ccf421|Deep Wood|Cast this spell only during the declare attackers step and only if you've been attacked this step. Prevent all damage that would be dealt to you this turn by attacking creatures.
+1dd64972-5713-4c25-b7a5-a35a56886ef4|Defend the Hearth|Prevent all combat damage that would be dealt to players this turn.
+924bf3bb-9f06-4a2c-a17f-3fe11551bcf2|Divine Light|Prevent all damage that would be dealt this turn to creatures you control.

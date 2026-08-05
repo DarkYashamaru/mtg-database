@@ -1,0 +1,5 @@
+d512d4ae-5db3-4fe5-8017-6a942004712d|Frenzy Sliver|All Sliver creatures have frenzy 1. (Whenever a Sliver attacks and isn't blocked, it gets +1/+0 until end of turn.)
+34b4d137-780b-446c-8cdd-fd1673180971|Homing Sliver|Each Sliver card in each player's hand has slivercycling {3}. Slivercycling {3} ({3}, Discard this card: Search your library for a Sliver card, reveal it, put it into your hand, then shuffle.)
+c3469de8-4bdb-42d4-9fc0-75fe31c3f6e5|Lymph Sliver|All Sliver creatures have absorb 1. (If a source would deal damage to a Sliver, prevent 1 of that damage.)
+21c82044-6e16-4e41-a6d0-e4d7cb42f37c|Mesmeric Sliver|All Slivers have "When this permanent enters, you may fateseal 1." (To fateseal 1, its controller looks at the top card of an opponent's library, then they may put that card on the bottom of that library.)
+767c896d-4ff6-4cd4-b3a4-80179e84e1cd|Virulent Sliver|All Sliver creatures have poisonous 1. (Whenever a Sliver deals combat damage to a player, that player gets a poison counter. A player with ten or more poison counters loses the game.)

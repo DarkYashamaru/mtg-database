@@ -1,0 +1,2 @@
+7777fab1-df3f-467f-b9e2-46dd2bd2166e|Forsaken Monument|Colorless creatures you control get +2/+2. Whenever you tap a permanent for {C}, add an additional {C}. Whenever you cast a colorless spell, you gain 2 life.
+baa337ce-edc6-4ee5-a898-68e9dbb4ab93|Ultima, Origin of Oblivion|Flying Whenever Ultima attacks, put a blight counter on target land. For as long as that land has a blight counter on it, it loses all land types and abilities and has "{T}: Add {C}." Whenever you tap a land for {C}, add an additional {C}.

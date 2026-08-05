@@ -1,0 +1,2 @@
+13cf3ef7-d88e-4cc7-a4d8-cedc671f356a|Ashiok's Erasure|Flash When this enchantment enters, exile target spell. Your opponents can't cast spells with the same name as the exiled card. When this enchantment leaves the battlefield, return the exiled card to its owner's hand.
+135135f2-1643-40db-91f2-bb7b956d212c|Spell Queller|Flash Flying When this creature enters, exile target spell with mana value 4 or less. When this creature leaves the battlefield, the exiled card's owner may cast that card without paying its mana cost.

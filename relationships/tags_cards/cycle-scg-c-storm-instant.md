@@ -1,0 +1,5 @@
+ef8ac291-3789-4147-a11f-c62fd8566dbe|Astral Steel|Target creature gets +1/+2 until end of turn. Storm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)
+90c6f338-fc41-4499-8f39-1cd202a2cd31|Hindering Touch|Counter target spell unless its controller pays {2}. Storm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)
+80c663a5-2794-4748-b47a-34352fb2112f|Reaping the Graves|Return target creature card from your graveyard to your hand. Storm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)
+ed3652da-0127-4c9e-9913-f20becdd0ba9|Scattershot|Scattershot deals 1 damage to target creature. Storm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies.)
+a38ad1aa-fc12-49be-b9f7-fe287597a5ca|Sprouting Vines|Search your library for a basic land card, reveal that card, put it into your hand, then shuffle. Storm (When you cast this spell, copy it for each spell cast before it this turn.)

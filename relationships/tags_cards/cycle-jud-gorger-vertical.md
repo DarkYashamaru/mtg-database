@@ -1,0 +1,3 @@
+cbbcd3a3-6ddd-4511-a352-3055d0102e7c|Soulgorger Orgg|Trample When this creature enters, you lose all but 1 life. When this creature leaves the battlefield, you gain life equal to the life you lost when it entered.
+9c0fd5ad-fbba-4598-80cf-6540888378cb|Spellgorger Barbarian|When this creature enters, discard a card at random. When this creature leaves the battlefield, draw a card.
+a628186d-b7d9-40a5-9ae2-fbc9d2a14c7c|Worldgorger Dragon|Flying, trample When this creature enters, exile all other permanents you control. When this creature leaves the battlefield, return the exiled cards to the battlefield under their owners' control.

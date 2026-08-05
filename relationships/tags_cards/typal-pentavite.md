@@ -1,0 +1,1 @@
+1c0d4f28-2494-45b0-acb8-921fee602c01|Pentavus|This creature enters with five +1/+1 counters on it. {1}, Remove a +1/+1 counter from this creature: Create a 1/1 colorless Pentavite artifact creature token with flying. {1}, Sacrifice a Pentavite: Put a +1/+1 counter on this creature.

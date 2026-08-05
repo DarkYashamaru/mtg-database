@@ -1,0 +1,1 @@
+ed1d21ba-ddfe-4f82-9e37-93f9e2c7ba33|Satoru Umezawa|Whenever you activate a ninjutsu ability, look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order. This ability triggers only once each turn. Each creature card in your hand has ninjutsu {2}{U}{B}.

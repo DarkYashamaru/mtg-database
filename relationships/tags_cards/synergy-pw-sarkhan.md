@@ -1,0 +1,1 @@
+482f5fc8-ca3b-4280-8cf7-a1c55f8b9f12|Sarkhan's Whelp|Flying (This creature can't be blocked except by creatures with flying or reach.) Whenever you activate an ability of a Sarkhan planeswalker, this creature deals 1 damage to any target.

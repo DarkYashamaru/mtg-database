@@ -1,0 +1,1 @@
+aa2c0d23-8df8-408b-a8c0-c4cd005f078d|Catapult Fodder // Catapult Captain|{2}{B}, {T}, Sacrifice another creature: Target opponent loses life equal to the sacrificed creature's toughness. // At the beginning of combat on your turn, if you control three or more creatures that each have toughness greater than their power, transform this creature.

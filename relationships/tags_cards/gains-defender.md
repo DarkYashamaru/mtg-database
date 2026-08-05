@@ -1,0 +1,7 @@
+5c4cbf1c-95ee-4555-8351-ea962e17ae1f|Corrupted Shapeshifter|Devoid (This card has no color.) As this creature enters, it becomes your choice of a 3/3 creature with flying, a 2/5 creature with vigilance, or a 0/12 creature with defender.
+02c4abd0-9a68-4a85-954b-3f64666c1f8d|Mistform Wall|This creature has defender as long as it's a Wall. {1}: This creature becomes the creature type of your choice until end of turn.
+66742e88-88cd-4c89-b04b-806577fe5f67|Molten Sentry|As this creature enters, flip a coin. If the coin comes up heads, this creature enters as a 5/2 creature with haste. If it comes up tails, this creature enters as a 2/5 creature with defender.
+dccf2ca8-8c87-41c9-8373-351859396d05|Primal Clay|As this creature enters, it becomes your choice of a 3/3 artifact creature, a 2/2 artifact creature with flying, or a 1/6 Wall artifact creature with defender in addition to its other types. (A creature with defender can't attack.)
+540c5225-845e-4498-baae-0fbb836c1f38|Primal Plasma|As this creature enters, it becomes your choice of a 3/3 creature, a 2/2 creature with flying, or a 1/6 creature with defender.
+bc9587cb-1b06-44ee-9bd4-c7b6c9394d45|Testament of Faith|{X}: This enchantment becomes an X/X Wall creature with defender in addition to its other types until end of turn.
+c5d27469-96e1-44ec-a887-2fc26f9e10d3|Woolly Razorback|This creature enters with three ice counters on it. As long as this creature has an ice counter on it, prevent all combat damage it would deal and it has defender. Whenever this creature blocks, remove an ice counter from it.

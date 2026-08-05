@@ -1,0 +1,1 @@
+c0adbddc-b070-4c5f-afe0-0474c72a9251|Gemstone Caverns|If this card is in your opening hand and you're not the starting player, you may begin the game with Gemstone Caverns on the battlefield with a luck counter on it. If you do, exile a card from your hand. {T}: Add {C}. If Gemstone Caverns has a luck counter on it, instead add one mana of any color.

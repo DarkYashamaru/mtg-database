@@ -1,0 +1,2 @@
+256cea34-4691-4367-a789-17d15460f664|Mana Matrix|Instant and enchantment spells you cast cost {2} less to cast.
+03d2d7dd-54b6-469e-8b1c-c48db8cc0925|Stenn, Paranoid Partisan|As Stenn enters, choose a card type other than creature or land. Spells you cast of the chosen type cost {1} less to cast. {1}{W}{U}: Exile Stenn. Return it to the battlefield under its owner's control at the beginning of the next end step.

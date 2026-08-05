@@ -1,0 +1,5 @@
+a292ca5b-2472-4b02-a26b-d1b5b717a34b|Fieldmist Borderpost|You may pay {1} and return a basic land you control to its owner's hand rather than pay this spell's mana cost. This artifact enters tapped. {T}: Add {W} or {U}.
+312a5a75-9b68-4e4b-97fe-3ab644e3e493|Firewild Borderpost|You may pay {1} and return a basic land you control to its owner's hand rather than pay this spell's mana cost. This artifact enters tapped. {T}: Add {R} or {G}.
+1499af11-274f-4f8d-b0b6-20e1693ebab7|Mistvein Borderpost|You may pay {1} and return a basic land you control to its owner's hand rather than pay this spell's mana cost. This artifact enters tapped. {T}: Add {U} or {B}.
+3f65d1f8-3e46-4e3d-b087-5496a4106e4e|Veinfire Borderpost|You may pay {1} and return a basic land you control to its owner's hand rather than pay this spell's mana cost. This artifact enters tapped. {T}: Add {B} or {R}.
+b8141489-00fa-4aba-85d0-4c883196fece|Wildfield Borderpost|You may pay {1} and return a basic land you control to its owner's hand rather than pay this spell's mana cost. This artifact enters tapped. {T}: Add {G} or {W}.

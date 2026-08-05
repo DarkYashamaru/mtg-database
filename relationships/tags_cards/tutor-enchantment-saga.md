@@ -1,0 +1,1 @@
+fab29bc7-1f0a-4df4-b8f1-c008ce5583d2|Search for Glory|Search your library for a snow permanent card, a legendary card, or a Saga card, reveal it, put it into your hand, then shuffle. You gain 1 life for each {S} spent to cast this spell. ({S} is mana from a snow source.)

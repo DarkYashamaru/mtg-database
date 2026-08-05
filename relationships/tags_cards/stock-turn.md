@@ -1,0 +1,2 @@
+4bdffa67-e6b3-4588-b76e-c11db6f043ca|Magosi, the Waterveil|This land enters tapped. {T}: Add {U}. {U}, {T}: Put an eon counter on this land. Skip your next turn. {T}, Remove an eon counter from this land and return it to its owner's hand: Take an extra turn after this one.
+17abf8c6-70b6-4877-a0f2-a87b22fb2828|Wormfang Manta|Flying When this creature enters, you skip your next turn. When this creature leaves the battlefield, you take an extra turn after this one.

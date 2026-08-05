@@ -1,0 +1,5 @@
+4f94ce97-5b2d-42fb-ac8e-c64075fe1af2|Cunning Giant|If this creature is unblocked, you may have it assign its combat damage to a creature defending player controls.
+b49baf80-237c-41ee-8a22-2b6a68a313e7|Dwarven Vigilantes|Whenever this creature attacks and isn't blocked, you may have it deal damage equal to its power to target creature. If you do, this creature assigns no combat damage this turn.
+ffae3ff4-67f7-4e41-b166-c63f88c7aa08|Farrel's Mantle|Enchant creature Whenever enchanted creature attacks and isn't blocked, its controller may have it deal damage equal to its power plus 2 to another target creature. If that player does, the attacking creature assigns no combat damage this turn.
+0d063c0e-66bc-4a9c-98aa-a381b9cea120|Farrel's Zealot|Whenever this creature attacks and isn't blocked, you may have it deal 3 damage to target creature. If you do, this creature assigns no combat damage this turn.
+b3a479d4-3e36-496b-abf8-b83231628d76|Gaze of Pain|Until end of turn, whenever a creature you control attacks and isn't blocked, you may choose to have it deal damage equal to its power to a target creature. If you do, it assigns no combat damage this turn.

@@ -1,0 +1,10 @@
+9c462cd8-36f9-4e39-adf3-310ad4d76051|Agadeem Occultist|{T}: Put target creature card from an opponent's graveyard onto the battlefield under your control if its mana value is less than or equal to the number of Allies you control.
+eb448589-28e1-49d4-ba3e-7ddb4341fdc5|Akoum Battlesinger|Haste Whenever this creature or another Ally you control enters, you may have Ally creatures you control get +1/+0 until end of turn.
+efae637f-3232-46f2-9839-f3386e2f447d|Akoum Flameseeker|Cohort — {T}, Tap an untapped Ally you control: Discard a card. If you do, draw a card.
+ceddea59-de47-4ddd-b424-6e1dcb13ab79|Allied Teamwork|When this enchantment enters, create a 1/1 white Ally creature token. Allies you control get +1/+1.
+9d293b69-12b7-4b50-a0a7-c4f493dee30b|Ally Encampment|{T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast an Ally spell. {1}, {T}, Sacrifice this land: Return target Ally you control to its owner's hand.
+ffc56a2e-f3bd-493b-9b7b-5f04fad69382|Angelic Captain|Flying Whenever this creature attacks, it gets +1/+1 until end of turn for each other attacking Ally.
+72994a7a-7c0d-4f28-8cc0-28161d098d7f|Appa, the Vigilant|Flying, vigilance Whenever Appa or another Ally you control enters, creatures you control get +1/+1 and gain flying and vigilance until end of turn.
+7b0d9d79-2e86-4079-8db3-500483c8807e|Avatar Enthusiasts|Whenever another Ally you control enters, put a +1/+1 counter on this creature.
+3a020ae9-279b-4c6c-8d3d-90d7b335fa3c|Bala Ged Thief|Whenever this creature or another Ally you control enters, target player reveals a number of cards from their hand equal to the number of Allies you control. You choose one of them. That player discards that card.
+5193172c-9024-409e-bd9e-0387971d65fe|Boiling Rock Rioter|Firebending 1 (Whenever this creature attacks, add {R}. This mana lasts until end of combat.) Tap an untapped Ally you control: Exile target card from a graveyard. Whenever this creature attacks, you may cast an Ally spell from among cards you own exiled with this creature.

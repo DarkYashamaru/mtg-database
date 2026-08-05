@@ -1,0 +1,10 @@
+d4d44264-b276-4bd7-8fbe-6af292b08773|Aboshan, Cephalid Emperor|Tap an untapped Octopus you control: Tap target permanent. {U}{U}{U}: Tap all creatures without flying.
+e9db79fd-a5b6-4d59-9176-e713e2e9c708|Aether Shockwave|Choose one — • Tap all Spirits. • Tap all non-Spirit creatures.
+7c779721-cd1b-4696-9ae9-68ccc284ed2a|Aetherize|Return all attacking creatures to their owner's hand.
+48369aec-a991-4bef-8554-01c84302b063|Aetherspouts|For each attacking creature, its owner puts it on their choice of the top or bottom of their library.
+fcfcac6b-6d26-4ffe-ae9e-b0ee7fa49787|Angel of Grace|Flash Flying When this creature enters, until end of turn, damage that would reduce your life total to less than 1 reduces it to 1 instead. {4}{W}{W}, Exile this card from your graveyard: Your life total becomes 10.
+8b1e6b7c-892d-4058-b183-9121cdd623f0|Angel of the Dire Hour|Flash Flying When this creature enters, if you cast it from your hand, exile all attacking creatures.
+66ca8a60-e028-4a5f-8177-860b888cb9d1|Angel's Grace|Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.) You can't lose the game this turn and your opponents can't win the game this turn. Until end of turn, damage that would reduce your life total to less than 1 reduces it to 1 instead.
+cb479ce1-59e8-4531-9a21-f7c97d334817|Blinding Angel|Flying (This creature can't be blocked except by creatures with flying or reach.) Whenever this creature deals combat damage to a player, that player skips their next combat phase.
+2dfad8c3-1973-4fc8-971d-f66cacd88070|Blustersquall|Tap target creature you don't control. Overload {3}{U} (You may cast this spell for its overload cost. If you do, change "target" in its text to "each.")
+f455b731-6ff9-4acb-9447-f524faa49b27|Breaking Wave|You may cast this spell as though it had flash if you pay {2} more to cast it. (You may cast it any time you could cast an instant.) Simultaneously untap all tapped creatures and tap all untapped creatures.

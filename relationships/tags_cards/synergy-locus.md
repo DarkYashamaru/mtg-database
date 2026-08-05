@@ -1,0 +1,4 @@
+f705c0eb-9c6c-4315-a860-208ed0c5d93e|Cloudpost|This land enters tapped. {T}: Add {C} for each Locus on the battlefield.
+92c9aad6-35ec-425d-be7d-393328992820|Glimmerpost|When this land enters, you gain 1 life for each Locus on the battlefield. {T}: Add {C}.
+df4bb104-d939-434f-8a1c-e89beda27c90|Monument to Perfection|{3}, {T}: Search your library for a basic, Sphere, or Locus land card, reveal it, put it into your hand, then shuffle. {3}: This artifact becomes a 9/9 Phyrexian Construct artifact creature, loses all abilities, and gains indestructible and toxic 9. Activate only if there are nine or more lands with different names among the basic, Sphere, and Locus lands you control.
+42f1ccb8-eda0-4828-ac07-82d4e950d7e1|Trenchpost|{T}: Add {C}. {3}, {T}: Target player mills a card for each Locus you control.

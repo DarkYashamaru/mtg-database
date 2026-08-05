@@ -1,0 +1,1 @@
+0fdfe986-0216-468b-aac8-bbcf588fd894|Arcum Dagsson|{T}: Target artifact creature's controller sacrifices it. That player may search their library for a noncreature artifact card, put it onto the battlefield, then shuffle.

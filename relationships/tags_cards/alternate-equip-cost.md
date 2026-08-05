@@ -1,0 +1,10 @@
+3f47ec32-4ee9-4bc0-96f2-310a939cb973|Ace's Baseball Bat|Equipped creature gets +3/+0. As long as equipped creature is attacking, it has first strike and must be blocked by a Dalek if able. Equip legendary creature {1} Equip {3}
+a7cc0f6b-6b17-4e76-b2a6-6a6ee2519b61|Bilbo's Ring|During your turn, equipped creature has hexproof and can't be blocked. Whenever equipped creature attacks alone, you draw a card and you lose 1 life. Equip Halfling {1} ({1}: Attach to target Halfling you control. Equip only as a sorcery.) Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)
+dca51281-fb21-45b6-beb4-1f13397caee2|Blackblade Reforged|Equipped creature gets +1/+1 for each land you control. Equip legendary creature {3} Equip {7}
+01ab7724-1967-4da6-aebd-3729983d6a0e|Bloodthorn Flail|Equipped creature gets +2/+1. Equip—Pay {3} or discard a card.
+d169738e-af0b-4488-a399-3aa1d1933aa1|Brotherhood Regalia|Equipped creature has ward {2}, is an Assassin in addition to its other types, and can't be blocked. Equip legendary creature {1} Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+5bb05573-7e8f-471f-908d-04bccead79e3|Ceremonial Groundbreaker|Equipped creature gets +2/+1 and has trample. Equip Citizen {1} Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+cae166de-e681-40a0-83a8-3c17cf40e2fc|Commander's Plate|Equipped creature gets +3/+3 and has protection from each color that's not in your commander's color identity. Equip commander {3} Equip {5}
+dac85722-d741-4584-8b98-8ac220958a38|Demonmail Hauberk|Equipped creature gets +4/+2. Equip—Sacrifice a creature.
+4b418846-6426-448a-b4cb-ce631e0a99a2|Dúnedain Blade|Equipped creature gets +2/+1. Equip Human {1} Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+9fb6bd72-031b-40a1-83c5-8a1c82f84e12|Excalibur, Sword of Eden|This spell costs {X} less to cast, where X is the total mana value of historic permanents you control. (Artifacts, legendaries, and Sagas are historic.) Equipped creature gets +10/+0 and has vigilance. Equip legendary creature {2}

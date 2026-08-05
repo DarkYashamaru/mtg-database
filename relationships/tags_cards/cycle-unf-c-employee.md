@@ -1,0 +1,5 @@
+ae4b00ab-25ad-4177-8b86-af8b84d67ef3|Deadbeat Attendant|When this creature enters, open an Attraction. (Put the top card of your Attraction deck onto the battlefield.)
+ad6dd363-e1b7-4df4-b9b6-4f5c1fae3bc6|Petting Zookeeper|Reach When this creature enters, open an Attraction. (Put the top card of your Attraction deck onto the battlefield.)
+66d4a218-5404-4389-b495-eaeda9a34401|Rad Rascal|When this creature enters, open an Attraction. (Put the top card of your Attraction deck onto the battlefield.)
+8772e5cc-d3f3-4d68-86e7-6c105f39930a|Ride Guide|When this creature enters, open an Attraction. (Put the top card of your Attraction deck onto the battlefield.)
+6048a682-f218-4039-8d5e-3e5156817fb2|Seasoned Buttoneer|When this creature enters, open an Attraction. (Put the top card of your Attraction deck onto the battlefield.)

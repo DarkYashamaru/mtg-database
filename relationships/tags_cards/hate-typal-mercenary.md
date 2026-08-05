@@ -1,0 +1,3 @@
+d262f3e1-b5bc-4dab-86c2-cd89c2419e54|Caught in the Crossfire|Spree (Choose one or more additional costs.) + {1} — Caught in the Crossfire deals 2 damage to each outlaw creature. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.) + {1} — Caught in the Crossfire deals 2 damage to each non-outlaw creature.
+245e26ec-39eb-4af8-99af-8cc22edbc261|Mercenary Informer|This creature can't be the target of black spells or abilities from black sources. {2}{W}: Put target nontoken Mercenary on the bottom of its owner's library.
+14c3a43c-cdb1-45d1-8eba-8e6d16bd7643|Root Cage|Mercenaries don't untap during their controllers' untap steps.

@@ -1,0 +1,5 @@
+52a0dae4-2a95-487e-acd4-eabdb2d031e2|Crux of Fate|Choose one — • Destroy all Dragon creatures. • Destroy all non-Dragon creatures.
+28f0765a-de09-4be3-b952-aee75b9ede03|Fascination|Choose one — • Each player draws X cards. • Each player mills X cards.
+acca2128-6ebb-48a5-a6a2-1bc5e4aa86ce|Mob Rule|Choose one — • Gain control of all creatures with power 4 or greater until end of turn. Untap those creatures. They gain haste until end of turn. • Gain control of all creatures with power 3 or less until end of turn. Untap those creatures. They gain haste until end of turn.
+b60aff46-2d5a-47e2-9340-39d34a47c3e1|Ruthless Instincts|Choose one — • Target nonattacking creature gains reach and deathtouch until end of turn. Untap it. • Target attacking creature gets +2/+2 and gains trample until end of turn.
+1f938353-9081-4dc1-b8e7-d18ece038bd4|Valorous Stance|Choose one — • Target creature gains indestructible until end of turn. (Damage and effects that say "destroy" don't destroy it.) • Destroy target creature with toughness 4 or greater.

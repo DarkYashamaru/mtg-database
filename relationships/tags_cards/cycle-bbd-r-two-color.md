@@ -1,0 +1,5 @@
+1a840210-204d-41cd-afc0-46abf7ea5f87|Apocalypse Hydra|This creature enters with X +1/+1 counters on it. If X is 5 or more, it enters with an additional X +1/+1 counters on it. {1}{R}, Remove a +1/+1 counter from this creature: It deals 1 damage to any target.
+baff00b8-b109-4e31-942b-38aeb1e45ab2|Archon of Valor's Reach|Flying, vigilance, trample As this creature enters, choose artifact, enchantment, instant, sorcery, or planeswalker. Players can't cast spells of the chosen type.
+da17da9b-f300-4613-978b-ba3026d4e275|Evil Twin|You may have this creature enter as a copy of any creature on the battlefield, except it has "{U}{B}, {T}: Destroy target creature with the same name as this creature."
+7ba31f45-c178-4bac-ab7b-5ba4d050133c|Gwafa Hazid, Profiteer|{W}{U}, {T}: Put a bribery counter on target creature you don't control. Its controller draws a card. Creatures with bribery counters on them can't attack or block.
+b01465ea-cab9-4a59-81a6-8db4648b89f4|Last One Standing|Choose a creature at random, then destroy the rest.

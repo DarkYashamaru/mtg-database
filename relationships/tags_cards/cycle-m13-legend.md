@@ -1,0 +1,5 @@
+68418069-f615-40ef-ae0d-764192acae00|Krenko, Mob Boss|{T}: Create X 1/1 red Goblin creature tokens, where X is the number of Goblins you control.
+0632f0f9-8d4f-4e94-8b53-1275b7f21a57|Nefarox, Overlord of Grixis|Flying Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.) Whenever Nefarox attacks alone, defending player sacrifices a creature of their choice.
+ade898df-14a5-460b-94f6-1f3f74d3ff95|Odric, Master Tactician|First strike (This creature deals combat damage before creatures without first strike.) Whenever Odric and at least three other creatures attack, you choose which creatures block this combat and how those creatures block.
+ea1eb902-a23c-44ff-9169-19baf71de238|Talrand, Sky Summoner|Whenever you cast an instant or sorcery spell, create a 2/2 blue Drake creature token with flying.
+2d513c3e-bd27-479e-af32-7f66d96d0de0|Yeva, Nature's Herald|Flash (You may cast this spell any time you could cast an instant.) You may cast green creature spells as though they had flash.

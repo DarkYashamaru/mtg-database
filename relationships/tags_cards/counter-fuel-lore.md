@@ -1,0 +1,1 @@
+8c709873-84b5-46c2-bb29-85b041a6df88|Garnet, Princess of Alexandria|Lifelink Whenever Garnet attacks, you may remove a lore counter from each of any number of Sagas you control. Put a +1/+1 counter on Garnet for each lore counter removed this way.

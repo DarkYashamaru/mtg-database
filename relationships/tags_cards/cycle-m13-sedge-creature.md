@@ -1,0 +1,5 @@
+616cb1be-074a-46c2-b8f1-6b9f15b7bc23|Arctic Aven|Flying This creature gets +1/+1 as long as you control a Plains. {W}: This creature gains lifelink until end of turn. (Damage dealt by this creature also causes you to gain that much life.)
+2b34f341-42bc-408a-85cc-b2d8797612b8|Crimson Muckwader|This creature gets +1/+1 as long as you control a Swamp. {2}{B}: Regenerate this creature. (The next time this creature would be destroyed this turn, instead tap it, remove it from combat, and heal all damage on it.)
+acb58839-2b26-4724-9e9b-b49b8217b13f|Flinthoof Boar|This creature gets +1/+1 as long as you control a Mountain. {R}: This creature gains haste until end of turn. (It can attack and {T} this turn.)
+18c65823-01ae-4314-a254-d89a1a362633|Harbor Bandit|This creature gets +1/+1 as long as you control an Island. {1}{U}: This creature can't be blocked this turn.
+4b1674b1-2176-493f-a463-936e715d51a2|Prized Elephant|This creature gets +1/+1 as long as you control a Forest. {G}: This creature gains trample until end of turn. (It can deal excess combat damage to the player or planeswalker it's attacking.)

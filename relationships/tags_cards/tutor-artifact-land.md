@@ -1,0 +1,1 @@
+1cbfe1f2-776b-429d-9a60-8da32058a927|Sojourner's Companion|Affinity for artifacts Artifact landcycling {2} ({2}, Discard this card: Search your library for an artifact land card, reveal it, put it into your hand, then shuffle.)

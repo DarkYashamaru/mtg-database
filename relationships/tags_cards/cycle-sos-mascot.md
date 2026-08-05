@@ -1,0 +1,5 @@
+882f30e4-4ce1-4581-8d2d-d763aa13befe|Elemental Mascot|Flying, vigilance Opus — Whenever you cast an instant or sorcery spell, this creature gets +1/+0 until end of turn. If five or more mana was spent to cast that spell, exile the top card of your library. You may play that card until the end of your next turn.
+cca3f3e8-15a7-4ad8-893a-d3570178a800|Fractal Mascot|Trample When this creature enters, tap target creature an opponent controls. Put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)
+0f0959ff-4464-4738-9d79-5b06f368f144|Inkling Mascot|Repartee — Whenever you cast an instant or sorcery spell that targets a creature, this creature gains flying until end of turn. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+b8ecddf7-ba89-40dd-9f63-5bad27dd850d|Pest Mascot|Trample Whenever you gain life, put a +1/+1 counter on this creature.
+34c572b2-dccf-43d9-a9c4-846653ad22da|Spirit Mascot|Whenever one or more cards leave your graveyard, put a +1/+1 counter on this creature.

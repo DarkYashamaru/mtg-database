@@ -1,0 +1,1 @@
+bca33fb6-cd37-4259-8c0b-7a4675754a00|Hunting Velociraptor|First strike Dinosaur spells you cast have prowl {2}{R}. (You may cast a spell for its prowl cost if you dealt combat damage to a player this turn with a creature with any of its creature types.)

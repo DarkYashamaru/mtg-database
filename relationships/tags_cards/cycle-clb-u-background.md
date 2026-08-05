@@ -1,0 +1,10 @@
+38477748-bc57-449c-afe1-c5f34caf8eff|Acolyte of Bahamut|Commander creatures you own have "The first Dragon spell you cast each turn costs {2} less to cast."
+325032d5-c452-4454-8976-82f86fee5ab8|Agent of the Iron Throne|Commander creatures you own have "Whenever an artifact or creature you control is put into a graveyard from the battlefield, each opponent loses 1 life."
+f898bf43-6a9c-46eb-b805-63cb12bab273|Cloakwood Hermit|Commander creatures you own have "At the beginning of your end step, if a creature card was put into your graveyard from anywhere this turn, create two tapped 1/1 green Squirrel creature tokens."
+54ad73d1-a17d-468c-a0ba-05c532a02cb2|Criminal Past|Commander creatures you own have menace and "This creature gets +X/+0, where X is the number of creature cards in your graveyard." (A creature with menace can't be blocked except by two or more creatures.)
+d1d7c5fa-a92a-4815-a558-6d3daf37f4c4|Dragon Cultist|Commander creatures you own have "At the beginning of your end step, if a source you controlled dealt 5 or more damage this turn, create a 4/4 red Dragon creature token with flying."
+0073d731-e60d-433a-ac35-a22af855da20|Dungeon Delver|Commander creatures you own have "Room abilities of dungeons you own trigger an additional time."
+b9432430-df01-497d-b025-7576dce830e4|Far Traveler|Commander creatures you own have "At the beginning of your end step, exile up to one target tapped creature you control, then return it to the battlefield under its owner's control."
+cbc93912-2c36-4554-9b42-1dcca059fbb5|Feywild Visitor|Commander creatures you own have "Whenever one or more nontoken creatures you control deal combat damage to a player, you create a 1/1 blue Faerie Dragon creature token with flying."
+d46dcc75-55ff-4226-a392-a49755d269d2|Inspiring Leader|Commander creatures you own have "Creature tokens you control get +2/+2."
+f52759f9-7aa5-4493-8fe3-7be9ec340dde|Street Urchin|Commander creatures you own have "{1}, Sacrifice another creature or an artifact: This creature deals 1 damage to any target."

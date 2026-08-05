@@ -1,0 +1,6 @@
+de14f6a9-1c62-42e9-b174-3e8b1080e0dc|Callous Oppressor|You may choose not to untap this creature during your untap step. As this creature enters, an opponent chooses a creature type. {T}: Gain control of target creature that isn't of the chosen type for as long as this creature remains tapped.
+e7a7ba65-ad14-41d5-889b-9bbeae9ab3f7|Crippling Fear|Choose a creature type. Creatures that aren't of the chosen type get -3/-3 until end of turn.
+dcd65c9b-4aaa-42af-869f-de179ae57c9f|Harsh Mercy|Each player chooses a creature type. Destroy all creatures that aren't of a type chosen this way. They can't be regenerated.
+ccaa44f2-96be-44e2-884f-c31baa3908d5|Kindred Dominance|Choose a creature type. Destroy all creatures that aren't of the chosen type.
+f55a3781-fe33-4301-9bb5-6a54b9c13c4f|Raise the Palisade|Choose a creature type. Return all creatures that aren't of the chosen type to their owners' hands.
+8b834f83-951b-4b5c-b9f1-3d860baa3c0e|Winnowing|Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.) For each player, you choose a creature that player controls. Then each player sacrifices all other creatures they control that don't share a creature type with the chosen creature they control.

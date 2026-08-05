@@ -1,0 +1,1 @@
+7f9a8845-d760-44a7-a4c9-8a20dba4e14a|Mjölnir, Hammer of Thor|When Mjölnir enters, it deals 4 damage to up to one target creature. Double all damage equipped creature would deal. Equip worthy {1} (A creature is worthy if it's a legendary non-Villain that's red and/or white.) {2}{R}, Discard this card: It deals 2 damage to each creature.

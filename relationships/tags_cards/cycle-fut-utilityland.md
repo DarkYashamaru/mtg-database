@@ -1,0 +1,5 @@
+cdc4048a-73ec-4ec1-a179-2b36c397bf1a|Dakmor Salvage|This land enters tapped. {T}: Add {B}. Dredge 2 (If you would draw a card, you may mill two cards instead. If you do, return this card from your graveyard to your hand.)
+ec0ea7f7-52ce-40d1-b34c-e36dd4b26120|Keldon Megaliths|This land enters tapped. {T}: Add {R}. Hellbent — {1}{R}, {T}: This land deals 1 damage to any target. Activate only if you have no cards in hand.
+92acb789-0e42-465c-ac16-40fefec48805|Llanowar Reborn|This land enters tapped. {T}: Add {G}. Graft 1 (This land enters with a +1/+1 counter on it. Whenever a creature enters, you may move a +1/+1 counter from this land onto it.)
+6e743fbf-b5b6-4176-a4f2-6933f521f2fe|New Benalia|This land enters tapped. When this land enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.) {T}: Add {W}.
+46eefc72-2d9e-4389-8ae1-26d9ee472b5c|Tolaria West|This land enters tapped. {T}: Add {U}. Transmute {1}{U}{U} ({1}{U}{U}, Discard this card: Search your library for a card with mana value 0, reveal it, put it into your hand, then shuffle. Transmute only as a sorcery.)

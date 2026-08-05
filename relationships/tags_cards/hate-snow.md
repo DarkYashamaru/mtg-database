@@ -1,0 +1,10 @@
+898f0824-cf4c-4e34-8407-9a32fdae6dcb|Arctic Foxes|This creature can't be blocked by creatures with power 2 or greater as long as defending player controls a snow land.
+40960ec8-e3be-45f2-8d27-316d82c69123|Arcum's Sleigh|{2}, {T}: Target creature gains vigilance until end of turn. Activate only during combat and only if defending player controls a snow land.
+b4e57fba-5fa3-4fd5-8f0a-7b61593ade72|Arcum's Weathervane|{2}, {T}: Target snow land is no longer snow. {2}, {T}: Target nonsnow basic land becomes snow.
+a349e526-882c-454f-ba79-ad17340f8153|Avalanche|Destroy X target snow lands.
+ef8c324a-582b-401e-add1-1985c5596908|Barbarian Guides|{2}{R}, {T}: Choose a land type. Target creature you control gains snow landwalk of the chosen type until end of turn. Return that creature to its owner's hand at the beginning of the next end step. (It can't be blocked as long as defending player controls a snow land of that type.)
+22ec98d2-0ac5-48a2-b48b-c6a98f35ecf0|Break the Ice|Destroy target land that is snow or could produce {C}. Overload {4}{B}{B} (You may cast this spell for its overload cost. If you do, change "target" in its text to "each.")
+3dcbcf5e-bdbe-46b3-881e-5ac4030c6e38|Cold Snap|Cumulative upkeep {2} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) At the beginning of each player's upkeep, this enchantment deals damage to that player equal to the number of snow lands they control.
+d7f28d00-2ec3-4d4e-b3a6-89d33c66da28|Freyalise's Radiance|Cumulative upkeep {2} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) Snow permanents don't untap during their controllers' untap steps.
+8c0a6ac1-b1cc-405a-95fb-f06b7fecbb54|Icequake|Destroy target land. If that land was a snow land, Icequake deals 1 damage to that land's controller.
+70b69803-1870-4441-954b-dba5b433fcb2|Legions of Lim-Dûl|Snow swampwalk (This creature can't be blocked as long as defending player controls a snow Swamp.)

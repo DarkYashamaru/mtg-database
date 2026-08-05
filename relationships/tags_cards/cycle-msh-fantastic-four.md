@@ -1,0 +1,4 @@
+5b6f2770-e774-4a77-801f-a3fda093c3dd|Human Torch, Johnny Storm|Flying Whenever you draw a card, if you control another Hero, Human Torch deals 1 damage to target opponent. Power-up — {6}{R}: Put three +1/+1 counters on Human Torch. (Activate each power-up ability only once. Reduce the cost by his mana cost if he entered this turn.)
+e9d20b6d-fa4f-473b-9866-230fd92a1319|Invisible Woman, Sue Storm|Lifelink Whenever you put one or more +1/+1 counters on one or more other Heroes you control, you may create a 0/4 colorless Wall creature token with defender.
+7fa5237e-dd79-4646-b935-cb8c6ee803ab|Mister Fantastic, Reed Richards|Reach Whenever one or more tokens you control enter, you may draw a card.
+d566d5f1-5abd-405b-8553-d267ecbe72ab|The Thing, Ben Grimm|Trample Whenever one or more Heroes you control deal damage to a player, put two +1/+1 counters on The Thing.

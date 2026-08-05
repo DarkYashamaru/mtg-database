@@ -1,0 +1,6 @@
+e4be4071-7910-460f-90f3-6c4d8cc9db65|Alpharael, Dreaming Acolyte|When Alpharael enters, draw two cards. Then discard two cards unless you discard an artifact card. During your turn, Alpharael has deathtouch.
+6846448b-d5a0-4ae0-bb11-ea7fa6ed2558|Haliya, Ascendant Cadet|Whenever Haliya enters or attacks, put a +1/+1 counter on target creature you control. Whenever one or more creatures you control with +1/+1 counters on them deal combat damage to a player, draw a card.
+6c05b882-51d9-43d8-93b8-c3317590f76a|Mm'menon, Uthros Exile|Flying Whenever an artifact you control enters, put a +1/+1 counter on target creature.
+470c16c5-b078-47f5-89b0-42991e1f7157|Sami, Ship's Engineer|At the beginning of your end step, if you control two or more tapped creatures, create a tapped 2/2 colorless Robot artifact creature token.
+28225bae-2d96-4352-b256-0c2ff4ef65e9|Syr Vondam, the Lucent|Deathtouch, lifelink Whenever Syr Vondam enters or attacks, other creatures you control get +1/+0 and gain deathtouch until end of turn.
+76cb1912-3791-44b8-b594-b92dab21bafc|Tannuk, Memorial Ensign|Landfall — Whenever a land you control enters, Tannuk deals 1 damage to each opponent. If this is the second time this ability has resolved this turn, draw a card.

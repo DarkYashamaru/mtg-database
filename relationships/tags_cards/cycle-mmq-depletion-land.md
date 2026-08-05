@@ -1,0 +1,5 @@
+26259c65-8f4e-42a6-b8a7-f65c36d35c4d|Hickory Woodlot|This land enters tapped with two depletion counters on it. {T}, Remove a depletion counter from this land: Add {G}{G}. If there are no depletion counters on this land, sacrifice it.
+a176924c-78fc-4151-b2b5-1547b1114a40|Peat Bog|This land enters tapped with two depletion counters on it. {T}, Remove a depletion counter from this land: Add {B}{B}. If there are no depletion counters on this land, sacrifice it.
+2c38f4c7-1b3f-42b4-a175-edab7acd6cc6|Remote Farm|This land enters tapped with two depletion counters on it. {T}, Remove a depletion counter from this land: Add {W}{W}. If there are no depletion counters on this land, sacrifice it.
+c8e0a1a5-8188-4677-9d8a-a18eb593343a|Sandstone Needle|This land enters tapped with two depletion counters on it. {T}, Remove a depletion counter from this land: Add {R}{R}. If there are no depletion counters on this land, sacrifice it.
+e4e6e796-39ce-4a63-8c61-c7c956d75d78|Saprazzan Skerry|This land enters tapped with two depletion counters on it. {T}, Remove a depletion counter from this land: Add {U}{U}. If there are no depletion counters on this land, sacrifice it.

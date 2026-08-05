@@ -1,0 +1,1 @@
+86dc3a41-4fb9-4b1f-8279-2b5edbc7e170|Binding Negotiation|Target opponent reveals their hand. You may choose a nonland card from it. If you do, they discard it. Otherwise, you may put a face-up exiled card they own into their graveyard.

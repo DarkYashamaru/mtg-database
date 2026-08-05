@@ -1,0 +1,5 @@
+d06cd670-7ffc-4295-97d1-0eff042fb6d5|Jenara, Asura of War|Flying {1}{W}: Put a +1/+1 counter on Jenara.
+242dfae4-504c-45d4-9a49-f7ab515fd23a|Karrthus, Tyrant of Jund|Flying, haste When Karrthus enters, gain control of all Dragons, then untap all Dragons. Other Dragon creatures you control have haste.
+f0c5864f-83c3-4d99-8f97-0ab92608fff3|Sen Triplets|At the beginning of your upkeep, choose target opponent. This turn, that player can't cast spells or activate abilities and plays with their hand revealed. You may play lands and cast spells from that player's hand this turn.
+9e0e4217-fefe-48dd-9153-032460192b19|Thraximundar|Haste Whenever Thraximundar attacks, defending player sacrifices a creature of their choice. Whenever a player sacrifices a creature, you may put a +1/+1 counter on Thraximundar.
+4308a020-48cf-45fe-8074-dd5d0ac6d12d|Uril, the Miststalker|Hexproof (This creature can't be the target of spells or abilities your opponents control.) Uril gets +2/+2 for each Aura attached to it.

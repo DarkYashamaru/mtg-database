@@ -1,0 +1,1 @@
+0c12abcc-6ada-43b3-8750-9cb6ce2b0785|Shadow the Hedgehog|Haste Whenever Shadow the Hedgehog or another creature you control with flash or haste dies, draw a card. Chaos Control — Each spell you cast has split second if mana from an artifact was spent to cast it. (As long as it's on the stack, players can't cast spells or activate abilities that aren't mana abilities.)

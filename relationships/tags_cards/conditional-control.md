@@ -1,0 +1,2 @@
+de14f6a9-1c62-42e9-b174-3e8b1080e0dc|Callous Oppressor|You may choose not to untap this creature during your untap step. As this creature enters, an opponent chooses a creature type. {T}: Gain control of target creature that isn't of the chosen type for as long as this creature remains tapped.
+c0128941-240a-4ca1-9816-b32f47523fdb|Fealty to the Realm|Enchant creature When this Aura enters, you become the monarch. The monarch controls enchanted creature. Enchanted creature attacks each combat if able and can't attack you.

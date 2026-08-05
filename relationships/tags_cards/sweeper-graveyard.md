@@ -1,0 +1,10 @@
+d06a8026-1657-4404-8dff-64e44f1a14f8|Abstergo Entertainment|{T}: Add {C}. {1}, {T}: Add one mana of any color. {3}, {T}, Exile Abstergo Entertainment: Return up to one target historic card from your graveyard to your hand, then exile all graveyards. (Artifacts, legendaries, and Sagas are historic.)
+3fa5e109-4a67-4523-8183-90e48a906400|Agent of Erebos|Constellation — Whenever this creature or another enchantment you control enters, exile target player's graveyard.
+48d14b5c-711a-4f8a-9de5-55415cb7a79a|Angel of Finality|Flying When this creature enters, exile target player's graveyard.
+93723b12-db34-4047-885e-8606415b1553|Ashiok, Dream Render|Spells and abilities your opponents control can't cause their controller to search their library. −1: Target player mills four cards. Then exile each opponent's graveyard.
+8bad4e43-4375-4e7f-897e-d28be72308d7|Author of Shadows|When this creature enters, exile all opponents' graveyards. Choose a nonland card exiled this way. You may cast that card for as long as it remains exiled, and you may spend mana as though it were mana of any color to cast that spell.
+7fca65b8-01fe-4858-97c6-f97ae82cd801|Bazaar of Wonders|When this enchantment enters, exile all graveyards. Whenever a player casts a spell, counter it if a card with the same name is in a graveyard or a nontoken permanent with the same name is on the battlefield.
+8c888122-9d05-4641-931c-83f771ba9d09|Blessed Respite|Target player shuffles their graveyard into their library. Prevent all combat damage that would be dealt this turn.
+727f3201-1cfc-4ab2-9dfe-be4f7251f42f|Boggart Trawler // Boggart Bog|As this land enters, you may pay 3 life. If you don't, it enters tapped. {T}: Add {B}. // When this creature enters, exile target player's graveyard.
+04b7362d-0490-4cb0-b5d7-2a7732f659ce|Bojuka Bog|This land enters tapped. When this land enters, exile target player's graveyard. {T}: Add {B}.
+65dcad6b-9a87-4313-bc71-682e1de262d0|Burn Away|Burn Away deals 6 damage to target creature. When that creature dies this turn, exile its controller's graveyard.

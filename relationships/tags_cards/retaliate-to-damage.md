@@ -1,0 +1,10 @@
+efbc9b9c-2b8c-4121-b232-350c80f12a2a|Angelheart Vial|Whenever you're dealt damage, you may put that many charge counters on this artifact. {2}, {T}, Remove four charge counters from this artifact: You gain 2 life and draw a card.
+a5e9142e-76bf-40d4-aeaa-ffe197d38f25|Auntie Blyte, Bad Influence|Flying Whenever a source you control deals damage to you, put that many +1/+1 counters on Auntie Blyte. {1}{R}, {T}, Remove X +1/+1 counters from Auntie Blyte: It deals X damage to any target.
+3d98a656-1737-486f-9b25-449b7c871d1f|Aurification|Whenever a creature deals damage to you, put a gold counter on it. Each creature with a gold counter on it is a Wall in addition to its other creature types and has defender. (Those creatures can't attack.) When this enchantment leaves the battlefield, remove all gold counters from all creatures.
+6c29add6-8524-4a33-9f2e-f792032dd6cd|Avenging Arrow|Destroy target creature that dealt damage this turn.
+0607b289-74a6-4f3a-b15c-a639244873b6|Awaken the Sky Tyrant|When a source an opponent controls deals damage to you, sacrifice this enchantment. If you do, create a 5/5 red Dragon creature token with flying.
+ace532a3-fa6e-479d-b169-1fb24c3d0f8c|Blood Hound|Whenever you're dealt damage, you may put that many +1/+1 counters on this creature. At the beginning of your end step, remove all +1/+1 counters from this creature.
+69658c2c-2c46-4d62-945e-1a5176869b05|Circle of Affliction|As this enchantment enters, choose a color. Whenever a source of the chosen color deals damage to you, you may pay {1}. If you do, target player loses 1 life and you gain 1 life.
+d05336cb-6157-47e7-942f-43becd67a5bf|Darien, King of Kjeldor|Whenever you're dealt damage, you may create that many 1/1 white Soldier creature tokens.
+ce785306-eaf5-42b3-9840-884cd690ae0a|Discordant Spirit|At the beginning of each end step, if it's an opponent's turn, put a +1/+1 counter on this creature for each 1 damage dealt to you this turn. At the beginning of your end step, remove all +1/+1 counters from this creature.
+35426427-4268-4c8f-9fe1-270f2ce43d97|Dissipation Field|Whenever a permanent deals damage to you, return it to its owner's hand.

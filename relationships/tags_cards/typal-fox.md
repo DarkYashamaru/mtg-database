@@ -1,0 +1,1 @@
+e75356a8-6268-4355-a0bd-114a5243d527|Patron of the Kitsune|Fox offering (You may cast this spell any time you could cast an instant by sacrificing a Fox and paying the difference in mana costs between this and the sacrificed Fox. Mana cost includes color.) Whenever a creature attacks, you may gain 1 life.

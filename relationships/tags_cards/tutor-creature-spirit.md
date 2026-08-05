@@ -1,0 +1,3 @@
+865e569b-6999-4a03-ad02-4bfd595d5820|Iname as One|When Iname as One enters, if you cast it from your hand, you may search your library for a Spirit permanent card, put it onto the battlefield, then shuffle. When Iname as One dies, you may exile it. If you do, return target Spirit permanent card from your graveyard to the battlefield.
+46c7f465-304c-4c4b-a1f6-9707706dbf94|Iname, Death Aspect|When Iname enters, you may search your library for any number of Spirit cards, put them into your graveyard, then shuffle.
+0fb26acd-891d-471d-98d8-73c6f940052b|Lifespinner|{T}, Sacrifice three Spirits: Search your library for a legendary Spirit permanent card, put it onto the battlefield, then shuffle.

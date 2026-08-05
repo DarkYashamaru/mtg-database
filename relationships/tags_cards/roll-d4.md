@@ -1,0 +1,4 @@
+82d51c8a-d42b-48b3-a726-3a8d28d057e5|Arden Angel|Flying At the beginning of your upkeep, if Arden Angel is in your graveyard, roll a four-sided die. If the result is 1, return Arden Angel from your graveyard to the battlefield.
+f70b9eee-3874-4391-8df8-e10bbd19307e|Bucknard's Everfull Purse|{1}, {T}: Roll a d4 and create a number of Treasure tokens equal to the result. The player to your right gains control of this artifact.
+561e8ecc-1f2b-4fd4-8f92-a0acea449816|Netherese Puzzle-Ward|Focus Beam — At the beginning of your upkeep, roll a d4. Scry X, where X is the result. Perfect Illumination — Whenever you roll a die's highest natural result, draw a card.
+2c4ee0df-e720-475b-aa04-e6394f3d708f|Wild Endeavor|Roll two d4 and choose one result. Create a number of 3/3 green Beast creature tokens equal to that result. Then search your library for a number of basic land cards equal to the other result, put them onto the battlefield tapped, then shuffle.

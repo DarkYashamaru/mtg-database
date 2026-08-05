@@ -1,0 +1,8 @@
+47a080c4-ff04-4f52-aca0-2b8e4f4d931e|Enduring Renewal|Play with your hand revealed. If you would draw a card, reveal the top card of your library instead. If it's a creature card, put it into your graveyard. Otherwise, draw a card. Whenever a creature is put into your graveyard from the battlefield, return it to your hand.
+251ff4e4-3be4-424e-8dd7-eb4ede7b415c|Revelation|Players play with their hands revealed.
+f5276e83-ca3f-4755-9239-e44d91a446fd|Seer's Vision|Your opponents play with their hands revealed. Sacrifice this enchantment: Look at target player's hand and choose a card from it. That player discards that card. Activate only as a sorcery.
+f0c5864f-83c3-4d99-8f97-0ab92608fff3|Sen Triplets|At the beginning of your upkeep, choose target opponent. This turn, that player can't cast spells or activate abilities and plays with their hand revealed. You may play lands and cast spells from that player's hand this turn.
+b7aa0625-c691-4219-b099-3798b349d09c|Stromgald Spy|Whenever this creature attacks and isn't blocked, you may have defending player play with their hand revealed for as long as this creature remains on the battlefield. If you do, this creature assigns no combat damage this turn.
+d2e647ac-717f-46e6-baa8-6a793e7bdc32|Telepathy|Your opponents play with their hands revealed.
+59015068-6868-4235-981b-96137123c685|Wandering Eye|Flying Players play with their hands revealed.
+c6eaa147-3566-43a9-999a-d58b877496f5|Zur's Weirding|Players play with their hands revealed. If a player would draw a card, they reveal it instead. Then any other player may pay 2 life. If a player does, put that card into its owner's graveyard. Otherwise, that player draws a card.

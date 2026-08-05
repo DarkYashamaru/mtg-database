@@ -1,0 +1,5 @@
+7cfc14ce-9940-4c61-9daa-2c6dbf1a80ad|Gust of Wind|This spell costs {2} less to cast if you control a creature with flying. Return target nonland permanent you don't control to its owner's hand. Draw a card.
+b01cd710-3906-486b-8bb5-8c4efa46e4d9|Mutual Destruction|This spell has flash as long as you control a permanent with flash. As an additional cost to cast this spell, sacrifice a creature. Destroy target creature.
+4b1befff-48fa-47a3-832e-bdaf43495c02|Ram Through|Target creature you control deals damage equal to its power to target creature you don't control. If the creature you control has trample, excess damage is dealt to that creature's controller instead.
+edc91e1a-a305-4c14-9d85-077a410528fa|Solid Footing|Flash Enchant creature Enchanted creature gets +1/+1. As long as enchanted creature has vigilance, it assigns combat damage equal to its toughness rather than its power.
+d74de74f-be0f-4809-8b7a-1bd58ee85551|Tentative Connection|This spell costs {3} less to cast if you control a creature with menace. Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn.

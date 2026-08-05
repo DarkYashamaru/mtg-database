@@ -1,0 +1,10 @@
+fe7bad80-f853-4af9-82e2-5ccf8038d93b|Angelsong|Prevent all combat damage that would be dealt this turn. Cycling {2} ({2}, Discard this card: Draw a card.)
+d5e6ac6b-5786-4d98-8037-0867e365fc93|Angus Mackenzie|{G}{W}{U}, {T}: Prevent all combat damage that would be dealt this turn. Activate only before the combat damage step.
+fc8247f5-f7b2-4fc4-a9ea-90babad5fa42|Batwing Brume|Prevent all combat damage that would be dealt this turn if {W} was spent to cast this spell. Each player loses 1 life for each attacking creature they control if {B} was spent to cast this spell. (Do both if {W}{B} was spent.)
+8c888122-9d05-4641-931c-83f771ba9d09|Blessed Respite|Target player shuffles their graveyard into their library. Prevent all combat damage that would be dealt this turn.
+dccd0533-fda0-41ff-b540-c4f1bb32fc95|Blunt the Assault|You gain 1 life for each creature on the battlefield. Prevent all combat damage that would be dealt this turn.
+e245a736-5f65-4159-8e39-e279e1f8794f|Chant of Vitu-Ghazi|Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.) Prevent all damage that would be dealt by creatures this turn. You gain life equal to the damage prevented this way.
+9be48462-2ec0-4d28-9977-f0232e8a1333|Clinging Mists|Prevent all combat damage that would be dealt this turn. Fateful hour — If you have 5 or less life, tap all attacking creatures. Those creatures don't untap during their controller's next untap step.
+c850a29e-dc40-4ab6-89f1-d501a1a350d1|Constant Mists|Buyback—Sacrifice a land. (You may sacrifice a land in addition to any other costs as you cast this spell. If you do, put this card into your hand as it resolves.) Prevent all combat damage that would be dealt this turn.
+932708ae-9d5c-4561-aa8b-0d2222d37fdc|Darkness|Prevent all combat damage that would be dealt this turn.
+a8f5cfa7-4956-4182-8e44-acf3493239f0|Dawn Charm|Choose one — • Prevent all combat damage that would be dealt this turn. • Regenerate target creature. • Counter target spell that targets you.

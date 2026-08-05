@@ -1,0 +1,5 @@
+d2db3f9c-26fe-487b-bbb7-8bc6f33456f1|Blitz of the Thunder-Raptor|Blitz of the Thunder-Raptor deals damage to target creature or planeswalker equal to the number of instant and sorcery cards in your graveyard. If that creature or planeswalker would die this turn, exile it instead.
+1720d38a-c3c1-4294-85c1-a91fc7179d6f|Boon of the Wish-Giver|Draw four cards. Cycling {1} ({1}, Discard this card: Draw a card.)
+97773064-6534-4761-8c73-3ffd713f4569|Call of the Death-Dweller|Return up to two target creature cards with total mana value 3 or less from your graveyard to the battlefield. Put a deathtouch counter on either of them. Then put a menace counter on either of them.
+937f0c60-003e-446d-8889-059f7b4a2dd6|Charge of the Forever-Beast|As an additional cost to cast this spell, reveal a creature card from your hand. Charge of the Forever-Beast deals damage to target creature or planeswalker equal to the revealed card's power.
+dec281b4-e6d6-4b78-b755-358e07eb7c06|Will of the All-Hunter|Target creature gets +2/+2 until end of turn. If it's blocking, instead put two +1/+1 counters on it. Cycling {2} ({2}, Discard this card: Draw a card.)

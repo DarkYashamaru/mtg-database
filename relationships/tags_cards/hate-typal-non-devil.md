@@ -1,0 +1,1 @@
+03a4b997-4738-41a9-933f-e1f765e3a75a|Rakdos, the Showstopper|Flying, trample When Rakdos enters, flip a coin for each creature that isn't a Demon, Devil, or Imp. Destroy each creature whose coin comes up tails.

@@ -1,0 +1,10 @@
+63c1eda1-3e6f-4e9c-adf3-a43164df98bb|Ankh of Mishra|Whenever a land enters, this artifact deals 2 damage to that land's controller.
+ef833546-f755-4ac5-867a-3926984e68a0|Archaeomancer's Map|When this artifact enters, search your library for up to two basic Plains cards, reveal them, put them into your hand, then shuffle. Whenever a land an opponent controls enters, if that player controls more lands than you, you may put a land card from your hand onto the battlefield.
+88cf4c1a-5863-45fc-b76d-7ad33b175b2b|Burgeoning|Whenever an opponent plays a land, you may put a land card from your hand onto the battlefield.
+fa450433-85b0-4f95-bd4e-f141ba036bee|Cemetery Gatekeeper|First strike When this creature enters, exile a card from a graveyard. Whenever a player plays a land or casts a spell, if it shares a card type with the exiled card, this creature deals 2 damage to that player.
+f86b9a01-62fc-4120-8914-5054ed48d37e|Confounding Conundrum|When this enchantment enters, draw a card. Whenever a land an opponent controls enters, if that player had another land enter the battlefield under their control this turn, they return a land they control to its owner's hand.
+0b5f7a1b-fbb9-4659-8fcb-7822dc0263bc|Curse of the Restless Dead|Enchant player Whenever a land enchanted player controls enters, you create a 2/2 black Zombie creature token with decayed. (It can't block. When it attacks, sacrifice it at end of combat.)
+d4e3440d-4e34-40d7-8a42-c673225c0332|Deep Gnome Terramancer|Flash Mold Earth — Whenever one or more lands enter under an opponent's control without being played, you may search your library for a Plains card, put it onto the battlefield tapped, then shuffle. Do this only once each turn.
+608293f1-34aa-4e55-8389-73f975858de6|Dirtcowl Wurm|Whenever an opponent plays a land, put a +1/+1 counter on this creature.
+017cadd8-55ee-497a-84d4-6535173bc1eb|Foe-liage|Whenever a land enters during your turn, put a +1/+1 counter on this creature.
+8e7c5649-41c2-4a0c-b873-e6f6c5908567|Hidden Herd|When an opponent plays a nonbasic land, if this permanent is an enchantment, it becomes a 3/3 Beast creature.

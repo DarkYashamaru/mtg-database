@@ -1,0 +1,5 @@
+a8f5cfa7-4956-4182-8e44-acf3493239f0|Dawn Charm|Choose one — • Prevent all combat damage that would be dealt this turn. • Regenerate target creature. • Counter target spell that targets you.
+5f73fd4e-0d24-4daa-8d82-73c0cf7f801d|Evolution Charm|Choose one — • Search your library for a basic land card, reveal it, put it into your hand, then shuffle. • Return target creature card from your graveyard to your hand. • Target creature gains flying until end of turn.
+b86b1878-65a9-48df-9727-1e80683d7e86|Fury Charm|Choose one — • Destroy target artifact. • Target creature gets +1/+1 and gains trample until end of turn. • Remove two time counters from target permanent or suspended card.
+ed228f67-3adf-46d4-ac45-e0278592850d|Midnight Charm|Choose one — • Midnight Charm deals 1 damage to target creature and you gain 1 life. • Target creature gains first strike until end of turn. • Tap target creature.
+dffde884-15bc-4985-90e2-a0888ef4cb48|Piracy Charm|Choose one — • Target creature gains islandwalk until end of turn. (It can't be blocked as long as defending player controls an Island.) • Target creature gets +2/-1 until end of turn. • Target player discards a card.

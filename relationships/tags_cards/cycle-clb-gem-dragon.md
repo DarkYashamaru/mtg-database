@@ -1,0 +1,5 @@
+0961b68d-bb0c-4bfb-ad78-01f90b3b97c8|Amethyst Dragon // Explosive Crystal|Flying, haste // Explosive Crystal deals 4 damage divided as you choose among any number of targets. (Then exile this card. You may cast the creature later from exile.)
+56b0cb64-b886-413e-bb20-392bf12d3926|Crystal Dragon // Rob the Hoard|Flying, vigilance // Return target artifact, enchantment, or legendary card from your graveyard to your hand. (Then exile this card. You may cast the creature later from exile.)
+c5632f18-7904-4a29-82be-6a6ef8e85e18|Emerald Dragon // Dissonant Wave|Counter target activated or triggered ability from a noncreature source. (Then exile this card. You may cast the creature later from exile.) // Flying, trample
+53015c41-af2d-43e2-a690-d8877537b8dd|Sapphire Dragon // Psionic Pulse|Counter target noncreature spell. (Then exile this card. You may cast the creature later from exile.) // Flying Whenever this creature attacks or blocks, scry 2.
+ca8535f2-1f96-4836-bd32-5e952f9bee72|Topaz Dragon // Entropic Cloud|Creatures you control gain deathtouch until end of turn. (Then exile this card. You may cast the creature later from exile.) // Flying, deathtouch

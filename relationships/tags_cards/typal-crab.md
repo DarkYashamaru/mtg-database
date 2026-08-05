@@ -1,0 +1,2 @@
+2be9c1e6-0226-497a-b548-21bf1cfbc286|Scuttletide|{1}, Discard a card: Create a 0/3 blue Crab creature token. Delirium — Crabs you control get +1/+1 as long as there are four or more card types among cards in your graveyard.
+1f266fa4-6667-49db-9d24-dfbabf1449ca|Uchuulon|Uchuulon's power is equal to the number of Crabs, Oozes, and/or Horrors you control. Horrific Symbiosis — At the beginning of your end step, exile up to one target creature card from an opponent's graveyard. If you do, create a token that's a copy of this creature.

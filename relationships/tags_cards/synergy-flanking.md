@@ -1,0 +1,2 @@
+7083dedd-b246-4fe0-b1ca-00c490ed9c6b|Cavalry Master|Flanking (Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.) Other creatures you control with flanking have flanking. (Each instance of flanking triggers separately.)
+b13a723d-80a9-4116-9857-baf3b373f87a|Telim'Tor|Flanking (Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.) Whenever Telim'Tor attacks, all attacking creatures with flanking get +1/+1 until end of turn.

@@ -1,0 +1,4 @@
+4d08e822-6535-44b7-a100-e5e1e8f5c3e3|Dust Elemental|Flash (You may cast this spell any time you could cast an instant.) Flying; fear (This creature can't be blocked except by artifact creatures and/or black creatures.) When this creature enters, return three creatures you control to their owner's hand.
+b2d597f4-162f-4adc-9dc9-6d44815b7a68|Stonecloaker|Flash Flying When this creature enters, return a creature you control to its owner's hand. When this creature enters, exile target card from a graveyard.
+9df318b9-16c6-42f1-9f81-6f73ca01e5c1|Stormfront Riders|Flying When this creature enters, return two creatures you control to their owner's hand. Whenever this creature or another creature is returned to your hand from the battlefield, create a 1/1 white Soldier creature token.
+e8d6084b-9b72-438e-a30a-851b888f3e4d|Whitemane Lion|Flash When this creature enters, return a creature you control to its owner's hand.

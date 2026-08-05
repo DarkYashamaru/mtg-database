@@ -1,0 +1,1 @@
+751da0fa-0ab1-4b8c-81bb-d86a0a280ac4|Liliana's Spoils|Target opponent discards a card. Look at the top five cards of your library. You may reveal a black card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.

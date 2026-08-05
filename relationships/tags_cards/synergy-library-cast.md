@@ -1,0 +1,2 @@
+ba5a7ac0-b625-42e9-af05-2680a01a95ed|Fblthp, the Lost|When Fblthp enters, draw a card. If it entered from your library or was cast from your library, draw two cards instead. When Fblthp becomes the target of a spell, shuffle Fblthp into its owner's library.
+095d9719-0db6-43de-8e4f-a0035a4c65ed|Melek, Izzet Paragon|Play with the top card of your library revealed. You may cast instant and sorcery spells from the top of your library. Whenever you cast an instant or sorcery spell from your library, copy it. You may choose new targets for the copy.

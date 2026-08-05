@@ -1,0 +1,1 @@
+d911cf65-7273-4162-a766-7d4107699dc2|Avengers: Under Siege|(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.) I — Create two 2/1 black Villain creature tokens with menace. II — This Saga deals 2 damage to each non-Villain creature and each opponent. III — Create a Treasure token for each Villain you control.

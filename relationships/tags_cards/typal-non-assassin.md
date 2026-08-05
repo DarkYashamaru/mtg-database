@@ -1,0 +1,1 @@
+f5b6835b-7ebe-4855-8b3e-bffb74fd50ee|Elena, Turk Recruit|When Elena enters, return target non-Assassin historic card from your graveyard to your hand. (Artifacts, legendaries, and Sagas are historic.) Whenever you cast a historic spell, put a +1/+1 counter on Elena.

@@ -1,0 +1,10 @@
+cc5370e0-a0e6-4958-a6f2-093a3868b575|Curious Cadaver|Flying When you sacrifice a Clue, return this card from your graveyard to your hand.
+a3468804-26ad-4919-b030-a1906a7029e8|Evidence Examiner|At the beginning of combat on your turn, you may collect evidence 4. (Exile cards with total mana value 4 or greater from your graveyard.) Whenever you collect evidence, investigate. (Create a Clue token. It's an artifact with "{2}, Sacrifice this token: Draw a card.")
+af294df7-f8a0-4d52-88cb-086678463970|Gleaming Geardrake|Flying When this creature enters, investigate. (Create a Clue token. It's an artifact with "{2}, Sacrifice this token: Draw a card.") Whenever you sacrifice an artifact, put a +1/+1 counter on this creature.
+b563ae31-338e-4bcc-a05f-d7ed7c3fe46e|Kraul Whipcracker|Reach When this creature enters, destroy target token an opponent controls.
+9acb74a9-f372-43ad-a80d-4f8d52236eb8|Meddling Youths|Haste Whenever you attack with three or more creatures, investigate. (Create a Clue token. It's an artifact with "{2}, Sacrifice this token: Draw a card.")
+20750317-061b-4b65-9fc8-43477fcd7a21|Private Eye|Other Detectives you control get +1/+1. Whenever you draw your second card each turn, target Detective can't be blocked this turn.
+8c105948-4b8f-4615-b66a-2bbdb3f3d6dd|Rune-Brand Juggler|When this creature enters, suspect up to one target creature you control. (A suspected creature has menace and can't block.) {3}{B}{R}, Sacrifice a suspected creature: Target creature gets -5/-5 until end of turn.
+6b869c33-a77c-4eb7-9df9-9815d70f7444|Sumala Sentry|Reach Whenever a face-down permanent you control is turned face up, put a +1/+1 counter on it and a +1/+1 counter on this creature.
+19dc29a7-8ccc-4e54-829b-86cc102b082d|Tin Street Gossip|Vigilance {T}: Add {R}{G}. Spend this mana only to cast face-down spells or to turn creatures face up.
+6317d45a-fe02-4879-b515-bc5327ecb5ae|Wispdrinker Vampire|Flying Whenever another creature you control with power 2 or less enters, each opponent loses 1 life and you gain 1 life. {5}{W}{B}: Creatures you control with power 2 or less gain deathtouch and lifelink until end of turn.

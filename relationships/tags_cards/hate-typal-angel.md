@@ -1,0 +1,1 @@
+293560ec-accf-49c6-9bf4-6d37f56a4eb7|Halo Hunter|Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.) When this creature enters, destroy target Angel.

@@ -1,0 +1,7 @@
+30afacd9-4680-4aac-8c22-584f9418822d|Circuitous Route|Search your library for up to two basic land cards and/or Gate cards, put them onto the battlefield tapped, then shuffle.
+1eb4c001-1115-4b99-bbbf-703eb551a381|District Guide|When this creature enters, you may search your library for a basic land card or Gate card, reveal it, put it into your hand, then shuffle.
+13bad22a-6ba3-4197-8658-e47049a1cf1f|Explore the Underdark|Search your library for up to two basic land cards and/or Gate cards, put them onto the battlefield tapped, then shuffle. You take the initiative.
+0f539127-535f-4e0d-abaa-e884521098d2|Gatecreeper Vine|Defender When this creature enters, you may search your library for a basic land card or a Gate card, reveal it, put it into your hand, then shuffle.
+49479778-c4c0-43ba-a7b7-45f00d067462|Maze's End|This land enters tapped. {T}: Add {C}. {3}, {T}, Return this land to its owner's hand: Search your library for a Gate card, put it onto the battlefield, then shuffle. If you control ten or more Gates with different names, you win the game.
+ba7a46f1-c2a5-42d3-93eb-4dcea7186e5e|Navigation Orb|{2}, {T}, Sacrifice this artifact: Search your library for up to two basic land cards and/or Gate cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.
+f38e43b6-9a8c-4f6a-bd1c-d5c4913a28a1|Open the Gates|Search your library for a basic land card or Gate card, reveal it, put it into your hand, then shuffle.

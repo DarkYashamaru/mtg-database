@@ -1,0 +1,1 @@
+abc04775-171d-41f3-83ea-4b4eb72723d5|Mech Hangar|{T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast a Pilot or Vehicle spell. {3}, {T}: Target Vehicle becomes an artifact creature until end of turn.

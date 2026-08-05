@@ -1,0 +1,1 @@
+f9275c99-0616-44b3-a19e-98c683e87ad3|Barbed Foliage|Whenever a creature attacks you, it loses flanking until end of turn. Whenever a creature without flying attacks you, this enchantment deals 1 damage to it.

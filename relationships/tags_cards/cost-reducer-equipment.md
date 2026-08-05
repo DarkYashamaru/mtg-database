@@ -1,0 +1,6 @@
+644c785d-3061-44bc-9f78-bc939c565bf4|Bladegraft Aspirant|Menace Equipment spells you cast cost {1} less to cast. Activated abilities of Equipment you control that target this creature cost {1} less to activate.
+c022b5df-1d85-44c0-94a1-d01b345b845b|Bureau Headmaster|Equipment spells you cast cost {1} less to cast. Equip abilities you activate cost {1} less to activate.
+d3bdfb25-dfb2-4df4-b502-ef0909a39f86|Cid, Freeflier Pilot|Equipment and Vehicle spells you cast cost {1} less to cast. Jump — During your turn, Cid has flying. {2}, {T}: Return target Equipment or Vehicle card from your graveyard to your hand.
+4b6377da-83e7-4519-9582-16a9c16b8faa|Danitha Capashen, Paragon|First strike, vigilance, lifelink Aura and Equipment spells you cast cost {1} less to cast.
+9e0461e7-ccc4-413b-be80-83311be46861|Golden-Tail Trainer|Aura and Equipment spells you cast cost {X} less to cast, where X is this creature's power. Whenever this creature attacks, other modified creatures you control get +X/+X until end of turn, where X is this creature's power. (Equipment, Auras you control, and counters are modifications.)
+90b4d288-e950-4182-af62-516549a8712c|Sokka, Swordmaster|Vigilance Equipment spells you cast cost {1} less to cast for each Ally you control. At the beginning of combat on your turn, attach up to one target Equipment you control to Sokka.

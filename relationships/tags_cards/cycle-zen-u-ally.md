@@ -1,0 +1,5 @@
+5e2c1e0e-0a10-416a-9b50-96ee0cbbc24e|Hagra Diabolist|Whenever this creature or another Ally you control enters, you may have target player lose life equal to the number of Allies you control.
+133f5d30-d883-493e-93a1-cf9583db460b|Kazandu Blademaster|First strike, vigilance Whenever this creature or another Ally you control enters, you may put a +1/+1 counter on this creature.
+1d6925f3-d132-4fa1-bde0-82d0128c319f|Murasa Pyromancer|Whenever this creature or another Ally you control enters, you may have this creature deal damage to target creature equal to the number of Allies you control.
+877c6bb4-487c-4eea-b4af-f28fe1515fb6|Seascape Aerialist|Whenever this creature or another Ally you control enters, you may have Ally creatures you control gain flying until end of turn.
+5ef498fa-31d5-4eca-873d-6b2b1f7f9a3c|Tajuru Archer|Whenever this creature or another Ally you control enters, you may have this creature deal damage to target creature with flying equal to the number of Allies you control.

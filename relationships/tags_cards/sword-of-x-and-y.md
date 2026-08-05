@@ -1,0 +1,1 @@
+b3a80545-9a8a-46b2-9d8c-b0d66fb68a5d|Sword of Wealth and Power|Equipped creature gets +2/+2 and has protection from instants and from sorceries. Whenever equipped creature deals combat damage to a player, create a Treasure token. When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy. Equip {2}

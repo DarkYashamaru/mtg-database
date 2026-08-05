@@ -1,0 +1,2 @@
+0413e0e4-c8f8-44c3-a749-c799766bc8cd|Drill Too Deep|Choose one — • Put five charge counters on target Spacecraft or Planet you control. • Destroy target artifact.
+16156274-8dc0-439c-94c4-e8c89bbb5687|Loading Zone|If one or more counters would be put on a creature, Spacecraft, or Planet you control, twice that many of each of those kinds of counters are put on it instead. Warp {G} (You may cast this card from your hand for its warp cost. Exile this enchantment at the beginning of the next end step, then you may cast it from exile on a later turn.)

@@ -1,0 +1,5 @@
+35ab189a-adc8-48d6-82d2-53eb56a4d5e4|Dralnu, Lich Lord|If damage would be dealt to Dralnu, sacrifice that many permanents instead. {T}: Target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost. (You may cast that card from your graveyard for its flashback cost. Then exile it.)
+eb933723-b879-44c8-bbc8-d8c84ce5ab12|Ith, High Arcanist|Vigilance {T}: Untap target attacking creature. Prevent all combat damage that would be dealt to and dealt by that creature this turn. Suspend 4—{W}{U}
+c7b72d38-0aa0-4e17-9dd5-9276d7cb21ec|Kaervek the Merciless|Whenever an opponent casts a spell, Kaervek deals damage equal to that spell's mana value to any target.
+84ba3e2c-ea96-470b-92c6-b937dc87549b|Saffi Eriksdotter|Sacrifice Saffi Eriksdotter: When target creature is put into your graveyard this turn, return that card to the battlefield.
+5f7f553d-ec94-49e5-ba17-68126a94cdbd|Stonebrow, Krosan Hero|Trample Whenever a creature you control with trample attacks, it gets +2/+2 until end of turn.

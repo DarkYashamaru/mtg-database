@@ -1,0 +1,4 @@
+4c5a2443-a038-44d3-83a4-5e9a6db7b1a7|Frost Titan|Whenever this creature becomes the target of a spell or ability an opponent controls, counter that spell or ability unless its controller pays {2}. Whenever this creature enters or attacks, tap target permanent. It doesn't untap during its controller's next untap step.
+f3abd4d1-a975-4e85-8684-aa0fce029670|Grave Titan|Deathtouch Whenever this creature enters or attacks, create two 2/2 black Zombie creature tokens.
+0ce47c8b-1e1f-463f-94f0-35ca00be89e6|Inferno Titan|{R}: This creature gets +1/+0 until end of turn. Whenever this creature enters or attacks, it deals 3 damage divided as you choose among one, two, or three targets.
+b2e950fb-cb7e-40a0-a311-5bbdd0477b29|Sun Titan|Vigilance Whenever this creature enters or attacks, you may return target permanent card with mana value 3 or less from your graveyard to the battlefield.

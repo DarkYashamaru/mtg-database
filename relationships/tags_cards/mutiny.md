@@ -1,0 +1,8 @@
+fc401d42-80fa-4a17-937a-c230e9317543|Blood Feud|Target creature fights another target creature. (Each deals damage equal to its power to the other.)
+96e081d2-ec72-41fc-ad81-2e31ab823ae0|Breaking of the Fellowship|Target creature an opponent controls deals damage equal to its power to another target creature that player controls. The Ring tempts you.
+198c05ca-fb2d-4f15-a28f-1dad36466a4f|Clash of Titans|Target creature fights another target creature. (Each deals damage equal to its power to the other.)
+711c10cb-7a85-417d-be24-79d4e4a89993|Deadshot|Tap target creature. It deals damage equal to its power to another target creature.
+717266b6-2bbc-4a04-8f30-e3eaf0283acd|Dissension in the Ranks|Target blocking creature fights another target blocking creature.
+647b4cb4-569d-4938-b56c-31a70e68ee41|Mutiny|Target creature an opponent controls deals damage equal to its power to another target creature that player controls.
+4ade4e30-4008-4931-b88e-605776a96b58|Rivals' Duel|Choose two target creatures that share no creature types. Those creatures fight each other. (Each deals damage equal to its power to the other.)
+ef7fce1b-0d95-4f92-a8ad-09d9756fa0e4|The Curse of Fenric|(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.) I — For each player, destroy up to one target creature that player controls. For each creature destroyed this way, its controller creates a 3/3 green Mutant creature token with deathtouch. II — Target nontoken creature becomes a 6/6 legendary Horror creature named Fenric and loses all abilities. III — Target Mutant fights another target creature named Fenric.

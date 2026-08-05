@@ -1,0 +1,5 @@
+8e953251-aa5c-4aa3-8e69-1ff1f609f3ff|General's Enforcer|Legendary Humans you control have indestructible. {2}{W}{B}: Exile target card from a graveyard. If it was a creature card, create a 1/1 white Human Soldier creature token.
+de83b309-ac31-4a57-95e6-ccd3659e6c1f|Parcelbeast|Mutate {G}{U} (If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities from under it.) {1}, {T}: Look at the top card of your library. If it's a land card, you may put it onto the battlefield. If you don't put the card onto the battlefield, put it into your hand.
+620a2037-8bf5-48e0-af94-f4f7d3650c60|Savai Thundermane|Whenever you cycle a card, you may pay {2}. When you do, this creature deals 2 damage to target creature and you gain 2 life.
+39b51f62-8421-42d1-86d3-74fd6e6f31a2|Skull Prophet|{T}: Add {B} or {G}. {T}: Mill two cards. (Put the top two cards of your library into your graveyard.)
+a9d8ab76-70a4-475e-b87e-4737c090553a|Sprite Dragon|Flying, haste Whenever you cast a noncreature spell, put a +1/+1 counter on this creature.

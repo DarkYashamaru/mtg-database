@@ -1,0 +1,3 @@
+995e2412-3f69-4aaf-a5d6-ae0ecbb95061|Apocalypse Chime|{2}, {T}, Sacrifice this artifact: Destroy all nontoken permanents with a name originally printed in the Homelands expansion. They can't be regenerated.
+a83f25e3-4d84-4c9b-ab12-19b8d326e459|City in a Bottle|Whenever one or more other nontoken permanents with a name originally printed in the Arabian Nights expansion are on the battlefield, their controllers sacrifice them. Players can't cast spells or play lands with a name originally printed in the Arabian Nights expansion.
+95197f8f-c24e-4d13-a106-7186b3cc59e0|Golgothian Sylex|{1}, {T}: Each nontoken permanent with a name originally printed in the Antiquities expansion is sacrificed by its controller.

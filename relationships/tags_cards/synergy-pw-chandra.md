@@ -1,0 +1,6 @@
+e75bec5c-538d-44ce-a6c7-85580d04fac8|Chandra's Embercat|{T}: Add {R}. Spend this mana only to cast an Elemental spell or a Chandra planeswalker spell.
+d8c95a86-2f05-44f9-8ed7-b1798eaed42f|Chandra's Regulator|Whenever you activate a loyalty ability of a Chandra planeswalker, you may pay {1}. If you do, copy that ability. You may choose new targets for the copy. {1}, {T}, Discard a Mountain card or a red card: Draw a card.
+c0cc881c-b63b-44dd-8157-67680c65fc3d|Chandra's Triumph|Chandra's Triumph deals 3 damage to target creature or planeswalker an opponent controls. Chandra's Triumph deals 5 damage instead if you control a Chandra planeswalker.
+7af53dd7-3994-48f1-9ae1-44380ac56ee0|Karplusan Hound|Whenever this creature attacks, if you control a Chandra planeswalker, this creature deals 2 damage to any target.
+0a865453-ddc8-4403-8f1e-5752e3582458|Keral Keep Disciples|Whenever you activate a loyalty ability of a Chandra planeswalker, this creature deals 1 damage to each opponent.
+d4b0a6e6-937d-428a-a469-bc09c30ac276|Renegade Firebrand|As long as you control a Chandra planeswalker, this creature gets +1/+0 and has first strike. (It deals combat damage before creatures without first strike.)

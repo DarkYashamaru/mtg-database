@@ -1,0 +1,1 @@
+18ca77d9-4740-4be4-913a-e21c9ed9e43f|Hollow Warrior|This creature can't attack or block unless you tap an untapped creature you control not declared as an attacking or blocking creature this combat. (This cost is paid as attackers or blockers are declared.)

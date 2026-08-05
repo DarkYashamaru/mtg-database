@@ -1,0 +1,10 @@
+465cda20-c8f3-4a7c-a250-875877bce21d|Abyssal Gorestalker|When this creature enters, each player sacrifices two creatures of their choice.
+d8ad23a1-0b43-48ea-9fbe-d89b29194509|Accursed Marauder|When this creature enters, each player sacrifices a nontoken creature of their choice.
+14c3692d-16a9-4ef0-98cd-60d15e4aa31f|Benalish Sleeper|Kicker {B} (You may pay an additional {B} as you cast this spell.) When this creature enters, if it was kicked, each player sacrifices a creature of their choice.
+b73bbdcc-e872-4da5-8d80-0fc9e52418bf|Chain Devil|Animate Chains — When this creature enters, each player sacrifices a nontoken creature of their choice.
+d5a33091-a348-4b13-8dbd-79ab0ad99afe|Demon's Disciple|When this creature enters, each player sacrifices a creature or planeswalker of their choice.
+4b1bf05e-753e-4350-a913-894cf3cecc0c|Fleshbag Marauder|When this creature enters, each player sacrifices a creature of their choice.
+86d2a45a-e452-4241-8ab4-28a2bb808ffa|Gaius van Baelsar|When Gaius van Baelsar enters, choose one — • Each player sacrifices a creature token of their choice. • Each player sacrifices a nontoken creature of their choice. • Each player sacrifices an enchantment of their choice.
+45ef5ea9-70a6-4999-8778-6a11cb97d28e|Gravelighter|Flying When this creature enters, draw a card if a creature died this turn. Otherwise, each player sacrifices a creature of their choice.
+fd03f20a-d365-48fb-8b2a-ad4b502a0045|Lokhust Heavy Destroyer|Flying Enmitic Exterminator — When this creature enters, each player sacrifices a creature of their choice. Unearth {5}{B}{B}{B} ({5}{B}{B}{B}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)
+3918eaa7-5a34-4d6a-be93-a95e733d041b|Merchant of Venom|Menace When this creature enters, each player sacrifices a creature of their choice. Whenever a player sacrifices a permanent, put a +1/+1 counter on this creature.

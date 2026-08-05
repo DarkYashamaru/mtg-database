@@ -1,0 +1,1 @@
+6dff1d15-604f-4eea-9b7a-0c0ba6afbbac|Meticulous Excavation|{2}{W}: Return target permanent you control to its owner's hand. If it has unearth, instead exile it, then return that card to its owner's hand. Activate only during your turn.

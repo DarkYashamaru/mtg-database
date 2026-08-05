@@ -1,0 +1,3 @@
+fab8c985-d7a9-41eb-9884-01128b97af5c|Flaming Gambit|Flaming Gambit deals X damage to target player or planeswalker. That player or that planeswalker's controller may choose a creature they control and have Flaming Gambit deal that damage to it instead. Flashback {X}{R}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+c6ca1f21-3aaf-4a5e-938e-7daed67a9d6e|Longhorn Firebeast|When this creature enters, any opponent may have it deal 5 damage to them. If a player does, sacrifice this creature.
+b52788ff-9956-400a-bf26-17e58f673af0|Skullscorch|Target player discards two cards at random unless that player has Skullscorch deal 4 damage to them.

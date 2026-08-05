@@ -1,0 +1,3 @@
+0f071f64-b69b-4fa0-999c-5028429e3cfb|Bridge from Below|Whenever a nontoken creature is put into your graveyard from the battlefield, if this card is in your graveyard, create a 2/2 black Zombie creature token. When a creature is put into an opponent's graveyard from the battlefield, if this card is in your graveyard, exile this card.
+57f15861-82cf-4faf-827c-9bc7f4844d2a|Runaway Boulder|Flash When this artifact enters, it deals 6 damage to target creature an opponent controls. Cycling {2} ({2}, Discard this card: Draw a card.)
+3a07e22c-71cd-4723-b07e-0ff02009a878|Steel Wrecking Ball|When this artifact enters, it deals 5 damage to target creature. {1}{R}, Discard this card: Destroy target artifact.

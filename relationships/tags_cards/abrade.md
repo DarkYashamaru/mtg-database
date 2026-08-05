@@ -1,0 +1,10 @@
+f9db72dc-9a5b-48a4-a86e-7464d9a2166a|Abrade|Choose one — • Abrade deals 3 damage to target creature. • Destroy target artifact.
+7b89b7d2-c724-4d5d-9f0b-7d3302ad1168|Agate Assault|Choose one — • Agate Assault deals 4 damage to target creature. If that creature would die this turn, exile it instead. • Exile target artifact.
+fe7bf8ca-88ae-4c6d-8d71-ef170a87c0d0|Brotherhood's End|Choose one — • Brotherhood's End deals 3 damage to each creature and each planeswalker. • Destroy all artifacts with mana value 3 or less.
+b24ed296-e17d-4e36-8a86-a370868b0136|Cast into the Fire|Choose one — • Cast into the Fire deals 1 damage to each of up to two target creatures. • Exile target artifact.
+b23dc81d-01bb-4bf0-9932-5d32a6b22cf7|Explosive Derailment|Spree (Choose one or more additional costs.) + {2} — Explosive Derailment deals 4 damage to target creature. + {2} — Destroy target artifact.
+3c22e031-4804-4c31-bd3c-c3f29d456b34|Fiery Confluence|Choose three. You may choose the same mode more than once. • Fiery Confluence deals 1 damage to each creature. • Fiery Confluence deals 2 damage to each opponent. • Destroy target artifact.
+a8cd3a52-1056-4664-ae55-eb0ba3a43a15|Fiery Intervention|Choose one — • Fiery Intervention deals 5 damage to target creature. • Destroy target artifact.
+ecd49d85-9c8c-4cc9-9a83-072ecd433677|Flame of Anor|Choose one. If you control a Wizard as you cast this spell, you may choose two instead. • Target player draws two cards. • Destroy target artifact. • Flame of Anor deals 5 damage to target creature.
+77e5e7e3-b97b-4953-9df4-1aee509fbf2a|Giantfall|Choose one — • Target creature you control deals damage equal to its power to target creature an opponent controls. • Destroy target artifact.
+5f97d49c-d0fa-4776-9455-93c1a172cd83|HULK SMASH!|Teamwork 4 (As an additional cost to cast this spell, you may tap any number of creatures you control with total power 4 or more.) Choose one. If this spell was cast using teamwork, choose both instead. • Destroy target noncreature artifact. • Target creature you control deals damage equal to its power to target creature an opponent controls.

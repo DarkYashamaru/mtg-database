@@ -1,0 +1,10 @@
+4a782bf9-4051-4613-8852-33b0d85a0edd|Ajani's Welcome|Whenever a creature you control enters, you gain 1 life.
+e66b12ff-45da-46dc-9148-bd8ea9b7fde0|Angelic Chorus|Whenever a creature you control enters, you gain life equal to its toughness.
+4e0b9273-6614-41a8-9738-959349c0717b|Anointer Priest|Whenever a creature token you control enters, you gain 1 life. Embalm {3}{W} ({3}{W}, Exile this card from your graveyard: Create a token that's a copy of it, except it's a white Zombie Human Cleric with no mana cost. Embalm only as a sorcery.)
+7b238254-51b4-4e68-a8c6-93ab1180012e|Answered Prayers|Whenever a creature you control enters, you gain 1 life. If this enchantment isn't a creature, it becomes a 3/3 Angel creature with flying in addition to its other types until end of turn.
+bdb769b5-c861-4ec1-ad6b-e2a56ca05fd1|Aunt May|Whenever another creature you control enters, you gain 1 life. If it's a Spider, put a +1/+1 counter on it.
+633fd158-19d0-4d97-a076-2ad897bbed19|Auriok Champion|Protection from black and from red Whenever another creature enters, you may gain 1 life.
+55f3c721-e13a-406e-bc8e-d6cdc91ac477|Authority of the Consuls|Creatures your opponents control enter tapped. Whenever a creature an opponent controls enters, you gain 1 life.
+0109432d-5a2a-456f-ad39-b75cb4c73420|Bogwater Lumaret|Whenever this creature or another creature you control enters, you gain 1 life.
+0d8730b5-f7ba-48b0-928d-d8b7685347d3|Case of the Uneaten Feast|Whenever a creature you control enters, you gain 1 life. To solve — You've gained 5 or more life this turn. (If unsolved, solve at the beginning of your end step.) Solved — Sacrifice this Case: Creature cards in your graveyard gain "You may cast this card from your graveyard" until end of turn.
+9d3c7c96-056f-408e-a834-fa45a430d3d4|Daxos, Blessed by the Sun|Daxos's toughness is equal to your devotion to white. (Each {W} in the mana costs of permanents you control counts toward your devotion to white.) Whenever another creature you control enters or dies, you gain 1 life.

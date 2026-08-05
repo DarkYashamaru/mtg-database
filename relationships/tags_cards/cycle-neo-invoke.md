@@ -1,0 +1,5 @@
+5b3f041e-ad4a-47ea-bdc4-1be2353f2e18|Invoke Calamity|You may cast up to two instant and/or sorcery spells with total mana value 6 or less from your graveyard and/or hand without paying their mana costs. If those spells would be put into your graveyard, exile them instead. Exile Invoke Calamity.
+f9ee4c80-20fb-4322-be02-1c78d37d7a99|Invoke Despair|Target opponent sacrifices a creature of their choice. If they can't, they lose 2 life and you draw a card. Then repeat this process for an enchantment and a planeswalker.
+3e5cd60f-8fef-4152-a957-0a803997b3da|Invoke Justice|Return target permanent card from your graveyard to the battlefield, then distribute four +1/+1 counters among any number of creatures and/or Vehicles target player controls.
+868b3c65-d753-4f32-b6ca-31e58782ea92|Invoke the Ancients|Create two 4/5 green Spirit creature tokens. For each of them, put your choice of a vigilance counter, a reach counter, or a trample counter on it.
+721c3255-953c-49cd-a5dd-852c3d09eae4|Invoke the Winds|Gain control of target artifact or creature. Untap it.

@@ -1,0 +1,5 @@
+d99e8f94-4a8a-42a1-b5d0-2b08cacb8676|Fleetfoot Panther|Flash When this creature enters, return a green or white creature you control to its owner's hand.
+1d6f3934-d8f1-4758-b87a-8df8d7dc492c|Marsh Crocodile|When this creature enters, return a blue or black creature you control to its owner's hand. When this creature enters, each player discards a card.
+bbcd2045-cf51-4346-a561-ebae8ffdc181|Razing Snidd|When this creature enters, return a black or red creature you control to its owner's hand. When this creature enters, each player sacrifices a land of their choice.
+b917e472-2550-4381-b756-45487c2c187a|Sawtooth Loon|Flying When this creature enters, return a white or blue creature you control to its owner's hand. When this creature enters, draw two cards, then put two cards from your hand on the bottom of your library.
+84c912e8-6a92-47f7-88b6-e777bd0bb424|Sparkcaster|When this creature enters, return a red or green creature you control to its owner's hand. When this creature enters, it deals 1 damage to target player or planeswalker.

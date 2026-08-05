@@ -1,0 +1,1 @@
+12fa17b2-158e-4d53-897f-81111f912b00|Market Gnome|When this creature dies, you gain 1 life and draw a card. When this creature is exiled from the battlefield while you're activating a craft ability, you gain 1 life and draw a card.

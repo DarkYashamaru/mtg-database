@@ -1,0 +1,3 @@
+65b61373-835a-4b22-90d1-d019446e98f7|Jetting Glasskite|Flying Whenever this creature becomes the target of a spell or ability for the first time each turn, counter that spell or ability.
+60808c8f-5257-451b-a9b6-389ba51598d5|Kira, Great Glass-Spinner|Flying Creatures you control have "Whenever this creature becomes the target of a spell or ability for the first time each turn, counter that spell or ability."
+0a661f7a-5d56-4d73-bab7-22bfc5cef22e|Shimmering Glasskite|Flying Whenever this creature becomes the target of a spell or ability for the first time each turn, counter that spell or ability.

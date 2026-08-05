@@ -1,0 +1,1 @@
+ed202f1d-3511-45f4-bfbc-e6b76d4311d1|The Valeyard|If an opponent would face a villainous choice, they face that choice an additional time. (They can make the same or different choices.) While voting, you may vote an additional time.

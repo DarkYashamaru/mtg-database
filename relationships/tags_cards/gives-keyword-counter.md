@@ -1,0 +1,9 @@
+2844d274-cb60-46c1-a73b-e763c633e496|Alchemist's Assistant|Lifelink Renew — {1}{B}, Exile this card from your graveyard: Put a lifelink counter on target creature. Activate only as a sorcery.
+4957c166-9734-4ba0-a4b9-2a248c0ff38f|Avenging Huntbonder|Double strike Whenever this creature attacks, put a double strike counter on another target attacking creature.
+d6a03a52-7e85-46de-920c-93a3f6479c4c|Avian Oddity|Flying Cycling {2}{U} ({2}{U}, Discard this card: Draw a card.) When you cycle this card, put a flying counter on target creature you control.
+8b50de69-121a-48c4-bd7c-c8858f35f6ed|Blood Curdle|Destroy target creature. Put a menace counter on a creature you control. (It can't be blocked except by two or more creatures.)
+cb3072c7-393c-43d9-a2c9-f918bd0fd7be|Double Jump // Flying Kick|Put a flying counter on target creature you control. Until end of turn, it has base power and toughness 5/5. Fuse (You may cast one or both halves of this card from your hand.) // Target creature you control deals damage equal to its power to target creature an opponent controls. Fuse (You may cast one or both halves of this card from your hand.)
+d8b770c2-0406-4a2d-95d9-e14bb5d3bdc6|Duskfang Mentor|When this creature enters, put a lifelink counter on target non-Human creature you control. {1}{B}, {T}: Put a +1/+1 counter on each creature you control with lifelink.
+500a17a0-8332-414c-9c3a-7157a7800887|Keensight Mentor|When this creature enters, put a vigilance counter on target non-Human creature you control. {1}{W}, {T}: Put a +1/+1 counter on each creature you control with vigilance.
+38c83332-2d21-450c-ae97-34109b565f59|Tyrite Sanctum|{T}: Add {C}. {2}, {T}: Target legendary creature becomes a God in addition to its other types. Put a +1/+1 counter on it. {4}, {T}, Sacrifice this land: Put an indestructible counter on target God.
+dfa8415d-2474-46ca-b92f-6e12e3268cf5|Unexpected Fangs|Put a +1/+1 counter and a lifelink counter on target creature.

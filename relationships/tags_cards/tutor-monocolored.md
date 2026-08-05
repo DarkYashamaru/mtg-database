@@ -1,0 +1,1 @@
+0eecdfb3-3b05-4051-a660-060ff6df80ef|Emergent Ultimatum|Search your library for up to three monocolored cards with different names and exile them. An opponent chooses one of those cards. Shuffle that card into your library. You may cast the other cards without paying their mana costs. Exile Emergent Ultimatum.

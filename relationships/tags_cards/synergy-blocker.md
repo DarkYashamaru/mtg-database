@@ -1,0 +1,10 @@
+92b617f9-6e6b-42a0-9c45-6ff5f6193051|Aang's Defense|Target blocking creature you control gets +2/+2 until end of turn. Draw a card.
+25edb501-11b5-4617-8a65-2eb4869cccd5|Act of Heroism|Untap target creature. It gets +2/+2 until end of turn and can block an additional creature this turn.
+97e7778f-971c-4425-8f6d-f4ff3fae000f|Aether Web|Flash (You may cast this spell any time you could cast an instant.) Enchant creature Enchanted creature gets +1/+1, has reach, and can block creatures with shadow as though they didn't have shadow. (Creatures with reach can block creatures with flying.)
+dd0cac88-0a78-408f-8eb0-080f79150180|Aethertow|Put target attacking or blocking creature on top of its owner's library. Conspire (As you cast this spell, you may tap two untapped creatures you control that share a color with it. When you do, copy it and you may choose a new target for the copy.)
+3d169bb1-e91b-46d8-9280-797192926314|Aliban's Tower|Target blocking creature gets +3/+1 until end of turn.
+05828c1e-9185-4b70-94fe-753eacdf45a1|Ambush|Blocking creatures gain first strike until end of turn.
+f7f76abc-8656-4e97-9b7f-7f89ca3e6d93|Angelic Page|Flying {T}: Target attacking or blocking creature gets +1/+1 until end of turn.
+ebc9ff52-c914-4c48-9d35-0e4cd07741cb|Ashiok, Nightmare Muse|+1: Create a 2/3 blue and black Nightmare creature token with "Whenever this token attacks or blocks, each opponent exiles the top two cards of their library." −3: Return target nonland permanent to its owner's hand, then that player exiles a card from their hand. −7: You may cast up to three spells from among face-up cards your opponents own from exile without paying their mana costs.
+e7592863-4aee-47b3-9abf-4b863ab0b6ec|Azorius Charm|Choose one — • Creatures you control gain lifelink until end of turn. • Draw a card. • Put target attacking or blocking creature on top of its owner's library.
+867c5592-50d5-420c-ac71-50014bc390eb|Barrow-Blade|Equipped creature gets +1/+1. Whenever equipped creature blocks or becomes blocked by a creature, that creature loses all abilities until end of turn. Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)

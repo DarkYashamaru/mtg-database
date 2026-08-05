@@ -1,0 +1,10 @@
+46752289-01e8-4839-8889-49db1efd2e1a|Armored Guardian|{1}{W}{W}: Target creature you control gains protection from the color of your choice until end of turn. {1}{U}{U}: This creature gains shroud until end of turn. (It can't be the target of spells or abilities.)
+e6527ba3-3293-4a29-a2f9-7a81f8f27b7c|Fountain Watch|Artifacts and enchantments you control have shroud. (They can't be the targets of spells or abilities.)
+34c3aebe-a224-426a-ae06-f3145193313e|Guardian Beast|As long as this creature is untapped, noncreature artifacts you control can't be enchanted, they have indestructible, and other players can't gain control of them. This effect doesn't remove Auras already attached to those artifacts.
+d72b69aa-fb61-441e-9b62-4534d7a32a69|Harbor Guardian|Reach (This creature can block creatures with flying.) Whenever this creature attacks, defending player may draw a card.
+c426c2b0-82fa-4ea0-bbdb-3a40e60c495e|Hydromorph Guardian|{U}, Sacrifice this creature: Counter target spell that targets a creature you control.
+124fea1b-c0e9-4e56-b026-82dddee0d36e|Hydromorph Gull|Flying {U}, Sacrifice this creature: Counter target spell that targets a creature you control.
+78171447-1bc8-4588-b427-5b82701324c5|Ivory Guardians|Protection from red Creatures named Ivory Guardians get +1/+1 as long as an opponent controls a nontoken red permanent.
+0d9a31f5-20d0-4266-95ec-38b4fa96b8aa|Luminous Guardian|{W}: This creature gets +0/+1 until end of turn. {2}: This creature can block an additional creature this turn.
+87d734bc-4e4d-4013-91ed-c6bf1dde824e|Spectral Guardian|As long as this creature is untapped, noncreature artifacts have shroud. (They can't be the targets of spells or abilities.)
+683c81ae-38cd-4db1-b7e7-a09d34b6431e|Sustaining Spirit|Cumulative upkeep {1}{W} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) Damage that would reduce your life total to less than 1 reduces it to 1 instead.

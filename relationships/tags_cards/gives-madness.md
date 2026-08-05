@@ -1,0 +1,1 @@
+26aba6fa-830f-4a7f-8618-488d8e00215a|Falkenrath Gorger|Each Vampire creature card you own that isn't on the battlefield has madness. The madness cost is equal to its mana cost. (If you discard a card with madness, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)

@@ -1,0 +1,5 @@
+f5f330a5-14a0-4bfe-ba46-4616692b7bd3|Blinding Souleater|{W/P}, {T}: Tap target creature. ({W/P} can be paid with either {W} or 2 life.)
+fb260f5a-b937-435b-ab18-dcc57d6845df|Immolating Souleater|{R/P}: This creature gets +1/+0 until end of turn. ({R/P} can be paid with either {R} or 2 life.)
+f81c0ddc-cd3c-42c0-a7d9-0057b69a5df1|Insatiable Souleater|{G/P}: This creature gains trample until end of turn. ({G/P} can be paid with either {G} or 2 life.)
+c4779671-2a01-4eef-847c-ede36091fc4a|Pestilent Souleater|{B/P}: This creature gains infect until end of turn. ({B/P} can be paid with either {B} or 2 life. A creature with infect deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)
+4d19b4d1-49d1-44e9-a453-dcb08b5fa6e4|Trespassing Souleater|{U/P}: This creature can't be blocked this turn. ({U/P} can be paid with either {U} or 2 life.)

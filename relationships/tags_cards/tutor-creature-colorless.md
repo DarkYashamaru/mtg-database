@@ -1,0 +1,3 @@
+cd3d79e9-c72e-4321-bca1-54505d51331a|Conduit of Ruin|When you cast this spell, you may search your library for a colorless creature card with mana value 7 or greater, reveal it, then shuffle and put that card on top. The first creature spell you cast each turn costs {2} less to cast.
+10d13ff6-c4d0-4753-8939-a8a90f0e92bb|Eye of Ugin|Colorless Eldrazi spells you cast cost {2} less to cast. {7}, {T}: Search your library for a colorless creature card, reveal it, put it into your hand, then shuffle.
+72cb5dcd-9b24-435c-921a-3766108374c4|Sanctum of Ugin|{T}: Add {C}. Whenever you cast a colorless spell with mana value 7 or greater, you may sacrifice this land. If you do, search your library for a colorless creature card, reveal it, put it into your hand, then shuffle.

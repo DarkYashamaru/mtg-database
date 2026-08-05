@@ -1,0 +1,3 @@
+b1298ce8-b318-4d5b-83f2-e274726dfca5|Crown of Empires|{3}, {T}: Tap target creature. Gain control of that creature instead if you control artifacts named Scepter of Empires and Throne of Empires.
+377d9245-9a70-4e35-9ed1-308565fc1acc|Scepter of Empires|{T}: This artifact deals 1 damage to target player or planeswalker. It deals 3 damage instead if you control artifacts named Crown of Empires and Throne of Empires.
+12afe8e6-eaf0-45c9-8086-4c658db7cb7e|Throne of Empires|{1}, {T}: Create a 1/1 white Soldier creature token. Create five of those tokens instead if you control artifacts named Crown of Empires and Scepter of Empires.

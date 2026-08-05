@@ -1,0 +1,7 @@
+949eb86a-94b2-4c9f-8040-f4ad8e1a7e33|Aphetto Runecaster|Whenever a permanent is turned face up, you may draw a card.
+a86587ea-14ec-45db-8bac-10b6b9eaeb25|Ixidron|As this creature enters, turn all other nontoken creatures face down. (They're 2/2 creatures.) Ixidron's power and toughness are each equal to the number of face-down creatures on the battlefield.
+73f44500-fe83-40fa-b6f2-ed5673d0edcc|Karlov Watchdog|Vigilance Permanents your opponents control can't be turned face up during your turn. Whenever you attack with three or more creatures, creatures you control get +1/+1 until end of turn.
+7bca544e-08d8-4e83-aa30-c7201a649a66|Nosy Goblin|{T}, Sacrifice this creature: Destroy target face-down creature.
+0361b9b7-9097-4aae-aa06-c63a5fb47a76|Pompous Gadabout|During your turn, this creature has hexproof. This creature can't be blocked by creatures that don't have a name.
+dfe51046-12db-4be8-a4b4-ffa6359cac15|Primal Whisperer|This creature gets +2/+2 for each face-down creature on the battlefield. Morph {3}{G} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)
+3d240726-5214-4493-8537-29bf65db1e4b|Unable to Scream|Enchant creature Enchanted creature loses all abilities and is a Toy artifact creature with base power and toughness 0/2 in addition to its other types. As long as enchanted creature is face down, it can't be turned face up.

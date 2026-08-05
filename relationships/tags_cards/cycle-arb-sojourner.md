@@ -1,0 +1,5 @@
+67ceffa4-2fdb-499c-88cd-49fb5eb9be59|Bant Sojourners|When you cycle this card and when this creature dies, you may create a 1/1 white Soldier creature token. Cycling {2}{W} ({2}{W}, Discard this card: Draw a card.)
+0c59db70-9cb4-4edf-ba6e-12ffa7c06b7b|Esper Sojourners|When you cycle this card and when this creature dies, you may tap or untap target permanent. Cycling {2}{U} ({2}{U}, Discard this card: Draw a card.)
+21f507fd-6a26-455c-879a-f838e0aa2a43|Grixis Sojourners|When you cycle this card and when this creature dies, you may exile target card from a graveyard. Cycling {2}{B} ({2}{B}, Discard this card: Draw a card.)
+84a3ebc2-5c38-40ef-b5f4-62a92cbca493|Jund Sojourners|When you cycle this card and when this creature dies, you may have it deal 1 damage to any target. Cycling {2}{R} ({2}{R}, Discard this card: Draw a card.)
+703215df-dee2-4b82-9f32-256e1410543c|Naya Sojourners|When you cycle this card and when this creature dies, you may put a +1/+1 counter on target creature. Cycling {2}{G} ({2}{G}, Discard this card: Draw a card.)

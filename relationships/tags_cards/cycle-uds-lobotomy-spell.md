@@ -1,0 +1,5 @@
+782ff740-ff43-4c07-af0b-433cb9770661|Eradicate|Exile target nonblack creature. Search its controller's graveyard, hand, and library for all cards with the same name as that creature and exile them. Then that player shuffles.
+255131a2-616c-4c8d-a36a-14e5b5ab345e|Quash|Counter target instant or sorcery spell. Search its controller's graveyard, hand, and library for all cards with the same name as that spell and exile them. Then that player shuffles.
+f18622da-81f3-4854-a1bb-8d658751d8db|Scour|Exile target enchantment. Search its controller's graveyard, hand, and library for all cards with the same name as that enchantment and exile them. Then that player shuffles.
+131d2b70-959d-4814-b0c8-38031f141718|Sowing Salt|Exile target nonbasic land. Search its controller's graveyard, hand, and library for all cards with the same name as that land and exile them. Then that player shuffles.
+90f01e9f-68f1-4e41-97dc-8de990a91504|Splinter|Exile target artifact. Search its controller's graveyard, hand, and library for all cards with the same name as that artifact and exile them. Then that player shuffles.

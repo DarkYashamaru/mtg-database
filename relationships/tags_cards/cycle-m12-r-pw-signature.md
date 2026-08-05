@@ -1,0 +1,5 @@
+65ddd04c-7207-4f6c-ae1b-c5e02a520a51|Chandra's Phoenix|Flying Haste (This creature can attack and {T} as soon as it comes under your control.) Whenever an opponent is dealt damage by a red instant or sorcery spell you control or by a red planeswalker you control, return this card from your graveyard to your hand.
+b9da511e-a57f-43c2-aa97-902f3b4c55fb|Garruk's Horde|Trample Play with the top card of your library revealed. You may cast creature spells from the top of your library. (Do this only any time you could cast that creature spell. You still pay the spell's costs.)
+5ca79852-d90d-47b0-8427-4da90779e205|Gideon's Avenger|Whenever a creature an opponent controls becomes tapped, put a +1/+1 counter on this creature.
+b6c8ac69-daa7-4e2e-a1d9-439731a81870|Jace's Archivist|{U}, {T}: Each player discards their hand, then draws cards equal to the greatest number of cards a player discarded this way.
+75d9c036-4f0d-4b55-b0a4-096ca84748ca|Sorin's Vengeance|Sorin's Vengeance deals 10 damage to target player or planeswalker and you gain 10 life.

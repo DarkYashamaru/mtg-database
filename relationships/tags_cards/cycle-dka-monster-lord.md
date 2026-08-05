@@ -1,0 +1,4 @@
+70de24d9-c585-4bf6-ac2c-c5b4b7aa298c|Diregraf Captain|Deathtouch Other Zombie creatures you control get +1/+1. Whenever another Zombie you control dies, target opponent loses 1 life.
+c33604ac-636a-43ad-9efe-8d7b3a28bf81|Drogskol Captain|Flying Other Spirit creatures you control get +1/+1 and have hexproof. (They can't be the targets of spells or abilities your opponents control.)
+3c2445ee-84d5-47de-8b09-dbdc89ca2db7|Immerwolf|Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.) Each other creature you control that's a Wolf or a Werewolf gets +1/+1. Non-Human Werewolves you control can't transform.
+599c3fd6-3309-4b5d-adec-9c4062848ad5|Stromkirk Captain|First strike Other Vampire creatures you control get +1/+1 and have first strike.

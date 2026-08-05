@@ -1,0 +1,5 @@
+a9d58cad-c1c2-4bd2-80f2-da9ce60801df|Brilliant Ultimatum|Exile the top five cards of your library. An opponent separates those cards into two piles. You may play lands and cast spells from one of those piles. If you cast a spell this way, you cast it without paying its mana cost.
+5fbd39e9-8736-4722-bb9b-6a7da8e47c84|Clarion Ultimatum|Choose five permanents you control. For each of those permanents, you may search your library for a card with the same name as that permanent. Put those cards onto the battlefield tapped, then shuffle.
+01294ac9-1a06-4ee8-b3b1-db1f07c9d94e|Cruel Ultimatum|Target opponent sacrifices a creature of their choice, discards three cards, then loses 5 life. You return a creature card from your graveyard to your hand, draw three cards, then gain 5 life.
+0cd28580-d718-4d0b-96e3-a836c2911c27|Titanic Ultimatum|Until end of turn, creatures you control get +5/+5 and gain first strike, trample, and lifelink.
+a04cfcc5-7bb4-4352-ad8d-9d625585e656|Violent Ultimatum|Destroy three target permanents.

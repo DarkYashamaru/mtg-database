@@ -1,0 +1,5 @@
+3b7d4206-0d88-407b-ace5-d5d28881bf95|Abzan Ascendancy|When this enchantment enters, put a +1/+1 counter on each creature you control. Whenever a nontoken creature you control dies, create a 1/1 white Spirit creature token with flying.
+c3c802ba-dfbb-4f63-ae9a-e29c2e30013d|Jeskai Ascendancy|Whenever you cast a noncreature spell, creatures you control get +1/+1 until end of turn. Untap those creatures. Whenever you cast a noncreature spell, you may draw a card. If you do, discard a card.
+aa1de5ce-ddd4-4c1f-8c52-0311f4419e7b|Mardu Ascendancy|Whenever a nontoken creature you control attacks, create a 1/1 red Goblin creature token that's tapped and attacking. Sacrifice this enchantment: Creatures you control get +0/+3 until end of turn.
+06e92ab3-c781-4f32-9ada-09a388047067|Sultai Ascendancy|At the beginning of your upkeep, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)
+e68dc47c-692f-4420-9799-eee104017273|Temur Ascendancy|Creatures you control have haste. Whenever a creature you control with power 4 or greater enters, you may draw a card.

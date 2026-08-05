@@ -1,0 +1,10 @@
+31b4e85d-89fc-4712-8f05-7ec097b1d3b6|Acererak the Archlich|When Acererak enters, if you haven't completed Tomb of Annihilation, return Acererak to its owner's hand and venture into the dungeon. Whenever Acererak attacks, for each opponent, you create a 2/2 black Zombie creature token unless that player sacrifices a creature of their choice.
+0cd99210-8d34-4112-8e41-7e8c5d2a95b9|Aetherplasm|Whenever this creature blocks a creature, you may return this creature to its owner's hand. If you do, you may put a creature card from your hand onto the battlefield blocking that creature.
+53b2c8f2-db9a-4ab0-a4e8-17385b2fa3bd|Aethertide Whale|Flying When this creature enters, you get six {E} (energy counters). Pay {E}{E}{E}{E}: Return this creature to its owner's hand.
+0a69c3dd-52a3-4ef6-b53f-b0780e0dc5f8|Alrund, God of the Cosmos // Hakka, Whispering Raven|Alrund gets +1/+1 for each card in your hand and each foretold card you own in exile. At the beginning of your end step, choose a card type, then reveal the top two cards of your library. Put all cards of the chosen type revealed this way into your hand and the rest on the bottom of your library in any order. // Flying Whenever Hakka deals combat damage to a player, return it to its owner's hand, then scry 2.
+73a1552e-bbfa-445e-8306-b347354c0364|Amugaba|Flying {2}{U}, Discard a card: Return this creature to its owner's hand.
+da69fbf7-c894-41dd-85ec-217de23a362f|Ancestral Statue|When this creature enters, return a nonland permanent you control to its owner's hand.
+8a7183cc-161c-444d-a889-a17519c8061b|Arcanis the Omnipotent|{T}: Draw three cards. {2}{U}{U}: Return Arcanis to its owner's hand.
+a0a706b2-b237-4183-82fa-2140a23b89e3|Archwing Dragon|Flying, haste At the beginning of the end step, return this creature to its owner's hand.
+5ea46ccf-5e36-4889-bf64-00d4f327e9b2|Attunement|Return this enchantment to its owner's hand: Draw three cards, then discard four cards.
+0ef74c49-0825-4201-b23b-dc6c6bbadacb|Balshan Griffin|Flying {1}{U}, Discard a card: Return this creature to its owner's hand.

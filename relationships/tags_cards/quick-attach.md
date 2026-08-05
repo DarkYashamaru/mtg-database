@@ -1,0 +1,2 @@
+c9432e87-38f6-4889-8f07-ae7cd045e532|Gilgamesh, Master-at-Arms|Whenever Gilgamesh enters or attacks, look at the top six cards of your library. You may put any number of Equipment cards from among them onto the battlefield. Put the rest on the bottom of your library in a random order. When you put one or more Equipment onto the battlefield this way, you may attach one of them to a Samurai you control.
+857d94f7-113c-45a4-a88a-5d087347d57f|Leonin Shikari|You may activate equip abilities any time you could cast an instant.

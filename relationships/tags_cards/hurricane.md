@@ -1,0 +1,10 @@
+9277b680-a146-4d4f-9649-39cddafdb585|Arashi, the Sky Asunder|{X}{G}, {T}: Arashi deals X damage to target creature with flying. Channel — {X}{G}{G}, Discard this card: It deals X damage to each creature with flying.
+a151c45f-0b9e-41af-90b3-fafa12e3bbce|Canopy Surge|Kicker {2} (You may pay an additional {2} as you cast this spell.) Canopy Surge deals 1 damage to each creature with flying and each player. If this spell was kicked, it deals 4 damage to each creature with flying and each player instead.
+4ef6ec4a-bbd2-487f-98c2-c0e78aebb550|Claws of Wirewood|Claws of Wirewood deals 3 damage to each creature with flying and each player. Cycling {2} ({2}, Discard this card: Draw a card.)
+ab0e2aa0-1ddd-4a4c-b7cd-4063caaa8bcd|Cloudthresher|Flash Reach When this creature enters, it deals 2 damage to each creature with flying and each player. Evoke {2}{G}{G} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)
+6143073f-4110-4a37-bc0c-89fbda2fc839|Corrosive Gale|({G/P} can be paid with either {G} or 2 life.) Corrosive Gale deals X damage to each creature with flying.
+c2508190-5aca-4511-adc8-2072cd228119|Downdraft|{G}: Target creature loses flying until end of turn. Sacrifice this enchantment: It deals 2 damage to each creature with flying.
+eb2524ae-899a-4f91-9feb-0716cf689db3|Firespout|Firespout deals 3 damage to each creature without flying if {R} was spent to cast this spell and 3 damage to each creature with flying if {G} was spent to cast this spell. (Do both if {R}{G} was spent.)
+337b0807-94cb-48d0-b752-61fbd05560e4|Gale Force|Gale Force deals 5 damage to each creature with flying.
+e552cab2-cee0-4420-9419-4bada4b2f241|Gruul Charm|Choose one — • Creatures without flying can't block this turn. • Gain control of all permanents you own. • Gruul Charm deals 3 damage to each creature with flying.
+3256029f-6558-4fcc-9fa1-74ceba3e5c92|Harbinger of the Hunt|Flying {2}{R}: This creature deals 1 damage to each creature without flying. {2}{G}: This creature deals 1 damage to each other creature with flying.

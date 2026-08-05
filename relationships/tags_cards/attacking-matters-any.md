@@ -1,0 +1,10 @@
+96de29a1-3178-4c8b-a67b-ab0262442cb6|Akki Coalflinger|First strike {R}, {T}: Attacking creatures gain first strike until end of turn.
+e4f880f5-0639-4acb-a099-e48f5707f0db|Anointer of Valor|Flying Whenever a creature attacks, you may pay {3}. When you do, put a +1/+1 counter on that creature.
+3269f589-00fc-4f0b-8693-656f2ab0670d|Argent Dais|This artifact enters with two oil counters on it. Whenever two or more creatures attack, put an oil counter on this artifact. {2}, {T}, Remove two oil counters from this artifact: Exile another target nonland permanent. Its controller draws two cards.
+2a800427-ff8c-4b3c-baee-85211b70656d|Aurelia, the Law Above|Flying, vigilance, haste Whenever a player attacks with three or more creatures, you draw a card. Whenever a player attacks with five or more creatures, Aurelia deals 3 damage to each of your opponents and you gain 3 life.
+9eb9e4c1-fabf-45ff-a584-fbe4b94fb41c|Avatar Roku, Firebender|Whenever a player attacks, add six {R}. Until end of combat, you don't lose this mana as steps end. {R}{R}{R}: Target creature gets +3/+0 until end of turn.
+5cdc4654-b8c5-4599-a1d2-9e9d5f6509cb|Duelist's Heritage|Whenever one or more creatures attack, you may have target attacking creature gain double strike until end of turn.
+cc3abacc-6643-49c5-8df8-5b56ab20fba5|Headlong Rush|Attacking creatures gain first strike until end of turn.
+39a9323d-dddc-42ac-929d-3f4fa7c87567|Impulsive Maneuvers|Whenever a creature attacks, flip a coin. If you win the flip, the next time that creature would deal combat damage this turn, it deals double that damage instead. If you lose the flip, the next time that creature would deal combat damage this turn, prevent that damage.
+e75356a8-6268-4355-a0bd-114a5243d527|Patron of the Kitsune|Fox offering (You may cast this spell any time you could cast an instant by sacrificing a Fox and paying the difference in mana costs between this and the sacrificed Fox. Mana cost includes color.) Whenever a creature attacks, you may gain 1 life.
+218f835b-4195-4ee8-a4ef-e5ba58fa5374|Righteous Cause|Whenever a creature attacks, you gain 1 life.

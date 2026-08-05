@@ -1,0 +1,5 @@
+b8bb97a8-5f5d-48e9-a4c1-b4c20efe7739|Bedeck // Bedazzle|Destroy target nonbasic land. Bedazzle deals 2 damage to target opponent or planeswalker. // Target creature gets +3/-3 until end of turn.
+a43ecf8b-5dc9-4ac4-ae1f-b663aa8c9d7b|Repudiate // Replicate|Create a token that's a copy of target creature you control. // Counter target activated or triggered ability. (Mana abilities can't be targeted.)
+836ecd67-6487-4f3d-9e08-013746be829a|Revival // Revenge|Double your life total. Target opponent loses half their life, rounded up. // Return target creature card with mana value 3 or less from your graveyard to the battlefield.
+342d20ca-178d-433e-9630-6fed33a8d0bc|Thrash // Threat|Target creature you control deals damage equal to its power to target creature or planeswalker you don't control. // Create a 4/4 red and green Beast creature token with trample.
+19053c47-97ce-4a25-a92c-1f4061e85bf3|Warrant // Warden|Create a 4/4 white and blue Sphinx creature token with flying and vigilance. // Put target attacking or blocking creature on top of its owner's library.

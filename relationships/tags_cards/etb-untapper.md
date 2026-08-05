@@ -1,0 +1,7 @@
+dba16032-66c1-4ccb-9d65-d41ac550d182|Amulet of Vigor|Whenever a permanent you control enters tapped, untap it.
+fd19a009-d1ab-4148-a829-3d4c3af1b0b2|Archelos, Lagoon Mystic|As long as Archelos is tapped, other permanents enter tapped. As long as Archelos is untapped, other permanents enter untapped.
+4306938b-c0db-4e63-a4fb-61628e5ff41f|Gond Gate|Gates you control enter untapped. {T}: Add {C}. {T}: Add one mana of any color that a Gate you control could produce.
+e8d20361-d9b7-4f9c-8ec5-3ac7c460dcb2|Horizon Explorer|Lands you control enter untapped. Whenever you attack a player, create a Lander token. (It's an artifact with "{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.")
+2962fe4c-bf48-454b-8a6b-0f8253352ae8|Spelunking|When this enchantment enters, draw a card, then you may put a land card from your hand onto the battlefield. If you put a Cave onto the battlefield this way, you gain 4 life. Lands you control enter untapped.
+e6e6e3d2-f2fb-46a1-8798-13a2f2efe8cc|The Wandering Minstrel|Lands you control enter untapped. The Minstrel's Ballad — At the beginning of combat on your turn, if you control five or more Towns, create a 2/2 Elemental creature token that's all colors. {3}{W}{U}{B}{R}{G}: Other creatures you control get +X/+X until end of turn, where X is the number of Towns you control.
+62f6baba-da3b-45b8-a3c1-efb75763cca8|Tiller Engine|Whenever a land you control enters tapped, choose one — • Untap that land. • Tap target nonland permanent an opponent controls.

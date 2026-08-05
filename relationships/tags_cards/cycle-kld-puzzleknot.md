@@ -1,0 +1,5 @@
+2065e9d0-c6e9-4270-898e-9822b532d467|Cogworker's Puzzleknot|When this artifact enters, create a 1/1 colorless Servo artifact creature token. {1}{W}, Sacrifice this artifact: Create a 1/1 colorless Servo artifact creature token.
+0de18ba2-84a7-4e07-84b2-771761d77aaf|Fireforger's Puzzleknot|When this artifact enters, it deals 1 damage to any target. {2}{R}, Sacrifice this artifact: It deals 1 damage to any target.
+0fbe0610-8565-4910-bf35-2c10e38b633a|Glassblower's Puzzleknot|When this artifact enters, scry 2, then you get {E}{E}. (You get two energy counters. To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.) {2}{U}, Sacrifice this artifact: Scry 2, then you get {E}{E}.
+c19d2f54-2c3a-4cbe-8328-061d4b51f574|Metalspinner's Puzzleknot|When this artifact enters, you draw a card and you lose 1 life. {2}{B}, Sacrifice this artifact: You draw a card and you lose 1 life.
+3334b218-01e3-47a3-8a28-5cc2decbedea|Woodweaver's Puzzleknot|When this artifact enters, you gain 3 life and get {E}{E}{E} (three energy counters). {2}{G}, Sacrifice this artifact: You gain 3 life and get {E}{E}{E}.

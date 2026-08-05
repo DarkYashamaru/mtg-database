@@ -1,0 +1,5 @@
+6aeba615-2d37-4eb8-a377-41a517e95aa3|Acorn Harvest|Create two 1/1 green Squirrel creature tokens. Flashback—{1}{G}, Pay 3 life. (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+d87190d0-bda3-4ad9-84b2-019f751999ce|Crippling Fatigue|Target creature gets -2/-2 until end of turn. Flashback—{1}{B}, Pay 3 life. (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+579cbd92-797f-4cdf-91ed-fca7a523eae5|Deep Analysis|Target player draws two cards. Flashback—{1}{U}, Pay 3 life. (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+9f66855d-3ae8-4163-a5f1-aa23a9cd06a5|Flash of Defiance|Green creatures and white creatures can't block this turn. Flashback—{1}{R}, Pay 3 life. (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+d19a2c28-8d09-40bf-aeb1-e699672b009f|Spirit Flare|Tap target untapped creature you control. If you do, it deals damage equal to its power to target attacking or blocking creature an opponent controls. Flashback—{1}{W}, Pay 3 life. (You may cast this card from your graveyard for its flashback cost. Then exile it.)

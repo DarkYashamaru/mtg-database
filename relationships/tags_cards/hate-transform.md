@@ -1,0 +1,1 @@
+7a98a1d1-7366-4b38-9047-48269790d328|Bound by Moonsilver|Enchant creature Enchanted creature can't attack, block, or transform. Sacrifice another permanent: Attach this Aura to target creature. Activate only as a sorcery and only once each turn.

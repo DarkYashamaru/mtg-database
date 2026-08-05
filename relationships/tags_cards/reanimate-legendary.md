@@ -1,0 +1,1 @@
+c4fe63e7-bb4c-4aff-b74f-d385d0128def|Staff of Eden, Vault's Key|When Staff of Eden enters, put target legendary permanent card not named Staff of Eden, Vault's Key from a graveyard onto the battlefield under your control. {T}: Draw a card for each permanent you control but don't own.

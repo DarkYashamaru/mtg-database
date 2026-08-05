@@ -1,0 +1,5 @@
+b34a7a9e-d740-4ddc-9b3c-8c49555ee2aa|Ethercaste Knight|Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)
+e1135564-ca93-4c5b-8686-cafdbaf0205e|Etherium Abomination|Unearth {1}{U}{B} ({1}{U}{B}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)
+9be3e610-f6bf-4e79-87ca-79dde27945d0|Godtracker of Jund|Whenever a creature you control with power 5 or greater enters, you may put a +1/+1 counter on this creature.
+1ad39f85-799a-42ae-852c-9117d689fe65|Kathari Bomber|Flying When this creature deals combat damage to a player, create two 1/1 red Goblin creature tokens and sacrifice this creature. Unearth {3}{B}{R} ({3}{B}{R}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)
+277ff122-2d6e-441e-9ec1-980cdb393982|Sigiled Behemoth|Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)

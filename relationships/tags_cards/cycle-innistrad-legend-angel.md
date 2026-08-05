@@ -1,0 +1,1 @@
+2270daaf-252d-40c4-bed5-bd46ae15f041|Liesa, Shroud of Dusk|Rather than pay {2} for each previous time you've cast this spell from the command zone this game, pay 2 life that many times. Flying, lifelink Whenever a player casts a spell, they lose 2 life.

@@ -1,0 +1,5 @@
+23c75386-8011-4ee4-97e2-eaafeb20b788|Armament Dragon|Flying When this creature enters, distribute three +1/+1 counters among one, two, or three target creatures you control.
+bb50b4f4-f0da-4283-821b-6d74bd20752f|Jeskai Shrinekeeper|Flying, haste Whenever this creature deals combat damage to a player, you gain 1 life and draw a card.
+41129dc1-be88-4198-94f9-032817a79bc7|Karakyk Guardian|Flying, vigilance, trample This creature has hexproof if it hasn't dealt damage yet. (It can't be the target of spells or abilities your opponents control.)
+aef4ab0e-c81f-428c-ab23-64504a9fb989|Kheru Goldkeeper|Flying Whenever one or more cards leave your graveyard during your turn, create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.") Renew — {2}{B}{G}{U}, Exile this card from your graveyard: Put two +1/+1 counters and a flying counter on target creature. Activate only as a sorcery.
+d317e3f1-553f-44f6-8543-d6d4c42534ad|Sonic Shrieker|Flying When this creature enters, it deals 2 damage to any target and you gain 2 life. If a player is dealt damage this way, they discard a card.

@@ -1,0 +1,5 @@
+3094f214-5aa8-4003-8a1e-035485dfb978|Godtoucher|{1}{W}, {T}: Prevent all damage that would be dealt to target creature with power 5 or greater this turn.
+f9921c9e-3248-488d-ad7b-8b064c5387e7|Sighted-Caste Sorcerer|Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.) {U}: This creature gains shroud until end of turn. (It can't be the target of spells or abilities.)
+83d9a5a2-09b0-44bf-b0b8-82a5fc53b00a|Thorn-Thrash Viashino|Devour 2 (As this creature enters, you may sacrifice any number of creatures. It enters with twice that many +1/+1 counters on it.) {G}: This creature gains trample until end of turn.
+dd7df06c-9434-46ce-893c-80081fbc2df7|Undead Leotau|{R}: This creature gets +1/-1 until end of turn. Unearth {2}{B} ({2}{B}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)
+e132bba0-40c5-4095-99a3-02cad520ca99|Vectis Silencers|{2}{B}: This creature gains deathtouch until end of turn. (Any amount of damage it deals to a creature is enough to destroy that creature.)

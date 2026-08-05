@@ -1,0 +1,5 @@
+0a1d817d-dce8-4e83-a380-909f7c9eee46|Bant Panorama|{T}: Add {C}. {1}, {T}, Sacrifice this land: Search your library for a basic Forest, Plains, or Island card, put it onto the battlefield tapped, then shuffle.
+6b9cd3d0-4316-4945-b960-12f51052d260|Esper Panorama|{T}: Add {C}. {1}, {T}, Sacrifice this land: Search your library for a basic Plains, Island, or Swamp card, put it onto the battlefield tapped, then shuffle.
+743f4488-fef1-4f4d-b745-d2de92423e00|Grixis Panorama|{T}: Add {C}. {1}, {T}, Sacrifice this land: Search your library for a basic Island, Swamp, or Mountain card, put it onto the battlefield tapped, then shuffle.
+f39f33ac-074d-442d-ae4c-1d694ee315f3|Jund Panorama|{T}: Add {C}. {1}, {T}, Sacrifice this land: Search your library for a basic Swamp, Mountain, or Forest card, put it onto the battlefield tapped, then shuffle.
+71e28800-c42c-48c0-95e5-0296be54a4e8|Naya Panorama|{T}: Add {C}. {1}, {T}, Sacrifice this land: Search your library for a basic Mountain, Forest, or Plains card, put it onto the battlefield tapped, then shuffle.

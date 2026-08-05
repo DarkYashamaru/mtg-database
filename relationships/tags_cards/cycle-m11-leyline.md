@@ -1,0 +1,5 @@
+9dc65ffe-17fc-4280-b4bd-78073ac7e12b|Leyline of Anticipation|If this card is in your opening hand, you may begin the game with it on the battlefield. You may cast spells as though they had flash.
+2608df54-dfbe-417d-aef5-49afbdfb03da|Leyline of Punishment|If this card is in your opening hand, you may begin the game with it on the battlefield. Players can't gain life. Damage can't be prevented.
+492e0e6c-8c27-4376-938b-f8a8b6205810|Leyline of Sanctity|If this card is in your opening hand, you may begin the game with it on the battlefield. You have hexproof. (You can't be the target of spells or abilities your opponents control.)
+cbf2b19e-32a3-489f-9979-ba2748c52845|Leyline of Vitality|If this card is in your opening hand, you may begin the game with it on the battlefield. Creatures you control get +0/+1. Whenever a creature you control enters, you may gain 1 life.
+f4e32fc1-1b8d-441e-8e76-71f19f98e925|Leyline of the Void|If this card is in your opening hand, you may begin the game with it on the battlefield. If a card would be put into an opponent's graveyard from anywhere, exile it instead.

@@ -1,0 +1,1 @@
+67ab82de-1167-42f5-90bd-21c63edcc712|Iron Man, Titan of Innovation|Flying, haste Genius Industrialist — Whenever Iron Man attacks, create a Treasure token, then you may sacrifice a noncreature artifact. If you do, search your library for an artifact card with mana value equal to 1 plus the sacrificed artifact's mana value, put it onto the battlefield tapped, then shuffle.

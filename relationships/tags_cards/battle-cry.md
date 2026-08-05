@@ -1,0 +1,10 @@
+6891c8b7-7112-40dc-8b94-b84ad1885e5e|Accorder Paladin|Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)
+60555f06-dc85-4a34-ae3c-fc1cdb923be7|Bolt Hound|Haste (This creature can attack and {T} as soon as it comes under your control.) Whenever this creature attacks, other creatures you control get +1/+0 until end of turn.
+10849bbb-50ca-4194-a7cb-fa872272b29b|Goblin Wardriver|Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)
+454a8902-8120-4373-96ee-bbf352b04e8d|Hero of Bladehold|Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.) Whenever this creature attacks, create two 1/1 white Soldier creature tokens that are tapped and attacking.
+f18799c4-ec54-4435-be51-03ea25809289|Hero of Oxid Ridge|Haste Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.) Whenever this creature attacks, creatures with power 1 or less can't block this turn.
+fd561a9a-45d2-4e9b-82df-5d4b24cca24a|Honored Crop-Captain|Whenever this creature attacks, other attacking creatures get +1/+0 until end of turn.
+52925539-423a-42ec-91b9-0d39e7df565c|Iraxxa, Empress of Mars|Trample Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.) Paradox — Whenever you cast a spell from anywhere other than your hand, create a 2/2 red Alien Warrior creature token.
+dff72513-b67a-4732-a8fc-269cbf21ae99|Kuldotha Ringleader|Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.) This creature attacks each combat if able.
+9d2bfbb2-84df-4d7c-9989-7f5577f90d97|Loxodon Partisan|Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)
+bd024849-3005-4509-ad83-65a9bcf956ac|Primaris Chaplain|Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.) Rosarius — Whenever this creature attacks, it gains indestructible until end of turn.

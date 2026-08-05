@@ -1,0 +1,10 @@
+4431ec11-9bd7-4750-8bc7-378beba06201|Zodiac Dog|Mountainwalk (This creature can't be blocked as long as defending player controls a Mountain.)
+e5c2cf0f-c1c0-4fd6-9b5f-7d4aa25246a7|Zodiac Dragon|When this creature is put into your graveyard from the battlefield, you may return it to your hand.
+01800a0c-ad93-4e45-a904-38253a143638|Zodiac Goat|Mountainwalk (This creature can't be blocked as long as defending player controls a Mountain.)
+f778bf66-e823-4b4c-8586-97e1d519efd8|Zodiac Horse|Islandwalk (This creature can't be blocked as long as defending player controls an Island.)
+47dd7ef4-7645-4878-ab91-261aa8fcf834|Zodiac Monkey|Forestwalk (This creature can't be blocked as long as defending player controls a Forest.)
+9c9e71d9-a636-4574-8b7e-e6dd0f71c7c8|Zodiac Ox|Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.)
+eb0a0515-7fa4-4319-9fc3-7a31c608ce9b|Zodiac Pig|Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.)
+048cc868-1657-448d-9f2c-97973e73f477|Zodiac Rabbit|Forestwalk (This creature can't be blocked as long as defending player controls a Forest.)
+5ea4d1d7-219b-4842-99ea-291842baca0d|Zodiac Rat|Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.)
+7280b7c5-e4d0-4a20-8634-5e240e6b3ca0|Zodiac Rooster|Plainswalk (This creature can't be blocked as long as defending player controls a Plains.)

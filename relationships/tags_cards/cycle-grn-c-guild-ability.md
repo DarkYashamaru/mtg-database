@@ -1,0 +1,5 @@
+088c9fa7-65ec-48c6-90cc-9087bc9df43e|Hammer Dropper|Mentor (Whenever this creature attacks, put a +1/+1 counter on target attacking creature with lesser power.)
+f93dbe17-71d1-4542-96ff-81ac6da9513f|Notion Rain|Surveil 2, then draw two cards. Notion Rain deals 2 damage to you. (To surveil 2, look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)
+85e18895-d1d2-46c7-afd0-31da410c0438|Rhizome Lurcher|Undergrowth — This creature enters with a number of +1/+1 counters on it equal to the number of creature cards in your graveyard.
+54b3ccdc-e5b0-44d9-bc81-a296fc5dc005|Rosemane Centaur|Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.) Vigilance
+dfe9e485-c070-4efd-8c35-69d4eb3f58e4|Sonic Assault|Tap target creature. Sonic Assault deals 2 damage to that creature's controller. Jump-start (You may cast this card from your graveyard by discarding a card in addition to paying its other costs. Then exile this card.)

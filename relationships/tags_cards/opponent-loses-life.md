@@ -1,0 +1,10 @@
+405c4a7b-dbb3-48a1-9205-7dbe6e2ad363|Aatchik, Emerald Radian|When Aatchik enters, create a 1/1 green Insect creature token for each artifact and/or creature card in your graveyard. Whenever another Insect you control dies, put a +1/+1 counter on Aatchik. Each opponent loses 1 life.
+04ea7e88-7ea5-4b4c-9a7c-2a6ac0bc0682|Absorb Vis|Target player loses 4 life and you gain 4 life. Basic landcycling {1}{B} ({1}{B}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)
+3676b745-001d-46e6-880f-2fe26476a38d|Abundant Maw|Emerge {6}{B} (You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature's mana value.) When you cast this spell, target opponent loses 3 life and you gain 3 life.
+80b07882-e144-4815-8b6f-04b3ab343d97|Accursed Witch // Infectious Curse|Spells your opponents cast that target this creature cost {1} less to cast. When this creature dies, return it to the battlefield transformed under your control attached to target opponent. // Enchant player Spells you cast that target enchanted player cost {1} less to cast. At the beginning of enchanted player's upkeep, that player loses 1 life and you gain 1 life.
+324d2aa8-6dea-4b0d-898d-1e52ed187565|Acolyte of Aclazotz|{T}, Sacrifice another creature or artifact: Each opponent loses 1 life and you gain 1 life.
+62dca41b-58b0-45eb-ada7-568e80a2abec|Acolyte of Xathrid|{1}{B}, {T}: Target player loses 1 life.
+381a3e8e-71dd-48e4-ab62-53478bde4a14|Agate-Blade Assassin|Whenever this creature attacks, defending player loses 1 life and you gain 1 life.
+632ccf7e-eaf4-42a6-9069-6ad915d03a5b|Agent of Masks|At the beginning of your upkeep, each opponent loses 1 life. You gain life equal to the life lost this way.
+325032d5-c452-4454-8976-82f86fee5ab8|Agent of the Iron Throne|Commander creatures you own have "Whenever an artifact or creature you control is put into a graveyard from the battlefield, each opponent loses 1 life."
+43f81514-e812-4e17-9b1a-704c136d8ffd|Al Bhed Salvagers|Whenever this creature or another creature or artifact you control dies, target opponent loses 1 life and you gain 1 life.

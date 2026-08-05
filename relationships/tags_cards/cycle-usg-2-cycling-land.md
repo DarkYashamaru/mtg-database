@@ -1,0 +1,6 @@
+9c8007ac-4b3d-4444-93e9-f583185e5d81|Blasted Landscape|{T}: Add {C}. Cycling {2} ({2}, Discard this card: Draw a card.)
+c6eb2814-0021-4308-ad44-6c8cc59b0d1c|Drifting Meadow|This land enters tapped. {T}: Add {W}. Cycling {2} ({2}, Discard this card: Draw a card.)
+9809d975-7ef8-4946-9041-607c4e954b13|Polluted Mire|This land enters tapped. {T}: Add {B}. Cycling {2} ({2}, Discard this card: Draw a card.)
+24aebda0-315f-4d2f-8bd9-00bbaf5bd76a|Remote Isle|This land enters tapped. {T}: Add {U}. Cycling {2} ({2}, Discard this card: Draw a card.)
+58bfd9a1-67ce-41d0-be38-f05addd1dd9e|Slippery Karst|This land enters tapped. {T}: Add {G}. Cycling {2} ({2}, Discard this card: Draw a card.)
+be09e83f-6486-4f42-8d2e-416cb95173f9|Smoldering Crater|This land enters tapped. {T}: Add {R}. Cycling {2} ({2}, Discard this card: Draw a card.)

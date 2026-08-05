@@ -1,0 +1,1 @@
+b6265654-84c3-469b-9afa-f752fd64abe0|Mwonvuli Beast Tracker|When this creature enters, search your library for a creature card with deathtouch, hexproof, reach, or trample and reveal it. Shuffle and put that card on top.

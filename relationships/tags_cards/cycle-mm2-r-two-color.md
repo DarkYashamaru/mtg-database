@@ -1,0 +1,10 @@
+1a840210-204d-41cd-afc0-46abf7ea5f87|Apocalypse Hydra|This creature enters with X +1/+1 counters on it. If X is 5 or more, it enters with an additional X +1/+1 counters on it. {1}{R}, Remove a +1/+1 counter from this creature: It deals 1 damage to any target.
+1e67b4eb-e5d2-4368-8284-4ba5c4c42455|Creakwood Liege|Other black creatures you control get +1/+1. Other green creatures you control get +1/+1. At the beginning of your upkeep, you may create a 1/1 black and green Worm creature token.
+bd4c46a3-b723-4b35-9061-9a1dee7cc9d8|Fulminator Mage|Sacrifice this creature: Destroy target nonbasic land.
+2ba16e4d-2de7-4906-801a-4ba2b90b5050|Ghost Council of Orzhova|When Ghost Council of Orzhova enters, target opponent loses 1 life and you gain 1 life. {1}, Sacrifice a creature: Exile Ghost Council of Orzhova. Return it to the battlefield under its owner's control at the beginning of the next end step.
+161b6d06-e6a7-488e-9f9c-d266c1402a3a|Mystic Snake|Flash When this creature enters, counter target spell.
+959acb66-84ca-4535-bca2-ad591895735e|Niv-Mizzet, the Firemind|Flying Whenever you draw a card, Niv-Mizzet deals 1 damage to any target. {T}: Draw a card.
+4789ac35-ca91-4046-8262-24c34e751cea|Nobilis of War|Flying Attacking creatures you control get +2/+0.
+3a6f886b-2043-47e9-9c0f-f7913a6fa67d|Shadowmage Infiltrator|Fear (This creature can't be blocked except by artifact creatures and/or black creatures.) Whenever this creature deals combat damage to a player, you may draw a card.
+b187aeeb-5cf5-4b73-a3ef-f39188d2ba33|Swans of Bryn Argoll|Flying If a source would deal damage to this creature, prevent that damage. The source's controller draws cards equal to the damage prevented this way.
+2441696b-a9ba-4813-ba2e-e71f85281d05|Wilt-Leaf Liege|({G/W} can be paid with either {G} or {W}.) Other green creatures you control get +1/+1. Other white creatures you control get +1/+1. If a spell or ability an opponent controls causes you to discard this card, put it onto the battlefield instead of putting it into your graveyard.

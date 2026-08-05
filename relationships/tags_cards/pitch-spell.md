@@ -1,0 +1,2 @@
+e88de17c-086d-4e2a-b5b2-2f9f57ca7c0f|Snapback|You may exile a blue card from your hand rather than pay this spell's mana cost. Return target creature to its owner's hand.
+69eeee95-cc69-41d1-833b-8895ef72df82|Spinning Darkness|You may exile the top three black cards of your graveyard rather than pay this spell's mana cost. Spinning Darkness deals 3 damage to target nonblack creature. You gain 3 life.

@@ -1,0 +1,3 @@
+0669172d-396b-4f5a-9703-129c5c849b55|Drain Power|Target player activates a mana ability of each land they control. Then that player loses all unspent mana and you add the mana lost this way.
+131acf69-fa5c-4ce7-9e39-2677af4f8907|Piracy|Until end of turn, you may tap lands you don't control for mana. Spend this mana only to cast spells.
+0d39513a-1f05-4d9a-a772-745f4f1a3471|Pygmy Hippo|Whenever this creature attacks and isn't blocked, you may have defending player activate a mana ability of each land they control and lose all unspent mana. If you do, this creature assigns no combat damage this turn and at the beginning of your next main phase this turn, you add an amount of {C} equal to the amount of mana that player lost this way.

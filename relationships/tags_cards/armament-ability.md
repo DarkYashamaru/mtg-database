@@ -1,0 +1,10 @@
+ae4249de-1b8c-4b15-8960-180557a15065|Animal Friend|Enchant creature Enchanted creature has "Whenever this creature attacks, create a 1/1 green Squirrel creature token. Put a +1/+1 counter on that token for each Aura and Equipment attached to this creature other than Animal Friend."
+f1dca9ac-8886-4688-9245-763ef486701c|Armament Master|Other Kor creatures you control get +2/+2 for each Equipment attached to this creature.
+ea7de96f-db69-421d-a951-ffaeac140379|Bruenor Battlehammer|Each creature you control gets +2/+0 for each Equipment attached to it. You may pay {0} rather than pay the equip cost of the first equip ability you activate each turn.
+d9dbe40f-38e9-460a-b84f-4aa22650017e|Champion of the Flame|Trample This creature gets +2/+2 for each Aura and Equipment attached to it.
+739621e6-e138-4ef9-87e8-c730b5a7f495|Goblin Gaveleer|Trample This creature gets +2/+0 for each Equipment attached to it.
+2a956224-8bdb-40d8-8405-2aa29eb228e0|Golem-Skin Gauntlets|Equipped creature gets +1/+0 for each Equipment attached to it. Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)
+f3d3ed94-f32c-4a67-8e2a-765e454a80df|Gunner Conscript|Trample This creature gets +1/+1 for each Aura and Equipment attached to it. When this creature dies, if it was enchanted, create a Junk token. When this creature dies, if it was equipped, create a Junk token.
+56940b6c-90ab-491b-a88a-4cd4a8adfbdb|Heavenly Blademaster|Flying, double strike When this creature enters, you may attach any number of Auras and Equipment you control to it. Other creatures you control get +1/+1 for each Aura and Equipment attached to this creature.
+10c48d19-d91f-4674-b186-477acaf08e5a|Kellan, the Fae-Blooded // Birthright Boon|Search your library for an Aura or Equipment card, reveal it, put it into your hand, then shuffle. // Double strike Other creatures you control get +1/+0 for each Aura and Equipment attached to Kellan.
+fc3869fd-1441-4d5e-9af5-f02857ed634a|Loxodon Punisher|This creature gets +2/+2 for each Equipment attached to it.

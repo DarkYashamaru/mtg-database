@@ -1,0 +1,1 @@
+ee7ebbc1-2f9e-4867-a522-424869b6d772|Combat Calligrapher|Flying Inklings can't attack you or planeswalkers you control. Whenever a player attacks one of your opponents, that attacking player creates a tapped 2/1 white and black Inkling creature token with flying that's attacking that opponent.

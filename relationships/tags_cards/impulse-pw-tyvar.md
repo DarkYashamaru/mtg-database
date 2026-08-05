@@ -1,0 +1,1 @@
+0089b07c-7f47-4a9a-9fb7-cc38ec9d7bcd|Harald, King of Skemfar|Menace (This creature can't be blocked except by two or more creatures.) When Harald enters, look at the top five cards of your library. You may reveal an Elf, Warrior, or Tyvar card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.

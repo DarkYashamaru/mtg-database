@@ -1,0 +1,1 @@
+5cd2fd32-4da2-40eb-b003-c0b9a9ec91c1|Cloudstone Curio|Whenever a nonartifact permanent you control enters, you may return another permanent you control that shares a permanent type with it to its owner's hand.

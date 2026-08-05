@@ -1,0 +1,4 @@
+70c268af-3fb4-42b8-a87a-d06d33c1c641|Cleaving Reaper|Flying, trample Pay 3 life: Return this card from your graveyard to your hand. Activate only if you had an Angel or Berserker enter the battlefield under your control this turn.
+720879dc-7593-41c0-ab3d-936069f26930|Lovisa Coldeyes|Each creature that's a Barbarian, a Warrior, or a Berserker gets +2/+2 and has haste.
+47c67df1-52f5-459f-b83e-6b971be9b294|Skemfar Avenger|Whenever another nontoken Elf or Berserker you control dies, you draw a card and you lose 1 life.
+fd9cd2b0-3f43-41a6-b963-c781d0f285e8|The Bloodsky Massacre|(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.) I — Create a 2/3 red Demon Berserker creature token with menace. II — Whenever a Berserker attacks this turn, you draw a card and you lose 1 life. III — Add {R} for each Berserker you control. Until end of turn, you don't lose this mana as steps and phases end.

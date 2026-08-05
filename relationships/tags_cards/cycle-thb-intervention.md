@@ -1,0 +1,5 @@
+e078585e-7058-4746-a884-3c9a14630a1b|Erebos's Intervention|Choose one — • Target creature gets -X/-X until end of turn. You gain X life. • Exile up to twice X target cards from graveyards.
+e7564d66-767c-4cd9-a5f0-0f2488a4a74b|Heliod's Intervention|Choose one — • Destroy X target artifacts and/or enchantments. • Target player gains twice X life.
+acf388b2-c4e3-4f1b-a16c-88f991d5c17b|Nylea's Intervention|Choose one — • Search your library for up to X land cards, reveal them, put them into your hand, then shuffle. • Nylea's Intervention deals twice X damage to each creature with flying.
+e190f086-ebee-447f-907f-7b37ec8824ac|Purphoros's Intervention|Choose one — • Create an X/1 red Elemental creature token with trample and haste. Sacrifice it at the beginning of the next end step. • Purphoros's Intervention deals twice X damage to target creature or planeswalker.
+f7c89d03-606e-4284-90dd-64b1fbebfb4d|Thassa's Intervention|Choose one — • Look at the top X cards of your library. Put up to two of them into your hand and the rest on the bottom of your library in a random order. • Counter target spell unless its controller pays twice {X}.

@@ -1,0 +1,10 @@
+3ceee5c2-321c-49ec-ba49-1fac7f6ee2cc|Argentum Masticore|First strike, protection from multicolored At the beginning of your upkeep, sacrifice this creature unless you discard a card. When you discard a card this way, destroy target nonland permanent an opponent controls with mana value less than or equal to the mana value of the discarded card.
+57d0c688-6206-4c83-9fcb-27fd29e2a9ed|Basri's Lieutenant|Vigilance, protection from multicolored When this creature enters, put a +1/+1 counter on target creature you control. Whenever this creature or another creature you control dies, if it had a +1/+1 counter on it, create a 2/2 white Knight creature token with vigilance.
+e5cf7b75-b59b-4cac-bfd2-13e452457d74|Enemy of the Guildpact|Protection from multicolored
+986a7ad0-527a-4079-aa1b-c8acdf087020|Ghostfire Slice|Devoid (This card has no color.) This spell costs {2} less to cast if an opponent controls a multicolored permanent. Ghostfire Slice deals 4 damage to any target.
+daff56a6-a5b6-4726-8fee-676b846e0c6b|Guildscorn Ward|Enchant creature Enchanted creature has protection from multicolored.
+3da9fecc-064a-44e6-b88e-4b10194e367e|Hall of Gemstone|At the beginning of each player's upkeep, that player chooses a color. Until end of turn, lands tapped for mana produce mana of the chosen color instead of any other color.
+e42ca67d-c9c3-499a-a7b7-63dc2dafdeab|Neutralizing Blast|Counter target multicolored spell.
+46570366-5e58-40b7-b725-833321a3b7b1|Niv-Mizzet, Guildpact|Flying, hexproof from multicolored Whenever Niv-Mizzet deals combat damage to a player, it deals X damage to any target, target player draws X cards, and you gain X life, where X is the number of different color pairs among permanents you control that are exactly two colors.
+ec7699e3-ce56-46e4-9e4d-5ed2bd5fca83|Null Elemental Blast|Choose one — • Counter target multicolored spell. • Destroy target multicolored permanent.
+e119ba58-85e4-49ec-a2f8-3d094187c99d|Pure // Simple|Destroy target multicolored permanent. // Destroy all Auras and Equipment.

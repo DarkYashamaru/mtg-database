@@ -1,0 +1,10 @@
+3d98a656-1737-486f-9b25-449b7c871d1f|Aurification|Whenever a creature deals damage to you, put a gold counter on it. Each creature with a gold counter on it is a Wall in addition to its other creature types and has defender. (Those creatures can't attack.) When this enchantment leaves the battlefield, remove all gold counters from all creatures.
+089788ce-d06c-4a85-915c-82e2cb5b0103|Candletrap|Enchant creature Enchanted creature has defender. Prevent all combat damage that would be dealt by enchanted creature. Coven — {2}{W}, Sacrifice this Aura: Exile enchanted creature. Activate only if you control three or more creatures with different powers.
+648aead4-dc0b-47bc-911c-8dcd2cfd32d3|Deep Freeze|Enchant creature Enchanted creature has base power and toughness 0/4, has defender, loses all other abilities, and is a blue Wall in addition to its other colors and types.
+2bc3d5b2-076f-4e01-87be-28d7eb70a2db|Dormant Sliver|All Sliver creatures have defender. All Slivers have "When this permanent enters, draw a card."
+93e40d56-18fd-42e1-a598-636aab79b836|Dragon Throne of Tarkir|Equipped creature has defender and "{2}, {T}: Other creatures you control gain trample and get +X/+X until end of turn, where X is this creature's power." Equip {3}
+45ca8431-befd-4542-9dd7-503bf1afaac5|Gelid Shackles|Enchant creature Enchanted creature can't block, and its activated abilities can't be activated. {S}: Enchanted creature gains defender until end of turn. ({S} can be paid with one mana from a snow source.)
+3b20e187-c200-40a0-8db2-481f0bf90168|Guard Duty|Enchant creature Enchanted creature has defender.
+44154004-e50e-45d1-bde0-ba6e3354067c|Guardian Zendikon|Enchant land Enchanted land is a 2/6 white Wall creature with defender. It's still a land. When enchanted land dies, return that card to its owner's hand.
+a742308c-4047-487f-b95b-0fa5bec2f09a|Peregrine Mask|Equipped creature has defender, flying, and first strike. Equip {2}
+06548af1-4fda-435c-ac32-bbf7afafb34e|Sky Tether|Enchant creature Enchanted creature has defender and loses flying.

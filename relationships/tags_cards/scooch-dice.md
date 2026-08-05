@@ -1,0 +1,2 @@
+d758fd82-7ccb-441d-a948-0abaf0311892|Night Shift of the Living Dead|After you roll a die, you may pay 1 life. If you do, increase or decrease the result by 1. Do this only once each turn. Whenever you roll a 6, create a 2/2 black Zombie Employee creature token.
+d5c54df9-437e-46e1-94cf-91d9f1d343b6|Xenosquirrels|This creature enters with two +1/+1 counters on it. After you roll a die, you may remove a +1/+1 counter from this creature. If you do, increase or decrease the result by 1.

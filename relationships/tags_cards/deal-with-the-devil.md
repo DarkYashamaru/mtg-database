@@ -1,0 +1,10 @@
+ff321c13-03ae-4cb9-b371-1242290f8433|Aggressive Mining|You can't play lands. Sacrifice a land: Draw two cards. Activate only once each turn.
+fb868840-09fa-49b1-85cb-b08ad065e972|Bitterblossom|At the beginning of your upkeep, you lose 1 life and create a 1/1 black Faerie Rogue creature token with flying.
+d2664f28-49e1-46f8-a863-b217e961a57c|Black Market Connections|At the beginning of your first main phase, choose one or more — • Sell Contraband — Create a Treasure token. You lose 1 life. • Buy Information — Draw a card. You lose 2 life. • Hire a Mercenary — Create a 3/2 colorless Shapeshifter creature token with changeling. You lose 3 life. (It is every creature type.)
+81dd22f7-f6c6-4cf2-9744-b1d918dbcf9a|Blood Funnel|Noncreature spells you cast cost {2} less to cast. Whenever you cast a noncreature spell, counter that spell unless you sacrifice a creature.
+95b10ca7-7360-4da5-bd93-686ae3051833|Carnival of Souls|Whenever a creature enters, you lose 1 life and add {B}.
+ad786230-4045-46af-bc89-078d45891e5b|Colfenor's Plans|When this enchantment enters, exile the top seven cards of your library face down. You may look at the cards exiled with this enchantment, and you may play lands and cast spells from among those cards. Skip your draw step. You can't cast more than one spell each turn.
+f47659b5-d834-4153-b9fc-6a0702c503d9|Dark Prophecy|Whenever a creature you control dies, you draw a card and you lose 1 life.
+0c6ce7c9-316b-4171-a8fa-ca26af1eecb7|Dark Tutelage|At the beginning of your upkeep, reveal the top card of your library and put that card into your hand. You lose life equal to its mana value.
+309e61f5-1fc7-4481-8d3a-9b35d335c99f|Dawn of the Dead|At the beginning of your upkeep, you lose 1 life. At the beginning of your upkeep, you may return target creature card from your graveyard to the battlefield. That creature gains haste until end of turn. Exile it at the beginning of the next end step.
+47a9df32-7588-4430-a40e-56a9041e0360|Demonic Lore|When this enchantment enters, draw three cards. At the beginning of your end step, you lose 2 life for each card in your hand.

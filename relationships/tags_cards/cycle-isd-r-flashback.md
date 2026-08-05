@@ -1,0 +1,5 @@
+9e2adca5-f39c-4a09-bcce-8238ebac2c4a|Cackling Counterpart|Create a token that's a copy of target creature you control. Flashback {5}{U}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+e2375f13-fd45-4087-abd1-c884acc6c736|Creeping Renaissance|Choose a permanent type. Return all cards of the chosen type from your graveyard to your hand. Flashback {5}{G}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+ee9f0b29-8a54-4cb8-8e2c-7bd67c2184ba|Devil's Play|Devil's Play deals X damage to any target. Flashback {X}{R}{R}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+15d8b339-7520-43c9-b2dc-4a936357042b|Divine Reckoning|Each player chooses a creature they control. Destroy the rest. Flashback {5}{W}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+b9019332-2f02-48d9-be0a-a2b41b79e136|Sever the Bloodline|Exile target creature and all other creatures with the same name as that creature. Flashback {5}{B}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)

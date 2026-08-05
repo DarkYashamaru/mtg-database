@@ -1,0 +1,10 @@
+acee1d16-1651-4e2c-8138-cc6456c4ee71|"Name Sticker" Goblin|When this creature enters from anywhere other than a graveyard or exile, if it's on the battlefield and you control 9 or fewer creatures named "Name Sticker" Goblin, roll a 20-sided die. 1-6 \| Add {R}{R}{R}{R}. 7-14 \| Add {R}{R}{R}{R}{R}. 15-20 \| Add {R}{R}{R}{R}{R}{R}.
+bc899d5c-0a91-4f19-a3e4-3078ae966110|Abstract Paintmage|At the beginning of your first main phase, add {U}{R}. Spend this mana only to cast instant and sorcery spells.
+97e18a8d-9068-4782-a744-280d28c68228|Accomplished Alchemist|{T}: Add one mana of any color. {T}: Add X mana of any one color, where X is the amount of life you gained this turn.
+287cd5e8-51e2-42a4-a139-c112ff89706d|Adarkar Unicorn|{T}: Add {U} or {C}{U}. Spend this mana only to pay cumulative upkeep costs.
+ca349ba9-b5ea-48e6-a617-c9b7f2708853|Alena, Kessig Trapper|First strike {T}: Add an amount of {R} equal to the greatest power among creatures you control that entered this turn. Partner (You can have two commanders if both have partner.)
+e98e8129-3e0e-45cc-b00c-1387cc592023|Alluring Suitor // Deadly Dancer|When you attack with exactly two creatures, transform this creature. // Trample When this creature transforms into Deadly Dancer, add {R}{R}. Until end of turn, you don't lose this mana as steps and phases end. {R}{R}: This creature and another target creature each get +1/+0 until end of turn.
+4b34a324-d939-453a-97e3-a21c584a0c74|Altar of Shadows|At the beginning of your first main phase, add {B} for each charge counter on this artifact. {7}, {T}: Destroy target creature. Then put a charge counter on this artifact.
+171a3ac4-0c9c-46ac-b273-089d566cca05|Altar of the Lost|This artifact enters tapped. {T}: Add two mana in any combination of colors. Spend this mana only to cast spells with flashback from a graveyard.
+2160849a-184f-4a49-8931-fd021e16f7cb|Ancient Spring|This land enters tapped. {T}: Add {U}. {T}, Sacrifice this land: Add {W}{B}.
+23467047-6dba-4498-b783-1ebc4f74b8c2|Ancient Tomb|{T}: Add {C}{C}. This land deals 2 damage to you.

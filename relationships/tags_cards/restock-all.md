@@ -1,0 +1,10 @@
+fc734a75-93bf-448b-b347-810ae835fe49|Archangel's Light|You gain 2 life for each card in your graveyard, then shuffle your graveyard into your library.
+8c888122-9d05-4641-931c-83f771ba9d09|Blessed Respite|Target player shuffles their graveyard into their library. Prevent all combat damage that would be dealt this turn.
+011ff7a5-6bce-4784-a19b-e74f7b49b8f1|Campfire|{1}, {T}: You gain 2 life. {2}, {T}, Exile this artifact: Put all commanders you own from the command zone and from your graveyard into your hand. Then shuffle your graveyard into your library.
+141c33be-7a25-4981-b62c-efee8e8ec91d|Clear the Mind|Target player shuffles their graveyard into their library. Draw a card.
+56fd8895-3be2-4591-86fa-87567d9cdc14|Commit // Memory|Put target spell or nonland permanent into its owner's library second from the top. // Aftermath (Cast this spell only from your graveyard. Then exile it.) Each player shuffles their hand and graveyard into their library, then draws seven cards.
+260f95c5-4058-4627-981f-98b9eafc2265|Cranial Archive|{2}, Exile this artifact: Target player shuffles their graveyard into their library. Draw a card.
+810a6cf5-e9f4-48e1-8e06-3e0af85633ce|Day's Undoing|Each player shuffles their hand and graveyard into their library, then draws seven cards. If it's your turn, end the turn. (Exile all spells and abilities from the stack, including this card. Discard down to your maximum hand size. Damage wears off, and "this turn" and "until end of turn" effects end.)
+f9b02a7c-c122-4282-90e2-81fcfa663193|Diminishing Returns|Each player shuffles their hand and graveyard into their library. You exile the top ten cards of your library. Then each player draws up to seven cards.
+23d3e5fe-3f82-44cf-91a1-6646a12a0255|Echo of Eons|Each player shuffles their hand and graveyard into their library, then draws seven cards. Flashback {2}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+204b71fc-4d5f-40dd-903d-56c733171d84|Elixir of Immortality|{2}, {T}: You gain 5 life. Shuffle this artifact and your graveyard into their owner's library.

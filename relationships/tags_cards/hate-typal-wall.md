@@ -1,0 +1,10 @@
+ef3fdfea-330d-4948-94ec-67e344b48086|Ali Baba|{R}: Tap target Wall.
+e7b91fba-8d96-4040-95e8-f0023b65c497|Battering Ram|At the beginning of combat on your turn, this creature gains banding until end of combat. (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's blocking.) Whenever this creature becomes blocked by a Wall, destroy that Wall at end of combat.
+e5b35b54-77d9-4cb0-86a1-efc8e49aea09|Blaster Mage|{R}, {T}, Discard a card: Destroy target Wall.
+a44e8d98-3bc8-42ce-b09f-a3b947d9ce53|Blow Your House Down|Up to three target creatures can't block this turn. Destroy any of them that are Walls.
+035d61a9-5ca2-4275-b8df-fcfa9f5c1b31|Bog Rats|This creature can't be blocked by Walls.
+b81e5dbd-47a5-4994-91b7-e2a50c8e098d|Chaos Charm|Choose one — • Destroy target Wall. • Chaos Charm deals 1 damage to target creature. • Target creature gains haste until end of turn.
+a6091c3e-b227-4e84-b75d-69512a0bddfb|Clockwork Swarm|This creature enters with four +1/+0 counters on it. This creature can't be blocked by Walls. At end of combat, if this creature attacked or blocked this combat, remove a +1/+0 counter from it. {X}, {T}: Put up to X +1/+0 counters on this creature. This ability can't cause the total number of +1/+0 counters on this creature to be greater than four. Activate only during your upkeep.
+01ea2130-e212-4532-b68b-2f940d53ef6e|Doorman|{T}: Until end of turn, target creature can't be blocked by creatures with power 2 or less and/or Walls.
+caf3c6ec-d17e-497c-8fe7-6f818ce93f96|Dwarven Demolition Team|{T}: Destroy target Wall.
+66aa6905-86f9-4800-988d-ffebafd4a9dc|Fifty Feet of Rope|Climb Over — {T}: Target Wall can't block this turn. Tie Up — {3}, {T}: Target creature doesn't untap during its controller's next untap step. Rappel Down — {4}, {T}: Venture into the dungeon. Activate only as a sorcery. (Enter the first room or advance to the next room.)

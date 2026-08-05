@@ -1,0 +1,5 @@
+68eb3566-c74d-42a6-89a6-b468677fc485|Benthicore|When this creature enters, create two 1/1 blue Merfolk Wizard creature tokens. Tap two untapped Merfolk you control: Untap this creature. It gains shroud until end of turn. (It can't be the target of spells or abilities.)
+e1c13a19-46cd-474b-a46b-a483be6b91bb|Cloudgoat Ranger|When this creature enters, create three 1/1 white Kithkin Soldier creature tokens. Tap three untapped Kithkin you control: This creature gets +2/+0 and gains flying until end of turn.
+27d6b1fb-ce53-45d6-a601-9f5b9ee7ab2f|Guardian of Cloverdell|When this creature enters, create three 1/1 white Kithkin Soldier creature tokens. {G}, Sacrifice a Kithkin: You gain 1 life.
+7e523d42-c7d8-47d1-8874-230920f03345|Hearthcage Giant|When this creature enters, create two 3/1 red Elemental Shaman creature tokens. Sacrifice an Elemental: Target Giant creature gets +3/+1 until end of turn.
+02f8ec49-f490-408b-a76e-58e160a5a5a7|Marsh Flitter|Flying When this creature enters, create two 1/1 black Goblin Rogue creature tokens. Sacrifice a Goblin: This creature has base power and toughness 3/3 until end of turn.

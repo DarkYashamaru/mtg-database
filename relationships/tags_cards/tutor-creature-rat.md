@@ -1,0 +1,1 @@
+acba24c1-168c-473b-96bb-1ba836c69f22|Ratcatcher|Fear (This creature can't be blocked except by artifact creatures and/or black creatures.) At the beginning of your upkeep, you may search your library for a Rat card, reveal it, put it into your hand, then shuffle.

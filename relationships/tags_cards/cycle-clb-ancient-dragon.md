@@ -1,0 +1,5 @@
+7d79fb4e-2ca0-404a-9663-1f5abce6e733|Ancient Brass Dragon|Flying Whenever this creature deals combat damage to a player, roll a d20. When you do, put any number of target creature cards with total mana value X or less from graveyards onto the battlefield under your control, where X is the result.
+8ce74097-97b1-493d-9585-bd1336f95927|Ancient Bronze Dragon|Flying Whenever this creature deals combat damage to a player, roll a d20. When you do, put X +1/+1 counters on each of up to two target creatures, where X is the result.
+48daee9d-ddaf-410f-8c3a-12fa1064ab56|Ancient Copper Dragon|Flying Whenever this creature deals combat damage to a player, roll a d20. You create a number of Treasure tokens equal to the result.
+44cb725a-72fc-4e0d-b966-f0b6d33f6b79|Ancient Gold Dragon|Flying Whenever this creature deals combat damage to a player, roll a d20. You create a number of 1/1 blue Faerie Dragon creature tokens with flying equal to the result.
+939556c8-e363-4453-a624-ca52b151467e|Ancient Silver Dragon|Flying Whenever this creature deals combat damage to a player, roll a d20. Draw cards equal to the result. You have no maximum hand size for the rest of the game.

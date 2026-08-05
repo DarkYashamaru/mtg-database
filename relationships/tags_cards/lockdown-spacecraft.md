@@ -1,0 +1,1 @@
+ed99a0b8-d82d-4c80-af97-cabd333620df|Tractor Beam|Enchant creature or Spacecraft When this Aura enters, tap enchanted permanent. You control enchanted permanent. Enchanted permanent doesn't untap during its controller's untap step.

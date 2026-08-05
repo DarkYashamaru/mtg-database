@@ -1,0 +1,5 @@
+d8b770c2-0406-4a2d-95d9-e14bb5d3bdc6|Duskfang Mentor|When this creature enters, put a lifelink counter on target non-Human creature you control. {1}{B}, {T}: Put a +1/+1 counter on each creature you control with lifelink.
+3c9d217e-d7f8-43df-9bb6-58d29f93e2c4|Frillscare Mentor|When this creature enters, put a menace counter on target non-Human creature you control. (It can't be blocked except by two or more creatures.) {2}{R}, {T}: Put a +1/+1 counter on each creature you control with menace.
+ec3031ff-93db-48e9-9e09-335786cb85c2|Hornbash Mentor|When this creature enters, put a trample counter on target non-Human creature you control. {2}{G}, {T}: Put a +1/+1 counter on each creature you control with trample.
+500a17a0-8332-414c-9c3a-7157a7800887|Keensight Mentor|When this creature enters, put a vigilance counter on target non-Human creature you control. {1}{W}, {T}: Put a +1/+1 counter on each creature you control with vigilance.
+2b3b0e56-0b83-403b-bdfd-b5b7c0accf1b|Wingspan Mentor|When this creature enters, put a flying counter on target non-Human creature you control. {2}{U}, {T}: Put a +1/+1 counter on each creature you control with flying.

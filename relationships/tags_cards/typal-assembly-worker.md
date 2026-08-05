@@ -1,0 +1,5 @@
+751321ac-af07-4b7e-976f-5bf4e4281470|Assembly-Worker|{T}: Target Assembly-Worker creature gets +1/+1 until end of turn.
+3afdc98e-aeeb-43e9-bdcd-0c51da44d2f8|Autonomous Assembler|Prototype {1}{W} — 2/2 (You may cast this spell with different mana cost, color, and size. It keeps its abilities and types.) Vigilance {1}, {T}: Put a +1/+1 counter on target Assembly-Worker you control.
+5963e0ef-e0bc-4611-ad4f-813a4c0eacfb|Mishra's Factory|{T}: Add {C}. {1}: This land becomes a 2/2 Assembly-Worker artifact creature until end of turn. It's still a land. {T}: Target Assembly-Worker creature gets +1/+1 until end of turn.
+b43e9772-6ad4-49c7-9557-b18ee1e4587d|Mishra's Foundry|{T}: Add {C}. {2}: This land becomes a 2/2 Assembly-Worker artifact creature until end of turn. It's still a land. {1}, {T}: Target attacking Assembly-Worker gets +2/+2 until end of turn.
+8f36e058-e5fa-48f9-9996-09b77fc193b3|Self-Assembler|When this creature enters, you may search your library for an Assembly-Worker creature card, reveal it, put it into your hand, then shuffle.

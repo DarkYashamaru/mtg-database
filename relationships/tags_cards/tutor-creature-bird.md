@@ -1,0 +1,1 @@
+0e5b40dc-debf-48a1-8398-5ea00b5a5166|Sazh Katzroy|When Sazh Katzroy enters, you may search your library for a Bird or basic land card, reveal it, put it into your hand, then shuffle. Whenever Sazh Katzroy attacks, put a +1/+1 counter on target creature, then double the number of +1/+1 counters on that creature.

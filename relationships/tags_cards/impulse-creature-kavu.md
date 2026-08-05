@@ -1,0 +1,1 @@
+635c0a7d-d832-4c10-a5f0-9cde19152cbb|Kavu Howler|When this creature enters, reveal the top four cards of your library. Put all Kavu cards revealed this way into your hand and the rest on the bottom of your library in any order.

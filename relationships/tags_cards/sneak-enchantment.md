@@ -1,0 +1,3 @@
+a03ab63a-83f3-4dd6-926d-08d09ce2e696|Gate to the Aether|At the beginning of each player's upkeep, that player reveals the top card of their library. If it's an artifact, creature, enchantment, or land card, the player may put it onto the battlefield.
+cf288b0a-a343-4ef7-ba02-4f83a6dabeaf|Hypergenesis|Suspend 3—{1}{G}{G} Starting with you, each player may put an artifact, creature, enchantment, or land card from their hand onto the battlefield. Repeat this process until no one puts a card onto the battlefield.
+b83a3ba0-249e-4c39-bbf0-cb005413f7d2|Show and Tell|Each player may put an artifact, creature, enchantment, or land card from their hand onto the battlefield.

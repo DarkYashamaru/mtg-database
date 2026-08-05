@@ -1,0 +1,2 @@
+67466d56-9f28-4bbe-ae54-6fd834581e77|Bitterheart Witch|Deathtouch When this creature dies, you may search your library for a Curse card, put it onto the battlefield attached to target player, then shuffle.
+b03c7c8d-8206-45cd-8ead-8f7b35c03a7a|Curse of Misfortunes|Enchant player At the beginning of your upkeep, you may search your library for a Curse card that doesn't have the same name as a Curse attached to enchanted player, put it onto the battlefield attached to that player, then shuffle.

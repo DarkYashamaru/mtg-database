@@ -1,0 +1,5 @@
+3902048e-b7bf-4676-be92-e590bc76c729|Corrupted Zendikon|Enchant land Enchanted land is a 3/3 black Ooze creature. It's still a land. When enchanted land dies, return that card to its owner's hand.
+68a1a67e-9d40-47dd-b282-6c1b15465f62|Crusher Zendikon|Enchant land Enchanted land is a 4/2 red Beast creature with trample. It's still a land. When enchanted land dies, return that card to its owner's hand.
+44154004-e50e-45d1-bde0-ba6e3354067c|Guardian Zendikon|Enchant land Enchanted land is a 2/6 white Wall creature with defender. It's still a land. When enchanted land dies, return that card to its owner's hand.
+10172c40-7169-4098-9452-b35797d27065|Vastwood Zendikon|Enchant land Enchanted land is a 6/4 green Elemental creature. It's still a land. When enchanted land dies, return that card to its owner's hand.
+d6786f80-818c-433d-8978-81814171dd39|Wind Zendikon|Enchant land Enchanted land is a 2/2 blue Elemental creature with flying. It's still a land. When enchanted land dies, return that card to its owner's hand.

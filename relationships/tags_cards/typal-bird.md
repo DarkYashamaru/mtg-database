@@ -1,0 +1,10 @@
+7f715f72-5444-4ab3-a6ca-3d5bfd0d4851|Airborne Aid|Draw a card for each Bird on the battlefield.
+f3c40943-1d7c-4ea2-b34f-8df8b6775701|Animal Sanctuary|{T}: Add {C}. {2}, {T}: Put a +1/+1 counter on target Bird, Cat, Dog, Goat, Ox, or Snake.
+910ae0ca-257d-4b45-b039-f26e7b2f3d5c|Aven Brigadier|Flying Other Bird creatures get +1/+1. Other Soldier creatures get +1/+1.
+7d3e5d95-2658-4c1a-9ed3-df1f554d87ea|Aven Warhawk|Amplify 1 (As this creature enters, put a +1/+1 counter on it for each Bird and/or Soldier card you reveal in your hand.) Flying
+a7726d8c-7539-43bc-9614-418fa12c0912|Celestial Gatekeeper|Flying When this creature dies, exile it, then return up to two target Bird and/or Cleric permanent cards from your graveyard to the battlefield.
+7979bf83-5091-4e62-8885-ca1833a97306|Choco, Seeker of Paradise|Whenever one or more Birds you control attack, look at that many cards from the top of your library. You may put one of them into your hand. Then put any number of land cards from among them onto the battlefield tapped and the rest into your graveyard. Landfall — Whenever a land you control enters, Choco gets +1/+0 until end of turn.
+ed77fdf2-59c0-4310-9b12-80d28beeaeef|Chocobo Camp|This land enters tapped unless you control a legendary creature. {T}: Add {G}. When you next cast a Bird creature spell this turn, it enters with an additional +1/+1 counter on it. {2}{G}{G}, {T}: Create a 2/2 green Bird creature token with "Whenever a land you control enters, this token gets +1/+0 until end of turn."
+fe4af83a-3554-44cd-94ed-18b773cf6d60|Cloudreach Cavalry|As long as you control a Bird, this creature gets +2/+2 and has flying.
+9b851461-d258-41c4-bd0a-d24d5f1be6b2|Crookclaw Elder|Flying Tap two untapped Birds you control: Draw a card. Tap two untapped Wizards you control: Target creature gains flying until end of turn.
+6d56bd32-f47a-4e54-a88e-b69d16283ea4|Dazzling Denial|Counter target spell unless its controller pays {2}. If you control a Bird, counter that spell unless its controller pays {4} instead.

@@ -1,0 +1,1 @@
+c15e5e93-2eff-407d-ae75-437e36ef85ba|Allies at Last|Affinity for Allies (This spell costs {1} less to cast for each Ally you control.) Up to two target creatures you control each deal damage equal to their power to target creature an opponent controls.

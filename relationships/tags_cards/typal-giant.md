@@ -1,0 +1,10 @@
+592d847e-e3f3-425d-89f9-01ab533ad581|Aegar, the Freezing Flame|Whenever a creature or planeswalker an opponent controls is dealt excess damage, if a Giant, Wizard, or spell you controlled dealt damage to it this turn, draw a card.
+7211221d-d4d8-4bbe-9d2a-b82e005bfe8a|Ancient Amphitheater|As this land enters, you may reveal a Giant card from your hand. If you don't, this land enters tapped. {T}: Add {R} or {W}.
+5a7b89a6-d42d-4fd4-8754-d9c3e3df2118|Battle of Frost and Fire|(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.) I — This Saga deals 4 damage to each non-Giant creature and each planeswalker. II — Scry 3. III — Whenever you cast a spell with mana value 5 or greater this turn, draw two cards, then discard a card.
+37165859-87bc-4d44-95a2-39051ab20a14|Blind-Spot Giant|This creature can't attack or block unless you control another Giant.
+ab32c671-7686-435b-a987-14a08f6790eb|Boldwyr Aggressor|Double strike Other Giants you control have double strike.
+378a78d8-9001-4aa5-a66b-2aca27fa8180|Borderland Behemoth|Trample This creature gets +4/+4 for each other Giant you control.
+b3f7c4ac-b788-4307-9bc3-d99ce310e07c|Calamity Bearer|If a Giant source you control would deal damage to a permanent or player, it deals double that damage to that permanent or player instead.
+81686da0-85fc-4938-962b-24443de3ada1|Crush Underfoot|Choose a Giant creature you control. It deals damage equal to its power to target creature.
+2088e791-9ce5-4e97-a4ce-f51adaa3f42b|Cyclone Summoner|When this creature enters, if you cast it from your hand, return all permanents to their owners' hands except for Giants, Wizards, and lands.
+311eef28-21e9-44fa-96df-d281f0a9ba34|Dawn-Blessed Pennant|As this artifact enters, choose Elemental, Elf, Faerie, Giant, Goblin, Kithkin, Merfolk, or Treefolk. Whenever a permanent you control of the chosen type enters, you gain 1 life. {2}, {T}, Sacrifice this artifact: Return target card of the chosen type from your graveyard to your hand.

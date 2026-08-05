@@ -1,0 +1,1 @@
+7d079c78-b2a9-444f-ab54-c61c041baa6d|Selfless Squire|Flash When this creature enters, prevent all damage that would be dealt to you this turn. Whenever damage that would be dealt to you is prevented, put that many +1/+1 counters on this creature.

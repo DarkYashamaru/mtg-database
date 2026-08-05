@@ -1,0 +1,2 @@
+03a4b997-4738-41a9-933f-e1f765e3a75a|Rakdos, the Showstopper|Flying, trample When Rakdos enters, flip a coin for each creature that isn't a Demon, Devil, or Imp. Destroy each creature whose coin comes up tails.
+23bd166b-d766-4d03-8016-6708481d2195|Raphael, Fiendish Savior|Flying Other Demons, Devils, Imps, and Tieflings you control get +1/+1 and have lifelink. At the beginning of each end step, if a creature card was put into your graveyard from anywhere this turn, create a 1/1 red Devil creature token with "When this token dies, it deals 1 damage to any target."

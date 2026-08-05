@@ -1,0 +1,10 @@
+aeba5c63-aa80-4f31-90fb-f404c9a3057d|Aphetto Vulture|Flying When this creature dies, you may put target Zombie card from your graveyard on top of your library.
+ffa93a79-7a10-4331-91de-eabbc4fee17e|Barishi|When this creature dies, exile it, then shuffle all creature cards from your graveyard into your library.
+0cc38d20-5ae8-413a-9f26-ff13cd92f24c|Bone Harvest|Put any number of target creature cards from your graveyard on top of your library. Draw a card at the beginning of the next turn's upkeep.
+e43b478b-4cb8-42b1-a5b0-0b1421b84852|Coin of Fate|When this artifact enters, surveil 1. {3}{W}, {T}, Exile two creature cards from your graveyard, Sacrifice this artifact: An opponent chooses one of the exiled cards. You put that card on the bottom of your library and return the other to the battlefield tapped. You become the monarch.
+2a4b77f0-81ac-48a6-961b-bd63e99f74cf|Dead Reckoning|You may put target creature card from your graveyard on top of your library. If you do, Dead Reckoning deals damage equal to that card's power to target creature.
+b9906b19-912e-4a9d-888f-3c895bbed2c5|Dukhara Scavenger|When this creature enters, you may put target artifact or creature card from your graveyard on top of your library.
+10b0b60f-9976-41f9-855b-1786b6f86f55|Elvish Soultiller|When this creature dies, choose a creature type. Shuffle all creature cards of that type from your graveyard into your library.
+24dbddad-998b-4755-b356-4c8aca3592b1|Flitting Guerrilla|Flying When this creature dies, each player mills two cards. Then you may exile this card. When you do, put target creature or battle card from your graveyard on top of your library. (To mill two cards, a player puts the top two cards of their library into their graveyard.)
+0a35df9d-80a0-4b6f-91d5-dad980af47e1|Footbottom Feast|Put any number of target creature cards from your graveyard on top of your library. Draw a card.
+31f32afa-5b2a-4218-ae7b-642e1cac3911|Forever Young|Put any number of target creature cards from your graveyard on top of your library. Draw a card.

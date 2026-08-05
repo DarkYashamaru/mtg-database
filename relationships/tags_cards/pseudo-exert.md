@@ -1,0 +1,6 @@
+b52f5850-f1aa-412a-bae9-2ce76c287188|Apes of Rath|Whenever this creature attacks, it doesn't untap during its controller's next untap step.
+1d79b7a8-2b4c-4893-afdb-879c74957288|Arbalest Elite|{2}{W}, {T}: This creature deals 3 damage to target attacking or blocking creature. This creature doesn't untap during your next untap step.
+d1aba343-d85a-4829-bdfe-db31fcb3c320|Deep Spawn|Trample At the beginning of your upkeep, sacrifice this creature unless you mill two cards. {U}: This creature gains shroud until end of turn and doesn't untap during your next untap step. Tap this creature. (A creature with shroud can't be the target of spells or abilities.)
+6facb0f6-fa49-4ce6-9f95-15bb3ce4bcf2|Homarid Warrior|{U}: This creature gains shroud until end of turn and doesn't untap during your next untap step. Tap it. (A creature with shroud can't be the target of spells or abilities.)
+7085d5c6-da96-465e-90cf-8469fcacb474|Reveka, Wizard Savant|{T}: Reveka deals 2 damage to any target and doesn't untap during your next untap step.
+83856c3a-652e-4afc-9dc0-0072324ac36f|Sanctuary Wall|Defender {2}{W}, {T}: Tap target creature. You may put a stun counter on it. If you do, put a stun counter on this creature. (If a permanent with a stun counter would become untapped, remove one from it instead.)

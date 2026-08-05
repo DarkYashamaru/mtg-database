@@ -1,0 +1,1 @@
+d6458cf6-eb1f-448b-8205-1b5d887ff2bf|Forerunner of the Coalition|When this creature enters, you may search your library for a Pirate card, reveal it, then shuffle and put that card on top. Whenever another Pirate you control enters, each opponent loses 1 life.

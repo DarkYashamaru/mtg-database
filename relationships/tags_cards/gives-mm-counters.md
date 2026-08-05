@@ -1,0 +1,10 @@
+3a92b235-196b-4f46-9d20-06f4d3653d36|Aberrant Return|Put one, two, or three target creature cards from graveyards onto the battlefield under your control. Each of them enters with an additional -1/-1 counter on it.
+535e2af0-7b08-4026-b1bf-87626407dd42|Archfiend of Ifnir|Flying Whenever you cycle or discard another card, put a -1/-1 counter on each creature your opponents control. Cycling {2} ({2}, Discard this card: Draw a card.)
+89e90361-822f-42b6-9ed9-d94e6d24fb95|Attempted Murder|Choose target creature. Roll X six-sided dice. For each even result, put two -1/-1 counters on that creature. For each odd result, create a 1/2 blue Bird creature token with flying named Storm Crow.
+e3cd53c1-86bd-4177-adb0-a1fa693b44c6|Auntie Ool, Cursewretch|Ward—Blight 2. (To blight 2, a player puts two -1/-1 counters on a creature they control.) Whenever one or more -1/-1 counters are put on a creature, draw a card if you control that creature. If you don't control it, its controller loses 1 life.
+d46c397c-e772-4a29-bbd2-1d7b47a461e8|Banewhip Punisher|When this creature enters, you may put a -1/-1 counter on target creature. {B}, Sacrifice this creature: Destroy target creature that has a -1/-1 counter on it.
+15febce7-8320-4591-9535-ef11c8adecc2|Barbed Bloodletter|Flash When this Equipment enters, attach it to target creature you control. That creature gains wither until end of turn. (It deals damage to creatures in the form of -1/-1 counters.) Equipped creature gets +1/+2. Equip {2}
+5a651557-ce08-46ba-aecd-0e4fbfdef3c0|Bile-Vial Boggart|When this creature dies, put a -1/-1 counter on up to one target creature.
+1ea20ecb-1919-4be7-b0bb-d79d2dec98fd|Biting Tether|Enchant creature You control enchanted creature. At the beginning of your upkeep, put a -1/-1 counter on enchanted creature.
+038c0165-32b6-4e81-8180-604b49905207|Black Sun's Zenith|Put X -1/-1 counters on each creature. Shuffle Black Sun's Zenith into its owner's library.
+156d1a58-c970-4b81-b6c7-5a0caa1699cd|Blackcleave Goblin|Haste Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)

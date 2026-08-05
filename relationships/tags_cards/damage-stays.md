@@ -1,0 +1,1 @@
+e6873252-653a-47a8-99b7-b2ef70aa1f7f|Ancient Adamantoise|Vigilance, ward {3} Damage isn't removed from this creature during cleanup steps. All damage that would be dealt to you and other permanents you control is dealt to this creature instead. When this creature dies, exile it and create ten tapped Treasure tokens.

@@ -1,0 +1,5 @@
+c01516e0-eec3-4370-b935-7674982e8850|Judith, the Scourge Diva|Other creatures you control get +1/+0. Whenever a nontoken creature you control dies, Judith deals 1 damage to any target.
+81ba3a33-0e04-4f68-9a42-1dd717733b57|Lavinia, Azorius Renegade|Each opponent can't cast noncreature spells with mana value greater than the number of lands that player controls. Whenever an opponent casts a spell, if no mana was spent to cast it, counter that spell.
+ebf3fd80-9574-489b-9428-f4251834bdc4|Nikya of the Old Ways|You can't cast noncreature spells. Whenever you tap a land for mana, add one mana of any type that land produced.
+644eeefd-e684-4ca8-8aef-a892ca130c07|Teysa Karlov|If a creature dying causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time. Creature tokens you control have vigilance and lifelink.
+04260930-ff38-4b35-9ec4-e89196a4f2c7|Zegana, Utopian Speaker|When Zegana enters, if you control another creature with a +1/+1 counter on it, draw a card. {4}{G}{U}: Adapt 4. (If this creature has no +1/+1 counters on it, put four +1/+1 counters on it.) Each creature you control with a +1/+1 counter on it has trample.

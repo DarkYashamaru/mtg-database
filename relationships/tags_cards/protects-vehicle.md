@@ -1,0 +1,1 @@
+1ad5766b-9ae3-437b-bd91-c4c988a8b095|Agonasaur Rex|Trample Cycling {2}{G} ({2}{G}, Discard this card: Draw a card.) When you cycle this card, put two +1/+1 counters on up to one target creature or Vehicle. It gains trample and indestructible until end of turn.

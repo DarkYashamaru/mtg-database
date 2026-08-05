@@ -1,0 +1,1 @@
+5a721c27-3e02-4f60-995e-b29d678d93b3|Rose, Cutthroat Raider|First strike Raid — At end of combat on your turn, if you attacked this turn, create a Junk token for each opponent you attacked. (It's an artifact with "{T}, Sacrifice this token: Exile the top card of your library. You may play that card this turn. Activate only as a sorcery.") Whenever you sacrifice a Junk, add {R}.

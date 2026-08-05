@@ -1,0 +1,10 @@
+92de7cf0-ac3e-46ae-86b2-7d8ebb0276e4|A Good Day to Pie|Tap up to two target creatures. Whenever you put a name sticker on a creature, you may return this card from your graveyard to your hand.
+5404c6a5-399d-4237-b03c-41b6a1b79050|Abandon the Post|Up to two target creatures can't block this turn. Flashback {3}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+46b5f12e-9fe5-44f6-b895-ee8c33205521|Aberrant|Ravenous (This creature enters with X +1/+1 counters on it. If X is 5 or more, draw a card when it enters.) Trample Heavy Power Hammer — Whenever this creature deals combat damage to a player, destroy target artifact or enchantment that player controls.
+2f5f46ed-b8aa-4864-bd20-17281d4632bf|Abigale, Poet Laureate // Heroic Stanza|Flying Whenever you cast a creature spell, Abigale becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.) // Put a +1/+1 counter on target creature.
+d4d44264-b276-4bd7-8fbe-6af292b08773|Aboshan, Cephalid Emperor|Tap an untapped Octopus you control: Tap target permanent. {U}{U}{U}: Tap all creatures without flying.
+a9002245-0f33-48cb-96d3-fde884236eb5|Absolver Thrull|Haunt (When this creature dies, exile it haunting target creature.) When this creature enters or the creature it haunts dies, destroy target enchantment.
+cf082161-47ff-46b9-926d-3fa5e5727861|Abuna Acolyte|{T}: Prevent the next 1 damage that would be dealt to any target this turn. {T}: Prevent the next 2 damage that would be dealt to target artifact creature this turn.
+68cc5065-0514-4adf-885f-da554e1db00a|Abyssal Harvester|{T}: Exile target creature card from a graveyard that was put there this turn. Create a token that's a copy of it, except it's a Nightmare in addition to its other types. Then exile all other Nightmare tokens you control.
+b96ccc2f-88e5-4522-924e-76fc76dc3b39|Abyssal Hunter|{B}, {T}: Tap target creature. This creature deals damage equal to its power to that creature.
+ed9cc560-f30b-4b60-a094-ccf93ed656a7|Access Tunnel|{T}: Add {C}. {3}, {T}: Target creature with power 3 or less can't be blocked this turn.

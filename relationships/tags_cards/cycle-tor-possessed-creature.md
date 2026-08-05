@@ -1,0 +1,4 @@
+1a5f1670-3e71-4379-90ee-a883c8dc6070|Possessed Aven|Flying Threshold — As long as there are seven or more cards in your graveyard, this creature gets +1/+1, is black, and has "{2}{B}, {T}: Destroy target blue creature."
+ee51365b-9f36-44a7-8706-ae5b2f86bd29|Possessed Barbarian|First strike Threshold — As long as there are seven or more cards in your graveyard, this creature gets +1/+1, is black, and has "{2}{B}, {T}: Destroy target red creature."
+2fd1707b-917c-4842-a5c6-dfffbedcf918|Possessed Centaur|Trample Threshold — As long as there are seven or more cards in your graveyard, this creature gets +1/+1, is black, and has "{2}{B}, {T}: Destroy target green creature."
+9bf9870e-32a3-494c-bd42-f9f013463619|Possessed Nomad|Vigilance Threshold — As long as there are seven or more cards in your graveyard, this creature gets +1/+1, is black, and has "{2}{B}, {T}: Destroy target white creature."

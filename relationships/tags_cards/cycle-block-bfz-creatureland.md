@@ -1,0 +1,5 @@
+7fff5224-c002-4a32-86fe-9a4b18d78b50|Hissing Quagmire|This land enters tapped. {T}: Add {B} or {G}. {1}{B}{G}: Until end of turn, this land becomes a 2/2 black and green Elemental creature with deathtouch. It's still a land.
+c2878f4e-3044-4d60-8ec1-b325edfca397|Lumbering Falls|This land enters tapped. {T}: Add {G} or {U}. {2}{G}{U}: Until end of turn, this land becomes a 3/3 green and blue Elemental creature with hexproof. It's still a land.
+e7bb8160-0a4b-4e46-b196-7a19fb388d8e|Needle Spires|This land enters tapped. {T}: Add {R} or {W}. {2}{R}{W}: Until end of turn, this land becomes a 2/1 red and white Elemental creature with double strike. It's still a land.
+4725abd4-06bc-464a-bc5b-c9e0f71ec079|Shambling Vent|This land enters tapped. {T}: Add {W} or {B}. {1}{W}{B}: Until end of turn, this land becomes a 2/3 white and black Elemental creature with lifelink. It's still a land.
+741c51f1-cfbe-4c29-ac8f-ca6bcd2652f9|Wandering Fumarole|This land enters tapped. {T}: Add {U} or {R}. {2}{U}{R}: Until end of turn, this land becomes a 1/4 blue and red Elemental creature with "{0}: Switch this creature's power and toughness until end of turn." It's still a land.

@@ -1,0 +1,1 @@
+131a7475-0b9e-46eb-9ade-fef1b9820184|Stormtide Leviathan|Islandwalk (This creature can't be blocked as long as defending player controls an Island.) All lands are Islands in addition to their other types. Creatures without flying or islandwalk can't attack.

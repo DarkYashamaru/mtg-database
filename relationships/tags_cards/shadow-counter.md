@@ -1,0 +1,1 @@
+867dbd5a-c3cf-41ce-980b-c9babc6f30f2|Minas Morgul, Dark Fortress|Minas Morgul enters tapped. {T}: Add {B}. {3}{B}, {T}: Put a shadow counter on target creature. For as long as that creature has a shadow counter on it, it's a Wraith in addition to its other types. (A creature with shadow can block or be blocked by only creatures with shadow.)

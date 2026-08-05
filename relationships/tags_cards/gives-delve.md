@@ -1,0 +1,1 @@
+f6cf359a-91cb-4b3c-8837-be53e4ed9c93|Teval, Arbiter of Virtue|Flying, lifelink Spells you cast have delve. (Each card you exile from your graveyard while casting those spells pays for {1}.) Whenever you cast a spell, you lose life equal to its mana value.

@@ -1,0 +1,10 @@
+d06a8026-1657-4404-8dff-64e44f1a14f8|Abstergo Entertainment|{T}: Add {C}. {1}, {T}: Add one mana of any color. {3}, {T}, Exile Abstergo Entertainment: Return up to one target historic card from your graveyard to your hand, then exile all graveyards. (Artifacts, legendaries, and Sagas are historic.)
+71bc69a5-7cec-4abd-b97d-13f8e1f9afac|Baxter Building|{T}: Add {C}. {4}, {T}: Add four mana in any combination of colors. {4}, {T}: Draw a card. Activate only if you control a creature with toughness 4 or greater.
+7a30316b-dcd5-4a4b-b959-eecde7ca92e7|Branch of Vitu-Ghazi|{T}: Add {C}. Disguise {3} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.) When this land is turned face up, add two mana of any one color. Until end of turn, you don't lose this mana as steps and phases end.
+2c96ab90-155b-4bf4-acc9-65a2f0cd3189|Capital City|{T}: Add {C}. {1}, {T}: Add one mana of any color. Cycling {2} ({2}, Discard this card: Draw a card.)
+4c77767a-8133-43bc-b7a5-09a73259d354|Captivating Cave|{T}: Add {C}. {1}, {T}: Add one mana of any color. {4}, {T}, Sacrifice this land: Put two +1/+1 counters on target creature. Activate only as a sorcery.
+d98b4250-3492-4864-9c4c-42db09b3ccd4|Cascading Cataracts|Indestructible {T}: Add {C}. {5}, {T}: Add five mana in any combination of colors.
+de75e5dd-8a52-406c-b55c-96d686885500|Castle Garenbrig|This land enters tapped unless you control a Forest. {T}: Add {G}. {2}{G}{G}, {T}: Add six {G}. Spend this mana only to cast creature spells or activate abilities of creatures.
+75540897-53f6-433b-bd70-9851551df6ef|Cave of Temptation|{T}: Add {C}. {1}, {T}: Add one mana of any color. {4}, {T}, Sacrifice this land: Put two +1/+1 counters on target creature. Activate only as a sorcery.
+37f924e1-7c25-4f06-88bb-054693a21e5a|Conduit Pylons|When this land enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.) {T}: Add {C}. {1}, {T}: Add one mana of any color.
+cc78776b-822b-4f11-8982-0805a25a9d36|Crypt of the Eternals|When this land enters, you gain 1 life. {T}: Add {C}. {1}, {T}: Add {U}, {B}, or {R}.

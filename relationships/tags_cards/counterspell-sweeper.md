@@ -1,0 +1,8 @@
+8c983da8-1436-4c06-af9c-91b72cab48c1|Counterflux|This spell can't be countered. Counter target spell you don't control. Overload {1}{U}{U}{R} (You may cast this spell for its overload cost. If you do, change "target" in its text to "each.")
+11ed8209-2184-4416-a8f0-72de00599574|Glen Elendra's Answer|This spell can't be countered. Counter all spells your opponents control and all abilities your opponents control. Create a 1/1 blue and black Faerie creature token with flying for each spell and ability countered this way.
+a067233b-cff0-45ae-89d9-377e94fcf3b3|Grimoire Thief|Whenever this creature becomes tapped, exile the top three cards of target opponent's library face down. You may look at cards exiled with this creature. {U}, Sacrifice this creature: Turn all cards exiled with this creature face up. Counter all spells with those names.
+02095128-82cd-4531-b47e-471307746f81|Kadena's Silencer|When this creature is turned face up, counter all abilities your opponents control. Megamorph {1}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its megamorph cost and put a +1/+1 counter on it.)
+4499d8cd-d090-4acc-a1d9-3d9d9b6ef768|Reverse the Polarity|Choose one — • Counter all other spells. • Switch each creature's power and toughness until end of turn. • Creatures can't be blocked this turn.
+f69d65e0-4d8a-4e27-b4dd-dd8c50acb8eb|Summary Dismissal|Exile all other spells and counter all abilities.
+ec45caf7-2051-463d-bf70-3dda671d6ce2|Swift Silence|Counter all other spells. Draw a card for each spell countered this way.
+ba9e129d-a3cf-431c-93af-f2e4902d40a0|Whirlwind Denial|For each spell and ability your opponents control, counter it unless its controller pays {4}.

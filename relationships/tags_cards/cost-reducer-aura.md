@@ -1,0 +1,5 @@
+4b6377da-83e7-4519-9582-16a9c16b8faa|Danitha Capashen, Paragon|First strike, vigilance, lifelink Aura and Equipment spells you cast cost {1} less to cast.
+9e0461e7-ccc4-413b-be80-83311be46861|Golden-Tail Trainer|Aura and Equipment spells you cast cost {X} less to cast, where X is this creature's power. Whenever this creature attacks, other modified creatures you control get +X/+X until end of turn, where X is this creature's power. (Equipment, Auras you control, and counters are modifications.)
+0d44bd43-77da-449e-b771-8a14da88b677|Hero of Iroas|Aura spells you cast cost {1} less to cast. Heroic — Whenever you cast a spell that targets this creature, put a +1/+1 counter on this creature.
+097992a9-7b88-4c3f-8191-1ff10a4a735d|Strong Back|Enchant creature Equip abilities you activate that target enchanted creature cost {3} less to activate. Aura spells you cast that target enchanted creature cost {3} less to cast. Enchanted creature gets +2/+2 for each Aura and Equipment attached to it.
+f08f7814-4585-41dd-b82e-ed2ef5e24242|Transcendent Envoy|Flying Aura spells you cast cost {1} less to cast.

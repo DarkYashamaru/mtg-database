@@ -1,0 +1,10 @@
+0eec9984-cd11-4a52-9234-469c6a5fb9aa|Abandoned Campground|This land enters tapped unless a player has 13 or less life. {T}: Add {W} or {U}.
+47b6d2ae-d3d7-41eb-9172-2076eb8d028d|Bleeding Woods|This land enters tapped unless a player has 13 or less life. {T}: Add {R} or {G}.
+6ccca5c2-66c3-495a-8d9e-1a9805569e52|Etched Cornfield|This land enters tapped unless a player has 13 or less life. {T}: Add {G} or {W}.
+c56cd2ec-5907-4282-9162-d93b7dfd63b5|Lakeside Shack|This land enters tapped unless a player has 13 or less life. {T}: Add {G} or {U}.
+c2cdefeb-3176-4faf-be54-a62d31f777a5|Murky Sewer|This land enters tapped unless a player has 13 or less life. {T}: Add {U} or {B}.
+c8c632ab-14ec-44e1-ac00-81d48336320d|Neglected Manor|This land enters tapped unless a player has 13 or less life. {T}: Add {W} or {B}.
+d55f7e20-11c6-44e2-8a21-dca67d3dbc68|Peculiar Lighthouse|This land enters tapped unless a player has 13 or less life. {T}: Add {U} or {R}.
+24a97436-ba61-4ebc-a560-a6c027ccfdf3|Raucous Carnival|This land enters tapped unless a player has 13 or less life. {T}: Add {R} or {W}.
+8f69bd3a-244e-42d8-bfac-5a426f4b54b4|Razortrap Gorge|This land enters tapped unless a player has 13 or less life. {T}: Add {B} or {R}.
+3a5b3405-a1e3-4aad-ab4e-1b8db2d1f3a8|Strangled Cemetery|This land enters tapped unless a player has 13 or less life. {T}: Add {B} or {G}.

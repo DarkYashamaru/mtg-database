@@ -1,0 +1,5 @@
+7ba580c9-f933-43d9-b03d-a349faa6c641|Fertile Thicket|This land enters tapped. When this land enters, you may look at the top five cards of your library. If you do, reveal up to one basic land card from among them, then put that card on top of your library and the rest on the bottom in any order. {T}: Add {G}.
+7d09b136-525f-49dd-a3a2-dfaca4e8e9a8|Looming Spires|This land enters tapped. When this land enters, target creature gets +1/+1 and gains first strike until end of turn. {T}: Add {R}.
+1b3fb20a-e090-4286-9c03-6b71c27c45be|Mortuary Mire|This land enters tapped. When this land enters, you may put target creature card from your graveyard on top of your library. {T}: Add {B}.
+08911e8e-cd67-4960-a927-958c33632469|Sandstone Bridge|This land enters tapped. When this land enters, target creature gets +1/+1 and gains vigilance until end of turn. {T}: Add {W}.
+79301ae1-8c9c-4723-be21-dc27e1646f35|Skyline Cascade|This land enters tapped. When this land enters, target creature an opponent controls doesn't untap during its controller's next untap step. {T}: Add {U}.

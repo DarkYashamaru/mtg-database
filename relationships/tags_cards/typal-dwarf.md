@@ -1,0 +1,10 @@
+3d5b6151-d985-423b-8ade-f00958bbd3f6|Armed and Armored|Vehicles you control become artifact creatures until end of turn. Choose a Dwarf you control. Attach any number of Equipment you control to it.
+a231319d-5d72-4aa6-8868-5987694791cd|Bearded Axe|Equipped creature gets +1/+1 for each Dwarf, Equipment, and/or Vehicle you control. Equip {2}
+cc913f28-18ef-485e-8d2b-ae0115523020|Depala, Pilot Exemplar|Other Dwarves you control get +1/+1. Each Vehicle you control gets +1/+1 as long as it's a creature. Whenever Depala becomes tapped, you may pay {X}. If you do, reveal the top X cards of your library, put all Dwarf and Vehicle cards from among them into your hand, then put the rest on the bottom of your library in a random order.
+d82c77a1-2b81-415d-9f18-47e059c15e01|Doors of Durin|Whenever you attack, scry 2, then you may reveal the top card of your library. If it's a creature card, put it onto the battlefield tapped and attacking. Until your next turn, it gains trample if you control a Dwarf and hexproof if you control an Elf.
+cbbca098-0b33-4693-8ea7-a2005b79af3d|Dwarven Bloodboiler|Tap an untapped Dwarf you control: Target creature gets +2/+0 until end of turn.
+06e18c42-d158-494d-979c-c2ac074a8ee3|Dwarven Lieutenant|{1}{R}: Target Dwarf creature gets +1/+0 until end of turn.
+f47f1c96-0b09-4277-8d61-cffa56d81be7|Dwarven Pony|{1}{R}, {T}: Target Dwarf creature gains mountainwalk until end of turn. (It can't be blocked as long as defending player controls a Mountain.)
+d047a819-5196-4a16-8d67-a4edaf6fdef0|Dwarven Recruiter|When this creature enters, search your library for any number of Dwarf cards, reveal them, then shuffle and put those cards on top in any order.
+c629fa91-e13c-494b-a95f-a91b7c52035a|Giott, King of the Dwarves|Double strike Whenever Giott or another Dwarf you control enters and whenever an Equipment you control enters, you may discard a card. If you do, draw a card.
+2f50c45f-058d-41fb-9965-08c2e0edc8ac|Heart Wolf|First strike {T}: Target Dwarf creature gets +2/+0 and gains first strike until end of turn. When that creature leaves the battlefield this turn, sacrifice this creature. Activate only during combat.

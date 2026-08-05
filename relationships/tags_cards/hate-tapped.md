@@ -1,0 +1,10 @@
+a4eb06ca-16d8-41c2-8fc6-22e73872b5b0|Aerial Assault|Destroy target tapped creature. You gain 1 life for each creature you control with flying.
+bf7ec320-64bb-46ca-aac0-ca3d4224b69e|Ajani's Response|This spell costs {3} less to cast if it targets a tapped creature. Destroy target creature.
+3ba809ce-3556-415c-9fcc-291cb10a43cd|Ajani, Outland Chaperone|+1: Create a 1/1 green and white Kithkin creature token. −2: Ajani deals 4 damage to target tapped creature. −8: Look at the top X cards of your library, where X is your life total. You may put any number of nonland permanent cards with mana value 3 or less from among them onto the battlefield. Then shuffle.
+5c641df8-97d7-484b-8d0e-790279fd6177|Artifact Possession|Enchant artifact Whenever enchanted artifact becomes tapped or a player activates an ability of enchanted artifact without {T} in its activation cost, this Aura deals 2 damage to that artifact's controller.
+dad0b69f-ef33-475b-aebc-3a3ca880feb1|Artillery Blast|Domain — Artillery Blast deals X damage to target tapped creature, where X is 1 plus the number of basic land types among lands you control.
+ce979f36-84f2-4419-b400-971263494cc6|Assassinate|Destroy target tapped creature.
+5f31a2d6-649a-40f4-89ce-95c635340e9e|Atraxi Warden|Flying When this creature enters, exile up to one target tapped creature. Suspend 5—{1}{W} (Rather than cast this card from your hand, you may pay {1}{W} and exile it with five time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, you may cast it without paying its mana cost. It has haste.)
+e4508afd-7cc3-4176-8291-cfc2c155ac11|Banish from Edoras|This spell costs {2} less to cast if it targets a tapped creature. Exile target creature.
+2800830c-73c6-4097-be7b-d698c6813c38|Banishing Slash|Destroy up to one target artifact, enchantment, or tapped creature. Then if you control an artifact and an enchantment, create a 2/2 white Samurai creature token with vigilance.
+9c3d2e1f-a5da-47f4-aea8-5861ef7e1b90|Betrayal|Enchant creature an opponent controls Whenever enchanted creature becomes tapped, you draw a card.

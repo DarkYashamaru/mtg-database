@@ -1,0 +1,5 @@
+5c326102-005d-463c-b9f7-14b034b66baa|Awakening of Vitu-Ghazi|Put nine +1/+1 counters on target land you control. It becomes a legendary 0/0 Elemental creature with haste named Vitu-Ghazi. It's still a land.
+ba5a7ac0-b625-42e9-af05-2680a01a95ed|Fblthp, the Lost|When Fblthp enters, draw a card. If it entered from your library or was cast from your library, draw two cards instead. When Fblthp becomes the target of a spell, shuffle Fblthp into its owner's library.
+e8065e1d-e937-4b56-8011-78f0d07328a0|Krenko, Tin Street Kingpin|Whenever Krenko attacks, put a +1/+1 counter on it, then create a number of 1/1 red Goblin creature tokens equal to Krenko's power.
+63e6cb7d-cc27-4200-85fc-ff6472318c1a|Massacre Girl|Menace When Massacre Girl enters, each other creature gets -1/-1 until end of turn. Whenever a creature dies this turn, each creature other than Massacre Girl gets -1/-1 until end of turn.
+9895a33f-9bbd-4440-8c1a-0d401431b77f|Tomik, Distinguished Advokist|Flying Lands on the battlefield and land cards in graveyards can't be the targets of spells or abilities your opponents control. Your opponents can't play land cards from graveyards.

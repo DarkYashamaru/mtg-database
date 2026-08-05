@@ -1,0 +1,10 @@
+5a4553fc-f945-4094-b231-2d378ed6609e|Archaeomender|When this creature enters, return target artifact card from your graveyard to your hand.
+4b889ec0-6130-4e31-bb02-03fdabd28bee|Argivian Archaeologist|{W}{W}, {T}: Return target artifact card from your graveyard to your hand.
+0b6c74a7-d7d3-4c05-84b1-bcb580bb476f|Argivian Find|Return target artifact or enchantment card from your graveyard to your hand.
+db2f3a06-f75e-4689-b147-9820aebb30e2|Auriok Salvagers|{1}{W}: Return target artifact card with mana value 1 or less from your graveyard to your hand.
+3644f316-f9a3-46c9-9b1e-747f86cf4ead|Buried Ruin|{T}: Add {C}. {2}, {T}, Sacrifice this land: Return target artifact card from your graveyard to your hand.
+49a32f34-01a9-4f25-bf38-b4d46ca67b2d|Call Damage Control|Choose up to two. Return those cards from your graveyard to your hand. • Target artifact card. • Target creature card. • Target enchantment card. • Target land card.
+7c520355-1ab8-4d6d-9a29-0f63d6b60024|Cavalier of Dawn|Vigilance When this creature enters, destroy up to one target nonland permanent. Its controller creates a 3/3 colorless Golem artifact creature token. When this creature dies, return target artifact or enchantment card from your graveyard to your hand.
+56b0cb64-b886-413e-bb20-392bf12d3926|Crystal Dragon // Rob the Hoard|Flying, vigilance // Return target artifact, enchantment, or legendary card from your graveyard to your hand. (Then exile this card. You may cast the creature later from exile.)
+07c7193e-f591-4aee-a3cc-3a2c52a38f9b|Custodi Squire|Flying Will of the council — When this creature enters, starting with you, each player votes for an artifact, creature, or enchantment card in your graveyard. Return each card with the most votes or tied for most votes to your hand.
+b9d89f7c-a362-48dc-a335-f0e556e83f35|Daring Archaeologist|When this creature enters, you may return target artifact card from your graveyard to your hand. Whenever you cast a historic spell, put a +1/+1 counter on this creature. (Artifacts, legendaries, and Sagas are historic.)

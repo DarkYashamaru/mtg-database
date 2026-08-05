@@ -1,0 +1,10 @@
+0e11792b-7fe5-4208-aa0b-e5d09b2b65fe|Baneslayer Angel|Flying, first strike, lifelink, protection from Demons and from Dragons
+7e079dd3-3397-491f-a6c5-7be5ade687d3|Become the Pilot|Enchant noncommander creature You control enchanted creature. Enchanted creature gets +2/+2 and can't be blocked unless it's attacking its owner or a permanent its owner controls.
+cd3d1e5d-db12-4878-92a2-23eb8d23eaf3|Blazing Torch|Equipped creature can't be blocked by Vampires or Zombies. Equipped creature has "{T}, Sacrifice Blazing Torch: Blazing Torch deals 2 damage to any target." Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)
+efaa1262-b7ac-49ab-831a-d10b59680691|Canal Courier|When this creature enters, you become the monarch. Whenever this creature and another creature attack different players, this creature can't be blocked this combat.
+a620a765-97ba-4687-acfd-4dec7da75d9f|Departed Deckhand|When this creature becomes the target of a spell, sacrifice it. This creature can't be blocked except by Spirits. {3}{U}: Another target creature you control can't be blocked this turn except by Spirits.
+4f7e865b-6ab0-4361-b864-63c38cdb2fed|Elite Inquisitor|First strike, vigilance Protection from Vampires, from Werewolves, and from Zombies
+7330201a-41ff-44bf-a623-2ed062878c58|Fallen Cleric|Protection from Clerics Morph {4}{B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)
+05f0feb6-6783-49fd-acf6-68b44aaff846|Feline Sovereign|Other Cats you control get +1/+1 and have protection from Dogs. Whenever one or more Cats you control deal combat damage to a player, destroy up to one target artifact or enchantment that player controls.
+d692adcf-8ab5-4208-85d1-c75285a85c59|Goblin Locksmith|Whenever this creature attacks, creatures with defender can't block this turn.
+b81ed78a-1bcc-4a98-8d06-6c9fdff0a8d3|Graxiplon|This creature can't be blocked unless defending player controls three or more creatures that share a creature type.

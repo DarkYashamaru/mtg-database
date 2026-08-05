@@ -1,0 +1,1 @@
+724767ca-bd84-4137-9133-4ad2e96b8428|Dack's Duplicate|You may have this creature enter as a copy of any creature on the battlefield, except it has haste and dethrone. (Whenever it attacks the player with the most life or tied for most life, put a +1/+1 counter on it.)

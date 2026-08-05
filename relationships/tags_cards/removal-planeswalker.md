@@ -1,0 +1,10 @@
+5a898412-5b1e-4217-ac78-5b4099ed8e16|Angelic Ascension|Exile target creature or planeswalker. Its controller creates a 4/4 white Angel creature token with flying.
+850a8369-94ab-43b6-8cfe-286e3623b19d|Angrath's Rampage|Choose one — • Target player sacrifices an artifact of their choice. • Target player sacrifices a creature of their choice. • Target player sacrifices a planeswalker of their choice.
+a75087aa-41bd-4e0f-a118-61b5209356f5|Annihilating Glare|As an additional cost to cast this spell, pay {4} or sacrifice an artifact or creature. Destroy target creature or planeswalker.
+edcb0248-e7c9-4df9-8dba-982048654fd2|Archenemy's Charm|Choose one — • Exile target creature or planeswalker. • Return one or two target creature and/or planeswalker cards from your graveyard to your hand. • Put two +1/+1 counters on target creature you control. It gains lifelink until end of turn.
+aa1a6646-c1e6-4bff-9092-43ee3e137914|Archon of Cruelty|Flying Whenever this creature enters or attacks, target opponent sacrifices a creature or planeswalker of their choice, discards a card, and loses 3 life. You draw a card and gain 3 life.
+a6d95d26-48d8-4a97-9a42-f492a61300c9|Assassin's Ink|This spell costs {1} less to cast if you control an artifact and {1} less to cast if you control an enchantment. Destroy target creature or planeswalker.
+adfcdadd-ddda-477b-8e72-0cae2430fb63|Baleful Mastery|You may pay {1}{B} rather than pay this spell's mana cost. If the {1}{B} cost was paid, an opponent draws a card. Exile target creature or planeswalker.
+f98f7cb7-90ca-41e7-9f1d-8054931ecf0e|Barrin, Tolarian Archmage|When Barrin enters, return up to one other target creature or planeswalker to its owner's hand. At the beginning of your end step, if a permanent was put into your hand from the battlefield this turn, draw a card.
+bceecc64-96f1-4e7b-8904-0aef90377764|Bedevil|Destroy target artifact, creature, or planeswalker.
+776341cb-d2ec-423f-9250-92dc8bd8d503|Bitter Triumph|As an additional cost to cast this spell, discard a card or pay 3 life. Destroy target creature or planeswalker.

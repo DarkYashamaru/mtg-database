@@ -1,0 +1,1 @@
+2f946c13-cfab-415f-9df7-6d621761b2fc|Slippery Bogbonder|Flash Hexproof When this creature enters, put a hexproof counter on target creature. Then move any number of counters from among creatures you control onto that creature.

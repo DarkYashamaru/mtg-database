@@ -1,0 +1,3 @@
+2f9107c5-991a-4c20-9b77-2e2fb4b9dc53|Sawhorn Nemesis|As this creature enters, choose a player. If a source would deal damage to the chosen player or a permanent they control, it deals double that damage instead.
+c7f1a49a-cc22-432f-bf3e-50ba61982b87|Sewer Nemesis|As this creature enters, choose a player. Sewer Nemesis's power and toughness are each equal to the number of cards in the chosen player's graveyard. Whenever the chosen player casts a spell, that player mills a card.
+112322ad-8f66-4cd4-98a1-f425d61a69ce|True-Name Nemesis|As this creature enters, choose a player. This creature has protection from the chosen player.

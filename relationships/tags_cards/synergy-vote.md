@@ -1,0 +1,8 @@
+e8df915f-f509-4c6c-9261-a5a16c3f06c5|Ballot Broker|While voting, you may vote an additional time. (The votes can be for different choices or for the same choice.)
+8877b896-8458-4828-9ff6-9e0ecc180cf7|Brago's Representative|While voting, you get an additional vote. (The votes can be for different choices or for the same choice.)
+b65e1dff-9423-4840-a6af-78cb3e6f4f31|Erestor of the Council|Whenever players finish voting, each opponent who voted for a choice you voted for creates a Treasure token. You scry X, where X is the number of opponents who voted for a choice you didn't vote for. Draw a card.
+ffbf8459-fda2-4c1d-9841-c001c37d2141|Grudge Keeper|Whenever players finish voting, each opponent who voted for a choice you didn't vote for loses 2 life.
+e3ad9287-ef13-4b66-9df8-b17e15bb4b0f|Illusion of Choice|You choose how each player votes this turn. Draw a card.
+d7b69fd7-e575-4009-8549-f576249ba641|Model of Unity|Whenever players finish voting, you and each opponent who voted for a choice you voted for may scry 2. {T}: Add one mana of any color.
+ed202f1d-3511-45f4-bfbc-e6b76d4311d1|The Valeyard|If an opponent would face a villainous choice, they face that choice an additional time. (They can make the same or different choices.) While voting, you may vote an additional time.
+f4e0b557-4f80-4b7c-bfcc-6d4c468faf2e|Tivit, Seller of Secrets|Flying, ward {3} Council's dilemma — Whenever Tivit enters or deals combat damage to a player, starting with you, each player votes for evidence or bribery. For each evidence vote, investigate. For each bribery vote, create a Treasure token. While voting, you may vote an additional time. (The votes can be for different choices or for the same choice.)

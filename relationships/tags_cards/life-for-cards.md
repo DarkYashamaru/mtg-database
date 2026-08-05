@@ -1,0 +1,10 @@
+4137a22c-f793-4e27-a9b2-72740a6e2121|Abzan Charm|Choose one — • Exile target creature with power 3 or greater. • You draw two cards and you lose 2 life. • Distribute two +1/+1 counters among one or two target creatures.
+981b0e21-e5e6-4a1e-bfde-679d56623f7f|Ad Nauseam|Reveal the top card of your library and put that card into your hand. You lose life equal to its mana value. You may repeat this process any number of times.
+14c356aa-178d-4c14-a88e-fbe92ee6d89f|Agent Venom|Flash Menace Whenever another nontoken creature you control dies, you draw a card and lose 1 life.
+84de4fec-2f38-4293-93d3-b3882c5aac14|Ambition's Cost|You draw three cards and you lose 3 life.
+78725353-9274-420a-b722-add0f43c444e|Ancient Craving|You draw three cards and you lose 3 life.
+870deab4-8570-40e9-aeda-ac3726cebb84|Asylum Visitor|At the beginning of each player's upkeep, if that player has no cards in hand, you draw a card and you lose 1 life. Madness {1}{B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)
+9f1c5040-ac46-4e8f-a5ff-8205e13a8893|Atrocious Experiment|Target player mills two cards, draws two cards, and loses 2 life. (To mill a card, a player puts the top card of their library into their graveyard.)
+525c0e33-f073-4bed-be8a-14e436a0bcf1|Audacious Reshapers|{T}, Sacrifice an artifact: Reveal cards from the top of your library until you reveal an artifact card. Put that card onto the battlefield and the rest on the bottom of your library in a random order. This creature deals damage to you equal to the number of cards revealed this way.
+5905c55a-f1d1-4021-a9af-f85b02ae21f3|Audacious Thief|Whenever this creature attacks, you draw a card and you lose 1 life.
+89f96032-5cba-404d-82b0-38d2be963e4b|Azula, On the Hunt|Firebending 2 (Whenever this creature attacks, add {R}{R}. This mana lasts until end of combat.) Whenever Azula attacks, you lose 1 life and create a Clue token. (It's an artifact with "{2}, Sacrifice this token: Draw a card.")

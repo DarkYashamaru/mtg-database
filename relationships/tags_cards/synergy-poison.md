@@ -1,0 +1,10 @@
+402c3afe-7041-41a3-8fcd-64a060c12d4a|Anoint with Affliction|Exile target creature if it has mana value 3 or less. Corrupted — Exile that creature instead if its controller has three or more poison counters.
+d56f1543-2b2d-4ce3-bcfe-41224a0cece4|Apostle of Invasion|Flying Corrupted — As long as an opponent has three or more poison counters, this creature has double strike.
+c42833e6-3e42-4bd6-acbc-d8e284e9833e|Bonepicker Skirge|Flying Corrupted — As long as an opponent has three or more poison counters, this creature has deathtouch and lifelink.
+57b37690-0fb6-4e78-9210-4a529a6ade7c|Bring the Ending|Counter target spell unless its controller pays {2}. Corrupted — Counter that spell instead if its controller has three or more poison counters.
+f971a597-caa7-4289-ae8f-1efdc9abb593|Chained Throatseeker|Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.) This creature can't attack unless defending player is poisoned.
+864fc52a-e9f4-4254-901e-b949d96b34eb|Chittering Skitterling|Corrupted — Sacrifice an artifact or creature: Draw a card. Activate only if an opponent has three or more poison counters and only once each turn.
+ba922414-878f-4261-9bce-500c5c9e9506|Contaminant Grafter|Trample, toxic 1 Whenever one or more creatures you control deal combat damage to one or more players, proliferate. Corrupted — At the beginning of your end step, if an opponent has three or more poison counters, draw a card, then you may put a land card from your hand onto the battlefield.
+87837a94-05db-48fe-b810-26d8f92cfc58|Corrupted Resolve|Counter target spell if its controller is poisoned.
+6ebbf025-2996-46f2-ac23-992909251525|Distorted Curiosity|Corrupted — This spell costs {2} less to cast if an opponent has three or more poison counters. Draw two cards.
+405a2cf9-62a0-460c-bf2a-ce4c351b61ce|Feed the Infection|You draw three cards and you lose 3 life. Corrupted — Each opponent who has three or more poison counters loses 3 life.

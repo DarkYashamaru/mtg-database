@@ -1,0 +1,5 @@
+991efbf1-299d-4892-aeab-8ff9827f7168|Transit Mage|When this creature enters, you may search your library for an artifact card with mana value 4 or 5, reveal it, put it into your hand, then shuffle.
+0848bb49-5758-41d6-a3e8-0c62e1768f52|Treasure Mage|When this creature enters, you may search your library for an artifact card with mana value 6 or greater, reveal it, put it into your hand, then shuffle.
+c2b51295-8820-425f-a517-55231123c7de|Tribute Mage|When this creature enters, you may search your library for an artifact card with mana value 2, reveal that card, put it into your hand, then shuffle.
+ffc95093-24a2-4616-a44a-24788e8df9c8|Trinket Mage|When this creature enters, you may search your library for an artifact card with mana value 1 or less, reveal that card, put it into your hand, then shuffle.
+08afc0d7-192f-4ab6-b6a0-c4265cf5e225|Trophy Mage|When this creature enters, you may search your library for an artifact card with mana value 3, reveal it, put it into your hand, then shuffle.

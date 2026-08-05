@@ -1,0 +1,5 @@
+c450f6b7-bb2a-4b8c-aec7-d27555137b63|Retreat to Coralhelm|Landfall — Whenever a land you control enters, choose one — • You may tap or untap target creature. • Scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+cc0cda37-9fea-48c6-897a-45f6b84e1eae|Retreat to Emeria|Landfall — Whenever a land you control enters, choose one — • Create a 1/1 white Kor Ally creature token. • Creatures you control get +1/+1 until end of turn.
+73cbb4f0-90d6-4228-9341-791e3e9c4b48|Retreat to Hagra|Landfall — Whenever a land you control enters, choose one — • Target creature gets +1/+0 and gains deathtouch until end of turn. • Each opponent loses 1 life and you gain 1 life.
+3f8e5ff1-af89-427e-924c-19a44f9a3788|Retreat to Kazandu|Landfall — Whenever a land you control enters, choose one — • Put a +1/+1 counter on target creature. • You gain 2 life.
+91108ed7-5b24-4b51-b01d-85005998c69d|Retreat to Valakut|Landfall — Whenever a land you control enters, choose one — • Target creature gets +2/+0 until end of turn. • Target creature can't block this turn.

@@ -1,0 +1,2 @@
+b32c3a35-cc77-43fa-96e1-5ec8c0ab056f|Greatbow Doyen|Other Archer creatures you control get +1/+1. Whenever an Archer you control deals damage to a creature, that Archer deals that much damage to that creature's controller.
+e403fadb-537c-41ac-924a-450f0eabe2c4|Ohabi Caleria|Reach Untap all Archers you control during each other player's untap step. Whenever an Archer you control deals damage to a creature, you may pay {2}. If you do, draw a card.

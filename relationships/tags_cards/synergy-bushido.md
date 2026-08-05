@@ -1,0 +1,1 @@
+f995e0cc-b2bd-41c3-8c08-c8873312cebe|Takeno, Samurai General|Bushido 2 (Whenever this creature blocks or becomes blocked, it gets +2/+2 until end of turn.) Each other Samurai creature you control gets +1/+1 for each point of bushido it has.

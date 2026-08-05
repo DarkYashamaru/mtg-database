@@ -1,0 +1,1 @@
+faffc9fb-32b3-4015-8c3f-e6b45002c050|Chong and Lily, Nomads|Whenever one or more Bards you control attack, choose one — • Put a lore counter on each of any number of target Sagas you control. • Creatures you control get +1/+0 until end of turn for each lore counter among Sagas you control.

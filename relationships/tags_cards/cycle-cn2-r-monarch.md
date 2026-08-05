@@ -1,0 +1,5 @@
+0d95ee14-9ff0-4d7f-be56-361a500ce36f|Custodi Lich|When this creature enters, you become the monarch. Whenever you become the monarch, target player sacrifices a creature of their choice.
+1fa0f877-e26c-4a26-8c69-4bf8fcdd30b5|Keeper of Keys|When this creature enters, you become the monarch. At the beginning of your upkeep, if you're the monarch, creatures you control can't be blocked this turn.
+f1052b21-ba96-499f-b9e6-9dba4ed82e1e|Protector of the Crown|When this creature enters, you become the monarch. All damage that would be dealt to you is dealt to this creature instead.
+797c2b1c-c373-4735-b397-f561559c7c61|Regal Behemoth|Trample When this creature enters, you become the monarch. Whenever you tap a land for mana while you're the monarch, add an additional one mana of any color.
+c0ce54a1-14a1-45f3-91d0-c57b581afc63|Skyline Despot|Flying When this creature enters, you become the monarch. At the beginning of your upkeep, if you're the monarch, create a 5/5 red Dragon creature token with flying.

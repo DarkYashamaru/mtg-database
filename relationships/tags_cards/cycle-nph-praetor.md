@@ -1,0 +1,5 @@
+958d71ff-c9f7-46f0-96ca-79e7f4d65a16|Elesh Norn, Grand Cenobite|Vigilance Other creatures you control get +2/+2. Creatures your opponents control get -2/-2.
+eb23aed0-c450-4e57-96f2-2866dceca004|Jin-Gitaxias, Core Augur|Flash At the beginning of your end step, draw seven cards. Each opponent's maximum hand size is reduced by seven.
+9218b56d-aaec-482f-99e9-d95d227bfe25|Sheoldred, Whispering One|Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.) At the beginning of your upkeep, return target creature card from your graveyard to the battlefield. At the beginning of each opponent's upkeep, that player sacrifices a creature of their choice.
+5b2ffb53-86b7-4665-a5c7-b85b035b6c81|Urabrask the Hidden|Creatures you control have haste. Creatures your opponents control enter tapped.
+dbf0ad03-ab31-49d2-89b1-05b45948a61f|Vorinclex, Voice of Hunger|Trample Whenever you tap a land for mana, add one mana of any type that land produced. Whenever an opponent taps a land for mana, that land doesn't untap during its controller's next untap step.

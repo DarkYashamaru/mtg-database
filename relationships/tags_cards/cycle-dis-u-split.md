@@ -1,0 +1,5 @@
+2554a591-8592-4a9f-a4dc-eb9a7e6dc3eb|Hit // Run|Target player sacrifices an artifact or creature of their choice. Hit deals damage to that player equal to that permanent's mana value. // Attacking creatures you control get +1/+0 until end of turn for each other attacking creature.
+e119ba58-85e4-49ec-a2f8-3d094187c99d|Pure // Simple|Destroy target multicolored permanent. // Destroy all Auras and Equipment.
+814f06aa-b48e-4c7f-b4cd-595d89176d0e|Rise // Fall|Target player reveals two cards at random from their hand, then discards each nonland card revealed this way. // Return target creature card from a graveyard and target creature on the battlefield to their owners' hands.
+d7158101-f6ac-4d61-9570-a3adc3c8b583|Supply // Demand|Search your library for a multicolored card, reveal it, put it into your hand, then shuffle. // Create X 1/1 green Saproling creature tokens.
+a40bebe3-6f00-4754-9f70-351055e3b524|Trial // Error|Counter target multicolored spell. // Return all creatures blocking or blocked by target creature to their owner's hand.

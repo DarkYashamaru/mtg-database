@@ -1,0 +1,1 @@
+745b9a2c-bcd7-4db9-8cd0-d38be2ef6270|Kassandra, Eagle Bearer|Haste When Kassandra enters, search your graveyard, hand, and library for a card named The Spear of Leonidas, put it onto the battlefield, then shuffle. Whenever a creature you control with a legendary Equipment attached to it deals combat damage to a player, draw a card.

@@ -1,0 +1,5 @@
+0799df10-b489-4f79-bf98-7a0c500b46a1|Fountain of Cho|This land enters tapped. {T}: Put a storage counter on this land. {T}, Remove any number of storage counters from this land: Add {W} for each storage counter removed this way.
+b02ab3c7-fe4a-443c-b860-ba971d3301b0|Mercadian Bazaar|This land enters tapped. {T}: Put a storage counter on this land. {T}, Remove any number of storage counters from this land: Add {R} for each storage counter removed this way.
+ccb2f92e-69c0-415c-81cd-52c384b3b233|Rushwood Grove|This land enters tapped. {T}: Put a storage counter on this land. {T}, Remove any number of storage counters from this land: Add {G} for each storage counter removed this way.
+f7dda04a-c9c6-4952-9bbc-87e3c7480347|Saprazzan Cove|This land enters tapped. {T}: Put a storage counter on this land. {T}, Remove any number of storage counters from this land: Add {U} for each storage counter removed this way.
+0bbd5a04-c281-4afb-98a1-657b4eca102c|Subterranean Hangar|This land enters tapped. {T}: Put a storage counter on this land. {T}, Remove any number of storage counters from this land: Add {B} for each storage counter removed this way.

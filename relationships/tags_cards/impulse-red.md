@@ -1,0 +1,1 @@
+2a08d878-7816-4d0a-9532-4f2d3c8eee90|Sarkhan's Dragonfire|Sarkhan's Dragonfire deals 3 damage to any target. Look at the top five cards of your library. You may reveal a red card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.

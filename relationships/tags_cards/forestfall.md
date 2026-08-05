@@ -1,0 +1,6 @@
+b6021700-992a-4faa-8f83-a9af03dc7296|Baru, Fist of Krosa|Whenever a Forest enters, green creatures you control get +1/+1 and gain trample until end of turn. Grandeur — Discard another card named Baru, Fist of Krosa: Create an X/X green Wurm creature token, where X is the number of lands you control.
+98d3d1f1-ac72-4b1e-87da-b4c1e4f03d08|Battlewand Oak|Whenever a Forest you control enters, this creature gets +2/+2 until end of turn. Whenever you cast a Treefolk spell, this creature gets +2/+2 until end of turn.
+1b065a17-14a4-433f-a6c8-2c8212f505c7|Oran-Rief Hydra|Trample Landfall — Whenever a land you control enters, put a +1/+1 counter on this creature. If that land is a Forest, put two +1/+1 counters on this creature instead.
+951b59c5-6d5a-4fca-b3ae-e783814e7e7a|Reach of Branches|Create a 2/5 green Treefolk Shaman creature token. Whenever a Forest you control enters, you may return this card from your graveyard to your hand.
+6bdff38d-0a52-42e5-86ea-edd7029b44f6|Staff of the Wild Magus|Whenever you cast a green spell or a Forest you control enters, you gain 1 life.
+46c3a69a-4984-40b0-905f-4b0762c7ad72|Titania, Nature's Force|You may play Forests from your graveyard. Whenever a Forest you control enters, create a 5/3 green Elemental creature token. Whenever an Elemental you control dies, you may mill three cards.

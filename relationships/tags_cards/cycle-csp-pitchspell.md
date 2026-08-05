@@ -1,0 +1,5 @@
+176508ba-c107-4694-8dd7-ea34fca3b299|Allosaurus Rider|You may exile two green cards from your hand rather than pay this spell's mana cost. Allosaurus Rider's power and toughness are each equal to 1 plus the number of lands you control.
+ad7d854b-d303-40eb-acd6-03a8023e05e7|Commandeer|You may exile two blue cards from your hand rather than pay this spell's mana cost. Gain control of target noncreature spell. You may choose new targets for it. (If that spell is an artifact, enchantment, or planeswalker, the permanent enters under your control.)
+c90e2db7-6973-4243-9645-265fd3bc8546|Fury of the Horde|You may exile two red cards from your hand rather than pay this spell's mana cost. Untap all creatures that attacked this turn. After this main phase, there is an additional combat phase followed by an additional main phase.
+be979bfc-998d-43d5-a7a4-44548d9a14c4|Soul Spike|You may exile two black cards from your hand rather than pay this spell's mana cost. Soul Spike deals 4 damage to any target and you gain 4 life.
+155f14dd-1516-4b9f-ae39-0a6172c69a66|Sunscour|You may exile two white cards from your hand rather than pay this spell's mana cost. Destroy all creatures.

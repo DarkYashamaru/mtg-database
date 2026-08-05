@@ -1,0 +1,10 @@
+fc467fe5-85ab-4c95-8d21-49096778b107|Apex Altisaur|When this creature enters, it fights up to one target creature you don't control. Enrage — Whenever this creature is dealt damage, it fights up to one target creature you don't control.
+7063abe1-87dd-4526-9867-f7ce255b2cf0|Bellowing Aegisaur|Enrage — Whenever this creature is dealt damage, put a +1/+1 counter on each other creature you control.
+b9ed0081-7eda-4ff9-ac2d-bcdc29a22d9f|Belltower Sphinx|Flying Whenever a source deals damage to this creature, that source's controller mills that many cards.
+7fc6a5c1-f0da-42f6-93d0-6d94467e2ac0|Body of Knowledge|Body of Knowledge's power and toughness are each equal to the number of cards in your hand. You have no maximum hand size. Whenever this creature is dealt damage, draw that many cards.
+b0a54050-3493-4ff6-8eca-e43b92c1f3d3|Broodhatch Nantuko|Whenever this creature is dealt damage, you may create that many 1/1 green Insect creature tokens. Morph {2}{G} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)
+b6c0ee14-2028-4e8b-9acd-ff78821bca9b|Bruce Banner // The Incredible Hulk|{X}{X}, {T}: Draw X cards. Activate only as a sorcery. {2}{R}{R}{G}{G}: Transform Bruce Banner. Activate only as a sorcery. // Reach, trample Enrage — Whenever The Incredible Hulk is dealt damage, put a +1/+1 counter on him. If he's attacking, untap him and there is an additional combat phase after this phase.
+8bd6dea2-2fdd-482f-9fe8-6f3eeed13872|Cacophodon|Enrage — Whenever this creature is dealt damage, untap target permanent.
+c00f082b-787f-4f96-8356-c10d35713bc4|Coalhauler Swine|Whenever this creature is dealt damage, it deals that much damage to each player.
+4415b65d-5473-4b19-94f7-e5cf4ce64d5e|Cracked Skull|Enchant creature When this Aura enters, look at target player's hand. You may choose a nonland card from it. That player discards that card. When enchanted creature is dealt damage, destroy it.
+865715e9-6759-4e01-803d-702c959e386e|Cryoshatter|Enchant creature Enchanted creature gets -5/-0. When enchanted creature becomes tapped or is dealt damage, destroy it.

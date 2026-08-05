@@ -1,0 +1,5 @@
+e42b6bd7-8fdf-4452-85cc-9aed790ff682|Coastal Breach|Undaunted (This spell costs {1} less to cast for each opponent.) Return all nonland permanents to their owners' hands.
+cfb1b64b-bf78-4015-ac29-cdcdf2adaa02|Curtains' Call|Undaunted (This spell costs {1} less to cast for each opponent.) Destroy two target creatures.
+f08e835a-7827-4fdc-8dcf-ae74507da052|Divergent Transformations|Undaunted (This spell costs {1} less to cast for each opponent.) Exile two target creatures. For each of those creatures, its controller reveals cards from the top of their library until they reveal a creature card, puts that card onto the battlefield, then shuffles the rest into their library.
+48d63b86-8ddd-4306-960f-98490d1d80b9|Seeds of Renewal|Undaunted (This spell costs {1} less to cast for each opponent.) Return up to two target cards from your graveyard to your hand. Exile Seeds of Renewal.
+9e0c66e9-7d2b-46bd-890e-886d0c029d1d|Sublime Exhalation|Undaunted (This spell costs {1} less to cast for each opponent.) Destroy all creatures.

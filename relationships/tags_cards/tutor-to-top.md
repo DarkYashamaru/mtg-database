@@ -1,0 +1,10 @@
+e5f96482-4bae-4d1b-97b2-dcc09676eb6e|Ainok Guide|When this creature enters, choose one — • Put a +1/+1 counter on this creature. • Search your library for a basic land card, reveal it, then shuffle and put that card on top.
+56508ae7-6013-4149-8935-96b8d5091baa|Boggart Harbinger|When this creature enters, you may search your library for a Goblin card, reveal it, then shuffle and put that card on top.
+a9f98ad5-e8d4-4142-a19f-3368b85d1c95|Bringer of the Black Dawn|You may pay {W}{U}{B}{R}{G} rather than pay this spell's mana cost. Trample At the beginning of your upkeep, you may pay 2 life. If you do, search your library for a card, then shuffle and put that card on top.
+bdec14d1-1b38-4223-869e-a0ffc76b2b0c|Brutalizer Exarch|When this creature enters, choose one — • Search your library for a creature card, reveal it, then shuffle and put that card on top. • Put target noncreature permanent on the bottom of its owner's library.
+5b8e0913-47e9-4d56-971d-abd91b0f7587|Campus Guide|When this creature enters, you may search your library for a basic land card, reveal it, then shuffle and put that card on top.
+b64051c0-e791-4fcb-b79f-4287e1b06468|Compass Gnome|When this creature enters, you may search your library for a basic land card or Cave card, reveal it, then shuffle and put that card on top.
+cd3d79e9-c72e-4321-bca1-54505d51331a|Conduit of Ruin|When you cast this spell, you may search your library for a colorless creature card with mana value 7 or greater, reveal it, then shuffle and put that card on top. The first creature spell you cast each turn costs {2} less to cast.
+b63dad39-4dd5-4340-953e-b05df1a3c776|Congregation at Dawn|Search your library for up to three creature cards, reveal them, then shuffle and put those cards on top in any order.
+d9353eb6-c7e7-4d85-a0c2-32b1d091881a|Cruel Tutor|Search your library for a card, then shuffle and put that card on top. You lose 2 life.
+721eb5a2-d7cf-4db0-8013-ef3f596c52a5|Doomsday|Search your library and graveyard for five cards and exile the rest. Put the chosen cards on top of your library in any order. You lose half your life, rounded up.

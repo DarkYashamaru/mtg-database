@@ -1,0 +1,5 @@
+0aa9ee99-69a8-452b-a0d5-001384bdff3c|Omen of the Dead|Flash When this enchantment enters, return target creature card from your graveyard to your hand. {2}{B}, Sacrifice this enchantment: Scry 2.
+e11e2dc8-b28e-415d-9a5d-0eb46da8945c|Omen of the Forge|Flash When this enchantment enters, it deals 2 damage to any target. {2}{R}, Sacrifice this enchantment: Scry 2.
+53295b03-717d-481d-9d5c-212c5f30bbbf|Omen of the Hunt|Flash When this enchantment enters, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle. {2}{G}, Sacrifice this enchantment: Scry 2.
+41960d32-ddb5-42be-94b2-3a2e77ca148d|Omen of the Sea|Flash (You may cast this spell any time you could cast an instant.) When this enchantment enters, scry 2, then draw a card. {2}{U}, Sacrifice this enchantment: Scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)
+08740dda-0629-4b6f-bbcc-c8088105b5e7|Omen of the Sun|Flash When this enchantment enters, create two 1/1 white Human Soldier creature tokens and you gain 2 life. {2}{W}, Sacrifice this enchantment: Scry 2.

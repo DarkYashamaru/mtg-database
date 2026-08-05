@@ -1,0 +1,2 @@
+81d72511-88b4-45ec-a5a9-e722caf55577|Mystical Teachings|Search your library for an instant card or a card with flash, reveal it, put it into your hand, then shuffle. Flashback {5}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+e6ad1be9-f13d-4590-b3db-e2d0fff46f03|Waterlogged Teachings // Inundated Archive|This land enters tapped. {T}: Add {U} or {B}. // Search your library for an instant card or a card with flash, reveal it, put it into your hand, then shuffle.

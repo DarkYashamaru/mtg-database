@@ -1,0 +1,1 @@
+cbb5526b-3aa1-43d9-acdb-bd230ce3fe63|Glimmer Seeker|Survival — At the beginning of your second main phase, if this creature is tapped, draw a card if you control a Glimmer creature. If you don't control a Glimmer creature, create a 1/1 white Glimmer enchantment creature token.

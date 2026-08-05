@@ -1,0 +1,5 @@
+56de4cdc-4db0-48ec-8a16-f66086507233|Mnemonic Deluge|Exile target instant or sorcery card from a graveyard. Copy that card three times. You may cast the copies without paying their mana costs. Exile Mnemonic Deluge.
+2eaee808-b72a-4950-ab4f-ab8e8d12f838|Profane Transfusion|Two target players exchange life totals. You create an X/X colorless Horror artifact creature token, where X is the difference between those players' life totals.
+edc15ea8-d321-4884-bdcf-ae6198aab78b|Reshape the Earth|Search your library for up to ten land cards, put them onto the battlefield tapped, then shuffle.
+089dd3b7-c3ed-4734-8789-a3c1ed9a4e40|Soulfire Eruption|Choose any number of target creatures, planeswalkers, and/or players. For each of them, exile the top card of your library, then Soulfire Eruption deals damage equal to that card's mana value to that permanent or player. You may play the exiled cards until the end of your next turn.
+0d3e0b38-a9ff-489b-8c00-4ca89deb4869|Triumphant Reckoning|Return all artifact, enchantment, and planeswalker cards from your graveyard to the battlefield.

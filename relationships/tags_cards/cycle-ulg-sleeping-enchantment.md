@@ -1,0 +1,5 @@
+3209ad08-5482-4dd4-a02e-1dbe99ce6b54|Brink of Madness|At the beginning of your upkeep, if you have no cards in hand, sacrifice this enchantment and target opponent discards their hand.
+e7e1b166-9267-426d-897d-24903327b48d|Defense of the Heart|At the beginning of your upkeep, if an opponent controls three or more creatures, sacrifice this enchantment, search your library for up to two creature cards, put those cards onto the battlefield, then shuffle.
+cf0799f3-ef64-4fcc-924a-5265e52c9727|Impending Disaster|At the beginning of your upkeep, if there are seven or more lands on the battlefield, sacrifice this enchantment and destroy all lands.
+82bccc9f-f700-4f1f-b89e-bea63d973161|Planar Collapse|At the beginning of your upkeep, if there are four or more creatures on the battlefield, sacrifice this enchantment and destroy all creatures. They can't be regenerated.
+aa19bbf0-7de3-4ec3-a98b-2ac7533c6b0b|Second Chance|At the beginning of your upkeep, if you have 5 or less life, sacrifice this enchantment and take an extra turn after this one.

@@ -1,0 +1,5 @@
+997478aa-b790-4269-a626-abf0cb30fea0|Leyline of Lifeforce|If this card is in your opening hand, you may begin the game with it on the battlefield. Creature spells can't be countered.
+bb87ec08-bb1b-43d8-8809-92904cbba685|Leyline of Lightning|If this card is in your opening hand, you may begin the game with it on the battlefield. Whenever you cast a spell, you may pay {1}. If you do, this enchantment deals 1 damage to target player or planeswalker.
+bc9f159b-984d-4b9f-8904-b38b5cb79636|Leyline of Singularity|If this card is in your opening hand, you may begin the game with it on the battlefield. All nonland permanents are legendary.
+971f7b30-0088-4e12-bc1a-262acc7f5f90|Leyline of the Meek|If this card is in your opening hand, you may begin the game with it on the battlefield. Creature tokens get +1/+1.
+f4e32fc1-1b8d-441e-8e76-71f19f98e925|Leyline of the Void|If this card is in your opening hand, you may begin the game with it on the battlefield. If a card would be put into an opponent's graveyard from anywhere, exile it instead.

@@ -1,0 +1,5 @@
+bd7fd82f-154a-4001-bb8f-7fb50ac77b6b|Nyxborn Eidolon|Bestow {4}{B} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.) Enchanted creature gets +2/+1.
+ebf2974a-963e-425a-8f8c-55f0a36984c3|Nyxborn Rollicker|Bestow {1}{R} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.) Enchanted creature gets +1/+1.
+a1012f33-7ebd-47c6-b670-1b0dc046fbce|Nyxborn Shieldmate|Bestow {2}{W} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.) Enchanted creature gets +1/+2.
+cdd37bbf-09db-4c1f-9947-312de48a0f4c|Nyxborn Triton|Bestow {4}{U} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.) Enchanted creature gets +2/+3.
+3fa11a6a-a760-45db-8341-f83a0f69c17f|Nyxborn Wolf|Bestow {4}{G} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.) Enchanted creature gets +3/+1.

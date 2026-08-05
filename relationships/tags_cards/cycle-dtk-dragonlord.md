@@ -1,0 +1,5 @@
+daff70a4-a990-47c9-b6ef-2c379272c8a3|Dragonlord Atarka|Flying, trample When Dragonlord Atarka enters, it deals 5 damage divided as you choose among any number of target creatures and/or planeswalkers your opponents control.
+82cdd612-3322-4372-810f-1ff106ea8e6a|Dragonlord Dromoka|This spell can't be countered. Flying, lifelink Your opponents can't cast spells during your turn.
+5ff89859-ddfd-48e5-8423-57b3956173ac|Dragonlord Kolaghan|Flying, haste Other creatures you control have haste. Whenever an opponent casts a creature or planeswalker spell with the same name as a card in their graveyard, that player loses 10 life.
+654ff673-4630-4068-9bcf-e88a7877eb58|Dragonlord Ojutai|Flying Dragonlord Ojutai has hexproof as long as it's untapped. Whenever Dragonlord Ojutai deals combat damage to a player, look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.
+44581d4f-746b-43b8-a34d-16dc383ab70e|Dragonlord Silumgar|Flying, deathtouch When Dragonlord Silumgar enters, gain control of target creature or planeswalker for as long as you control Dragonlord Silumgar.

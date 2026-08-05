@@ -1,0 +1,2 @@
+08a0e845-9ef9-4de1-b9fe-4530357346ca|Biblioplex Tomekeeper|When this creature enters, choose up to one — • Target creature becomes prepared. (Only creatures with prepare spells can become prepared.) • Target creature becomes unprepared.
+2ac2b815-2d72-48e6-b43a-18884a74bf95|Skycoach Waypoint|{T}: Add {C}. {3}, {T}: Target creature becomes prepared. (Only creatures with prepare spells can become prepared.)

@@ -1,0 +1,1 @@
+fd1b4523-2399-4771-89bf-1d65f5d67056|The Circle of Loyalty|Affinity for Knights (This spell costs {1} less to cast for each Knight you control.) Creatures you control get +1/+1. Whenever you cast a legendary spell, create a 2/2 white Knight creature token with vigilance. {3}{W}, {T}: Create a 2/2 white Knight creature token with vigilance.

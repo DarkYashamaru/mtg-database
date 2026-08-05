@@ -1,0 +1,5 @@
+0d96b60b-a060-48ee-bb83-93f1c4a10669|Green Sun's Zenith|Search your library for a green creature card with mana value X or less, put it onto the battlefield, then shuffle. Shuffle Green Sun's Zenith into its owner's library.
+ff922641-142a-4774-be3e-36a5183fce2b|Magus of the Order|{G}, {T}, Sacrifice this creature and another green creature: Search your library for a green creature card, put it onto the battlefield, then shuffle.
+8c1fe337-375a-4add-93b6-0ac39ed72b4f|Natural Order|As an additional cost to cast this spell, sacrifice a green creature. Search your library for a green creature card, put it onto the battlefield, then shuffle.
+782dcbc4-5a11-42f5-b8d9-4572e36d45b3|Summoner's Pact|Search your library for a green creature card, reveal it, put it into your hand, then shuffle. At the beginning of your next upkeep, pay {2}{G}{G}. If you don't, you lose the game.
+5859fd59-8732-414a-8932-007980af495d|Woodland Bellower|When this creature enters, you may search your library for a nonlegendary green creature card with mana value 3 or less, put it onto the battlefield, then shuffle.

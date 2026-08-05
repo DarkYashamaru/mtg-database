@@ -1,0 +1,10 @@
+95db05eb-2c25-43f2-8e18-dfc64f490634|Aboshan's Desire|Enchant creature Enchanted creature has flying. Threshold — Enchanted creature has shroud as long as there are seven or more cards in your graveyard. (It can't be the target of spells or abilities.)
+12134f7d-433a-416a-b668-c1a21984c94b|Aerie Mystics|Flying {1}{G}{U}: Creatures you control gain shroud until end of turn. (They can't be the targets of spells or abilities.)
+e52eb1a6-fff1-4a47-b434-31a74d76231c|Alexi's Cloak|Flash Enchant creature Enchanted creature has shroud. (It can't be the target of spells or abilities.)
+dcc55415-216e-4e18-83d6-43f301359f84|Aspect of Mongoose|Enchant creature Enchanted creature has shroud. (It can't be the target of spells or abilities.) When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.
+73ca14bb-0586-4716-8d4c-738a93950ed5|Cloak and Dagger|Equipped creature gets +2/+0 and has shroud. (It can't be the target of spells or abilities.) Whenever a Rogue creature enters, you may attach this Equipment to it. Equip {3}
+6e412163-a93a-4738-a8f0-a4d27c960360|Clout of the Dominus|Enchant creature As long as enchanted creature is blue, it gets +1/+1 and has shroud. (It can't be the target of spells or abilities.) As long as enchanted creature is red, it gets +1/+1 and has haste.
+ba3aa1eb-722a-47d3-83be-96daddb50265|Crystalline Sliver|All Slivers have shroud. (They can't be the targets of spells or abilities.)
+f1a3153c-0200-4ff2-b7d5-48d23920bb3c|Diplomatic Immunity|Enchant creature Shroud (A permanent with shroud can't be the target of spells or abilities.) Enchanted creature has shroud.
+dcbb6b0e-2219-4ba4-9720-3e58b59b4328|Eladamri, Lord of Leaves|Other Elf creatures have forestwalk. (They can't be blocked as long as defending player controls a Forest.) Other Elves have shroud. (They can't be the targets of spells or abilities.)
+ee04afb0-184f-4a13-8d44-0fbe121b1eff|Favorable Destiny|Enchant creature Enchanted creature gets +1/+2 as long as it's white. Enchanted creature has shroud as long as its controller controls another creature. (It can't be the target of spells or abilities.)

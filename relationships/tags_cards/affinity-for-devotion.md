@@ -1,0 +1,3 @@
+a2ea435c-5a61-4c98-bb76-8ff4ef0a0da9|Daybreak Chimera|This spell costs {X} less to cast, where X is your devotion to white. (Each {W} in the mana costs of permanents you control counts toward your devotion to white.) Flying
+746dc1d8-f245-47be-abd5-50ca6ac0d1af|Drag to the Underworld|This spell costs {X} less to cast, where X is your devotion to black. (Each {B} in the mana costs of permanents you control counts toward your devotion to black.) Destroy target creature.
+f8b1ac76-2f9b-454e-a20a-1cb79c23f414|Marshmist Titan|This spell costs {X} less to cast, where X is your devotion to black. (Each {B} in the mana costs of permanents you control counts toward your devotion to black.)

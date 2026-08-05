@@ -1,0 +1,10 @@
+d72b57e5-1c6e-4f02-968f-7e2dd24f0d3c|Boromir, Warden of the Tower|Vigilance Whenever an opponent casts a spell, if no mana was spent to cast it, counter that spell. Sacrifice Boromir: Creatures you control gain indestructible until end of turn. The Ring tempts you.
+8a76a9b9-3127-45fe-b20f-a8f643276281|Containment Priest|Flash If a nontoken creature would enter and it wasn't cast, exile it instead.
+5733c3fb-c533-456c-b30e-5d2b9e206b6b|Don't Blink|Until end of turn, if one or more creatures would enter from exile or after being cast from exile, their owners shuffle them into their libraries instead. Cycling {2} ({2}, Discard this card: Draw a card.)
+e9541db2-2874-4307-b896-c403f6d82e68|Hallowed Moonlight|Until end of turn, if a creature would enter and it wasn't cast, exile it instead. Draw a card.
+81ba3a33-0e04-4f68-9a42-1dd717733b57|Lavinia, Azorius Renegade|Each opponent can't cast noncreature spells with mana value greater than the number of lands that player controls. Whenever an opponent casts a spell, if no mana was spent to cast it, counter that spell.
+808d5a67-8c38-42f5-9413-8771d8b4ae38|Mistcaller|Sacrifice this creature: Until end of turn, if a nontoken creature would enter and it wasn't cast, exile it instead.
+fe1a9af0-1774-4d54-b59f-f42dc8afcbe9|Nix|Counter target spell if no mana was spent to cast it.
+34f83b7a-45a7-40a8-abcb-31d7aae4cea1|Roiling Vortex|At the beginning of each player's upkeep, this enchantment deals 1 damage to them. Whenever a player casts a spell, if no mana was spent to cast that spell, this enchantment deals 5 damage to that player. {R}: Your opponents can't gain life this turn.
+86ef86de-104f-4eae-a2db-893b50e95ad7|Tokka & Rahzar, Terrible Twos|This spell can't be countered. Menace Whenever a player casts a spell, if the amount of mana spent to cast it was less than its mana value, Tokka & Rahzar deal 3 damage to that player.
+4514777d-0589-4631-978b-ff244167c176|Vexing Bauble|Whenever a player casts a spell, if no mana was spent to cast it, counter that spell. {1}, {T}, Sacrifice this artifact: Draw a card.

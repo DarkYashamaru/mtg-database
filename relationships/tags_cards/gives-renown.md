@@ -1,0 +1,1 @@
+07326335-45dd-4ebd-8ae6-5191b6eb2928|Aragorn, Hornburg Hero|Attacking creatures you control have first strike and renown 1. (When a creature with renown 1 deals combat damage to a player, if it isn't renowned, put a +1/+1 counter on it and it becomes renowned.) Whenever a renowned creature you control deals combat damage to a player, double the number of +1/+1 counters on it.

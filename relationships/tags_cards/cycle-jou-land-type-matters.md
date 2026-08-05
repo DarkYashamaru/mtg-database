@@ -1,0 +1,5 @@
+b03397e5-56af-47c0-ab9a-746a0c99c568|Nessian Game Warden|When this creature enters, look at the top X cards of your library, where X is the number of Forests you control. You may reveal a creature card from among them and put it into your hand. Put the rest on the bottom of your library in any order.
+ad5e2208-df68-4119-b225-a7c133b70359|Quarry Colossus|When this creature enters, put target creature into its owner's library just beneath the top X cards of that library, where X is the number of Plains you control.
+57308fc8-8915-4211-a5fd-9363caea9ab9|Scourge of Fleets|When this creature enters, return each creature your opponents control with toughness X or less to its owner's hand, where X is the number of Islands you control.
+52289774-d292-4028-91fb-8826fa004dc8|Spawn of Thraxes|Flying When this creature enters, it deals damage to any target equal to the number of Mountains you control.
+662a2158-4176-4b4a-be6a-13f4501d22f9|Squelching Leeches|Squelching Leeches's power and toughness are each equal to the number of Swamps you control.

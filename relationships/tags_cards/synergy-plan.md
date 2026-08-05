@@ -1,0 +1,2 @@
+9e4fa592-71f8-4c71-8c91-78e6326cd736|Doctor Doom|When Doctor Doom enters, create two 3/3 colorless Robot Villain artifact creature tokens named Doombot. As long as you control an artifact creature or a Plan, Doctor Doom has indestructible. At the beginning of your end step, you draw a card and lose 1 life.
+fcb1caea-e1ac-48f0-a67a-d4aadad490d9|The Masters of Evil|Other Villains you control get +2/+1. {1}{B}, Discard this card: Search your library for a Plan card, reveal it, put it into your hand, then shuffle.

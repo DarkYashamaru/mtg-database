@@ -1,0 +1,10 @@
+245aa786-d607-414f-ab55-b003b2b9faf4|Autumnal Gloom // Ancient of the Equinox|Trample, hexproof // {B}: Mill a card. Delirium — At the beginning of your end step, if there are four or more card types among cards in your graveyard, transform this enchantment.
+e84837bd-4f94-43e1-876e-d82cae6ee247|Behind the Scenes|Creatures you control have skulk. (They can't be blocked by creatures with greater power.) {4}{W}: Creatures you control get +1/+1 until end of turn.
+870ca989-0e72-4e74-9570-57e129298f2e|Drunau Corpse Trawler|When this creature enters, create a 2/2 black Zombie creature token. {2}{B}: Target Zombie gains deathtouch until end of turn.
+10891656-070f-49f4-80e0-78061b773f17|Geistblast|Geistblast deals 2 damage to any target. {2}{U}, Exile this card from your graveyard: Copy target instant or sorcery spell you control. You may choose new targets for the copy.
+b119e0de-6af4-4b5b-9920-187f0a414231|Nahiri's Machinations|At the beginning of combat on your turn, target creature you control gains indestructible until end of turn. {1}{R}: This enchantment deals 1 damage to target blocking creature.
+e2cfbaf5-903c-49fa-b7bf-2c55087f1ffa|Olivia's Bloodsworn|Flying This creature can't block. {R}: Target Vampire gains haste until end of turn.
+68227832-2916-49b9-92bb-c09b8a0c13f5|Ongoing Investigation|Whenever one or more creatures you control deal combat damage to a player, investigate. (Create a Clue token. It's an artifact with "{2}, Sacrifice this token: Draw a card.") {1}{G}, Exile a creature card from your graveyard: Investigate. You gain 2 life.
+d28b7c07-ef65-4187-a15e-2180bdc593d1|Spectral Shepherd|Flying {1}{U}: Return target Spirit you control to its owner's hand.
+41fd1557-8dba-4bbf-9954-5c4f4f541812|Ulrich's Kindred|Trample {3}{G}: Target attacking Wolf or Werewolf gains indestructible until end of turn. (Damage and effects that say "destroy" don't destroy it.)
+1eb89059-b691-431d-bcda-ab8aa14c67c8|Veteran Cathar|{3}{W}: Target Human gains double strike until end of turn.

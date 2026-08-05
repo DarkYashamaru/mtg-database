@@ -1,0 +1,5 @@
+674c34eb-1080-4811-8f2a-5006e08d98b8|Aerie Worshippers|Inspired — Whenever this creature becomes untapped, you may pay {2}{U}. If you do, create a 2/2 blue Bird enchantment creature token with flying.
+92680de3-6ee2-4b73-b0f5-38383482dcca|Forlorn Pseudamma|Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.) Inspired — Whenever this creature becomes untapped, you may pay {2}{B}. If you do, create a 2/2 black Zombie enchantment creature token.
+e861ddd5-64f7-4c59-ab96-0c69ef74febe|God-Favored General|Inspired — Whenever this creature becomes untapped, you may pay {2}{W}. If you do, create two 1/1 white Soldier enchantment creature tokens.
+2fb54c18-f69b-4712-af36-14d8a6d4df2b|Pheres-Band Raiders|Inspired — Whenever this creature becomes untapped, you may pay {2}{G}. If you do, create a 3/3 green Centaur enchantment creature token.
+3ad9d55d-02f7-412e-8756-6a026f8e68d7|Satyr Nyx-Smith|Haste Inspired — Whenever this creature becomes untapped, you may pay {2}{R}. If you do, create a 3/1 red Elemental enchantment creature token with haste.

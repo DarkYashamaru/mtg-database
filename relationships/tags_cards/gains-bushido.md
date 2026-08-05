@@ -1,0 +1,1 @@
+cba58942-b98c-45aa-8651-7dc666e31c93|Fumiko the Lowblood|Fumiko has bushido X, where X is the number of attacking creatures. (Whenever this creature blocks or becomes blocked, it gets +X/+X until end of turn.) Creatures your opponents control attack each combat if able.

@@ -1,0 +1,10 @@
+b21d6482-1b3a-47e6-98a5-3067f5f3818b|Aether Gale|Return six target nonland permanents to their owners' hands.
+3e0be003-4f42-4917-b85d-46baf2afd734|Aethersnipe|When this creature enters, return target nonland permanent to its owner's hand. Evoke {1}{U}{U} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)
+8651da8e-9b2c-4530-a521-aea490ad88d4|Alchemist's Retrieval|Cleave {1}{U} (You may cast this spell for its cleave cost. If you do, remove the words in square brackets.) Return target nonland permanent [you control] to its owner's hand.
+da69fbf7-c894-41dd-85ec-217de23a362f|Ancestral Statue|When this creature enters, return a nonland permanent you control to its owner's hand.
+b5c8e24a-f4d7-42dc-8117-905ad0bad888|Atlantis Attacks|Teamwork 4 (As an additional cost to cast this spell, you may tap any number of creatures you control with total power 4 or more.) Choose one. If this spell was cast using teamwork, choose both instead. • Target player creates a 6/5 blue Leviathan creature token with hexproof. • Return one or two target nonland permanents to their owners' hands.
+679480aa-f9ad-4a6c-bd79-db9f9f75433d|Bespoke Bō|When this Equipment enters, return up to one other target nonland permanent to its owner's hand. Equipped creature gets +2/+1 and has vigilance. Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+51acd176-e84d-42c2-acb2-cceeb28a9fec|Blink of an Eye|Kicker {1}{U} (You may pay an additional {1}{U} as you cast this spell.) Return target nonland permanent to its owner's hand. If this spell was kicked, draw a card.
+acd881eb-f3b4-4174-9fc2-e3c7c213886b|Boomerang Basics|Return target nonland permanent to its owner's hand. If you controlled that permanent, draw a card.
+9219b7d5-642d-4470-a7c4-f3e56bfae8c7|Callous Dismissal|Return target nonland permanent to its owner's hand. Amass Zombies 1. (Put a +1/+1 counter on an Army you control. It's also a Zombie. If you don't control an Army, create a 0/0 black Zombie Army creature token first.)
+9d8fe3f8-5027-4f9e-999e-e277caa96478|Disperse|Return target nonland permanent to its owner's hand.

@@ -1,0 +1,10 @@
+753ead8c-f3f8-42fe-931d-79f5ee3ece54|Aberrant Mind Sorcerer|Psionic Spells — When this creature enters, choose target instant or sorcery card in your graveyard, then roll a d20. 1—9 \| You may put that card on top of your library. 10—20 \| Return that card to your hand.
+a3da7d5b-2c2b-45fe-b9c5-413b8c8fc0a2|Academy Ruins|{T}: Add {C}. {1}{U}, {T}: Put target artifact card from your graveyard on top of your library.
+aeba5c63-aa80-4f31-90fb-f404c9a3057d|Aphetto Vulture|Flying When this creature dies, you may put target Zombie card from your graveyard on top of your library.
+a78b063a-7f74-465a-9670-34f927f4bfe9|Aquatic Alchemist // Bubble Up|Whenever you cast your first instant or sorcery spell each turn, this creature gets +2/+0 until end of turn. // Put target instant or sorcery card from your graveyard on top of your library. (Then exile this card. You may cast the creature later from exile.)
+cb58055f-8190-4bc7-ad32-844ca66fd2b0|Arashin Sovereign|Flying When this creature dies, you may put it on your choice of the top or bottom of its owner's library.
+c6424a3e-dbc7-403f-867f-a81cccd17ab8|Arcbound Reclaimer|Remove a +1/+1 counter from this creature: Put target artifact card from your graveyard on top of your library. Modular 2 (This creature enters with two +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.)
+3415a199-05ac-4627-be97-f842eb1415a3|Avenging Angel|Flying When this creature dies, you may put it on top of its owner's library.
+3dadb654-6191-4ad3-8315-46f5613fbc01|Biblioplex Assistant|Flying When this creature enters, put up to one target instant or sorcery card from your graveyard on top of your library.
+94ca5db6-86e1-42b4-b776-977efa2e12b6|Bloodwater Entity|Flying Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) When this creature enters, you may put target instant or sorcery card from your graveyard on top of your library.
+0cc38d20-5ae8-413a-9f26-ff13cd92f24c|Bone Harvest|Put any number of target creature cards from your graveyard on top of your library. Draw a card at the beginning of the next turn's upkeep.

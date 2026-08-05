@@ -1,0 +1,10 @@
+8b46b50c-f824-4c4e-86de-38065c6f9a64|Alpine Moon|As this enchantment enters, choose a nonbasic land card name. Lands your opponents control with the chosen name lose all land types and abilities, and they gain "{T}: Add one mana of any color."
+137b5708-50a9-4f4c-84e6-9043be9f1989|Anathemancer|When this creature enters, it deals damage to target player equal to the number of nonbasic lands that player controls. Unearth {5}{B}{R} ({5}{B}{R}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)
+ceef2d5a-77ea-4e56-9806-fd1a2d5be400|Archon of Emeria|Flying Each player can't cast more than one spell each turn. Nonbasic lands your opponents control enter tapped.
+05c2dec2-d2f7-4036-b91f-4fccba10a8bb|Back to Basics|Nonbasic lands don't untap during their controllers' untap steps.
+b8bb97a8-5f5d-48e9-a4c1-b4c20efe7739|Bedeck // Bedazzle|Destroy target nonbasic land. Bedazzle deals 2 damage to target opponent or planeswalker. // Target creature gets +3/-3 until end of turn.
+94fac5fe-97d5-4c12-a80c-8efff9d853ae|Blood Moon|Nonbasic lands are Mountains.
+bf1341dd-41a3-49f6-87ec-63170dde4324|Boseiju, Who Endures|{T}: Add {G}. Channel — {1}{G}, Discard this card: Destroy target artifact, enchantment, or nonbasic land an opponent controls. That player may search their library for a land card with a basic land type, put it onto the battlefield, then shuffle. This ability costs {1} less to activate for each legendary creature you control.
+22ec98d2-0ac5-48a2-b48b-c6a98f35ecf0|Break the Ice|Destroy target land that is snow or could produce {C}. Overload {4}{B}{B} (You may cast this spell for its overload cost. If you do, change "target" in its text to "each.")
+629f247c-1e64-4c32-8892-0716ed469d1c|Bumi Bash|Choose one — • Bumi Bash deals damage equal to the number of lands you control to target creature. • Destroy target land creature or nonbasic land.
+21b8192e-46a2-4a6a-abd5-3a074efa30a9|Burning Earth|Whenever a player taps a nonbasic land for mana, this enchantment deals 1 damage to that player.

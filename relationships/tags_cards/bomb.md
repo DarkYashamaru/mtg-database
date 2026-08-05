@@ -1,0 +1,1 @@
+d88c3554-18db-4e5e-a979-2402990a0311|Echocasting Symposium|Target player creates a token that's a copy of target creature you control. Paradigm (Then exile this spell. After you first resolve a spell with this name, you may cast a copy of it from exile without paying its mana cost at the beginning of each of your first main phases.)

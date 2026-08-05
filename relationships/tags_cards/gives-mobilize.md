@@ -1,0 +1,1 @@
+71c68002-1489-4858-a8fb-1f575641983e|Infantry Shield|Equipped creature has menace and mobilize X, where X is its power. (Whenever it attacks, create X tapped and attacking 1/1 red Warrior creature tokens. Sacrifice them at the beginning of the next end step.) Equip {2}

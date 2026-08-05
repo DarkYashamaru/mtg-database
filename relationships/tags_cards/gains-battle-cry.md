@@ -1,0 +1,1 @@
+65c35934-796c-4495-a6b5-eea654dfcd55|Reckless Pyrosurfer|Haste Landfall — Whenever a land you control enters, this creature gains battle cry until end of turn. (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn. Each instance of battle cry triggers separately.)

@@ -1,0 +1,10 @@
+6aeba615-2d37-4eb8-a377-41a517e95aa3|Acorn Harvest|Create two 1/1 green Squirrel creature tokens. Flashback—{1}{G}, Pay 3 life. (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+91c380f6-2c41-48b7-9f07-104e8659e397|Adanto Vanguard|As long as this creature is attacking, it gets +2/+0. Pay 4 life: This creature gains indestructible until end of turn. (Damage and effects that say "destroy" don't destroy it.)
+ff4297d3-3d96-4bd6-a606-1bdc20a6df2b|Aether Storm|Creature spells can't be cast. Pay 4 life: Destroy this enchantment. It can't be regenerated. Any player may activate this ability.
+5f15125e-ae89-471e-b055-226a783bc7c1|Aetherflux Reservoir|Whenever you cast a spell, you gain 1 life for each spell you've cast this turn. Pay 50 life: This artifact deals 50 damage to any target.
+e6bef0c4-3dfc-49a8-8fec-22b2570b704b|Aftershock|Destroy target artifact, creature, or land. Aftershock deals 3 damage to you.
+1267dfda-eb1a-4963-9fe3-fa619d924d7a|Agonizing Remorse|Target opponent reveals their hand. You choose a nonland card from it or a card from their graveyard. Exile that card. You lose 1 life.
+b46351cf-73c7-493c-b8a7-5d7bedc8b205|Ambulatory Edifice|When this creature enters, you may pay 2 life. When you do, target creature gets -1/-1 until end of turn.
+03a4cbe2-cf35-4c2c-b035-666f994ffd09|Anavolver|Kicker {1}{U} and/or {B} (You may pay an additional {1}{U} and/or {B} as you cast this spell.) If this creature was kicked with its {1}{U} kicker, it enters with two +1/+1 counters on it and with flying. If this creature was kicked with its {B} kicker, it enters with a +1/+1 counter on it and with "Pay 3 life: Regenerate this creature."
+ad09b3c3-c8e7-481c-8c45-e7f234935117|Anguished Unmaking|Exile target nonland permanent. You lose 3 life.
+32476743-c9d4-49ca-bec2-0669c215841b|Anrakyr the Traveller|Lord of the Pyrrhian Legions — Whenever Anrakyr the Traveller attacks, you may cast an artifact spell from your hand or graveyard by paying life equal to its mana value rather than paying its mana cost.

@@ -1,0 +1,2 @@
+287cd5e8-51e2-42a4-a139-c112ff89706d|Adarkar Unicorn|{T}: Add {U} or {C}{U}. Spend this mana only to pay cumulative upkeep costs.
+5ffed544-1656-4753-ac8f-ad8fb4442c7f|Snowfall|Cumulative upkeep {U} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) Whenever an Island is tapped for mana, its controller may add an additional {U}. If that Island is snow, its controller may add an additional {U}{U} instead. Spend this mana only to pay cumulative upkeep costs.

@@ -1,0 +1,10 @@
+ed2e8718-4b20-4310-96ce-05a29a24ef32|Drafna, Founder of Lat-Nam|{1}{U}: Return target artifact you control to its owner's hand. {3}, {T}: Copy target artifact spell you control. (The copy becomes a token.)
+c9a188f9-2e65-4a66-826f-0150f25730af|Esperzoa|Flying At the beginning of your upkeep, return an artifact you control to its owner's hand.
+5d24525f-dbac-434b-bda7-ff8af55245ff|Glint Hawk|Flying When this creature enters, sacrifice it unless you return an artifact you control to its owner's hand.
+ed1e5d24-c8a8-48fe-a88f-1003ad432477|Hurkyl's Recall|Return all artifacts target player owns to their hand.
+d1da2c33-2be4-4065-8e5c-613a069d2013|Ingenuity Engine|Cascade (When you cast this spell, exile cards from the top of your library until you exile a nonland card that costs less. You may cast it without paying its mana cost. Put the exiled cards on the bottom in a random order.) {1}, {T}, Sacrifice an artifact: Return target artifact you control to its owner's hand.
+da46786e-28df-4638-ab3d-121011d2f150|Master Transmuter|{U}, {T}, Return an artifact you control to its owner's hand: You may put an artifact card from your hand onto the battlefield.
+7df45a2a-75bc-4343-8dad-3a642efd13ee|Metalhead|When Metalhead enters, return up to one other target artifact or creature to its owner's hand. {R}, Sacrifice another artifact: Put a +1/+1 counter on Metalhead. He gains menace and haste until end of turn.
+eddab60f-2eac-4f20-934c-3d9307f885c3|Nobody|When this creature enters, return up to one other target artifact you control to its owner's hand. Scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+facc26d5-bb53-4f91-9b8c-73bf4dd44fcd|Repulsor Bots|Flying (This creature can't be blocked except by creatures with flying or reach.) When this creature enters, return up to two other target artifacts and/or creatures to their owners' hands.
+54917578-9493-499e-b200-51d5cf7978ff|Rescue, Pepper Potts|Flash Flying When Rescue enters, return up to one other target artifact or creature you control to its owner's hand. If it was an artifact, put a +1/+1 counter on Rescue.

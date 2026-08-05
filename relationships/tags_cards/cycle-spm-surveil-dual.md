@@ -1,0 +1,5 @@
+676141c3-a433-4aba-86fb-729628f96dfa|Ominous Asylum|This land enters tapped. {T}: Add {B} or {R}. {4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+1af15c1d-a41c-44cc-9614-d72694dd26e8|Savage Mansion|This land enters tapped. {T}: Add {R} or {G}. {4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+80f08b47-a237-4efd-8d86-dfe35a816b0e|Sinister Hideout|This land enters tapped. {T}: Add {U} or {B}. {4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+6ef30340-a26d-49aa-bc86-0b8aa5252f87|Suburban Sanctuary|This land enters tapped. {T}: Add {G} or {W}. {4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+98e547de-b963-4ee4-9a08-67bae010734b|University Campus|This land enters tapped. {T}: Add {W} or {U}. {4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)

@@ -1,0 +1,2 @@
+6ec2a242-9068-4ee2-8ac8-8341cc570f56|Emeria's Call // Emeria, Shattered Skyclave|Create two 4/4 white Angel Warrior creature tokens with flying. Non-Angel creatures you control gain indestructible until your next turn. // As this land enters, you may pay 3 life. If you don't, it enters tapped. {T}: Add {W}.
+dfbd3afc-9905-4cff-a4f4-df08a4d0a7fa|Restoration Angel|Flash Flying When this creature enters, you may exile target non-Angel creature you control, then return that card to the battlefield under your control.

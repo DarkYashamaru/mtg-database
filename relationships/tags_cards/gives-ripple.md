@@ -1,0 +1,1 @@
+b2bd40a1-1857-4f4c-aed6-d4e224ac0ef7|Thrumming Stone|Spells you cast have ripple 4. (Whenever you cast a spell, you may reveal the top four cards of your library. You may cast spells with the same name as that spell from among the revealed cards without paying their mana costs. Put the rest on the bottom of your library.)

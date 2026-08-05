@@ -1,0 +1,3 @@
+d63f4eeb-3fa5-4e65-8414-e3fd3c03c128|Drudge Spell|{B}, Exile two creature cards from your graveyard: Create a 1/1 black Skeleton creature token. It has "{B}: Regenerate this token." When this enchantment leaves the battlefield, destroy all Skeleton tokens. They can't be regenerated.
+8cc7e418-cc5e-4aef-9757-874223fccd74|Phoenix Down|{1}{W}, {T}, Exile this artifact: Choose one — • Return target creature card with mana value 4 or less from your graveyard to the battlefield tapped. • Exile target Skeleton, Spirit, or Zombie.
+08fc069e-7fdd-4726-aa08-a96bbd2bcaa3|Undead Slayer|{W}, {T}: Exile target Skeleton, Vampire, or Zombie.

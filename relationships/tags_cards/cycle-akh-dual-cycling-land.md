@@ -1,0 +1,5 @@
+2031b17c-0536-446f-a9aa-b46fe79b7ea7|Canyon Slough|({T}: Add {B} or {R}.) This land enters tapped. Cycling {2} ({2}, Discard this card: Draw a card.)
+32b03b48-06da-4a74-a7ac-e5ae39a4f428|Fetid Pools|({T}: Add {U} or {B}.) This land enters tapped. Cycling {2} ({2}, Discard this card: Draw a card.)
+406eabe2-df62-49e2-bb39-c0227509d875|Irrigated Farmland|({T}: Add {W} or {U}.) This land enters tapped. Cycling {2} ({2}, Discard this card: Draw a card.)
+3c87ea85-ca29-45a7-b5b2-758c62898b0a|Scattered Groves|({T}: Add {G} or {W}.) This land enters tapped. Cycling {2} ({2}, Discard this card: Draw a card.)
+db8d8643-3d0b-4f20-bf53-f4cd26a0e8df|Sheltered Thicket|({T}: Add {R} or {G}.) This land enters tapped. Cycling {2} ({2}, Discard this card: Draw a card.)

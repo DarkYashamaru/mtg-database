@@ -1,0 +1,1 @@
+2a248d6a-aa83-4e59-848b-46de8204b538|Done for the Day|At the beginning of your end step, if you control an Employee, a Performer, or a Robot, you may get {TK} or create a Treasure token. If you control all three, you may put a sticker on a nonland permanent you own.

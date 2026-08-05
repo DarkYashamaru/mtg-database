@@ -1,0 +1,5 @@
+4a480736-4cdc-4e3a-a8cb-d1c726982f9f|Basandra, Battle Seraph|Flying Players can't cast spells during combat. {R}: Target creature attacks this turn if able.
+9a1de7e4-9930-4db3-a8f3-d146d0abf38b|Edric, Spymaster of Trest|Whenever a creature deals combat damage to one of your opponents, its controller may draw a card.
+ec439630-e18b-45f6-8034-2ecbea27772f|Nin, the Pain Artist|{X}{U}{R}, {T}: Nin deals X damage to target creature. That creature's controller draws X cards.
+088ac883-6f44-4046-bf19-81c7fd952e55|Skullbriar, the Walking Grave|Haste Whenever Skullbriar deals combat damage to a player, put a +1/+1 counter on it. Counters remain on Skullbriar as it moves to any zone other than a player's hand or library.
+ba3bfe0c-2bd6-469c-802c-440b7caf7fb5|Vish Kal, Blood Arbiter|Flying, lifelink Sacrifice a creature: Put X +1/+1 counters on Vish Kal, where X is the sacrificed creature's power. Remove all +1/+1 counters from Vish Kal: Target creature gets -1/-1 until end of turn for each +1/+1 counter removed this way.

@@ -1,0 +1,10 @@
+7266b491-54e6-4393-a448-d5ae99d965c6|Azorius Keyrune|{T}: Add {W} or {U}. {W}{U}: This artifact becomes a 2/2 white and blue Bird artifact creature with flying until end of turn.
+991ae2f7-3f8e-4364-8698-5277786d7dcd|Boros Keyrune|{T}: Add {R} or {W}. {R}{W}: This artifact becomes a 1/1 red and white Soldier artifact creature with double strike until end of turn. (It deals both first-strike and regular combat damage.)
+7685ff3f-6d61-4b1d-a381-49bc6274aa01|Dimir Keyrune|{T}: Add {U} or {B}. {U}{B}: This artifact becomes a 2/2 blue and black Horror artifact creature until end of turn and can't be blocked this turn.
+ec970eba-230a-4c41-874a-4a74abf3214e|Golgari Keyrune|{T}: Add {B} or {G}. {B}{G}: This artifact becomes a 2/2 black and green Insect artifact creature with deathtouch until end of turn.
+98bdb1e1-7550-47e8-aa06-f81802b257a0|Gruul Keyrune|{T}: Add {R} or {G}. {R}{G}: This artifact becomes a 3/2 red and green Beast artifact creature with trample until end of turn.
+8b8c0285-424f-4a82-bfb6-17752cfa71dd|Izzet Keyrune|{T}: Add {U} or {R}. {U}{R}: Until end of turn, this artifact becomes a 2/1 blue and red Elemental artifact creature. Whenever this artifact deals combat damage to a player, you may draw a card. If you do, discard a card.
+9808c424-0d74-45b8-a092-fd296c6833d2|Orzhov Keyrune|{T}: Add {W} or {B}. {W}{B}: This artifact becomes a 1/4 white and black Thrull artifact creature with lifelink until end of turn.
+3986b284-f943-4570-ba26-3419910feeef|Rakdos Keyrune|{T}: Add {B} or {R}. {B}{R}: This artifact becomes a 3/1 black and red Devil artifact creature with first strike until end of turn.
+d4ecee6d-b23f-48e7-b7e5-347027225709|Selesnya Keyrune|{T}: Add {G} or {W}. {G}{W}: This artifact becomes a 3/3 green and white Wolf artifact creature until end of turn.
+9e737a22-a352-411d-8412-96770c7f6cce|Simic Keyrune|{T}: Add {G} or {U}. {G}{U}: This artifact becomes a 2/3 green and blue Crab artifact creature with hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)

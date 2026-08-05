@@ -1,0 +1,5 @@
+2e4865c5-a590-4820-81ec-926014ddb8c4|Cataclysmic Gearhulk|Vigilance When this creature enters, each player chooses an artifact, a creature, an enchantment, and a planeswalker from among the nonland permanents they control, then sacrifices the rest.
+3494a575-f68e-4e78-9f6b-142cd8a0edea|Combustible Gearhulk|First strike When this creature enters, target opponent may have you draw three cards. If the player doesn't, you mill three cards, then this creature deals damage to that player equal to the total mana value of those cards.
+a77b5be2-f361-4135-ba25-670a74d268ac|Noxious Gearhulk|Menace When this creature enters, you may destroy another target creature. If a creature is destroyed this way, you gain life equal to its toughness.
+a6395447-677d-4c39-8eda-2d57e527c94e|Torrential Gearhulk|Flash When this creature enters, you may cast target instant card from your graveyard without paying its mana cost. If that spell would be put into your graveyard, exile it instead.
+3765e8bb-e70d-4503-b8dc-1e684e434c18|Verdurous Gearhulk|Trample When this creature enters, distribute four +1/+1 counters among any number of target creatures you control.

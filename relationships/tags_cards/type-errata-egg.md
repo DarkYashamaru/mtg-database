@@ -1,0 +1,5 @@
+8f561498-66e7-4cbf-8cb9-e6fd4717993d|Dragon Egg|Defender When this creature dies, create a 2/2 red Dragon creature token with flying and "{R}: This token gets +1/+0 until end of turn."
+53175678-1f5c-4889-9086-66381b3ddc3a|Ludevic's Test Subject // Ludevic's Abomination|Trample // Defender {1}{U}: Put a hatchling counter on this creature. Then if there are five or more hatchling counters on it, remove all of them and transform it.
+16dfd80a-9847-45b8-954f-2af9b7cfa21d|Roc Egg|Defender (This creature can't attack.) When this creature dies, create a 3/3 white Bird creature token with flying.
+98116aec-2ab1-4bee-b727-9feff6274825|Rukh Egg|When this creature dies, create a 4/4 red Bird creature token with flying at the beginning of the next end step.
+2209ebd4-1131-4b8e-b0f5-aa9506dc0057|Summoner's Egg|Imprint — When this creature enters, you may exile a card from your hand face down. When this creature dies, turn the exiled card face up. If it's a creature card, put it onto the battlefield under your control.

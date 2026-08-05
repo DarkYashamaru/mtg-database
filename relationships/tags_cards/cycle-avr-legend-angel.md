@@ -1,0 +1,4 @@
+216cb26e-8da9-478b-bfbc-8030f7adee72|Avacyn, Angel of Hope|Flying, vigilance, indestructible Other permanents you control have indestructible.
+e8f213eb-58db-4fab-bd0b-2acfd0a86ac3|Bruna, Light of Alabaster|Flying, vigilance Whenever Bruna attacks or blocks, you may attach to it any number of Auras on the battlefield and you may put onto the battlefield attached to it any number of Aura cards that could enchant it from your graveyard and/or hand.
+66f9f325-5e8e-4ebf-b5b3-c6410d80f2c5|Gisela, Blade of Goldnight|Flying, first strike If a source would deal damage to an opponent or a permanent an opponent controls, that source deals double that damage to that player or permanent instead. If a source would deal damage to you or a permanent you control, prevent half that damage, rounded up.
+e55104e2-4900-48de-b288-d3e6abd5e09e|Sigarda, Host of Herons|Flying, hexproof Spells and abilities your opponents control can't cause you to sacrifice permanents.

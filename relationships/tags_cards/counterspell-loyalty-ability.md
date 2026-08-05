@@ -1,0 +1,1 @@
+5a5d426b-e5eb-44f0-b5fe-c258bec6d59e|Verdant Command|Choose two — • Target player creates two tapped 1/1 green Squirrel creature tokens. • Counter target loyalty ability of a planeswalker. • Exile target card from a graveyard. • Target player gains 3 life.

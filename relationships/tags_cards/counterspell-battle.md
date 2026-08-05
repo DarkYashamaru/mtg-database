@@ -1,0 +1,1 @@
+a24d3d60-2bd7-40cb-8002-b092943f61fe|Assimilate Essence|Counter target creature or battle spell unless its controller pays {4}. If they do, you incubate 2. (Create an Incubator token with two +1/+1 counters on it and "{2}: Transform this token." It transforms into a 0/0 Phyrexian artifact creature.)

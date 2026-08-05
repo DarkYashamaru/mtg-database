@@ -1,0 +1,4 @@
+e2ef355a-2472-47e0-9b2e-987994291921|East Wind Avatar|Flying, vigilance Alliance — Whenever another creature you control enters, this creature gets +1/+0 until end of turn.
+b408c345-b308-4920-8494-4f204d856aa3|North Wind Avatar|Flying When this creature enters, if you cast it, you may put a card you own from outside the game into your hand.
+003e5dc6-8b26-4a0a-a50b-5f0806a7bacd|South Wind Avatar|Deathtouch Whenever another creature you control dies, you gain life equal to its toughness. Whenever you gain life, each opponent loses 1 life.
+92e45a8f-c582-45e1-9b7f-def219023ebf|West Wind Avatar|Trample Whenever this creature enters or attacks, you may sacrifice a token or a land. If you do, you gain 3 life. Disappear — At the beginning of your end step, if a permanent left the battlefield under your control this turn, draw a card.

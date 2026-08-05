@@ -1,0 +1,1 @@
+c1aecc8a-db3a-4158-b1f1-bfe06d782482|Tower Winder|Reach, deathtouch When this creature enters, search your library and/or graveyard for a card named Command Tower, reveal it, and put it into your hand. If you search your library this way, shuffle.

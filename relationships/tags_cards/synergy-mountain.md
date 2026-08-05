@@ -1,0 +1,10 @@
+eaabd151-2160-4bff-82c0-3fa88659be98|Anger|Haste As long as this card is in your graveyard and you control a Mountain, creatures you control have haste.
+63dfe794-5f56-41ec-9883-5523b41cc3e0|Arena of Glory|This land enters tapped unless you control a Mountain. {T}: Add {R}. {R}, {T}, Exert this land: Add {R}{R}. If that mana is spent on a creature spell, it gains haste until end of turn. (An exerted permanent won't untap during your next untap step.)
+0fd27f59-36ec-4235-8e1f-4a4a14972f4a|Awaken the Ancient|Enchant Mountain Enchanted Mountain is a 7/7 red Giant creature with haste. It's still a land.
+7647940e-c99c-401c-ad1d-9ec730f66b6f|Balduvian Trading Post|If this land would enter, sacrifice an untapped Mountain instead. If you do, put this land onto the battlefield. If you don't, put it into its owner's graveyard. {T}: Add {C}{R}. {1}, {T}: This land deals 1 damage to target attacking creature.
+d9ecb346-7745-4106-a3e1-c467a3b91ec7|Barrel Down Sokenzan|Sweep — Return any number of Mountains you control to their owner's hand. Barrel Down Sokenzan deals damage to target creature equal to twice the number of Mountains returned this way.
+e5b7d0c5-f478-43ef-98fd-7792122ab8f5|Ben-Ben, Akki Hermit|{T}: Ben-Ben deals damage to target attacking creature equal to the number of untapped Mountains you control.
+977c2f33-b622-4172-9efb-7f523becd32b|Blazemire Verge|{T}: Add {B}. {T}: Add {R}. Activate only if you control a Swamp or a Mountain.
+91fbb25b-8521-483f-88b0-77778d25f7fd|Castle Embereth|This land enters tapped unless you control a Mountain. {T}: Add {R}. {1}{R}{R}, {T}: Creatures you control get +1/+0 until end of turn.
+afb0c14c-41ac-4536-bfce-f1c36066b278|Chained to the Rocks|Enchant Mountain you control When this Aura enters, exile target creature an opponent controls until this Aura leaves the battlefield. (That creature returns under its owner's control.)
+d8c95a86-2f05-44f9-8ed7-b1798eaed42f|Chandra's Regulator|Whenever you activate a loyalty ability of a Chandra planeswalker, you may pay {1}. If you do, copy that ability. You may choose new targets for the copy. {1}, {T}, Discard a Mountain card or a red card: Draw a card.

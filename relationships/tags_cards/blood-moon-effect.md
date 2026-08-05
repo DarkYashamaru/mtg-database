@@ -1,0 +1,10 @@
+8b46b50c-f824-4c4e-86de-38065c6f9a64|Alpine Moon|As this enchantment enters, choose a nonbasic land card name. Lands your opponents control with the chosen name lose all land types and abilities, and they gain "{T}: Add one mana of any color."
+94fac5fe-97d5-4c12-a80c-8efff9d853ae|Blood Moon|Nonbasic lands are Mountains.
+1534d90f-fc88-42dc-bf01-8b0986485e78|Blood Sun|When this enchantment enters, draw a card. All lands lose all abilities except mana abilities.
+728e2960-1d85-4b3f-8b5b-915f9b9ffd2f|Chaos Moon|At the beginning of each upkeep, count the number of permanents. If the number is odd, until end of turn, red creatures get +1/+1 and whenever a player taps a Mountain for mana, that player adds an additional {R}. If the number is even, until end of turn, red creatures get -1/-1 and if a player taps a Mountain for mana, that Mountain produces colorless mana instead of any other type.
+4013b4c2-c9ed-4d14-90f0-97214ec1fded|Contamination|At the beginning of your upkeep, sacrifice this enchantment unless you sacrifice a creature. If a land is tapped for mana, it produces {B} instead of any other type and amount.
+a24e05fb-dffb-4400-b4ca-22fdde45e7a7|Conversion|At the beginning of your upkeep, sacrifice this enchantment unless you pay {W}{W}. All Mountains are Plains.
+fd50d76c-7654-47b9-a5b6-d075874e4357|Damping Sphere|If a land is tapped for two or more mana, it produces {C} instead of any other type and amount. Each spell a player casts costs {1} more to cast for each other spell that player has cast this turn.
+8d134a60-e1e5-4163-8bdc-36af91567185|Gaea's Liege|As long as Gaea's Liege isn't attacking, its power and toughness are each equal to the number of Forests you control. As long as Gaea's Liege is attacking, its power and toughness are each equal to the number of Forests defending player controls. {T}: Target land becomes a Forest until this creature leaves the battlefield.
+a4a9c2bb-e6d0-4665-8b2f-e90c78784303|Glaciers|At the beginning of your upkeep, sacrifice this enchantment unless you pay {W}{U}. All Mountains are Plains.
+84910453-e5dc-4bff-8554-86a5f4ab2746|Harbinger of the Seas|Nonbasic lands are Islands.

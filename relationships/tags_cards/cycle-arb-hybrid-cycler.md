@@ -1,0 +1,5 @@
+79d290ea-c095-4135-9711-f3ce089dae43|Architects of Will|When this creature enters, look at the top three cards of target player's library, then put them back in any order. Cycling {U/B} ({U/B}, Discard this card: Draw a card.)
+3992369a-2158-4cf8-b7e5-be517b91c1f5|Deadshot Minotaur|When this creature enters, it deals 3 damage to target creature with flying. Cycling {R/G} ({R/G}, Discard this card: Draw a card.)
+a1379c25-6daf-4efa-a517-6e6e25c31875|Glassdust Hulk|Whenever another artifact you control enters, this creature gets +1/+1 until end of turn and can't be blocked this turn. Cycling {W/U} ({W/U}, Discard this card: Draw a card.)
+2e29025e-6954-4fbd-933f-81c2309c704e|Monstrous Carabid|This creature attacks each combat if able. Cycling {B/R} ({B/R}, Discard this card: Draw a card.)
+92017087-18f4-46ee-8808-5959d31d0011|Sigil of the Nayan Gods|Enchant creature Enchanted creature gets +1/+1 for each creature you control. Cycling {G/W} ({G/W}, Discard this card: Draw a card.)

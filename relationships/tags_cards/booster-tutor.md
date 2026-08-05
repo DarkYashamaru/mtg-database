@@ -1,0 +1,1 @@
+19a3c505-b180-47cc-bef3-9e807a8a4a3d|Lore Seeker|Reveal this card as you draft it. After you draft this card, you may add a booster pack to the draft. (Your next pick is from that booster pack. Pass it to the next player and it's drafted this draft round.)

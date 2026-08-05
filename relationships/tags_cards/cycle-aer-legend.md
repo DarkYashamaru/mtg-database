@@ -1,0 +1,5 @@
+baf80db7-2ca8-4bfc-b5b6-25ed51878dd7|Baral, Chief of Compliance|Instant and sorcery spells you cast cost {1} less to cast. Whenever a spell or ability you control counters a spell, you may draw a card. If you do, discard a card.
+786baa29-afd4-40f0-95c8-920a972b9175|Kari Zev, Skyship Raider|First strike, menace Whenever Kari Zev attacks, create Ragavan, a legendary 2/1 red Monkey creature token. Ragavan enters tapped and attacking. Exile that token at end of combat.
+761021ce-4559-464e-aa03-85c2fe78e267|Rishkar, Peema Renegade|When Rishkar enters, put a +1/+1 counter on each of up to two target creatures. Each creature you control with a counter on it has "{T}: Add {G}."
+7e00b0cd-d212-4604-ba07-da21f4fe00b0|Sram, Senior Edificer|Whenever you cast an Aura, Equipment, or Vehicle spell, draw a card.
+fdba89eb-1cf5-46e6-9d09-1adb9bc40fcd|Yahenni, Undying Partisan|Haste Whenever a creature an opponent controls dies, put a +1/+1 counter on Yahenni. Sacrifice another creature: Yahenni gains indestructible until end of turn.

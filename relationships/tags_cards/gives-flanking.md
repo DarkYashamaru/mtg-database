@@ -1,0 +1,4 @@
+0f5f8b47-d104-4e29-b052-02d730d76ec0|Agility|Enchant creature Enchanted creature gets +1/+1 and has flanking. (Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.)
+7083dedd-b246-4fe0-b1ca-00c490ed9c6b|Cavalry Master|Flanking (Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.) Other creatures you control with flanking have flanking. (Each instance of flanking triggers separately.)
+79560d80-1745-4773-a5c4-4c8e98475135|Jabari's Banner|{1}, {T}: Target creature gains flanking until end of turn. (Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.)
+de8ccd32-f537-4a11-8dc4-e48836a0b139|Sidewinder Sliver|All Sliver creatures have flanking. (Whenever a creature without flanking blocks a Sliver, the blocking creature gets -1/-1 until end of turn.)

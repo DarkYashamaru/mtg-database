@@ -1,0 +1,3 @@
+52fc8217-5a14-40b5-a8fc-b6fc45af5f33|Spatial Binding|Pay 1 life: Until your next upkeep, target permanent can't phase out.
+d97553bf-6763-4a7b-8d82-1b438a22aa62|The War Doctor|Whenever one or more other permanents phase out and whenever one or more other cards are put into exile from anywhere, put a time counter on The War Doctor. Whenever The War Doctor attacks, it deals damage equal to the number of time counters on it to any target. If a creature dealt damage this way would die this turn, exile it instead.
+b6fee94a-30b8-415e-8567-ad03ccb1d658|Time and Tide|Simultaneously, all phased-out creatures phase in and all creatures with phasing phase out.

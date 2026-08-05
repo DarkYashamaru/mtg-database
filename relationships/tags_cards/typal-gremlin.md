@@ -1,0 +1,1 @@
+5236a6b5-0a96-4470-ba03-37b6d7a889bb|Midnight Mayhem|Create three 1/1 red Gremlin creature tokens. Gremlins you control gain menace, lifelink, and haste until end of turn. (A creature with menace can't be blocked except by two or more creatures.)

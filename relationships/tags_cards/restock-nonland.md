@@ -1,0 +1,1 @@
+3e978db3-77ef-4b93-8f8f-e414e27254bd|Elixir|This artifact enters tapped. {5}, {T}, Exile this artifact: Shuffle all nonland cards from your graveyard into your library. You gain life equal to the number of cards shuffled into your library this way.

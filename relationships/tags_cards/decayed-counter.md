@@ -1,0 +1,1 @@
+9fee2572-8864-475c-bade-a64e36ef69c4|Rot-Curse Rakshasa|Trample Decayed (This creature can't block. When it attacks, sacrifice it at end of combat.) Renew — {X}{B}{B}, Exile this card from your graveyard: Put a decayed counter on each of X target creatures. Activate only as a sorcery.

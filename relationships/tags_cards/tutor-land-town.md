@@ -1,0 +1,2 @@
+bc92988c-d628-45ea-8606-516a1211cef3|Prishe's Wanderings|Search your library for a basic land card or Town card, put it onto the battlefield tapped, then shuffle. When you search your library this way, put a +1/+1 counter on target creature you control.
+14bc29ee-4f84-4e62-8ede-5741b99414c9|Reach the Horizon|Search your library for up to two basic land cards and/or Town cards with different names, put them onto the battlefield tapped, then shuffle.

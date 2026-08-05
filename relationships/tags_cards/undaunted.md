@@ -1,0 +1,1 @@
+07db0374-3297-49c3-886d-a6bb42f7bb18|Avatar of Growth|This spell costs {1} less to cast for each opponent you have. Trample When this creature enters, each player searches their library for up to two basic land cards, puts them onto the battlefield, then shuffles.

@@ -1,0 +1,10 @@
+7dbf9e96-e61f-43db-8767-63a351cf4ef8|Alirios, Enraptured|Alirios enters tapped. Alirios doesn't untap during your untap step if you control a Reflection. When Alirios enters, create a 3/2 blue Reflection creature token.
+ac143b8e-f993-4989-8833-e26dc9faffa4|Altar Golem|Trample Altar Golem's power and toughness are each equal to the number of creatures on the battlefield. This creature doesn't untap during your untap step. Tap five untapped creatures you control: Untap this creature.
+6b8cf2a0-b045-4d91-9d91-c602d40c6237|Basalt Monolith|This artifact doesn't untap during your untap step. {T}: Add {C}{C}{C}. {3}: Untap this artifact.
+066dfefd-eef5-4c81-8e8a-310bac01674f|Battered Golem|This creature doesn't untap during your untap step. Whenever an artifact enters, you may untap this creature.
+6bf5dcf1-5c93-42f4-adaf-a6f2e5807596|Black Carriage|Trample This creature doesn't untap during your untap step. Sacrifice a creature: Untap this creature. Activate only during your upkeep.
+7f6ddfa2-31ba-4cb7-83e7-1f099e3e8dc3|Brass Gnat|Flying This creature doesn't untap during your untap step. At the beginning of your upkeep, you may pay {1}. If you do, untap this creature.
+64f56228-7874-4465-ba58-1049083ea02f|Brass Man|This creature doesn't untap during your untap step. At the beginning of your upkeep, you may pay {1}. If you do, untap this creature.
+3835cb81-b6e4-4be8-9d49-8307ddc2e1a2|Chained Brute|This creature doesn't untap during your untap step. {1}, Sacrifice another creature: Untap this creature. Activate only during your turn.
+9be9625e-b98b-416b-aac4-9f7b2dfbd39d|Colossus of Sardia|Trample (This creature can deal excess combat damage to the player or planeswalker it's attacking.) This creature doesn't untap during your untap step. {9}: Untap this creature. Activate only during your upkeep.
+d8f2c12c-d463-42dc-95f1-2daf68f99873|Deep-Slumber Titan|This creature enters tapped. This creature doesn't untap during your untap step. Whenever this creature is dealt damage, untap it.

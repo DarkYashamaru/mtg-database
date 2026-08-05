@@ -1,0 +1,5 @@
+6a7229a8-1634-4278-ab50-0ec2b51edac1|Glister Bairn|Vivid — At the beginning of combat on your turn, another target creature you control gets +X/+X until end of turn, where X is the number of colors among permanents you control.
+fb9cd9d0-8eea-4aa8-bb9c-bb0aac847421|Hovel Hurler|This creature enters with two -1/-1 counters on it. {R/W}{R/W}, Remove a counter from this creature: Another target creature you control gets +1/+0 and gains flying until end of turn. Activate only as a sorcery.
+a2f33166-6cfc-4dc5-8edc-088bf40f06b5|Noggle Robber|When this creature enters or dies, create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.")
+ce60402c-34cd-44fe-ae1d-4a5404298f5b|Reaping Willow|Lifelink This creature enters with two -1/-1 counters on it. {1}{W/B}, Remove two counters from this creature: Return target creature card with mana value 3 or less from your graveyard to the battlefield. Activate only as a sorcery.
+25b0876e-c995-486e-8536-6e68b76b9c86|Voracious Tome-Skimmer|Flying Whenever you cast a spell during an opponent's turn, you may pay 1 life. If you do, draw a card.

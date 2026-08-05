@@ -1,0 +1,1 @@
+1cfe6e3a-f8c9-4105-ad03-0faf1fcc4626|Riku of Many Paths|Whenever you cast a modal spell, choose up to X, where X is the number of times you chose a mode for that spell — • Exile the top card of your library. Until the end of your next turn, you may play it. • Put a +1/+1 counter on Riku. It gains trample until end of turn. • Create a 1/1 blue Bird creature token with flying.

@@ -1,0 +1,1 @@
+b0d639cb-71d4-454f-9dd6-89cd7a59b702|Serene Sleuth|When this creature enters, investigate. (Create a Clue token. It's an artifact with "{2}, Sacrifice this token: Draw a card.") At the beginning of combat on your turn, investigate for each goaded creature you control. Then each creature you control is no longer goaded.

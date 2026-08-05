@@ -1,0 +1,1 @@
+01432542-2ea7-45bc-bc90-151516faee0e|Tyranid Harridan|Flying, ward {4} Shrieking Gargoyles — Whenever this creature or another Tyranid you control deals combat damage to a player, create a 1/1 blue Tyranid Gargoyle creature token with flying.

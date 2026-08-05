@@ -1,0 +1,5 @@
+9e4db334-4698-4986-820f-1daf1bffda83|Angel's Herald|{2}{W}, {T}, Sacrifice a green creature, a white creature, and a blue creature: Search your library for a card named Empyrial Archangel, put it onto the battlefield, then shuffle.
+967c509f-dbde-44ee-93fa-a01376f34b99|Behemoth's Herald|{2}{G}, {T}, Sacrifice a red creature, a green creature, and a white creature: Search your library for a card named Godsire, put it onto the battlefield, then shuffle.
+9f4e4d6e-bb1d-41d6-9184-3cac45197285|Demon's Herald|{2}{B}, {T}, Sacrifice a blue creature, a black creature, and a red creature: Search your library for a card named Prince of Thralls, put it onto the battlefield, then shuffle.
+85a38b39-5806-4df9-95cc-8d608e2b5e47|Dragon's Herald|{2}{R}, {T}, Sacrifice a black creature, a red creature, and a green creature: Search your library for a card named Hellkite Overlord, put it onto the battlefield, then shuffle.
+6452873b-1bb2-44b3-b630-88f15962b6e8|Sphinx's Herald|{2}{U}, {T}, Sacrifice a white creature, a blue creature, and a black creature: Search your library for a card named Sphinx Sovereign, put it onto the battlefield, then shuffle.

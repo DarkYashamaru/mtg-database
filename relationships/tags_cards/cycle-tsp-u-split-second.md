@@ -1,0 +1,5 @@
+af06a811-7a57-4f68-9d87-7903e043f36d|Celestial Crusader|Flash Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.) Flying Other white creatures get +1/+1.
+3e39224c-72ce-4ecc-aa17-12c071ea1f3e|Krosan Grip|Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.) Destroy target artifact or enchantment.
+a3475ca6-d88e-4855-a554-1338624d1635|Sudden Death|Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.) Target creature gets -4/-4 until end of turn.
+7b139231-dcd2-4b03-bcf2-fcb040617b69|Sudden Shock|Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.) Sudden Shock deals 2 damage to any target.
+ad9b6737-22c4-45cc-976b-32743ed48462|Wipe Away|Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.) Return target permanent to its owner's hand.

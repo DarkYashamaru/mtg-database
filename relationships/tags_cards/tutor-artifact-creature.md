@@ -1,0 +1,2 @@
+77ae7caa-e180-4efb-9348-ab389364b186|Sphinx Summoner|Flying When this creature enters, you may search your library for an artifact creature card, reveal it, put it into your hand. then shuffle.
+240410a0-3288-4336-b1ad-34936e64ccf2|Vision Quest|Search your library and/or graveyard for an artifact creature card with mana value X or less and put it onto the battlefield with X additional +1/+1 counters on it. If X is 4 or greater, it gains haste until end of turn. If you search your library this way, shuffle.

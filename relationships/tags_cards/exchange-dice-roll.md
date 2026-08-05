@@ -1,0 +1,1 @@
+af1779f8-790e-4606-a02d-9eb4589d58cf|Vedalken Squirrel-Whacker|As this creature enters, roll a six-sided die twice. Its base power becomes the first result and its base toughness becomes the second result. If you would roll one or more six-sided dice, instead roll them and you may exchange one result with this creature's base power or base toughness.

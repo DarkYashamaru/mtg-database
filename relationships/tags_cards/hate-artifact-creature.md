@@ -1,0 +1,10 @@
+0fdfe986-0216-468b-aac8-bbcf588fd894|Arcum Dagsson|{T}: Target artifact creature's controller sacrifices it. That player may search their library for a noncreature artifact card, put it onto the battlefield, then shuffle.
+bbf183bc-d502-4432-8202-f29f60c08396|Argothian Pixies|This creature can't be blocked by artifact creatures. Prevent all damage that would be dealt to this creature by artifact creatures.
+0dbcc5d8-9533-48fd-a69d-bbc6c72aaac5|Argothian Sprite|This creature can't be blocked by artifact creatures. {7}: Put two +1/+1 counters on this creature.
+9bd3a4bb-cc12-4e5f-a33f-77ab0c7788db|Artifact Ward|Enchant creature Enchanted creature can't be blocked by artifact creatures. Prevent all damage that would be dealt to enchanted creature by artifact sources. Enchanted creature can't be the target of abilities from artifact sources.
+e01b3d52-297d-42e3-9de9-4f45c2359bcc|Audacious Infiltrator|This creature can't be blocked by artifact creatures.
+6a1a9e8a-a323-489a-b4db-b04da76662f4|Auriok Siege Sled|{1}: Target artifact creature blocks this creature this turn if able. {1}: Target artifact creature can't block this creature this turn.
+9155f78e-0ccc-4e08-ae79-ef5b2db1183f|Basalt Golem|This creature can't be blocked by artifact creatures. Whenever this creature becomes blocked by a creature, that creature's controller sacrifices it at end of combat. If the player does, they create a 0/2 colorless Wall artifact creature token with defender.
+520abf49-7631-4e7f-889e-547ccc8c3b95|Chandler|{R}{R}{R}, {T}: Destroy target artifact creature.
+1d6a1dab-8724-4b07-b109-c6ba2a7ea1ad|Clockwork Steed|This creature enters with four +1/+0 counters on it. This creature can't be blocked by artifact creatures. At end of combat, if this creature attacked or blocked this combat, remove a +1/+0 counter from it. {X}, {T}: Put up to X +1/+0 counters on this creature. This ability can't cause the total number of +1/+0 counters on this creature to be greater than four. Activate only during your upkeep.
+ca283839-864f-4252-8452-480e3ba29b20|Domineer|Enchant artifact creature You control enchanted artifact creature.

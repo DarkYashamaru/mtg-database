@@ -1,0 +1,10 @@
+35bf67e0-8141-4664-b762-2c613353e1eb|Acolyte of the Inferno|Renown 1 (When this creature deals combat damage to a player, if it isn't renowned, put a +1/+1 counter on it and it becomes renowned.) Whenever this creature becomes blocked by a creature, it deals 2 damage to that creature.
+9376ccf6-1b18-44e9-8f9d-c5ad38927e2f|Arc Spitter|Equipped creature has "{1}: This creature deals 1 damage to target creature that's blocking it." Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)
+d40fd63b-f55d-49f6-b4e5-a8d00f22e8e1|Ashmouth Hound|Whenever this creature blocks or becomes blocked by a creature, this creature deals 1 damage to that creature.
+151a681d-a350-4d1d-86cd-b80d58602810|Assembled Alphas|Whenever this creature blocks or becomes blocked by a creature, this creature deals 3 damage to that creature and 3 damage to that creature's controller.
+3e765710-e567-4af0-b5f5-7c182649b757|Battle-Scarred Goblin|Whenever this creature becomes blocked, it deals 1 damage to each creature blocking it.
+6fd37ff3-e75d-459a-8717-8f6a9865fb32|Clockwork Hydra|This creature enters with four +1/+1 counters on it. Whenever this creature attacks or blocks, remove a +1/+1 counter from it. If you do, it deals 1 damage to any target. {T}: Put a +1/+1 counter on this creature.
+c3f841c4-6e12-46fc-802a-3025182e7ff4|Close Quarters|Whenever a creature you control becomes blocked, this enchantment deals 1 damage to any target.
+649300e2-c491-435d-92d5-f1b88f0e2e2e|Elite Javelineer|Whenever this creature blocks, it deals 1 damage to target attacking creature.
+dd1b4235-f053-4c46-8993-ae8d7860a0f3|Fire Juggler|Whenever this creature becomes blocked, clash with an opponent. If you win, this creature deals 4 damage to each creature blocking it. (Each clashing player reveals the top card of their library, then puts that card on their choice of the top or bottom. A player wins if their card had a greater mana value.)
+a0e40eb1-a909-405b-8fb4-3759df8edf7f|Flowstone Salamander|{R}: This creature deals 1 damage to target creature blocking it.

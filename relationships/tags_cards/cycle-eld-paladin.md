@@ -1,0 +1,5 @@
+30393cb0-f461-4899-8aae-609bc8378f36|Ardenvale Paladin|Adamant — If at least three white mana was spent to cast this spell, this creature enters with a +1/+1 counter on it.
+eec31fe0-a633-4424-84d2-90fe88016310|Embereth Paladin|Haste Adamant — If at least three red mana was spent to cast this spell, this creature enters with a +1/+1 counter on it.
+33fdbff6-0e89-4f02-b429-9b17869134cd|Garenbrig Paladin|Adamant — If at least three green mana was spent to cast this spell, this creature enters with a +1/+1 counter on it. This creature can't be blocked by creatures with power 2 or less.
+6fea3c95-9663-4857-983e-eaf522efa1a8|Locthwain Paladin|Menace (This creature can't be blocked except by two or more creatures.) Adamant — If at least three black mana was spent to cast this spell, this creature enters with a +1/+1 counter on it.
+1965ca0e-1357-4437-82d3-1a78353ab5f1|Vantress Paladin|Flying Adamant — If at least three blue mana was spent to cast this spell, this creature enters with a +1/+1 counter on it.

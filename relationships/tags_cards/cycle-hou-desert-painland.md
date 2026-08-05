@@ -1,0 +1,5 @@
+eab70fff-6a9f-4f9f-89a2-b6910c199e46|Hashep Oasis|{T}: Add {C}. {T}, Pay 1 life: Add {G}. {1}{G}{G}, {T}, Sacrifice a Desert: Target creature gets +3/+3 until end of turn. Activate only as a sorcery.
+af698bd5-5f56-4d2a-9f02-8c3e781210cd|Ifnir Deadlands|{T}: Add {C}. {T}, Pay 1 life: Add {B}. {2}{B}{B}, {T}, Sacrifice a Desert: Put two -1/-1 counters on target creature an opponent controls. Activate only as a sorcery.
+c17d799f-adc9-4c41-87cf-b243b5ea3be1|Ipnu Rivulet|{T}: Add {C}. {T}, Pay 1 life: Add {U}. {1}{U}, {T}, Sacrifice a Desert: Target player mills four cards. (They put the top four cards of their library into their graveyard.)
+d0d35864-1edc-4af1-9b89-3d7e94908011|Ramunap Ruins|{T}: Add {C}. {T}, Pay 1 life: Add {R}. {2}{R}{R}, {T}, Sacrifice a Desert: This land deals 2 damage to each opponent.
+8305715e-f711-47d6-8efe-d0efe4ced418|Shefet Dunes|{T}: Add {C}. {T}, Pay 1 life: Add {W}. {2}{W}{W}, {T}, Sacrifice a Desert: Creatures you control get +1/+1 until end of turn. Activate only as a sorcery.

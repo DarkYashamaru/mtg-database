@@ -1,0 +1,10 @@
+e7fc5ad6-f2f0-4b06-a61b-05022db9d93b|Arcades, the Strategist|Flying, vigilance Whenever a creature you control with defender enters, draw a card. Each creature you control with defender assigns combat damage equal to its toughness rather than its power and can attack as though it didn't have defender.
+4d6d3e6d-f958-4c17-b117-960fb8033601|Assault Formation|Each creature you control assigns combat damage equal to its toughness rather than its power. {G}: Target creature with defender can attack this turn as though it didn't have defender. {2}{G}: Creatures you control get +0/+1 until end of turn.
+060e0378-e335-4b3d-82aa-ae36639339f6|Axebane Guardian|Defender {T}: Add X mana in any combination of colors, where X is the number of creatures you control with defender.
+1c0fc9b4-177e-4529-827f-a1e17ff7a752|Blight Pile|Defender {2}{B}, {T}: Each opponent loses X life, where X is the number of creatures with defender you control.
+5e186931-992b-491c-bffc-6877a613d5c3|Coral Colony|Defender {1}{U}, {T}: Target player mills X cards, where X is the number of creatures you control with defender. (To mill a card, a player puts the top card of their library into their graveyard.)
+8a960cc2-3802-42bc-ba28-941bfe9743be|Doorkeeper|Defender {2}{U}, {T}: Target player mills X cards, where X is the number of creatures you control with defender.
+0c73f566-3b8a-4d57-b7a9-7437b6f1f66d|Flamewright|{1}, {T}: Create a 1/1 colorless Construct artifact creature token with defender. {T}, Sacrifice a creature with defender: This creature deals 1 damage to any target.
+5f657279-cc0f-4431-b517-47bd1c7109b6|High Alert|Each creature you control assigns combat damage equal to its toughness rather than its power. Creatures you control can attack as though they didn't have defender. {2}{W}{U}: Untap target creature.
+585f62dc-4461-42f1-a3a4-b19a1e550d2d|Overgrown Battlement|Defender {T}: Add {G} for each creature you control with defender.
+05608055-d97a-4c8f-833d-47b3dd1ea255|Perimeter Captain|Defender Whenever a creature you control with defender blocks, you may gain 2 life.

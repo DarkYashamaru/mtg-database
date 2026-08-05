@@ -1,0 +1,1 @@
+ae0d17f6-859c-4b41-8b66-b68abb837bbb|Quick Draw|Target creature you control gets +1/+1 and gains first strike until end of turn. Creatures target opponent controls lose first strike and double strike until end of turn.

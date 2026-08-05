@@ -1,0 +1,5 @@
+97e7778f-971c-4425-8f6d-f4ff3fae000f|Aether Web|Flash (You may cast this spell any time you could cast an instant.) Enchant creature Enchanted creature gets +1/+1, has reach, and can block creatures with shadow as though they didn't have shadow. (Creatures with reach can block creatures with flying.)
+a1a7757f-7e9b-4b5b-b9df-e98d8918caac|Feebleness|Flash Enchant creature Enchanted creature gets -2/-1.
+893cdd4f-0b22-4ddc-98a3-5d202564ffa5|Ghitu Firebreathing|Flash (You may cast this spell any time you could cast an instant.) Enchant creature {R}: Enchanted creature gets +1/+0 until end of turn. {R}: Return this Aura to its owner's hand.
+e83b8830-fa97-4e60-b042-005e552a3ceb|Ophidian Eye|Flash (You may cast this spell any time you could cast an instant.) Enchant creature Whenever enchanted creature deals damage to an opponent, you may draw a card.
+cb5ab978-d9b1-4f2f-bf3a-5e28e96b9e2e|Temporal Isolation|Flash Enchant creature Enchanted creature has shadow. (It can block or be blocked by only creatures with shadow.) Prevent all damage that would be dealt by enchanted creature.

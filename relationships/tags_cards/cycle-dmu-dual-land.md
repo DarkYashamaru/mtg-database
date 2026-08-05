@@ -1,0 +1,10 @@
+c27b771d-b5ec-459a-a101-f078cb8d0184|Contaminated Aquifer|({T}: Add {U} or {B}.) This land enters tapped.
+e3b67368-1dd6-419b-a95d-7131b1dba23f|Geothermal Bog|({T}: Add {B} or {R}.) This land enters tapped.
+b0b58a03-462c-4964-97c7-42bc777ec23e|Haunted Mire|({T}: Add {B} or {G}.) This land enters tapped.
+0aea7e5d-40d7-46c7-a8a6-479cb8061e49|Idyllic Beachfront|({T}: Add {W} or {U}.) This land enters tapped.
+58c592ed-20fc-481b-909b-2315567e5f20|Molten Tributary|({T}: Add {U} or {R}.) This land enters tapped.
+32c91719-f3dd-4cc7-9e32-7d5ccf18f07c|Radiant Grove|({T}: Add {G} or {W}.) This land enters tapped.
+fb69bc57-f05a-41c2-9b7b-9a9761ef0cd3|Sacred Peaks|({T}: Add {R} or {W}.) This land enters tapped.
+a5e5a259-5fa7-4b01-93cb-a2b4aaf80927|Sunlit Marsh|({T}: Add {W} or {B}.) This land enters tapped.
+4b1f68a2-b606-4c64-bd44-a9714808316d|Tangled Islet|({T}: Add {G} or {U}.) This land enters tapped.
+c2ca3e20-23ca-4d2a-88a1-5e98ff884abb|Wooded Ridgeline|({T}: Add {R} or {G}.) This land enters tapped.

@@ -1,0 +1,3 @@
+46fbcbdf-73d0-4fa2-8db7-3b19bfc7ac22|Ashen Ghoul|Haste {B}: Return this card from your graveyard to the battlefield. Activate only during your upkeep and only if three or more creature cards are above this card.
+cb558dda-0c05-426d-aedc-bc07cc54db76|Khabál Ghoul|At the beginning of each end step, put a +1/+1 counter on this creature for each creature that died this turn.
+68c0c04e-b0d5-4721-83bf-bf18e8b7e680|Scavenging Ghoul|At the beginning of each end step, put a corpse counter on this creature for each creature that died this turn. Remove a corpse counter from this creature: Regenerate this creature.

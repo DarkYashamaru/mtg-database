@@ -1,0 +1,5 @@
+4854f836-2247-43c3-adbc-1d1ee5eaf120|Avatar of Fury|If an opponent controls seven or more lands, this spell costs {6} less to cast. Flying {R}: This creature gets +1/+0 until end of turn.
+e2f22cef-9494-4356-aa5c-619aecd7e74d|Avatar of Hope|If you have 3 or less life, this spell costs {6} less to cast. Flying This creature can block any number of creatures.
+68d84ffa-5bd0-4ed9-a987-6cef13095438|Avatar of Might|If an opponent controls at least four more creatures than you, this spell costs {6} less to cast. Trample (This creature can deal excess combat damage to the player or planeswalker it's attacking.)
+13aa88a0-4b47-4012-ba50-002e51e637cf|Avatar of Will|If an opponent has no cards in hand, this spell costs {6} less to cast. Flying
+2da5aa33-3794-4f83-936c-9d8640833d86|Avatar of Woe|If there are ten or more creature cards total in all graveyards, this spell costs {6} less to cast. Fear (This creature can't be blocked except by artifact creatures and/or black creatures.) {T}: Destroy target creature. It can't be regenerated.

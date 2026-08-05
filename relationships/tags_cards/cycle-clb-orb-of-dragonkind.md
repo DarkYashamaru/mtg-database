@@ -1,0 +1,3 @@
+651c967c-8f71-4eb5-b22f-545e55ea050e|Carnelian Orb of Dragonkind|{T}: Add {R}. If that mana is spent on a Dragon creature spell, it gains haste until end of turn.
+5eef3d70-ef16-4722-8c3d-21a0311597bd|Jade Orb of Dragonkind|{T}: Add {G}. When you spend this mana to cast a Dragon creature spell, it enters with an additional +1/+1 counter on it and gains hexproof until your next turn. (It can't be the target of spells or abilities your opponents control.)
+c61ab8e1-ef23-465d-bcd3-f771434988b2|Lapis Orb of Dragonkind|{T}: Add {U}. When you spend this mana to cast a Dragon creature spell, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)

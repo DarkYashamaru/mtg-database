@@ -1,0 +1,3 @@
+789bf406-38f0-4888-b2ff-c4a95ac79283|Rakdos the Defiler|Flying, trample Whenever Rakdos attacks, sacrifice half the non-Demon permanents you control, rounded up. Whenever Rakdos deals combat damage to a player, that player sacrifices half the non-Demon permanents they control of their choice, rounded up.
+03a4b997-4738-41a9-933f-e1f765e3a75a|Rakdos, the Showstopper|Flying, trample When Rakdos enters, flip a coin for each creature that isn't a Demon, Devil, or Imp. Destroy each creature whose coin comes up tails.
+d3a50d73-3a1f-43aa-ab97-c6c0031bb734|Reaper from the Abyss|Flying Morbid — At the beginning of each end step, if a creature died this turn, destroy target non-Demon creature.

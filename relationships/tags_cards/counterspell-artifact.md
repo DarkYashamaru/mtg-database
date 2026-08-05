@@ -1,0 +1,10 @@
+d08e9784-75f7-4164-ac48-d06160f8c56b|Annul|Counter target artifact or enchantment spell.
+2d4aedc5-31c5-4281-98e1-b0c2233c3c8a|Artifact Blast|Counter target artifact spell.
+60fc5eb0-95d6-49b0-a538-945ef599e484|Defabricate|Choose one — • Counter target artifact or enchantment spell. If that spell is countered this way, exile it instead of putting it into its owner's graveyard. • Counter target activated or triggered ability.
+ec85a375-fe38-4b11-af0e-f2b466181dd7|Goblin Artisans|{T}: Flip a coin. If you win the flip, draw a card. If you lose the flip, counter target artifact spell you control that isn't the target of an ability from another creature named Goblin Artisans.
+a5fdf1b2-da22-4fa6-810a-85c3f7587535|Halt Order|Counter target artifact spell. Draw a card.
+016718df-2eb5-499f-adea-18231c0375b3|Hurl into History|Counter target artifact or creature spell. Discover X, where X is that spell's mana value. (Exile cards from the top of your library until you exile a nonland card with that mana value or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)
+cd1a6508-aaba-4515-9496-057915d02040|Illumination|Counter target artifact or enchantment spell. Its controller gains life equal to its mana value.
+f5daadc1-98ff-480a-82bb-fe7bfaa7b60e|Jin-Gitaxias, Progress Tyrant|Whenever you cast an artifact, instant, or sorcery spell, copy that spell. You may choose new targets for the copy. This ability triggers only once each turn. (A copy of a permanent spell becomes a token.) Whenever an opponent casts an artifact, instant, or sorcery spell, counter that spell. This ability triggers only once each turn.
+9c0f7cdc-9095-40ae-bf83-75a5ffda72b9|Quandrix Command|Choose two — • Return target creature or planeswalker to its owner's hand. • Counter target artifact or enchantment spell. • Put two +1/+1 counters on target creature. • Target player shuffles up to three target cards from their graveyard into their library.
+b515dfc6-1a1e-46d6-a7a3-0e3af8279f49|Scatter Ray|Counter target artifact or creature spell unless its controller pays {4}.

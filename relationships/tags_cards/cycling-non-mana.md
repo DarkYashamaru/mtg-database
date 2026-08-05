@@ -1,0 +1,2 @@
+42d86827-6459-42fc-86b6-6eb055604c36|Edge of Autumn|If you control four or fewer lands, search your library for a basic land card, put it onto the battlefield tapped, then shuffle. Cycling—Sacrifice a land. (Sacrifice a land, Discard this card: Draw a card.)
+bd7867f4-4f58-49c2-9c24-a124dfdb506d|Street Wraith|Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.) Cycling—Pay 2 life. (Pay 2 life, Discard this card: Draw a card.)

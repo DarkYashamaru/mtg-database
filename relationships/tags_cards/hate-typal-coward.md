@@ -1,0 +1,4 @@
+6ad1d8d0-06c0-4804-af5f-60ffb358f371|Boldwyr Intimidator|Cowards can't block Warriors. {R}: Target creature becomes a Coward until end of turn. {2}{R}: Target creature becomes a Warrior until end of turn.
+adfd6c2d-a7f8-4f5c-bc31-d65c8150ed49|Gornog, the Red Reaper|Haste Cowards can't block Warriors. Whenever one or more Warriors you control attack a player, target creature that player controls becomes a Coward. Attacking Warriors you control get +X/+0, where X is the number of Cowards your opponents control.
+045bf1fd-f375-47a0-9983-7e2ebfed7854|Kargan Intimidator|Cowards can't block Warriors. {1}: Choose one that hasn't been chosen this turn — • This creature gets +1/+1 until end of turn. • Target creature becomes a Coward until end of turn. • Target Warrior gains trample until end of turn.
+fa70903d-3c8b-49f7-8817-f708b5ba250f|Pyrophobia|Pyrophobia deals 3 damage to target creature. Cowards can't block this turn.

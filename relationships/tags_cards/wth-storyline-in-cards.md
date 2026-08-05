@@ -1,0 +1,10 @@
+d0e1904e-1a37-41f6-8582-b9ea794bb886|Abduction|Enchant creature When this Aura enters, untap enchanted creature. You control enchanted creature. When enchanted creature dies, return that card to the battlefield under its owner's control.
+28f70f86-19a9-4811-bc10-423a05842d39|Aboroth|Cumulative upkeep—Put a -1/-1 counter on this creature. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)
+4954181c-cb46-4cac-adc3-2c8b7693a211|Abyssal Gatekeeper|When this creature dies, each player sacrifices a creature of their choice.
+2786f210-ec64-46ea-9a7f-b03759fb1dae|Ancestral Knowledge|Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) When this enchantment enters, look at the top ten cards of your library, then exile any number of them and put the rest back on top of your library in any order. When this enchantment leaves the battlefield, shuffle your library.
+91520db8-2d50-4c17-9f0e-2f92f63285f7|Avizoa|Flying {0}: This creature gets +2/+2 until end of turn. You skip your next untap step. Activate only once each turn.
+84fdcfd3-2b22-4570-af34-7e3f55f97466|Benalish Missionary|{1}{W}, {T}: Prevent all combat damage that would be dealt by target blocked creature this turn.
+882ee72e-2149-4778-a81c-8bf09beb5d66|Call of the Wild|{2}{G}{G}: Reveal the top card of your library. If it's a creature card, put it onto the battlefield. Otherwise, put it into your graveyard.
+16128b90-9b81-476e-8999-3ef498728c39|Cinder Wall|Defender When this creature blocks, destroy it at end of combat.
+7a5cfc97-89cf-43bc-8e48-f8bf7a0c5fcd|Debt of Loyalty|Regenerate target creature. You gain control of that creature if it regenerates this way.
+d8328d27-e27f-4c84-8ab5-cabb80a34f54|Desperate Gambit|Choose a source you control and flip a coin. If you win the flip, the next time that source would deal damage this turn, it deals double that damage instead. If you lose the flip, the next time it would deal damage this turn, prevent that damage.

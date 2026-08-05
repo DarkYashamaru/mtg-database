@@ -1,0 +1,1 @@
+dfd8e6c2-e425-41fa-af55-985271f771b3|Balthor the Defiled|Minion creatures get +1/+1. {B}{B}{B}, Exile Balthor: Each player returns all black and all red creature cards from their graveyard to the battlefield.

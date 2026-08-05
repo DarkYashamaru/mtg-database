@@ -1,0 +1,3 @@
+a94bb381-74e2-488f-896d-a017a2b568ab|Avid Reclaimer|{T}: Add {G} or {U}. If you control a Nissa planeswalker, you gain 2 life.
+1342bd59-91d3-4a5b-b853-542a52d7da6d|Guardian of the Great Conduit|Reach (This creature can block creatures with flying.) As long as you control a Nissa planeswalker, this creature gets +2/+0 and has vigilance. (Attacking doesn't cause it to tap.)
+8d4ef98d-228e-41ff-9133-53f0987e58d8|Nissa's Triumph|Search your library for up to two basic Forest cards. If you control a Nissa planeswalker, instead search your library for up to three land cards. Reveal those cards, put them into your hand, then shuffle.

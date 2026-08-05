@@ -1,0 +1,5 @@
+0665daf5-e12a-4b59-81fc-63fec2807571|Anya, Merciless Angel|Flying Anya gets +3/+3 for each opponent whose life total is less than half their starting life total. As long as an opponent's life total is less than half their starting life total, Anya has indestructible.
+ea904852-6322-4a24-9145-190acfce54ec|Arjun, the Shifting Flame|Flying Whenever you cast a spell, put the cards in your hand on the bottom of your library in any order, then draw that many cards.
+647d7988-9a5d-4700-9238-938d0d5fae12|Karlov of the Ghost Council|Whenever you gain life, put two +1/+1 counters on Karlov. {W}{B}, Remove six +1/+1 counters from Karlov: Exile target creature.
+198b6c6f-a480-4672-9d87-b0cb5d8ed1c0|Kaseto, Orochi Archmage|{G}{U}: Target creature can't be blocked this turn. If that creature is a Snake, it gets +2/+2 until end of turn.
+e0420f2c-d578-421e-ae75-e7dc5f70661a|Mazirek, Kraul Death Priest|Flying Whenever a player sacrifices another permanent, put a +1/+1 counter on each creature you control.

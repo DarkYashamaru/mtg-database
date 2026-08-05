@@ -1,0 +1,2 @@
+b38d1811-64d7-4a35-a86c-3291eecd8391|Summon: Leviathan|(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.) I — Return each creature that isn't a Kraken, Leviathan, Merfolk, Octopus, or Serpent to its owner's hand. II, III — Until end of turn, whenever a Kraken, Leviathan, Merfolk, Octopus, or Serpent attacks, draw a card. Ward {2}
+e510eaaf-6497-480f-baa8-f4796b5f1086|Whelming Wave|Return all creatures to their owners' hands except for Krakens, Leviathans, Octopuses, and Serpents.

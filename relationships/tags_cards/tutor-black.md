@@ -1,0 +1,4 @@
+32ebb029-9f03-49c9-b9bb-cb1954e2a324|Conflux|Search your library for a white card, a blue card, a black card, a red card, and a green card. Reveal those cards, put them into your hand, then shuffle.
+83c8f1ca-194e-4cb6-9d5f-029133c1edbc|Lotuslight Dancers|Lifelink When this creature enters, search your library for a black card, a green card, and a blue card. Put those cards into your graveyard, then shuffle.
+30c4914e-4d9f-453d-bf5b-48ab8e0f2ba3|Mausoleum Secrets|Undergrowth — Search your library for a black card with mana value less than or equal to the number of creature cards in your graveyard, reveal it, put it into your hand, then shuffle.
+cf42a7e3-71ee-40b8-a6ca-0368c746e128|Shadow-Rite Priest|Other Clerics you control get +1/+1. {3}{B}{B}, {T}, Sacrifice another Cleric: Search your library for a black creature card, put it onto the battlefield, then shuffle.

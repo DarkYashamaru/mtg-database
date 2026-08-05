@@ -1,0 +1,2 @@
+a549d54f-2640-455c-8a93-bef4df2f9e8b|Cairn Wanderer|Changeling (This card is every creature type.) As long as a creature card with flying is in a graveyard, this creature has flying. The same is true for fear, first strike, double strike, deathtouch, haste, landwalk, lifelink, protection, reach, trample, shroud, and vigilance.
+a02a7816-c967-4503-bb08-f8db44915250|The Abyss|At the beginning of each player's upkeep, destroy target nonartifact creature that player controls of their choice. It can't be regenerated.

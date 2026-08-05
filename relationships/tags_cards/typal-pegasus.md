@@ -1,0 +1,3 @@
+48a99dce-0aa9-4aac-81df-cec5f94c639d|Archon of Sun's Grace|Flying Lifelink (Damage dealt by this creature also causes you to gain that much life.) Pegasus creatures you control have lifelink. Constellation — Whenever an enchantment you control enters, create a 2/2 white Pegasus creature token with flying.
+8776d14f-a5a2-4ef3-98d0-e1148e579e4d|Sacred Mesa|At the beginning of your upkeep, sacrifice this enchantment unless you sacrifice a Pegasus. {1}{W}: Create a 1/1 white Pegasus creature token with flying.
+0b96cd7a-2132-4ff2-9666-6e2fbd0a2160|Thurid, Mare of Destiny|Flying, lifelink Whenever you cast a Pegasus, Unicorn, or Horse creature spell, copy it. (The copy becomes a token.) Other Pegasi, Unicorns, and Horses you control get +1/+1.

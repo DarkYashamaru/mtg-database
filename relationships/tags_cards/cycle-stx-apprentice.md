@@ -1,0 +1,5 @@
+3858a2ff-cdc9-4e40-bc2c-42ed691aae08|Lorehold Apprentice|Magecraft — Whenever you cast or copy an instant or sorcery spell, until end of turn, Spirit creatures you control gain "{T}: This creature deals 1 damage to each opponent."
+0d60ffba-9904-442e-8d4a-a6b1b50a38eb|Prismari Apprentice|Magecraft — Whenever you cast or copy an instant or sorcery spell, this creature can't be blocked this turn. If that spell has mana value 5 or greater, put a +1/+1 counter on this creature.
+92116bbd-c7ad-4033-8d98-3ea09fea8ae7|Quandrix Apprentice|Magecraft — Whenever you cast or copy an instant or sorcery spell, look at the top three cards of your library. You may reveal a land card from among them and put that card into your hand. Put the rest on the bottom of your library in any order.
+5ab91144-5eb3-491b-a8be-7e1139d0d6c8|Silverquill Apprentice|Magecraft — Whenever you cast or copy an instant or sorcery spell, target creature gets +1/+0 until end of turn.
+696f554d-0485-48a5-9273-3f6fb7d16a5d|Witherbloom Apprentice|Magecraft — Whenever you cast or copy an instant or sorcery spell, each opponent loses 1 life and you gain 1 life.

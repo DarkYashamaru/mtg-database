@@ -1,0 +1,1 @@
+cb5aa38e-6a76-4c0c-be14-3c546acd353d|Vizier of the Anointed|When this creature enters, you may search your library for a creature card with eternalize or embalm, put that card into your graveyard, then shuffle. Whenever you activate an eternalize or embalm ability, draw a card.

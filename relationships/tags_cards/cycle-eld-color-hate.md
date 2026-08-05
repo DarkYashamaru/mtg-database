@@ -1,0 +1,5 @@
+0e3ac581-3d78-4879-9afb-3db69c5c47a5|Archon of Absolution|Flying Protection from white (This creature can't be blocked, targeted, dealt damage, enchanted, or equipped by anything white.) Creatures can't attack you or planeswalkers you control unless their controller pays {1} for each of those creatures.
+48390b8d-db41-48a5-9bac-316660ab7252|Mystical Dispute|This spell costs {2} less to cast if it targets a blue spell. Counter target spell unless its controller pays {3}.
+3afe4852-d506-45d7-8a19-ddcbc3dd90d4|Oakhame Adversary|This spell costs {2} less to cast if an opponent controls a green permanent. Deathtouch Whenever this creature deals combat damage to a player, draw a card.
+1b78aa71-b554-45dc-a737-52cd74c3e7f1|Redcap Melee|Redcap Melee deals 4 damage to target creature or planeswalker. If a nonred permanent is dealt damage this way, you sacrifice a land.
+8c9164b5-10ed-4cad-af33-7d4b5d3d6bf2|Specter's Shriek|Target opponent reveals their hand. You may choose a nonland card from it. If you do, that player exiles that card. If a nonblack card is exiled this way, exile a card from your hand.

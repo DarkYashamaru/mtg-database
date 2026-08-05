@@ -1,0 +1,1 @@
+cf682012-de36-4ab4-ad94-c3c0fd7bce3f|Paliano, the High City|Reveal this card as you draft it. The player to your right chooses a color, you choose another color, then the player to your left chooses a third color. {T}: Add one mana of any color chosen as you drafted cards named Paliano, the High City.

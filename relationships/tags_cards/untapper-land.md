@@ -1,0 +1,10 @@
+4567a528-75f0-4ea6-b927-3a500caf76ac|Arbor Elf|{T}: Untap target Forest.
+b57f06e4-da97-4473-9fbf-f66e9129502a|Argothian Elder|{T}: Untap two target lands.
+fd751ed4-4002-4cae-9d1d-1fe0f1fd4965|Avatar Kyoshi, Earthbender|During your turn, Avatar Kyoshi has hexproof. At the beginning of combat on your turn, earthbend 8, then untap that land. (Target land you control becomes a 0/0 creature with haste that's still a land. Put eight +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)
+5563427d-ffdc-4bea-ad7d-1605894b8a6c|Awakening|At the beginning of each upkeep, untap all creatures and lands.
+02c60b8b-f665-4279-a00f-ae03991df4a6|Azusa's Many Journeys // Likeness of the Seeker|(As this Saga enters and after your draw step, add a lore counter.) I — You may play an additional land this turn. II — You gain 3 life. III — Exile this Saga, then return it to the battlefield transformed under your control. // Whenever this creature becomes blocked, untap up to three lands you control.
+44661108-d72f-4d02-9303-7e4b0ecf7e9c|Bear Umbra|Enchant creature Enchanted creature gets +2/+2 and has "Whenever this creature attacks, untap all lands you control." Umbra armor (If enchanted creature would be destroyed, instead remove all damage from it and destroy this Aura.)
+90194ff1-db61-463f-b5a3-15cd85311d0e|Beledros Witherbloom|Flying At the beginning of each upkeep, create a 1/1 black and green Pest creature token with "When this token dies, you gain 1 life." Pay 10 life: Untap all lands you control. Activate only once each turn.
+bc0518fc-d34b-474a-92c5-2cb013828396|Benthic Explorers|{T}, Untap a tapped land an opponent controls: Add one mana of any type that land could produce.
+53929852-6359-4e7a-8f2c-a5954c76ffcc|Blossom Dryad|{T}: Untap target land.
+1fef13d8-5da2-46a6-91ed-7a31bd46e538|Bumi, Unleashed|Trample When Bumi enters, earthbend 4. Whenever Bumi deals combat damage to a player, untap all lands you control. After this phase, there is an additional combat phase. Only land creatures can attack during that combat phase.

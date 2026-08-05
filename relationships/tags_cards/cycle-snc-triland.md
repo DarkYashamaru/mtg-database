@@ -1,0 +1,5 @@
+f5896356-5744-4f7e-a4e5-1cc36dde5958|Jetmir's Garden|({T}: Add {R}, {G}, or {W}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+6e9ef5ef-6aed-4d3e-a59b-9e3dc8740b1b|Raffine's Tower|({T}: Add {W}, {U}, or {B}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+3123ec89-8e95-4761-ba17-747ec667509f|Spara's Headquarters|({T}: Add {G}, {W}, or {U}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+8291543f-d086-48aa-b2b7-5481ca8c9198|Xander's Lounge|({T}: Add {U}, {B}, or {R}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)
+f7e7b78c-c769-4720-8585-1874773eb342|Ziatora's Proving Ground|({T}: Add {B}, {R}, or {G}.) This land enters tapped. Cycling {3} ({3}, Discard this card: Draw a card.)

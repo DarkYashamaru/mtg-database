@@ -1,0 +1,5 @@
+94ca5db6-86e1-42b4-b776-977efa2e12b6|Bloodwater Entity|Flying Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) When this creature enters, you may put target instant or sorcery card from your graveyard on top of your library.
+f7289e62-ce5e-4f11-8d64-9fb62531b578|Obelisk Spider|Reach Whenever this creature deals combat damage to a creature, put a -1/-1 counter on that creature. Whenever you put one or more -1/-1 counters on a creature, each opponent loses 1 life and you gain 1 life.
+3d699db7-cc52-4ee3-947b-0ba291bf037a|Resolute Survivors|You may exert this creature as it attacks. (It won't untap during your next untap step.) Whenever you exert a creature, this creature deals 1 damage to each opponent and you gain 1 life.
+058bbc0a-9c09-4c98-8735-83255a71bbca|River Hoopoe|Flying {3}{G}{U}: You gain 2 life and draw a card.
+ea30f395-86fc-444f-8c9e-b9876287084e|Unraveling Mummy|{1}{W}: Target attacking Zombie gains lifelink until end of turn. {1}{B}: Target attacking Zombie gains deathtouch until end of turn.

@@ -1,0 +1,10 @@
+92de7cf0-ac3e-46ae-86b2-7d8ebb0276e4|A Good Day to Pie|Tap up to two target creatures. Whenever you put a name sticker on a creature, you may return this card from your graveyard to your hand.
+92b617f9-6e6b-42a0-9c45-6ff5f6193051|Aang's Defense|Target blocking creature you control gets +2/+2 until end of turn. Draw a card.
+8adbba6e-03ef-4278-aec5-8a4496b377a8|Abandon Hope|As an additional cost to cast this spell, discard X cards. Look at target opponent's hand and choose X cards from it. That player discards those cards.
+fa43793d-a215-4a64-a09c-ed9799f745a4|Abandon Reason|Up to two target creatures each get +1/+0 and gain first strike until end of turn. (They deal combat damage before creatures without first strike.) Madness {1}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)
+5404c6a5-399d-4237-b03c-41b6a1b79050|Abandon the Post|Up to two target creatures can't block this turn. Flashback {3}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+3a92b235-196b-4f46-9d20-06f4d3653d36|Aberrant Return|Put one, two, or three target creature cards from graveyards onto the battlefield under your control. Each of them enters with an additional -1/-1 counter on it.
+6300de53-6e71-4f0e-87e1-b0acd25c59a8|Abeyance|Until end of turn, target player can't cast instant or sorcery spells, and that player can't activate abilities that aren't mana abilities. Draw a card.
+2f5f46ed-b8aa-4864-bd20-17281d4632bf|Abigale, Poet Laureate // Heroic Stanza|Flying Whenever you cast a creature spell, Abigale becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.) // Put a +1/+1 counter on target creature.
+dd97e457-07eb-4918-b780-ae7ff42a37e7|Abjure|As an additional cost to cast this spell, sacrifice a blue permanent. Counter target spell.
+edbf1b87-2d1e-47e6-a04e-a2b1646af7d9|Abnormal Endurance|Until end of turn, target creature gets +2/+0 and gains "When this creature dies, return it to the battlefield tapped under its owner's control."

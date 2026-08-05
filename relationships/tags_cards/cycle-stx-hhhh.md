@@ -1,0 +1,5 @@
+314f0a96-5e91-42a3-9d75-3f641f22a9ee|Blade Historian|Attacking creatures you control have double strike.
+a52e73bb-47cb-4912-9b81-4ae40641eabb|Daemogoth Titan|Whenever this creature attacks or blocks, sacrifice a creature.
+e0155236-13c5-4e01-b4de-b8fa4af846d8|Dramatic Finale|Creature tokens you control get +1/+1. Whenever one or more nontoken creatures you control die, create a 2/1 white and black Inkling creature token with flying. This ability triggers only once each turn.
+dfc45c58-821c-42f3-ab48-05b912748bdf|Elemental Expressionist|Magecraft — Whenever you cast or copy an instant or sorcery spell, choose target creature you control. Until end of turn, it gains "If this creature would leave the battlefield, exile it instead of putting it anywhere else" and "When this creature is put into exile, create a 4/4 blue and red Elemental creature token." (Each instance of that ability triggers separately.)
+d8bcd896-cae9-4733-a437-165644b8b0e8|Manifestation Sage|When this creature enters, create a 0/0 green and blue Fractal creature token. Put X +1/+1 counters on it, where X is the number of cards in your hand.

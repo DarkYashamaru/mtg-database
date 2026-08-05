@@ -1,0 +1,10 @@
+15397a59-70a8-441f-abf7-230405a1602b|Armadillo Cloak|Enchant creature Enchanted creature gets +2/+2 and has trample. Whenever enchanted creature deals damage, you gain that much life.
+3f0c9466-5ab9-4205-a84f-b4b27b5a678e|Bloodbraid Elf|Haste (This creature can attack and {T} as soon as it comes under your control.) Cascade (When you cast this spell, exile cards from the top of your library until you exile a nonland card that costs less. You may cast it without paying its mana cost. Put the exiled cards on the bottom in a random order.)
+e597d8a1-3bbc-4001-b642-f4421447970f|Extract from Darkness|Each player mills two cards. Then you put a creature card from a graveyard onto the battlefield under your control.
+4af23012-16eb-47be-b666-3e536d8f6c1b|Flame-Kin Zealot|When this creature enters, creatures you control get +1/+1 and gain haste until end of turn.
+39c7d2cc-4fd1-4f1a-be1a-a6ae56d2356d|Shaman of the Pack|When this creature enters, target opponent loses life equal to the number of Elves you control.
+15276d3b-a117-44bf-87c3-c17e032e4a26|Thunderclap Wyvern|Flash (You may cast this spell any time you could cast an instant.) Flying Other creatures you control with flying get +1/+1.
+3ec1b309-8c26-4dc4-b4c3-f97c2c3f8a68|Torrent of Souls|Return up to one target creature card from your graveyard to the battlefield if {B} was spent to cast this spell. Creatures target player controls get +2/+0 and gain haste until end of turn if {R} was spent to cast this spell. (Do both if {B}{R} was spent.)
+c744b5f4-fbcf-48b8-9d60-5e9c6ac297e0|Trygon Predator|Flying Whenever this creature deals combat damage to a player, you may destroy target artifact or enchantment that player controls.
+e9e56b1d-5ad2-4807-8c4c-1a1a6a25ecbf|Wee Dragonauts|Flying Whenever you cast an instant or sorcery spell, this creature gets +2/+0 until end of turn.
+ccf8d919-1399-4bef-94ac-04c67f122828|Zealous Persecution|Until end of turn, creatures you control get +1/+1 and creatures your opponents control get -1/-1.

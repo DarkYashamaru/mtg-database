@@ -1,0 +1,6 @@
+a85197ab-dc94-4b72-9716-8dbdbbe90ff8|Butcher of Malakir|Flying Whenever this creature or another creature you control dies, each opponent sacrifices a creature of their choice.
+7c777a41-e40a-4b40-96bf-8ddd5c12924c|Dictate of Erebos|Flash Whenever a creature you control dies, each opponent sacrifices a creature of their choice.
+6f4ac4a4-53ec-4bc9-8f5c-d4b801d867b2|Grave Pact|Whenever a creature you control dies, each other player sacrifices a creature of their choice.
+7de8ffa5-f6e5-4987-b3f8-6d6fc83f8fa8|Martyr's Bond|Whenever this enchantment or another nonland permanent you control is put into a graveyard from the battlefield, each opponent sacrifices a permanent of their choice that shares a card type with it.
+49039519-62db-4605-b600-cef6f34c893f|Rampage of the Valkyries|When this enchantment enters, create a 4/4 white Angel creature token with flying and vigilance. Whenever an Angel you control dies, each other player sacrifices a creature of their choice.
+760ede92-a826-4144-9de8-84ba9b8743d1|Sothera, the Supervoid|Whenever a creature you control dies, each opponent chooses a creature they control and exiles it. At the beginning of your end step, if a player controls no creatures, sacrifice Sothera, then put a creature card exiled with it onto the battlefield under your control with two additional +1/+1 counters on it.

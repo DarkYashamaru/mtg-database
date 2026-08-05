@@ -1,0 +1,2 @@
+34b4d137-780b-446c-8cdd-fd1673180971|Homing Sliver|Each Sliver card in each player's hand has slivercycling {3}. Slivercycling {3} ({3}, Discard this card: Search your library for a Sliver card, reveal it, put it into your hand, then shuffle.)
+762d864b-69bc-43ac-af2f-e18186010169|Sliver Overlord|{3}: Search your library for a Sliver card, reveal that card, put it into your hand, then shuffle. {3}: Gain control of target Sliver. (This effect lasts indefinitely.)

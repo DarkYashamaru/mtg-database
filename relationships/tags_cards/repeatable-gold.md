@@ -1,0 +1,2 @@
+ba0d3df2-3acf-46d7-8d64-8d67d1579adc|Curse of Opulence|Enchant player Whenever enchanted player is attacked, create a Gold token. Each opponent attacking that player does the same. (A Gold token is an artifact with "Sacrifice this token: Add one mana of any color.")
+1ebafd78-269a-4974-88d2-e75b44b744c2|King Macar, the Gold-Cursed|Inspired — Whenever King Macar becomes untapped, you may exile target creature. If you do, create a Gold token. (It's an artifact with "Sacrifice this token: Add one mana of any color.")

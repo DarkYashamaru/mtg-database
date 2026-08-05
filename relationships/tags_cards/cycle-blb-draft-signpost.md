@@ -1,0 +1,10 @@
+f293da27-e42d-4e87-8b61-d3c27e4c6d71|Burrowguard Mentor|Trample Burrowguard Mentor's power and toughness are each equal to the number of creatures you control.
+b173245e-2009-48ff-ac42-5f28d12aec79|Fireglass Mentor|At the beginning of your second main phase, if an opponent lost life this turn, exile the top two cards of your library. Choose one of them. Until end of turn, you may play that card.
+20194297-f2a4-4473-95bc-7c6835e5b6b3|Lilysplash Mentor|Reach {1}{G}{U}: Exile another target creature you control, then return it to the battlefield under its owner's control with a +1/+1 counter on it. Activate only as a sorcery.
+0eb8983e-4e44-4bfe-81dd-ddb41007a166|Plumecreed Mentor|Flying Whenever this creature or another creature you control with flying enters, put a +1/+1 counter on target creature you control without flying.
+f50bbe5e-a839-40e1-ba79-1e96f91bd218|Seedglaive Mentor|Vigilance, haste Valiant — Whenever this creature becomes the target of a spell or ability you control for the first time each turn, put a +1/+1 counter on it.
+12a165c4-229b-458b-8fc7-c1b7cba35a8e|Starseer Mentor|Flying, vigilance At the beginning of your end step, if you gained or lost life this turn, target opponent loses 3 life unless they sacrifice a nonland permanent of their choice or discard a card.
+b2252471-01ca-4d58-aa99-4ab0aa5eae12|Stormcatch Mentor|Haste Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) Instant and sorcery spells you cast cost {1} less to cast.
+e75e40a5-a9ae-4789-96c1-0e19d1ce59c5|Tidecaller Mentor|Menace Threshold — When this creature enters, if there are seven or more cards in your graveyard, return up to one target nonland permanent to its owner's hand.
+db649e15-24ca-4fd8-9f0b-f1df28c9c57d|Vinereap Mentor|When this creature enters or dies, create a Food token. (It's an artifact with "{2}, {T}, Sacrifice this token: You gain 3 life.")
+9d14c7bd-7802-401c-b02b-c7f3c51b007f|Wandertale Mentor|Whenever you expend 4, put a +1/+1 counter on this creature. (You expend 4 as you spend your fourth total mana to cast spells during a turn.) {T}: Add {R} or {G}.

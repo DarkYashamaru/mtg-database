@@ -1,0 +1,5 @@
+30ec09e4-82bf-4a6b-b6c8-ff267447e0a9|Thriving Grubs|When this creature enters, you get {E}{E} (two energy counters). Whenever this creature attacks, you may pay {E}{E}. If you do, put a +1/+1 counter on it.
+3f523026-beda-4549-96c0-e92108170261|Thriving Ibex|When this creature enters, you get {E}{E} (two energy counters). Whenever this creature attacks, you may pay {E}{E}. If you do, put a +1/+1 counter on it.
+0bb8500a-bc29-43f1-ab22-2b8adeb9c99d|Thriving Rats|When this creature enters, you get {E}{E} (two energy counters). Whenever this creature attacks, you may pay {E}{E}. If you do, put a +1/+1 counter on it.
+d8841f3a-f3ff-42ca-89a8-0cc1c3ca6a6c|Thriving Rhino|When this creature enters, you get {E}{E} (two energy counters). Whenever this creature attacks, you may pay {E}{E}. If you do, put a +1/+1 counter on it.
+85dda096-48b2-414e-8c4d-4ffa6e5dac11|Thriving Turtle|When this creature enters, you get {E}{E} (two energy counters). Whenever this creature attacks, you may pay {E}{E}. If you do, put a +1/+1 counter on it.

@@ -1,0 +1,2 @@
+455dc001-3f6d-4d44-afa7-0f83a2520baf|Down for Repairs|Target opponent reveals their hand. You choose a nonland card from it. That player discards that card. Destroy up to one target Attraction that player controls. (It's put into their junkyard.)
+f73ba6ae-87c1-4e5d-ae52-59d11d7d6ba6|Draconian Gate-Bot|When this creature enters, choose one — • Open an Attraction. (Put the top card of your Attraction deck onto the battlefield.) • Destroy target Attraction. (It's put into its owner's junkyard.)

@@ -1,0 +1,4 @@
+28ddc23c-5b0b-4747-9a33-6845acf27bec|Elvish Harbinger|When this creature enters, you may search your library for an Elf card, reveal it, then shuffle and put that card on top. {T}: Add one mana of any color.
+113fc13a-6df9-4eed-b9d4-002a85a036a1|Nissa Revane|+1: Search your library for a card named Nissa's Chosen, put it onto the battlefield, then shuffle. +1: You gain 2 life for each Elf you control. −7: Search your library for any number of Elf creature cards, put them onto the battlefield, then shuffle.
+4f5921c1-b932-4d6b-bb8e-01992578abdc|Skyshroud Poacher|{3}, {T}: Search your library for an Elf permanent card, put it onto the battlefield, then shuffle.
+7a838374-fc40-4fb6-9d38-a96f01e7038a|Wirewood Herald|When this creature dies, you may search your library for an Elf card, reveal that card, put it into your hand, then shuffle.

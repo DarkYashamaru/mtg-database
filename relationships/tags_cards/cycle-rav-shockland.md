@@ -1,0 +1,10 @@
+43985bbc-a0f6-4812-984e-392bc8562633|Blood Crypt|({T}: Add {B} or {R}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+20283c4a-f1f0-42f0-bc08-6da87474426b|Breeding Pool|({T}: Add {G} or {U}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+73864fcc-1bde-4bc0-831e-2b93e546e417|Godless Shrine|({T}: Add {W} or {B}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+f1750962-a87c-49f6-b731-02ae971ac6ea|Hallowed Fountain|({T}: Add {W} or {U}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+975ec9a3-6f20-4177-8211-82526e092538|Overgrown Tomb|({T}: Add {B} or {G}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+45181cb8-2090-4471-ba90-e5a8f04d525f|Sacred Foundry|({T}: Add {R} or {W}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+17039058-822d-409f-938c-b727a366ba63|Steam Vents|({T}: Add {U} or {R}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+16052b52-ade1-406f-a06b-ce7ea607fb63|Stomping Ground|({T}: Add {R} or {G}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+f413a83d-a40d-434c-b20a-4c707c0527fa|Temple Garden|({T}: Add {G} or {W}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.
+fc9ec820-4245-4a96-b009-5308a818ca58|Watery Grave|({T}: Add {U} or {B}.) As this land enters, you may pay 2 life. If you don't, it enters tapped.

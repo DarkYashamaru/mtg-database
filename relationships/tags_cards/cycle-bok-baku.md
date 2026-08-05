@@ -1,0 +1,5 @@
+9ca64b8e-e9d2-41b3-b229-6fcdc48a8371|Blademane Baku|Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature. {1}, Remove X ki counters from this creature: For each counter removed, this creature gets +2/+0 until end of turn.
+f73f8eca-55fe-418f-a244-29ef82cfc47c|Petalmane Baku|Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature. {1}, Remove X ki counters from this creature: Add X mana of any one color.
+736168bb-0a5c-4b29-9f82-1319cd112873|Quillmane Baku|Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature. {1}, {T}, Remove X ki counters from this creature: Return target creature with mana value X or less to its owner's hand.
+74466fa6-34d9-42f9-8590-c7f1fa672bf5|Skullmane Baku|Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature. {1}, {T}, Remove X ki counters from this creature: Target creature gets -X/-X until end of turn.
+bb23221a-f1d0-421d-9769-132e2b26b804|Waxmane Baku|Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature. {1}, Remove X ki counters from this creature: Tap X target creatures.

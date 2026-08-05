@@ -1,0 +1,10 @@
+203b72d2-a273-49cc-bd10-2fbc07ed2fc8|Agents of S.H.I.E.L.D.|Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.
+2b8ef83b-1a1d-4299-ab69-e9e296bb224d|Akrasan Squire|Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)
+51d7bd70-0874-41d4-94bc-c3e14c968668|Altar of the Goyf|Whenever a creature you control attacks alone, it gets +X/+X until end of turn, where X is the number of card types among cards in all graveyards. Lhurgoyf creatures you control have trample.
+6b19377c-f178-49cb-95f8-fd3451acc7cf|Angelic Benediction|Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.) Whenever a creature you control attacks alone, you may tap target creature.
+507d2f27-08a9-4938-b191-5734cda42ef2|Angelic Exaltation|Whenever a creature you control attacks alone, it gets +X/+X until end of turn, where X is the number of creatures you control.
+49a8ca54-30d3-42d3-b122-334d24805e1b|Ardent Plea|Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.) Cascade (When you cast this spell, exile cards from the top of your library until you exile a nonland card that costs less. You may cast it without paying its mana cost. Put the exiled cards on the bottom in a random order.)
+32e7385e-525e-4925-8cfd-bfea21fcd1bf|Asari Captain|Haste Whenever a Samurai or Warrior you control attacks alone, it gets +1/+0 until end of turn for each Samurai or Warrior you control.
+01518a87-6b16-4b7b-805d-b652404c6356|Aven Squire|Flying Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)
+40216d09-ae4d-4a41-b3f6-1a8035093045|Battlegrace Angel|Flying Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.) Whenever a creature you control attacks alone, it gains lifelink until end of turn.
+5ff647e4-730a-498f-8f2c-5bd64d5a9780|Cathedral of War|This land enters tapped. Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.) {T}: Add {C}.

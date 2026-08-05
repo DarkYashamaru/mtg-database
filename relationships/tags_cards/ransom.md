@@ -1,0 +1,10 @@
+0fe602b7-9f88-4d3d-af24-7790df867ed5|Aether Barrier|Whenever a player casts a creature spell, that player sacrifices a permanent of their choice unless they pay {1}.
+128304af-4555-4276-bf26-638017beb3ff|Aura Flux|Other enchantments have "At the beginning of your upkeep, sacrifice this enchantment unless you pay {2}."
+477f5011-aaeb-4a5f-8a65-5fb45cb06389|Breath of Dreams|Cumulative upkeep {U} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) Green creatures have "Cumulative upkeep {1}."
+24315f60-731a-40bb-85ba-eedba1b011ff|Carrionette|{2}{B}{B}: Exile this card and target creature unless that creature's controller pays {2}. Activate only if this card is in your graveyard.
+20b8911e-6701-485c-ac62-2b3cc79ec288|Coral Net|Enchant green or white creature Enchanted creature has "At the beginning of your upkeep, sacrifice this creature unless you discard a card."
+62817ef5-9b8d-4bca-bdd4-ab3bc4e063d0|Decomposition|Enchant black creature Enchanted creature has "Cumulative upkeep—Pay 1 life." (At the beginning of its controller's upkeep, that player puts an age counter on it, then sacrifices it unless they pay its upkeep cost for each age counter on it.) When enchanted creature dies, its controller loses 2 life.
+af8fba92-f7e5-485d-a1da-a30c46a3992e|Disruption Aura|Enchant artifact Enchanted artifact has "At the beginning of your upkeep, sacrifice this artifact unless you pay its mana cost."
+7a756cd1-29a8-4edf-bb74-fbb5b4020022|Energy Flux|All artifacts have "At the beginning of your upkeep, sacrifice this artifact unless you pay {2}."
+155ee24f-a458-4df4-86d5-5eb7396ebf45|Erosion|Enchant land At the beginning of the upkeep of enchanted land's controller, destroy that land unless that player pays {1} or 1 life.
+cb02daf6-9013-4ccc-bf1f-773b757ac468|Essence Leak|Enchant permanent As long as enchanted permanent is red or green, it has "At the beginning of your upkeep, sacrifice this permanent unless you pay its mana cost."

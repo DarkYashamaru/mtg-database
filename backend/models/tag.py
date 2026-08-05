@@ -8,7 +8,9 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from database.base import Base
 
 if TYPE_CHECKING:
+    from models.archetype import Archetype
     from models.card import Card
+    from models.category import Category
 
 
 class Tag(Base):
@@ -45,6 +47,18 @@ class Tag(Base):
         "ThemeCategory",
         secondary="theme_category_tags",
         back_populates="tags"
+    )
+
+    broad_categories: Mapped[list["Category"]] = relationship(
+        "Category",
+        secondary="category_tags",
+        back_populates="tags",
+    )
+
+    broad_archetypes: Mapped[list["Archetype"]] = relationship(
+        "Archetype",
+        secondary="archetype_tags",
+        back_populates="tags",
     )
 
     def __repr__(self) -> str:

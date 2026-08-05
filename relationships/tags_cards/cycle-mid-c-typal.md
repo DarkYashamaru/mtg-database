@@ -1,0 +1,5 @@
+16c99713-f19e-4b25-9b03-6a8d8203adfe|Crawl from the Cellar|Return target creature card from your graveyard to your hand. Put a +1/+1 counter on up to one target Zombie you control. Flashback {3}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+13ebe447-1f8f-4b12-9e35-9d334a863c19|Flare of Faith|Target creature gets +2/+2 until end of turn. If it's a Human, instead it gets +3/+3 and gains indestructible until end of turn.
+22fe038e-033e-4632-a0d7-116492cded83|Howl of the Hunt|Flash Enchant creature When this Aura enters, if enchanted creature is a Wolf or Werewolf, untap that creature. Enchanted creature gets +2/+2 and has vigilance.
+721aeedc-1de5-40d0-a04c-a2ebc056d06a|Neonate's Rush|This spell costs {1} less to cast if you control a Vampire. Neonate's Rush deals 1 damage to target creature and 1 damage to its controller. Draw a card.
+d70ee6f1-541b-43b4-897c-68a231beb894|Shipwreck Sifters|When this creature enters, draw a card, then discard a card. Whenever you discard a Spirit card or a card with disturb, put a +1/+1 counter on this creature.

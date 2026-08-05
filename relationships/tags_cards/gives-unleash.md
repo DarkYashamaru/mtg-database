@@ -1,0 +1,1 @@
+4117e428-0c78-4dea-9019-dd1836fbb03e|Tesak, Judith's Hellhound|Unleash (You may have this creature enter with a +1/+1 counter on it. It can't block as long as it has a +1/+1 counter on it.) Other Dogs you control have unleash. Creatures you control with counters on them have haste. Whenever Tesak attacks, add {R} for each attacking creature.

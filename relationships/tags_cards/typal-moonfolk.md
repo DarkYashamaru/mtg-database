@@ -1,0 +1,1 @@
+e514546a-ca03-48ba-90e1-7a0e145137f2|Patron of the Moon|Moonfolk offering (You may cast this spell any time you could cast an instant by sacrificing a Moonfolk and paying the difference in mana costs between this and the sacrificed Moonfolk. Mana cost includes color.) Flying {1}: Put up to two land cards from your hand onto the battlefield tapped.

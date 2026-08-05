@@ -1,0 +1,10 @@
+bb300e38-32d7-4152-9a82-88d43af99f19|Chronatog|{0}: This creature gets +3/+3 until end of turn. You skip your next turn. Activate only once each turn.
+24542d66-e67a-4403-91a8-bb4231ea1f50|Chronatog Totem|{T}: Add {U}. {1}{U}: This artifact becomes a 1/2 blue Atog artifact creature until end of turn. {0}: This creature gets +3/+3 until end of turn. You skip your next turn. Activate only once each turn and only if this permanent is a creature.
+969c9864-f78b-46b2-b35b-c9adaf355c2d|Chronosavant|{1}{W}: Return this card from your graveyard to the battlefield tapped. You skip your next turn.
+205f6384-7203-42ed-bc0f-8803cf1f4514|Eater of Days|Flying, trample When this creature enters, you skip your next two turns.
+9fe9650d-6c9b-4988-9ea4-79ba0d55a77b|Lethal Vapors|Whenever a creature enters, destroy it. {0}: Destroy this enchantment. You skip your next turn. Any player may activate this ability.
+4bdffa67-e6b3-4588-b76e-c11db6f043ca|Magosi, the Waterveil|This land enters tapped. {T}: Add {U}. {U}, {T}: Put an eon counter on this land. Skip your next turn. {T}, Remove an eon counter from this land and return it to its owner's hand: Take an extra turn after this one.
+f79f84c9-2023-4348-863b-a3b4bc382904|Meditate|Draw four cards. You skip your next turn.
+0dc76b7f-6405-44a1-8c55-31fa480ff70b|Ral Zarek, Guest Lecturer|+1: Surveil 2. −1: Any number of target players each discard a card. −2: Return target creature card with mana value 3 or less from your graveyard to the battlefield. −7: Flip five coins. Target opponent skips their next X turns, where X is the number of coins that came up heads.
+8d01c85c-5f83-4514-b81c-4165051d5722|Unstable Hulk|Morph {3}{R}{R} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.) When this creature is turned face up, it gets +6/+6 and gains trample until end of turn. You skip your next turn.
+f86b8c03-9f1e-4d42-ac45-907c46e9e1c0|Waterspout Elemental|Kicker {U} (You may pay an additional {U} as you cast this spell.) Flying When this creature enters, if it was kicked, return all other creatures to their owners' hands and you skip your next turn.

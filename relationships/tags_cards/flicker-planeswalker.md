@@ -1,0 +1,1 @@
+3aeba3c2-5517-4870-8802-29b0fa70ffae|Semester's End|Exile any number of target creatures and/or planeswalkers you control. At the beginning of the next end step, return each of them to the battlefield under its owner's control. Each of them enters with an additional +1/+1 counter on it if it's a creature and an additional loyalty counter on it if it's a planeswalker.

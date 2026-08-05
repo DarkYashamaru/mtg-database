@@ -1,0 +1,10 @@
+ec17b9db-dd80-4b46-a1b5-215f26bf6498|Bloodstone Goblin|Whenever you cast a spell, if that spell was kicked, this creature gets +1/+1 and gains menace until end of turn. (It can't be blocked except by two or more creatures.)
+621fc513-b16a-4c09-93f8-424e688471e2|Coralhelm Chronicler|Whenever you cast a kicked spell, draw a card, then discard a card. When this creature enters, look at the top five cards of your library. You may reveal a card with a kicker ability from among them and put it into your hand. Put the rest on the bottom of your library in a random order.
+519fccdb-fde4-42cb-b2ca-35fc36cf984a|Elfhame Druid|{T}: Add {G}. {T}: Add {G}{G}. Spend this mana only to cast kicked spells.
+04559759-1afd-4785-badc-c3416041f016|Hallar, the Firefletcher|Trample Whenever you cast a spell, if that spell was kicked, put a +1/+1 counter on Hallar, then Hallar deals damage equal to the number of +1/+1 counters on it to each opponent.
+2a56fe0b-f8a9-499c-bce1-cec6cb3b66f0|Lullmage's Familiar|{T}: Add {G} or {U}. Whenever you cast a kicked spell, you gain 2 life.
+77d5d435-d794-46c0-b630-a460973cf75a|Merfolk Falconer|Flying Whenever you cast a kicked spell, scry 2.
+dfa8c557-f2f5-4763-85c7-e2ec14d9e6b6|Murasa Sproutling|Kicker {1}{G} (You may pay an additional {1}{G} as you cast this spell.) When this creature enters, if it was kicked, return target card with a kicker ability from your graveyard to your hand.
+e682ad51-001c-4465-951e-43df96b7d3b9|Risen Riptide|Whenever you cast a kicked spell, this creature has base power and toughness 5/5 until end of turn.
+05e73886-8311-4a0d-9c8d-4a03c7f20ea2|Roost of Drakes|Kicker {2}{U} (You may pay an additional {2}{U} as you cast this spell.) When this enchantment enters, if it was kicked, create a 2/2 blue Drake creature token with flying. Whenever you cast a kicked spell, create a 2/2 blue Drake creature token with flying.
+851a2214-5f87-4e5b-b099-1c5c90784a97|Rumbling Aftershocks|Whenever you cast a kicked spell, you may have this enchantment deal damage to any target equal to the number of times that spell was kicked.

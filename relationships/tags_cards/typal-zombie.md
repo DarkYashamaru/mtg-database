@@ -1,0 +1,10 @@
+48edc348-93f6-4dce-9cc4-7244d76b6f4a|Accursed Duneyard|{T}: Add {C}. {2}, {T}: Regenerate target Shade, Skeleton, Specter, Spirit, Vampire, Wraith, or Zombie. (The next time it would be destroyed this turn, instead tap it, remove it from combat, and heal all damage on it.)
+8f3cba20-e7a4-47f4-8bce-90168ce9cc5c|Accursed Horde|{1}{B}: Target attacking Zombie gains indestructible until end of turn. (Damage and effects that say "destroy" don't destroy it. If its toughness is 0 or less, it still dies.)
+aeba5c63-aa80-4f31-90fb-f404c9a3057d|Aphetto Vulture|Flying When this creature dies, you may put target Zombie card from your graveyard on top of your library.
+41e250e6-8e38-4cbc-ae66-98800a5feba8|Archdemon of Unx|Flying, trample At the beginning of your upkeep, sacrifice a non-Zombie creature, then create a 2/2 black Zombie creature token.
+575ffeb4-6d12-4f69-bcc9-15db325daac1|Archghoul of Thraben|Whenever this creature or another Zombie you control dies, look at the top card of your library. If it's a Zombie card, you may reveal it and put it into your hand. If you don't put the card into your hand, you may put it into your graveyard.
+5adc9d0d-3393-4d91-be85-1f9dd344698b|Binding Mummy|Whenever another Zombie you control enters, you may tap target artifact or creature.
+d72b8254-3df8-431b-955a-ec2aea493e2b|Bladestitched Skaab|Other Zombies you control get +1/+0.
+34b2f465-0b15-428a-a1c2-bcd41af07d01|Boneknitter|{1}{B}: Regenerate target Zombie. Morph {2}{B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)
+db5a4c25-5ae5-4a04-be79-bdee39b9152c|Call to the Grave|At the beginning of each player's upkeep, that player sacrifices a non-Zombie creature of their choice. At the beginning of the end step, if no creatures are on the battlefield, sacrifice this enchantment.
+70fa209f-5e79-44de-81ce-1d8d0d8c1006|Cemetery Reaper|Other Zombie creatures you control get +1/+1. {2}{B}, {T}: Exile target creature card from a graveyard. Create a 2/2 black Zombie creature token.

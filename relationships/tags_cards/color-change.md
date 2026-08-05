@@ -1,0 +1,10 @@
+5456f00c-0bef-4c14-902f-f5c14475f284|Aisling Leprechaun|Whenever this creature blocks or becomes blocked by a creature, that creature becomes green. (This effect lasts indefinitely.)
+61473d8e-45f1-4753-918d-04918a466031|Alchor's Tomb|{2}, {T}: Target permanent you control becomes the color of your choice. (This effect lasts indefinitely.)
+e75b2a97-b28d-43fe-8b1e-ba87a09f339c|Ambush Commander|Forests you control are 1/1 green Elf creatures that are still lands. {1}{G}, Sacrifice an Elf: Target creature gets +3/+3 until end of turn.
+a4280cea-386b-450d-a7e9-29c7aa58ce5a|Amphibian Downpour|Flash Storm (When you cast this spell, copy it for each spell cast before it this turn. You may choose new targets for the copies. Copies become tokens.) Enchant creature Enchanted creature loses all abilities and is a blue Frog creature with base power and toughness 1/1.
+c2042b38-1f06-44d4-b56f-2cb4d9197712|Angelic Armaments|Equipped creature gets +2/+2, has flying, and is a white Angel in addition to its other colors and types. Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)
+db951ec2-d751-479d-af1f-885d3cf50027|Aphotic Wisps|Target creature becomes black and gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.) Draw a card.
+9ae13026-960a-4d31-b775-d47209a1e313|Ardyn, the Usurper|Demons you control have menace, lifelink, and haste. Starscourge — At the beginning of combat on your turn, exile up to one target creature card from a graveyard. If you exiled a card this way, create a token that's a copy of that card, except it's a 5/5 black Demon.
+4d74c735-8035-4c42-bfb1-1bc97e5bdd9a|Aurora Griffin|Flying {W}: Target permanent becomes white until end of turn.
+0fd27f59-36ec-4235-8e1f-4a4a14972f4a|Awaken the Ancient|Enchant Mountain Enchanted Mountain is a 7/7 red Giant creature with haste. It's still a land.
+7e8f5b34-fd16-4307-9104-17b584b25b14|Awakener Druid|When this creature enters, target Forest becomes a 4/5 green Treefolk creature for as long as this creature remains on the battlefield. It's still a land.

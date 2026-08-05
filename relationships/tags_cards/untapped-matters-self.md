@@ -1,0 +1,10 @@
+ff5caed4-0276-476d-8fae-edae2536df7f|Archangel of Tithes|Flying As long as this creature is untapped, creatures can't attack you or planeswalkers you control unless their controller pays {1} for each of those creatures. As long as this creature is attacking, creatures can't block unless their controller pays {1} for each of those creatures.
+fd19a009-d1ab-4148-a829-3d4c3af1b0b2|Archelos, Lagoon Mystic|As long as Archelos is tapped, other permanents enter tapped. As long as Archelos is untapped, other permanents enter untapped.
+08497e8f-3521-48e4-a1e7-c192b485d891|Blinkmoth Urn|At the beginning of each player's first main phase, if this artifact is untapped, that player adds {C} for each artifact they control.
+6f967951-99d3-4cce-bb26-b60b22bb99b0|Castle Raptors|Flying As long as this creature is untapped, it gets +0/+2.
+654ff673-4630-4068-9bcf-e88a7877eb58|Dragonlord Ojutai|Flying Dragonlord Ojutai has hexproof as long as it's untapped. Whenever Dragonlord Ojutai deals combat damage to a player, look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.
+c82091b2-f2f1-4a85-80d6-91ab218f0a94|Farsight Mask|Whenever a source an opponent controls deals damage to you, if this artifact is untapped, you may draw a card.
+150ab025-5cc3-4468-a724-bbba8838445d|Genesis Chamber|Whenever a nontoken creature enters, if this artifact is untapped, that creature's controller creates a 1/1 colorless Myr artifact creature token.
+2dd50d7f-941f-4deb-a15c-ee2357844c35|Giant Tortoise|This creature gets +0/+3 as long as it's untapped.
+34c3aebe-a224-426a-ae06-f3145193313e|Guardian Beast|As long as this creature is untapped, noncreature artifacts you control can't be enchanted, they have indestructible, and other players can't gain control of them. This effect doesn't remove Auras already attached to those artifacts.
+d26b27db-a567-4631-b4b6-7294222fbdd1|Howling Mine|At the beginning of each player's draw step, if this artifact is untapped, that player draws an additional card.

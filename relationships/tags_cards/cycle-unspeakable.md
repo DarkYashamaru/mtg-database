@@ -1,0 +1,4 @@
+a61f5100-aa38-4996-b23c-3ce4ed25ed09|Peer Through Depths|Look at the top five cards of your library. You may reveal an instant or sorcery card from among them and put it into your hand. Put the rest on the bottom of your library in any order.
+c81ca8ff-92f3-481e-82f7-0673b6c74ea0|Reach Through Mists|Draw a card.
+4f5978a6-40c2-49df-8277-48a6d4f6f23e|Sift Through Sands|Draw two cards, then discard a card. If you've cast a spell named Peer Through Depths and a spell named Reach Through Mists this turn, you may search your library for a card named The Unspeakable, put it onto the battlefield, then shuffle.
+64e413c9-96e5-43c3-a182-84d53fef4327|The Unspeakable|Flying, trample Whenever The Unspeakable deals combat damage to a player, you may return target Arcane card from your graveyard to your hand.

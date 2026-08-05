@@ -1,0 +1,10 @@
+8c281ebe-d9a1-48af-b58b-19c55aa4625b|Alpine Meadow|({T}: Add {R} or {W}.) This land enters tapped.
+32fb0096-546c-4633-b6e3-ba3f2d9fa49c|Arctic Treeline|({T}: Add {G} or {W}.) This land enters tapped.
+5d3563dd-a2c1-463c-a0ed-5ac22388bdbe|Glacial Floodplain|({T}: Add {W} or {U}.) This land enters tapped.
+35137378-6754-4bb1-a38e-5940890ccab1|Highland Forest|({T}: Add {R} or {G}.) This land enters tapped.
+40c5d6fe-854a-436d-9f80-13eb5f1f8f68|Ice Tunnel|({T}: Add {U} or {B}.) This land enters tapped.
+983739cd-0b36-40d9-9a03-7b6aa7ffd0df|Rimewood Falls|({T}: Add {G} or {U}.) This land enters tapped.
+749c2c8e-9588-4e83-b07f-3c37eb63338b|Snowfield Sinkhole|({T}: Add {W} or {B}.) This land enters tapped.
+77cf536e-246e-4c18-8e04-c904fcad3f40|Sulfurous Mire|({T}: Add {B} or {R}.) This land enters tapped.
+96262c15-9130-409c-8242-71f84be719b7|Volatile Fjord|({T}: Add {U} or {R}.) This land enters tapped.
+bf5482b6-dd3e-4fb7-bc62-29e23b417a5f|Woodland Chasm|({T}: Add {B} or {G}.) This land enters tapped.

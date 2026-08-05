@@ -1,0 +1,10 @@
+46b5f12e-9fe5-44f6-b895-ee8c33205521|Aberrant|Ravenous (This creature enters with X +1/+1 counters on it. If X is 5 or more, draw a card when it enters.) Trample Heavy Power Hammer — Whenever this creature deals combat damage to a player, destroy target artifact or enchantment that player controls.
+d6d7faa8-ecc9-408b-9c46-a0f62c74f567|Abolish|You may discard a Plains card rather than pay this spell's mana cost. Destroy target artifact or enchantment.
+21f45043-5419-4019-8b6c-e5294bd5f549|Acidic Slime|Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.) When this creature enters, destroy target artifact, enchantment, or land.
+c12b8e31-5702-4d3c-80c9-56c87e50679d|Act of Authority|When this enchantment enters, you may exile target artifact or enchantment. At the beginning of your upkeep, you may exile target artifact or enchantment. If you do, its controller gains control of this enchantment.
+72a0e0f1-e8be-441a-bcaf-029fb1bd1fd2|Airship Crash|Destroy target artifact, enchantment, or creature with flying. Cycling {2} ({2}, Discard this card: Draw a card.)
+fa9b6be2-b88c-4302-b7e2-faf25a60bcb9|Altar's Light|Exile target artifact or enchantment.
+14878a5f-7983-4133-a1a7-9d539531e092|Angel of the Ruins|Flying When this creature enters, exile up to two target artifacts and/or enchantments. Plainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)
+f041b37e-25af-4aff-b7e3-f07a4d5c6f9a|Appetite for the Unnatural|Destroy target artifact or enchantment. You gain 2 life.
+3c1ef404-e2c6-486d-a5a2-d5779c71d498|Archdruid's Charm|Choose one — • Search your library for a creature or land card and reveal it. Put it onto the battlefield tapped if it's a land card. Otherwise, put it into your hand. Then shuffle. • Put a +1/+1 counter on target creature you control. It deals damage equal to its power to target creature you don't control. • Exile target artifact or enchantment.
+22677153-bd87-4ff8-af92-ced4da2aac6c|Atraxa's Fall|Destroy target artifact, battle, enchantment, or creature with flying.

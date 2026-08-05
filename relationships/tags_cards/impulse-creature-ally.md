@@ -1,0 +1,1 @@
+e294d9d2-df91-4410-85d3-8ffb13fb2285|Master Piandao|First strike Whenever Master Piandao attacks, look at the top four cards of your library. You may reveal an Ally, Equipment, or Lesson card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.

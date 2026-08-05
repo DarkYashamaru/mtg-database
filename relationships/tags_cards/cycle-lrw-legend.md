@@ -1,0 +1,5 @@
+bc92f0ba-2cf0-453c-a0d3-98a8784fe55b|Ashling the Pilgrim|{1}{R}: Put a +1/+1 counter on Ashling. If this is the third time this ability has resolved this turn, remove all +1/+1 counters from Ashling, and it deals that much damage to each creature and each player.
+929ad5c3-4efe-44c3-93ac-eda432814385|Brigid, Hero of Kinsbaile|First strike {T}: Brigid deals 2 damage to each attacking or blocking creature target player controls.
+0b40032b-711d-499f-8bb9-87855f1fce9e|Maralen of the Mornsong|Players can't draw cards. At the beginning of each player's draw step, that player loses 3 life, searches their library for a card, puts it into their hand, then shuffles.
+7613c50b-4568-4340-b64a-ab427aaffd51|Rhys the Exiled|Whenever Rhys attacks, you gain 1 life for each Elf you control. {B}, Sacrifice an Elf: Regenerate Rhys.
+244d4807-0802-41bc-9460-55ac38a28a72|Vendilion Clique|Flash Flying When Vendilion Clique enters, look at target player's hand. You may choose a nonland card from it. If you do, that player reveals the chosen card, puts it on the bottom of their library, then draws a card.

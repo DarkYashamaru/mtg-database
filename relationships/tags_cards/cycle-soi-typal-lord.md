@@ -1,0 +1,5 @@
+fd62ad01-601f-4250-bc2a-8ef3982e45c4|Diregraf Colossus|This creature enters with a +1/+1 counter on it for each Zombie card in your graveyard. Whenever you cast a Zombie spell, create a tapped 2/2 black Zombie creature token.
+26aba6fa-830f-4a7f-8618-488d8e00215a|Falkenrath Gorger|Each Vampire creature card you own that isn't on the battlefield has madness. The madness cost is equal to its mana cost. (If you discard a card with madness, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)
+ee2ca311-7639-436d-8ecb-d2aad075f25f|Rattlechains|Flash Flying When this creature enters, target Spirit gains hexproof until end of turn. You may cast Spirit spells as though they had flash.
+dfeb239b-8904-4ef0-9a91-edc901b0c49a|Silverfur Partisan|Trample Whenever a Wolf or Werewolf you control becomes the target of an instant or sorcery spell, create a 2/2 green Wolf creature token.
+91508175-fa1d-4c51-99d4-036a2de6abb0|Thalia's Lieutenant|When this creature enters, put a +1/+1 counter on each other Human you control. Whenever another Human you control enters, put a +1/+1 counter on this creature.

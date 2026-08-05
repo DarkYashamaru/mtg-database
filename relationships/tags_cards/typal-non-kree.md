@@ -1,0 +1,1 @@
+6d86d783-7116-4426-8c0f-718c2d904887|Captain Marvel, Apex Avenger|Flying, double strike, indestructible Whenever you put one or more counters on another creature, if it's not a Kree, you may put the same number and kind of counters on Captain Marvel.

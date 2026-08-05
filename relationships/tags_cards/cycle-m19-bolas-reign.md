@@ -1,0 +1,3 @@
+d06eedb4-bd5a-4864-9505-a570a745d165|Apex of Power|Exile the top seven cards of your library. Until end of turn, you may cast spells from among them. If this spell was cast from your hand, add ten mana of any one color.
+3b00068d-ad07-417c-bbb3-5f980615fb06|Fraying Omnipotence|Each player loses half their life, then discards half the cards in their hand, then sacrifices half the creatures they control of their choice. Round up each time.
+df9fe645-6f7b-44a0-ab69-b68cb7e525cd|Patient Rebuilding|At the beginning of your upkeep, target opponent mills three cards, then you draw a card for each land card put into their graveyard this way.

@@ -1,0 +1,5 @@
+d0b08a7b-8c9c-4440-9331-5a24917423ca|Fever Charm|Choose one — • Target creature gains haste until end of turn. • Target creature gets +2/+0 until end of turn. • Fever Charm deals 3 damage to target Wizard creature.
+46aa8dca-2a7d-4bff-9323-5f6933ca95f2|Misery Charm|Choose one — • Destroy target Cleric. • Return target Cleric card from your graveyard to your hand. • Target player loses 2 life.
+3d4ec57a-8541-42ed-9790-7933f96c8adf|Piety Charm|Choose one — • Destroy target Aura attached to a creature. • Target Soldier creature gets +2/+2 until end of turn. • Creatures you control gain vigilance until end of turn.
+bb97f7c6-6a75-4f4e-b74e-c57ce98a08fc|Trickery Charm|Choose one — • Target creature gains flying until end of turn. • Target creature becomes the creature type of your choice until end of turn. • Look at the top four cards of your library, then put them back in any order.
+74f5b4a9-8358-40b1-b38a-e034e2b916ac|Vitality Charm|Choose one — • Create a 1/1 green Insect creature token. • Target creature gets +1/+1 and gains trample until end of turn. • Regenerate target Beast.

@@ -1,0 +1,3 @@
+56e2bdcf-d1d8-4c56-af3a-388cd42353e6|Forerunner of the Heralds|When this creature enters, you may search your library for a Merfolk card, reveal it, then shuffle and put that card on top. Whenever another Merfolk you control enters, put a +1/+1 counter on this creature.
+035ee753-232f-4ba2-afbf-8d1eb162e6f8|Merrow Harbinger|Islandwalk (This creature can't be blocked as long as defending player controls an Island.) When this creature enters, you may search your library for a Merfolk card, reveal it, then shuffle and put that card on top.
+59e1899f-a9e8-48aa-b3fb-0b7d9fd6859c|Seahunter|{3}, {T}: Search your library for a Merfolk permanent card, put it onto the battlefield, then shuffle.

@@ -1,0 +1,4 @@
+eb7ae3e8-0489-4f3a-8343-7e7ec2fe3f01|Damia, Sage of Stone|Deathtouch Skip your draw step. At the beginning of your upkeep, if you have fewer than seven cards in hand, draw cards equal to the difference.
+2fecfbef-e521-4025-94ea-451c9abde3de|Doctor Octopus, Master Planner|Other Villains you control get +2/+2. Your maximum hand size is eight. At the beginning of your end step, if you have fewer than eight cards in hand, draw cards equal to the difference.
+4c1c1537-e519-4e2f-9bc2-d34b289d4487|Kozilek, the Great Distortion|When you cast this spell, if you have fewer than seven cards in hand, draw cards equal to the difference. Menace Discard a card with mana value X: Counter target spell with mana value X.
+a82d855c-50c8-43f2-99ba-a84fe84539c5|The Ten Rings|Your maximum hand size is ten. At the beginning of your end step, if you have fewer than ten cards in hand, draw cards equal to the difference.

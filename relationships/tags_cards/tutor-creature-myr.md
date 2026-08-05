@@ -1,0 +1,2 @@
+97bb382b-16b2-44db-a2bd-de09ca90bfcc|Myr Kinsmith|When this creature enters, you may search your library for a Myr card, reveal it, put it into your hand, then shuffle.
+b9043dcd-234f-4144-80db-1cb903c009ea|Myr Turbine|{T}: Create a 1/1 colorless Myr artifact creature token. {T}, Tap five untapped Myr you control: Search your library for a Myr creature card, put it onto the battlefield, then shuffle.

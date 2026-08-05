@@ -1,0 +1,8 @@
+0bc7f093-bef0-4f1a-852c-4b75ebf54838|Arcane Signet|{T}: Add one mana of any color in your commander's color identity.
+0895c9b7-ae7d-4bb3-af17-3b75deb50a25|Command Tower|{T}: Add one mana of any color in your commander's color identity.
+cae166de-e681-40a0-83a8-3c17cf40e2fc|Commander's Plate|Equipped creature gets +3/+3 and has protection from each color that's not in your commander's color identity. Equip commander {3} Equip {5}
+0b67c4e2-f88b-4e01-85a1-9d5f5b8db13b|Commander's Sphere|{T}: Add one mana of any color in your commander's color identity. Sacrifice this artifact: Draw a card.
+b639e1fe-d099-4cab-a0d0-a1b33c7f31dd|Hidden Hideout|This land enters tapped. {T}: Add one mana of any color in your commander's color identity. {2}, {T}: Target creature you control with a counter on it gains lifelink until end of turn.
+aa6723a2-75da-49f5-a1ba-cbfa82c55301|Opal Palace|{T}: Add {C}. {1}, {T}: Add one mana of any color in your commander's color identity. If you spend this mana to cast your commander, it enters with a number of additional +1/+1 counters on it equal to the number of times it's been cast from the command zone this game.
+b473e293-59e3-4e04-acf2-622604aeb25f|Path of Ancestry|This land enters tapped. {T}: Add one mana of any color in your commander's color identity. When that mana is spent to cast a creature spell that shares a creature type with your commander, scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+71c52bf5-2a5d-488e-8b15-7ef290e4b77d|War Room|{T}: Add {C}. {3}, {T}, Pay life equal to the number of colors in your commanders' color identity: Draw a card.

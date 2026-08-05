@@ -1,0 +1,5 @@
+ecf1e378-d6bc-4ee0-800e-eb8a955d781f|Aether Gust|Choose target spell or permanent that's red or green. Its owner puts it on their choice of the top or bottom of their library.
+92f8c8b1-1fd5-4e80-b8a9-51671937aaf2|Devout Decree|Exile target creature or planeswalker that's black or red. Scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+3a747893-a514-4689-8486-ecccf654fecb|Fry|This spell can't be countered. Fry deals 5 damage to target creature or planeswalker that's white or blue.
+b17f4960-9603-4a81-8dc8-e09e8b822357|Noxious Grasp|Destroy target creature or planeswalker that's green or white. You gain 1 life.
+002965be-a36f-4a09-9ce0-c6535bca1703|Veil of Summer|Draw a card if an opponent has cast a blue or black spell this turn. Spells you control can't be countered this turn. You and permanents you control gain hexproof from blue and from black until end of turn. (You and they can't be the targets of blue or black spells or abilities your opponents control.)

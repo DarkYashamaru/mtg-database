@@ -1,0 +1,5 @@
+69858691-1190-4454-af0a-87c2ac4ab6ec|Arisen Gorgon|This creature has deathtouch as long as you control a Liliana planeswalker. (Any amount of damage this deals to a creature is enough to destroy it.)
+dec9edbb-677b-4773-8bc4-b388d7592276|Court Cleric|Lifelink (Damage dealt by this creature also causes you to gain that much life.) This creature gets +1/+1 as long as you control an Ajani planeswalker.
+482f5fc8-ca3b-4280-8cf7-a1c55f8b9f12|Sarkhan's Whelp|Flying (This creature can't be blocked except by creatures with flying or reach.) Whenever you activate an ability of a Sarkhan planeswalker, this creature deals 1 damage to any target.
+cac79a2b-1de3-4461-95ac-fa0f1129cd6b|Tezzeret's Strider|As long as you control a Tezzeret planeswalker, this creature has menace. (It can't be blocked except by two or more creatures.)
+32412a41-2929-4417-90bc-21c5659eeb72|Vivien's Jaguar|Reach (This creature can block creatures with flying.) {2}{G}: Return this card from your graveyard to your hand. Activate only if you control a Vivien planeswalker.

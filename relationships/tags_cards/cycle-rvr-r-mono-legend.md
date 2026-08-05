@@ -1,0 +1,5 @@
+ba5a7ac0-b625-42e9-af05-2680a01a95ed|Fblthp, the Lost|When Fblthp enters, draw a card. If it entered from your library or was cast from your library, draw two cards instead. When Fblthp becomes the target of a spell, shuffle Fblthp into its owner's library.
+68418069-f615-40ef-ae0d-764192acae00|Krenko, Mob Boss|{T}: Create X 1/1 red Goblin creature tokens, where X is the number of Goblins you control.
+63e6cb7d-cc27-4200-85fc-ff6472318c1a|Massacre Girl|Menace When Massacre Girl enters, each other creature gets -1/-1 until end of turn. Whenever a creature dies this turn, each creature other than Massacre Girl gets -1/-1 until end of turn.
+9895a33f-9bbd-4440-8c1a-0d401431b77f|Tomik, Distinguished Advokist|Flying Lands on the battlefield and land cards in graveyards can't be the targets of spells or abilities your opponents control. Your opponents can't play land cards from graveyards.
+2d513c3e-bd27-479e-af32-7f66d96d0de0|Yeva, Nature's Herald|Flash (You may cast this spell any time you could cast an instant.) You may cast green creature spells as though they had flash.

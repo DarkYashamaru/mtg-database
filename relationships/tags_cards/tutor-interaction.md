@@ -1,0 +1,5 @@
+08b13e1f-27ca-40a8-b5ed-88ac933d24bf|Archivist of Oghma|Flash Whenever an opponent searches their library, you gain 1 life and draw a card.
+d9517c5d-66d0-4178-96fb-a8c04f311ad8|Aven Mindcensor|Flash Flying If an opponent would search a library, that player searches the top four cards of that library instead.
+1f438b8f-fe23-4f3b-ab2e-f6c33676c462|Opposition Agent|Flash You control your opponents while they're searching their libraries. While an opponent is searching their library, they exile each card they find. You may play those cards for as long as they remain exiled, and you may spend mana as though it were mana of any color to cast them.
+49d4aef7-d2d1-4f66-bc2a-79ec8cc96565|Panglacial Wurm|Trample While you're searching your library, you may cast this card from your library.
+418ecbb7-b809-4639-a531-070b58b5b85e|River Song|Meet in Reverse — You draw cards from the bottom of your library rather than the top. Spoilers — Whenever an opponent scries, surveils, or searches their library, put a +1/+1 counter on River Song. Then River Song deals damage to that player equal to its power.

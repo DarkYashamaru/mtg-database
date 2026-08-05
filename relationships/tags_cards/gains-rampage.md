@@ -1,0 +1,1 @@
+e8521fdf-0896-4747-8c66-ea3bb69eb876|Gabriel Angelfire|At the beginning of your upkeep, choose flying, first strike, trample, or rampage 3. Gabriel Angelfire gains that ability until your next upkeep. (Whenever a creature with rampage 3 becomes blocked, it gets +3/+3 until end of turn for each creature blocking it beyond the first.)

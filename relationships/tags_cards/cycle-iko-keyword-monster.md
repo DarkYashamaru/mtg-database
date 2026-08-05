@@ -1,0 +1,5 @@
+bb504fb1-1d19-4d0b-958f-e8f2433e0575|Frondland Felidar|Vigilance Creatures you control with vigilance have "{1}, {T}: Tap target creature."
+a29b2e93-d872-4be8-8b15-57f57282ed45|Labyrinth Raptor|Menace Whenever a creature you control with menace becomes blocked, defending player sacrifices a creature of their choice that's blocking it. {B}{R}: Creatures you control with menace get +1/+0 until end of turn.
+178a79e2-64fd-4777-95fe-98b7834a642a|Quartzwood Crasher|Trample Whenever one or more creatures you control with trample deal combat damage to a player, create an X/X green Dinosaur Beast creature token with trample, where X is the amount of damage those creatures dealt to that player.
+84adce5c-39c7-425e-b163-4a1a3977364b|Skycat Sovereign|Flying This creature gets +1/+1 for each other creature you control with flying. {2}{W}{U}: Create a 1/1 white Cat Bird creature token with flying.
+ccc4f21f-cf8c-40bb-a6d6-1f624320c5b2|Slitherwisp|Flash Whenever you cast another spell that has flash, you draw a card and each opponent loses 1 life.

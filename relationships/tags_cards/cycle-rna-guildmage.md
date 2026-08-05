@@ -1,0 +1,5 @@
+838eeca8-02f9-44fa-8170-1426622adf30|Clan Guildmage|{1}{R}, {T}: Target creature can't block this turn. {2}{G}, {T}: Target land you control becomes a 4/4 Elemental creature with haste until end of turn. It's still a land.
+90abb55d-5c05-453f-b4a6-c0741dc36694|Combine Guildmage|{1}{G}, {T}: This turn, each creature you control enters with an additional +1/+1 counter on it. {1}{U}, {T}: Move a +1/+1 counter from target creature you control onto another target creature you control.
+c65f8949-5e37-4929-994a-ec037814bf63|Cult Guildmage|{3}{B}, {T}: Target player discards a card. Activate only as a sorcery. {R}, {T}: This creature deals 1 damage to target opponent or planeswalker.
+76f1cc7a-084e-410d-92cb-b8f6ab8da4e9|Senate Guildmage|{W}, {T}: You gain 2 life. {U}, {T}: Draw a card, then discard a card.
+ec484fd1-aa9a-4056-becf-1d8c710272fd|Syndicate Guildmage|{1}{W}, {T}: Tap target creature with power 4 or greater. {4}{B}, {T}: This creature deals 2 damage to target opponent or planeswalker.

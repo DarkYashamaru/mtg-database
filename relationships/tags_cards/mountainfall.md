@@ -1,0 +1,4 @@
+05b6f9e3-9acd-43a6-acff-caa811aaf0a1|Akoum Hellkite|Flying Landfall — Whenever a land you control enters, this creature deals 1 damage to any target. If that land is a Mountain, this creature deals 2 damage instead.
+2c75b870-263b-41ab-9ece-6e3845bc3d8d|Koth, Fire of Resistance|+2: Search your library for a basic Mountain card, reveal it, put it into your hand, then shuffle. −3: Koth deals damage to target creature equal to the number of Mountains you control. −7: You get an emblem with "Whenever a Mountain you control enters, this emblem deals 4 damage to any target."
+fc71710a-8294-4370-89da-7ab1c2b38d19|Staff of the Flame Magus|Whenever you cast a red spell or a Mountain you control enters, you gain 1 life.
+1bc44216-4e06-4f66-89b7-5c327004604e|Valakut, the Molten Pinnacle|This land enters tapped. Whenever a Mountain you control enters, if you control at least five other Mountains, you may have this land deal 3 damage to any target. {T}: Add {R}.

@@ -1,0 +1,1 @@
+8c489e39-b9ff-400f-a855-3cddf7e112e6|Sensational Spider-Man|Whenever Sensational Spider-Man attacks, tap target creature defending player controls and put a stun counter on it. Then you may remove up to three stun counters from among all permanents. Draw cards equal to the number of stun counters removed this way.

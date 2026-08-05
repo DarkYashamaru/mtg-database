@@ -1,0 +1,1 @@
+35df179a-c0e6-4ac1-a861-e6e9b4d1614d|Acclaimed Contender|When this creature enters, if you control another Knight, look at the top five cards of your library. You may reveal a Knight, Aura, Equipment, or legendary artifact card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.

@@ -1,0 +1,1 @@
+f064fc04-28fb-423f-a4f3-bb567c71168f|Venom, Deadly Devourer|Vigilance, menace {3}: Exile target creature card from a graveyard. When you do, put X +1/+1 counters on target Symbiote, where X is the exiled card's toughness.

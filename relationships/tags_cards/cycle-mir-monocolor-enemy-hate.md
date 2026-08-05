@@ -1,0 +1,5 @@
+c7986014-30e0-4999-ab95-b86620471419|Mangara's Equity|As this enchantment enters, choose black or red. At the beginning of your upkeep, sacrifice this enchantment unless you pay {1}{W}. Whenever a creature of the chosen color deals damage to you or a white creature you control, this enchantment deals that much damage to that creature.
+bba30360-c54a-4906-8b2e-84bb1209c43d|Mind Harness|Enchant red or green creature Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) You control enchanted creature.
+436b5989-9b8c-4e03-a82e-046837c891ca|Reign of Chaos|Choose one — • Destroy target Plains and target white creature. • Destroy target Island and target blue creature.
+67d12a5a-9e0c-4550-86ad-cd1e173fea8f|Reign of Terror|Destroy all green creatures or all white creatures. They can't be regenerated. You lose 2 life for each creature that died this way.
+29ec9b49-fbe5-49ac-8ad6-7159cb88bc66|Roots of Life|As this enchantment enters, choose Island or Swamp. Whenever a land of the chosen type an opponent controls becomes tapped, you gain 1 life.

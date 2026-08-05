@@ -1,0 +1,5 @@
+132ca99a-a3c7-4ed6-b4d0-0edcd7140ca2|Absorb|Counter target spell. You gain 3 life.
+a4e5693f-12a0-451e-818d-d6efc7b4ed25|Decimate|Destroy target artifact, target creature, target enchantment, and target land. (You can't cast this spell unless you have legal choices for all its targets.)
+e43e06fb-52b7-4f38-8fac-f31973b043f7|Phantom Nishoba|Trample This creature enters with seven +1/+1 counters on it. Whenever this creature deals damage, you gain that much life. If damage would be dealt to this creature, prevent that damage. Remove a +1/+1 counter from this creature.
+accb82be-4f90-4d9a-bafd-f8de3622b3a3|Pyre Zombie|At the beginning of your upkeep, if this card is in your graveyard, you may pay {1}{B}{B}. If you do, return it to your hand. {1}{R}{R}, Sacrifice this creature: It deals 2 damage to any target.
+4cf3fb65-9107-428a-8853-029ec97112b5|Spinal Embrace|Cast this spell only during combat. Untap target creature you don't control and gain control of it. It gains haste until end of turn. At the beginning of the next end step, sacrifice it. If you do, you gain life equal to its toughness.

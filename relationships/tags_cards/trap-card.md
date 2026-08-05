@@ -1,0 +1,1 @@
+c309ec42-34a0-4083-a36c-7814643d7960|Mandate of Peace|Cast this spell only during combat. Your opponents can't cast spells this turn. End the combat phase. (Remove all attackers and blockers from combat. Exile all spells and abilities from the stack, including this spell.)

@@ -1,0 +1,5 @@
+8b96c334-82c7-4511-805e-f04c27514d7c|Desperate Ravings|Draw two cards, then discard a card at random. Flashback {2}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+75e9ac31-5993-4039-93b2-9380ced2499a|Memory's Journey|Target player shuffles up to three target cards from their graveyard into their library. Flashback {G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+3f0a0a15-613a-4864-9309-a340dc4cf94d|Rally the Peasants|Creatures you control get +2/+0 until end of turn. Flashback {2}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+da113cc9-bb2b-4af4-9c43-32c165b87363|Spider Spawning|Create a 1/2 green Spider creature token with reach for each creature card in your graveyard. Flashback {6}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+d48e1545-7997-45ed-83a1-aee45b3d3d20|Unburial Rites|Return target creature card from your graveyard to the battlefield. Flashback {3}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)

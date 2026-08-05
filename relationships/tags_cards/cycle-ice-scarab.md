@@ -1,0 +1,5 @@
+2774d8b3-dc5f-4281-b4c5-cb003fef0ab2|Black Scarab|Enchant creature Enchanted creature can't be blocked by black creatures. Enchanted creature gets +2/+2 as long as an opponent controls a black permanent.
+47c12d2f-b458-4848-9a01-0fc37ef3d942|Blue Scarab|Enchant creature Enchanted creature can't be blocked by blue creatures. Enchanted creature gets +2/+2 as long as an opponent controls a blue permanent.
+c5ca2df3-6fd9-478d-9bc6-48695a4600fb|Green Scarab|Enchant creature Enchanted creature can't be blocked by green creatures. Enchanted creature gets +2/+2 as long as an opponent controls a green permanent.
+380b6a48-c364-4939-be0b-df542c63a5ff|Red Scarab|Enchant creature Enchanted creature can't be blocked by red creatures. Enchanted creature gets +2/+2 as long as an opponent controls a red permanent.
+ec9c3906-8628-48c6-96a7-8c6748cba816|White Scarab|Enchant creature Enchanted creature can't be blocked by white creatures. Enchanted creature gets +2/+2 as long as an opponent controls a white permanent.

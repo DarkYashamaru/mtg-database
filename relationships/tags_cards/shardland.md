@@ -1,0 +1,3 @@
+cc78776b-822b-4f11-8982-0805a25a9d36|Crypt of the Eternals|When this land enters, you gain 1 life. {T}: Add {C}. {1}, {T}: Add {U}, {B}, or {R}.
+f432eb6a-f1bf-4ce7-b915-1488dccb4bb9|Oscorp Industries|This land enters tapped. When this land enters from a graveyard, you lose 2 life. {T}: Add {U}, {B}, or {R}. Mayhem (You may play this card from your graveyard if you discarded it this turn. Timing rules still apply.)
+18290c4b-cff6-4ee5-a487-fe0d5706d3de|Urban Retreat|This land enters tapped. {T}: Add {G}, {W}, or {U}. {2}, Return a tapped creature you control to its owner's hand: Put this card from your hand onto the battlefield. Activate only as a sorcery.

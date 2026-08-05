@@ -1,0 +1,1 @@
+eae7dd41-3d5f-49a7-baaa-2c03bb341c3a|Ral's Staticaster|Trample (This creature can deal excess combat damage to the player or planeswalker it's attacking.) Whenever this creature attacks, if you control a Ral planeswalker, this creature gets +1/+0 for each card in your hand until end of turn.

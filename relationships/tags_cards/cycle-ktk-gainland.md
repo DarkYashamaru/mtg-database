@@ -1,0 +1,10 @@
+64e29bfc-9313-4e8c-808c-bc27f6b018a6|Bloodfell Caves|This land enters tapped. When this land enters, you gain 1 life. {T}: Add {B} or {R}.
+45429b2c-be3b-4b2e-9bab-a059ccbda8cd|Blossoming Sands|This land enters tapped. When this land enters, you gain 1 life. {T}: Add {G} or {W}.
+865a2194-fca0-446e-aae3-ca475cd66e00|Dismal Backwater|This land enters tapped. When this land enters, you gain 1 life. {T}: Add {U} or {B}.
+6de714e1-446d-4fb9-9e3d-bcd3ec6af9ca|Jungle Hollow|This land enters tapped. When this land enters, you gain 1 life. {T}: Add {B} or {G}.
+6c922206-6e68-4dcd-9559-88da1074f2c4|Rugged Highlands|This land enters tapped. When this land enters, you gain 1 life. {T}: Add {R} or {G}.
+d37f858e-03c8-4594-9b92-cd03699a1591|Scoured Barrens|This land enters tapped. When this land enters, you gain 1 life. {T}: Add {W} or {B}.
+2f4ad084-2062-44c0-9975-15f100204531|Swiftwater Cliffs|This land enters tapped. When this land enters, you gain 1 life. {T}: Add {U} or {R}.
+ec96cde2-f1e6-495c-94e2-3e8ae79e556c|Thornwood Falls|This land enters tapped. When this land enters, you gain 1 life. {T}: Add {G} or {U}.
+5d641bf6-0f93-4189-8dc1-ec7ea446dade|Tranquil Cove|This land enters tapped. When this land enters, you gain 1 life. {T}: Add {W} or {U}.
+b0af0c54-2a59-4075-8543-d41ff20c4c87|Wind-Scarred Crag|This land enters tapped. When this land enters, you gain 1 life. {T}: Add {R} or {W}.

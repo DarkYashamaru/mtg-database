@@ -1,0 +1,10 @@
+527e4eec-0983-46a9-a4f7-451080200aea|Carnifex Demon|Flying This creature enters with two -1/-1 counters on it. {B}, Remove a -1/-1 counter from this creature: Put a -1/-1 counter on each other creature.
+a98ea782-1c49-4207-a130-41329087fdf6|Channeler Initiate|When this creature enters, put three -1/-1 counters on target creature you control. {T}, Remove a -1/-1 counter from this creature: Add one mana of any color.
+c56e6715-80bc-4f9d-86ef-7c31b1ef0a17|Decimator Beetle|When this creature enters, put a -1/-1 counter on target creature you control. Whenever this creature attacks, remove a -1/-1 counter from target creature you control and put a -1/-1 counter on up to one target creature defending player controls.
+bf7c1fa8-0460-4be5-b00d-72c0960c4149|Deity of Scars|Trample This creature enters with two -1/-1 counters on it. {B/G}, Remove a -1/-1 counter from this creature: Regenerate this creature.
+d0dd582a-ac35-4a46-beca-6304fdd2d358|Etched Monstrosity|This creature enters with five -1/-1 counters on it. {W}{U}{B}{R}{G}, Remove five -1/-1 counters from this creature: Target player draws three cards.
+f732873e-0b34-4ccc-8b4c-9f02463ba57b|Exemplar of Strength|When this creature enters, put three -1/-1 counters on target creature you control. Whenever this creature attacks, remove a -1/-1 counter from it. If you do, you gain 1 life.
+43e0dbaf-3c81-47e2-b0c2-364f7ac7295f|Grim Poppet|This creature enters with three -1/-1 counters on it. Remove a -1/-1 counter from this creature: Put a -1/-1 counter on another target creature.
+8fe687aa-d134-4a29-9c93-64086c4a1977|Morselhoarder|This creature enters with two -1/-1 counters on it. Remove a -1/-1 counter from this creature: Add one mana of any color.
+b8c748ed-7ba2-4f92-a9de-5080382c2fc2|Quillspike|{B/G}, Remove a -1/-1 counter from a creature you control: This creature gets +3/+3 until end of turn.
+3d794629-9014-460a-8d3b-785eadc1cdb5|Wickerbough Elder|This creature enters with a -1/-1 counter on it. {G}, Remove a -1/-1 counter from this creature: Destroy target artifact or enchantment.

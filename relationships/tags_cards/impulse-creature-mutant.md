@@ -1,0 +1,1 @@
+a1ddf985-1646-468c-b1a4-ab6bb8e9dd7c|Cowabunga!|Look at the top four cards of your library. You may reveal a Mutant, Ninja, Turtle, or land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.

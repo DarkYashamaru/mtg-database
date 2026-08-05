@@ -1,0 +1,5 @@
+a8b3a35e-0172-4f7b-b50f-571e59d7ca5f|Cessation|Enchant creature Enchanted creature can't attack. When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.
+9d2d6479-531c-4ce1-b52b-00e36fa63b64|Rancor|Enchant creature Enchanted creature gets +2/+0 and has trample. When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.
+eaaa3e41-dbf6-43ae-b65e-e1502ba4fa0b|Sleeper's Guile|Enchant creature Enchanted creature has fear. (It can't be blocked except by artifact creatures and/or black creatures.) When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.
+151388a4-a24b-4089-a323-e7c1d5e6490a|Slow Motion|Enchant creature At the beginning of the upkeep of enchanted creature's controller, that player sacrifices that creature unless they pay {2}. When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.
+39eb4062-68a0-4f64-a9cc-79be87fd8173|Sluggishness|Enchant creature Enchanted creature can't block. When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.

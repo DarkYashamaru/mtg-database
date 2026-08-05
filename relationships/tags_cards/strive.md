@@ -1,0 +1,10 @@
+b0168b7e-a8b8-4ce3-af12-a43f3818b6a1|Aerial Formation|Strive — This spell costs {2}{U} more to cast for each target beyond the first. Any number of target creatures each get +1/+1 and gain flying until end of turn.
+2fbf95b4-bcf4-4b5e-b5dc-0294f2b48d3e|Aether Tide|As an additional cost to cast this spell, discard X creature cards. Return X target creatures to their owners' hands.
+925a0b9b-a1fa-4aad-89d9-e2698ac3582f|Ajani's Presence|Strive — This spell costs {2}{W} more to cast for each target beyond the first. Any number of target creatures each get +1/+1 and gain indestructible until end of turn. (Damage and effects that say "destroy" don't destroy them.)
+a349e526-882c-454f-ba79-ad17340f8153|Avalanche|Destroy X target snow lands.
+ce723db6-2a80-42a5-a176-cd322b4e1e27|Back in Town|Return X target outlaw creature cards from your graveyard to the battlefield. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)
+3c8b0a8a-8f80-4c3e-8f27-fb1df94aa0d4|Blinding Flare|Strive — This spell costs {R} more to cast for each target beyond the first. Any number of target creatures can't block this turn.
+814adb99-6100-4c36-96d9-763bc20dca5d|Builder's Bane|Destroy X target artifacts. Builder's Bane deals damage to each player equal to the number of artifacts they controlled that were put into a graveyard this way.
+7ce950fb-e065-45d3-aeff-f8c475460754|By Force|Destroy X target artifacts.
+73d8c33d-916a-4220-96ae-9622aad36210|Call the Coppercoats|Strive — This spell costs {1}{W} more to cast for each target beyond the first. Choose any number of target opponents. Create X 1/1 white Human Soldier creature tokens, where X is the number of creatures those opponents control.
+b2f43df5-ec64-4375-b67f-b198732ab0b1|Change of Plans|Each of X target creatures you control connive. You may have any number of them phase out. (To have a creature connive, draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature. Treat phased-out permanents and anything attached to them as though they don't exist until their controller's next turn.)

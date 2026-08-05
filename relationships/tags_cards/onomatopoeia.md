@@ -1,0 +1,10 @@
+8b1fc306-0d8f-4edb-b197-2e99f10c599e|Boing!|Return target creature to its owner's hand, then roll a six-sided die. If the result is 3 or less, scry a number of cards equal to the result.
+514fdac0-95f4-4034-b891-283fe0fb6da6|Boom // Bust|Destroy target land you control and target land you don't control. // Destroy all lands.
+9ab0820b-4f5f-47b3-8fa9-43f802aed275|Borborygmos|Trample Whenever Borborygmos deals combat damage to a player, put a +1/+1 counter on each creature you control.
+b7505737-1fc8-4ee8-8b1d-5dde73b6a76d|Borborygmos Enraged|Trample Whenever Borborygmos Enraged deals combat damage to a player, reveal the top three cards of your library. Put all land cards revealed this way into your hand and the rest into your graveyard. Discard a land card: Borborygmos Enraged deals 3 damage to any target.
+562af5da-1080-46d2-8a38-71f06b7e8457|Crash|You may sacrifice a Mountain rather than pay this spell's mana cost. Destroy target artifact.
+24227761-b50e-4b9e-93a2-e82d053b3e3d|Fling|As an additional cost to cast this spell, sacrifice a creature. Fling deals damage equal to the sacrificed creature's power to any target.
+5209e1da-aeed-45b3-9640-c2db121d6612|Goblin Kaboomist|At the beginning of your upkeep, create a colorless artifact token named Land Mine with "{R}, Sacrifice this token: This token deals 2 damage to target attacking creature without flying." Then flip a coin. If you lose the flip, this creature deals 2 damage to itself.
+c92802ff-484c-4d55-aba4-c3a000264113|Kaboom!|Choose any number of target players or planeswalkers. For each of them, reveal cards from the top of your library until you reveal a nonland card, Kaboom! deals damage equal to that card's mana value to that player or planeswalker, then you put the revealed cards on the bottom of your library in any order.
+d6eabbff-cc0c-4000-8feb-4826e1b6bc66|Kapow!|Put a +1/+1 counter on target creature you control. It fights target creature an opponent controls. (Each deals damage equal to its power to the other.)
+938cc97f-3908-401e-94cd-32004aff1ef1|Sizzle|Sizzle deals 3 damage to each opponent.

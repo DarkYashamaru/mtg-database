@@ -1,0 +1,10 @@
+ddf461b9-a205-4dc7-a9c3-c047b1ff709f|Aang's Journey|Kicker {2} (You may pay an additional {2} as you cast this spell.) Search your library for a basic land card. If this spell was kicked, instead search your library for a basic land card and a Shrine card. Reveal those cards, put them into your hand, then shuffle. You gain 2 life.
+dbedd45e-f76c-4be7-ad89-ff57bed6626f|Absolving Lammasu|Flying When this creature enters, all suspected creatures are no longer suspected. When this creature dies, you gain 3 life and suspect up to one target creature an opponent controls. (A suspected creature has menace and can't block.)
+132ca99a-a3c7-4ed6-b4d0-0edcd7140ca2|Absorb|Counter target spell. You gain 3 life.
+2d4721f1-1a49-45aa-99d5-ab8c6f3f3ab6|Abuna's Chant|Choose one — • You gain 5 life. • Prevent the next 5 damage that would be dealt to target creature this turn. Entwine {2} (Choose both if you pay the entwine cost.)
+02125db4-4507-467a-ac0c-406de2c7d533|Adventurous Eater // Have a Bite|This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.) // Put a +1/+1 counter on target creature. You gain 1 life.
+a4eb06ca-16d8-41c2-8fc6-22e73872b5b0|Aerial Assault|Destroy target tapped creature. You gain 1 life for each creature you control with flying.
+6bac1495-16cf-4e1e-9126-482f85322c78|Aerial Predation|Destroy target creature with flying. You gain 2 life.
+009a399b-c78e-475b-8bc3-7db2afc9d676|Airdrop Aeronauts|Flying Revolt — When this creature enters, if a permanent left the battlefield under your control this turn, you gain 5 life.
+2fcca686-03c8-4407-9f9f-2b7462470044|Alabaster Potion|Choose one — • Target player gains X life. • Prevent the next X damage that would be dealt to any target this turn.
+57ad3c3a-6ac7-4a35-bc07-00f6ea0988c5|Alive // Well|Create a 3/3 green Centaur creature token. Fuse (You may cast one or both halves of this card from your hand.) // You gain 2 life for each creature you control. Fuse (You may cast one or both halves of this card from your hand.)

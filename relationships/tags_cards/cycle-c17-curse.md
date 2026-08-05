@@ -1,0 +1,5 @@
+b6689782-08d8-48e1-a05d-cd040dfe85bc|Curse of Bounty|Enchant player Whenever enchanted player is attacked, untap all nonland permanents you control. Each opponent attacking that player untaps all nonland permanents they control.
+6cbd36d9-de47-41b0-9ef4-a72ca01adccd|Curse of Disturbance|Enchant player Whenever enchanted player is attacked, create a 2/2 black Zombie creature token. Each opponent attacking that player does the same.
+ba0d3df2-3acf-46d7-8d64-8d67d1579adc|Curse of Opulence|Enchant player Whenever enchanted player is attacked, create a Gold token. Each opponent attacking that player does the same. (A Gold token is an artifact with "Sacrifice this token: Add one mana of any color.")
+c6f76fa7-095e-4bfe-a38c-5c4531880880|Curse of Verbosity|Enchant player Whenever enchanted player is attacked, you draw a card. Each opponent attacking that player does the same.
+6d2eb412-e09b-4ab3-8653-b458e9f38eff|Curse of Vitality|Enchant player Whenever enchanted player is attacked, you gain 2 life. Each opponent attacking that player does the same.

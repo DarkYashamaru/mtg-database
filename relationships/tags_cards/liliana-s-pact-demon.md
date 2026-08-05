@@ -1,0 +1,3 @@
+667ece0e-a474-4e11-8ac4-6c8fc354457c|Demonlord Belzenlok|Flying, trample When Demonlord Belzenlok enters, exile cards from the top of your library until you exile a nonland card, then put that card into your hand. If the card's mana value is 4 or greater, repeat this process. Demonlord Belzenlok deals 1 damage to you for each card put into your hand this way.
+85e1791f-f9a0-4e82-baf6-33cff2dcf60b|Kothophed, Soul Hoarder|Flying Whenever a permanent owned by another player is put into a graveyard from the battlefield, you draw a card and you lose 1 life.
+136c9ecb-59b4-4ef6-bcb2-7b8d3df3ee75|Razaketh, the Foulblooded|Flying, trample Pay 2 life, Sacrifice another creature: Search your library for a card, put that card into your hand, then shuffle.

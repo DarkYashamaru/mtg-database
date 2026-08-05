@@ -1,0 +1,10 @@
+410b7faf-365c-4b73-a64d-bddbe49cfded|Alloy Golem|As this creature enters, choose a color. This creature is the chosen color. (It's still an artifact.)
+598a7347-b772-4839-a02f-b930076c1354|Ancient Kavu|{2}: This creature becomes colorless until end of turn.
+de3ed52e-7cc2-49ea-96d9-4254aac46168|Angel's Tomb|Whenever a creature you control enters, you may have this artifact become a 3/3 white Angel artifact creature with flying until end of turn.
+eb287c04-97f5-4e47-beb1-66cc7d15e748|Atarka Monument|{T}: Add {R} or {G}. {4}{R}{G}: This artifact becomes a 4/4 red and green Dragon artifact creature with flying until end of turn.
+7266b491-54e6-4393-a448-d5ae99d965c6|Azorius Keyrune|{T}: Add {W} or {U}. {W}{U}: This artifact becomes a 2/2 white and blue Bird artifact creature with flying until end of turn.
+a298b2aa-02e3-422a-8804-861fd6bb1068|Blazing Blade Askari|Flanking (Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.) {2}: This creature becomes colorless until end of turn.
+991ae2f7-3f8e-4364-8698-5277786d7dcd|Boros Keyrune|{T}: Add {R} or {W}. {R}{W}: This artifact becomes a 1/1 red and white Soldier artifact creature with double strike until end of turn. (It deals both first-strike and regular combat damage.)
+8da29533-f389-4bc2-ab9b-b469f893a362|Cactus Preserve|This land enters tapped. {T}: Add one mana of any type that a land you control could produce. {3}: Until end of turn, this land becomes an X/X green Plant creature with reach, where X is the greatest mana value among your commanders. It's still a land.
+7cdcfbdf-5ec7-451b-8c96-f19d75a4d76c|Caldera Kavu|{1}{B}: This creature gets +1/+1 until end of turn. {G}: This creature becomes the color of your choice until end of turn.
+1e4146d2-cfa0-4f5e-9761-3c83519b90c3|Cave of the Frost Dragon|If you control two or more other lands, this land enters tapped. {T}: Add {W}. {4}{W}: This land becomes a 3/4 white Dragon creature with flying until end of turn. It's still a land.

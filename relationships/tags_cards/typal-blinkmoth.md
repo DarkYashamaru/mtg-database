@@ -1,0 +1,1 @@
+40d45c02-6416-4e19-8fe3-0ddadf5ba627|Blinkmoth Nexus|{T}: Add {C}. {1}: This land becomes a 1/1 Blinkmoth artifact creature with flying until end of turn. It's still a land. {1}, {T}: Target Blinkmoth creature gets +1/+1 until end of turn.

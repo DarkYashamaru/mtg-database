@@ -1,0 +1,10 @@
+f86b9a01-62fc-4120-8914-5054ed48d37e|Confounding Conundrum|When this enchantment enters, draw a card. Whenever a land an opponent controls enters, if that player had another land enter the battlefield under their control this turn, they return a land they control to its owner's hand.
+1784bbaa-67b1-4bd1-bf77-53da2bfbf7fc|Cornered Market|Players can't cast spells with the same name as a nontoken permanent. Players can't play nonbasic lands with the same name as a nontoken permanent.
+3584a055-5220-4721-89f8-de33f779122f|Damping Engine|A player who controls more permanents than each other player can't play lands or cast artifact, creature, or enchantment spells. That player may sacrifice a permanent of their choice for that player to ignore this effect until end of turn.
+9b515bb8-6e37-4b2d-8d56-bb517c3b267c|Moonhold|Target player can't play lands this turn if {R} was spent to cast this spell and can't cast creature spells this turn if {W} was spent to cast this spell. (Do both if {R}{W} was spent.)
+e1788b54-4cd9-459f-b2c9-06773e68e9e3|Pardic Miner|Sacrifice this creature: Target player can't play lands this turn.
+6053a192-fcf9-4b06-9f46-e84eaadaa882|Solfatara|Target player can't play lands this turn. Draw a card at the beginning of the next turn's upkeep.
+a1785817-f17b-471b-a63b-866e7972df1f|Territorial Dispute|At the beginning of your upkeep, sacrifice this enchantment unless you sacrifice a land. Players can't play lands.
+9895a33f-9bbd-4440-8c1a-0d401431b77f|Tomik, Distinguished Advokist|Flying Lands on the battlefield and land cards in graveyards can't be the targets of spells or abilities your opponents control. Your opponents can't play land cards from graveyards.
+8dc48180-1482-40c4-8c5f-1724018e9c5b|Turf Wound|Target player can't play lands this turn. Draw a card.
+c3ea1497-63ac-46bb-95e9-d98b93a880b3|Ward of Bones|Each opponent who controls more creatures than you can't cast creature spells. The same is true for artifacts and enchantments. Each opponent who controls more lands than you can't play lands.

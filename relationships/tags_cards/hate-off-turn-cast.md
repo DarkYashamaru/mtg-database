@@ -1,0 +1,6 @@
+c3dc6b0e-8790-4bd3-b166-63b2dc77488f|Adrenaline Jockey|Whenever a player casts a spell, if it's not their turn, this creature deals 4 damage to them. Whenever you activate an exhaust ability, put a +1/+1 counter on this creature.
+35064a72-c052-496f-8f1a-6dbc5e617d3f|Price of Glory|Whenever a player taps a land for mana, if it's not that player's turn, destroy that land.
+8c653a0d-e35a-4596-bed6-b5156192955b|Scytheclaw Raptor|Whenever a player casts a spell, if it's not their turn, this creature deals 4 damage to them.
+2b6cbd55-5adc-4a34-ac45-8531705a7ee1|Teferi, Mage of Zhalfir|Flash Creature cards you own that aren't on the battlefield have flash. Each opponent can cast spells only any time they could cast a sorcery.
+ae7604bb-4818-45a3-960c-cf3d83f15964|Teferi, Time Raveler|Each opponent can cast spells only any time they could cast a sorcery. +1: Until your next turn, you may cast sorcery spells as though they had flash. −3: Return up to one target artifact, creature, or enchantment to its owner's hand. Draw a card.
+2f4360f6-9ac7-499f-b0a5-769550ea15ba|Vision, Synthezoid Avenger|Flying Whenever a player casts a spell, if it isn't that player's turn, choose one — • Put a +1/+1 counter on Vision. • Vision phases out. (Treat him and anything attached to him as though they don't exist until your next turn.)

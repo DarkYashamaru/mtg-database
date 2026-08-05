@@ -1,0 +1,1 @@
+f5a95092-fb71-4b55-bc54-782bd1c603e1|Pontiff of Blight|Extort (Whenever you cast a spell, you may pay {W/B}. If you do, each opponent loses 1 life and you gain that much life.) Other creatures you control have extort. (If a creature has multiple instances of extort, each triggers separately.)

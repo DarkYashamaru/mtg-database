@@ -1,0 +1,5 @@
+f9516b60-36dd-4f8a-bebb-ac1bc0961f07|Candlekeep Sage|Commander creatures you own have "When this creature enters or leaves the battlefield, draw a card."
+cdaefc96-4560-43bb-9514-bf87657bd481|Flaming Fist|Commander creatures you own have "Whenever this creature attacks, it gains double strike until end of turn."
+9eab87ff-82a0-4655-b6ea-00b27e882449|Master Chef|Commander creatures you own have "This creature enters with an additional +1/+1 counter on it" and "Other creatures you control enter with an additional +1/+1 counter on them."
+227ddf6c-d21a-48da-84fb-395c7e096914|Scion of Halaster|Commander creatures you own have "The first time you would draw a card each turn, instead look at the top two cards of your library. Put one of them into your graveyard and the other back on top of your library. Then draw a card."
+7c5cd912-eddb-47c8-a31b-8ad2af46abd3|Tavern Brawler|Commander creatures you own have "At the beginning of your upkeep, exile the top card of your library. This creature gets +X/+0 until end of turn, where X is that card's mana value. You may play that card this turn."

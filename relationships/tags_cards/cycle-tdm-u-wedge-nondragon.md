@@ -1,0 +1,5 @@
+449db6bf-d766-4d09-a7bd-9c45b3d4c4c3|Bone-Cairn Butcher|Mobilize 2 (Whenever this creature attacks, create two tapped and attacking 1/1 red Warrior creature tokens. Sacrifice them at the beginning of the next end step.) Attacking tokens you control have deathtouch.
+eff690a7-c2c7-4750-894c-0667d3151165|Jeskai Brushmaster|Double strike Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)
+4dc0831a-0eb1-4f7d-9591-6e670e180116|Lie in Wait|Return target creature card from your graveyard to your hand. Lie in Wait deals damage equal to that card's power to target creature.
+6f2e4607-bece-42ba-a2a3-5dc50f246793|Mammoth Bellow|Create a 5/5 green Elephant creature token. Harmonize {5}{G}{U}{R} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)
+40eb7f43-7cee-41a1-a4d1-f34ee125ccd1|Skirmish Rhino|Trample When this creature enters, each opponent loses 2 life and you gain 2 life.

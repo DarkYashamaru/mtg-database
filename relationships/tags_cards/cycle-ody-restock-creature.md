@@ -1,0 +1,3 @@
+8d4d70c4-0490-4239-ac8f-dd1d1a008f08|Anurid Scavenger|Protection from black At the beginning of your upkeep, sacrifice this creature unless you put a card from your graveyard on the bottom of your library.
+92ac7531-10bb-47a2-9dd0-378d547b4ed6|Battlefield Scrounger|Threshold — Put three cards from your graveyard on the bottom of your library: This creature gets +3/+3 until end of turn. Activate only once each turn and only if there are seven or more cards in your graveyard.
+835733a2-3738-4fc0-97d5-33156b711ba4|Gurzigost|At the beginning of your upkeep, sacrifice this creature unless you put two cards from your graveyard on the bottom of your library. {G}{G}, Discard a card: You may have this creature assign its combat damage this turn as though it weren't blocked.

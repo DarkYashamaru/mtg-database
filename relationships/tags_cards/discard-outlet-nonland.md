@@ -1,0 +1,6 @@
+8345187a-a210-49d7-bdce-10fb2909e050|Amnesia|Target player reveals their hand and discards all nonland cards.
+10db57b4-f895-4514-b610-2252ba676353|Bullseye, Death Dealer|When Bullseye enters, you may sacrifice an artifact or discard a nonland card. When you do, Bullseye deals 2 damage to any target. {3}, {T}, Sacrifice an artifact or discard a nonland card: Bullseye deals 2 damage to any target.
+34ace274-8401-4e3c-89cd-75fe2337bf7d|Disciple of Deceit|Inspired — Whenever this creature becomes untapped, you may discard a nonland card. If you do, search your library for a card with the same mana value as that card, reveal it, put it into your hand, then shuffle.
+e4e6cb61-f673-4f36-b95c-c84a68459503|Hypothesizzle|Draw two cards. Then you may discard a nonland card. When you do, Hypothesizzle deals 4 damage to target creature.
+ed54a59b-b24c-4681-b862-fa634fe759fd|Serum-Core Chimera|Flying Whenever you cast a noncreature spell, put an oil counter on this creature. Remove three oil counters from this creature: Draw a card. Then you may discard a nonland card. When you discard a card this way, this creature deals 3 damage to target creature or planeswalker. Activate only as a sorcery.
+690df8d2-9538-4c51-b730-cee09ad0ef1c|Sphinx of the Chimes|Flying Discard two nonland cards with the same name: Draw four cards.

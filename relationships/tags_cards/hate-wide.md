@@ -1,0 +1,10 @@
+65a64759-3a93-4542-84fc-3af5ccb741f4|Avenge|This spell costs {2} less to cast if a player attacked you during their last turn. Destroy all creatures. You gain 1 life for each creature destroyed this way.
+c302d64b-8026-401a-a8dd-52cf01160046|Biomantic Mastery|Draw a card for each creature target player controls, then draw a card for each creature another target player controls.
+7a2484a9-04fd-41a0-8224-610c1c07ed10|Blasphemous Act|This spell costs {1} less to cast for each creature on the battlefield. Blasphemous Act deals 13 damage to each creature.
+6cf50e21-0f60-4e9a-b910-ebe1bad2a29e|Blasphemous Edict|You may pay {B} rather than pay this spell's mana cost if there are thirteen or more creatures on the battlefield. Each player sacrifices thirteen creatures of their choice.
+dccd0533-fda0-41ff-b540-c4f1bb32fc95|Blunt the Assault|You gain 1 life for each creature on the battlefield. Prevent all combat damage that would be dealt this turn.
+73d8c33d-916a-4220-96ae-9622aad36210|Call the Coppercoats|Strive — This spell costs {1}{W} more to cast for each target beyond the first. Choose any number of target opponents. Create X 1/1 white Human Soldier creature tokens, where X is the number of creatures those opponents control.
+086b2564-9114-4ba2-94fd-b490f98f38a7|Chain Reaction|Chain Reaction deals X damage to each creature, where X is the number of creatures on the battlefield.
+b5516bc9-ec8d-4323-8748-96c49d7d0622|Deadly Tempest|Destroy all creatures. Each player loses life equal to the number of creatures they controlled that were destroyed this way.
+932668fa-d6e3-41c0-ad0c-8e0a00e68d11|Decree of Pain|Destroy all creatures. They can't be regenerated. Draw a card for each creature destroyed this way. Cycling {3}{B}{B} ({3}{B}{B}, Discard this card: Draw a card.) When you cycle this card, all creatures get -2/-2 until end of turn.
+135cb4af-f4b6-455b-8fea-84fcef78ee03|Deploy to the Front|Create X 1/1 white Soldier creature tokens, where X is the number of creatures on the battlefield.

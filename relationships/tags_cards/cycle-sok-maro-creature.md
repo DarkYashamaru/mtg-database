@@ -1,0 +1,5 @@
+18f34bfd-7675-49df-91ea-695c510cd3c3|Adamaro, First to Desire|Adamaro's power and toughness are each equal to the number of cards in the hand of the opponent with the most cards in hand.
+da3e399f-6801-4e4d-9b1d-ba15fcfb7ee4|Kagemaro, First to Suffer|Kagemaro's power and toughness are each equal to the number of cards in your hand. {B}, Sacrifice Kagemaro: All creatures get -X/-X until end of turn, where X is the number of cards in your hand.
+340ec369-1761-4134-a96d-5537b4e08703|Kiyomaro, First to Stand|Kiyomaro's power and toughness are each equal to the number of cards in your hand. As long as you have four or more cards in hand, Kiyomaro has vigilance. Whenever Kiyomaro deals damage, if you have seven or more cards in hand, you gain 7 life.
+8af347b8-89fa-499e-8e5a-77463edd6773|Masumaro, First to Live|Masumaro's power and toughness are each equal to twice the number of cards in your hand.
+b11f96a0-5f70-45d6-90cc-2edbead3672e|Soramaro, First to Dream|Flying Soramaro's power and toughness are each equal to the number of cards in your hand. {4}, Return a land you control to its owner's hand: Draw a card.

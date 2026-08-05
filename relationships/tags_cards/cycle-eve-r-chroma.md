@@ -1,0 +1,5 @@
+85842fa9-e7e8-4380-9034-c93a5497d3d8|Fiery Bombardment|Chroma — {2}, Sacrifice a creature: This enchantment deals damage to any target equal to the number of red mana symbols in the sacrificed creature's mana cost.
+4d6ad734-b8b5-4d91-9b7b-1fa0c55bfa4f|Light from Within|Chroma — Each creature you control gets +1/+1 for each white mana symbol in its mana cost.
+8fa6e2fb-3b92-466a-a2cd-b1e5e9a4bf23|Primalcrux|Trample Chroma — This creature's power and toughness are each equal to the number of green mana symbols in the mana costs of permanents you control.
+bfa0ec94-8851-4518-92e7-ab9f1f90a051|Sanity Grinding|Chroma — Reveal the top ten cards of your library. For each blue mana symbol in the mana costs of the revealed cards, target opponent mills a card. Then put the cards you revealed this way on the bottom of your library in any order.
+51afd09d-7eee-41c9-bc42-f3f61a176479|Umbra Stalker|Chroma — Umbra Stalker's power and toughness are each equal to the number of black mana symbols in the mana costs of cards in your graveyard.

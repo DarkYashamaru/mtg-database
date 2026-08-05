@@ -1,0 +1,5 @@
+441de890-7b9f-42f7-859a-a154b8ed74ac|Foresee|Scry 4, then draw two cards.
+9d687287-7b3f-48c8-b5df-0d7550b9ad66|Judge Unworthy|Choose target attacking or blocking creature. Scry 3, then reveal the top card of your library. Judge Unworthy deals damage equal to that card's mana value to that creature.
+0f71416c-e244-48b4-acbe-2a8ef540db0f|Llanowar Empath|When this creature enters, scry 2, then reveal the top card of your library. If it's a creature card, put it into your hand. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)
+8bcb0f45-902d-41d6-a10c-60bc27befd30|Putrid Cyclops|When this creature enters, scry 1, then reveal the top card of your library. This creature gets -X/-X until end of turn, where X is that card's mana value. (To scry 1, look at the top card of your library, then you may put that card on the bottom.)
+ea480035-9f1b-40c9-a3a5-ce7cd093dfcf|Riddle of Lightning|Choose any target. Scry 3, then reveal the top card of your library. Riddle of Lightning deals damage equal to that card's mana value to that permanent or player.

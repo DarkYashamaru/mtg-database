@@ -1,0 +1,10 @@
+27e04c41-f42c-4d60-8a71-ec2d7c326f64|Azorius Cluestone|{T}: Add {W} or {U}. {W}{U}, {T}, Sacrifice this artifact: Draw a card.
+f6c3b420-9aca-4fab-b7bb-1814bd2d93f6|Boros Cluestone|{T}: Add {R} or {W}. {R}{W}, {T}, Sacrifice this artifact: Draw a card.
+62f834c7-4765-4b6f-812c-7ce14e13ea0d|Dimir Cluestone|{T}: Add {U} or {B}. {U}{B}, {T}, Sacrifice this artifact: Draw a card.
+e917ad3d-df8e-442b-918c-3aa7a10f3cc4|Golgari Cluestone|{T}: Add {B} or {G}. {B}{G}, {T}, Sacrifice this artifact: Draw a card.
+80911151-1e72-4d10-b00a-9fcff2dd131a|Gruul Cluestone|{T}: Add {R} or {G}. {R}{G}, {T}, Sacrifice this artifact: Draw a card.
+3c76bb90-92fb-428b-8e94-def4cf4b6f2d|Izzet Cluestone|{T}: Add {U} or {R}. {U}{R}, {T}, Sacrifice this artifact: Draw a card.
+09650a76-05c4-40a0-b861-d146b3ba87d6|Orzhov Cluestone|{T}: Add {W} or {B}. {W}{B}, {T}, Sacrifice this artifact: Draw a card.
+b4f0bda0-1051-4ab8-b254-891f427b33ad|Rakdos Cluestone|{T}: Add {B} or {R}. {B}{R}, {T}, Sacrifice this artifact: Draw a card.
+792d4afd-b3de-4be2-b68a-03a5be7b9627|Selesnya Cluestone|{T}: Add {G} or {W}. {G}{W}, {T}, Sacrifice this artifact: Draw a card.
+0b65050d-a9cd-4b6c-9114-af89bfa6682f|Simic Cluestone|{T}: Add {G} or {U}. {G}{U}, {T}, Sacrifice this artifact: Draw a card.

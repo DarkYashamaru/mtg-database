@@ -1,0 +1,3 @@
+af42079b-a3c0-448c-9bb2-b915252e87a9|Animation Module|Whenever one or more +1/+1 counters are put on a permanent you control, you may pay {1}. If you do, create a 1/1 colorless Servo artifact creature token. {3}, {T}: Choose a counter on target permanent or player. Give that permanent or player another counter of that kind.
+1daba4f6-2a7d-426a-97d1-0298a7100c45|Decoction Module|Whenever a creature you control enters, you get {E} (an energy counter). {4}, {T}: Return target creature you control to its owner's hand.
+b057c8ff-f169-41cd-a594-026f1a6cb0f9|Fabrication Module|Whenever you get one or more {E} (energy counters), put a +1/+1 counter on target creature you control. {4}, {T}: You get {E}.

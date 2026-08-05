@@ -1,0 +1,1 @@
+0ca233f4-1b7f-4807-ab6e-2b1f5439b3db|Karn Liberated|+4: Target player exiles a card from their hand. −3: Exile target permanent. −14: Restart the game, leaving in exile all non-Aura permanent cards exiled with Karn. Then put those cards onto the battlefield under your control.

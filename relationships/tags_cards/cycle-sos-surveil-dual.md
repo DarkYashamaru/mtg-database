@@ -1,0 +1,5 @@
+a32e08fa-bea4-4ba9-a126-9bf0a91f67e2|Fields of Strife|This land enters tapped. {T}: Add {R} or {W}. {2}{R}{W}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+349ea6c7-6b3e-417f-b082-b712e2b1635b|Forum of Amity|This land enters tapped. {T}: Add {W} or {B}. {2}{W}{B}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+638ff242-63d5-457d-a7a6-40ad51052e2e|Paradox Gardens|This land enters tapped. {T}: Add {G} or {U}. {2}{G}{U}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+33a4e73d-d93a-4b6f-88ff-cd53f20d178c|Spectacle Summit|This land enters tapped. {T}: Add {U} or {R}. {2}{U}{R}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)
+595f0eb5-f521-4174-9c48-b89e85ea907c|Titan's Grave|This land enters tapped. {T}: Add {B} or {G}. {2}{B}{G}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)

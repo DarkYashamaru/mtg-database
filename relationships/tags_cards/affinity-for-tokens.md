@@ -1,0 +1,1 @@
+5b677e88-bcc9-4a55-9c89-8bbd0e2344dc|Junk Winder|Affinity for tokens (This spell costs {1} less to cast for each token you control.) Whenever a token you control enters, tap target nonland permanent an opponent controls. It doesn't untap during its controller's next untap step.

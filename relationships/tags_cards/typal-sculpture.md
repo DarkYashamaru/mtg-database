@@ -1,0 +1,1 @@
+70c92f25-32d6-4cda-b961-cf2680bd59ab|Doomed Artisan|Sculptures you control can't attack or block. At the beginning of your end step, create a colorless Sculpture artifact creature token with "This token's power and toughness are each equal to the number of Sculptures you control."

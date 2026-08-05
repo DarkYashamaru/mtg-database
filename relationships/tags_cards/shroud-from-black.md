@@ -1,0 +1,1 @@
+245e26ec-39eb-4af8-99af-8cc22edbc261|Mercenary Informer|This creature can't be the target of black spells or abilities from black sources. {2}{W}: Put target nontoken Mercenary on the bottom of its owner's library.

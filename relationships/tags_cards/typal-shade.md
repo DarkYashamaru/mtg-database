@@ -1,0 +1,1 @@
+48edc348-93f6-4dce-9cc4-7244d76b6f4a|Accursed Duneyard|{T}: Add {C}. {2}, {T}: Regenerate target Shade, Skeleton, Specter, Spirit, Vampire, Wraith, or Zombie. (The next time it would be destroyed this turn, instead tap it, remove it from combat, and heal all damage on it.)

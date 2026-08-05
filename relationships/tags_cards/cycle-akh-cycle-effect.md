@@ -1,0 +1,5 @@
+008c92bc-3022-4d34-aa04-584576ff8f8e|Deem Worthy|Deem Worthy deals 7 damage to target creature. Cycling {3}{R} ({3}{R}, Discard this card: Draw a card.) When you cycle this card, you may have it deal 2 damage to target creature.
+aa4ecefa-808e-4706-af16-4ea5af9743fc|Renewed Faith|You gain 6 life. Cycling {1}{W} ({1}{W}, Discard this card: Draw a card.) When you cycle this card, you may gain 2 life.
+14f081bb-dd7a-4419-af9b-f75d91e1a6d0|Shefet Monitor|Cycling {3}{G} ({3}{G}, Discard this card: Draw a card.) When you cycle this card, you may search your library for a basic land card or a Desert card, put it onto the battlefield, then shuffle. (Do this before you draw.)
+52fa7e9b-36d9-409c-8981-6f8dfd8bb031|Stir the Sands|Create three 2/2 black Zombie creature tokens. Cycling {3}{B} ({3}{B}, Discard this card: Draw a card.) When you cycle this card, create a 2/2 black Zombie creature token.
+699fc7cf-1ad3-4c32-b3e4-49f9a2da4b26|Vizier of Tumbling Sands|{T}: Untap another target permanent. Cycling {1}{U} ({1}{U}, Discard this card: Draw a card.) When you cycle this card, untap target permanent.

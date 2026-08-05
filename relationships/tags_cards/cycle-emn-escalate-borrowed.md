@@ -1,0 +1,3 @@
+e858d26f-db45-4c56-b40a-bbaeedbf5549|Borrowed Grace|Escalate {1}{W} (Pay this cost for each mode chosen beyond the first.) Choose one or both — • Creatures you control get +2/+0 until end of turn. • Creatures you control get +0/+2 until end of turn.
+b45fc33b-0658-4fe1-89da-54a07a12ebd4|Borrowed Hostility|Escalate {3} (Pay this cost for each mode chosen beyond the first.) Choose one or both — • Target creature gets +3/+0 until end of turn. • Target creature gains first strike until end of turn.
+ee6e0279-9606-4877-a3a0-5d9dd557ff15|Borrowed Malevolence|Escalate {2} (Pay this cost for each mode chosen beyond the first.) Choose one or both — • Target creature gets +1/+1 until end of turn. • Target creature gets -1/-1 until end of turn.

@@ -1,0 +1,5 @@
+74fedfc4-3eb7-4845-9d3e-9d5243a0062a|Court Hussar|Vigilance When this creature enters, look at the top three cards of your library, then put one of them into your hand and the rest on the bottom of your library in any order. When this creature enters, sacrifice it unless {W} was spent to cast it.
+c92221f7-76e8-483a-9d68-b19ff4d0baaf|Ember Weaver|Reach (This creature can block creatures with flying.) As long as you control a red permanent, this creature gets +1/+0 and has first strike.
+633e91ea-84d4-42ca-a8eb-603db340ebe7|Knight of the Skyward Eye|{3}{G}: This creature gets +3/+3 until end of turn. Activate only once each turn.
+f8d64a8e-1bff-4960-bc36-1fbb4fc18c8f|Returned Phalanx|Defender {1}{U}: This creature can attack this turn as though it didn't have defender.
+2a4cde8f-38e0-439b-9928-95ab23317f70|Skeletonize|Skeletonize deals 3 damage to target creature. When a creature dealt damage this way dies this turn, create a 1/1 black Skeleton creature token with "{B}: Regenerate this token."

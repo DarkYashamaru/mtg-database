@@ -1,0 +1,3 @@
+26f8626a-ce64-450c-bda5-833df2fbb4fb|Orzhov Charm|Choose one — • Return target creature you control and all Auras you control attached to it to their owner's hand. • Destroy target creature and you lose life equal to its toughness. • Return target creature card with mana value 1 or less from your graveyard to the battlefield.
+c30491b5-08fe-4694-9ac8-53be7b4b92ce|Portal of Sanctuary|{1}, {T}: Return target creature you control and each Aura attached to it to their owners' hands. Activate only during your turn.
+5f085af7-ce66-4019-9516-d1650ee7b6e0|Scarab of the Unseen|{T}, Sacrifice this artifact: Return all Auras attached to target permanent you own to their owners' hands. Draw a card at the beginning of the next turn's upkeep.

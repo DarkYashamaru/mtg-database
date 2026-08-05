@@ -1,0 +1,2 @@
+f8fac28d-adf4-47e9-bdd3-8402cbf0f228|Boggart Loggers|Forestwalk (This creature can't be blocked as long as defending player controls a Forest.) {2}{B}, Sacrifice this creature: Destroy target Treefolk or Forest.
+e1feea85-2f06-43aa-9b3c-eb63085276f5|Consuming Bonfire|Choose one — • Consuming Bonfire deals 4 damage to target non-Elemental creature. • Consuming Bonfire deals 7 damage to target Treefolk creature.

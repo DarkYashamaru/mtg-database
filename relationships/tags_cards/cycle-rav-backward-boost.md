@@ -1,0 +1,10 @@
+20eff2ce-f26d-48a2-8a1f-435a7e2968c8|Boros Fury-Shield|Prevent all combat damage that would be dealt by target attacking or blocking creature this turn. If {R} was spent to cast this spell, Boros Fury-Shield deals damage to that creature's controller equal to the creature's power.
+74fedfc4-3eb7-4845-9d3e-9d5243a0062a|Court Hussar|Vigilance When this creature enters, look at the top three cards of your library, then put one of them into your hand and the rest on the bottom of your library in any order. When this creature enters, sacrifice it unless {W} was spent to cast it.
+878e8980-a2cc-4335-aafe-f5166ef48f79|Gruul Scrapper|When this creature enters, if {R} was spent to cast it, it gains haste until end of turn.
+2ce12817-a7b5-475a-87d0-718d77349a6d|Ogre Savant|When this creature enters, if {U} was spent to cast it, return target creature to its owner's hand.
+36780340-824d-420b-b41b-182f88d944de|Plaxmanta|Flash When this creature enters, creatures you control gain shroud until end of turn. (They can't be the targets of spells or abilities.) When this creature enters, sacrifice it unless {G} was spent to cast it.
+942f6260-055e-4cc7-bec6-3a46fd4b048e|Revenant Patriarch|When this creature enters, if {W} was spent to cast it, target player skips their next combat phase. This creature can't block.
+f074c0d0-8455-484d-ae75-820fdfbc4740|Ribbons of Night|Ribbons of Night deals 4 damage to target creature and you gain 4 life. If {U} was spent to cast this spell, draw a card.
+9abe09fb-17ab-41e8-9d89-1467ed62f87b|Rolling Spoil|Destroy target land. If {B} was spent to cast this spell, all creatures get -1/-1 until end of turn.
+fc2e441c-bc0b-439f-af71-daba3b033381|Seed Spark|Destroy target artifact or enchantment. If {G} was spent to cast this spell, create two 1/1 green Saproling creature tokens.
+9a5b404c-b55f-47ad-8f5d-322a1ec6650f|Squealing Devil|Fear (This creature can't be blocked except by artifact creatures and/or black creatures.) When this creature enters, you may pay {X}. If you do, target creature gets +X/+0 until end of turn. When this creature enters, sacrifice it unless {B} was spent to cast it.

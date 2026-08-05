@@ -1,0 +1,4 @@
+21591447-c045-4317-8d0e-705627aa157b|Coward // Killer|Target creature can't block this turn and becomes a Coward in addition to its other types until end of turn. Time travel. // Killer deals 3 damage to target creature and each other creature that shares a creature type with it.
+6586f8d1-196d-42a4-816f-629d432ece2f|Crown of Suspicion|Enchant creature Enchanted creature gets +2/-1. Sacrifice this Aura: Enchanted creature and other creatures that share a creature type with it get +2/-1 until end of turn.
+db982577-1c75-4bc9-ab15-1888ea0be16d|Endemic Plague|As an additional cost to cast this spell, sacrifice a creature. Destroy all creatures that share a creature type with the sacrificed creature. They can't be regenerated.
+c8cd2b52-6d32-413f-9b26-2f9d436dbeae|Faces of the Past|Whenever a creature dies, tap all untapped creatures that share a creature type with it or untap all tapped creatures that share a creature type with it.

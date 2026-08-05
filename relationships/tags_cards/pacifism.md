@@ -1,0 +1,10 @@
+8b25f353-0798-4a03-a928-6a701a919468|Arachnus Web|Enchant creature Enchanted creature can't attack or block, and its activated abilities can't be activated. At the beginning of the end step, if enchanted creature's power is 4 or greater, destroy this Aura.
+81728b98-8cf9-4734-a318-69184bb4d15c|Arrest|Enchant creature Enchanted creature can't attack or block, and its activated abilities can't be activated.
+3d98a656-1737-486f-9b25-449b7c871d1f|Aurification|Whenever a creature deals damage to you, put a gold counter on it. Each creature with a gold counter on it is a Wall in addition to its other creature types and has defender. (Those creatures can't attack.) When this enchantment leaves the battlefield, remove all gold counters from all creatures.
+79af045e-2c73-4003-8f62-b8611a225f08|Bonds of Faith|Enchant creature Enchanted creature gets +2/+2 as long as it's a Human. Otherwise, it can't attack or block.
+7a98a1d1-7366-4b38-9047-48269790d328|Bound by Moonsilver|Enchant creature Enchanted creature can't attack, block, or transform. Sacrifice another permanent: Attach this Aura to target creature. Activate only as a sorcery and only once each turn.
+ca597a0d-b510-4b25-9a83-4d4e613546f5|Bound in Gold|Enchant permanent Enchanted permanent can't attack, block, or crew Vehicles, and its activated abilities can't be activated unless they're mana abilities.
+b8cee34a-710d-4c09-b475-0e4754eccd66|Bound in Silence|Enchant creature Enchanted creature can't attack or block.
+5a81755f-bc44-47ac-8039-8847a5e37922|Brainwash|Enchant creature Enchanted creature can't attack unless its controller pays {3}.
+18ffd8ad-1556-450d-8bc1-8103a3d0404e|Cage of Hands|Enchant creature Enchanted creature can't attack or block. {1}{W}: Return this Aura to its owner's hand.
+93d20859-249f-47ae-8f6d-095228e7b6e9|Calming Licid|{W}, {T}: This creature loses this ability and becomes an Aura enchantment with enchant creature. Attach it to target creature. You may pay {W} to end this effect. Enchanted creature can't attack.

@@ -1,0 +1,1 @@
+bdacd7a4-3d14-45eb-85a6-33ee711b34af|Emissary of Soulfire|When this creature enters, you get {E}{E}{E} (three energy counters). Pay {E}{E}: Put an exalted counter on target creature you control. Activate only as a sorcery. (Whenever a creature you control attacks alone, it gets +1/+1 until end of turn for each instance of exalted among permanents you control.)

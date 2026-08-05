@@ -1,0 +1,1 @@
+fd26127d-6807-41e3-9dcf-20ef257d71d3|Mirror-Mad Phantasm|Flying {1}{U}: This creature's owner shuffles it into their library. If that player does, they reveal cards from the top of that library until a card named Mirror-Mad Phantasm is revealed. The player puts that card onto the battlefield and all other cards revealed this way into their graveyard.

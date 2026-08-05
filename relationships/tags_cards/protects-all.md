@@ -1,0 +1,10 @@
+41785f7b-3d02-4b7f-86ff-b381f626142e|Absolute Grace|All creatures have protection from black.
+f4aa8391-34d5-4ad2-a981-9aa08f8229db|Absolute Law|All creatures have protection from red.
+12134f7d-433a-416a-b668-c1a21984c94b|Aerie Mystics|Flying {1}{G}{U}: Creatures you control gain shroud until end of turn. (They can't be the targets of spells or abilities.)
+8c1fda45-09f1-4b58-a487-e11c868e1357|Ainok Strike Leader|Whenever you attack with this creature and/or your commander, for each opponent, create a 1/1 red Goblin creature token that's tapped and attacking that player. Sacrifice this creature: Creature tokens you control gain indestructible until end of turn.
+925a0b9b-a1fa-4aad-89d9-e2698ac3582f|Ajani's Presence|Strive — This spell costs {2}{W} more to cast for each target beyond the first. Any number of target creatures each get +1/+1 and gain indestructible until end of turn. (Damage and effects that say "destroy" don't destroy them.)
+a3fc6888-0a4b-4e1d-b709-042b8b6b1a04|Akroma's Blessing|Choose a color. Creatures you control gain protection from the chosen color until end of turn. Cycling {W} ({W}, Discard this card: Draw a card.)
+967e8b3f-8266-4d9a-a38b-d0e10184e1e4|Akroma's Memorial|Creatures you control have flying, first strike, vigilance, trample, haste, and protection from black and from red.
+fd949f82-fc10-4e37-8aa9-6c7569fe3c55|Akroma's Will|Choose one. If you control a commander as you cast this spell, you may choose both instead. • Creatures you control gain flying, vigilance, and double strike until end of turn. • Creatures you control gain lifelink, indestructible, and protection from each color until end of turn.
+0ea6d165-2c30-41a4-8829-6d0510afc03f|And They Shall Know No Fear|Choose a creature type. Creatures you control of the chosen type get +1/+0 and gain indestructible until end of turn.
+2f959c67-2b0b-4ba8-a8aa-90c25a3806ec|Angelic Guardian|Flying (This creature can't be blocked except by creatures with flying or reach.) Whenever one or more creatures you control attack, they gain indestructible until end of turn. (Damage and effects that say "destroy" don't destroy them.)

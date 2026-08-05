@@ -1,0 +1,5 @@
+2f7b46c1-3d82-4fd9-9882-589315cab47b|Candlestick|Equipped creature gets +1/+1 and has "Whenever this creature attacks, surveil 2." (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.) {2}, Sacrifice this Equipment: Draw a card. Equip {2}
+7627163a-1689-446f-b5aa-a6c56aefb532|Knife|During your turn, equipped creature gets +1/+0 and has first strike. {2}, Sacrifice this Equipment: Draw a card. Equip {2}
+ed2ef95e-8851-4226-9c63-4c19ea323b82|Lead Pipe|Equipped creature gets +2/+0. Whenever equipped creature dies, each opponent loses 1 life. {2}, Sacrifice this Equipment: Draw a card. Equip {2}
+a3f09898-6c77-4d68-8d10-8440c75f884c|Rope|Equipped creature gets +1/+2, has reach, and can't be blocked by more than one creature. {2}, Sacrifice this Equipment: Draw a card. Equip {3}
+fdbac0a7-18c0-48a5-a174-0d4d1473fd9c|Wrench|Equipped creature gets +1/+1 and has vigilance and "{3}, {T}: Tap target creature." {2}, Sacrifice this Equipment: Draw a card. Equip {2}

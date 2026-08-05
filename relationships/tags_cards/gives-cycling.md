@@ -1,0 +1,4 @@
+34b4d137-780b-446c-8cdd-fd1673180971|Homing Sliver|Each Sliver card in each player's hand has slivercycling {3}. Slivercycling {3} ({3}, Discard this card: Search your library for a Sliver card, reveal it, put it into your hand, then shuffle.)
+65ea3638-1766-4096-88a8-662a0d6faf0c|Jo Grant|Each historic card in your hand has cycling {2}{W}. ({2}{W}, Discard that card: Draw a card.) Whenever you cycle a card, put a +1/+1 counter on Jo Grant. Doctor's companion (You can have two commanders if the other is the Doctor.)
+e445825a-e70e-4796-99be-4a7c4080b8cc|Rhet-Tomb Mystic|Flying Each creature card in your hand has cycling {1}{U}. ({1}{U}, Discard that card: Draw a card.)
+10da681b-50bd-4a1b-9934-f0c90e0af55c|Tectonic Reformation|Each land card in your hand has cycling {R}. Cycling {2} ({2}, Discard this card: Draw a card.)

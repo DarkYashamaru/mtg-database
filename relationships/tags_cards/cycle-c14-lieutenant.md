@@ -1,0 +1,5 @@
+502575f4-7c56-44bc-a77f-ae28d66c8e1f|Angelic Field Marshal|Flying Lieutenant — As long as you control your commander, this creature gets +2/+2 and creatures you control have vigilance.
+2ee46c98-aee7-459a-80fa-4ed9d8a3acda|Demon of Wailing Agonies|Flying Lieutenant — As long as you control your commander, this creature gets +2/+2 and has "Whenever this creature deals combat damage to a player, that player sacrifices a creature of their choice."
+72bdc7ba-2906-436d-8405-6a8a3335fdae|Stormsurge Kraken|Hexproof Lieutenant — As long as you control your commander, this creature gets +2/+2 and has "Whenever this creature becomes blocked, you may draw two cards."
+f55334d9-1ec2-4667-bf28-5a0384d6f053|Thunderfoot Baloth|Trample Lieutenant — As long as you control your commander, this creature gets +2/+2 and other creatures you control get +2/+2 and have trample.
+63394e24-a456-4cc6-9885-8c62447b050a|Tyrant's Familiar|Flying, haste Lieutenant — As long as you control your commander, this creature gets +2/+2 and has "Whenever this creature attacks, it deals 7 damage to target creature defending player controls."

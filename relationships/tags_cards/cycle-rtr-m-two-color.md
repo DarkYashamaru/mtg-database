@@ -1,0 +1,10 @@
+33598888-0367-4085-9415-f4e21da08354|Armada Wurm|Trample When this creature enters, create a 5/5 green Wurm creature token with trample.
+08bc10fd-8901-4836-ad4d-a867e1bcba77|Epic Experiment|Exile the top X cards of your library. You may cast instant and sorcery spells with mana value X or less from among them without paying their mana costs. Then put all cards exiled this way that weren't cast into your graveyard.
+c46718dc-24dc-4b77-b455-aa4c89570b8d|Isperia, Supreme Judge|Flying Whenever a creature attacks you or a planeswalker you control, you may draw a card.
+87e65e36-9483-49fe-b644-2caca092107f|Jarad, Golgari Lich Lord|Jarad gets +1/+1 for each creature card in your graveyard. {1}{B}{G}, Sacrifice another creature: Each opponent loses life equal to the sacrificed creature's power. Sacrifice a Swamp and a Forest: Return this card from your graveyard to your hand.
+899d58dc-60b2-4013-9f91-c1888c585d66|Niv-Mizzet, Dracogenius|Flying Whenever Niv-Mizzet deals damage to a player, you may draw a card. {U}{R}: Niv-Mizzet deals 1 damage to any target.
+52d1d575-3e7f-4df1-8c89-aee0cac03aca|Rakdos's Return|Rakdos's Return deals X damage to target opponent or planeswalker. That player or that planeswalker's controller discards X cards.
+143a269a-b9ee-48ba-bd7b-4aa46eb36778|Rakdos, Lord of Riots|You can't cast Rakdos unless an opponent lost life this turn. Flying, trample Creature spells you cast cost {1} less to cast for each 1 life your opponents have lost this turn.
+71d83fca-e40e-4d0e-956d-d0d6da9cc472|Sphinx's Revelation|You gain X life and draw X cards.
+e94ef397-f5c5-4b8d-ae27-528352fa1d1e|Trostani, Selesnya's Voice|Whenever another creature you control enters, you gain life equal to that creature's toughness. {1}{G}{W}, {T}: Populate. (Create a token that's a copy of a creature token you control.)
+0d2bbce0-8c27-4b82-ab62-51a0c3cfc9b0|Vraska the Unseen|+1: Until your next turn, whenever a creature deals combat damage to Vraska, destroy that creature. −3: Destroy target nonland permanent. −7: Create three 1/1 black Assassin creature tokens with "Whenever this token deals combat damage to a player, that player loses the game."

@@ -1,0 +1,7 @@
+861fa80d-99e0-4332-a2b8-5aa959fd41a4|Consume Spirit|Spend only black mana on X. Consume Spirit deals X damage to any target and you gain X life.
+e75ba79f-4cc2-4ede-8641-559ab94e7e36|Drain Life|Spend only black mana on X. Drain Life deals X damage to any target. You gain life equal to the damage dealt, but not more life than the player's life total before the damage was dealt, the planeswalker's loyalty before the damage was dealt, or the creature's toughness.
+97acd977-164d-49d5-b3a1-72e0d75c9016|Hogaak, Arisen Necropolis|You can't spend mana to cast this spell. Convoke, delve (Each creature you tap while casting this spell pays for {1} or one mana of that creature's color. Each card you exile from your graveyard pays for {1}.) You may cast this card from your graveyard. Trample
+e9ced5d8-8337-403f-86a3-bddb9c77d658|Imperiosaur|Spend only mana produced by basic lands to cast this spell.
+43dac6fa-4cdf-49ec-9e11-2e5e8f9f928b|Myr Superion|Spend only mana produced by creatures to cast this spell.
+dffc6785-31b0-487c-b9a0-980bca39753d|Security Rhox|You may pay {R}{G} rather than pay this spell's mana cost. Spend only mana produced by Treasures to cast it this way.
+063b0f5d-af27-4681-87b9-b553f6887061|Soul Burn|Spend only black and/or red mana on X. Soul Burn deals X damage to any target. You gain life equal to the damage dealt, but not more than the amount of {B} spent on X, the player's life total before the damage was dealt, the planeswalker's loyalty before the damage was dealt, or the creature's toughness.

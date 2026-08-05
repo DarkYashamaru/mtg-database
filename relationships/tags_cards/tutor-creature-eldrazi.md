@@ -1,0 +1,1 @@
+31b27775-196b-4022-bff5-25b34290ff7f|From Beyond|Devoid (This card has no color.) At the beginning of your upkeep, create a 1/1 colorless Eldrazi Scion creature token. It has "Sacrifice this token: Add {C}." {1}{G}, Sacrifice this enchantment: Search your library for an Eldrazi card, reveal it, put it into your hand, then shuffle.

@@ -1,0 +1,10 @@
+6bac1495-16cf-4e1e-9126-482f85322c78|Aerial Predation|Destroy target creature with flying. You gain 2 life.
+ab855992-34da-42a2-b7c7-dec4db849159|Aerial Volley|Aerial Volley deals 3 damage divided as you choose among one, two, or three target creatures with flying.
+70cdd24a-8dc5-47b5-8729-9ebf486f4821|Aerie Ouphes|Sacrifice this creature: It deals damage equal to its power to target creature with flying. Persist (When this creature dies, if it had no -1/-1 counters on it, return it to the battlefield under its owner's control with a -1/-1 counter on it.)
+49638d96-e83e-4aab-bafb-d6183a6e3ff6|Air Servant|Flying {2}{U}: Tap target creature with flying.
+72a0e0f1-e8be-441a-bcaf-029fb1bd1fd2|Airship Crash|Destroy target artifact, enchantment, or creature with flying. Cycling {2} ({2}, Discard this card: Draw a card.)
+bec585af-0c59-46a7-838f-d747c80a9e97|Arbor Colossus|Reach {3}{G}{G}{G}: Monstrosity 3. (If this creature isn't monstrous, put three +1/+1 counters on it and it becomes monstrous.) When this creature becomes monstrous, destroy target creature with flying an opponent controls.
+22677153-bd87-4ff8-af92-ced4da2aac6c|Atraxa's Fall|Destroy target artifact, battle, enchantment, or creature with flying.
+657f6318-aa09-46f1-ab69-896b17a48950|Bamboo Grove Archer|Defender, reach Channel — {4}{G}, Discard this card: Destroy target creature with flying.
+698feaaa-2fff-4809-81d1-4caad44c6c0a|Blizzard|Cast this spell only if you control a snow land. Cumulative upkeep {2} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) Creatures with flying don't untap during their controllers' untap steps.
+361b965f-2ce7-49f8-84e7-7325ea0c948d|Bow of Nylea|Attacking creatures you control have deathtouch. {1}{G}, {T}: Choose one — • Put a +1/+1 counter on target creature. • Bow of Nylea deals 2 damage to target creature with flying. • You gain 3 life. • Put up to four target cards from your graveyard on the bottom of your library in any order.

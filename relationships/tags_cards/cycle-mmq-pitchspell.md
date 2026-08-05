@@ -1,0 +1,5 @@
+7d937265-02f5-4f2c-9fef-c5930e13b3be|Cave-In|You may exile a red card from your hand rather than pay this spell's mana cost. Cave-In deals 2 damage to each creature and each player.
+c39e5fb0-6de3-4105-ad3c-0ecb8951a1d5|Misdirection|You may exile a blue card from your hand rather than pay this spell's mana cost. Change the target of target spell with a single target.
+b4f7b1eb-6cd4-40f9-b259-3c39291edf27|Reverent Mantra|You may exile a white card from your hand rather than pay this spell's mana cost. Choose a color. All creatures gain protection from the chosen color until end of turn.
+1a3a274d-41da-47db-ad41-5720f36a7963|Unmask|You may exile a black card from your hand rather than pay this spell's mana cost. Target player reveals their hand. You choose a nonland card from it. That player discards that card.
+990cd7de-66a2-4def-bf00-390b2682e995|Vine Dryad|You may exile a green card from your hand rather than pay this spell's mana cost. Flash Forestwalk (This creature can't be blocked as long as defending player controls a Forest.)

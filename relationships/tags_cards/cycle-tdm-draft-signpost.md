@@ -1,0 +1,10 @@
+511d3de9-076b-4811-bddf-00623f98993f|Auroral Procession|Return target card from your graveyard to your hand.
+322a2d97-cf71-4bfc-b52d-f642f2d0dcbd|Cori Mountain Stalwart|Flurry — Whenever you cast your second spell each turn, this creature deals 2 damage to each opponent and you gain 2 life.
+185e0892-194f-43ac-853f-1e142bf8476e|Effortless Master|Vigilance Menace (This creature can't be blocked except by two or more creatures.) This creature enters with two +1/+1 counters on it if you've cast two or more spells this turn.
+b80d21de-2ace-4e0d-92b2-6f0273512621|Frontline Rush|Choose one — • Create two 1/1 red Goblin creature tokens. • Target creature gets +X/+X until end of turn, where X is the number of creatures you control.
+8f976399-29a9-4eb7-844d-3d3f2fdf6ea7|Glacial Dragonhunt|Draw a card, then you may discard a card. When you discard a nonland card this way, Glacial Dragonhunt deals 3 damage to target creature. Harmonize {4}{U}{R} (You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile this spell.)
+ca1dc6f0-3ec2-4f62-a08a-1395201bd93f|Hardened Tactician|{1}, Sacrifice a token: Draw a card.
+3431338b-928a-47f2-bc2f-f3c5d8eda8d0|Host of the Hereafter|This creature enters with two +1/+1 counters on it. Whenever this creature or another creature you control dies, if it had counters on it, put its counters on up to one target creature you control.
+a3275d80-112b-4839-a014-e44ef48d2e6b|Kishla Skimmer|Flying Whenever a card leaves your graveyard during your turn, draw a card. This ability triggers only once each turn.
+af762373-e159-4a36-83b5-a82b8b16fa41|Marshal of the Lost|Deathtouch Whenever you attack, target creature gets +X/+X until end of turn, where X is the number of attacking creatures.
+45392882-e4b9-4c74-a10f-985c2b4e2be9|Stalwart Successor|Menace (This creature can't be blocked except by two or more creatures.) Whenever one or more counters are put on a creature you control, if it's the first time counters have been put on that creature this turn, put a +1/+1 counter on that creature.

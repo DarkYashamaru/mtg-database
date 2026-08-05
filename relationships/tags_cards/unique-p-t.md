@@ -1,0 +1,10 @@
+e6873252-653a-47a8-99b7-b2ef70aa1f7f|Ancient Adamantoise|Vigilance, ward {3} Damage isn't removed from this creature during cleanup steps. All damage that would be dealt to you and other permanents you control is dealt to this creature instead. When this creature dies, exile it and create ten tapped Treasure tokens.
+19409704-09c4-4a4b-a5a7-f95120b425db|Artisan of Kozilek|When you cast this spell, you may return target creature card from your graveyard to the battlefield. Annihilator 2 (Whenever this creature attacks, defending player sacrifices two permanents of their choice.)
+18379907-ddba-479e-8953-3adc1ed40458|Autochthon Wurm|Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.) Trample
+b23587e0-9fb7-492e-8bb4-f218e8e4ce6c|Brisela, Voice of Nightmares|Flying, first strike, vigilance, lifelink Your opponents can't cast spells with mana value 3 or less.
+758aeca5-6ef3-4463-a65a-66b39289cc86|Char-Rumbler|Double strike {R}: This creature gets +1/+0 until end of turn.
+c38cc5fe-936a-4d61-a816-9be773ae1d02|Charix, the Raging Isle|Spells your opponents cast that target Charix cost {2} more to cast. {3}: Charix gets +X/-X until end of turn, where X is the number of Islands you control.
+a52e73bb-47cb-4912-9b81-4ae40641eabb|Daemogoth Titan|Whenever this creature attacks or blocks, sacrifice a creature.
+282e5e5f-365a-4e11-aeac-ead71d1cf68a|Demolition Stomper|This Vehicle can't be blocked by creatures with power 2 or less. Crew 5 (Tap any number of creatures you control with total power 5 or more: This Vehicle becomes an artifact creature until end of turn.)
+51780f71-bf60-4208-94ea-76fa84790fb6|Drivnod, Carnage Dominus|If a creature dying causes a triggered ability of a permanent you control to trigger, that ability triggers an additional time. {B/P}{B/P}, Exile three creature cards from your graveyard: Put an indestructible counter on Drivnod. ({B/P} can be paid with either {B} or 2 life.)
+205f6384-7203-42ed-bc0f-8803cf1f4514|Eater of Days|Flying, trample When this creature enters, you skip your next two turns.

@@ -1,0 +1,5 @@
+a59ff932-f758-476e-ba31-0623bd748231|Anara, Wolvid Familiar|During your turn, commanders you control have indestructible. (Effects that say "destroy" don't destroy them. A creature with indestructible can't be destroyed by damage.) Partner (You can have two commanders if both have partner.)
+ddf38a32-302a-4658-9eaf-b813ebe275c9|Esior, Wardwing Familiar|Flying Spells your opponents cast that target one or more commanders you control cost {3} more to cast. Partner (You can have two commanders if both have partner.)
+6a0b1b7e-1a93-4c00-be94-8fa56af57468|Falthis, Shadowcat Familiar|Commanders you control have menace and deathtouch. Partner (You can have two commanders if both have partner.)
+d9c87cc2-943e-49b6-becc-748857549617|Kediss, Emberclaw Familiar|Whenever a commander you control deals combat damage to an opponent, it deals that much damage to each other opponent. Partner (You can have two commanders if both have partner.)
+6df7f4b4-a3a8-44d0-845f-84304bf6a3f8|Keleth, Sunmane Familiar|Whenever a commander you control attacks, put a +1/+1 counter on it. Partner (You can have two commanders if both have partner.)

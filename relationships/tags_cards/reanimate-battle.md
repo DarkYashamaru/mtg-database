@@ -1,0 +1,1 @@
+913ec957-5f4e-46b4-a819-9448837f72a3|Revival Experiment|For each permanent type, return up to one card of that type from your graveyard to the battlefield. You lose 3 life for each card returned this way. Exile Revival Experiment.

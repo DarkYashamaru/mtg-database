@@ -1,0 +1,9 @@
+2a93236d-f182-4826-8112-4048bb3cbaf9|Ageless Entity|Whenever you gain life, put that many +1/+1 counters on this creature.
+990b5e12-6e04-4832-9d64-87278f12cbda|Betor, Ancestor's Voice|Flying, lifelink At the beginning of your end step, put a number of +1/+1 counters on up to one other target creature you control equal to the amount of life you gained this turn. Return up to one target creature card with mana value less than or equal to the amount of life you lost this turn from your graveyard to the battlefield.
+956250da-532a-4457-8696-73915be56943|Cradle of Vitality|Whenever you gain life, you may pay {1}{W}. If you do, put a +1/+1 counter on target creature for each 1 life you gained.
+d3c56fc4-3611-41b1-952e-4c5311b1510b|Lathiel, the Bounteous Dawn|Lifelink At the beginning of each end step, if you gained life this turn, distribute up to that many +1/+1 counters among any number of other target creatures.
+64c54c9f-0550-41e2-a44a-5892a199f670|Light of Promise|Enchant creature Enchanted creature has "Whenever you gain life, put that many +1/+1 counters on this creature."
+367ac7e2-5056-48f3-a296-87d6cb1f7b54|Nykthos Paragon|Whenever you gain life, you may put that many +1/+1 counters on each creature you control. Do this only once each turn.
+163ece8a-0479-4bb2-b559-581985d1898b|Sunbond|Enchant creature Enchanted creature has "Whenever you gain life, put that many +1/+1 counters on this creature."
+83860749-1603-46e9-9065-e98001244193|Treebeard, Gracious Host|Trample, ward {2} When Treebeard enters, create two Food tokens. Whenever you gain life, put that many +1/+1 counters on target Halfling or Treefolk.
+94723d61-3e29-4180-91bc-df37c4086a66|Willowdusk, Essence Seer|{1}, {T}: Choose another target creature. Put a number of +1/+1 counters on it equal to the amount of life you gained this turn or the amount of life you lost this turn, whichever is greater. Activate only as a sorcery.

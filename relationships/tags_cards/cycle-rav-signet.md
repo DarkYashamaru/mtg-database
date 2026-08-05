@@ -1,0 +1,10 @@
+e018773f-95b3-49a3-9674-6f04ddef2092|Azorius Signet|{1}, {T}: Add {W}{U}.
+41c84665-1f99-40ab-aaca-1188649eb263|Boros Signet|{1}, {T}: Add {R}{W}.
+7d881c57-0bd9-4c57-aa4a-b10808b86143|Dimir Signet|{1}, {T}: Add {U}{B}.
+1cf51f50-24e4-48d0-95b3-1dad3ffa4bf5|Golgari Signet|{1}, {T}: Add {B}{G}.
+d36e0c9f-c025-4dfe-9644-9cad2461ce38|Gruul Signet|{1}, {T}: Add {R}{G}.
+2fda4fe7-8b0c-489c-a000-6d358e614e34|Izzet Signet|{1}, {T}: Add {U}{R}.
+de3dcb5d-775a-479f-99f5-d1883ed9b1b5|Orzhov Signet|{1}, {T}: Add {W}{B}.
+3adb7681-977f-4a32-9ec8-51481b958268|Rakdos Signet|{1}, {T}: Add {B}{R}.
+1436dd81-496e-42a5-b210-fb5b9cdf073f|Selesnya Signet|{1}, {T}: Add {G}{W}.
+44503105-3e13-408d-a44f-37d503c61d72|Simic Signet|{1}, {T}: Add {G}{U}.

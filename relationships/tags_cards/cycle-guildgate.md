@@ -1,0 +1,10 @@
+ad1712d8-809f-410c-8b91-ffe6fb8a69a1|Azorius Guildgate|This land enters tapped. {T}: Add {W} or {U}.
+73c423b7-cab8-4e69-8070-9edbf96a6c2c|Boros Guildgate|This land enters tapped. {T}: Add {R} or {W}.
+52d14717-0cbc-4d7e-b546-54ea91580338|Dimir Guildgate|This land enters tapped. {T}: Add {U} or {B}.
+fa2da325-6859-45bb-b185-35526b01bcc1|Golgari Guildgate|This land enters tapped. {T}: Add {B} or {G}.
+d38476e9-2e47-4c0c-8129-483c0bd09ec0|Gruul Guildgate|This land enters tapped. {T}: Add {R} or {G}.
+bf75a3d1-f184-4b48-a913-21caee1db084|Izzet Guildgate|This land enters tapped. {T}: Add {U} or {R}.
+57b37df5-fee4-4720-931f-f0cb0a8b338c|Orzhov Guildgate|This land enters tapped. {T}: Add {W} or {B}.
+361f534b-39d1-4421-b5a8-d3813c62f86d|Rakdos Guildgate|This land enters tapped. {T}: Add {B} or {R}.
+75b235d3-595a-4859-be45-9559d8445db5|Selesnya Guildgate|This land enters tapped. {T}: Add {G} or {W}.
+e8705df9-6439-4930-91b6-229f818559af|Simic Guildgate|This land enters tapped. {T}: Add {G} or {U}.

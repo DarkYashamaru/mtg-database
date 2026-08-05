@@ -1,0 +1,1 @@
+26ae37ab-91f8-4113-beb0-1154f9b62d28|Varchild, Betrayer of Kjeldor|Whenever Varchild deals combat damage to a player, that player creates that many 1/1 red Survivor creature tokens. Survivors your opponents control can't block, and they can't attack you or planeswalkers you control. When Varchild leaves the battlefield, gain control of all Survivors.

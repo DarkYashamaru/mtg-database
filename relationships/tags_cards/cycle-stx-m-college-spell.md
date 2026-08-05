@@ -1,0 +1,5 @@
+ded78090-c6a1-4c9d-b7b9-b433b1d963b6|Blot Out the Sky|Create X tapped 2/1 white and black Inkling creature tokens with flying. If X is 6 or more, destroy all noncreature, nonland permanents.
+e0c21b32-f672-4496-91ed-7b7f351eb539|Body of Research|Create a 0/0 green and blue Fractal creature token. Put X +1/+1 counters on it, where X is the number of cards in your library.
+efd31076-2bbe-4c65-9166-19ec0e832b57|Harness Infinity|Exchange your hand and graveyard. Exile Harness Infinity.
+663d451b-f848-41cc-b541-0c6fe37d3d54|Hofri Ghostforge|Spirits you control get +1/+1 and have trample and haste. Whenever another nontoken creature you control dies, exile it. If you do, create a token that's a copy of that creature, except it's a Spirit in addition to its other types and it has "When this token leaves the battlefield, return the exiled card to its owner's graveyard."
+985f9dd7-e693-48ff-9dd6-a1a3cbaa236b|Magma Opus|Magma Opus deals 4 damage divided as you choose among any number of targets. Tap two target permanents. Create a 4/4 blue and red Elemental creature token. Draw two cards. {U/R}{U/R}, Discard this card: Create a Treasure token.

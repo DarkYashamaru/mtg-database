@@ -1,0 +1,10 @@
+ae4249de-1b8c-4b15-8960-180557a15065|Animal Friend|Enchant creature Enchanted creature has "Whenever this creature attacks, create a 1/1 green Squirrel creature token. Put a +1/+1 counter on that token for each Aura and Equipment attached to this creature other than Animal Friend."
+b761f6d9-1063-40f8-a3f1-25b1f9b46963|Auramancer's Guise|Enchant creature Enchanted creature gets +2/+2 for each Aura attached to it and has vigilance.
+d9dbe40f-38e9-460a-b84f-4aa22650017e|Champion of the Flame|Trample This creature gets +2/+2 for each Aura and Equipment attached to it.
+9f148f1f-53c5-477d-ba91-a2415db65adf|Evershrike|Flying This creature gets +2/+2 for each Aura attached to it. {X}{W/B}{W/B}: Return this card from your graveyard to the battlefield. You may put an Aura card with mana value X or less from your hand onto the battlefield attached to it. If you don't, exile this creature.
+3b19054c-ba33-44b4-b328-bb8ea3f52dab|Gatherer of Graces|This creature gets +1/+1 for each Aura attached to it. Sacrifice an Aura: Regenerate this creature.
+2fa4e241-6b2f-4372-8bb6-a876e5ae7c50|Graceblade Artisan|This creature gets +2/+2 for each Aura attached to it.
+f3d3ed94-f32c-4a67-8e2a-765e454a80df|Gunner Conscript|Trample This creature gets +1/+1 for each Aura and Equipment attached to it. When this creature dies, if it was enchanted, create a Junk token. When this creature dies, if it was equipped, create a Junk token.
+56940b6c-90ab-491b-a88a-4cd4a8adfbdb|Heavenly Blademaster|Flying, double strike When this creature enters, you may attach any number of Auras and Equipment you control to it. Other creatures you control get +1/+1 for each Aura and Equipment attached to this creature.
+10c48d19-d91f-4674-b186-477acaf08e5a|Kellan, the Fae-Blooded // Birthright Boon|Search your library for an Aura or Equipment card, reveal it, put it into your hand, then shuffle. // Double strike Other creatures you control get +1/+0 for each Aura and Equipment attached to Kellan.
+2bfc7467-1316-43d3-9ca6-ff36cc2de607|Kor Spiritdancer|This creature gets +2/+2 for each Aura attached to it. Whenever you cast an Aura spell, you may draw a card.

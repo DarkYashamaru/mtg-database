@@ -1,0 +1,1 @@
+a57ad23b-cff3-45e5-98b3-1b20224aaa19|Chandra's Defeat|Chandra's Defeat deals 5 damage to target red creature or red planeswalker. If that permanent is a Chandra planeswalker, you may discard a card. If you do, draw a card.

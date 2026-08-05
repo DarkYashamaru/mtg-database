@@ -1,0 +1,1 @@
+70f26726-0373-4e50-a1de-37392ca94890|Ox Drover|Vigilance This creature can't be blocked by Oxen. Whenever this creature enters or attacks, target opponent creates a 2/4 white Ox creature token and you draw a card.

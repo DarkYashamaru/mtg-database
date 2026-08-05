@@ -1,0 +1,10 @@
+d72b8254-3df8-431b-955a-ec2aea493e2b|Bladestitched Skaab|Other Zombies you control get +1/+0.
+419a8ab2-cff6-4811-a559-8791c9bb3d8e|Bloodtithe Harvester|When this creature enters, create a Blood token. (It's an artifact with "{1}, {T}, Discard a card, Sacrifice this token: Draw a card.") {T}, Sacrifice this creature: Target creature gets -X/-X until end of turn, where X is twice the number of Blood tokens you control. Activate only as a sorcery.
+14d5fdb3-14a3-461d-8515-a520c2c9e666|Fleshtaker|Whenever you sacrifice another creature, you gain 1 life and scry 1. (Look at the top card of your library. You may put that card on the bottom.) {1}, Sacrifice another creature: This creature gets +2/+2 until end of turn.
+86783f8d-26c9-4b8c-a697-ab6facafeb67|Grizzly Ghoul|Trample This creature enters with a +1/+1 counter on it for each creature that died this turn.
+d8fc015c-7e6d-441d-bbeb-98ca74b21314|Join the Dance|Create two 1/1 white Human creature tokens. Flashback {3}{G}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+bc9ac394-15b6-4d95-acca-5dc247235d2b|Markov Waltzer|Flying, haste At the beginning of combat on your turn, up to two target creatures you control each get +1/+0 until end of turn.
+d28b7c07-ef65-4187-a15e-2180bdc593d1|Spectral Shepherd|Flying {1}{U}: Return target Spirit you control to its owner's hand.
+41fd1557-8dba-4bbf-9954-5c4f4f541812|Ulrich's Kindred|Trample {3}{G}: Target attacking Wolf or Werewolf gains indestructible until end of turn. (Damage and effects that say "destroy" don't destroy it.)
+3e969073-76cc-4a2c-9abd-3a4094488fe5|Vilespawn Spider|Reach At the beginning of your upkeep, mill a card. (Put the top card of your library into your graveyard.) {2}{G}{U}, {T}, Sacrifice this creature: Create a 1/1 green Insect creature token for each creature card in your graveyard. Activate only as a sorcery.
+0fa886c2-9b58-4368-b2d0-e619c62a554f|Wandering Mind|Flying When this creature enters, look at the top six cards of your library. You may reveal a noncreature, nonland card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.

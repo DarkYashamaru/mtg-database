@@ -1,0 +1,5 @@
+da93264e-4e04-401a-9809-e4e1056cf604|Inkshield|Prevent all combat damage that would be dealt to you this turn. For each 1 damage prevented this way, create a 2/1 white and black Inkling creature token with flying.
+25e1d5fe-c2d8-4a11-ad54-bf1626f9ab45|Oversimplify|Exile all creatures. Each player creates a 0/0 green and blue Fractal creature token and puts a number of +1/+1 counters on it equal to the total power of creatures they controlled that were exiled this way.
+e197104f-5382-4cb2-8afe-5ca0594629c2|Reinterpret|Counter target spell. You may cast a spell with equal or lesser mana value from your hand without paying its mana cost.
+913ec957-5f4e-46b4-a819-9448837f72a3|Revival Experiment|For each permanent type, return up to one card of that type from your graveyard to the battlefield. You lose 3 life for each card returned this way. Exile Revival Experiment.
+34143cfa-aa48-481c-af42-1240af174b80|Wake the Past|Return all artifact cards from your graveyard to the battlefield. They gain haste until end of turn.

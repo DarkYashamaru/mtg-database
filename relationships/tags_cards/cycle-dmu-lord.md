@@ -1,0 +1,5 @@
+ef693b9f-11e3-49bf-8387-b8f480b9007a|Leaf-Crowned Visionary|Other Elves you control get +1/+1. Whenever you cast an Elf spell, you may pay {G}. If you do, draw a card.
+1e080c7d-102c-4d28-bcb9-62b36d400d13|Rundvelt Hordemaster|Other Goblins you control get +1/+1. Whenever this creature or another Goblin you control dies, exile the top card of your library. If it's a Goblin creature card, you may cast that card until the end of your next turn.
+cf42a7e3-71ee-40b8-a6ca-0368c746e128|Shadow-Rite Priest|Other Clerics you control get +1/+1. {3}{B}{B}, {T}, Sacrifice another Cleric: Search your library for a black creature card, put it onto the battlefield, then shuffle.
+ba21f18e-ee65-4c10-92c9-b9fb41510eba|Valiant Veteran|Other Soldiers you control get +1/+1. {3}{W}{W}, Exile this card from your graveyard: Put a +1/+1 counter on each Soldier you control.
+4246b503-0da8-4de7-9343-9dfb3c3672df|Vodalian Hexcatcher|Flash Other Merfolk you control get +1/+1. Sacrifice a Merfolk: Counter target noncreature spell unless its controller pays {1}.

@@ -1,0 +1,6 @@
+913b57de-f921-40ea-9124-0da35a269181|Carry Away|Enchant Equipment When this Aura enters, unattach enchanted Equipment. You control enchanted Equipment.
+cbf68ddd-596f-4b2d-b93c-3b7976ba4d37|Fumble|Return target creature to its owner's hand. Gain control of all Auras and Equipment that were attached to it, then attach them to another creature.
+4c95b2fe-d107-44f9-b877-8bd4799f5a65|Grip of Phyresis|Gain control of target Equipment, then create a 0/0 black Phyrexian Germ creature token and attach that Equipment to it.
+e911f9d9-da04-4997-a8d7-449b566cd1ce|Murderous Spoils|Destroy target nonblack creature. It can't be regenerated. You gain control of all Equipment that were attached to it. (This effect lasts indefinitely.)
+a483b1fd-751a-447e-8e4f-a54b1c194d2c|Ogre Geargrabber|Whenever this creature attacks, gain control of target Equipment an opponent controls until end of turn. Attach it to this creature. When you lose control of that Equipment, unattach it.
+17c0cf45-a031-40e8-a37f-eda98a8f785b|Stolen Uniform|Choose target creature you control and target Equipment. Gain control of that Equipment until end of turn. Attach it to the chosen creature. When you lose control of that Equipment this turn, if it's attached to a creature you control, unattach it.

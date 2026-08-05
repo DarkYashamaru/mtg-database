@@ -1,0 +1,1 @@
+7fd2beb8-f823-4723-beec-e59b62127490|Magda, the Hoardmaster|Whenever you commit a crime, create a tapped Treasure token. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.) Sacrifice three Treasures: Create a 4/4 red Scorpion Dragon creature token with flying and haste. Activate only as a sorcery.

@@ -1,0 +1,4 @@
+f48b2349-797e-4e79-aea7-2413e78129e1|Morgul-Knife Wound|Enchant creature Enchanted creature gets -3/-0 and has "At the beginning of your upkeep, exile this creature unless you pay 2 life."
+9d973df5-b2e8-4af8-8379-0f8282e1e62a|Parasitic Bond|Enchant creature At the beginning of the upkeep of enchanted creature's controller, this Aura deals 2 damage to that player.
+aad212b2-57ba-4e70-869b-636842eb7a88|Stab Wound|Enchant creature Enchanted creature gets -2/-2. At the beginning of the upkeep of enchanted creature's controller, that player loses 2 life.
+371e8e29-f569-4b23-bae4-cf89e5b09fd3|Traveling Plague|Enchant creature At the beginning of each upkeep, put a plague counter on this Aura. Enchanted creature gets -1/-1 for each plague counter on this Aura. When enchanted creature leaves the battlefield, that creature's controller returns this Aura from its owner's graveyard to the battlefield.

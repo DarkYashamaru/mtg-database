@@ -1,0 +1,2 @@
+37bd9e54-c93e-4fec-9b21-6940da75ab7a|Pull Through the Weft|Return up to two target nonland permanent cards from your graveyard to your hand, then return up to two target land cards from your graveyard to the battlefield tapped.
+b93eaf66-91b3-44da-851c-79810901be0c|Wayspeaker Bodyguard|When this creature enters, return target nonland permanent card with mana value 2 or less from your graveyard to your hand. Flurry — Whenever you cast your second spell each turn, tap target creature an opponent controls.

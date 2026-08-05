@@ -1,0 +1,8 @@
+91520db8-2d50-4c17-9f0e-2f92f63285f7|Avizoa|Flying {0}: This creature gets +2/+2 until end of turn. You skip your next untap step. Activate only once each turn.
+0e7b02fd-f2a3-493c-939b-ff9bca337774|Brine Elemental|Morph {5}{U}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.) When this creature is turned face up, each opponent skips their next untap step.
+a3386efe-d6c5-4853-a4db-61460da3364a|Dovin, Architect of Law|+1: You gain 2 life and draw a card. −1: Tap target creature. It doesn't untap during its controller's next untap step. −9: Tap all permanents target opponent controls. That player skips their next untap step.
+c8f69b48-a3b2-4324-852d-11fad19d6432|Sands of Time|Each player skips their untap step. At the beginning of each player's upkeep, that player simultaneously untaps each tapped artifact, creature, and land they control and taps each untapped artifact, creature, and land they control.
+d5b9b75d-4bf0-4328-9bb3-7b260a0c46af|Savor the Moment|Take an extra turn after this one. Skip the untap step of that turn.
+8658cd14-6826-4308-b6ce-fcfd8f2e17ed|Shisato, Whispering Hunter|At the beginning of your upkeep, sacrifice a Snake. Whenever Shisato deals combat damage to a player, that player skips their next untap step.
+a8cf1379-0195-4e11-b994-481ef1284245|Stasis|Players skip their untap steps. At the beginning of your upkeep, sacrifice this enchantment unless you pay {U}.
+5c2d0ead-8bfc-4ca7-9b38-2fc07af1c1d5|Yosei, the Morning Star|Flying When Yosei dies, target player skips their next untap step. Tap up to five target permanents that player controls.

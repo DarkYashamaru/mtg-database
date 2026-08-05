@@ -1,0 +1,1 @@
+40eb9904-dea3-47cf-963a-04821f98ba64|The Black Gate|As The Black Gate enters, you may pay 3 life. If you don't, it enters tapped. {T}: Add {B}. {1}{B}, {T}: Choose a player with the most life or tied for most life. Target creature can't be blocked by creatures that player controls this turn.

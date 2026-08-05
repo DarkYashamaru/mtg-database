@@ -1,0 +1,1 @@
+49e9fba7-8465-4bbb-95db-73a7e149f494|Maelstrom of the Spirit Dragon|{T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast a Dragon spell or an Omen spell. {4}, {T}, Sacrifice this land: Search your library for a Dragon card, reveal it, put it into your hand, then shuffle.

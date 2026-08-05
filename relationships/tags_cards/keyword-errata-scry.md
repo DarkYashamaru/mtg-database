@@ -1,0 +1,3 @@
+431838a8-f020-4e4e-a6f4-2d4ca27c56df|Darksteel Pendant|Indestructible (Effects that say "destroy" don't destroy this artifact.) {1}, {T}: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+713332c1-5bd8-400f-bfff-c1ca0697a043|Opt|Scry 1. (Look at the top card of your library. You may put that card on the bottom.) Draw a card.
+5baa7abe-5bdf-40ce-9a83-a93b7cae71a3|Soldevi Excavations|If this land would enter, sacrifice an untapped Island instead. If you do, put this land onto the battlefield. If you don't, put it into its owner's graveyard. {T}: Add {C}{U}. {1}, {T}: Scry 1.

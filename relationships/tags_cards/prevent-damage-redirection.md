@@ -1,0 +1,3 @@
+f7be3da5-55b2-46f2-a5aa-277dee242b94|Lava Burst|Lava Burst deals X damage to any target. If Lava Burst would deal damage to a creature, that damage can't be prevented or dealt instead to another permanent or player.
+c309ec42-34a0-4083-a36c-7814643d7960|Mandate of Peace|Cast this spell only during combat. Your opponents can't cast spells this turn. End the combat phase. (Remove all attackers and blockers from combat. Exile all spells and abilities from the stack, including this spell.)
+84050a10-e1f1-413e-aa21-5c1f47bb2a64|Whippoorwill|{G}{G}, {T}: Target creature can't be regenerated this turn. Damage that would be dealt to that creature this turn can't be prevented or dealt instead to another permanent or player. When the creature dies this turn, exile the creature.

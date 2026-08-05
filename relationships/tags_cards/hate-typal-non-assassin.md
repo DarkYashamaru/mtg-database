@@ -1,0 +1,1 @@
+da9ec010-8b42-4927-b602-4e96bced4e99|All-Fates Stalker|When this creature enters, exile up to one target non-Assassin creature until this creature leaves the battlefield. Warp {1}{W} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)

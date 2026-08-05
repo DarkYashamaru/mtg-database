@@ -1,0 +1,10 @@
+fd19a009-d1ab-4148-a829-3d4c3af1b0b2|Archelos, Lagoon Mystic|As long as Archelos is tapped, other permanents enter tapped. As long as Archelos is untapped, other permanents enter untapped.
+ceef2d5a-77ea-4e56-9806-fd1a2d5be400|Archon of Emeria|Flying Each player can't cast more than one spell each turn. Nonbasic lands your opponents control enter tapped.
+b68bc097-482a-4fe5-9fca-df5941f3dc5c|Ashling's Prerogative|As this enchantment enters, choose odd or even. (Zero is even.) Each creature with mana value of the chosen quality has haste. Each creature without mana value of the chosen quality enters tapped.
+55f3c721-e13a-406e-bc8e-d6cdc91ac477|Authority of the Consuls|Creatures your opponents control enter tapped. Whenever a creature an opponent controls enters, you gain 1 life.
+5d998c09-7d89-4265-ada4-6d80cbf56dae|Blind Obedience|Extort (Whenever you cast a spell, you may pay {W/B}. If you do, each opponent loses 1 life and you gain that much life.) Artifacts and creatures your opponents control enter tapped.
+3dcc35f3-74dc-46a8-8aa9-3411189f0547|Charismatic Conqueror|Vigilance Whenever an artifact or creature an opponent controls enters untapped, they may tap that permanent. If they don't, you create a 1/1 white Vampire creature token with lifelink.
+56fd0752-9fb0-4c05-90e5-c3b268b57c6f|Cone of Cold|Roll a d20. 1—9 \| Tap all creatures your opponents control. 10—19 \| Tap all creatures your opponents control. Those creatures don't untap during their controllers' next untap steps. 20 \| Tap all creatures your opponents control. Those creatures don't untap during their controllers' next untap steps. Until your next turn, creatures your opponents control enter tapped.
+7129bdec-83e0-4c1e-a87b-ac0da1a714b3|Dauntless Dismantler|Artifacts your opponents control enter tapped. {X}{X}{W}, Sacrifice this creature: Destroy each artifact with mana value X.
+1c367fa2-844a-4083-9484-c6def1dee8a8|Due Respect|Permanents enter tapped this turn. Draw a card.
+f6828a87-eebe-48dd-873e-251624107e38|False Floor|This artifact enters tapped. Creatures enter tapped. {2}, {T}, Exile this artifact: Exile all untapped creatures. Activate only as a sorcery.

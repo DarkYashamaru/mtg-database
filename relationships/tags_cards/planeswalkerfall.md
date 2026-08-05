@@ -1,0 +1,1 @@
+2a31cd16-fb30-4bb0-b775-d5e8b9221dd4|Gatewatch Beacon|This artifact enters with three loyalty counters on it. {T}: Add {W}. Whenever a planeswalker you control enters, if this artifact has loyalty counters on it, you may move a loyalty counter from this artifact onto that planeswalker.

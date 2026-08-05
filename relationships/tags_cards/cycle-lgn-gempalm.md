@@ -1,0 +1,5 @@
+cb9e6860-591f-4758-aaa3-14efa0a775f5|Gempalm Avenger|Cycling {2}{W} ({2}{W}, Discard this card: Draw a card.) When you cycle this card, Soldier creatures get +1/+1 and gain first strike until end of turn.
+467ea3e3-7767-405a-9d1a-8fa5de696376|Gempalm Incinerator|Cycling {1}{R} ({1}{R}, Discard this card: Draw a card.) When you cycle this card, you may have it deal X damage to target creature, where X is the number of Goblins on the battlefield.
+bd532f8d-789f-4ee1-a2f3-ae30e8282c76|Gempalm Polluter|Cycling {B}{B} ({B}{B}, Discard this card: Draw a card.) When you cycle this card, you may have target player lose life equal to the number of Zombies on the battlefield.
+c3162232-b713-44be-b2af-29d801279ab2|Gempalm Sorcerer|Cycling {2}{U} ({2}{U}, Discard this card: Draw a card.) When you cycle this card, Wizard creatures gain flying until end of turn.
+48792146-e20c-4d93-83af-f746069fc6f1|Gempalm Strider|Cycling {2}{G}{G} ({2}{G}{G}, Discard this card: Draw a card.) When you cycle this card, Elf creatures get +2/+2 until end of turn.

@@ -1,0 +1,1 @@
+e22bb590-9c9a-4a99-8cd7-1dbe742f4cdd|Brotherhood Scribe|Metalcraft — {T}: You get {E} (an energy counter). Activate only if you control three or more artifacts. Whenever you get one or more {E} during your turn, creatures you control get +1/+1 until end of turn.

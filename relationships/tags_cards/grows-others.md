@@ -1,0 +1,2 @@
+7063abe1-87dd-4526-9867-f7ce255b2cf0|Bellowing Aegisaur|Enrage — Whenever this creature is dealt damage, put a +1/+1 counter on each other creature you control.
+70787d8b-0a40-43ea-837a-9617dc13e7e5|Vigor|Trample If damage would be dealt to another creature you control, prevent that damage. Put a +1/+1 counter on that creature for each 1 damage prevented this way. When Vigor is put into a graveyard from anywhere, shuffle it into its owner's library.

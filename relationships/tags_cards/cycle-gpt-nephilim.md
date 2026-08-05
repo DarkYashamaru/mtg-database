@@ -1,0 +1,5 @@
+634bd800-8caa-47ae-8b70-2c66baf9a355|Dune-Brood Nephilim|Whenever this creature deals combat damage to a player, create a 1/1 colorless Sand creature token for each land you control.
+d6b6d965-1401-4566-adb3-90b03218af8d|Glint-Eye Nephilim|Whenever this creature deals combat damage to a player, draw that many cards. {1}, Discard a card: This creature gets +1/+1 until end of turn.
+3846b499-59c8-4e77-b46a-1d697bcbded7|Ink-Treader Nephilim|Whenever a player casts an instant or sorcery spell, if that spell targets only this creature, copy the spell for each other creature that spell could target. Each copy targets a different one of those creatures.
+26edbbb8-331e-42a6-a550-acc7e9efb32c|Witch-Maw Nephilim|Whenever you cast a spell, you may put two +1/+1 counters on this creature. Whenever this creature attacks, it gains trample until end of turn if its power is 10 or greater.
+7e9d61d3-6ba7-45ac-a55c-a2f36595c5d2|Yore-Tiller Nephilim|Whenever this creature attacks, return target creature card from your graveyard to the battlefield tapped and attacking.

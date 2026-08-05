@@ -1,0 +1,2 @@
+02847b0d-03a1-4e30-902e-60bdf6952c58|Greater Werewolf|At end of combat, put a -0/-2 counter on each creature blocking or blocked by this creature.
+5542afeb-285f-4889-9d09-46ce20d0d189|Lesser Werewolf|{B}: If this creature's power is 1 or more, it gets -1/-0 until end of turn and put a -0/-1 counter on target creature blocking or blocked by this creature. Activate only during the declare blockers step.

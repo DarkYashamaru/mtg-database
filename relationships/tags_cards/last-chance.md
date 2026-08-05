@@ -1,0 +1,6 @@
+271d8db6-8606-46d7-9812-75aa22fcfd8e|Alchemist's Gambit|Cleave {4}{U}{U}{R} (You may cast this spell for its cleave cost. If you do, remove the words in square brackets.) Take an extra turn after this one. During that turn, damage can't be prevented. [At the beginning of that turn's end step, you lose the game.] Exile Alchemist's Gambit.
+324af60d-142b-4b6c-afe9-6aa36267d5ee|Chance for Glory|Creatures you control gain indestructible. Take an extra turn after this one. At the beginning of that turn's end step, you lose the game.
+8d0adc5c-3fdd-4e22-b783-5651f8e57b65|Final Fortune|Take an extra turn after this one. At the beginning of that turn's end step, you lose the game.
+e611a3e0-eb0e-466e-a771-51310eeb34cd|Glorious End|End the turn. (Exile all spells and abilities from the stack, including this card. The player whose turn it is discards down to their maximum hand size. Damage wears off, and "this turn" and "until end of turn" effects end.) At the beginning of your next end step, you lose the game.
+360039a5-1cbd-4ee3-8f94-21b5348e106a|Last Chance|Take an extra turn after this one. At the beginning of that turn's end step, you lose the game.
+574044cf-2e2f-4b5c-b4d1-cf05ba814ab2|Warrior's Oath|Take an extra turn after this one. At the beginning of that turn's end step, you lose the game.

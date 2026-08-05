@@ -1,0 +1,10 @@
+bf034a20-e362-4f38-9bf9-857777c62598|Acidic Dagger|{4}, {T}: Whenever target creature deals combat damage to a non-Wall creature this turn, destroy that non-Wall creature. When the targeted creature leaves the battlefield this turn, sacrifice this artifact. Activate only before blockers are declared.
+68b06917-7f83-47d4-a466-4e6698cae56d|Cloak of Invisibility|Enchant creature Enchanted creature has phasing and can't be blocked except by Walls. (It phases in or out before its controller untaps during each of their untap steps. While it's phased out, it's treated as though it doesn't exist.)
+af354337-424c-4c7e-8ca5-6149261368d2|Cockatrice|Flying Whenever this creature blocks or becomes blocked by a non-Wall creature, destroy that creature at end of combat.
+02a8a4e6-2081-4903-81ad-96e5a949dff8|Coils of the Medusa|Enchant creature Enchanted creature gets +1/-1. Sacrifice this Aura: Destroy all non-Wall creatures blocking enchanted creature.
+a4374baa-a846-4b34-afbf-6bb7feb4648c|Electric Seaweed|Defender, haste When this creature enters, until end of turn, whenever another creature dies, this creature deals 1 damage to each non-Wall creature. {T}: This creature deals 1 damage to any target.
+9a6ff511-3c8f-446e-8cad-b8997a753958|Elven Riders|This creature can't be blocked except by Walls and/or creatures with flying.
+3f79780a-accd-4782-94a8-a6e71fb3ada7|Evil Eye of Orms-by-Gore|Non-Eye creatures you control can't attack. This creature can't be blocked except by Walls.
+2d6a387f-7ad4-419e-951a-9dcd4c9ac823|Flow of Maggots|Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) This creature can't be blocked by non-Wall creatures.
+2cf5ce1f-d5f6-44cd-96e5-87d990d7e770|Infernal Medusa|Whenever this creature blocks a creature, destroy that creature at end of combat. Whenever this creature becomes blocked by a non-Wall creature, destroy that creature at end of combat.
+de26b0c6-dfb7-45a8-9d7f-f8d45522d675|Invisibility|Enchant creature Enchanted creature can't be blocked except by Walls.

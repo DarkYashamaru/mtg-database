@@ -1,0 +1,10 @@
+4867cc47-de84-4958-b1de-4a0a5050210e|Battletide Alchemist|If a source would deal damage to a player, you may prevent X of that damage, where X is the number of Clerics you control.
+b437c963-def5-40d6-b567-ae9f1d2a0fa5|Benevolent Unicorn|If a spell would deal damage to a permanent or player, it deals that much damage minus 1 to that permanent or player instead.
+618f29e1-0ea0-4457-91a6-7210f7619c9a|Daunting Defender|If a source would deal damage to a Cleric creature you control, prevent 1 of that damage.
+5d520dd4-7986-41fa-ab94-9226da751668|Djeru, With Eyes Open|Vigilance When Djeru enters, you may search your library for a planeswalker card, reveal it, put it into your hand, then shuffle. If a source would deal damage to a planeswalker you control, prevent 1 of that damage.
+fe9106e3-c637-4995-9dc1-cae0be31f23b|Guardian Seraph|Flying If a source an opponent controls would deal damage to you, prevent 1 of that damage.
+ecc3e2ac-6534-4350-92f4-2c1f578d854e|Hedron-Field Purists|Level up {2}{W} ({2}{W}: Put a level counter on this. Level up only as a sorcery.) LEVEL 1-4 1/4 If a source would deal damage to you or a creature you control, prevent 1 of that damage. LEVEL 5+ 2/5 If a source would deal damage to you or a creature you control, prevent 2 of that damage.
+7e529372-cec7-40d7-a1ac-1dce1764f8b2|Lashknife Barrier|When this enchantment enters, draw a card. If a source would deal damage to a creature you control, it deals that much damage minus 1 to that creature instead.
+c3469de8-4bdb-42d4-9fc0-75fe31c3f6e5|Lymph Sliver|All Sliver creatures have absorb 1. (If a source would deal damage to a Sliver, prevent 1 of that damage.)
+c420d9c8-dc54-46b8-bd22-39c21019c3d7|Orbs of Warding|You have hexproof. (You can't be the target of spells or abilities your opponents control.) If a creature would deal damage to you, prevent 1 of that damage.
+30b99bee-c16e-4936-b688-1a256dd0c196|Plated Pegasus|Flash (You may cast this spell any time you could cast an instant.) Flying If a spell would deal damage to a permanent or player, prevent 1 damage that spell would deal to that permanent or player.

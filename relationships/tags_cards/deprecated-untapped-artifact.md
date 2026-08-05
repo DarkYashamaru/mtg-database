@@ -1,0 +1,4 @@
+d26b27db-a567-4631-b4b6-7294222fbdd1|Howling Mine|At the beginning of each player's draw step, if this artifact is untapped, that player draws an additional card.
+0004ebd0-dfd6-4276-b4a6-de0003e94237|Static Orb|As long as this artifact is untapped, players can't untap more than two permanents during their untap steps.
+4d330c40-3d72-4528-a254-d036683958d3|Voodoo Doll|At the beginning of your upkeep, put a pin counter on this artifact. At the beginning of your end step, if this artifact is untapped, destroy this artifact and it deals damage to you equal to the number of pin counters on it. {X}{X}, {T}: This artifact deals damage equal to the number of pin counters on it to any target. X is the number of pin counters on this artifact.
+1dcbd583-3388-4b34-a7cd-131648aa6abd|Winter Orb|As long as this artifact is untapped, players can't untap more than one land during their untap steps.

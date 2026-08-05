@@ -1,0 +1,1 @@
+a08f79b7-d66f-47da-9670-afd7409c0c5c|Rydia, Summoner of Mist|Landfall — Whenever a land you control enters, you may discard a card. If you do, draw a card. Summon — {X}, {T}: Return target Saga card with mana value X from your graveyard to the battlefield with a finality counter on it. It gains haste until end of turn. Activate only as a sorcery.

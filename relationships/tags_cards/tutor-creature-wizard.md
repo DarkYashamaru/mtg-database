@@ -1,0 +1,2 @@
+c4fa89c7-f00d-42ef-bd67-407a288cd054|Step Through|Return two target creatures to their owners' hands. Wizardcycling {2} ({2}, Discard this card: Search your library for a Wizard card, reveal it, put it into your hand, then shuffle.)
+271b37b6-b60b-4687-bd82-ecacf3b66cb3|Vedalken Aethermage|Flash (You may cast this spell any time you could cast an instant.) When this creature enters, return target Sliver to its owner's hand. Wizardcycling {3} ({3}, Discard this card: Search your library for a Wizard card, reveal it, put it into your hand, then shuffle.)

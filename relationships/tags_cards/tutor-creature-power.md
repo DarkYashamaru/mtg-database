@@ -1,0 +1,3 @@
+4d6a1391-817a-4ddc-840d-886b138eeb3f|Imperial Recruiter|When this creature enters, search your library for a creature card with power 2 or less, reveal it, put it into your hand, then shuffle.
+5b1dc298-403d-484d-90dd-e1c9b73e0188|Rootless Yew|When this creature dies, search your library for a creature card with power or toughness 6 or greater, reveal it, put it into your hand, then shuffle.
+4fdde84f-4103-4209-a296-60d1bf94af65|Wild Pair|Whenever a creature enters, if you cast it from your hand, you may search your library for a creature card with the same total power and toughness, put it onto the battlefield, then shuffle.

@@ -1,0 +1,5 @@
+0766cf02-ea55-4271-8c73-213c93b0baac|Blinding Beam|Choose one — • Tap two target creatures. • Creatures don't untap during target player's next untap step. Entwine {1} (Choose both if you pay the entwine cost.)
+8b239262-c392-4ec6-9ae1-8b4a076e4bf0|Dream's Grip|Choose one — • Tap target permanent. • Untap target permanent. Entwine {1} (Choose both if you pay the entwine cost.)
+8a640369-59ab-4506-b473-1f804721414c|Incite War|Choose one — • Creatures target player controls attack this turn if able. • Creatures you control gain first strike until end of turn. Entwine {2} (Choose both if you pay the entwine cost.)
+1c586d8a-9d1a-48a7-bb3e-9b2c0c329f8d|Journey of Discovery|Choose one — • Search your library for up to two basic land cards, reveal them, put them into your hand, then shuffle. • You may play up to two additional lands this turn. Entwine {2}{G} (Choose both if you pay the entwine cost.)
+dcf503b5-c7ef-49e5-87ed-3b8758197446|Wail of the Nim|Choose one — • Regenerate each creature you control. • Wail of the Nim deals 1 damage to each creature and each player. Entwine {B} (Choose both if you pay the entwine cost.)

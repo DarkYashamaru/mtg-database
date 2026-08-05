@@ -1,0 +1,4 @@
+e101b744-9175-4aa5-bf80-d6944359e538|Airbending Lesson|Airbend target nonland permanent. (Exile it. While it's exiled, its owner may cast it for {2} rather than its mana cost.) Draw a card.
+5e113f0f-4469-4276-82e1-0a804f3de444|Earthbending Lesson|Earthbend 4. (Target land you control becomes a 0/0 creature with haste that's still a land. Put four +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)
+a9282f91-638e-414b-8b3d-9a99e30aec96|Firebending Lesson|Kicker {4} (You may pay an additional {4} as you cast this spell.) Firebending Lesson deals 2 damage to target creature. If this spell was kicked, it deals 5 damage to that creature instead.
+3d28886c-46bf-4d2e-a257-cb9016cc3573|Waterbending Lesson|Draw three cards. Then discard a card unless you waterbend {2}. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)

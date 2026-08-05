@@ -1,0 +1,3 @@
+db70ddae-0ac1-47f2-9158-8448e337a08f|Cheeky House-Mouse // Squeak By|// Target creature you control gets +1/+1 until end of turn. It can't be blocked by creatures with power 3 or greater this turn.
+245d0ccf-87b6-460a-8b99-9e2079f2d375|Delney, Streetwise Lookout|Creatures you control with power 2 or less can't be blocked by creatures with power 3 or greater. If a triggered ability of a creature you control with power 2 or less triggers, that ability triggers an additional time.
+35e2730e-b3aa-4080-aae8-7b3ad1e59848|Kithkin Armor|Enchant creature Enchanted creature can't be blocked by creatures with power 3 or greater. Sacrifice this Aura: The next time a source of your choice would deal damage to enchanted creature this turn, prevent that damage.

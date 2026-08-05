@@ -1,0 +1,4 @@
+4ab1411e-b255-4a6e-b81a-5de7b2d4ea12|Sunscape Apprentice|{G}, {T}: Target creature gets +1/+1 until end of turn. {U}, {T}: Put target creature you control on top of its owner's library.
+c8fd2232-e499-4889-a2ca-e486ea87d02b|Sunscape Battlemage|Kicker {1}{G} and/or {2}{U} (You may pay an additional {1}{G} and/or {2}{U} as you cast this spell.) When this creature enters, if it was kicked with its {1}{G} kicker, destroy target creature with flying. When this creature enters, if it was kicked with its {2}{U} kicker, draw two cards.
+615603bb-3899-4419-9444-e4b64c94a438|Sunscape Familiar|Defender (This creature can't attack.) Green spells and blue spells you cast cost {1} less to cast.
+e3be8e19-cec1-43ae-9e22-d7cb374570bb|Sunscape Master|{G}{G}, {T}: Creatures you control get +2/+2 until end of turn. {U}{U}, {T}: Return target creature to its owner's hand.

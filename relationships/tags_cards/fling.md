@@ -1,0 +1,10 @@
+25fc274f-d5af-4174-b8e8-c2e65bb4c13f|Airdrop Condor|Flying {1}{R}, Sacrifice a Goblin creature: This creature deals damage equal to the sacrificed creature's power to any target.
+f3b70d61-e33e-4243-aac9-e7bd9ba40acb|Barrage Tyrant|Devoid (This card has no color.) {2}{R}, Sacrifice another colorless creature: This creature deals damage equal to the sacrificed creature's power to any target.
+b704f231-f64c-49fc-84f6-0fc53081bcd0|Blood-Chin Fanatic|{1}{B}, Sacrifice another Warrior creature: Target player loses X life and you gain X life, where X is the sacrificed creature's power.
+d5bd7c0b-c412-47ed-afb8-1a9ba04be77c|Bloodfire Infusion|Enchant creature you control {R}, Sacrifice enchanted creature: This Aura deals damage equal to the sacrificed creature's power to each creature.
+84d47913-53ac-4d4d-bac3-bc0306d43e12|Bloodshot Cyclops|{T}, Sacrifice a creature: This creature deals damage equal to the sacrificed creature's power to any target.
+b816b3cc-ae4b-4fb7-8b1a-e01ab83459a3|Brion Stoutarm|Lifelink {R}, {T}, Sacrifice another creature: Brion Stoutarm deals damage equal to the sacrificed creature's power to target player or planeswalker.
+0e7405e3-e9e6-4213-a73f-e0c01a7d6721|Callous Sell-Sword // Burn Together|Target creature you control deals damage equal to its power to any other target. Then sacrifice it. // This creature enters with a +1/+1 counter on it for each creature that died under your control this turn.
+4d98aea2-b4ff-4903-ba28-a53fbfaad6b1|Final Strike|As an additional cost to cast this spell, sacrifice a creature. Final Strike deals damage to target opponent or planeswalker equal to the sacrificed creature's power.
+24227761-b50e-4b9e-93a2-e82d053b3e3d|Fling|As an additional cost to cast this spell, sacrifice a creature. Fling deals damage equal to the sacrificed creature's power to any target.
+c28a7641-49e3-43b1-a366-8d6e9c8dab9c|Freyalise Supplicant|{T}, Sacrifice a red or white creature: This creature deals damage to any target equal to half the sacrificed creature's power, rounded down.

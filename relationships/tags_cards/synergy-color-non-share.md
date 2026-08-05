@@ -1,0 +1,1 @@
+f6209f18-9f40-44b4-9a8c-3445eda89928|Heroic Defiance|Enchant creature Enchanted creature gets +3/+3 unless it shares a color with the most common color among all permanents or a color tied for most common.

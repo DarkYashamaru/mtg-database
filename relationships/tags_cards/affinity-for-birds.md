@@ -1,0 +1,1 @@
+2d995c47-e548-4fc4-9182-fef46af20ca5|Bartz and Boko|Affinity for Birds (This spell costs {1} less to cast for each Bird you control.) When Bartz and Boko enters, each other Bird you control deals damage equal to its power to target creature an opponent controls.

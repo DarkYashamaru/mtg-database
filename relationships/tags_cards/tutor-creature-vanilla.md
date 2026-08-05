@@ -1,0 +1,1 @@
+1a9bfe76-6c74-4393-b04e-461422a29ddb|Fang-Druid Summoner|Reach When this creature enters, you may search your library and/or graveyard for a creature card with no abilities, reveal it, and put it into your hand. If you search your library this way, shuffle.

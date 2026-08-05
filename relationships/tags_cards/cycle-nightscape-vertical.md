@@ -1,0 +1,4 @@
+429de3c3-3f2e-4d55-a04a-f414912aff3a|Nightscape Apprentice|{U}, {T}: Put target creature you control on top of its owner's library. {R}, {T}: Target creature gains first strike until end of turn.
+e96e68b4-cb32-4b75-a885-e1781f4b74ab|Nightscape Battlemage|Kicker {2}{U} and/or {2}{R} (You may pay an additional {2}{U} and/or {2}{R} as you cast this spell.) When this creature enters, if it was kicked with its {2}{U} kicker, return up to two target nonblack creatures to their owners' hands. When this creature enters, if it was kicked with its {2}{R} kicker, destroy target land.
+57296ea3-3c0d-49b7-bc08-0d0d8414e9ad|Nightscape Familiar|Blue spells and red spells you cast cost {1} less to cast. {1}{B}: Regenerate this creature.
+e5f9bd6b-0aa6-4f61-b101-ec194af6d632|Nightscape Master|{U}{U}, {T}: Return target creature to its owner's hand. {R}{R}, {T}: This creature deals 2 damage to target creature.

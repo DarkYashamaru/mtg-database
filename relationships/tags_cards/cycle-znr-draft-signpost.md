@@ -1,0 +1,10 @@
+b33a7ec6-b22b-41cf-9312-65add1529b51|Brushfire Elemental|Haste This creature can't be blocked by creatures with power 2 or less. Landfall — Whenever a land you control enters, this creature gets +2/+2 until end of turn.
+d7721c5e-b3c5-45c8-b757-935603dfe44b|Cleric of Life's Bond|Whenever another Cleric you control enters, you gain 1 life. Whenever you gain life for the first time each turn, put a +1/+1 counter on this creature.
+63324e72-e580-456a-91be-766c9f07b7b3|Kargan Warleader|Other Warriors you control get +1/+1.
+2a56fe0b-f8a9-499c-bce1-cec6cb3b66f0|Lullmage's Familiar|{T}: Add {G} or {U}. Whenever you cast a kicked spell, you gain 2 life.
+edf0e7c0-d9a1-4d29-9cee-5267d3a3978f|Moss-Pit Skeleton|Kicker {3} (You may pay an additional {3} as you cast this spell.) If this creature was kicked, it enters with three +1/+1 counters on it. Whenever one or more +1/+1 counters are put on a creature you control, if this card is in your graveyard, you may put this card on top of your library.
+ca7964a1-b4ce-412b-bcae-e0dfbb95389a|Murasa Rootgrazer|Vigilance {T}: You may put a basic land card from your hand onto the battlefield. {T}: Return target basic land you control to its owner's hand.
+f3e0aaa1-f624-4dc7-a425-7dbf27cba1ce|Ravager's Mace|When this Equipment enters, attach it to target creature you control. Equipped creature gets +1/+0 for each creature in your party and has menace. (Your party consists of up to one each of Cleric, Rogue, Warrior, and Wizard.) Equip {2}{B}{R}
+5ed445c1-8a04-4fab-91ef-4d52db95c3b5|Soaring Thought-Thief|Flash Flying As long as an opponent has eight or more cards in their graveyard, Rogues you control get +1/+0. Whenever one or more Rogues you control attack, each opponent mills two cards.
+c4f3a6c6-a123-43ad-9513-d65fbff10d02|Spoils of Adventure|This spell costs {1} less to cast for each creature in your party. (Your party consists of up to one each of Cleric, Rogue, Warrior, and Wizard.) You gain 3 life and draw three cards.
+e1c33cfe-1d48-463d-83bb-111374505194|Umara Mystic|Flying Whenever you cast an instant, sorcery, or Wizard spell, this creature gets +2/+0 until end of turn.

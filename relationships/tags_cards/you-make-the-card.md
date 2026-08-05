@@ -1,0 +1,4 @@
+33c722cf-b4bf-431f-aefd-ee96241a7fbf|Crucible of Worlds|You may play lands from your graveyard.
+2ef75cf3-30dc-4852-a6d1-1d6391fad022|Forgotten Ancient|Whenever a player casts a spell, you may put a +1/+1 counter on this creature. At the beginning of your upkeep, you may move any number of +1/+1 counters from this creature onto other creatures.
+d3beb624-f589-4ed5-97a0-11ad61481250|Vanish into Memory|Exile target creature. You draw cards equal to that creature's power. At the beginning of your next upkeep, return that card to the battlefield under its owner's control. If you do, discard cards equal to that creature's toughness.
+00fdcc19-88ed-46c3-91f0-095806228105|Waste Not|Whenever an opponent discards a creature card, create a 2/2 black Zombie creature token. Whenever an opponent discards a land card, add {B}{B}. Whenever an opponent discards a noncreature, nonland card, draw a card.

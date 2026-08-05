@@ -1,0 +1,10 @@
+f2cf087a-d89a-4145-9394-945ce41c8cca|Archway Angel|Flying When this creature enters, you gain 2 life for each Gate you control.
+9110339d-72ba-4132-801f-cd2fd738b71d|Augmenter Pugilist // Echoing Equation|Trample As long as you control eight or more lands, this creature gets +5/+5. // Choose target creature you control. Each other creature you control becomes a copy of it until end of turn, except those creatures aren't legendary.
+da307ea2-4df7-4d6b-be0f-9dc6ac93db61|Baldur's Gate|{T}: Add {C}. {2}, {T}: Add X mana of any one color, where X is the number of other Gates you control.
+d9ecb346-7745-4106-a3e1-c467a3b91ec7|Barrel Down Sokenzan|Sweep — Return any number of Mountains you control to their owner's hand. Barrel Down Sokenzan deals damage to target creature equal to twice the number of Mountains returned this way.
+8733a4fc-4068-4af4-9598-dc3d895e8556|Basilisk Gate|{T}: Add {C}. {2}, {T}: Target creature gets +X/+X until end of turn, where X is the number of Gates you control. Activate only as a sorcery.
+55f31c9c-a015-4965-a0c4-788b861dba21|Beacon of Creation|Create a 1/1 green Insect creature token for each Forest you control. Shuffle Beacon of Creation into its owner's library.
+e5b7d0c5-f478-43ef-98fd-7792122ab8f5|Ben-Ben, Akki Hermit|{T}: Ben-Ben deals damage to target attacking creature equal to the number of untapped Mountains you control.
+5e1bf23b-7fb0-45ff-8544-fce9fa3eba00|Blossoming Tortoise|Whenever this creature enters or attacks, mill three cards, then return a land card from your graveyard to the battlefield tapped. Activated abilities of lands you control cost {1} less to activate. Land creatures you control get +1/+1.
+785026c5-3f26-489c-8e26-96dd3ca6bc98|Breaker of Creation|When you cast this spell, you gain 1 life for each colorless permanent you control. Hexproof from each color Annihilator 2 (Whenever this creature attacks, defending player sacrifices two permanents of their choice.)
+066cd584-773c-4623-be53-8f6feda5a26a|Cabal Stronghold|{T}: Add {C}. {3}, {T}: Add {B} for each basic Swamp you control.

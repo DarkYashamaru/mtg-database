@@ -1,0 +1,6 @@
+f60d03ae-f45f-45b2-a0f7-108acb0a45db|Cateran Brute|{2}, {T}: Search your library for a Mercenary permanent card with mana value 2 or less, put it onto the battlefield, then shuffle.
+a2f3139e-80f6-43fb-bdb7-d45d6eb2a652|Cateran Enforcer|Fear (This creature can't be blocked except by artifact creatures and/or black creatures.) {4}, {T}: Search your library for a Mercenary permanent card with mana value 4 or less, put it onto the battlefield, then shuffle.
+938c4f2e-6dda-4ac4-b50c-40dc165b4eaa|Cateran Kidnappers|{3}, {T}: Search your library for a Mercenary permanent card with mana value 3 or less, put it onto the battlefield, then shuffle.
+c2223cdf-419d-4153-9551-705557461664|Cateran Overlord|Sacrifice a creature: Regenerate this creature. {6}, {T}: Search your library for a Mercenary permanent card with mana value 6 or less, put it onto the battlefield, then shuffle.
+415e9484-0788-4c00-bb1f-19308511114b|Cateran Persuader|{1}, {T}: Search your library for a Mercenary permanent card with mana value 1 or less, put it onto the battlefield, then shuffle.
+e7989ef3-d2a5-41c6-944c-f969d850f557|Cateran Slaver|Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.) {5}, {T}: Search your library for a Mercenary permanent card with mana value 5 or less, put it onto the battlefield, then shuffle.

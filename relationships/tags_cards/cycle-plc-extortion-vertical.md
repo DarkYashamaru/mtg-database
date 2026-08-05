@@ -1,0 +1,4 @@
+3b9369ae-8827-45d1-af85-c777cde8e1bc|Brain Gorgers|When you cast this spell, any player may sacrifice a creature of their choice. If a player does, counter Brain Gorgers. Madness {1}{B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)
+6a4ace6b-ef3a-4d11-89d7-958f98dcc445|Dash Hopes|When you cast this spell, any player may pay 5 life. If a player does, counter Dash Hopes. Counter target spell.
+248e0dfa-0bcb-402c-badf-ca59f02792f7|Phantasmagorian|When you cast this spell, any player may discard three cards. If a player does, counter Phantasmagorian. Discard three cards: Return this card from your graveyard to your hand.
+13da5255-2fc5-43a4-a44c-13a5d9ff77c3|Temporal Extortion|When you cast this spell, any player may pay half their life, rounded up. If a player does, counter Temporal Extortion. Take an extra turn after this one.

@@ -1,0 +1,5 @@
+306593b0-6ea8-476f-a3f2-e17876c1bab4|Ancient Grudge|Destroy target artifact. Flashback {G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+d9f2c571-b357-4d4d-94c5-fd47551bb842|Bump in the Night|Target opponent loses 3 life. Flashback {5}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+269208e1-353c-4334-941a-2177f6665fba|Feeling of Dread|Tap up to two target creatures. Flashback {1}{U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+66d65cda-e3d1-4a00-8ff3-c6d5ef0ab0c1|Forbidden Alchemy|Look at the top four cards of your library. Put one of them into your hand and the rest into your graveyard. Flashback {6}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+8432729e-5fd4-4661-8b79-e41b1d03eb7b|Travel Preparations|Put a +1/+1 counter on each of up to two target creatures. Flashback {1}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)

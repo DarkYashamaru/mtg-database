@@ -1,0 +1,5 @@
+45773715-3f46-4671-b633-bf087e892e26|Lorehold Campus|This land enters tapped. {T}: Add {R} or {W}. {4}, {T}: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+3a3a1b35-ae4d-49d5-ae09-5a1693ad53ce|Prismari Campus|This land enters tapped. {T}: Add {U} or {R}. {4}, {T}: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+172f86b6-9580-4eb2-b7dc-2a44277d978b|Quandrix Campus|This land enters tapped. {T}: Add {G} or {U}. {4}, {T}: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+2b65eb80-6fb7-429f-81f2-2fe125eba634|Silverquill Campus|This land enters tapped. {T}: Add {W} or {B}. {4}, {T}: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)
+6cd58a88-6434-4c55-bf93-a739b5ed9bc1|Witherbloom Campus|This land enters tapped. {T}: Add {B} or {G}. {4}, {T}: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)

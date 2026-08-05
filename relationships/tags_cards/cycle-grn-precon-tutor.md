@@ -1,0 +1,2 @@
+a81b7629-9db9-4351-8d0e-c45a7a6167d4|Ral's Dispersal|Return target creature to its owner's hand. You may search your library and/or graveyard for a card named Ral, Caller of Storms, reveal it, and put it into your hand. If you search your library this way, shuffle.
+c39e2046-173a-44b6-8e93-b22ede35485d|Vraska's Stoneglare|Destroy target creature. You gain life equal to its toughness. You may search your library and/or graveyard for a card named Vraska, Regal Gorgon, reveal it, and put it into your hand. If you search your library this way, shuffle.

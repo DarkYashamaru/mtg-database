@@ -1,0 +1,10 @@
+02079e18-ac14-4255-95c4-741eb76c4799|Albino Troll|Echo {1}{G} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.) {1}{G}: Regenerate this creature.
+03a4cbe2-cf35-4c2c-b035-666f994ffd09|Anavolver|Kicker {1}{U} and/or {B} (You may pay an additional {1}{U} and/or {B} as you cast this spell.) If this creature was kicked with its {1}{U} kicker, it enters with two +1/+1 counters on it and with flying. If this creature was kicked with its {B} kicker, it enters with a +1/+1 counter on it and with "Pay 3 life: Regenerate this creature."
+5f12134c-d626-4a5e-8653-700681a491fc|Ancient Silverback|{G}: Regenerate this creature. (The next time this creature would be destroyed this turn, instead tap it, remove it from combat, and heal all damage on it.)
+a6ffcbc9-0990-4d95-a995-1b2f321256d7|Asphodel Wanderer|{2}{B}: Regenerate this creature.
+723398f2-eaf2-4615-9078-418b9f540a33|Augur of Skulls|{1}{B}: Regenerate this creature. Sacrifice this creature: Target player discards two cards. Activate only during your upkeep.
+33899675-0de2-4adb-bf3f-55e18b493015|Birthing Hulk|Devoid (This card has no color.) When this creature enters, create two 1/1 colorless Eldrazi Scion creature tokens. They have "Sacrifice this token: Add {C}." ({C} represents colorless mana.) {1}{C}: Regenerate this creature.
+e11a856c-31d3-4f4b-a517-8a5134b88517|Blight Mamba|Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.) {1}{G}: Regenerate this creature.
+250a027f-2b3e-4eaf-899a-a9da8be20070|Cadaverous Knight|Flanking (Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.) {1}{B}{B}: Regenerate this creature.
+7d8e20e5-6456-43f5-9188-263b54c0a923|Carnage Gladiator|Whenever a creature blocks, that creature's controller loses 1 life. {1}{B}{R}: Regenerate this creature.
+97b386da-4bc0-4c39-a5cc-17e441c45127|Carnassid|Trample {1}{G}: Regenerate this creature.

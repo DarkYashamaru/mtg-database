@@ -1,0 +1,5 @@
+f4bd26d5-4448-451f-9909-b6dea1551af7|Implement of Combustion|{R}, Sacrifice this artifact: It deals 1 damage to target player or planeswalker. When this artifact is put into a graveyard from the battlefield, draw a card.
+0baf75b3-cc02-47cc-873a-8d5f17da0ec9|Implement of Examination|{U}, Sacrifice this artifact: Draw a card. When this artifact is put into a graveyard from the battlefield, draw a card.
+b92629c0-1619-4214-929f-4404992fabeb|Implement of Ferocity|{G}, Sacrifice this artifact: Put a +1/+1 counter on target creature. Activate only as a sorcery. When this artifact is put into a graveyard from the battlefield, draw a card.
+a71b2ffb-6a62-4239-987f-ec82a358927f|Implement of Improvement|{W}, Sacrifice this artifact: You gain 2 life. When this artifact is put into a graveyard from the battlefield, draw a card.
+16923d37-bac0-4e6a-bd02-f3aa9360deeb|Implement of Malice|{B}, Sacrifice this artifact: Target player discards a card. Activate only as a sorcery. When this artifact is put into a graveyard from the battlefield, draw a card.

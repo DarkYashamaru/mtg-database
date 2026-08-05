@@ -1,0 +1,2 @@
+a1ddf985-1646-468c-b1a4-ab6bb8e9dd7c|Cowabunga!|Look at the top four cards of your library. You may reveal a Mutant, Ninja, Turtle, or land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.
+3d8dfd57-7d26-4a3b-a9c3-33077c85b3db|Definitely Not a Turtle|When this creature dies, look at the top six cards of your library. You may reveal a land or legendary Turtle card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.

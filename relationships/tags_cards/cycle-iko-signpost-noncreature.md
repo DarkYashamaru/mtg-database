@@ -1,0 +1,5 @@
+670df8be-21cd-49d8-92e3-d7cc38b256d6|Back for More|Return target creature card from your graveyard to the battlefield. When you do, it fights up to one target creature you don't control. (Each deals damage equal to its power to the other.)
+e12ed186-01c1-4da5-b90f-cfbb77c4e8d0|Channeled Force|As an additional cost to cast this spell, discard X cards. Target player draws X cards. Channeled Force deals X damage to up to one target creature or planeswalker.
+0c8cb2ec-5b58-497c-a6e7-2d25512d5a44|Dire Tactics|Exile target creature. If you don't control a Human, you lose life equal to that creature's toughness.
+24645d9e-5e6d-411d-be41-c2bd1659937f|Primal Empathy|At the beginning of your upkeep, draw a card if you control a creature with the greatest power among creatures on the battlefield. Otherwise, put a +1/+1 counter on a creature you control.
+ae005f00-3817-40ca-b8be-069a4085cfee|Zenith Flare|Zenith Flare deals X damage to any target and you gain X life, where X is the number of cards with a cycling ability in your graveyard.

@@ -1,0 +1,10 @@
+02f46271-c90d-4318-9004-74e7bee64a89|Angel of Destiny|Flying, double strike Whenever a creature you control deals combat damage to a player, you and that player each gain that much life. At the beginning of your end step, if you have at least 15 life more than your starting life total, each player this creature attacked this turn loses the game.
+15397a59-70a8-441f-abf7-230405a1602b|Armadillo Cloak|Enchant creature Enchanted creature gets +2/+2 and has trample. Whenever enchanted creature deals damage, you gain that much life.
+23425b11-e40d-4f68-8903-3084ad45319f|Doubtless One|Doubtless One's power and toughness are each equal to the number of Clerics on the battlefield. Whenever this creature deals damage, you gain that much life.
+f92c9a5d-853f-4157-89ba-8d8c8033c533|El-Hajjâj|Whenever this creature deals damage, you gain that much life.
+1f35f5e3-ddd1-4293-96f8-1181bbda77eb|Essence Sliver|Whenever a Sliver deals damage, its controller gains that much life.
+2f6e9ab8-6951-4c5f-bcde-0e96e0fe87f2|Exalted Angel|Flying Whenever this creature deals damage, you gain that much life. Morph {2}{W}{W} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)
+a2019c23-09b8-4b0f-8b91-d8137804cb95|Flash Conscription|Untap target creature and gain control of it until end of turn. That creature gains haste until end of turn. If {W} was spent to cast this spell, the creature gains "Whenever this creature deals combat damage, you gain that much life" until end of turn.
+5cd35d18-115b-4d7c-8d05-3d4c8303f46e|Genju of the Fields|Enchant Plains {2}: Until end of turn, enchanted Plains becomes a 2/5 white Spirit creature with "Whenever this creature deals damage, its controller gains that much life." It's still a land. When enchanted Plains is put into a graveyard, you may return this card from your graveyard to your hand.
+a552edbe-bd5d-4281-8d9f-d03f4b10815d|Horned Cheetah|Whenever this creature deals damage, you gain that much life.
+b82d1104-8a54-4745-ba8b-eeddcb657338|Kjeldoran Gargoyle|Flying, first strike Whenever this creature deals damage, you gain that much life.

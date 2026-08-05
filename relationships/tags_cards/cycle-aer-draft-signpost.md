@@ -1,0 +1,10 @@
+f5ded323-75c8-471e-a516-238b9d6b06d3|Hidden Stockpile|Revolt — At the beginning of your end step, if a permanent left the battlefield under your control this turn, create a 1/1 colorless Servo artifact creature token. {1}, Sacrifice a creature: Scry 1.
+71ba6f1b-2fa6-4d4c-8778-f0765b1a5d8e|Maverick Thopterist|Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.) When this creature enters, create two 1/1 colorless Thopter artifact creature tokens with flying.
+fdb109f6-d185-4d1e-92b9-768e77562f55|Outland Boar|This creature can't be blocked by creatures with power 2 or less.
+6fa07b6c-f01a-4416-b0fc-986b0fc4e412|Renegade Rallier|Revolt — When this creature enters, if a permanent left the battlefield under your control this turn, return target permanent card with mana value 2 or less from your graveyard to the battlefield.
+d3caee32-25b7-4ef7-9f9a-e31d08720086|Renegade Wheelsmith|Whenever this creature becomes tapped, target creature can't block this turn.
+b2f09e41-0a91-4fb6-8804-874b3a5166b0|Rogue Refiner|When this creature enters, draw a card and you get {E}{E} (two energy counters).
+afacd2b1-1733-4b28-b834-71a31149fa00|Spire Patrol|Flying When this creature enters, tap target creature an opponent controls. That creature doesn't untap during its controller's next untap step.
+c6f2c767-3c8e-4113-b271-ea7c19583e6c|Tezzeret's Touch|Enchant artifact Enchanted artifact is a creature with base power and toughness 5/5 in addition to its other types. When enchanted artifact is put into a graveyard, return that card to its owner's hand.
+74adb283-9bef-4a6f-9489-bcfcba53e8d7|Weldfast Engineer|At the beginning of combat on your turn, target artifact creature you control gets +2/+0 until end of turn.
+c9404d7d-a026-4082-9fcb-1ab571a136b5|Winding Constrictor|If one or more counters would be put on an artifact or creature you control, that many plus one of each of those kinds of counters are put on that permanent instead. If you would get one or more counters, you get that many plus one of each of those kinds of counters instead.

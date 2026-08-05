@@ -1,0 +1,1 @@
+7411a8f4-b736-482f-886e-5fa671e94e0d|Witchbane Orb|When this artifact enters, destroy all Curses attached to you. You have hexproof. (You can't be the target of spells or abilities your opponents control, including Aura spells.)

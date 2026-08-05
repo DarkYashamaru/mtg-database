@@ -1,0 +1,1 @@
+ca68f436-2522-4007-87bf-2669c7743db0|Spider-Slayer, Hatred Honed|Whenever Spider-Slayer deals damage to a Spider, destroy that creature. {6}, Exile this card from your graveyard: Create two tapped 1/1 colorless Robot artifact creature tokens with flying.

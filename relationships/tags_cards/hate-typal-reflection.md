@@ -1,0 +1,2 @@
+fee53820-a17c-4f34-9971-581bf8e12fd6|Pure Reflection|Whenever a player casts a creature spell, destroy all Reflections. Then that player creates an X/X white Reflection creature token, where X is the mana value of that spell.
+42e041c0-ffbc-4bf8-a5aa-f0d14aad7112|Spirit Mirror|At the beginning of your upkeep, if there are no Reflection tokens on the battlefield, create a 2/2 white Reflection creature token. {0}: Destroy target Reflection.

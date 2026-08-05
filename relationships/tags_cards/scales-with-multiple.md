@@ -1,0 +1,10 @@
+1ca25379-d194-4670-a7bf-525ad11cf436|Accumulated Knowledge|Draw a card, then draw cards equal to the number of cards named Accumulated Knowledge in all graveyards.
+1e33f39b-a61a-4a09-a541-16cc1bd53d02|Aether Burst|Return up to X target creatures to their owners' hands, where X is one plus the number of cards named Aether Burst in all graveyards as you cast this spell.
+e0828e8d-f01f-4088-9123-6d923ddb3242|Ancestral Anger|Target creature gains trample and gets +X/+0 until end of turn, where X is 1 plus the number of cards named Ancestral Anger in your graveyard. Draw a card.
+b6021700-992a-4faa-8f83-a9af03dc7296|Baru, Fist of Krosa|Whenever a Forest enters, green creatures you control get +1/+1 and gain trample until end of turn. Grandeur — Discard another card named Baru, Fist of Krosa: Create an X/X green Wurm creature token, where X is the number of lands you control.
+e99fde0d-ca28-4a49-abe0-d01cf4e322b6|Biovisionary|At the beginning of the end step, if you control four or more creatures named Biovisionary, you win the game.
+7879b37c-5e2a-4945-9378-47744b715a6c|Blazing Effigy|When this creature dies, it deals X damage to target creature, where X is 3 plus the amount of damage dealt to this creature this turn by other sources named Blazing Effigy.
+5c820811-1775-4ea4-b003-721750a4d90f|Brothers Yamazaki|Bushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.) If there are exactly two permanents named Brothers Yamazaki on the battlefield, the "legend rule" doesn't apply to them. Each other creature named Brothers Yamazaki gets +2/+2 and has haste.
+6781166b-f6ab-4076-8e97-0cd9342f1b41|Charmed Stray|Lifelink When this creature enters, put a +1/+1 counter on each other creature you control named Charmed Stray.
+84a2a592-0e31-434f-b3b4-f2013d86f29d|Cleric of the Forward Order|When this creature enters, you gain 2 life for each creature you control named Cleric of the Forward Order.
+dcc82c14-d632-4333-be35-4a206a10b184|Cylian Sunsinger|{R}{G}{W}: This creature and each other creature with the same name as it get +3/+3 until end of turn.

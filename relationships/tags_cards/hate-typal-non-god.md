@@ -1,0 +1,1 @@
+f1190fb9-72a2-48f8-bc2d-61240f1e9119|Zodiark, Umbral God|Indestructible When Zodiark enters, each player sacrifices half the non-God creatures they control of their choice, rounded down. Whenever a player sacrifices another creature, put a +1/+1 counter on Zodiark.

@@ -1,0 +1,1 @@
+e35d4c62-5211-4785-b683-a83719195d87|Spinerock Tyrant|Flying Wither (This deals damage to creatures in the form of -1/-1 counters.) Whenever you cast an instant or sorcery spell with a single target, you may copy it. If you do, those spells gain wither. You may choose new targets for the copy.

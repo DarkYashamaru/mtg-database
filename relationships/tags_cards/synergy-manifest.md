@@ -1,0 +1,1 @@
+e12681cc-c66e-4dac-882c-bd8638a2e12c|Qarsi Deceiver|{T}: Add {C}. Spend this mana only to cast a face-down creature spell, pay a mana cost to turn a manifested creature face up, or pay a morph cost. (A megamorph cost is a morph cost.)

@@ -1,0 +1,10 @@
+ca7d093c-0533-493f-9ad3-8af30118fbfc|Abraded Bluffs|This land enters tapped. When this land enters, it deals 1 damage to target opponent. {T}: Add {R} or {W}.
+9cbc9f83-8979-42a5-a466-a8d89c8e6de8|Bristling Backwoods|This land enters tapped. When this land enters, it deals 1 damage to target opponent. {T}: Add {R} or {G}.
+c116b787-5f7e-47ef-a694-58709770dd32|Creosote Heath|This land enters tapped. When this land enters, it deals 1 damage to target opponent. {T}: Add {G} or {W}.
+852c6520-d148-4923-a312-05a9af821f24|Eroded Canyon|This land enters tapped. When this land enters, it deals 1 damage to target opponent. {T}: Add {U} or {R}.
+9d3b60af-3e38-4d36-95fc-11b31c38f955|Festering Gulch|This land enters tapped. When this land enters, it deals 1 damage to target opponent. {T}: Add {B} or {G}.
+ebb3e2ff-2214-4e11-88fb-e0fa84288cf1|Forlorn Flats|This land enters tapped. When this land enters, it deals 1 damage to target opponent. {T}: Add {W} or {B}.
+64ee02f1-afdb-474b-a893-31538ad7219a|Jagged Barrens|This land enters tapped. When this land enters, it deals 1 damage to target opponent. {T}: Add {B} or {R}.
+36508a8a-d1a4-400e-bfda-09436bc4d5d4|Lonely Arroyo|This land enters tapped. When this land enters, it deals 1 damage to target opponent. {T}: Add {W} or {U}.
+b6a965eb-cffb-41c1-925a-7cf3e8e2f248|Lush Oasis|This land enters tapped. When this land enters, it deals 1 damage to target opponent. {T}: Add {G} or {U}.
+e579edd7-4f6c-4f22-a72f-0a20d7a698a2|Soured Springs|This land enters tapped. When this land enters, it deals 1 damage to target opponent. {T}: Add {U} or {B}.

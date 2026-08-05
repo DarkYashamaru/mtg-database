@@ -1,0 +1,8 @@
+5d144825-594a-454b-9276-fe92e87c19c0|Drake Familiar|Flying When this creature enters, sacrifice it unless you return an enchantment to its owner's hand.
+1031bc78-7eca-44aa-9ea8-47fa67b4ce62|Floodtide Serpent|This creature can't attack unless you return an enchantment you control to its owner's hand. (This cost is paid as attackers are declared.)
+fbf8fdf5-0d7d-41a3-a6b9-27bb7a644c20|Geothermal Kami|When this creature enters, you may return an enchantment you control to its owner's hand. If you do, you gain 3 life.
+b2f3c27e-b646-4449-901a-8b809cdfa84e|Get Out|Choose one — • Counter target creature or enchantment spell. • Return one or two target creatures and/or enchantments you own to your hand.
+ce19d2dd-4b2c-493e-8963-ad97649248e2|Natural Emergence|When this enchantment enters, return a red or green enchantment you control to its owner's hand. Lands you control are 2/2 creatures with first strike. They're still lands.
+fa879d99-3d2b-4a9a-a17f-d5ac109f8f44|Remove Enchantments|Return to your hand all enchantments you both own and control, all Auras you own attached to permanents you control, and all Auras you own attached to attacking creatures your opponents control. Then destroy all other enchantments you control, all other Auras attached to permanents you control, and all other Auras attached to attacking creatures your opponents control.
+718d72c4-ad37-49b6-860a-0b921c0de978|Riptide Chimera|Flying At the beginning of your upkeep, return an enchantment you control to its owner's hand.
+21c768fa-4f1a-4a1a-abb9-e69e17426233|Shimmerwing Chimera|Flying At the beginning of your upkeep, return up to one other target enchantment you control to its owner's hand.

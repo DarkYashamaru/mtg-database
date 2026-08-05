@@ -1,0 +1,1 @@
+3c2445ee-84d5-47de-8b09-dbdc89ca2db7|Immerwolf|Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.) Each other creature you control that's a Wolf or a Werewolf gets +1/+1. Non-Human Werewolves you control can't transform.

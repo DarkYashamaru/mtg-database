@@ -1,0 +1,3 @@
+5811effb-5010-44b9-bb97-9d7eb358327f|Doomsday Specter|Flying When this creature enters, return a blue or black creature you control to its owner's hand. Whenever this creature deals combat damage to a player, look at that player's hand and choose a card from it. The player discards that card.
+ce19d2dd-4b2c-493e-8963-ad97649248e2|Natural Emergence|When this enchantment enters, return a red or green enchantment you control to its owner's hand. Lands you control are 2/2 creatures with first strike. They're still lands.
+fc988ce3-0cad-41a5-8f13-656caca732df|Shivan Wurm|Trample When this creature enters, return a red or green creature you control to its owner's hand.

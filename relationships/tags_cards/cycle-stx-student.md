@@ -1,0 +1,5 @@
+2121bcb4-f5fe-447f-9112-c7e5b5c45baf|Dina, Soul Steeper|Whenever you gain life, each opponent loses 1 life. {1}, Sacrifice another creature: Dina gets +X/+0 until end of turn, where X is the sacrificed creature's power.
+e233cb5b-7237-4271-8157-9179cc897b6c|Killian, Ink Duelist|Lifelink Menace (This creature can't be blocked except by two or more creatures.) Spells you cast that target a creature cost {2} less to cast.
+28b64167-b7ea-4b4f-8434-061298050366|Quintorius, Field Historian|Spirits you control get +1/+0. Whenever one or more cards leave your graveyard, create a 3/2 red and white Spirit creature token.
+3735559f-efe5-43ad-9b3e-3ef127c0ceda|Rootha, Mercurial Artist|{2}, Return Rootha to its owner's hand: Copy target instant or sorcery spell you control. You may choose new targets for the copy.
+ee2ef1e0-6803-4eb5-8664-605438c67505|Zimone, Quandrix Prodigy|{1}, {T}: You may put a land card from your hand onto the battlefield tapped. {4}, {T}: Draw a card. If you control eight or more lands, draw two cards instead.

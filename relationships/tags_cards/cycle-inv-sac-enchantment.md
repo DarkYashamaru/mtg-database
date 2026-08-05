@@ -1,0 +1,5 @@
+05b020fd-21be-495d-ae45-7de3b1224e6d|Angelic Shield|Creatures you control get +0/+1. Sacrifice this enchantment: Return target creature to its owner's hand.
+e23d6f3b-0e18-423b-943b-15db7837255b|Fires of Yavimaya|Creatures you control have haste. Sacrifice this enchantment: Target creature gets +2/+2 until end of turn.
+f5276e83-ca3f-4755-9239-e44d91a446fd|Seer's Vision|Your opponents play with their hands revealed. Sacrifice this enchantment: Look at target player's hand and choose a card from it. That player discards that card. Activate only as a sorcery.
+f268699f-c0a2-43f7-b933-7665599ab5ff|Smoldering Tar|At the beginning of your upkeep, target player loses 1 life. Sacrifice this enchantment: It deals 4 damage to target creature. Activate only as a sorcery.
+2c275a85-5a15-46cd-a6e7-add63f9b853d|Sterling Grove|Other enchantments you control have shroud. (They can't be the targets of spells or abilities.) {1}, Sacrifice this enchantment: Search your library for an enchantment card, reveal it, then shuffle and put that card on top.

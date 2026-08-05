@@ -1,0 +1,1 @@
+0e61a062-f13a-4958-91de-909650c662a8|Barbara Wright|History Teacher — Sagas you control have read ahead. (As a Saga enters, choose a chapter and start with that many lore counters. Skipped chapters don't trigger.) Doctor's companion (You can have two commanders if the other is the Doctor.)

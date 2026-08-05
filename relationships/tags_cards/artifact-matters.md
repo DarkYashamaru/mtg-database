@@ -1,0 +1,1 @@
+a145ff8c-5812-4bcb-bd16-9839dc25121d|Storm-Kiln Artist|This creature gets +1/+0 for each artifact you control. Magecraft — Whenever you cast or copy an instant or sorcery spell, create a Treasure token. (It's an artifact with "{T}, Sacrifice this token: Add one mana of any color.")

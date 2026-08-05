@@ -1,0 +1,2 @@
+473da1b6-232b-4428-a66d-30262246b47a|Emeria Shepherd|Flying Landfall — Whenever a land you control enters, you may return target nonland permanent card from your graveyard to your hand. If that land is a Plains, you may return that nonland permanent card to the battlefield instead.
+bd8bc927-e50a-4fab-9803-0602a841c7c2|Staff of the Sun Magus|Whenever you cast a white spell or a Plains you control enters, you gain 1 life.

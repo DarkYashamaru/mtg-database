@@ -1,0 +1,10 @@
+d02befcb-3e2c-4cfe-a913-9bb648e5bb2c|Aquitect's Will|Put a flood counter on target land. That land is an Island in addition to its other types for as long as it has a flood counter on it. If you control a Merfolk, draw a card.
+10e95489-a94d-4523-964c-ec9753103a62|Blanket of Night|Each land is a Swamp in addition to its other land types.
+94fac5fe-97d5-4c12-a80c-8efff9d853ae|Blood Moon|Nonbasic lands are Mountains.
+b4d27fad-9a94-4760-80a6-6a2948109864|Celestial Dawn|Lands you control are Plains. Nonland permanents you control are white. The same is true for spells you control and nonland cards you own that aren't on the battlefield. You may spend white mana as though it were mana of any color. You may spend other mana only as though it were colorless mana.
+55e04860-f4f5-445b-81f2-b500fa9b456a|Contaminated Ground|Enchant land Enchanted land is a Swamp. Whenever enchanted land becomes tapped, its controller loses 2 life.
+a24e05fb-dffb-4400-b4ca-22fdde45e7a7|Conversion|At the beginning of your upkeep, sacrifice this enchantment unless you pay {W}{W}. All Mountains are Plains.
+685c4665-e04c-4012-aa5b-888a042c2a21|Convincing Mirage|Enchant land As this Aura enters, choose a basic land type. Enchanted land is the chosen type.
+fe371e3a-976f-41d8-ad58-4b3b61415d71|Crystal Spray|Change the text of target spell or permanent by replacing all instances of one color word with another or one basic land type with another until end of turn. Draw a card.
+d02427fa-3ef0-484f-acad-63a1d5218727|Cyclopean Giant|When this creature dies, target land becomes a Swamp. Exile this card.
+1edee40f-d153-4d67-aee7-ef08e11e4a79|Cyclopean Tomb|{2}, {T}: Put a mire counter on target non-Swamp land. That land is a Swamp for as long as it has a mire counter on it. Activate only during your upkeep. When this artifact is put into a graveyard from the battlefield, at the beginning of each of your upkeeps for the rest of the game, remove all mire counters from a land that a mire counter was put onto with this artifact but that a mire counter has not been removed from with this artifact.

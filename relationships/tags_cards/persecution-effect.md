@@ -1,0 +1,7 @@
+e32c0de7-132d-4a39-85fb-da0ed1132878|Ascendant Evincar|Flying (This creature can't be blocked except by creatures with flying or reach.) Other black creatures get +1/+1. Nonblack creatures get -1/-1.
+0cbf6ad8-9bf1-455d-bd74-9c142e17acb0|Crovax, Ascendant Hero|Other white creatures get +1/+1. Nonwhite creatures get -1/-1. Pay 2 life: Return Crovax to its owner's hand.
+958d71ff-c9f7-46f0-96ca-79e7f4d65a16|Elesh Norn, Grand Cenobite|Vigilance Other creatures you control get +2/+2. Creatures your opponents control get -2/-2.
+e6f95e3a-61a6-40a9-8070-ffd2767764ad|Ethereal Absolution|Creatures you control get +1/+1. Creatures your opponents control get -1/-1. {2}{W}{B}: Exile target card from an opponent's graveyard. If it was a creature card, you create a 1/1 white and black Spirit creature token with flying.
+c41e8a99-e4a8-4323-a59d-265266e29fa9|Profit // Loss|Creatures your opponents control get -1/-1 until end of turn. Fuse (You may cast one or both halves of this card from your hand.) // Creatures you control get +1/+1 until end of turn. Fuse (You may cast one or both halves of this card from your hand.)
+dafbb927-3d9d-4be7-b427-f6564b295161|The Flesh Is Weak|When this enchantment enters, put a +1/+1 counter on each creature you control. Creatures you control with +1/+1 counters on them are artifacts in addition to their other types. Nonartifact creatures get -1/-1.
+ccf8d919-1399-4bef-94ac-04c67f122828|Zealous Persecution|Until end of turn, creatures you control get +1/+1 and creatures your opponents control get -1/-1.

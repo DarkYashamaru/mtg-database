@@ -1,0 +1,2 @@
+e90d6903-5415-4ddf-88c0-15ddd8614bde|Hawkeye, Avenging Archer|Reach Whenever a creature an opponent controls dies, if Hawkeye dealt damage to it this turn, draw a card. {T}: Hawkeye deals 1 damage to any target.
+4789357c-3ab7-4327-b5ee-b1110ddb876f|Madame Vastra|Partner with Jenny Flint (When this creature enters, target player may put Jenny Flint into their hand from their library, then shuffle.) Madame Vastra must be blocked if able. Whenever a creature dealt damage by Madame Vastra this turn dies, create a Clue token and a Food token.

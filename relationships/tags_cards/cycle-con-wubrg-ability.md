@@ -1,0 +1,3 @@
+f8fb5a40-4e32-4817-bf56-484add976475|Dragonsoul Knight|First strike {W}{U}{B}{R}{G}: Until end of turn, this creature becomes a Dragon, gets +5/+3, and gains flying and trample.
+67b8b67d-fda3-4a62-9bfb-51a171638502|Fleshformer|{W}{U}{B}{R}{G}: This creature gets +2/+2 and gains fear until end of turn. Target creature gets -2/-2 until end of turn. Activate only during your turn. (A creature with fear can't be blocked except by artifact creatures and/or black creatures.)
+4e4991b3-11c4-4408-a752-67e51f0fae44|Paragon of the Amesha|First strike {W}{U}{B}{R}{G}: Until end of turn, this creature becomes an Angel, gets +3/+3, and gains flying and lifelink.

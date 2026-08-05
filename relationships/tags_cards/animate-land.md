@@ -1,0 +1,10 @@
+e75b2a97-b28d-43fe-8b1e-ba87a09f339c|Ambush Commander|Forests you control are 1/1 green Elf creatures that are still lands. {1}{G}, Sacrifice an Elf: Target creature gets +3/+3 until end of turn.
+b2bd58ea-b2c6-47f1-b082-7969f093bbc6|Animate Land|Until end of turn, target land becomes a 3/3 creature that's still a land.
+141f952b-9e9f-48c5-9c88-b1504dfa73bc|Anthousa, Setessan Hero|Heroic — Whenever you cast a spell that targets Anthousa, up to three target lands you control each become 2/2 Warrior creatures until end of turn. They're still lands.
+c66dc0d3-b98c-40a2-be35-e455b4658828|Avalanche Caller|{2}: Target snow land you control becomes a 4/4 Elemental creature with hexproof and haste until end of turn. It's still a land. (A creature with hexproof can't be the target of spells or abilities your opponents control.)
+0fd27f59-36ec-4235-8e1f-4a4a14972f4a|Awaken the Ancient|Enchant Mountain Enchanted Mountain is a 7/7 red Giant creature with haste. It's still a land.
+7e8f5b34-fd16-4307-9104-17b584b25b14|Awakener Druid|When this creature enters, target Forest becomes a 4/5 green Treefolk creature for as long as this creature remains on the battlefield. It's still a land.
+5c326102-005d-463c-b9f7-14b034b66baa|Awakening of Vitu-Ghazi|Put nine +1/+1 counters on target land you control. It becomes a legendary 0/0 Elemental creature with haste named Vitu-Ghazi. It's still a land.
+3eb21641-90e1-4865-b7be-a21d52b7b56b|Balduvian Conjurer|{T}: Target snow land becomes a 2/2 creature until end of turn. It's still a land.
+2cff1f9e-11a6-460c-8f5f-4c02424357e3|Balduvian Frostwaker|{U}, {T}: Target snow land becomes a 2/2 blue Elemental creature with flying. It's still a land.
+49d189dd-9ce7-434f-931b-7110cd5255e7|Brave the Wilds|Bargain (You may sacrifice an artifact, enchantment, or token as you cast this spell.) If this spell was bargained, target land you control becomes a 3/3 Elemental creature with haste that's still a land. Search your library for a basic land card, reveal it, put it into your hand, then shuffle.

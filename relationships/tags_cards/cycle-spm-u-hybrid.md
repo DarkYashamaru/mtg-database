@@ -1,0 +1,5 @@
+0a744206-04c4-46cb-b64d-cf192c9324df|Rhino's Rampage|Target creature you control gets +1/+0 until end of turn. It fights target creature an opponent controls. When excess damage is dealt to the creature an opponent controls this way, destroy up to one target noncreature artifact with mana value 3 or less.
+5773ae05-44bc-423c-846c-f323dd8a5079|Shriek, Treblemaker|At the beginning of your first main phase, you may discard a card. When you do, target creature can't block this turn. Sonic Blast — Whenever a creature an opponent controls dies, Shriek deals 1 damage to that player.
+2d961997-4f5f-4ce2-b062-11411147e2f7|Sun-Spider, Nimble Webber|During your turn, Sun-Spider has flying. When Sun-Spider enters, search your library for an Aura or Equipment card, reveal it, put it into your hand, then shuffle.
+0409765a-bbb4-465e-99b3-3687bffc3cf9|Vulture, Scheming Scavenger|Flying Whenever Vulture attacks, other Villains you control gain flying until end of turn.
+3b23e4f8-882d-4cce-9b61-171ae2cc3a18|Web-Warriors|When this creature enters, put a +1/+1 counter on each other creature you control.

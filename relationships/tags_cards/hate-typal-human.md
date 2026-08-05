@@ -1,0 +1,10 @@
+aac711d1-2fa0-42f9-9eda-a1642f3ff016|Death's Caress|Destroy target creature. If that creature was a Human, you gain life equal to its toughness.
+51e0a61d-69f0-475d-b40b-50d69252800d|Frost Fair Lure Fish|When this creature enters, create two 1/1 blue Fish creature tokens and create two tapped Treasure tokens. Fish you control have haste and can't be blocked by Humans. Foretell {3}{U}{R}
+bd95c832-9ae9-404a-a2bc-0760a5b9ff56|Human Frailty|Destroy target Human creature.
+7950a7ff-7c2e-40fe-b64a-324f4fbcf528|Innocent Traveler // Malicious Invader|At the beginning of your upkeep, any opponent may sacrifice a creature of their choice. If no one does, transform this creature. // Flying This creature gets +2/+0 as long as an opponent controls a Human.
+5d27c63e-d1ef-48af-b51d-01ebc6daeac9|Mikaeus, the Unhallowed|Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.) Whenever a Human deals damage to you, destroy it. Other non-Human creatures you control get +1/+1 and have undying. (When a creature with undying dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)
+56697773-8a04-49b6-8327-895e972da7e7|Night Revelers|This creature has haste as long as an opponent controls a Human.
+46f46bdd-52b8-436f-9a39-f5360a84b2cd|Opportunistic Dragon|Flying When this creature enters, choose target Human or artifact an opponent controls. For as long as this creature remains on the battlefield, gain control of that permanent, it loses all abilities, and it can't attack or block.
+d9763c75-75f7-4766-8cca-84c899796e3c|Parasitic Grasp|Cleave {1}{B}{B} (You may cast this spell for its cleave cost. If you do, remove the words in square brackets.) Parasitic Grasp deals 3 damage to target [Human] creature. You gain 3 life.
+6f9bce77-f7f0-453b-86cd-1e6bd71980a3|Scorch the Fields|Destroy target land. Scorch the Fields deals 1 damage to each Human creature.
+c55909d3-1f67-4a4a-9d53-8513d6cf96d8|Stromkirk Noble|This creature can't be blocked by Humans. Whenever this creature deals combat damage to a player, put a +1/+1 counter on it.

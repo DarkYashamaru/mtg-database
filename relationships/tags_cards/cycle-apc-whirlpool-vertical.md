@@ -1,0 +1,3 @@
+aef9fcf0-b755-40f6-821d-836ae1b5497a|Whirlpool Drake|Flying When this creature enters, shuffle the cards from your hand into your library, then draw that many cards. When this creature dies, shuffle the cards from your hand into your library, then draw that many cards.
+13a3f2c1-0454-4661-a462-542254f8360d|Whirlpool Rider|When this creature enters, shuffle the cards from your hand into your library, then draw that many cards.
+b7a1c54b-bb2f-4423-865a-ad114cd18c76|Whirlpool Warrior|When this creature enters, shuffle the cards from your hand into your library, then draw that many cards. {R}, Sacrifice this creature: Each player shuffles the cards from their hand into their library, then draws that many cards.

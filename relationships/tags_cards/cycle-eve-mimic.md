@@ -1,0 +1,5 @@
+0af189d3-4de1-483e-aac4-dd5d51a57d9c|Battlegate Mimic|Whenever you cast a spell that's both red and white, this creature has base power and toughness 4/2 until end of turn and gains first strike until end of turn.
+ed186aea-e0dc-4d88-a619-748b2ebf0c52|Nightsky Mimic|Whenever you cast a spell that's both white and black, this creature has base power and toughness 4/4 until end of turn and gains flying until end of turn.
+16948dd9-959b-4972-b337-37ecc2b141bd|Riverfall Mimic|Whenever you cast a spell that's both blue and red, this creature has base power and toughness 3/3 until end of turn and can't be blocked this turn.
+3da837db-b3e9-46e4-939d-54ab43af94d9|Shorecrasher Mimic|Whenever you cast a spell that's both green and blue, this creature has base power and toughness 5/3 until end of turn and gains trample until end of turn.
+5f4ddd52-4940-4557-8531-40c66857d4cd|Woodlurker Mimic|Whenever you cast a spell that's both black and green, this creature has base power and toughness 4/5 until end of turn and gains wither until end of turn. (It deals damage to creatures in the form of -1/-1 counters.)

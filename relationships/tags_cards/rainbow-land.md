@@ -1,0 +1,10 @@
+5a70ccfa-d12d-4e62-a1a4-f05cda2fd442|Abandoned Outpost|This land enters tapped. {T}: Add {W}. {T}, Sacrifice this land: Add one mana of any color.
+e3eb6f90-ccfc-41e7-bff6-0b378226bc7e|Abundant Countryside|{T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast a creature spell. {6}, {T}: Create a 1/1 colorless Shapeshifter creature token with changeling. (It's every creature type.)
+61c89b11-65c9-4fda-bbcd-d84de25df801|Aether Hub|When this land enters, you get {E} (an energy counter). {T}: Add {C}. {T}, Pay {E}: Add one mana of any color.
+9d293b69-12b7-4b50-a0a7-c4f493dee30b|Ally Encampment|{T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast an Ally spell. {1}, {T}, Sacrifice this land: Return target Ally you control to its owner's hand.
+0baabe39-72ae-47bd-a095-cbf7eb8a6361|Ancient Ziggurat|{T}: Add one mana of any color. Spend this mana only to cast a creature spell.
+cf438848-da86-4db6-b3b8-4dd8570be3b8|Archaeological Dig|{T}: Add {C}. {T}, Sacrifice this land: Add one mana of any color.
+69c63055-ed44-4b32-b591-f3c6c2f3e7d1|Archway Commons|This land enters tapped. When this land enters, sacrifice it unless you pay {1}. {T}: Add one mana of any color.
+c5fc8e7c-a87e-4586-a13c-d30e0a3aafbf|Avengers Tower|{T}: Add {C}. {T}: Add one mana of any color. Spend this mana only to cast a Hero spell or to activate an ability of a Hero source. {4}, {T}: Look at the top three cards of your library. You may reveal a Hero card from among them and put it into your hand. Put the rest on the bottom of your library in any order.
+c0cbb347-b060-43ce-a9c5-8c835be3cf1b|Azor's Gateway // Sanctum of the Sun|{1}, {T}: Draw a card, then exile a card from your hand. If cards with five or more different mana values are exiled with Azor's Gateway, you gain 5 life, untap Azor's Gateway, and transform it. // (Transforms from Azor's Gateway.) {T}: Add X mana of any one color, where X is your life total.
+da307ea2-4df7-4d6b-be0f-9dc6ac93db61|Baldur's Gate|{T}: Add {C}. {2}, {T}: Add X mana of any one color, where X is the number of other Gates you control.

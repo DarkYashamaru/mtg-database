@@ -1,0 +1,1 @@
+619e0686-e88c-4238-8364-75395e733533|Kambal, Profiteering Mayor|Whenever one or more tokens your opponents control enter, for each of them, create a tapped token that's a copy of it. This ability triggers only once each turn. Whenever one or more tokens you control enter, each opponent loses 1 life and you gain 1 life.

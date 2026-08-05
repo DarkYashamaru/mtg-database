@@ -1,0 +1,10 @@
+d4d44264-b276-4bd7-8fbe-6af292b08773|Aboshan, Cephalid Emperor|Tap an untapped Octopus you control: Tap target permanent. {U}{U}{U}: Tap all creatures without flying.
+d9d7b7a9-5107-4720-9f92-b49e372372b8|Aphetto Grifter|Tap two untapped Wizards you control: Tap target permanent.
+fd19a009-d1ab-4148-a829-3d4c3af1b0b2|Archelos, Lagoon Mystic|As long as Archelos is tapped, other permanents enter tapped. As long as Archelos is untapped, other permanents enter untapped.
+a7b6cd8b-1bed-4742-8c97-8be4edbfc8ee|Captain of the Mists|Whenever another Human you control enters, untap this creature. {1}{U}, {T}: You may tap or untap target permanent.
+11a163cc-ade3-4b55-b50e-3b3bf7e1962c|Coral Trickster|Morph {U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.) When this creature is turned face up, you may tap or untap target permanent.
+0bbeb0ee-647b-43d3-91b3-6869d5ccb8b8|Curse of Inertia|Enchant player Whenever a player attacks enchanted player with one or more creatures, that attacking player may tap or untap target permanent of their choice.
+3c939ea6-68b7-4965-b1d3-af1d3dc79778|Deceiver Exarch|Flash (You may cast this spell any time you could cast an instant.) When this creature enters, choose one — • Untap target permanent you control. • Tap target permanent an opponent controls.
+afa49a09-146f-4439-850e-dd1938c93cef|Derevi, Empyrial Tactician|Flying When Derevi enters and whenever a creature you control deals combat damage to a player, you may tap or untap target permanent. {1}{G}{W}{U}: Put Derevi onto the battlefield from the command zone.
+a3386efe-d6c5-4853-a4db-61460da3364a|Dovin, Architect of Law|+1: You gain 2 life and draw a card. −1: Tap target creature. It doesn't untap during its controller's next untap step. −9: Tap all permanents target opponent controls. That player skips their next untap step.
+8b239262-c392-4ec6-9ae1-8b4a076e4bf0|Dream's Grip|Choose one — • Tap target permanent. • Untap target permanent. Entwine {1} (Choose both if you pay the entwine cost.)

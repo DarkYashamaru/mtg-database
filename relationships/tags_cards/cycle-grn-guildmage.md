@@ -1,0 +1,5 @@
+9d0eb1f4-08ef-4ac9-902b-47335ab46984|Conclave Guildmage|{G}, {T}: Creatures you control gain trample until end of turn. {5}{W}, {T}: Create a 2/2 green and white Elf Knight creature token with vigilance.
+257cc8e9-55b4-4510-9d1f-5df8c1ae2061|House Guildmage|{1}{U}, {T}: Target creature doesn't untap during its controller's next untap step. {2}{B}, {T}: Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)
+08bb1f33-b232-4382-a268-4804d4e72d29|League Guildmage|{3}{U}, {T}: Draw a card. {X}{R}, {T}: Copy target instant or sorcery spell you control with mana value X. You may choose new targets for the copy.
+bb33abbe-b43c-4a74-b2db-cce949f0edf2|Legion Guildmage|{5}{R}, {T}: This creature deals 3 damage to each opponent. {2}{W}, {T}: Tap another target creature.
+14b8b35e-57b6-4577-97a8-9d9c513db0b8|Swarm Guildmage|{4}{B}, {T}: Creatures you control get +1/+0 and gain menace until end of turn. (They can't be blocked except by two or more creatures.) {1}{G}, {T}: You gain 2 life.

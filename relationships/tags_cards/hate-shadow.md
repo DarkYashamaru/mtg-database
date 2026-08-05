@@ -1,0 +1,10 @@
+97e7778f-971c-4425-8f6d-f4ff3fae000f|Aether Web|Flash (You may cast this spell any time you could cast an instant.) Enchant creature Enchanted creature gets +1/+1, has reach, and can block creatures with shadow as though they didn't have shadow. (Creatures with reach can block creatures with flying.)
+6bb24767-687e-4ff6-b7ac-3bf969f4dfeb|Aetherflame Wall|Defender This creature can block creatures with shadow as though they didn't have shadow. {R}: This creature gets +1/+0 until end of turn.
+07c42f46-800e-4d2a-b844-c125ab93190d|Circle of Protection: Shadow|{1}: The next time a creature of your choice with shadow would deal damage to you this turn, prevent that damage.
+5fdde593-54cb-4186-974b-df4383f7efe2|Dauthi Cutthroat|Shadow (This creature can block or be blocked by only creatures with shadow.) {1}{B}, {T}: Destroy target creature with shadow.
+5bf39f9e-4f06-4637-b0fc-5d21b926f6f4|Dauthi Ghoul|Shadow (This creature can block or be blocked by only creatures with shadow.) Whenever a creature with shadow dies, put a +1/+1 counter on this creature.
+be291913-dd50-4443-ad06-7cfd04a643eb|Faceless Devourer|Shadow (This creature can block or be blocked by only creatures with shadow.) When this creature enters, exile another target creature with shadow. When this creature leaves the battlefield, return the exiled card to the battlefield under its owner's control.
+976968c5-7ef4-4451-86ff-03a011bbcca7|Heartwood Dryad|This creature can block creatures with shadow as though it had shadow.
+b7b51ab1-403e-4640-8827-b04965aa6760|Maze of Shadows|{T}: Add {C}. {T}: Untap target attacking creature with shadow. Prevent all combat damage that would be dealt to and dealt by that creature this turn.
+4433a5fd-2daa-440a-b9cc-4ad028358cbc|Phyrexian Splicer|{2}, {T}, Choose flying, first strike, trample, or shadow: Until end of turn, target creature with the chosen ability loses it and another target creature gains it.
+a7b4a519-d85f-40ae-bb5f-08bc1d301418|Reality Anchor|Target creature loses shadow until end of turn. Draw a card.

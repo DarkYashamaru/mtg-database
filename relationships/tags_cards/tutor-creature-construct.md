@@ -1,0 +1,1 @@
+ecf09f2d-a886-4ec8-8ff6-fe15d87b1375|Scrapyard Recombiner|Modular 2 (This creature enters with two +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.) {T}, Sacrifice an artifact: Search your library for a Construct card, reveal it, put it into your hand, then shuffle.

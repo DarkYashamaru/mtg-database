@@ -1,0 +1,5 @@
+e0a9c4be-74fe-4984-9028-60380db1575b|Brazen Upstart|Vigilance When this creature dies, look at the top five cards of your library. You may reveal a creature card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.
+bd3cdd9b-aa67-4bf5-80c8-53574d2c221e|Corpse Appraiser|When this creature enters, exile up to one target creature card from a graveyard. If a card is put into exile this way, look at the top three cards of your library, then put one of those cards into your hand and the rest into your graveyard.
+0cca60c3-f0be-494d-8c2c-9b135ef83165|Crew Captain|Haste This creature has indestructible as long as it entered this turn.
+c650f497-92d6-48cf-8b59-5d61eb184dc0|Disciplined Duelist|Double strike This creature enters with a shield counter on it. (If it would be dealt damage or destroyed, remove a shield counter from it instead.)
+abd839ab-8b08-4bc0-900a-3a161c62b06c|Nimble Larcenist|Flying When this creature enters, target opponent reveals their hand. You choose an artifact, instant, or sorcery card from it and exile that card.

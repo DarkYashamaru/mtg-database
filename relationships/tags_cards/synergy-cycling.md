@@ -1,0 +1,10 @@
+a051dee0-60c8-4f58-84cb-55460c097115|Abandoned Sarcophagus|You may cast spells that have a cycling ability from your graveyard. If a card that has a cycling ability would be put into your graveyard from anywhere and it wasn't cycled, exile it instead.
+535e2af0-7b08-4026-b1bf-87626407dd42|Archfiend of Ifnir|Flying Whenever you cycle or discard another card, put a -1/-1 counter on each creature your opponents control. Cycling {2} ({2}, Discard this card: Draw a card.)
+7aa5db50-5057-45fd-bce9-fb4a5e874263|Astral Drift|Whenever you cycle this card or cycle another card while this enchantment is on the battlefield, you may exile target creature. If you do, return that card to the battlefield under its owner's control at the beginning of the next end step. Cycling {2}{W} ({2}{W}, Discard this card: Draw a card.)
+70f14b10-8129-4249-a267-8b4be5d9befa|Astral Slide|Whenever a player cycles a card, you may exile target creature. If you do, return that card to the battlefield under its owner's control at the beginning of the next end step.
+93255c68-2ed1-499b-82c6-672823451ce9|Crystalline Resonance|Whenever you cycle a card, you may have this enchantment become a copy of another target permanent until your next turn, except it has this ability.
+e6dfac7c-72ed-4db8-97b0-371ed9108b00|Cunning Survivor|Whenever you cycle or discard a card, this creature gets +1/+0 until end of turn and can't be blocked this turn.
+04858b93-0a2a-44d0-942d-7fadf589cbb7|Curator of Mysteries|Flying Whenever you cycle or discard another card, scry 1. Cycling {U} ({U}, Discard this card: Draw a card.)
+86d3def3-53fa-4cad-bb25-d3275af1e3f5|Drake Haven|Whenever you cycle or discard a card, you may pay {1}. If you do, create a 2/2 blue Drake creature token with flying.
+13e2a2c3-5ab5-4de4-96ca-5f9c72137000|Drannith Healer|Whenever you cycle another card, you gain 1 life. Cycling {1} ({1}, Discard this card: Draw a card.)
+edd1727e-3a6e-4d0e-b7ae-fae2108d2147|Drannith Stinger|Whenever you cycle another card, this creature deals 1 damage to each opponent. Cycling {1} ({1}, Discard this card: Draw a card.)

@@ -1,0 +1,1 @@
+1a82be68-3b74-4dfc-9068-3abea61db709|Fell Gravship|When this Spacecraft enters, mill three cards, then return a creature or Spacecraft card from your graveyard to your hand. Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.) 8+ \| Flying, lifelink

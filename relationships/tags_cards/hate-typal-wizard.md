@@ -1,0 +1,5 @@
+d0b08a7b-8c9c-4440-9331-5a24917423ca|Fever Charm|Choose one — • Target creature gains haste until end of turn. • Target creature gets +2/+0 until end of turn. • Fever Charm deals 3 damage to target Wizard creature.
+2ac2d483-2d2a-4912-8db4-04a5a2080831|Greensleeves, Maro-Sorcerer|Protection from planeswalkers and from Wizards Greensleeves's power and toughness are each equal to the number of lands you control. Landfall — Whenever a land you control enters, create a 3/3 green Badger creature token.
+52d10e81-c8ae-44bb-bb83-f4fe737f30d7|Information Dealer|{T}: Look at the top X cards of your library, where X is the number of Wizards on the battlefield, then put them back in any order.
+a84c9507-d054-4770-84f3-5a4b5a01d826|Ixidor's Will|Counter target spell unless its controller pays {2} for each Wizard on the battlefield.
+bd8d0498-53f9-484c-a59a-78daca468859|Nameless One|Nameless One's power and toughness are each equal to the number of Wizards on the battlefield. Morph {2}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)

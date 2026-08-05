@@ -1,0 +1,4 @@
+34e325f0-b66f-44b9-a25c-da88357dbac4|Thunderscape Apprentice|{B}, {T}: Target player loses 1 life. {G}, {T}: Target creature gets +1/+1 until end of turn.
+9aa66e7d-d5e3-4c48-9c68-b61ff2af0b1a|Thunderscape Battlemage|Kicker {1}{B} and/or {G} (You may pay an additional {1}{B} and/or {G} as you cast this spell.) When this creature enters, if it was kicked with its {1}{B} kicker, target player discards two cards. When this creature enters, if it was kicked with its {G} kicker, destroy target enchantment.
+40f6ea6f-71e1-46bd-8d9a-ccb5f437892c|Thunderscape Familiar|First strike Black spells and green spells you cast cost {1} less to cast.
+e1db1798-17d1-4ef3-80d7-3f9115a01f7b|Thunderscape Master|{B}{B}, {T}: Target player loses 2 life and you gain 2 life. {G}{G}, {T}: Creatures you control get +2/+2 until end of turn.

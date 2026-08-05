@@ -1,0 +1,5 @@
+2b80faaf-92fd-4fa0-a3f6-8bb263e7ff1d|Akroma, Angel of Fury|This spell can't be countered. Flying, trample, protection from white and from blue {R}: Akroma gets +1/+0 until end of turn. Morph {3}{R}{R}{R} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)
+359b8f2c-831e-47d0-9267-dae79cecb63a|Braids, Conjurer Adept|At the beginning of each player's upkeep, that player may put an artifact, creature, or land card from their hand onto the battlefield.
+0cbf6ad8-9bf1-455d-bd74-9c142e17acb0|Crovax, Ascendant Hero|Other white creatures get +1/+1. Nonwhite creatures get -1/-1. Pay 2 life: Return Crovax to its owner's hand.
+c065a7c0-272b-4b7e-a41c-7164352cd189|Jedit Ojanen of Efrava|Forestwalk (This creature can't be blocked as long as defending player controls a Forest.) Whenever Jedit Ojanen attacks or blocks, create a 2/2 green Cat Warrior creature token with forestwalk.
+19d6a20b-4641-4c79-ae70-ed1ad5085472|Mirri the Cursed|Flying, first strike, haste Whenever Mirri deals combat damage to a creature, put a +1/+1 counter on Mirri.

@@ -1,0 +1,10 @@
+1347224f-421e-4270-8e50-cf25c875909c|Acrobatic Leap|Target creature gets +1/+3 and gains flying until end of turn. Untap it.
+d7fa5c42-7cd5-42e7-a42e-724c1a3df96a|Aerial Boost|Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.) Target creature gets +2/+2 and gains flying until end of turn.
+b0168b7e-a8b8-4ce3-af12-a43f3818b6a1|Aerial Formation|Strive — This spell costs {2}{U} more to cast for each target beyond the first. Any number of target creatures each get +1/+1 and gain flying until end of turn.
+b56c0846-e465-4251-93ea-2e3e7be8dffc|Aerial Guide|Flying Whenever this creature attacks, another target attacking creature gains flying until end of turn.
+59b2edf0-00e4-4cd4-88ac-6dd74e9b1b14|Air Marshal|{3}: Target Soldier gains flying until end of turn.
+f543dfcd-015e-48bc-851d-08002d0241fa|Ana Disciple|{U}, {T}: Target creature gains flying until end of turn. {B}, {T}: Target creature gets -2/-0 until end of turn.
+d3758fca-0522-4b5a-a1cc-3b2b3ab299ba|Angelic Blessing|Target creature gets +3/+3 and gains flying until end of turn. (It can't be blocked except by creatures with flying or reach.)
+a8730922-3f47-4c07-bdd5-4a0f557a3d3d|Archpriest of Iona|Archpriest of Iona's power is equal to the number of creatures in your party. (Your party consists of up to one each of Cleric, Rogue, Warrior, and Wizard.) At the beginning of combat on your turn, if you have a full party, target creature gets +1/+1 and gains flying until end of turn.
+f2cedb38-12b0-4489-a62b-9b6a3776d695|Arnjlot's Ascent|Cumulative upkeep {U} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.) {1}: Target creature gains flying until end of turn.
+6b70af46-ff27-4eec-9692-248b06248de6|Arrester's Zeal|Target creature gets +2/+2 until end of turn. Addendum — If you cast this spell during your main phase, that creature gains flying until end of turn.

@@ -1,0 +1,1 @@
+ad643992-eb9f-4a4a-9b74-a5aee2337f30|Lo and Li, Twin Tutors|When Lo and Li enter, search your library for a Lesson or Noble card, reveal it, put it into your hand, then shuffle. Noble creatures you control and Lesson spells you control have lifelink.

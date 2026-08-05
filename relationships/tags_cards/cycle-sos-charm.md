@@ -1,0 +1,5 @@
+a5729f11-6cde-4830-b882-ab4c5251c1a9|Lorehold Charm|Choose one — • Each opponent sacrifices a nontoken artifact of their choice. • Return target artifact or creature card with mana value 2 or less from your graveyard to the battlefield. • Creatures you control get +1/+1 and gain trample until end of turn.
+c3c25a2c-f71c-4cb7-9117-0bcda9248bfd|Prismari Charm|Choose one — • Surveil 2, then draw a card. • Prismari Charm deals 1 damage to each of one or two targets. • Return target nonland permanent to its owner's hand.
+f43e36ea-6bf5-45bd-a4ad-cc507ae45641|Quandrix Charm|Choose one — • Counter target spell unless its controller pays {2}. • Destroy target enchantment. • Target creature has base power and toughness 5/5 until end of turn.
+d985b12e-2731-4ccf-9f51-90218b20b42a|Silverquill Charm|Choose one — • Put two +1/+1 counters on target creature. • Exile target creature with power 2 or less. • Each opponent loses 3 life and you gain 3 life.
+ee1db746-f5c1-4dce-82eb-24b273cc9507|Witherbloom Charm|Choose one — • You may sacrifice a permanent. If you do, draw two cards. • You gain 5 life. • Destroy target nonland permanent with mana value 2 or less.

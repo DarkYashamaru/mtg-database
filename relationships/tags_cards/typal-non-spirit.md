@@ -1,0 +1,3 @@
+7ab18e48-f935-405b-8658-b49052d20529|Clash of Realities|All Spirits have "When this permanent enters, you may have it deal 3 damage to target non-Spirit creature." Non-Spirit creatures have "When this creature enters, you may have it deal 3 damage to target Spirit creature."
+59f10ddb-8287-4d2c-8c60-1080b108fa78|Requiem Angel|Flying Whenever another non-Spirit creature you control dies, create a 1/1 white Spirit creature token with flying.
+f41ea1b5-2c31-43fa-b142-244add1efd35|Spirit Bonds|Whenever a nontoken creature you control enters, you may pay {W}. If you do, create a 1/1 white Spirit creature token with flying. {1}{W}, Sacrifice a Spirit: Target non-Spirit creature gains indestructible until end of turn. (Damage and effects that say "destroy" don't destroy it.)

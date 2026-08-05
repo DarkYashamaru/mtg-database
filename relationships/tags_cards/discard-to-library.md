@@ -1,0 +1,10 @@
+2ac9d397-10ca-43ce-bff9-45d631553486|Agonizing Memories|Look at target player's hand and choose two cards from it. Put them on top of that player's library in any order.
+3901bf30-b7c1-4977-a7b1-fcdafcc266cd|Chimney Imp|Flying When this creature dies, target opponent puts a card from their hand on top of their library.
+08dfe42e-35c0-4be0-abba-57269792ff3d|Chittering Rats|When this creature enters, target opponent puts a card from their hand on top of their library.
+671a8509-3b6e-499c-a744-ff8b3c2b6e6a|Head Games|Target opponent puts the cards from their hand on top of their library. Search that player's library for that many cards. The player puts those cards into their hand, then shuffles.
+bcc797b9-d2e5-4fde-8d80-c890c871f344|Jester's Mask|This artifact enters tapped. {1}, {T}, Sacrifice this artifact: Target opponent puts the cards from their hand on top of their library. Search that player's library for that many cards. That player puts those cards into their hand, then shuffles.
+4a3f1110-919c-4fd0-8154-9c9441a7d770|Lost Hours|Target player reveals their hand. You choose a nonland card from it. That player puts that card into their library third from the top.
+27a3faa1-4f1a-4581-9e19-9265faa9c10b|Painful Memories|Look at target opponent's hand and choose a card from it. Put that card on top of that player's library.
+8955996a-76c9-496a-9238-5fd89bcdaae4|Perish the Thought|Target opponent reveals their hand. You choose a card from it. That player shuffles that card into their library.
+f33ef275-632e-46c8-a735-042dee340a12|Prying Questions|Target opponent loses 3 life and puts a card from their hand on top of their library.
+0ac7bacd-944d-44f4-927b-28e8c0a4371d|Psychotic Episode|Target player reveals their hand and the top card of their library. You choose a card revealed this way. That player puts the chosen card on the bottom of their library. Madness {1}{B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)

@@ -1,0 +1,5 @@
+de8c0e2d-3207-4bc6-83ef-91e33b26a981|All-Out Assault|Creatures you control get +1/+1 and have deathtouch. When this enchantment enters, if it's your main phase, there is an additional combat phase after this phase followed by an additional main phase. When you next attack this turn, untap each creature you control.
+53e86135-3b24-4618-bcc0-af4d81e672dd|Death Begets Life|Destroy all creatures and enchantments. Draw a card for each permanent destroyed this way.
+413fb2db-f1a1-4d22-ac37-a52821d35ca2|Dragonback Assault|When this enchantment enters, it deals 3 damage to each creature and each planeswalker. Landfall — Whenever a land you control enters, create a 4/4 red Dragon creature token with flying.
+61b6b1d1-4350-41c1-ac47-835b2831f24a|Jeskai Revelation|Return target spell or permanent to its owner's hand. Jeskai Revelation deals 4 damage to any target. Create two 1/1 white Monk creature tokens with prowess. Draw two cards. You gain 4 life.
+be5138fd-3e92-42b9-93c5-311e66bd443f|Perennation|Return target permanent card from your graveyard to the battlefield with a hexproof counter and an indestructible counter on it.

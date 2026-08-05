@@ -1,0 +1,5 @@
+bdec14d1-1b38-4223-869e-a0ffc76b2b0c|Brutalizer Exarch|When this creature enters, choose one — • Search your library for a creature card, reveal it, then shuffle and put that card on top. • Put target noncreature permanent on the bottom of its owner's library.
+3c939ea6-68b7-4965-b1d3-af1d3dc79778|Deceiver Exarch|Flash (You may cast this spell any time you could cast an instant.) When this creature enters, choose one — • Untap target permanent you control. • Tap target permanent an opponent controls.
+e820296a-81b0-401f-959c-7aed8abefce1|Entomber Exarch|When this creature enters, choose one — • Return target creature card from your graveyard to your hand. • Target opponent reveals their hand. You choose a noncreature card from it. That player discards that card.
+7deae378-9291-487e-9f0b-1deaf37218a8|Inquisitor Exarch|When this creature enters, choose one — • You gain 2 life. • Target opponent loses 2 life.
+ebc52f9a-ba0c-48ed-bb04-ed086efeb060|Tormentor Exarch|When this creature enters, choose one — • Target creature gets +2/+0 until end of turn. • Target creature gets -0/-2 until end of turn.

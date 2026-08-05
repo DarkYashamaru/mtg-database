@@ -1,0 +1,4 @@
+3961ef7c-4eb4-482e-9cda-d49d6a29c5a9|Aurochs|Trample Whenever this creature attacks, it gets +1/+0 until end of turn for each other attacking Aurochs.
+b07bd1cd-4000-4e6b-b16b-283c76593377|Aurochs Herd|Trample When this creature enters, you may search your library for an Aurochs card, reveal it, put it into your hand, then shuffle. Whenever this creature attacks, it gets +1/+0 until end of turn for each other attacking Aurochs.
+edd5b228-f19f-4b27-8b92-75545389da14|Bull Aurochs|Trample Whenever this creature attacks, it gets +1/+0 until end of turn for each other attacking Aurochs.
+b760b1db-764b-4b40-8a84-691b5c9c1dbc|Rimehorn Aurochs|Trample Whenever this creature attacks, it gets +1/+0 until end of turn for each other attacking Aurochs. {2}{S}: Target creature blocks target creature this turn if able. ({S} can be paid with one mana from a snow source.)

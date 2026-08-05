@@ -1,0 +1,1 @@
+c7031047-5109-482f-b2e9-14800b9279bf|Riders of the Mark|Affinity for Humans (This spell costs {1} less to cast for each Human you control.) Trample, haste At the beginning of your end step, if this creature attacked this turn, return it to its owner's hand. If you do, create a number of 1/1 white Human Soldier creature tokens equal to its toughness.

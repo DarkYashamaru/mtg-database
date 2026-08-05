@@ -1,0 +1,10 @@
+23467047-6dba-4498-b783-1ebc4f74b8c2|Ancient Tomb|{T}: Add {C}{C}. This land deals 2 damage to you.
+eeb9377b-72c1-4214-9a66-0f55577c17d1|Barbarian Ring|{T}: Add {R}. This land deals 1 damage to you. Threshold — {R}, {T}, Sacrifice this land: It deals 2 damage to any target. Activate only if there are seven or more cards in your graveyard.
+36937483-30cb-449a-8028-75017a124922|Boseiju, Who Shelters All|Boseiju enters tapped. {T}, Pay 2 life: Add {C}. If that mana is spent on an instant or sorcery spell, that spell can't be countered.
+92392467-a22f-4dd7-a0eb-393bef956dc0|Cabal Pit|{T}: Add {B}. This land deals 1 damage to you. Threshold — {B}, {T}, Sacrifice this land: Target creature gets -2/-2 until end of turn. Activate only if there are seven or more cards in your graveyard.
+c737d27b-db14-4bd4-8f16-bcbd4401c47b|Caldera Lake|This land enters tapped. {T}: Add {C}. {T}: Add {U} or {R}. This land deals 1 damage to you.
+5cf92fd4-7c0b-4d8e-92f1-53dc2e0476fc|Centaur Garden|{T}: Add {G}. This land deals 1 damage to you. Threshold — {G}, {T}, Sacrifice this land: Target creature gets +3/+3 until end of turn. Activate only if there are seven or more cards in your graveyard.
+c733873e-77db-471f-8061-139db24f7e7c|Cephalid Coliseum|{T}: Add {U}. This land deals 1 damage to you. Threshold — {U}, {T}, Sacrifice this land: Target player draws three cards, then discards three cards. Activate only if there are seven or more cards in your graveyard.
+f25351e3-539b-4bbc-b92d-6480acf4d722|City of Brass|Whenever this land becomes tapped, it deals 1 damage to you. {T}: Add one mana of any color.
+6276a985-7630-476d-a94f-6c6adc88f6c4|Corrupted Crossroads|{T}: Add {C}. ({C} represents colorless mana.) {T}, Pay 1 life: Add one mana of any color. Spend this mana only to cast a spell with devoid.
+5b6d933e-2830-4f5a-b244-a421aa9615dc|Eumidian Hatchery|{T}, Pay 1 life: Add {B}. Put a hatchling counter on this land. When this land is put into a graveyard from the battlefield, for each hatchling counter on it, create a 1/1 black Insect creature token with flying.

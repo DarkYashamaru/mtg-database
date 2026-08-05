@@ -1,0 +1,10 @@
+38477748-bc57-449c-afe1-c5f34caf8eff|Acolyte of Bahamut|Commander creatures you own have "The first Dragon spell you cast each turn costs {2} less to cast."
+f9516b60-36dd-4f8a-bebb-ac1bc0961f07|Candlekeep Sage|Commander creatures you own have "When this creature enters or leaves the battlefield, draw a card."
+6ebd4b3f-246e-475f-8cec-838eaaf597e2|Clan Crafter|Commander creatures you own have "{2}, Sacrifice an artifact: Put a +1/+1 counter on this creature and draw a card."
+f898bf43-6a9c-46eb-b805-63cb12bab273|Cloakwood Hermit|Commander creatures you own have "At the beginning of your end step, if a creature card was put into your graveyard from anywhere this turn, create two tapped 1/1 green Squirrel creature tokens."
+54ad73d1-a17d-468c-a0ba-05c532a02cb2|Criminal Past|Commander creatures you own have menace and "This creature gets +X/+0, where X is the number of creature cards in your graveyard." (A creature with menace can't be blocked except by two or more creatures.)
+d1d7c5fa-a92a-4815-a558-6d3daf37f4c4|Dragon Cultist|Commander creatures you own have "At the beginning of your end step, if a source you controlled dealt 5 or more damage this turn, create a 4/4 red Dragon creature token with flying."
+ef220170-c01a-4ca5-b887-f248c50227ee|Faceless One|If Faceless One is your commander, choose a color before the game begins. Faceless One is the chosen color. Choose a Background (You can have a Background as a second commander.)
+b9432430-df01-497d-b025-7576dce830e4|Far Traveler|Commander creatures you own have "At the beginning of your end step, exile up to one target tapped creature you control, then return it to the battlefield under its owner's control."
+cbc93912-2c36-4554-9b42-1dcca059fbb5|Feywild Visitor|Commander creatures you own have "Whenever one or more nontoken creatures you control deal combat damage to a player, you create a 1/1 blue Faerie Dragon creature token with flying."
+c5126d6e-969c-4034-98e3-f8653163346f|Folk Hero|Commander creatures you own have "Whenever you cast a spell that shares a creature type with this creature, draw a card. This ability triggers only once each turn."

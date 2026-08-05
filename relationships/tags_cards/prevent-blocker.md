@@ -1,0 +1,10 @@
+5404c6a5-399d-4237-b03c-41b6a1b79050|Abandon the Post|Up to two target creatures can't block this turn. Flashback {3}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+dbedd45e-f76c-4be7-ad89-ff57bed6626f|Absolving Lammasu|Flying When this creature enters, all suspected creatures are no longer suspected. When this creature dies, you gain 3 life and suspect up to one target creature an opponent controls. (A suspected creature has menace and can't block.)
+11b7ee78-fca6-4b34-93e4-e60492583d50|Agrus Kos, Spirit of Justice|Double strike, vigilance Whenever Agrus Kos enters or attacks, choose up to one target creature. If it's suspected, exile it. Otherwise, suspect it. (A suspected creature has menace and can't block.)
+5b3ef91a-5804-43cc-a947-f25f33b7b88c|Ahn-Crop Crasher|Haste (This creature can attack and {T} as soon as it comes under your control.) You may exert this creature as it attacks. When you do, target creature can't block this turn. (An exerted creature won't untap during your next untap step.)
+25c8a3b0-c393-4fc6-a373-808cd8e9850c|Air Bladder|Enchant creature Enchanted creature has flying. Enchanted creature can block only creatures with flying.
+f574bd9f-4246-42cb-bf4e-d2888daa44c9|Alchemist's Vial|When this artifact enters, draw a card. {1}, {T}, Sacrifice this artifact: Target creature can't attack or block this turn.
+8b25f353-0798-4a03-a928-6a701a919468|Arachnus Web|Enchant creature Enchanted creature can't attack or block, and its activated abilities can't be activated. At the beginning of the end step, if enchanted creature's power is 4 or greater, destroy this Aura.
+4dfea3bf-dfd1-4abd-a17e-f3a07488a069|Arena Athlete|Heroic — Whenever you cast a spell that targets this creature, target creature an opponent controls can't block this turn.
+81728b98-8cf9-4734-a318-69184bb4d15c|Arrest|Enchant creature Enchanted creature can't attack or block, and its activated abilities can't be activated.
+6a1a9e8a-a323-489a-b4db-b04da76662f4|Auriok Siege Sled|{1}: Target artifact creature blocks this creature this turn if able. {1}: Target artifact creature can't block this creature this turn.

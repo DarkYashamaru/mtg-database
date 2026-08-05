@@ -1,0 +1,10 @@
+e4125377-34c0-4b54-bdf8-4e88f5d24565|Approach of the Second Sun|If this spell was cast from your hand and you've cast another spell named Approach of the Second Sun this game, you win the game. Otherwise, put Approach of the Second Sun into its owner's library seventh from the top and you gain 7 life.
+9b5a3765-943b-4925-b008-fc734b2934f7|Baseball Bat|When this Equipment enters, attach it to target creature you control. Equipped creature gets +1/+1. Whenever equipped creature attacks, tap up to one target creature. Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)
+607425ac-9e90-4c9e-88bf-72f8a76cce97|Big Play|Target creature gets +2/+2 and gains reach until end of turn. Put a +1/+1 counter on it. (A creature with reach can block creatures with flying.)
+0e676904-17c3-40f2-9b5b-eb29cacc336f|Boxing Ring|Whenever a creature you control enters, it fights up to one target creature you don't control with the same mana value. {T}: Create a Treasure token. Activate only if you control a creature that fought this turn.
+0140cf53-71ef-4d37-9197-48aab35ca4a2|Bull Rush|Target creature gets +2/+0 until end of turn.
+d41dc3a5-58e4-444a-b388-5a32ccbed0eb|Finishing Move|You get {TK}{TK}, then you may put a sticker on a nonland permanent you own. Target creature you control deals damage equal to its power to target creature you don't control.
+cbf68ddd-596f-4b2d-b93c-3b7976ba4d37|Fumble|Return target creature to its owner's hand. Gain control of all Auras and Equipment that were attached to it, then attach them to another creature.
+02746b0e-3ef9-46c0-9517-6c52c2905d0b|Game Plan|Assist (Another player can pay up to {5} of this spell's cost.) Each player shuffles their hand and graveyard into their library, then draws seven cards. Exile Game Plan.
+81776a16-bf38-450b-995b-beb29121cab2|Huddle Up|Assist (Another player can pay up to {2} of this spell's cost.) Two target players each draw a card.
+f5bece93-afb3-4fa4-83a8-d7eaac032522|Most Valuable Slayer|Whenever you attack, target attacking creature gets +1/+0 and gains first strike until end of turn.

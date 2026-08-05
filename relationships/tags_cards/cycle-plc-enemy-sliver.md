@@ -1,0 +1,5 @@
+93a9423c-2b1b-41ce-80f4-157140c684ad|Cautery Sliver|All Slivers have "{1}, Sacrifice this permanent: This permanent deals 1 damage to any target." All Slivers have "{1}, Sacrifice this permanent: Prevent the next 1 damage that would be dealt to target player, planeswalker, or Sliver creature this turn."
+88e5b905-fe52-4fd6-8cdf-b7ede5166ebc|Darkheart Sliver|All Slivers have "Sacrifice this permanent: You gain 3 life."
+2bc3d5b2-076f-4e01-87be-28d7eb70a2db|Dormant Sliver|All Sliver creatures have defender. All Slivers have "When this permanent enters, draw a card."
+b1af4207-e546-4bde-950b-3234dfffe278|Frenetic Sliver|All Slivers have "{0}: If this permanent is on the battlefield, flip a coin. If you win the flip, exile this permanent and return it to the battlefield under its owner's control at the beginning of the next end step. If you lose the flip, sacrifice it."
+9655569d-bfa5-4665-9371-9f275b8d223e|Necrotic Sliver|All Slivers have "{3}, Sacrifice this permanent: Destroy target permanent."

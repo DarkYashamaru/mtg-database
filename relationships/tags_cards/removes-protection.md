@@ -1,0 +1,2 @@
+15093579-8258-41d2-9738-aaa7e3824c40|Cephalid Snitch|Sacrifice this creature: Target creature loses protection from black until end of turn.
+95892392-2ed3-4c1a-bbaa-4083f526769c|Shay Cormac|{1}: Permanents your opponents control lose hexproof, indestructible, protection, shroud, and ward until end of turn. Whenever a creature an opponent controls becomes the target of a spell or ability you control, put a bounty counter on that creature. Whenever a creature with a bounty counter on it dies, put two +1/+1 counters on Shay Cormac.

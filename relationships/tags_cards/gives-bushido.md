@@ -1,0 +1,2 @@
+63305fd4-068f-498b-a01e-0b375c592797|Sensei Golden-Tail|Bushido 1 (Whenever this creature blocks or becomes blocked, it gets +1/+1 until end of turn.) {1}{W}, {T}: Put a training counter on target creature. That creature gains bushido 1 and becomes a Samurai in addition to its other creature types. Activate only as a sorcery.
+2d13d399-7198-4cab-b564-dfe0e09425a3|Slimy Burrito Illusion|{TK}{TK} — Bushido 2 (Whenever this creature blocks or becomes blocked, it gets +2/+2 until end of turn.) {TK}{TK}{TK} — Double strike {TK}{TK} — 2/4 {TK}{TK}{TK}{TK} — 5/6

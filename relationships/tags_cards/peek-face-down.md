@@ -1,0 +1,9 @@
+e7ac8c1d-d298-4d57-8e0e-c60c7e61b247|Aven Soulgazer|Flying {2}{W}: Look at target face-down creature.
+ad37551c-9d20-4902-8190-6a0aa32a7947|Found Footage|You may look at face-down creatures your opponents control any time. {2}, Sacrifice this artifact: Surveil 2, then draw a card. (To surveil 2, look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)
+09c275bd-8323-485e-81f6-aff1f99d0d03|Hauntwoods Shrieker|Whenever this creature attacks, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.) {1}{G}: Reveal target face-down permanent. If it's a creature card, you may turn it face up.
+84b28100-ad70-4a78-b557-99f5ef6126a3|Keeper of the Lens|You may look at face-down creatures you don't control any time.
+7df50107-25d8-47dc-9a13-27b257cfbf6f|Lens of Clarity|You may look at the top card of your library and at face-down creatures you don't control any time.
+6afe9cc7-80e4-4607-8633-6013d96bd19c|Lumbering Laundry|{2}: Until end of turn, you may look at face-down creatures you don't control any time. Disguise {5} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)
+905a6d6c-5ef8-4afa-89bb-9d85a854743f|Revealing Wind|Prevent all combat damage that would be dealt this turn. You may look at each face-down creature that's attacking or blocking.
+387a5937-cdbd-4e8e-8efb-4d444aa9cbc9|Smoke Teller|{1}{U}: Look at target face-down creature.
+81a5893a-764c-41ea-ba81-346b3c7558a4|Spy Network|Look at target player's hand, the top card of that player's library, and any face-down creatures they control. Look at the top four cards of your library, then put them back in any order.

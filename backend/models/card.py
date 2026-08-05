@@ -15,7 +15,9 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from database.base import Base
 
 if TYPE_CHECKING:
+    from models.archetype import Archetype
     from models.tag import Tagging
+    from models.category import Category
     from models.catalogs import Supertype, CardType, Subtype
 
 
@@ -51,6 +53,18 @@ class Card(Base):
     keywords: Mapped[list["Card_Keyword"]] = relationship(
         back_populates="card",
         cascade="all, delete-orphan",
+    )
+
+    categories: Mapped[list["Category"]] = relationship(
+        "Category",
+        secondary="card_categories",
+        back_populates="cards",
+    )
+
+    archetypes: Mapped[list["Archetype"]] = relationship(
+        "Archetype",
+        secondary="card_archetypes",
+        back_populates="cards",
     )
 
     def __repr__(self) -> str:

@@ -1,0 +1,5 @@
+77217a66-4ba8-443f-b915-178cfcc233e1|Chaos Spewer|When this creature enters, you may pay {2}. If you don't, blight 2. (To blight 2, put two -1/-1 counters on a creature you control.)
+f70d65bf-5f1c-4aee-9bd1-f5ee6974b058|Flaring Cinder|When this creature enters and whenever you cast a spell with mana value 4 or greater, you may discard a card. If you do, draw a card.
+d709f396-021f-49eb-adb5-374aa790eaae|Merrow Skyswimmer|Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.) Flying, vigilance When this creature enters, create a 1/1 white and blue Merfolk creature token.
+96c4b51c-8a10-428c-a948-e1ba9c652bfd|Stoic Grove-Guide|{1}{B/G}, Exile this card from your graveyard: Create a 2/2 black and green Elf creature token. Activate only as a sorcery.
+63eed1f5-442f-433d-989c-397b88543162|Wary Farmer|At the beginning of your end step, if another creature entered the battlefield under your control this turn, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)

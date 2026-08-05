@@ -1,0 +1,3 @@
+0ca233f4-1b7f-4807-ab6e-2b1f5439b3db|Karn Liberated|+4: Target player exiles a card from their hand. −3: Exile target permanent. −14: Restart the game, leaving in exile all non-Aura permanent cards exiled with Karn. Then put those cards onto the battlefield under your control.
+c4fccdd5-5b51-46b9-9937-9167c108743d|Sway of the Stars|Each player shuffles their hand, graveyard, and all permanents they own into their library, then draws seven cards. Each player's life total becomes 7.
+ae0b8c13-0a71-4a60-bf9f-6e2da9503e9c|Worldfire|Exile all permanents. Exile all cards from all hands and graveyards. Each player's life total becomes 1.

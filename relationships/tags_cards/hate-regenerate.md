@@ -1,0 +1,10 @@
+a2404d88-0621-49ae-9908-052c23a96ac6|Abu Ja'far|When this creature dies, destroy all creatures blocking or blocked by it. They can't be regenerated.
+4c13e2b5-961a-4031-84b1-15bd19b94286|Afterlife|Destroy target creature. It can't be regenerated. Its controller creates a 1/1 white Spirit creature token with flying.
+41681a1f-0777-4b96-8c7e-d6a5d1b1c8fc|Agonizing Demise|Kicker {1}{R} (You may pay an additional {1}{R} as you cast this spell.) Destroy target nonblack creature. It can't be regenerated. If this spell was kicked, Agonizing Demise deals damage equal to that creature's power to the creature's controller.
+28f55673-7aa0-497e-8434-aa70df1b5e04|Annihilate|Destroy target nonblack creature. It can't be regenerated. Draw a card.
+995e2412-3f69-4aaf-a5d6-ae0ecbb95061|Apocalypse Chime|{2}, {T}, Sacrifice this artifact: Destroy all nontoken permanents with a name originally printed in the Homelands expansion. They can't be regenerated.
+e77e8768-3ea8-44f9-aba6-1e023e006946|Artifact Mutation|Destroy target artifact. It can't be regenerated. Create X 1/1 green Saproling creature tokens, where X is that artifact's mana value.
+2da5aa33-3794-4f83-936c-9d8640833d86|Avatar of Woe|If there are ten or more creature cards total in all graveyards, this spell costs {6} less to cast. Fear (This creature can't be blocked except by artifact creatures and/or black creatures.) {T}: Destroy target creature. It can't be regenerated.
+c573c59a-5a79-4fe1-a6d8-5e0153b5c059|Befoul|Destroy target land or nonblack creature. It can't be regenerated.
+ab55834f-c935-4773-89c6-bec9712284eb|Big Game Hunter|When this creature enters, destroy target creature with power 4 or greater. It can't be regenerated. Madness {B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)
+690ba846-964e-44ba-8637-9a1ce62f5931|Bone Shaman|{B}: Until end of turn, this creature gains "Creatures dealt damage by this creature this turn can't be regenerated this turn."

@@ -1,0 +1,2 @@
+41820f91-27cf-41c0-bb5e-9adf6845a6a4|Phyrexian Obliterator|Trample Whenever a source deals damage to this creature, that source's controller sacrifices that many permanents of their choice.
+9b5cfbb7-21ed-491d-b77d-547e4d30a7da|Phyrexian Vindicator|Flying If damage would be dealt to this creature, prevent that damage. When damage is prevented this way, this creature deals that much damage to any other target.

@@ -1,0 +1,4 @@
+a6898364-c29e-4b97-a500-344efa3ec24a|Banishing Stroke|Put target artifact, creature, or enchantment on the bottom of its owner's library. Miracle {W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)
+1e77cf90-ac51-4ac7-b123-be04aabe1688|Blessings of Nature|Distribute four +1/+1 counters among any number of target creatures. Miracle {G} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)
+78260893-c443-44c8-ab45-ce86ef347d98|Thunderous Wrath|Thunderous Wrath deals 5 damage to any target. Miracle {R} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)
+a2ae1a1b-5c4f-46ed-90da-bd50ca914e7c|Vanishment|Put target nonland permanent on top of its owner's library. Miracle {U} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)

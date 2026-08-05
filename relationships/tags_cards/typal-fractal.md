@@ -1,0 +1,2 @@
+70868667-a843-4954-863f-990854188c53|Biomathematician|When this creature enters, create a 0/0 green and blue Fractal creature token. Put a +1/+1 counter on each Fractal you control.
+c63b3511-d597-4c6e-9094-eabdeaa8a394|Jadzi, Steward of Fate // Oracle's Gift|Jadzi enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.) When Jadzi enters, draw two cards, then discard two cards. // Create X 0/0 green and blue Fractal creature tokens, then put X +1/+1 counters on each Fractal you control.

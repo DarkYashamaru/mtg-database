@@ -1,0 +1,5 @@
+36ac8fc6-98ad-499b-9adf-046433e2c122|Bouncer's Beatdown|This spell costs {2} less to cast if it targets a black permanent. Bouncer's Beatdown deals X damage to target creature or planeswalker, where X is the greatest power among creatures you control. If that creature or planeswalker would die this turn, exile it instead.
+7068637c-b025-41a5-be31-df1850f33b68|Knockout Blow|This spell costs {2} less to cast if it targets a red creature. Knockout Blow deals 4 damage to target attacking or blocking creature and you gain 2 life.
+9300874a-32a9-4869-b3e1-1b996403df4e|Out of the Way|This spell costs {2} less to cast if it targets a green permanent. Return target nonland permanent an opponent controls to its owner's hand. Draw a card.
+b6d61d96-a56a-4f4c-a196-05e03fe16ed2|Torch Breath|This spell costs {2} less to cast if it targets a blue permanent. This spell can't be countered. Torch Breath deals X damage to target creature or planeswalker.
+19becb14-3774-4732-b792-d2d0e5a94b35|Whack|This spell costs {3} less to cast if it targets a white creature. Target creature gets -4/-4 until end of turn.

@@ -1,0 +1,5 @@
+a549d54f-2640-455c-8a93-bef4df2f9e8b|Cairn Wanderer|Changeling (This card is every creature type.) As long as a creature card with flying is in a graveyard, this creature has flying. The same is true for fear, first strike, double strike, deathtouch, haste, landwalk, lifelink, protection, reach, trample, shroud, and vigilance.
+7b8f1458-c638-4907-9363-f7cc22d04605|Chameleon Colossus|Changeling (This card is every creature type.) Protection from black {2}{G}{G}: This creature gets +X/+X until end of turn, where X is its power.
+17e905ca-c0bd-473d-95a7-e180ba5fea43|Mirror Entity|Changeling (This card is every creature type.) {X}: Until end of turn, creatures you control have base power and toughness X/X and gain all creature types.
+400c9fd8-c307-4b27-af6a-73e100717881|Shapesharer|Changeling (This card is every creature type.) {2}{U}: Target Shapeshifter becomes a copy of target creature until your next turn.
+fd5ee26c-cc54-4dc0-b611-5cda14354a5e|Taurean Mauler|Changeling (This card is every creature type.) Whenever an opponent casts a spell, you may put a +1/+1 counter on this creature.

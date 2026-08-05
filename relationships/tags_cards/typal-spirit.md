@@ -1,0 +1,10 @@
+48edc348-93f6-4dce-9cc4-7244d76b6f4a|Accursed Duneyard|{T}: Add {C}. {2}, {T}: Regenerate target Shade, Skeleton, Specter, Spirit, Vampire, Wraith, or Zombie. (The next time it would be destroyed this turn, instead tap it, remove it from combat, and heal all damage on it.)
+e9db79fd-a5b6-4d59-9176-e713e2e9c708|Aether Shockwave|Choose one — • Tap all Spirits. • Tap all non-Spirit creatures.
+9b6a74fb-c48f-4d85-b4b3-96eb80b9efc7|Angel of Flight Alabaster|Flying At the beginning of your upkeep, return target Spirit card from your graveyard to your hand.
+9c45682f-48b5-4e58-9277-ff4211f389ae|Antiquities on the Loose|Create two 2/2 red and white Spirit creature tokens. Then if this spell was cast from anywhere other than your hand, put a +1/+1 counter on each Spirit you control. Flashback {4}{W}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)
+3420da71-0af4-46b4-a994-91a82332d0fb|Apothecary Geist|Flying When this creature enters, if you control another Spirit, you gain 3 life.
+eb036e02-f43e-46a2-90f1-931579467c9b|Baboon Spirit|Whenever another nontoken Spirit you control enters, create a 1/1 colorless Spirit creature token with "This token can't block or be blocked by non-Spirit creatures." {3}{U}: Exile another target creature you control. Return it to the battlefield under its owner's control at the beginning of the next end step.
+8443b8c2-d0ab-4fb1-ad35-7e5e4cb345b6|Baku Altar|Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this artifact. {2}, {T}, Remove a ki counter from this artifact: Create a 1/1 colorless Spirit creature token.
+2450d35b-7d87-4885-b396-f8e1d3ac0b22|Battleground Geist|Flying Other Spirit creatures you control get +1/+0.
+9ca64b8e-e9d2-41b3-b229-6fcdc48a8371|Blademane Baku|Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature. {1}, Remove X ki counters from this creature: For each counter removed, this creature gets +2/+0 until end of turn.
+10ea73c8-7cf8-4a48-a0cc-072bb541880f|Blood Age General|{T}: Attacking Spirits get +1/+0 until end of turn.

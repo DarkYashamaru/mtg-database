@@ -1,0 +1,5 @@
+c85d824b-c190-4d04-ab99-918ad0e6516c|Endurance|Flash Reach When this creature enters, up to one target player puts all the cards from their graveyard on the bottom of their library in a random order. Evoke—Exile a green card from your hand.
+fbf9f8c5-849f-45d5-8129-5fc683c21a04|Fury|Double strike When this creature enters, it deals 4 damage divided as you choose among any number of target creatures and/or planeswalkers. Evoke—Exile a red card from your hand.
+0d6b89dc-23fb-48e9-a54b-cea2838ae7c8|Grief|Menace When this creature enters, target opponent reveals their hand. You choose a nonland card from it. That player discards that card. Evoke—Exile a black card from your hand.
+dcb9c2a7-ae54-4ddc-a567-640bf4bf4366|Solitude|Flash Lifelink When this creature enters, exile up to one other target creature. That creature's controller gains life equal to its power. Evoke—Exile a white card from your hand.
+377179d5-ac83-4d34-b5b1-f3d8caa60f79|Subtlety|Flash Flying When this creature enters, choose up to one target creature spell or planeswalker spell. Its owner puts it on their choice of the top or bottom of their library. Evoke—Exile a blue card from your hand.

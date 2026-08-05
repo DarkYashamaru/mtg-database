@@ -1,0 +1,10 @@
+ae4fe5e0-408d-4398-84d7-a901b836df2a|Admiral's Order|Raid — If you attacked this turn, you may pay {U} rather than pay this spell's mana cost. Counter target spell.
+17ce2c17-b69b-4ebf-9c3c-c64e771af101|Alesha, Who Laughs at Fate|First strike Whenever Alesha attacks, put a +1/+1 counter on it. Raid — At the beginning of your end step, if you attacked this turn, return target creature card with mana value less than or equal to Alesha's power from your graveyard to the battlefield.
+3477e1cc-46af-46f4-9ea2-bdf0bf1f880e|Avengers Assemble!|Flash Heroes you control get +2/+2. At the beginning of each end step, if you attacked with a Hero this turn or a Hero entered the battlefield under your control this turn, draw a card.
+e1e5ad8c-d425-44ad-a8f6-e9290667f6f5|Bellowing Saddlebrute|Raid — When this creature enters, you lose 4 life unless you attacked this turn.
+cad09970-14c8-4d80-82fe-6c855efb0191|Bloodsoaked Champion|This creature can't block. Raid — {1}{B}: Return this card from your graveyard to the battlefield. Activate only if you attacked this turn.
+05878e49-93ad-4144-9c50-a0bb86126c2e|Chart a Course|Draw two cards. Then discard a card unless you attacked this turn.
+24a691f3-88dc-47a5-b5cd-e02bb8026470|Cruel Administrator|Raid — This creature enters with a +1/+1 counter on it if you attacked this turn. Whenever this creature attacks, create a 2/2 red Soldier creature token with firebending 1. (Whenever it attacks, add {R}. This mana lasts until end of combat.)
+22a23706-a5fe-46f3-b845-6f58d558c723|Curious Obsession|Enchant creature Enchanted creature gets +1/+1 and has "Whenever this creature deals combat damage to a player, you may draw a card." At the beginning of your end step, if you didn't attack with a creature this turn, sacrifice this Aura.
+1355424e-9909-41dc-8d43-b8d21b0919bf|Deadeye Rig-Hauler|Raid — When this creature enters, if you attacked this turn, you may return target creature to its owner's hand.
+ab735456-f831-4988-84c6-50ca14351990|Deadeye Tormentor|Raid — When this creature enters, if you attacked this turn, target opponent discards a card.

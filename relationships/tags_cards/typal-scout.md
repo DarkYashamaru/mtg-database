@@ -1,0 +1,1 @@
+24fd1f47-bb15-45c6-a7b1-ba8eb3bb8b1d|Vaan, Street Thief|Whenever one or more Scouts, Pirates, and/or Rogues you control deal combat damage to a player, exile the top card of that player's library. You may cast it. If you don't, create a Treasure token. Whenever you cast a spell you don't own, put a +1/+1 counter on each Scout, Pirate, and Rogue you control.

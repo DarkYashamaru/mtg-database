@@ -1,0 +1,5 @@
+0b1a27bd-bb98-44f8-8357-666fabfeabf0|Chain of Acid|Destroy target noncreature permanent. Then that permanent's controller may copy this spell and may choose a new target for that copy.
+029d08cb-da4d-4f4e-b667-62712af63260|Chain of Plasma|Chain of Plasma deals 3 damage to any target. Then that player or that permanent's controller may discard a card. If the player does, they may copy this spell and may choose a new target for that copy.
+d7b476ed-fc50-4804-8375-488a9e2ab184|Chain of Silence|Prevent all damage target creature would deal this turn. That creature's controller may sacrifice a land of their choice. If the player does, they may copy this spell and may choose a new target for that copy.
+ea14c26b-bf2f-48b4-b879-6e63069ded1f|Chain of Smog|Target player discards two cards. That player may copy this spell and may choose a new target for that copy.
+2167ac25-d042-4b48-b770-8b94acc1a965|Chain of Vapor|Return target nonland permanent to its owner's hand. Then that permanent's controller may sacrifice a land of their choice. If the player does, they may copy this spell and may choose a new target for that copy.

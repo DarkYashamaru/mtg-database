@@ -1,0 +1,5 @@
+ce1866e9-28de-4bcc-9999-11958e6c13a6|Massacre|If an opponent controls a Plains and you control a Swamp, you may cast this spell without paying its mana cost. All creatures get -2/-2 until end of turn.
+0923ad85-2ea4-4463-8f71-b7d0a162b486|Mogg Salvage|If an opponent controls an Island and you control a Mountain, you may cast this spell without paying its mana cost. Destroy target artifact.
+c6f69168-71c2-41a2-ab95-cfd7baf0ba68|Refreshing Rain|If an opponent controls a Swamp and you control a Forest, you may cast this spell without paying its mana cost. Target player gains 6 life.
+c5edfaae-3ecd-41ad-970f-8cecb09bf1e4|Sivvi's Ruse|If an opponent controls a Mountain and you control a Plains, you may cast this spell without paying its mana cost. Prevent all damage that would be dealt this turn to creatures you control.
+99427ebe-c00d-4206-84ca-9764f6e952c6|Submerge|If an opponent controls a Forest and you control an Island, you may cast this spell without paying its mana cost. Put target creature on top of its owner's library.

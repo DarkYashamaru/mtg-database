@@ -1,0 +1,5 @@
+2031bc31-81cc-407a-8615-29832f586bbc|Calciform Pools|{T}: Add {C}. {1}, {T}: Put a storage counter on this land. {1}, Remove X storage counters from this land: Add X mana in any combination of {W} and/or {U}.
+130a8cf5-1354-4d17-91c8-c073642eb3db|Dreadship Reef|{T}: Add {C}. {1}, {T}: Put a storage counter on this land. {1}, Remove X storage counters from this land: Add X mana in any combination of {U} and/or {B}.
+6f18ea44-3efa-4a45-abc6-86a0627e40f2|Fungal Reaches|{T}: Add {C}. {1}, {T}: Put a storage counter on this land. {1}, Remove X storage counters from this land: Add X mana in any combination of {R} and/or {G}.
+33587cb2-0fd3-4e4c-bc5e-e7299cc9dab5|Molten Slagheap|{T}: Add {C}. {1}, {T}: Put a storage counter on this land. {1}, Remove X storage counters from this land: Add X mana in any combination of {B} and/or {R}.
+021e4165-2f02-4bd4-86ca-cb7bf4c9e23d|Saltcrusted Steppe|{T}: Add {C}. {1}, {T}: Put a storage counter on this land. {1}, Remove X storage counters from this land: Add X mana in any combination of {G} and/or {W}.

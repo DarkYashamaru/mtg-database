@@ -1,0 +1,4 @@
+2bc3d5b2-076f-4e01-87be-28d7eb70a2db|Dormant Sliver|All Sliver creatures have defender. All Slivers have "When this permanent enters, draw a card."
+ee10dc06-26e1-4f50-a0a6-6d039e71b75f|Plague Sliver|All Slivers have "At the beginning of your upkeep, this permanent deals 1 damage to you."
+762d864b-69bc-43ac-af2f-e18186010169|Sliver Overlord|{3}: Search your library for a Sliver card, reveal that card, put it into your hand, then shuffle. {3}: Gain control of target Sliver. (This effect lasts indefinitely.)
+271b37b6-b60b-4687-bd82-ecacf3b66cb3|Vedalken Aethermage|Flash (You may cast this spell any time you could cast an instant.) When this creature enters, return target Sliver to its owner's hand. Wizardcycling {3} ({3}, Discard this card: Search your library for a Wizard card, reveal it, put it into your hand, then shuffle.)

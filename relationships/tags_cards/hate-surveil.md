@@ -1,0 +1,1 @@
+418ecbb7-b809-4639-a531-070b58b5b85e|River Song|Meet in Reverse — You draw cards from the bottom of your library rather than the top. Spoilers — Whenever an opponent scries, surveils, or searches their library, put a +1/+1 counter on River Song. Then River Song deals damage to that player equal to its power.

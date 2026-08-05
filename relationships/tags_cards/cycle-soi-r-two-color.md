@@ -1,0 +1,5 @@
+7c35f3fd-c64e-4944-a4d5-37ce916d23c3|Altered Ego|This spell can't be countered. You may have this creature enter as a copy of any creature on the battlefield, except it enters with X additional +1/+1 counters on it.
+ad09b3c3-c8e7-481c-8c45-e7f234935117|Anguished Unmaking|Exile target nonland permanent. You lose 3 life.
+70763549-4b4e-4cb8-8c02-0639ba18bb1a|Fevered Visions|At the beginning of each player's end step, that player draws a card. If the player is your opponent and has four or more cards in hand, this enchantment deals 2 damage to that player.
+cd6e9465-f4eb-482d-9c49-3a16b52c997c|Invocation of Saint Traft|Enchant creature Enchanted creature has "Whenever this creature attacks, create a 4/4 white Angel creature token with flying that's tapped and attacking. Exile that token at end of combat."
+8499b3ec-9a61-47a4-a880-e8230b41c81b|Prized Amalgam|Whenever a creature enters, if it entered from your graveyard or you cast it from your graveyard, return this card from your graveyard to the battlefield tapped at the beginning of the next end step.

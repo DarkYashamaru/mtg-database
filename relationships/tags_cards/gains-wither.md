@@ -1,0 +1,3 @@
+5f7a4ffb-83f7-46e5-b0a7-c8b068af6969|Blazethorn Scarecrow|This creature has haste as long as you control a red creature. This creature has wither as long as you control a green creature. (It deals damage to creatures in the form of -1/-1 counters.)
+fe01e07c-dbca-4598-a944-1b194df44260|Thornwatch Scarecrow|This creature has wither as long as you control a green creature. (It deals damage to creatures in the form of -1/-1 counters.) This creature has vigilance as long as you control a white creature.
+5f4ddd52-4940-4557-8531-40c66857d4cd|Woodlurker Mimic|Whenever you cast a spell that's both black and green, this creature has base power and toughness 4/5 until end of turn and gains wither until end of turn. (It deals damage to creatures in the form of -1/-1 counters.)

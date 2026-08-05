@@ -1,0 +1,7 @@
+45f88a6a-ac8a-4a53-a96b-f09ca33c79ba|Agent of the Fates|Deathtouch Heroic — Whenever you cast a spell that targets this creature, each opponent sacrifices a creature of their choice.
+b8f3da11-7c8f-4846-98a6-204bfd8d572b|Blighted Fen|{T}: Add {C}. {4}{B}, {T}, Sacrifice this land: Target opponent sacrifices a creature of their choice.
+2e3ee458-fa3f-4452-ab95-5a7fb5a0483b|Plaguecrafter|When this creature enters, each player sacrifices a creature or planeswalker of their choice. Each player who can't discards a card.
+6f34d70e-7a3a-43f7-b2c9-f89519804d3c|Skull Storm|When you cast this spell, copy it for each time you've cast your commander from the command zone this game. Each opponent sacrifices a creature of their choice. Each opponent who can't loses half their life, rounded up.
+9e0e4217-fefe-48dd-9153-032460192b19|Thraximundar|Haste Whenever Thraximundar attacks, defending player sacrifices a creature of their choice. Whenever a player sacrifices a creature, you may put a +1/+1 counter on Thraximundar.
+4ba5bcee-fc95-4d05-965e-b1762529ec5f|Torment of Scarabs|Enchant player At the beginning of enchanted player's upkeep, that player loses 3 life unless they sacrifice a nonland permanent of their choice or discard a card.
+21ea9501-9a0f-43a3-a2cc-e9648325c45e|Woebringer Demon|Flying At the beginning of each player's upkeep, that player sacrifices a creature of their choice. If the player can't, sacrifice this creature.

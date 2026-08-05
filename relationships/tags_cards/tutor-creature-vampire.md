@@ -1,0 +1,1 @@
+439537ca-53c1-47cb-9174-5872c3c46288|Forerunner of the Legion|When this creature enters, you may search your library for a Vampire card, reveal it, then shuffle and put that card on top. Whenever another Vampire you control enters, target creature gets +1/+1 until end of turn.

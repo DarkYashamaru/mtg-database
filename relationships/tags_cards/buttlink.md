@@ -1,0 +1,1 @@
+a1a1761c-88e5-40b4-ba4c-60735c054b09|Ikra Shidiqi, the Usurper|Menace Whenever a creature you control deals combat damage to a player, you gain life equal to that creature's toughness. Partner (You can have two commanders if both have partner.)

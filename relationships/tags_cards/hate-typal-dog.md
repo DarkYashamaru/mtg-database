@@ -1,0 +1,1 @@
+05f0feb6-6783-49fd-acf6-68b44aaff846|Feline Sovereign|Other Cats you control get +1/+1 and have protection from Dogs. Whenever one or more Cats you control deal combat damage to a player, destroy up to one target artifact or enchantment that player controls.

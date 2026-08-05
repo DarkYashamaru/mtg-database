@@ -1,7 +1,9 @@
 from collections.abc import Mapping, Sequence
 
 from pydantic import BaseModel
+from models.archetype import Archetype
 from models.card import Card
+from models.category import Category
 from models.tag import Tag
 from models.themes import Theme, ThemeCategory, CardTheme, CommanderTheme
 from sqlalchemy.orm import selectinload
@@ -44,6 +46,14 @@ class CardThemeMinimalSchema(BaseModel):
     curated: bool
     score: int
 
+
+class CategorySchema(BaseModel):
+    name: str
+
+
+class ArchetypeSchema(BaseModel):
+    name: str
+
 class CardSchema(BaseModel):
     oracle_id: str
     name: str
@@ -58,6 +68,8 @@ class CardSchema(BaseModel):
     keywords: list[KeywordSchema]
     color_identity: list[ColorSchema]
     themes: list[CardThemeMinimalSchema]
+    categories: list[CategorySchema]
+    archetypes: list[ArchetypeSchema]
 
 class ThemeTagSchema(BaseModel):
     slug: str
@@ -150,6 +162,16 @@ def card_to_schema(card: Card, inherited_tags_by_direct_id: Mapping[str, Sequenc
 
         themes=card_themes,
 
+        categories=[
+            CategorySchema(name=category.name)
+            for category in sorted(card.categories, key=lambda category: category.name)
+        ],
+
+        archetypes=[
+            ArchetypeSchema(name=archetype.name)
+            for archetype in sorted(card.archetypes, key=lambda archetype: archetype.name)
+        ],
+
         tags=TagCollectionSchema(
             direct=_tag_schemas(direct_tags),
             inherited=_tag_schemas(list(inherited_tags_by_id.values())),
@@ -189,6 +211,14 @@ def card_to_schema(card: Card, inherited_tags_by_direct_id: Mapping[str, Sequenc
 
 def tag_to_schema (tag: Tag):
     return TagSchema(slug=tag.slug, description=tag.description)
+
+
+def category_to_schema(category: Category) -> CategorySchema:
+    return CategorySchema(name=category.name)
+
+
+def archetype_to_schema(archetype: Archetype) -> ArchetypeSchema:
+    return ArchetypeSchema(name=archetype.name)
 
 THEME_LOAD_OPTIONS = [
     selectinload(Theme.categories)

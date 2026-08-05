@@ -1,0 +1,5 @@
+be455184-c57d-4504-8c34-3be42bc3f04b|Bramblewood Paragon|Each other Warrior creature you control enters with an additional +1/+1 counter on it. Each creature you control with a +1/+1 counter on it has trample.
+9c4a3ca6-dcf9-4986-81da-bcfd46414bee|Cenn's Tactician|{W}, {T}: Put a +1/+1 counter on target Soldier creature. Each creature you control with a +1/+1 counter on it can block an additional creature each combat.
+b72cedc2-73b3-4e7f-8b58-8db532a69f6e|Oona's Blackguard|Flying Each other Rogue creature you control enters with an additional +1/+1 counter on it. Whenever a creature you control with a +1/+1 counter on it deals combat damage to a player, that player discards a card.
+669830ea-f55c-447a-aa3a-8965fa6d2a33|Rage Forger|When this creature enters, put a +1/+1 counter on each other Shaman creature you control. Whenever a creature you control with a +1/+1 counter on it attacks, you may have that creature deal 1 damage to target player or planeswalker.
+f53da056-97be-41ad-8cfc-0d92e17dcd7b|Sage of Fables|Each other Wizard creature you control enters with an additional +1/+1 counter on it. {2}, Remove a +1/+1 counter from a creature you control: Draw a card.

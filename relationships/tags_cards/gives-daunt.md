@@ -1,0 +1,6 @@
+f74888ee-5086-49a6-ae74-fd9894f46332|Bright-Palm, Soul Awakener|Backup 1 (When this creature enters, put a +1/+1 counter on target creature. If that's another creature, it gains the following ability until end of turn.) Whenever this creature attacks, double the number of +1/+1 counters on target creature. That creature can't be blocked by creatures with power 2 or less this turn.
+20a362c3-d278-437f-881c-e7d9fe78fc2d|Chomping Kavu|Backup 1 (When this creature enters, put a +1/+1 counter on target creature. If that's another creature, it gains the following ability until end of turn.) This creature can't be blocked by creatures with power 2 or less.
+01ea2130-e212-4532-b68b-2f940d53ef6e|Doorman|{T}: Until end of turn, target creature can't be blocked by creatures with power 2 or less and/or Walls.
+92d5bb7e-08ba-448e-8763-f47c89505e80|Ghirapur Guide|{2}{G}: Target creature you control can't be blocked by creatures with power 2 or less this turn.
+742f6478-7c9e-43a4-81c1-09383fe65dad|Mournwillow|Haste Delirium — When this creature enters, if there are four or more card types among cards in your graveyard, creatures with power 2 or less can't block this turn.
+9f48cb32-46be-4c47-b558-2ea359efdd9b|Wrecking Ball Arm|Equipped creature has base power and toughness 7/7 and can't be blocked by creatures with power 2 or less. Equip legendary creature {3} Equip {7}

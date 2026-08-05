@@ -1,0 +1,1 @@
+5ebfa3f5-f80a-4845-bba7-75c4ddb88682|Fire Nation Cadets|This creature has firebending 2 as long as there's a Lesson card in your graveyard. (Whenever this creature attacks, add {R}{R}. This mana lasts until end of combat.) {2}: This creature gets +1/+0 until end of turn.

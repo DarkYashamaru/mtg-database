@@ -1,0 +1,1 @@
+7292272d-6511-466b-aadd-c4fe7ed8df09|Bloodvial Purveyor|Flying, trample Whenever an opponent casts a spell, that player creates a Blood token. (It's an artifact with "{1}, {T}, Discard a card, Sacrifice this token: Draw a card.") Whenever this creature attacks, it gets +1/+0 until end of turn for each Blood token defending player controls.

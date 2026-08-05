@@ -1,0 +1,1 @@
+71766a05-62a5-4839-b9bf-f5dcde710251|Millicent, Restless Revenant|Affinity for Spirits (This spell costs {1} less to cast for each Spirit you control.) Flying Whenever Millicent or another nontoken Spirit you control dies or deals combat damage to a player, create a 1/1 white Spirit creature token with flying.

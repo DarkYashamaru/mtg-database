@@ -1,0 +1,10 @@
+46535f8e-1bcd-4588-ac6c-a4bc89c379c8|Abzan Banner|{T}: Add {W}, {B}, or {G}. {W}{B}{G}, {T}, Sacrifice this artifact: Draw a card.
+93563b7b-5685-4832-b164-0701dbf3cf18|Abzan Monument|When this artifact enters, search your library for a basic Plains, Swamp, or Forest card, reveal it, put it into your hand, then shuffle. {1}{W}{B}{G}, {T}, Sacrifice this artifact: Create an X/X white Spirit creature token, where X is the greatest toughness among creatures you control. Activate only as a sorcery.
+0897adea-2759-40e8-a05a-c722473e1cf3|Aeolipile|{1}, {T}, Sacrifice this artifact: It deals 2 damage to any target.
+4b033a0a-c1ae-44d7-9662-72cbbfda024b|Aether Spellbomb|{U}, Sacrifice this artifact: Return target creature to its owner's hand. {1}, Sacrifice this artifact: Draw a card.
+062c8e40-dea7-4df7-bcaa-f1d696fe61c3|Aetherjacket|Flying, vigilance {2}, {T}, Sacrifice this creature: Destroy another target artifact. Activate only as a sorcery.
+a87abe7a-fee9-45fd-b3d8-896e43ed6b3c|Agent's Toolkit|This artifact enters with a +1/+1 counter, a flying counter, a deathtouch counter, and a shield counter on it. (If it would be dealt damage or destroyed, remove a shield counter from it instead.) Whenever a creature you control enters, you may move a counter from this artifact onto that creature. {2}, Sacrifice this artifact: Draw a card.
+f574bd9f-4246-42cb-bf4e-d2888daa44c9|Alchemist's Vial|When this artifact enters, draw a card. {1}, {T}, Sacrifice this artifact: Target creature can't attack or block this turn.
+cef5361a-a189-4e05-a8b8-fc764aed73b9|All-Fates Scroll|{T}: Add one mana of any color. {7}, {T}, Sacrifice this artifact: Draw X cards, where X is the number of differently named lands you control.
+5f4834c7-cd63-420b-8492-ef127ffd4f45|Anchovy & Banana Pizza|When this artifact enters, destroy target creature. {2}, {T}, Sacrifice this artifact: You gain 3 life.
+995e2412-3f69-4aaf-a5d6-ae0ecbb95061|Apocalypse Chime|{2}, {T}, Sacrifice this artifact: Destroy all nontoken permanents with a name originally printed in the Homelands expansion. They can't be regenerated.
