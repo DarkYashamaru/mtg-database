@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e262ea6f-c8c7-45c7-a9a6-29dcbe6300a4",
+  "name": "Markov Enforcer",
+  "faces": [
+    {
+      "name": "Markov Enforcer",
+      "type_line": "Creature \u2014 Vampire Soldier",
+      "oracle_text": "Whenever this creature or another Vampire you control enters, this creature fights up to one target creature an opponent controls.\nWhenever a creature dealt damage by this creature this turn dies, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Vampire you control enters, this creature fights up to one target creature an opponent controls.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Vampire"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature fights up to one target creature an opponent controls"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature dealt damage by this creature this turn dies, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_dealt_damage_by_self_this_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Blood token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

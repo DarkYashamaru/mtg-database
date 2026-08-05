@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "104565b1-2db8-4c01-ae3d-14087768be45",
+  "name": "Concealed Weapon",
+  "faces": [
+    {
+      "name": "Concealed Weapon",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +3/+0.\nDisguise {2}{R} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)\nWhen this Equipment is turned face up, attach it to target creature you control.\nEquip {1}{R}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment is turned face up, attach it to target creature you control.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach it to target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {1}{R}",
+          "cost": "",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equip {1}{R}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +3/+0.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 3,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "Disguise {2}{R} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disguise {2}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6629e5f3-ac59-48f8-b09c-3b98f59b9922",
+  "name": "Awakened Awareness",
+  "faces": [
+    {
+      "name": "Awakened Awareness",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant artifact or creature\nWhen this Aura enters, put X +1/+1 counters on enchanted permanent.\nAs long as enchanted permanent is a creature, it has base power and toughness 1/1.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, put X +1/+1 counters on enchanted permanent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "enchanted_permanent",
+              "amount": "X"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant artifact or creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "artifact_or_creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted permanent is a creature, it has base power and toughness 1/1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as enchanted permanent is a creature, it has base power and toughness 1/1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

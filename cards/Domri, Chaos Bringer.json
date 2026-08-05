@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2a5408ed-8b47-4896-97e4-aa102a4b85c9",
+  "name": "Domri, Chaos Bringer",
+  "faces": [
+    {
+      "name": "Domri, Chaos Bringer",
+      "type_line": "Legendary Planeswalker \u2014 Domri",
+      "oracle_text": "+1: Add {R} or {G}. If that mana is spent on a creature spell, it gains riot. (It enters with your choice of a +1/+1 counter or haste.)\n\u22123: Look at the top four cards of your library. You may reveal up to two creature cards from among them and put them into your hand. Put the rest on the bottom of your library in a random order.\n\u22128: You get an emblem with \"At the beginning of each end step, create a 4/4 red and green Beast creature token with trample.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Add {R} or {G}. If that mana is spent on a creature spell, it gains riot. (It enters with your choice of a +1/+1 counter or haste.)",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{g}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it gains riot",
+              "condition": [
+                {
+                  "condition_text": "that mana is spent on a creature spell"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Look at the top four cards of your library. You may reveal up to two creature cards from among them and put them into your hand. Put the rest on the bottom of your library in a random order.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may reveal up to two creature cards from among them and put them into your hand"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22128: You get an emblem with \"At the beginning of each end step, create a 4/4 red and green Beast creature token with trample.\"",
+          "cost": "\u22128",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with \"At the beginning of each end step, create a 4/4 red and green Beast creature token with trample.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

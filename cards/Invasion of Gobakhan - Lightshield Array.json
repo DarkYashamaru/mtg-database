@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "oracle_id": "86c32a56-3272-4738-b0b3-a8aa49a17ce4",
+  "name": "Invasion of Gobakhan // Lightshield Array",
+  "faces": [
+    {
+      "name": "Invasion of Gobakhan",
+      "type_line": "Battle \u2014 Siege",
+      "oracle_text": "(As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.)\nWhen this Siege enters, look at target opponent's hand. You may exile a nonland card from it. For as long as that card remains exiled, its owner may play it. A spell cast this way costs {2} more to cast.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Siege enters, look at target opponent's hand. You may exile a nonland card from it. For as long as that card remains exiled, its owner may play it. A spell cast this way costs {2} more to cast.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_siege"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at target opponent's hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may exile a nonland card from it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "For as long as that card remains exiled, its owner may play it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "A spell cast this way costs {2} more to cast"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Lightshield Array",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your end step, put a +1/+1 counter on each creature that attacked this turn.\nSacrifice this enchantment: Creatures you control gain hexproof and indestructible until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, put a +1/+1 counter on each creature that attacked this turn.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "each_creature_that_attacked_this_turn",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice this enchantment: Creatures you control gain hexproof and indestructible until end of turn.",
+          "cost": "Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "hexproof_and_indestructible"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

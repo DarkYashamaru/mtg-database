@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f9ef90b9-a2b4-4a5b-92fb-2268ea7d709f",
+  "name": "Ayara, Widow of the Realm // Ayara, Furnace Queen",
+  "faces": [
+    {
+      "name": "Ayara, Furnace Queen",
+      "type_line": "Legendary Creature \u2014 Phyrexian Elf Noble",
+      "oracle_text": "At the beginning of combat on your turn, return up to one target artifact or creature card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, return up to one target artifact or creature card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to one target artifact or creature card from your graveyard to the battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_end_step"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": "it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Ayara, Widow of the Realm",
+      "type_line": "Legendary Creature \u2014 Elf Noble",
+      "oracle_text": "{T}, Sacrifice another creature or artifact: Ayara deals X damage to target opponent or battle and you gain X life, where X is the sacrificed permanent's mana value.\n{5}{R/P}: Transform Ayara. Activate only as a sorcery. ({R/P} can be paid with either {R} or 2 life.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice another creature or artifact: Ayara deals X damage to target opponent or battle and you gain X life, where X is the sacrificed permanent's mana value.",
+          "cost": "{T}, Sacrifice another creature or artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ayara deals X damage to target opponent or battle and you gain X life, where X is the sacrificed permanent's mana value"
+            }
+          ]
+        },
+        {
+          "raw_text": "{5}{R/P}: Transform Ayara. Activate only as a sorcery. ({R/P} can be paid with either {R} or 2 life.)",
+          "cost": "{5}{R/P}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

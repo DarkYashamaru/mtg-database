@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8ed7791d-6d75-4cd7-9428-c731f623b241",
+  "name": "Dreamcaller Siren",
+  "faces": [
+    {
+      "name": "Dreamcaller Siren",
+      "type_line": "Creature \u2014 Siren Pirate",
+      "oracle_text": "Flash\nFlying\nThis creature can block only creatures with flying.\nWhen this creature enters, if you control another Pirate, tap up to two target nonland permanents.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if you control another Pirate, tap up to two target nonland permanents.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control another Pirate"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap up to two target nonland permanents"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can block only creatures with flying.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "block_only_creatures_with_flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

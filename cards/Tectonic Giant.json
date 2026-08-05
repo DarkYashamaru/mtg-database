@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0e5e46e3-f9af-47cc-a740-bf808d5cb4b1",
+  "name": "Tectonic Giant",
+  "faces": [
+    {
+      "name": "Tectonic Giant",
+      "type_line": "Creature \u2014 Elemental Giant",
+      "oracle_text": "Whenever this creature attacks or becomes the target of a spell an opponent controls, choose one \u2014\n\u2022 This creature deals 3 damage to each opponent.\n\u2022 Exile the top two cards of your library. Choose one of them. Until the end of your next turn, you may play that card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks or becomes the target of a spell an opponent controls, choose one \u2014\n\u2022 This creature deals 3 damage to each opponent.\n\u2022 Exile the top two cards of your library. Choose one of them. Until the end of your next turn, you may play that card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature attacks or becomes the target of a spell an opponent controls"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "This creature deals 3 damage to each opponent.",
+              "effects": [
+                {
+                  "action": "deal_damage",
+                  "source": "self",
+                  "target": "each_opponent",
+                  "amount": 3
+                }
+              ]
+            },
+            {
+              "raw_text": "Exile the top two cards of your library. Choose one of them. Until the end of your next turn, you may play that card.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Exile the top two cards of your library"
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "Choose one of them"
+                },
+                {
+                  "action": "allow_play",
+                  "object": "that_card",
+                  "until": "end_of_your_next_turn"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

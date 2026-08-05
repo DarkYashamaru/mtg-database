@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0f5a3a09-2f07-4774-9e0f-e99d9a444166",
+  "name": "Aurelia, the Warleader",
+  "faces": [
+    {
+      "name": "Aurelia, the Warleader",
+      "type_line": "Legendary Creature \u2014 Angel",
+      "oracle_text": "Flying, vigilance, haste\nWhenever Aurelia attacks for the first time each turn, untap all creatures you control. After this phase, there is an additional combat phase.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Aurelia attacks for the first time each turn, untap all creatures you control. After this phase, there is an additional combat phase.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "attack_count_each_turn": 1
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": {
+                "selector": "creatures_you_control"
+              }
+            },
+            {
+              "action": "add_combat_phase_after_this_phase"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

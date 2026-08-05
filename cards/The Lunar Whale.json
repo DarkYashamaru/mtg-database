@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "13b4aeac-4530-4e09-a547-548b4884bb2f",
+  "name": "The Lunar Whale",
+  "faces": [
+    {
+      "name": "The Lunar Whale",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nYou may look at the top card of your library any time.\nAs long as The Lunar Whale attacked this turn, you may play the top card of your library.\nCrew 1",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Crew 1",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as The Lunar Whale attacked this turn, you may play the top card of your library.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as The Lunar Whale attacked this turn, you may play the top card of your library"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

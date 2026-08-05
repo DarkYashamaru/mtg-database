@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "068cbbe3-43c3-425e-80ec-d1ce5c02ea9b",
+  "name": "Radiant Destiny",
+  "faces": [
+    {
+      "name": "Radiant Destiny",
+      "type_line": "Enchantment",
+      "oracle_text": "Ascend (If you control ten or more permanents, you get the city's blessing for the rest of the game.)\nAs this enchantment enters, choose a creature type.\nCreatures you control of the chosen type get +1/+1. As long as you have the city's blessing, they also have vigilance.",
+      "static": [
+        {
+          "keyword": "ascend"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this enchantment enters, choose a creature type.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this enchantment enters, choose a creature type"
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures you control of the chosen type get +1/+1. As long as you have the city's blessing, they also have vigilance.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures you control of the chosen type get +1/+1"
+            },
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "as_long_as_you_have_the_citys_blessing_they_also"
+              },
+              "keywords": [
+                "vigilance"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

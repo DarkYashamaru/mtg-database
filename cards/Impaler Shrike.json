@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "db98ee99-d4e5-4623-8446-5cce5d11dca0",
+  "name": "Impaler Shrike",
+  "faces": [
+    {
+      "name": "Impaler Shrike",
+      "type_line": "Creature \u2014 Phyrexian Bird",
+      "oracle_text": "Flying\nWhenever this creature deals combat damage to a player, you may sacrifice it. If you do, draw three cards.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may sacrifice it. If you do, draw three cards.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 3,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fcb97d06-e0b8-4a13-ab7c-1304ccb7ace2",
+  "name": "Thassa's Emissary",
+  "faces": [
+    {
+      "name": "Thassa's Emissary",
+      "type_line": "Enchantment Creature \u2014 Crab",
+      "oracle_text": "Bestow {5}{U} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.)\nWhenever this creature or enchanted creature deals combat damage to a player, draw a card.\nEnchanted creature gets +3/+3.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or enchanted creature deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self_or_enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Bestow {5}{U} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Bestow {5}{U}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +3/+3.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 3,
+              "toughness_delta": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

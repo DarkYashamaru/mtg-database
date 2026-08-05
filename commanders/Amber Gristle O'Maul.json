@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1435f7b-a694-4c7f-a0f2-34c4c646e04b",
+  "name": "Amber Gristle O'Maul",
+  "faces": [
+    {
+      "name": "Amber Gristle O'Maul",
+      "type_line": "Legendary Creature \u2014 Dwarf Cleric",
+      "oracle_text": "Haste\nWhenever Amber Gristle O'Maul attacks, you may discard your hand. If you do, draw a card for each player being attacked.\nChoose a Background (You can have a Background as a second commander.)",
+      "static": [
+        {
+          "keyword": "haste"
+        },
+        {
+          "keyword": "choose_a_background"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Amber Gristle O'Maul attacks, you may discard your hand. If you do, draw a card for each player being attacked.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_hand",
+              "player": "you"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "player_being_attacked",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fb1bd39c-c870-4f63-9e4f-32c94ac46555",
+  "name": "Conundrum Sphinx",
+  "faces": [
+    {
+      "name": "Conundrum Sphinx",
+      "type_line": "Creature \u2014 Sphinx",
+      "oracle_text": "Flying\nWhenever this creature attacks, each player chooses a card name. Then each player reveals the top card of their library. If the card a player revealed has the name they chose, that player puts it into their hand. If it doesn't, that player puts it on the bottom of their library.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, each player chooses a card name. Then each player reveals the top card of their library. If the card a player revealed has the name they chose, that player puts it into their hand. If it doesn't, that player puts it on the bottom of their library.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player chooses a card name"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then each player reveals the top card of their library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "that player puts it into their hand",
+              "condition": [
+                {
+                  "condition_text": "the card a player revealed has the name they chose"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "that player puts it on the bottom of their library",
+              "condition": [
+                {
+                  "condition_text": "it doesn't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

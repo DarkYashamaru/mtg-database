@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7866ce6-d507-4221-bb19-d3e6fd7b57d8",
+  "name": "Tidal Terror",
+  "faces": [
+    {
+      "name": "Tidal Terror",
+      "type_line": "Creature \u2014 Octopus",
+      "oracle_text": "Whenever this creature attacks, you may tap two other untapped creatures you control. If you do, this creature can't be blocked this turn.\nIslandcycling {2} ({2}, Discard this card: Search your library for an Island card, reveal it, put it into your hand, then shuffle.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may tap two other untapped creatures you control. If you do, this creature can't be blocked this turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may tap two other untapped creatures you control"
+            },
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "self",
+              "restriction": "cant_be_blocked",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Islandcycling {2} ({2}, Discard this card: Search your library for an Island card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Islandcycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for an island card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

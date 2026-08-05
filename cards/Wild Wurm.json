@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ba14d185-9432-4a67-8bfb-544c2cebe71d",
+  "name": "Wild Wurm",
+  "faces": [
+    {
+      "name": "Wild Wurm",
+      "type_line": "Creature \u2014 Wurm",
+      "oracle_text": "When this creature enters, flip a coin. If you lose the flip, return this creature to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, flip a coin. If you lose the flip, return this creature to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "flip a coin"
+            },
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

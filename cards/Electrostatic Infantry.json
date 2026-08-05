@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ba8883fc-db24-4c3d-ae36-05085089c9cc",
+  "name": "Electrostatic Infantry",
+  "faces": [
+    {
+      "name": "Electrostatic Infantry",
+      "type_line": "Creature \u2014 Dwarf Wizard",
+      "oracle_text": "Trample\nWhenever you cast an instant or sorcery spell, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

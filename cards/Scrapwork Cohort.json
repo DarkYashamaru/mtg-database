@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "149694e6-5cf0-4983-9546-a4bd579b2ade",
+  "name": "Scrapwork Cohort",
+  "faces": [
+    {
+      "name": "Scrapwork Cohort",
+      "type_line": "Artifact Creature \u2014 Soldier",
+      "oracle_text": "When this creature enters, create a 1/1 colorless Soldier artifact creature token.\nUnearth {2}{W} ({2}{W}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 1/1 colorless Soldier artifact creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Soldier artifact creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Soldier",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Unearth {2}{W} ({2}{W}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+          "cost": "Unearth {2}{W} ({2}{W}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "temporary_reanimation_clause",
+              "target": "it",
+              "expire_at": "beginning_of_next_end_step",
+              "exile_if_would_leave_battlefield": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

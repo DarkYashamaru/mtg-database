@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "db4907f3-4071-47c4-9329-96b4813435be",
+  "name": "Migration Path",
+  "faces": [
+    {
+      "name": "Migration Path",
+      "type_line": "Sorcery",
+      "oracle_text": "Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Cycling {2} ({2}, Discard this card: Draw a card.)",
+          "cost": "Cycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for up to two basic land cards, put them onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

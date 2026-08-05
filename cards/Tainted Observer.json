@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "420aaa77-f429-4f3d-a73e-91dc25cb38db",
+  "name": "Tainted Observer",
+  "faces": [
+    {
+      "name": "Tainted Observer",
+      "type_line": "Creature \u2014 Phyrexian Bird",
+      "oracle_text": "Flying\nToxic 1 (Players dealt combat damage by this creature also get a poison counter.)\nWhenever another creature you control enters, you may pay {2}. If you do, proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "toxic",
+          "amount": 1
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, you may pay {2}. If you do, proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "proliferate",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

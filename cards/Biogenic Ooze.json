@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d2d84ba5-0d20-4ce3-8f1f-93cd9ef94f5f",
+  "name": "Biogenic Ooze",
+  "faces": [
+    {
+      "name": "Biogenic Ooze",
+      "type_line": "Creature \u2014 Ooze",
+      "oracle_text": "When this creature enters, create a 2/2 green Ooze creature token.\nAt the beginning of your end step, put a +1/+1 counter on each Ooze you control.\n{1}{G}{G}{G}: Create a 2/2 green Ooze creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 2/2 green Ooze creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 green Ooze creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Ooze"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, put a +1/+1 counter on each Ooze you control.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Ooze"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{G}{G}{G}: Create a 2/2 green Ooze creature token.",
+          "cost": "{1}{G}{G}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 green Ooze creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Ooze"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

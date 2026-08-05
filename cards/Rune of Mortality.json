@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b827f8d2-07da-4358-9496-a68f8ccdbfe5",
+  "name": "Rune of Mortality",
+  "faces": [
+    {
+      "name": "Rune of Mortality",
+      "type_line": "Enchantment \u2014 Aura Rune",
+      "oracle_text": "Enchant permanent\nWhen this Aura enters, draw a card.\nAs long as enchanted permanent is a creature, it has deathtouch.\nAs long as enchanted permanent is an Equipment, it has \"Equipped creature has deathtouch.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant permanent",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "permanent"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted permanent is a creature, it has deathtouch.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as enchanted permanent is a creature, it has deathtouch"
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted permanent is an Equipment, it has \"Equipped creature has deathtouch.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as enchanted permanent is an Equipment, it has \"Equipped creature has deathtouch.\""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

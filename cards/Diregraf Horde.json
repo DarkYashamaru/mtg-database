@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d7947858-f11d-438c-8ad3-991afe950a11",
+  "name": "Diregraf Horde",
+  "faces": [
+    {
+      "name": "Diregraf Horde",
+      "type_line": "Creature \u2014 Zombie",
+      "oracle_text": "When this creature enters, create two 2/2 black Zombie creature tokens with decayed. When you do, exile up to two target cards from graveyards. (A creature with decayed can't block. When it attacks, sacrifice it at end of combat.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create two 2/2 black Zombie creature tokens with decayed. When you do, exile up to two target cards from graveyards. (A creature with decayed can't block. When it attacks, sacrifice it at end of combat.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "two 2/2 black Zombie creature tokens with decayed",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile up to two target cards from graveyards",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

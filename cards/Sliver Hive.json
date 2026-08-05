@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7286688-ffbe-4d25-ad55-27990f005368",
+  "name": "Sliver Hive",
+  "faces": [
+    {
+      "name": "Sliver Hive",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a Sliver spell.\n{5}, {T}: Create a 1/1 colorless Sliver creature token. Activate only if you control a Sliver.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add one mana of any color. Spend this mana only to cast a Sliver spell.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "subtypes_all": [
+                    "Sliver"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{5}, {T}: Create a 1/1 colorless Sliver creature token. Activate only if you control a Sliver.",
+          "cost": "{5}, {T}",
+          "condition": [
+            {
+              "condition_text": "you control a sliver"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Sliver creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Sliver"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

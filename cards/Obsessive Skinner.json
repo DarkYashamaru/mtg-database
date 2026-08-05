@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7e59437-cdd0-476a-b1ec-231be4139d31",
+  "name": "Obsessive Skinner",
+  "faces": [
+    {
+      "name": "Obsessive Skinner",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "When this creature enters, put a +1/+1 counter on target creature.\nDelirium \u2014 At the beginning of each opponent's upkeep, if there are four or more card types among cards in your graveyard, put a +1/+1 counter on target creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each opponent's upkeep, if there are four or more card types among cards in your graveyard, put a +1/+1 counter on target creature.",
+          "trigger": {
+            "type": "beginning_of_each_opponents_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "there are four or more card types among cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

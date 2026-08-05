@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "98950aaf-d0b8-420b-9e6a-c7d07d0f8588",
+  "name": "Soul Seizer // Ghastly Haunting",
+  "faces": [
+    {
+      "name": "Ghastly Haunting",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nYou control enchanted creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "You control enchanted creature.",
+          "effects": [
+            {
+              "action": "gain_control",
+              "target": "enchanted_creature",
+              "duration": "static"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Soul Seizer",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Flying\nWhen this creature deals combat damage to a player, you may transform it. If you do, attach it to target creature that player controls.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature deals combat damage to a player, you may transform it. If you do, attach it to target creature that player controls.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "attach it to target creature that player controls",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

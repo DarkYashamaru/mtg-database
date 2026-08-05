@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b10ad415-0aae-4d70-82e6-a4055a40cbe4",
+  "name": "Sword of War and Peace",
+  "faces": [
+    {
+      "name": "Sword of War and Peace",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +2/+2 and has protection from red and from white.\nWhenever equipped creature deals combat damage to a player, this Equipment deals damage to that player equal to the number of cards in their hand and you gain 1 life for each card in your hand.\nEquip {2}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals combat damage to a player, this Equipment deals damage to that player equal to the number of cards in their hand and you gain 1 life for each card in your hand.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this Equipment deals damage to that player equal to the number of cards in their hand and you gain 1 life for each card in your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +2/+2 and has protection from red and from white.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +2/+2 and has protection from red and from white"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

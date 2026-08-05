@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd31487e-e95a-4d90-8c85-742aa83c3e90",
+  "name": "Grim Javelineer",
+  "faces": [
+    {
+      "name": "Grim Javelineer",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Whenever you attack, target attacking creature gets +1/+0 until end of turn. When that creature dies this turn, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, target attacking creature gets +1/+0 until end of turn. When that creature dies this turn, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_attacking_creature",
+              "power_delta": 1,
+              "toughness_delta": 0
+            },
+            {
+              "action": "custom_effect",
+              "text": "When that creature dies this turn, surveil 1"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

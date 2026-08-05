@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bf6ea878-044b-40a8-a21b-0191a948a69a",
+  "name": "Urza's Engine",
+  "faces": [
+    {
+      "name": "Urza's Engine",
+      "type_line": "Artifact Creature \u2014 Juggernaut",
+      "oracle_text": "Trample\n{3}: This creature gains banding until end of turn. (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)\n{3}: Attacking creatures banded with this creature gain trample until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}: This creature gains banding until end of turn. (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
+          "cost": "{3}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "banding"
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}: Attacking creatures banded with this creature gain trample until end of turn.",
+          "cost": "{3}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "attacking_creatures_banded_with_self",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

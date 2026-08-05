@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8aab0b55-2779-43c7-a3ee-151b8e5c72f3",
+  "name": "Aether Chaser",
+  "faces": [
+    {
+      "name": "Aether Chaser",
+      "type_line": "Creature \u2014 Human Artificer",
+      "oracle_text": "First strike\nWhen this creature enters, you get {E}{E} (two energy counters).\nWhenever this creature attacks, you may pay {E}{E}. If you do, create a 1/1 colorless Servo artifact creature token.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, you may pay {E}{E}. If you do, create a 1/1 colorless Servo artifact creature token.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {E}{E}"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless servo artifact creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "servo",
+                  "artifact"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

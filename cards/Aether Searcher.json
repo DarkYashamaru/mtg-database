@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "80ea63fd-691a-45ba-a4bf-862e5ec2922d",
+  "name": "Aether Searcher",
+  "faces": [
+    {
+      "name": "Aether Searcher",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "Reveal this card as you draft it. Reveal the next card you draft and note its name.\nWhen this creature enters, you may search your hand and/or library for a card with a name noted as you drafted cards named Aether Searcher. You may cast it without paying its mana cost. If you searched your library this way, shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your hand and/or library for a card with a name noted as you drafted cards named Aether Searcher. You may cast it without paying its mana cost. If you searched your library this way, shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your hand and/or library for a card with a name noted as you drafted cards named Aether Searcher"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast it without paying its mana cost"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you searched your library this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Reveal this card as you draft it. Reveal the next card you draft and note its name.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Reveal this card as you draft it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Reveal the next card you draft and note its name"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

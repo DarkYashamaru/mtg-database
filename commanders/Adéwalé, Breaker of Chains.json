@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e30d9e08-cf88-4e2d-95e1-7144d8fea5c7",
+  "name": "Ad\u00e9wal\u00e9, Breaker of Chains",
+  "faces": [
+    {
+      "name": "Ad\u00e9wal\u00e9, Breaker of Chains",
+      "type_line": "Legendary Creature \u2014 Human Assassin Pirate",
+      "oracle_text": "When Ad\u00e9wal\u00e9 enters, reveal the top six cards of your library. Put an Assassin, Pirate, or Vehicle card from among them into your hand and the rest on the bottom of your library in a random order.\nWhenever a Vehicle you control deals combat damage to a player, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Ad\u00e9wal\u00e9 enters, reveal the top six cards of your library. Put an Assassin, Pirate, or Vehicle card from among them into your hand and the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "reveal the top six cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put an Assassin, Pirate, or Vehicle card from among them into your hand and the rest on the bottom of your library in a random order"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a Vehicle you control deals combat damage to a player, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Vehicle"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

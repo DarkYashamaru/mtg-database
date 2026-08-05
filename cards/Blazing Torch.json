@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cd3d1e5d-db12-4878-92a2-23eb8d23eaf3",
+  "name": "Blazing Torch",
+  "faces": [
+    {
+      "name": "Blazing Torch",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature can't be blocked by Vampires or Zombies.\nEquipped creature has \"{T}, Sacrifice Blazing Torch: Blazing Torch deals 2 damage to any target.\"\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equipped creature has \"{T}, Sacrifice Blazing Torch: Blazing Torch deals 2 damage to any target.\"",
+          "cost": "Equipped creature has \"{T}, Sacrifice Blazing Torch",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature can't be blocked by Vampires or Zombies.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature can't be blocked by Vampires or Zombies"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

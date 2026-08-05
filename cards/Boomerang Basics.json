@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "acd881eb-f3b4-4174-9fc2-e3c7c213886b",
+  "name": "Boomerang Basics",
+  "faces": [
+    {
+      "name": "Boomerang Basics",
+      "type_line": "Sorcery \u2014 Lesson",
+      "oracle_text": "Return target nonland permanent to its owner's hand. If you controlled that permanent, draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target nonland permanent to its owner's hand. If you controlled that permanent, draw a card.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you controlled that permanent"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

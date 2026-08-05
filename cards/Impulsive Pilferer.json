@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7d9fc9e7-d80b-49c3-871c-ed25b3059ae8",
+  "name": "Impulsive Pilferer",
+  "faces": [
+    {
+      "name": "Impulsive Pilferer",
+      "type_line": "Creature \u2014 Goblin Pirate",
+      "oracle_text": "When this creature dies, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nEncore {3}{R} ({3}{R}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Encore {3}{R} ({3}{R}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+          "cost": "Encore {3}{R} ({3}{R}, Exile this card from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each opponent, create a token copy that attacks that opponent this turn if able"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "they",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "them_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1c772df4-bd88-4f7e-853c-5dd06f4cf70e",
+  "name": "Territorial Hellkite",
+  "faces": [
+    {
+      "name": "Territorial Hellkite",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying, haste\nAt the beginning of combat on your turn, choose an opponent at random that this creature didn't attack during your last combat. This creature attacks that player this combat if able. If you can't choose an opponent this way, tap this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, choose an opponent at random that this creature didn't attack during your last combat. This creature attacks that player this combat if able. If you can't choose an opponent this way, tap this creature.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose an opponent at random that this creature didn't attack during your last combat"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This creature attacks that player this combat if able"
+            },
+            {
+              "action": "custom_effect",
+              "text": "tap this creature",
+              "condition": [
+                {
+                  "condition_text": "you can't choose an opponent this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

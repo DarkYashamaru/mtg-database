@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "647d7988-9a5d-4700-9238-938d0d5fae12",
+  "name": "Karlov of the Ghost Council",
+  "faces": [
+    {
+      "name": "Karlov of the Ghost Council",
+      "type_line": "Legendary Creature \u2014 Spirit Advisor",
+      "oracle_text": "Whenever you gain life, put two +1/+1 counters on Karlov.\n{W}{B}, Remove six +1/+1 counters from Karlov: Exile target creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, put two +1/+1 counters on Karlov.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{W}{B}, Remove six +1/+1 counters from Karlov: Exile target creature.",
+          "cost": "{W}{B}, Remove six +1/+1 counters from Karlov",
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_creature"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

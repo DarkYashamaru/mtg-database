@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fd9c4ebe-cc9c-427c-8105-adb1703c191b",
+  "name": "Mirrorworks",
+  "faces": [
+    {
+      "name": "Mirrorworks",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever another nontoken artifact you control enters, you may pay {2}. If you do, create a token that's a copy of that artifact.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken artifact you control enters, you may pay {2}. If you do, create a token that's a copy of that artifact.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Artifact"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of that artifact",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

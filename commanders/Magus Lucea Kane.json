@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ae9f5c80-bc96-4ab3-bb5b-e8bd470e9eab",
+  "name": "Magus Lucea Kane",
+  "faces": [
+    {
+      "name": "Magus Lucea Kane",
+      "type_line": "Legendary Creature \u2014 Human Tyranid Wizard",
+      "oracle_text": "Spiritual Leader \u2014 At the beginning of combat on your turn, put a +1/+1 counter on target creature.\nPsychic Stimulus \u2014 {T}: Add {C}{C}. When you next cast a spell with {X} in its mana cost or activate an ability with {X} in its activation cost this turn, copy that spell or ability. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, put a +1/+1 counter on target creature.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Psychic Stimulus \u2014 {T}: Add {C}{C}. When you next cast a spell with {X} in its mana cost or activate an ability with {X} in its activation cost this turn, copy that spell or ability. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+          "cost": "Psychic Stimulus \u2014 {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{c}",
+                "{c}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "custom_effect",
+              "text": "When you next cast a spell with {X} in its mana cost or activate an ability with {X} in its activation cost this turn, copy that spell or ability"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

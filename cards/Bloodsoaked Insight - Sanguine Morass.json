@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c52fc8a1-43c6-41f8-b010-03be7c89ef1d",
+  "name": "Bloodsoaked Insight // Sanguine Morass",
+  "faces": [
+    {
+      "name": "Bloodsoaked Insight",
+      "type_line": "Sorcery",
+      "oracle_text": "This spell costs {1} less to cast for each 1 life your opponents have lost this turn.\nTarget opponent exiles the top three cards of their library. Until the end of your next turn, you may play those cards. If you cast a spell this way, mana of any type can be spent to cast it.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {1} less to cast for each 1 life your opponents have lost this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {1} less to cast for each 1 life your opponents have lost this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target opponent exiles the top three cards of their library. Until the end of your next turn, you may play those cards. If you cast a spell this way, mana of any type can be spent to cast it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target opponent exiles the top three cards of their library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until the end of your next turn, you may play those cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "mana of any type can be spent to cast it",
+              "condition": [
+                {
+                  "condition_text": "you cast a spell this way"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sanguine Morass",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {B} or {R}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B} or {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}",
+                "{r}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

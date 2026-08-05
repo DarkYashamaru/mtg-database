@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b9bacb46-fd1d-459b-81c2-d7d08fe73848",
+  "name": "Dragon Tempest",
+  "faces": [
+    {
+      "name": "Dragon Tempest",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature you control with flying enters, it gains haste until end of turn.\nWhenever a Dragon you control enters, it deals X damage to any target, where X is the number of Dragons you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control with flying enters, it gains haste until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "a_creature_you_control_with_flying"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a Dragon you control enters, it deals X damage to any target, where X is the number of Dragons you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Dragon"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals X damage to any target, where X is the number of Dragons you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

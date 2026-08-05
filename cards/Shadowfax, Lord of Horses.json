@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aa630f3d-9443-46fe-a54f-8b3c9fcb872e",
+  "name": "Shadowfax, Lord of Horses",
+  "faces": [
+    {
+      "name": "Shadowfax, Lord of Horses",
+      "type_line": "Legendary Creature \u2014 Horse",
+      "oracle_text": "Horses you control have haste. (They can attack and {T} as soon as they come under your control.)\nWhenever Shadowfax attacks, you may put a creature card with lesser power from your hand onto the battlefield tapped and attacking.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Shadowfax attacks, you may put a creature card with lesser power from your hand onto the battlefield tapped and attacking.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a creature card with lesser power from your hand onto the battlefield tapped and attacking"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Horses you control have haste. (They can attack and {T} as soon as they come under your control.)",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Horse"
+                ]
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

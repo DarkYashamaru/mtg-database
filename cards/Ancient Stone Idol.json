@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5f981cca-5cd9-49e4-ab1a-bbbf6fc7e737",
+  "name": "Ancient Stone Idol",
+  "faces": [
+    {
+      "name": "Ancient Stone Idol",
+      "type_line": "Artifact Creature \u2014 Golem",
+      "oracle_text": "Flash\nThis spell costs {1} less to cast for each attacking creature.\nTrample\nWhen this creature dies, create a 6/12 colorless Construct artifact creature token with trample.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, create a 6/12 colorless Construct artifact creature token with trample.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 6/12 colorless Construct artifact creature token with trample",
+                "power_toughness": "6/12",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Construct",
+                  "artifact"
+                ],
+                "keywords": [
+                  "trample"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {1} less to cast for each attacking creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {1} less to cast for each attacking creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

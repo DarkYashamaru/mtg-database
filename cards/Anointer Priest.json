@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4e0b9273-6614-41a8-9738-959349c0717b",
+  "name": "Anointer Priest",
+  "faces": [
+    {
+      "name": "Anointer Priest",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "Whenever a creature token you control enters, you gain 1 life.\nEmbalm {3}{W} ({3}{W}, Exile this card from your graveyard: Create a token that's a copy of it, except it's a white Zombie Human Cleric with no mana cost. Embalm only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature token you control enters, you gain 1 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Token"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Embalm {3}{W} ({3}{W}, Exile this card from your graveyard: Create a token that's a copy of it, except it's a white Zombie Human Cleric with no mana cost. Embalm only as a sorcery.)",
+          "cost": "Embalm {3}{W} ({3}{W}, Exile this card from your graveyard",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Create a token that's a copy of it, except it's a white Zombie Human Cleric with no mana cost"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Embalm only as a sorcery"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

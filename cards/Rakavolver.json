@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c00adb98-81dc-490f-9e0f-7f8546ef22ce",
+  "name": "Rakavolver",
+  "faces": [
+    {
+      "name": "Rakavolver",
+      "type_line": "Creature \u2014 Volver",
+      "oracle_text": "Kicker {1}{W} and/or {U} (You may pay an additional {1}{W} and/or {U} as you cast this spell.)\nIf this creature was kicked with its {1}{W} kicker, it enters with two +1/+1 counters on it and with \"Whenever this creature deals damage, you gain that much life.\"\nIf this creature was kicked with its {U} kicker, it enters with a +1/+1 counter on it and with flying.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{W} and/or {U} (You may pay an additional {1}{W} and/or {U} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{W} and/or {U}"
+            }
+          ]
+        },
+        {
+          "raw_text": "If this creature was kicked with its {1}{W} kicker, it enters with two +1/+1 counters on it and with \"Whenever this creature deals damage, you gain that much life.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it enters with two +1/+1 counters on it and with \"whenever this creature deals damage, you gain that much life",
+              "condition": [
+                {
+                  "condition_text": "this creature was kicked with its {1}{w} kicker"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "If this creature was kicked with its {U} kicker, it enters with a +1/+1 counter on it and with flying.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it enters with a +1/+1 counter on it and with flying",
+              "condition": [
+                {
+                  "condition_text": "this creature was kicked with its {u} kicker"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

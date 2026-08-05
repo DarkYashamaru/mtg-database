@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "726c911d-6543-4400-a8fa-b8a5c9f0c15d",
+  "name": "Deadlock Trap",
+  "faces": [
+    {
+      "name": "Deadlock Trap",
+      "type_line": "Artifact",
+      "oracle_text": "This artifact enters tapped.\nWhen this artifact enters, you get {E}{E} (two energy counters).\n{T}, Pay {E}: Tap target creature or planeswalker. Its activated abilities can't be activated this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, you get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Pay {E}: Tap target creature or planeswalker. Its activated abilities can't be activated this turn.",
+          "cost": "{T}, Pay {E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Tap target creature or planeswalker"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Its activated abilities can't be activated this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This artifact enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

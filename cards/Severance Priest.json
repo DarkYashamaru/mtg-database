@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3a38bf69-511f-4851-870f-8a65641d832e",
+  "name": "Severance Priest",
+  "faces": [
+    {
+      "name": "Severance Priest",
+      "type_line": "Creature \u2014 Djinn Cleric",
+      "oracle_text": "Deathtouch\nWhen this creature enters, target opponent reveals their hand. You may choose a nonland card from it. If you do, exile that card.\nWhen this creature leaves the battlefield, the exiled card's owner creates an X/X white Spirit creature token, where X is the mana value of the exiled card.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target opponent reveals their hand. You may choose a nonland card from it. If you do, exile that card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may choose a nonland card from it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile that card",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature leaves the battlefield, the exiled card's owner creates an X/X white Spirit creature token, where X is the mana value of the exiled card.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "the exiled card's owner creates an X/X white Spirit creature token, where X is the mana value of the exiled card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

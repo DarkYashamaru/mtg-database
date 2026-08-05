@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8af3b981-6eda-46b0-a7b8-226bc719d137",
+  "name": "Minion of Leshrac",
+  "faces": [
+    {
+      "name": "Minion of Leshrac",
+      "type_line": "Creature \u2014 Demon Minion",
+      "oracle_text": "Protection from black\nAt the beginning of your upkeep, this creature deals 5 damage to you unless you sacrifice a creature other than this creature. If this creature deals damage to you this way, tap it.\n{T}: Destroy target creature or land.",
+      "static": [
+        {
+          "keyword": "protection",
+          "quality": "black"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, this creature deals 5 damage to you unless you sacrifice a creature other than this creature. If this creature deals damage to you this way, tap it.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 5 damage to you unless you sacrifice a creature other than this creature"
+            },
+            {
+              "action": "tap",
+              "target": "it",
+              "condition": [
+                {
+                  "condition_text": "this creature deals damage to you this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Destroy target creature or land.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy target creature or land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

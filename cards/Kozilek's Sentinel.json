@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "86ae05d6-f1ba-456d-bbc0-f35cd0d0537d",
+  "name": "Kozilek's Sentinel",
+  "faces": [
+    {
+      "name": "Kozilek's Sentinel",
+      "type_line": "Creature \u2014 Eldrazi Drone",
+      "oracle_text": "Devoid (This card has no color.)\nWhenever you cast a colorless spell, this creature gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a colorless spell, this creature gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Colorles"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

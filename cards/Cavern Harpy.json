@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "81c40bd8-b989-41e8-9527-eae8fb87311d",
+  "name": "Cavern Harpy",
+  "faces": [
+    {
+      "name": "Cavern Harpy",
+      "type_line": "Creature \u2014 Harpy Beast",
+      "oracle_text": "Flying\nWhen this creature enters, return a blue or black creature you control to its owner's hand.\nPay 1 life: Return this creature to its owner's hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, return a blue or black creature you control to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return a blue or black creature you control to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay 1 life: Return this creature to its owner's hand.",
+          "cost": "Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

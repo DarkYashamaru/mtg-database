@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3233af43-7826-4895-b67e-03c6102c2cd5",
+  "name": "Kutzil, Malamet Exemplar",
+  "faces": [
+    {
+      "name": "Kutzil, Malamet Exemplar",
+      "type_line": "Legendary Creature \u2014 Cat Warrior",
+      "oracle_text": "Your opponents can't cast spells during your turn.\nWhenever one or more creatures you control each with power greater than its base power deals combat damage to a player, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control each with power greater than its base power deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "one_or_more_creatures_you_control_each_with_power_greater_than_its_base_power"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Your opponents can't cast spells during your turn.",
+          "effects": [
+            {
+              "action": "casting_restriction",
+              "target": "your_opponents",
+              "restriction": "cant_cast_spells",
+              "condition": [
+                {
+                  "turn_scope": "your_turn"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

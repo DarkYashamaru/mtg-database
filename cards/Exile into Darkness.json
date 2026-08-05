@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bfa21cbc-8a04-4456-bf02-bae6b514d50a",
+  "name": "Exile into Darkness",
+  "faces": [
+    {
+      "name": "Exile into Darkness",
+      "type_line": "Sorcery",
+      "oracle_text": "Target player sacrifices a creature of their choice with mana value 3 or less.\nAt the beginning of your upkeep, if you have more cards in hand than each opponent, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if you have more cards in hand than each opponent, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you have more cards in hand than each opponent"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target player sacrifices a creature of their choice with mana value 3 or less.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player sacrifices a creature of their choice with mana value 3 or less"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

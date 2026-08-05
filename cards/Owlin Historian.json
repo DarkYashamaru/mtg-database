@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e1ebb60e-fbf3-4f8f-a76f-d637ec59ffb0",
+  "name": "Owlin Historian",
+  "faces": [
+    {
+      "name": "Owlin Historian",
+      "type_line": "Creature \u2014 Bird Cleric",
+      "oracle_text": "Flying\nWhen this creature enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\nWhenever one or more cards leave your graveyard, this creature gets +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more cards leave your graveyard, this creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "cards_leave_graveyard",
+            "subject": "your_graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "82333385-631f-4abf-b159-bb367f1c6fd9",
+  "name": "Abandon Attachments",
+  "faces": [
+    {
+      "name": "Abandon Attachments",
+      "type_line": "Instant \u2014 Lesson",
+      "oracle_text": "You may discard a card. If you do, draw two cards.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may discard a card. If you do, draw two cards.",
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

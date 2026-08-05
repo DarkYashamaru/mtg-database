@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e11b2b6e-3819-4dcb-b64e-2dfe6a6b049d",
+  "name": "Skywarp Skaab",
+  "faces": [
+    {
+      "name": "Skywarp Skaab",
+      "type_line": "Creature \u2014 Zombie Drake",
+      "oracle_text": "Flying\nWhen this creature enters, you may exile two creature cards from your graveyard. If you do, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may exile two creature cards from your graveyard. If you do, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile two creature cards from your graveyard"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

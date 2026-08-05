@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bdbf70da-af38-4827-9b8b-39f553ebd34a",
+  "name": "Sage of Hours",
+  "faces": [
+    {
+      "name": "Sage of Hours",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Heroic \u2014 Whenever you cast a spell that targets this creature, put a +1/+1 counter on it.\nRemove all +1/+1 counters from this creature: For each five counters removed this way, take an extra turn after this one.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that targets this creature, put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "that targets this creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove all +1/+1 counters from this creature: For each five counters removed this way, take an extra turn after this one.",
+          "cost": "Remove all +1/+1 counters from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each five counters removed this way, take an extra turn after this one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

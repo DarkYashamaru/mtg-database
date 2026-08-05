@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b872f147-00eb-4cf8-af8c-4144356b2089",
+  "name": "Faerie Vandal",
+  "faces": [
+    {
+      "name": "Faerie Vandal",
+      "type_line": "Creature \u2014 Faerie Rogue",
+      "oracle_text": "Flash (You may cast this spell any time you could cast an instant.)\nFlying\nWhenever you draw your second card each turn, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

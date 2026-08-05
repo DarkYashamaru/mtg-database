@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ffcffad7-6c33-4265-82c9-04045fdf371b",
+  "name": "Dread Tiller",
+  "faces": [
+    {
+      "name": "Dread Tiller",
+      "type_line": "Artifact Creature \u2014 Scarecrow",
+      "oracle_text": "When this creature enters, put a -1/-1 counter on target creature.\nWhenever a creature with a -1/-1 counter on it dies, you may put a land card from your hand or graveyard onto the battlefield tapped.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a -1/-1 counter on target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a -1/-1 counter on target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature with a -1/-1 counter on it dies, you may put a land card from your hand or graveyard onto the battlefield tapped.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_with_a__1_1_counter_on_it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a land card from your hand or graveyard onto the battlefield tapped"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

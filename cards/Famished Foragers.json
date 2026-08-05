@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e95f22dd-b89a-4836-86ad-5a9a1627af38",
+  "name": "Famished Foragers",
+  "faces": [
+    {
+      "name": "Famished Foragers",
+      "type_line": "Creature \u2014 Vampire",
+      "oracle_text": "When this creature enters, if an opponent lost life this turn, add {R}{R}{R}.\n{2}{R}, Discard a card: Draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if an opponent lost life this turn, add {R}{R}{R}.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "an opponent lost life this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "add {R}{R}{R}"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{R}, Discard a card: Draw a card.",
+          "cost": "{2}{R}, Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0c9ec9a1-738a-4f69-b367-5dbf3d046bf1",
+  "name": "Servant of the Stinger",
+  "faces": [
+    {
+      "name": "Servant of the Stinger",
+      "type_line": "Creature \u2014 Human Warlock",
+      "oracle_text": "Deathtouch\nWhenever this creature deals combat damage to a player, if you've committed a crime this turn, you may sacrifice this creature. If you do, search your library for a card, put it into your hand, then shuffle. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, if you've committed a crime this turn, you may sacrifice this creature. If you do, search your library for a card, put it into your hand, then shuffle. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you've committed a crime this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "search your library for a card, put it into your hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

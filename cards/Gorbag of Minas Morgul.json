@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e77e97d7-58ff-4454-ba49-66182e550f12",
+  "name": "Gorbag of Minas Morgul",
+  "faces": [
+    {
+      "name": "Gorbag of Minas Morgul",
+      "type_line": "Legendary Creature \u2014 Orc Soldier",
+      "oracle_text": "Whenever a Goblin or Orc you control deals combat damage to a player, you may sacrifice it. When you do, choose one \u2014\n\u2022 Draw a card.\n\u2022 Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Goblin or Orc you control deals combat damage to a player, you may sacrifice it. When you do, choose one \u2014\n\u2022 Draw a card.\n\u2022 Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Goblin",
+                "Or",
+                "Orc"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Draw a card.",
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            },
+            {
+              "raw_text": "Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+              "effects": [
+                {
+                  "action": "create_token",
+                  "amount": 1,
+                  "token": {
+                    "raw": "Treasure token",
+                    "subtypes": [
+                      "Treasure"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

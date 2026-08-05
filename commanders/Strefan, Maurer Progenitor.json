@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3cc745d2-5021-43ff-ace8-35011011e62a",
+  "name": "Strefan, Maurer Progenitor",
+  "faces": [
+    {
+      "name": "Strefan, Maurer Progenitor",
+      "type_line": "Legendary Creature \u2014 Vampire Noble",
+      "oracle_text": "Flying\nAt the beginning of your end step, create a Blood token for each player who lost life this turn.\nWhenever Strefan attacks, you may sacrifice two Blood tokens. If you do, you may put a Vampire card from your hand onto the battlefield tapped and attacking. It gains indestructible until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, create a Blood token for each player who lost life this turn.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a Blood token for each player who lost life this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Strefan attacks, you may sacrifice two Blood tokens. If you do, you may put a Vampire card from your hand onto the battlefield tapped and attacking. It gains indestructible until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "two_blood_tokens",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put a vampire card from your hand onto the battlefield tapped and attacking",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

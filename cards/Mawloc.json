@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e5d928dc-b465-4cf7-ab11-d5bd3328f8e7",
+  "name": "Mawloc",
+  "faces": [
+    {
+      "name": "Mawloc",
+      "type_line": "Creature \u2014 Tyranid",
+      "oracle_text": "Ravenous (This creature enters with X +1/+1 counters on it. If X is 5 or more, draw a card when it enters.)\nTerror from the Deep \u2014 When this creature enters, it fights up to one target creature an opponent controls. If that creature would die this turn, exile it instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, it fights up to one target creature an opponent controls. If that creature would die this turn, exile it instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it fights up to one target creature an opponent controls"
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "that creature would die this turn"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Ravenous (This creature enters with X +1/+1 counters on it. If X is 5 or more, draw a card when it enters.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ravenous"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

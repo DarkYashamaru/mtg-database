@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "295fe873-ecb5-4d5e-a73c-3af6c478afc5",
+  "name": "Perch Protection",
+  "faces": [
+    {
+      "name": "Perch Protection",
+      "type_line": "Instant",
+      "oracle_text": "Gift an extra turn (You may promise an opponent a gift as you cast this spell. If you do, they take an extra turn after this one.)\nCreate four 2/2 blue Bird creature tokens with flying. If the gift was promised, all permanents you control phase out, and until your next turn, your life total can't change and you gain protection from everything.\nExile Perch Protection.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Gift an extra turn (You may promise an opponent a gift as you cast this spell. If you do, they take an extra turn after this one.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gift an extra turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Create four 2/2 blue Bird creature tokens with flying. If the gift was promised, all permanents you control phase out, and until your next turn, your life total can't change and you gain protection from everything.",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "four 2/2 blue Bird creature tokens with flying",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Bird"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "all permanents you control phase out, and until your next turn, your life total can't change and you gain protection from everything",
+              "condition": [
+                {
+                  "condition_text": "the gift was promised"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Exile Perch Protection.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile Perch Protection"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

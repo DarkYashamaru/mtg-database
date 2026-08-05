@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85255c26-4e74-4cf0-91a6-78ddba5abdc6",
+  "name": "Tetravus",
+  "faces": [
+    {
+      "name": "Tetravus",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "Flying\nThis creature enters with three +1/+1 counters on it.\nAt the beginning of your upkeep, you may remove any number of +1/+1 counters from this creature. If you do, create that many 1/1 colorless Tetravite artifact creature tokens. They each have flying and \"This token can't be enchanted.\"\nAt the beginning of your upkeep, you may exile any number of tokens created with this creature. If you do, put that many +1/+1 counters on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may remove any number of +1/+1 counters from this creature. If you do, create that many 1/1 colorless Tetravite artifact creature tokens. They each have flying and \"This token can't be enchanted.\"",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may remove any number of +1/+1 counters from this creature"
+            },
+            {
+              "action": "create_token",
+              "amount": "that",
+              "token": {
+                "raw": "many 1/1 colorless tetravite artifact creature tokens",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "tetravite",
+                  "artifact"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "They each have flying and \"This token can't be enchanted.\""
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, you may exile any number of tokens created with this creature. If you do, put that many +1/+1 counters on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile any number of tokens created with this creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that many +1/+1 counters on this creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with three +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

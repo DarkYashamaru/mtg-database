@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8345eb05-c04e-4c1d-9776-5ab7d91a7842",
+  "name": "Rev, Tithe Extractor",
+  "faces": [
+    {
+      "name": "Rev, Tithe Extractor",
+      "type_line": "Legendary Creature \u2014 Human Rogue",
+      "oracle_text": "Whenever you attack, target creature gains deathtouch until end of turn.\nWhenever one or more creatures you control deal combat damage to a player, create a Treasure token, then look at the top card of that player's library and exile it face down. You may cast that card for as long as it remains exiled. (A Treasure token is an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, target creature gains deathtouch until end of turn.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "deathtouch"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more creatures you control deal combat damage to a player, create a Treasure token, then look at the top card of that player's library and exile it face down. You may cast that card for as long as it remains exiled. (A Treasure token is an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of that player's library and exile it face down"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast that card for as long as it remains exiled"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0a66ce8b-af99-411f-8ecb-52a5d2f6af3d",
+  "name": "Ertha Jo, Frontier Mentor",
+  "faces": [
+    {
+      "name": "Ertha Jo, Frontier Mentor",
+      "type_line": "Legendary Creature \u2014 Kor Advisor",
+      "oracle_text": "When Ertha Jo enters, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"\nWhenever you activate an ability that targets a creature or player, copy that ability. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Ertha Jo enters, create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "create_a_11_red_mercenary_creature_token_with_t_target_creature_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            },
+            {
+              "action": "activation_restriction",
+              "condition": [
+                {
+                  "condition_text": "as a sorcery"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you activate an ability that targets a creature or player, copy that ability. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you activate an ability that targets a creature or player"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy that ability"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

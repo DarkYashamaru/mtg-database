@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "26a716b2-a2e2-405b-accd-df572416d8bf",
+  "name": "Rodolf Duskbringer",
+  "faces": [
+    {
+      "name": "Rodolf Duskbringer",
+      "type_line": "Legendary Creature \u2014 Vampire Angel",
+      "oracle_text": "Flying, deathtouch, lifelink\nWhenever you gain life, Rodolf Duskbringer gains indestructible until end of turn.\nAt the beginning of your end step, you may pay {1}{W/B}. When you do, return target creature card with mana value X or less from your graveyard to the battlefield, where X is the amount of life you gained this turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "deathtouch"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, Rodolf Duskbringer gains indestructible until end of turn.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, you may pay {1}{W/B}. When you do, return target creature card with mana value X or less from your graveyard to the battlefield, where X is the amount of life you gained this turn.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{W/B}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return target creature card with mana value x or less from your graveyard to the battlefield, where x is the amount of life you gained this turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

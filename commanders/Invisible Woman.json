@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "085016ee-4429-453f-b7f3-d61065f1214e",
+  "name": "Invisible Woman",
+  "faces": [
+    {
+      "name": "Invisible Woman",
+      "type_line": "Legendary Creature \u2014 Human Hero",
+      "oracle_text": "At the beginning of combat on your turn, if you've cast a noncreature spell this turn, create a 0/3 colorless Wall creature token with defender and reach.\nWhenever you attack, you may pay {R}{G}{W}{U}. When you do, target creature gets +1/+0 until end of turn for each creature you control and can't be blocked this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if you've cast a noncreature spell this turn, create a 0/3 colorless Wall creature token with defender and reach.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you've cast a noncreature spell this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 0/3 colorless Wall creature token with defender and reach",
+                "power_toughness": "0/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Wall"
+                ],
+                "keywords": [
+                  "defender",
+                  "reach"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack, you may pay {R}{G}{W}{U}. When you do, target creature gets +1/+0 until end of turn for each creature you control and can't be blocked this turn.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {R}{G}{W}{U}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "target creature gets +1/+0 until end of turn for each creature you control and can't be blocked this turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

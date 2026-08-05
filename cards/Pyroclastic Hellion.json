@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b2151d51-39f6-49cc-a5cc-8202dd028336",
+  "name": "Pyroclastic Hellion",
+  "faces": [
+    {
+      "name": "Pyroclastic Hellion",
+      "type_line": "Creature \u2014 Hellion",
+      "oracle_text": "When this creature enters, you may return a land you control to its owner's hand. When you do, this creature deals 2 damage to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may return a land you control to its owner's hand. When you do, this creature deals 2 damage to each opponent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return a land you control to its owner's hand"
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

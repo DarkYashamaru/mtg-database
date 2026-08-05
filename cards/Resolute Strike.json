@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "563e9574-3f60-4558-88cb-aaf97caa7515",
+  "name": "Resolute Strike",
+  "faces": [
+    {
+      "name": "Resolute Strike",
+      "type_line": "Instant",
+      "oracle_text": "Target creature gets +2/+2 until end of turn. If it's a Warrior, you may attach an Equipment you control to it.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature gets +2/+2 until end of turn. If it's a Warrior, you may attach an Equipment you control to it.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "attach_equipment",
+              "source": "equipment_you_control",
+              "target": "it",
+              "optional": true,
+              "condition": [
+                {
+                  "condition_text": "it's a warrior"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

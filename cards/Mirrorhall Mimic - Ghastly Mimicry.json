@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5768fe50-a134-492c-a725-5ed02610c39f",
+  "name": "Mirrorhall Mimic // Ghastly Mimicry",
+  "faces": [
+    {
+      "name": "Ghastly Mimicry",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nAt the beginning of your upkeep, create a token that's a copy of enchanted creature, except it's a Spirit in addition to its other types.\nIf Ghastly Mimicry would be put into a graveyard from anywhere, exile it instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, create a token that's a copy of enchanted creature, except it's a Spirit in addition to its other types.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of enchanted creature, except it's a Spirit in addition to its other types"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "If Ghastly Mimicry would be put into a graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "ghastly mimicry would be put into a graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mirrorhall Mimic",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "You may have this creature enter as a copy of any creature on the battlefield, except it's a Spirit in addition to its other types.\nDisturb {3}{U}{U} (You may cast this card from your graveyard transformed for its disturb cost.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may have this creature enter as a copy of any creature on the battlefield, except it's a Spirit in addition to its other types.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may have this creature enter as a copy of any creature on the battlefield, except it's a Spirit in addition to its other types"
+            }
+          ]
+        },
+        {
+          "raw_text": "Disturb {3}{U}{U} (You may cast this card from your graveyard transformed for its disturb cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disturb {3}{U}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

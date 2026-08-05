@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a0218a14-8301-4484-aed5-90334349620e",
+  "name": "Warhost's Frenzy",
+  "faces": [
+    {
+      "name": "Warhost's Frenzy",
+      "type_line": "Instant",
+      "oracle_text": "Kicker {B} (You may pay an additional {B} as you cast this spell.)\nCreatures you control get +2/+0 until end of turn. If this spell was kicked, whenever a creature you control dies this turn, draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {B} (You may pay an additional {B} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures you control get +2/+0 until end of turn. If this spell was kicked, whenever a creature you control dies this turn, draw a card.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 2,
+              "toughness_delta": 0
+            },
+            {
+              "action": "custom_effect",
+              "text": "whenever a creature you control dies this turn, draw a card",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

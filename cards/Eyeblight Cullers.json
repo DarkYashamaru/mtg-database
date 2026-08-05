@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b7d69422-b90b-4149-8c6d-eef636d5c6f5",
+  "name": "Eyeblight Cullers",
+  "faces": [
+    {
+      "name": "Eyeblight Cullers",
+      "type_line": "Creature \u2014 Elf Warrior",
+      "oracle_text": "When this creature dies, create three 1/1 green Elf Warrior creature tokens, then mill three cards. (Put the top three cards of your library into your graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, create three 1/1 green Elf Warrior creature tokens, then mill three cards. (Put the top three cards of your library into your graveyard.)",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "1/1 green elf warrior creature tokens",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "elf",
+                  "warrior"
+                ]
+              }
+            },
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

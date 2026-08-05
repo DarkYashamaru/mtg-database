@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "33b31fb0-71ce-408a-a256-2a5a3b085cb6",
+  "name": "Case of the Filched Falcon",
+  "faces": [
+    {
+      "name": "Case of the Filched Falcon",
+      "type_line": "Enchantment \u2014 Case",
+      "oracle_text": "When this Case enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nTo solve \u2014 You control three or more artifacts. (If unsolved, solve at the beginning of your end step.)\nSolved \u2014 {2}{U}, Sacrifice this Case: Put four +1/+1 counters on target noncreature artifact. It becomes a 0/0 Bird creature with flying in addition to its other types.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Case enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "investigate"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Solved \u2014 {2}{U}, Sacrifice this Case: Put four +1/+1 counters on target noncreature artifact. It becomes a 0/0 Bird creature with flying in addition to its other types.",
+          "cost": "Solved \u2014 {2}{U}, Sacrifice this Case",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_noncreature_artifact",
+              "amount": 4
+            },
+            {
+              "action": "custom_effect",
+              "text": "It becomes a 0/0 Bird creature with flying in addition to its other types"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "To solve \u2014 You control three or more artifacts. (If unsolved, solve at the beginning of your end step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "To solve \u2014 You control three or more artifacts"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

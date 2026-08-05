@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "45bef776-121b-4489-9c46-f7b4fd4c3c0d",
+  "name": "Skyward Eye Prophets",
+  "faces": [
+    {
+      "name": "Skyward Eye Prophets",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Vigilance\n{T}: Reveal the top card of your library. If it's a land card, put it onto the battlefield. Otherwise, put it into your hand.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Reveal the top card of your library. If it's a land card, put it onto the battlefield. Otherwise, put it into your hand.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

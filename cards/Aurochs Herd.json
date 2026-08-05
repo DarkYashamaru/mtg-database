@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b07bd1cd-4000-4e6b-b16b-283c76593377",
+  "name": "Aurochs Herd",
+  "faces": [
+    {
+      "name": "Aurochs Herd",
+      "type_line": "Creature \u2014 Aurochs",
+      "oracle_text": "Trample\nWhen this creature enters, you may search your library for an Aurochs card, reveal it, put it into your hand, then shuffle.\nWhenever this creature attacks, it gets +1/+0 until end of turn for each other attacking Aurochs.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for an Aurochs card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for an aurochs card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, it gets +1/+0 until end of turn for each other attacking Aurochs.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gets +1/+0 until end of turn for each other attacking Aurochs"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "211814a5-195d-41c6-b96c-4c26b2cbb33c",
+  "name": "Dalakos, Crafter of Wonders",
+  "faces": [
+    {
+      "name": "Dalakos, Crafter of Wonders",
+      "type_line": "Legendary Creature \u2014 Merfolk Artificer",
+      "oracle_text": "{T}: Add {C}{C}. Spend this mana only to cast artifact spells or activate abilities of artifacts.\nEquipped creatures you control have flying and haste.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}{C}. Spend this mana only to cast artifact spells or activate abilities of artifacts.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{c}",
+                "{c}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "actions_any": [
+                  {
+                    "action": "cast_spell",
+                    "filter": {
+                      "card_types": [
+                        "Artifact"
+                      ]
+                    }
+                  },
+                  {
+                    "action": "activate_ability",
+                    "filter": {
+                      "source_card_types": [
+                        "Artifact"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creatures you control have flying and haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Equipped"
+                ]
+              },
+              "keywords": [
+                "flying",
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

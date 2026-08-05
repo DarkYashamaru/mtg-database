@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6ba8e099-5871-4ee3-8a65-06fd8ccec340",
+  "name": "The Fall of Lord Konda // Fragment of Konda",
+  "faces": [
+    {
+      "name": "Fragment of Konda",
+      "type_line": "Enchantment Creature \u2014 Human Noble",
+      "oracle_text": "Defender\nWhen this creature dies, draw a card.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, draw a card.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "The Fall of Lord Konda",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 Exile target creature an opponent controls with mana value 4 or greater.\nII \u2014 Each player gains control of all permanents they own.\nIII \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Exile target creature an opponent controls with mana value 4 or greater.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target creature an opponent controls with mana value 4 or greater"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Each player gains control of all permanents they own.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each player gains control of all permanents they own"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

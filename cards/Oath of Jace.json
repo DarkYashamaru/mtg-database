@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dc92b420-8ac7-4478-a287-3d897357be08",
+  "name": "Oath of Jace",
+  "faces": [
+    {
+      "name": "Oath of Jace",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "When Oath of Jace enters, draw three cards, then discard two cards.\nAt the beginning of your upkeep, scry X, where X is the number of planeswalkers you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Oath of Jace enters, draw three cards, then discard two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, scry X, where X is the number of planeswalkers you control.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "scry X, where X is the number of planeswalkers you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

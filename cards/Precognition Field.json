@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9c3e4bd4-2e1e-4103-adc3-f9ccc259dcdf",
+  "name": "Precognition Field",
+  "faces": [
+    {
+      "name": "Precognition Field",
+      "type_line": "Enchantment",
+      "oracle_text": "You may look at the top card of your library any time.\nYou may cast instant and sorcery spells from the top of your library.\n{3}: Exile the top card of your library.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}: Exile the top card of your library.",
+          "cost": "{3}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "You may cast instant and sorcery spells from the top of your library.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast instant and sorcery spells from the top of your library"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

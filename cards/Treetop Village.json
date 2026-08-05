@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b53f216d-1592-4eee-b204-502a805fbc8c",
+  "name": "Treetop Village",
+  "faces": [
+    {
+      "name": "Treetop Village",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {G}.\n{1}{G}: This land becomes a 3/3 green Ape creature with trample until end of turn. It's still a land. (It can deal excess combat damage to the player or planeswalker it's attacking.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{G}: This land becomes a 3/3 green Ape creature with trample until end of turn. It's still a land. (It can deal excess combat damage to the player or planeswalker it's attacking.)",
+          "cost": "{1}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land becomes a 3/3 green Ape creature with trample until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

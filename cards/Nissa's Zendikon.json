@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1b8c4cbe-b2fc-4d52-9382-1e03c40003be",
+  "name": "Nissa's Zendikon",
+  "faces": [
+    {
+      "name": "Nissa's Zendikon",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\nEnchanted land is a 4/4 Elemental creature with reach and haste. It's still a land.\nWhen enchanted land dies, return that card to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted land dies, return that card to its owner's hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return that card to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted land is a 4/4 Elemental creature with reach and haste. It's still a land.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted land is a 4/4 Elemental creature with reach and haste"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

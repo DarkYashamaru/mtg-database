@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "133109c3-a2ca-4231-b3b1-baa700800b07",
+  "name": "Primordial Ooze",
+  "faces": [
+    {
+      "name": "Primordial Ooze",
+      "type_line": "Creature \u2014 Ooze",
+      "oracle_text": "This creature attacks each combat if able.\nAt the beginning of your upkeep, put a +1/+1 counter on this creature. Then you may pay {X}, where X is the number of +1/+1 counters on it. If you don't, tap this creature and it deals X damage to you.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a +1/+1 counter on this creature. Then you may pay {X}, where X is the number of +1/+1 counters on it. If you don't, tap this creature and it deals X damage to you.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may pay {X}, where X is the number of +1/+1 counters on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "tap this creature and it deals x damage to you",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature attacks each combat if able.",
+          "effects": [
+            {
+              "action": "attack_requirement",
+              "target": "self",
+              "requirement": "each_combat_if_able"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

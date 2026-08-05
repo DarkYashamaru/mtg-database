@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b7c48f87-bdef-4cef-a1c4-5b4d0b7a26cd",
+  "name": "Vanguard Suppressor",
+  "faces": [
+    {
+      "name": "Vanguard Suppressor",
+      "type_line": "Creature \u2014 Astartes Warrior",
+      "oracle_text": "Squad {2} (As an additional cost to cast this spell, you may pay {2} any number of times. When this creature enters, create that many tokens that are copies of it.)\nFlying\nSuppressing Fire \u2014 Whenever this creature deals combat damage to a player, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Squad {2} (As an additional cost to cast this spell, you may pay {2} any number of times. When this creature enters, create that many tokens that are copies of it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Squad {2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

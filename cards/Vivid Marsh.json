@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "20b32052-f66f-4eb8-b56e-00d531907f19",
+  "name": "Vivid Marsh",
+  "faces": [
+    {
+      "name": "Vivid Marsh",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped with two charge counters on it.\n{T}: Add {B}.\n{T}, Remove a charge counter from this land: Add one mana of any color.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Remove a charge counter from this land: Add one mana of any color.",
+          "cost": "{T}, Remove a charge counter from this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped with two charge counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters tapped with two charge counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3a16bdda-8499-47e4-b870-b9576f4c1a83",
+  "name": "Master of Death",
+  "faces": [
+    {
+      "name": "Master of Death",
+      "type_line": "Creature \u2014 Zombie Wizard",
+      "oracle_text": "When this creature enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\nAt the beginning of your upkeep, if this card is in your graveyard, you may pay 1 life. If you do, return it to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if this card is in your graveyard, you may pay 1 life. If you do, return it to your hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "this card is in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay 1 life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to your hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

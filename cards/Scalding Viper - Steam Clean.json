@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "12c71296-1243-49e6-a196-8b016a7b635c",
+  "name": "Scalding Viper // Steam Clean",
+  "faces": [
+    {
+      "name": "Scalding Viper",
+      "type_line": "Creature \u2014 Elemental Snake",
+      "oracle_text": "Whenever an opponent casts a spell with mana value 3 or less, this creature deals 1 damage to that player.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent casts a spell with mana value 3 or less, this creature deals 1 damage to that player.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an opponent casts a spell with mana value 3 or less"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 1 damage to that player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Steam Clean",
+      "type_line": "Sorcery \u2014 Adventure",
+      "oracle_text": "Return target nonland permanent to its owner's hand. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target nonland permanent to its owner's hand. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

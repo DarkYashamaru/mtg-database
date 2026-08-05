@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "60105eb8-bdca-44b9-a970-68a7615526e8",
+  "name": "Dependable Quinjet",
+  "faces": [
+    {
+      "name": "Dependable Quinjet",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\n{T}: Add one mana of any color.\nCrew 4 (Tap any number of creatures you control with total power 4 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "Crew 4 (Tap any number of creatures you control with total power 4 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 4,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

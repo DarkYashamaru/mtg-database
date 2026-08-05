@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ed7885bf-c557-4328-b1a4-54780b2315f4",
+  "name": "Cloudpiercer",
+  "faces": [
+    {
+      "name": "Cloudpiercer",
+      "type_line": "Creature \u2014 Dinosaur",
+      "oracle_text": "Mutate {3}{R} (If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities from under it.)\nReach\nWhenever this creature mutates, you may discard a card. If you do, draw a card.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature mutates, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "mutates",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Mutate {3}{R} (If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities from under it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Mutate {3}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

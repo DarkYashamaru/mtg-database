@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "536c1112-694f-42f8-a7b1-604389e54a95",
+  "name": "Chandra, the Firebrand",
+  "faces": [
+    {
+      "name": "Chandra, the Firebrand",
+      "type_line": "Legendary Planeswalker \u2014 Chandra",
+      "oracle_text": "+1: Chandra deals 1 damage to any target.\n\u22122: When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.\n\u22126: Chandra deals 6 damage to each of up to six targets.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Chandra deals 1 damage to any target.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "cast_spell",
+                "subject": "you"
+              },
+              "condition": [
+                {
+                  "spell_types_any": [
+                    "instant",
+                    "sorcery"
+                  ]
+                },
+                {
+                  "timing": "next_time_this_turn"
+                }
+              ],
+              "effects": [
+                {
+                  "action": "copy_spell",
+                  "object": "triggering_spell"
+                }
+              ]
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: Chandra deals 6 damage to each of up to six targets.",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Chandra deals 6 damage to each of up to six targets"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

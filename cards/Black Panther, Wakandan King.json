@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "48deff27-b421-430b-a484-55b4a593010a",
+  "name": "Black Panther, Wakandan King",
+  "faces": [
+    {
+      "name": "Black Panther, Wakandan King",
+      "type_line": "Legendary Creature \u2014 Human Noble Hero",
+      "oracle_text": "First strike\nSurvey the Realm \u2014 Whenever Black Panther or another creature you control enters, put a +1/+1 counter on target land you control.\nMine Vibranium \u2014 {3}: Move all +1/+1 counters from target land you control onto target creature. If one or more +1/+1 counters are moved this way, you gain that much life and draw a card.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Black Panther or another creature you control enters, put a +1/+1 counter on target land you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Black",
+                "Panther",
+                "Or",
+                "Another"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Land"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Mine Vibranium \u2014 {3}: Move all +1/+1 counters from target land you control onto target creature. If one or more +1/+1 counters are moved this way, you gain that much life and draw a card.",
+          "cost": "Mine Vibranium \u2014 {3}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Move all +1/+1 counters from target land you control onto target creature"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": "that_much",
+              "condition": [
+                {
+                  "condition_text": "one or more +1/+1 counters are moved this way"
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

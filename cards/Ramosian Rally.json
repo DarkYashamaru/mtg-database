@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2731c237-eda1-4b74-a294-502d574f4435",
+  "name": "Ramosian Rally",
+  "faces": [
+    {
+      "name": "Ramosian Rally",
+      "type_line": "Instant",
+      "oracle_text": "If you control a Plains, you may tap an untapped creature you control rather than pay this spell's mana cost.\nCreatures you control get +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If you control a Plains, you may tap an untapped creature you control rather than pay this spell's mana cost.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may tap an untapped creature you control rather than pay this spell's mana cost",
+              "condition": [
+                {
+                  "condition_text": "you control a plains"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures you control get +1/+1 until end of turn.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

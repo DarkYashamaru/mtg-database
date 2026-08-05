@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2896f01d-003b-4d68-9d0a-64990ba59cbe",
+  "name": "Scabland",
+  "faces": [
+    {
+      "name": "Scabland",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {C}.\n{T}: Add {R} or {W}. This land deals 1 damage to you.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {R} or {W}. This land deals 1 damage to you.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{w}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

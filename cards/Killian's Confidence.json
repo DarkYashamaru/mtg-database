@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c17f0e65-e5a3-4113-b782-0b192ab52046",
+  "name": "Killian's Confidence",
+  "faces": [
+    {
+      "name": "Killian's Confidence",
+      "type_line": "Sorcery",
+      "oracle_text": "Target creature gets +1/+1 until end of turn. Draw a card.\nWhenever one or more creatures you control deal combat damage to a player, you may pay {W/B}. If you do, return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control deal combat damage to a player, you may pay {W/B}. If you do, return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{w/b}",
+              "optional": true
+            },
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature gets +1/+1 until end of turn. Draw a card.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

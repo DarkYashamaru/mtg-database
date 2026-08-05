@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "51f17fe1-1cf7-4362-b9a2-8ec225d41b03",
+  "name": "Ana Sanctuary",
+  "faces": [
+    {
+      "name": "Ana Sanctuary",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, if you control a blue or black permanent, target creature gets +1/+1 until end of turn. If you control a blue permanent and a black permanent, that creature gets +5/+5 until end of turn instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if you control a blue or black permanent, target creature gets +1/+1 until end of turn. If you control a blue permanent and a black permanent, that creature gets +5/+5 until end of turn instead.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you control a blue or black permanent"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "that creature gets +5/+5 until end of turn instead",
+              "condition": [
+                {
+                  "condition_text": "you control a blue permanent and a black permanent"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

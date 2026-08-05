@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "984adc49-421b-488f-b316-ed7323c5735b",
+  "name": "Captain Rex Nebula",
+  "faces": [
+    {
+      "name": "Captain Rex Nebula",
+      "type_line": "Legendary Creature \u2014 Human Pilot Employee",
+      "oracle_text": "At the beginning of combat on your turn, choose target nonland permanent you control. Until end of turn, it becomes a Vehicle artifact with base power and toughness each equal to its mana value, and it gains crew 2 and \"Crash Land \u2014 Whenever this Vehicle deals damage, roll a six-sided die. If the result is equal to this Vehicle's mana value, sacrifice this Vehicle, then it deals that much damage to any target.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle deals damage, roll a six-sided die. If the result is equal to this Vehicle's mana value, sacrifice this Vehicle, then it deals that much damage to any target.\"",
+          "trigger": {
+            "type": "deals_damage",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "roll a six-sided die"
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_vehicle",
+              "condition": [
+                {
+                  "condition_text": "the result is equal to this vehicle's mana value"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "it deals that much damage to any target"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

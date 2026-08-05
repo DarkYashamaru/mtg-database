@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e71479c9-bb38-4112-bf8a-41b39a3ade51",
+  "name": "Pizza Face, Gastromancer",
+  "faces": [
+    {
+      "name": "Pizza Face, Gastromancer",
+      "type_line": "Legendary Artifact Creature \u2014 Food Mutant",
+      "oracle_text": "When Pizza Face enters, create a Food token.\nDisappear \u2014 At the beginning of your end step, if a permanent left the battlefield under your control this turn, put three +1/+1 counters on up to one other target artifact or creature. If it isn't a creature, it becomes a 0/0 Mutant creature in addition to its other types.\n{10}, {T}, Sacrifice Pizza Face: You gain 15 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Pizza Face enters, create a Food token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if a permanent left the battlefield under your control this turn, put three +1/+1 counters on up to one other target artifact or creature. If it isn't a creature, it becomes a 0/0 Mutant creature in addition to its other types.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a permanent left the battlefield under your control this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "up_to_one_other_target_artifact_or_creature",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "it becomes a 0/0 mutant creature in addition to its other types",
+              "condition": [
+                {
+                  "condition_text": "it isn't a creature"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{10}, {T}, Sacrifice Pizza Face: You gain 15 life.",
+          "cost": "{10}, {T}, Sacrifice Pizza Face",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 15
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

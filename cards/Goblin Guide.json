@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "51d9564b-44fc-4de1-9119-09d7b4089378",
+  "name": "Goblin Guide",
+  "faces": [
+    {
+      "name": "Goblin Guide",
+      "type_line": "Creature \u2014 Goblin Scout",
+      "oracle_text": "Haste\nWhenever this creature attacks, defending player reveals the top card of their library. If it's a land card, that player puts it into their hand.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, defending player reveals the top card of their library. If it's a land card, that player puts it into their hand.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "defending player reveals the top card of their library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "that player puts it into their hand",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

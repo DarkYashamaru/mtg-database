@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a93b5956-c11e-434e-bed5-94af9de55382",
+  "name": "Nezumi Prowler",
+  "faces": [
+    {
+      "name": "Nezumi Prowler",
+      "type_line": "Artifact Creature \u2014 Rat Ninja",
+      "oracle_text": "Ninjutsu {1}{B} ({1}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhen this creature enters, target creature you control gains deathtouch and lifelink until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target creature you control gains deathtouch and lifelink until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control",
+              "keyword": "deathtouch_and_lifelink"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Ninjutsu {1}{B} ({1}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)",
+          "cost": "Ninjutsu {1}{B} ({1}{B}, Return an unblocked attacker you control to hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "object": "self",
+              "source_zone": "hand",
+              "destination_zone": "battlefield",
+              "tapped": true,
+              "attacking": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

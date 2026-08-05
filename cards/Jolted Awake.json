@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4306a9e5-6845-4fd4-96ad-8888147612aa",
+  "name": "Jolted Awake",
+  "faces": [
+    {
+      "name": "Jolted Awake",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose up to one target artifact or creature card in your graveyard. You get {E}{E} (two energy counters). Then you may pay an amount of {E} equal to that card's mana value. If you do, return it from your graveyard to the battlefield.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Cycling {2} ({2}, Discard this card: Draw a card.)",
+          "cost": "Cycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Choose up to one target artifact or creature card in your graveyard. You get {E}{E} (two energy counters). Then you may pay an amount of {E} equal to that card's mana value. If you do, return it from your graveyard to the battlefield.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose up to one target artifact or creature card in your graveyard"
+            },
+            {
+              "action": "get_energy",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may pay an amount of {E} equal to that card's mana value"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it from your graveyard to the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

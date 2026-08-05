@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "42b12ba0-7d1d-48f9-9473-881f7a19514a",
+  "name": "Nadier, Agent of the Duskenel",
+  "faces": [
+    {
+      "name": "Nadier, Agent of the Duskenel",
+      "type_line": "Legendary Creature \u2014 Elf Warrior",
+      "oracle_text": "Whenever a token you control leaves the battlefield, put a +1/+1 counter on Nadier.\nWhen Nadier leaves the battlefield, create a number of 1/1 green Elf Warrior creature tokens equal to its power.\nPartner (You can have two commanders if both have partner.)",
+      "static": [
+        {
+          "keyword": "partner"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a token you control leaves the battlefield, put a +1/+1 counter on Nadier.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Token"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When Nadier leaves the battlefield, create a number of 1/1 green Elf Warrior creature tokens equal to its power.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a number of 1/1 green Elf Warrior creature tokens equal to its power"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

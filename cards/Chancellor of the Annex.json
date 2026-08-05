@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85c0a376-da6f-4f69-853c-a093708d0952",
+  "name": "Chancellor of the Annex",
+  "faces": [
+    {
+      "name": "Chancellor of the Annex",
+      "type_line": "Creature \u2014 Phyrexian Angel",
+      "oracle_text": "You may reveal this card from your opening hand. If you do, when each opponent casts their first spell of the game, counter that spell unless that player pays {1}.\nFlying\nWhenever an opponent casts a spell, counter it unless that player pays {1}.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent casts a spell, counter it unless that player pays {1}.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "counter it unless that player pays {1}"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may reveal this card from your opening hand. If you do, when each opponent casts their first spell of the game, counter that spell unless that player pays {1}.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may reveal this card from your opening hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "when each opponent casts their first spell of the game, counter that spell unless that player pays {1}",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

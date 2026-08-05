@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2a747cdb-afbe-451d-8b1b-9458401a5419",
+  "name": "Undercellar Sweep",
+  "faces": [
+    {
+      "name": "Undercellar Sweep",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, you take the initiative.\nWhenever you attack, if you or a player you're attacking has the initiative, you create two 1/1 white Soldier creature tokens that are tapped and attacking.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you take the initiative.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "take_the_initiative"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack, if you or a player you're attacking has the initiative, you create two 1/1 white Soldier creature tokens that are tapped and attacking.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "you or a player you're attacking has the initiative"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you create two 1/1 white Soldier creature tokens that are tapped and attacking"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

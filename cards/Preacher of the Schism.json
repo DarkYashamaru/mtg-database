@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "74947e47-c4ff-4f47-9845-befa7403cbde",
+  "name": "Preacher of the Schism",
+  "faces": [
+    {
+      "name": "Preacher of the Schism",
+      "type_line": "Creature \u2014 Vampire Cleric",
+      "oracle_text": "Deathtouch\nWhenever this creature attacks the player with the most life or tied for most life, create a 1/1 white Vampire creature token with lifelink.\nWhenever this creature attacks while you have the most life or are tied for most life, you draw a card and you lose 1 life.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks the player with the most life or tied for most life, create a 1/1 white Vampire creature token with lifelink.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature attacks the player with the most life or tied for most life"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white Vampire creature token with lifelink",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Vampire"
+                ],
+                "keywords": [
+                  "lifelink"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks while you have the most life or are tied for most life, you draw a card and you lose 1 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature attacks while you have the most life or are tied for most life"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

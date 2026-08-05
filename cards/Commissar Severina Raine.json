@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c00074ec-5b31-44d3-b69b-e2bf6f6a2477",
+  "name": "Commissar Severina Raine",
+  "faces": [
+    {
+      "name": "Commissar Severina Raine",
+      "type_line": "Legendary Creature \u2014 Human Soldier",
+      "oracle_text": "Leading from the Front \u2014 Whenever Commissar Severina Raine attacks, each opponent loses X life, where X is the number of other attacking creatures.\nSummary Execution \u2014 {2}, Sacrifice another creature: You gain 2 life and draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Commissar Severina Raine attacks, each opponent loses X life, where X is the number of other attacking creatures.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent loses X life, where X is the number of other attacking creatures"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Summary Execution \u2014 {2}, Sacrifice another creature: You gain 2 life and draw a card.",
+          "cost": "Summary Execution \u2014 {2}, Sacrifice another creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

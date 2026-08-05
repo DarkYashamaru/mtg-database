@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "49136bdc-bc50-49a2-999a-1ef9c16ea130",
+  "name": "Smuggler's Copter",
+  "faces": [
+    {
+      "name": "Smuggler's Copter",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nWhenever this Vehicle attacks or blocks, you may draw a card. If you do, discard a card.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle attacks or blocks, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "attacks_or_blocks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

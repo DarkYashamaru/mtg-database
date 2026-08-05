@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bb9ce416-eef1-49e8-89a0-2b6837505070",
+  "name": "Realm of Koh",
+  "faces": [
+    {
+      "name": "Realm of Koh",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped unless you control a basic land.\n{T}: Add {B}.\n{3}{B}, {T}: Create a 1/1 colorless Spirit creature token with \"This token can't block or be blocked by non-Spirit creatures.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{B}, {T}: Create a 1/1 colorless Spirit creature token with \"This token can't block or be blocked by non-Spirit creatures.\"",
+          "cost": "{3}{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 colorless Spirit creature token with \"This token can't block or be blocked by non-Spirit creatures",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Spirit"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped unless you control a basic land.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters tapped unless you control a basic land"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

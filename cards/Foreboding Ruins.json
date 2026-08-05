@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5c87e2fa-77f1-4978-b25f-f14d227301d1",
+  "name": "Foreboding Ruins",
+  "faces": [
+    {
+      "name": "Foreboding Ruins",
+      "type_line": "Land",
+      "oracle_text": "As this land enters, you may reveal a Swamp or Mountain card from your hand. If you don't, this land enters tapped.\n{T}: Add {B} or {R}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B} or {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}",
+                "{r}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this land enters, you may reveal a Swamp or Mountain card from your hand. If you don't, this land enters tapped.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this land enters, you may reveal a Swamp or Mountain card from your hand"
+            },
+            {
+              "action": "enters_tapped",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

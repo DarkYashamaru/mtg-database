@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "899d58dc-60b2-4013-9f91-c1888c585d66",
+  "name": "Niv-Mizzet, Dracogenius",
+  "faces": [
+    {
+      "name": "Niv-Mizzet, Dracogenius",
+      "type_line": "Legendary Creature \u2014 Dragon Wizard",
+      "oracle_text": "Flying\nWhenever Niv-Mizzet deals damage to a player, you may draw a card.\n{U}{R}: Niv-Mizzet deals 1 damage to any target.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Niv-Mizzet deals damage to a player, you may draw a card.",
+          "trigger": {
+            "type": "deals_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{U}{R}: Niv-Mizzet deals 1 damage to any target.",
+          "cost": "{U}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

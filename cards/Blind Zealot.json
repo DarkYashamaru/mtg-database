@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "30c7e304-ecfe-44c1-88d1-f507df63c080",
+  "name": "Blind Zealot",
+  "faces": [
+    {
+      "name": "Blind Zealot",
+      "type_line": "Creature \u2014 Phyrexian Human Cleric",
+      "oracle_text": "Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)\nWhenever this creature deals combat damage to a player, you may sacrifice it. If you do, destroy target creature that player controls.",
+      "static": [
+        {
+          "keyword": "intimidate"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may sacrifice it. If you do, destroy target creature that player controls.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy target creature that player controls",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

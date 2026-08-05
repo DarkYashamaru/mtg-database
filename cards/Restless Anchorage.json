@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91320daf-f69c-4350-b0fc-4bb37a6904b1",
+  "name": "Restless Anchorage",
+  "faces": [
+    {
+      "name": "Restless Anchorage",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {W} or {U}.\n{1}{W}{U}: Until end of turn, this land becomes a 2/3 white and blue Bird creature with flying. It's still a land.\nWhenever this land attacks, create a Map token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this land attacks, create a Map token.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Map token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W} or {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}",
+                "{u}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{W}{U}: Until end of turn, this land becomes a 2/3 white and blue Bird creature with flying. It's still a land.",
+          "cost": "{1}{W}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, this land becomes a 2/3 white and blue Bird creature with flying"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

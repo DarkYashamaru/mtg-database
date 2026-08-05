@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1729c6f2-2452-4fbc-a1bc-3e625f2ad8e1",
+  "name": "Sun-Blessed Healer",
+  "faces": [
+    {
+      "name": "Sun-Blessed Healer",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "Kicker {1}{W} (You may pay an additional {1}{W} as you cast this spell.)\nLifelink (Damage dealt by this creature also causes you to gain that much life.)\nWhen this creature enters, if it was kicked, return target nonland permanent card with mana value 2 or less from your graveyard to the battlefield.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, return target nonland permanent card with mana value 2 or less from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target nonland permanent card with mana value 2 or less from your graveyard to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{W} (You may pay an additional {1}{W} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

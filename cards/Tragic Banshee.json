@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "888f58c0-1860-4df4-ad75-53e634150680",
+  "name": "Tragic Banshee",
+  "faces": [
+    {
+      "name": "Tragic Banshee",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Morbid \u2014 When this creature enters, target creature an opponent controls gets -1/-1 until end of turn. If a creature died this turn, that creature gets -13/-13 until end of turn instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target creature an opponent controls gets -1/-1 until end of turn. If a creature died this turn, that creature gets -13/-13 until end of turn instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature_an_opponent_controls",
+              "power_delta": -1,
+              "toughness_delta": -1
+            },
+            {
+              "action": "custom_effect",
+              "text": "that creature gets -13/-13 until end of turn instead",
+              "condition": [
+                {
+                  "condition_text": "a creature died this turn"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

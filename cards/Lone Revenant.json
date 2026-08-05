@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5d814b0b-82e8-4145-87e1-4fed44d16465",
+  "name": "Lone Revenant",
+  "faces": [
+    {
+      "name": "Lone Revenant",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Hexproof (This creature can't be the target of spells or abilities your opponents control.)\nWhenever this creature deals combat damage to a player, if you control no other creatures, look at the top four cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",
+      "static": [
+        {
+          "keyword": "hexproof"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, if you control no other creatures, look at the top four cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control no other creatures"
+            }
+          ],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "destination": "hand",
+              "remainder_destination": "bottom_of_library",
+              "remainder_order": "any"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

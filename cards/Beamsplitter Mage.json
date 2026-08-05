@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fa09e18c-e7cf-4f08-9cc4-324e36594063",
+  "name": "Beamsplitter Mage",
+  "faces": [
+    {
+      "name": "Beamsplitter Mage",
+      "type_line": "Creature \u2014 Vedalken Wizard",
+      "oracle_text": "Whenever you cast an instant or sorcery spell that targets only this creature, if you control one or more other creatures that spell could target, choose one of those creatures. Copy that spell. The copy targets the chosen creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell that targets only this creature, if you control one or more other creatures that spell could target, choose one of those creatures. Copy that spell. The copy targets the chosen creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            },
+            {
+              "condition_text": "that targets only this creature"
+            },
+            {
+              "condition_text": "you control one or more other creatures that spell could target"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose one of those creatures"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Copy that spell"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The copy targets the chosen creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

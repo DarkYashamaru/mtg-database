@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f353948c-b5f9-4840-a89a-19206dde9d47",
+  "name": "Slab Hammer",
+  "faces": [
+    {
+      "name": "Slab Hammer",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature attacks, you may return a land you control to its owner's hand. If you do, the creature gets +2/+2 until end of turn.\nEquip {2}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, you may return a land you control to its owner's hand. If you do, the creature gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return a land you control to its owner's hand"
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "the_creature",
+              "power_delta": 2,
+              "toughness_delta": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

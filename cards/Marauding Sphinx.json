@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "70bea459-f6e9-411a-bd33-339bf95ea47a",
+  "name": "Marauding Sphinx",
+  "faces": [
+    {
+      "name": "Marauding Sphinx",
+      "type_line": "Creature \u2014 Sphinx Rogue",
+      "oracle_text": "Flying, vigilance, ward {2}\nWhenever you commit a crime, surveil 2. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you commit a crime, surveil 2. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+          "trigger": {
+            "type": "commit_crime",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 2
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

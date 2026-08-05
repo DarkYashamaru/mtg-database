@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7010bfbb-8aea-473b-a9a5-27488de13cc5",
+  "name": "Disturbing Mirth",
+  "faces": [
+    {
+      "name": "Disturbing Mirth",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, you may sacrifice another enchantment or creature. If you do, draw two cards.\nWhen you sacrifice this enchantment, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you may sacrifice another enchantment or creature. If you do, draw two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_enchantment_or_creature",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "When you sacrifice this enchantment, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+          "trigger": {
+            "type": "custom",
+            "text": "When you sacrifice this enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "manifest dread"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

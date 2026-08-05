@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cc913f28-18ef-485e-8d2b-ae0115523020",
+  "name": "Depala, Pilot Exemplar",
+  "faces": [
+    {
+      "name": "Depala, Pilot Exemplar",
+      "type_line": "Legendary Creature \u2014 Dwarf Pilot",
+      "oracle_text": "Other Dwarves you control get +1/+1.\nEach Vehicle you control gets +1/+1 as long as it's a creature.\nWhenever Depala becomes tapped, you may pay {X}. If you do, reveal the top X cards of your library, put all Dwarf and Vehicle cards from among them into your hand, then put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Depala becomes tapped, you may pay {X}. If you do, reveal the top X cards of your library, put all Dwarf and Vehicle cards from among them into your hand, then put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever Depala becomes tapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{x}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "reveal the top x cards of your library, put all dwarf",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "vehicle cards from among them into your hand"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Dwarves you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other Dwarves you control get +1/+1"
+            }
+          ]
+        },
+        {
+          "raw_text": "Each Vehicle you control gets +1/+1 as long as it's a creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each Vehicle you control gets +1/+1 as long as it's a creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

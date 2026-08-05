@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "01197456-62f1-4bc0-9f2f-127f97f9b05d",
+  "name": "Higure, the Still Wind",
+  "faces": [
+    {
+      "name": "Higure, the Still Wind",
+      "type_line": "Legendary Creature \u2014 Human Ninja",
+      "oracle_text": "Ninjutsu {2}{U}{U} ({2}{U}{U}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Higure deals combat damage to a player, you may search your library for a Ninja card, reveal it, put it into your hand, then shuffle.\n{2}: Target Ninja creature can't be blocked this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Higure deals combat damage to a player, you may search your library for a Ninja card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a ninja card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Ninjutsu {2}{U}{U} ({2}{U}{U}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)",
+          "cost": "Ninjutsu {2}{U}{U} ({2}{U}{U}, Return an unblocked attacker you control to hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "object": "self",
+              "source_zone": "hand",
+              "destination_zone": "battlefield",
+              "tapped": true,
+              "attacking": true
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}: Target Ninja creature can't be blocked this turn.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target Ninja creature can't be blocked this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

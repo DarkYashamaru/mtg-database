@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d04d2434-121e-4420-abfc-fa21ad5577c3",
+  "name": "Shard of the Void Dragon",
+  "faces": [
+    {
+      "name": "Shard of the Void Dragon",
+      "type_line": "Creature \u2014 C'tan",
+      "oracle_text": "Flying\nSpear of the Void Dragon \u2014 Whenever this creature attacks, each opponent sacrifices a nonland permanent of their choice.\nMatter Absorption \u2014 Whenever an artifact is put into a graveyard from the battlefield or is put into exile from the battlefield, put two +1/+1 counters on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, each opponent sacrifices a nonland permanent of their choice.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent sacrifices a nonland permanent of their choice"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an artifact is put into a graveyard from the battlefield or is put into exile from the battlefield, put two +1/+1 counters on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an artifact is put into a graveyard from the battlefield or is put into exile from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

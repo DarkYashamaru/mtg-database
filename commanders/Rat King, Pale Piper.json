@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "da359f85-7a11-4575-848d-642d1ae0ddbb",
+  "name": "Rat King, Pale Piper",
+  "faces": [
+    {
+      "name": "Rat King, Pale Piper",
+      "type_line": "Legendary Creature \u2014 Rat Avatar",
+      "oracle_text": "Menace\nWhenever Rat King or another nontoken creature you control leaves the battlefield, create a 1/1 black Rat creature token.\n{2}, Sacrifice a token: Draw a card.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Rat King or another nontoken creature you control leaves the battlefield, create a 1/1 black Rat creature token.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Rat",
+                "King",
+                "Or",
+                "Another",
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 black Rat creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Rat"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, Sacrifice a token: Draw a card.",
+          "cost": "{2}, Sacrifice a token",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

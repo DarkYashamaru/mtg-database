@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7ed8a69b-fba0-4d4d-98b2-311a92373669",
+  "name": "Skeletal Vampire",
+  "faces": [
+    {
+      "name": "Skeletal Vampire",
+      "type_line": "Creature \u2014 Vampire Skeleton",
+      "oracle_text": "Flying\nWhen this creature enters, create two 1/1 black Bat creature tokens with flying.\n{3}{B}{B}, Sacrifice a Bat: Create two 1/1 black Bat creature tokens with flying.\nSacrifice a Bat: Regenerate this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create two 1/1 black Bat creature tokens with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "two 1/1 black Bat creature tokens with flying",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Bat"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{B}{B}, Sacrifice a Bat: Create two 1/1 black Bat creature tokens with flying.",
+          "cost": "{3}{B}{B}, Sacrifice a Bat",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "two 1/1 black Bat creature tokens with flying",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Bat"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Sacrifice a Bat: Regenerate this creature.",
+          "cost": "Sacrifice a Bat",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

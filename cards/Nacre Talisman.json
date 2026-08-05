@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f87aaed9-7f78-4f8b-8af5-44d4be1d6f30",
+  "name": "Nacre Talisman",
+  "faces": [
+    {
+      "name": "Nacre Talisman",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a player casts a white spell, you may pay {3}. If you do, untap target permanent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts a white spell, you may pay {3}. If you do, untap target permanent.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player casts a white spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{3}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap target permanent",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

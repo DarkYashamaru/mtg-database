@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "92c824da-2351-43bd-9fa0-d09709ad8205",
+  "name": "Basri's Acolyte",
+  "faces": [
+    {
+      "name": "Basri's Acolyte",
+      "type_line": "Creature \u2014 Cat Cleric",
+      "oracle_text": "Lifelink (Damage dealt by this creature also causes you to gain that much life.)\nWhen this creature enters, put a +1/+1 counter on each of up to two other target creatures you control.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on each of up to two other target creatures you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Of",
+                  "Up",
+                  "To",
+                  "Two",
+                  "Other",
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8de50bda-1ef6-4ccf-9efc-fab10b7eb2e5",
+  "name": "Fervent Champion",
+  "faces": [
+    {
+      "name": "Fervent Champion",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "First strike, haste\nWhenever this creature attacks, another target attacking Knight you control gets +1/+0 until end of turn.\nEquip abilities you activate that target this creature cost {3} less to activate.",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, another target attacking Knight you control gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "subtypes": [
+                  "Target",
+                  "Attacking",
+                  "Knight"
+                ]
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip abilities you activate that target this creature cost {3} less to activate.",
+          "cost": "",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equip abilities you activate that target this creature cost {3} less to activate."
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

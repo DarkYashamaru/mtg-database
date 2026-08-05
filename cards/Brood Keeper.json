@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c123f45d-a8db-405f-93ef-7227e826790c",
+  "name": "Brood Keeper",
+  "faces": [
+    {
+      "name": "Brood Keeper",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "Whenever an Aura becomes attached to this creature, create a 2/2 red Dragon creature token with flying. It has \"{R}: This creature gets +1/+0 until end of turn.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an Aura becomes attached to this creature, create a 2/2 red Dragon creature token with flying. It has \"{R}: This creature gets +1/+0 until end of turn.\"",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an Aura becomes attached to this creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 red Dragon creature token with flying",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Dragon"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "it_has_r_self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

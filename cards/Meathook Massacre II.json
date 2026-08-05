@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "68957dca-df5c-4051-af22-407cb7e47200",
+  "name": "Meathook Massacre II",
+  "faces": [
+    {
+      "name": "Meathook Massacre II",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "When Meathook Massacre II enters, each player sacrifices X creatures of their choice.\nWhenever a creature you control dies, you may pay 3 life. If you do, return that card under your control with a finality counter on it.\nWhenever a creature an opponent controls dies, they may pay 3 life. If they don't, return that card under your control with a finality counter on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Meathook Massacre II enters, each player sacrifices X creatures of their choice.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player sacrifices X creatures of their choice"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control dies, you may pay 3 life. If you do, return that card under your control with a finality counter on it.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay 3 life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return that card under your control with a finality counter on it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature an opponent controls dies, they may pay 3 life. If they don't, return that card under your control with a finality counter on it.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_an_opponent_controls"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "they may pay 3 life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return that card under your control with a finality counter on it",
+              "condition": [
+                {
+                  "condition_text": "they don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

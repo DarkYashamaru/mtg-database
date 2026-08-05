@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "71ae0fab-eb3e-4226-9fcc-29186f98a569",
+  "name": "Knuckles the Echidna",
+  "faces": [
+    {
+      "name": "Knuckles the Echidna",
+      "type_line": "Legendary Creature \u2014 Echidna Warrior",
+      "oracle_text": "Double strike, trample, haste\nWhenever one or more creatures you control deal combat damage to a player, create a Treasure token.\nTreasure Hunter \u2014 At the beginning of your upkeep, if you control thirty or more artifacts, you win the game.",
+      "static": [
+        {
+          "keyword": "double strike"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control deal combat damage to a player, create a Treasure token.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if you control thirty or more artifacts, you win the game.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you control thirty or more artifacts"
+            }
+          ],
+          "effects": [
+            {
+              "action": "win_the_game"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

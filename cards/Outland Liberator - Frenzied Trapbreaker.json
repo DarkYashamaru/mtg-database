@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9545f126-062f-4410-a362-e16255a128d6",
+  "name": "Outland Liberator // Frenzied Trapbreaker",
+  "faces": [
+    {
+      "name": "Frenzied Trapbreaker",
+      "type_line": "Creature \u2014 Werewolf",
+      "oracle_text": "{1}, Sacrifice this creature: Destroy target artifact or enchantment.\nWhenever this creature attacks, destroy target artifact or enchantment defending player controls.\nNightbound (If a player casts at least two spells during their own turn, it becomes day next turn.)",
+      "static": [
+        {
+          "keyword": "nightbound"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, destroy target artifact or enchantment defending player controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target artifact or enchantment defending player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice this creature: Destroy target artifact or enchantment.",
+          "cost": "{1}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Artifact",
+                  "Enchantment"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Outland Liberator",
+      "type_line": "Creature \u2014 Human Werewolf",
+      "oracle_text": "{1}, Sacrifice this creature: Destroy target artifact or enchantment.\nDaybound (If a player casts no spells during their own turn, it becomes night next turn.)",
+      "static": [
+        {
+          "keyword": "daybound"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice this creature: Destroy target artifact or enchantment.",
+          "cost": "{1}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Artifact",
+                  "Enchantment"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

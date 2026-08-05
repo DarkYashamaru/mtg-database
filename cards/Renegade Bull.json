@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "61747805-0c34-4beb-8cbf-97bac7a998d0",
+  "name": "Renegade Bull",
+  "faces": [
+    {
+      "name": "Renegade Bull",
+      "type_line": "Creature \u2014 Ox",
+      "oracle_text": "Trample\nWhenever you cast an instant or sorcery spell, this creature gets +X/+0 until end of turn, where X is that spell's mana value.\nWhenever this creature attacks, exile up to one target instant or sorcery card from your graveyard and copy it. You may cast the copy without paying its mana cost.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature gets +X/+0 until end of turn, where X is that spell's mana value.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature gets +X/+0 until end of turn, where X is that spell's mana value"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, exile up to one target instant or sorcery card from your graveyard and copy it. You may cast the copy without paying its mana cost.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target instant or sorcery card from your graveyard and copy it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast the copy without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

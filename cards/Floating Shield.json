@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "332716fb-cc1c-4a6f-b7d4-bd7f13cfa438",
+  "name": "Floating Shield",
+  "faces": [
+    {
+      "name": "Floating Shield",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nAs this Aura enters, choose a color.\nEnchanted creature has protection from the chosen color. This effect doesn't remove this Aura.\nSacrifice this Aura: Target creature gains protection from the chosen color until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice this Aura: Target creature gains protection from the chosen color until end of turn.",
+          "cost": "Sacrifice this Aura",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "protection_from_the_chosen_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As this Aura enters, choose a color.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this Aura enters, choose a color"
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has protection from the chosen color. This effect doesn't remove this Aura.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has protection from the chosen color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This effect doesn't remove this Aura"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f1ea7dc5-01cb-4780-947c-08ea9324c52f",
+  "name": "Reckless Handling",
+  "faces": [
+    {
+      "name": "Reckless Handling",
+      "type_line": "Sorcery",
+      "oracle_text": "Search your library for an artifact card, reveal it, put it into your hand, shuffle, then discard a card at random. If an artifact card was discarded this way, Reckless Handling deals 2 damage to each opponent.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for an artifact card, reveal it, put it into your hand, shuffle, then discard a card at random. If an artifact card was discarded this way, Reckless Handling deals 2 damage to each opponent.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for an artifact card, reveal it, put it into your hand, shuffle"
+            },
+            {
+              "action": "custom_effect",
+              "text": "discard a card at random"
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "an artifact card was discarded this way"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

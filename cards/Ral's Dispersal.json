@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a81b7629-9db9-4351-8d0e-c45a7a6167d4",
+  "name": "Ral's Dispersal",
+  "faces": [
+    {
+      "name": "Ral's Dispersal",
+      "type_line": "Instant",
+      "oracle_text": "Return target creature to its owner's hand. You may search your library and/or graveyard for a card named Ral, Caller of Storms, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target creature to its owner's hand. You may search your library and/or graveyard for a card named Ral, Caller of Storms, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature"
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may search your library and/or graveyard for a card named Ral, Caller of Storms, reveal it, and put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

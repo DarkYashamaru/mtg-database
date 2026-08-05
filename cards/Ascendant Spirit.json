@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "784c039d-a9b2-4b22-a937-c8f7b475e96a",
+  "name": "Ascendant Spirit",
+  "faces": [
+    {
+      "name": "Ascendant Spirit",
+      "type_line": "Snow Creature \u2014 Spirit",
+      "oracle_text": "{S}{S}: This creature becomes a Spirit Warrior with base power and toughness 2/3.\n{S}{S}{S}: If this creature is a Warrior, put a flying counter on it and it becomes a Spirit Warrior Angel with base power and toughness 4/4.\n{S}{S}{S}{S}: If this creature is an Angel, put two +1/+1 counters on it and it gains \"Whenever this creature deals combat damage to a player, draw a card.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{S}{S}: This creature becomes a Spirit Warrior with base power and toughness 2/3.",
+          "cost": "{S}{S}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature becomes a Spirit Warrior with base power and toughness 2/3"
+            }
+          ]
+        },
+        {
+          "raw_text": "{S}{S}{S}: If this creature is a Warrior, put a flying counter on it and it becomes a Spirit Warrior Angel with base power and toughness 4/4.",
+          "cost": "{S}{S}{S}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a flying counter on it and it becomes a spirit warrior angel with base power and toughness 4/4",
+              "condition": [
+                {
+                  "condition_text": "this creature is a warrior"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "{S}{S}{S}{S}: If this creature is an Angel, put two +1/+1 counters on it and it gains \"Whenever this creature deals combat damage to a player, draw a card.\"",
+          "cost": "{S}{S}{S}{S}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "it_and_it_gains_whenever_self_deals_combat_damage_to_a_player_draw_a_card",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "this creature is an angel"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

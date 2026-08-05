@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0b1557e8-3dd6-4276-8b8e-505e7ea944ec",
+  "name": "Eye of Ojer Taq // Apex Observatory",
+  "faces": [
+    {
+      "name": "Apex Observatory",
+      "type_line": "Artifact",
+      "oracle_text": "This artifact enters tapped. As it enters, choose a card type shared among two exiled cards used to craft it.\n{T}: The next spell you cast this turn of the chosen type can be cast without paying its mana cost.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: The next spell you cast this turn of the chosen type can be cast without paying its mana cost.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "The next spell you cast this turn of the chosen type can be cast without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This artifact enters tapped. As it enters, choose a card type shared among two exiled cards used to craft it.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            },
+            {
+              "action": "custom_effect",
+              "text": "As it enters, choose a card type shared among two exiled cards used to craft it"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eye of Ojer Taq",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add one mana of any color.\nCraft with two that share a card type {6} ({6}, Exile this artifact, Exile the two from among other permanents you control and/or cards from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "Craft with two that share a card type {6} ({6}, Exile this artifact, Exile the two from among other permanents you control and/or cards from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+          "cost": "Craft with two that share a card type {6} ({6}, Exile this artifact, Exile the two from among other permanents you control and/or cards from your graveyard",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "battlefield",
+              "controller": "its_owner",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

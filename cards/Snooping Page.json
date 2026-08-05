@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f07c07d7-00f1-44a5-b51f-0a22cc51fd2b",
+  "name": "Snooping Page",
+  "faces": [
+    {
+      "name": "Snooping Page",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "Repartee \u2014 Whenever you cast an instant or sorcery spell that targets a creature, this creature can't be blocked this turn.\nWhenever this creature deals combat damage to a player, you draw a card and lose 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell that targets a creature, this creature can't be blocked this turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            },
+            {
+              "condition_text": "that targets a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you draw a card and lose 1 life.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you draw a card and lose 1 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

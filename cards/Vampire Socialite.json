@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91a45e96-2a93-4c48-b472-11904d2b856d",
+  "name": "Vampire Socialite",
+  "faces": [
+    {
+      "name": "Vampire Socialite",
+      "type_line": "Creature \u2014 Vampire Noble",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen this creature enters, if an opponent lost life this turn, put a +1/+1 counter on each other Vampire you control.\nAs long as an opponent lost life this turn, each other Vampire you control enters with an additional +1/+1 counter on it.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if an opponent lost life this turn, put a +1/+1 counter on each other Vampire you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "an opponent lost life this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Other",
+                  "Vampire"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as an opponent lost life this turn, each other Vampire you control enters with an additional +1/+1 counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as an opponent lost life this turn, each other Vampire you control enters with an additional +1/+1 counter on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

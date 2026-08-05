@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9167a585-b742-427d-b840-e024f6878a5c",
+  "name": "TARDIS",
+  "faces": [
+    {
+      "name": "TARDIS",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nWhenever this Vehicle attacks, if you control a Time Lord, the next spell you cast this turn has cascade and you may planeswalk.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle attacks, if you control a Time Lord, the next spell you cast this turn has cascade and you may planeswalk.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [
+            {
+              "condition_text": "you control a Time Lord"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "the next spell you cast this turn has cascade and you may planeswalk"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

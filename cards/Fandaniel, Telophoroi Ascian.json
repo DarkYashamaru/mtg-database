@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3909ff79-2103-407c-a812-a5a5a996fce2",
+  "name": "Fandaniel, Telophoroi Ascian",
+  "faces": [
+    {
+      "name": "Fandaniel, Telophoroi Ascian",
+      "type_line": "Legendary Creature \u2014 Elder Wizard",
+      "oracle_text": "Whenever you cast an instant or sorcery spell, surveil 1.\nAt the beginning of your end step, each opponent may sacrifice a nontoken creature of their choice. Each opponent who doesn't loses 2 life for each instant and sorcery card in your graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, surveil 1.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, each opponent may sacrifice a nontoken creature of their choice. Each opponent who doesn't loses 2 life for each instant and sorcery card in your graveyard.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent may sacrifice a nontoken creature of their choice"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each opponent who doesn't loses 2 life for each instant and sorcery card in your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

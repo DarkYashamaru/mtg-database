@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5e1bd17d-3825-45c0-9e7c-6887b7e2cb5c",
+  "name": "Binding Geist // Spectral Binding",
+  "faces": [
+    {
+      "name": "Binding Geist",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Whenever this creature attacks, target creature an opponent controls gets -2/-0 until end of turn.\nDisturb {1}{U} (You may cast this card from your graveyard transformed for its disturb cost.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, target creature an opponent controls gets -2/-0 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature_an_opponent_controls",
+              "power_delta": -2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disturb {1}{U} (You may cast this card from your graveyard transformed for its disturb cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disturb {1}{U}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spectral Binding",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets -2/-0.\nIf Spectral Binding would be put into a graveyard from anywhere, exile it instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets -2/-0.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": -2,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "If Spectral Binding would be put into a graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "spectral binding would be put into a graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

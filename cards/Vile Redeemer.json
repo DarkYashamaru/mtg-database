@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a7a88bcc-eac2-4f74-804f-b49d16560184",
+  "name": "Vile Redeemer",
+  "faces": [
+    {
+      "name": "Vile Redeemer",
+      "type_line": "Creature \u2014 Eldrazi",
+      "oracle_text": "Devoid (This card has no color.)\nFlash\nWhen you cast this spell, you may pay {C}. If you do, create a 1/1 colorless Eldrazi Scion creature token for each nontoken creature that died under your control this turn. Those tokens have \"Sacrifice this token: Add {C}.\"",
+      "static": [
+        {
+          "keyword": "devoid"
+        },
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, you may pay {C}. If you do, create a 1/1 colorless Eldrazi Scion creature token for each nontoken creature that died under your control this turn. Those tokens have \"Sacrifice this token: Add {C}.\"",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{c}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a 1/1 colorless eldrazi scion creature token for each nontoken creature that died under your control this turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Those tokens have \"Sacrifice this token: Add {C}.\""
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

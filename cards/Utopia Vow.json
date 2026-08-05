@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "917652c7-ac12-4cd7-ab2d-f2260a620d02",
+  "name": "Utopia Vow",
+  "faces": [
+    {
+      "name": "Utopia Vow",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature can't attack or block.\nEnchanted creature has \"{T}: Add one mana of any color.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Enchanted creature has \"{T}: Add one mana of any color.\"",
+          "cost": "Enchanted creature has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature can't attack or block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "enchanted_creature",
+              "restriction": "cant_attack_or_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

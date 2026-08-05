@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3893f320-47fd-49ec-a78c-80bfb607a279",
+  "name": "Isolated Watchtower",
+  "faces": [
+    {
+      "name": "Isolated Watchtower",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{2}, {T}: Scry 1, then you may reveal the top card of your library. If a basic land card is revealed this way, put it onto the battlefield tapped. Activate only if an opponent controls at least two more lands than you.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}: Scry 1, then you may reveal the top card of your library. If a basic land card is revealed this way, put it onto the battlefield tapped. Activate only if an opponent controls at least two more lands than you.",
+          "cost": "{2}, {T}",
+          "condition": [
+            {
+              "condition_text": "an opponent controls at least two more lands than you"
+            }
+          ],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            },
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it onto the battlefield tapped",
+              "condition": [
+                {
+                  "condition_text": "a basic land card is revealed this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

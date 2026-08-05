@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "405a54b3-fb9f-4503-a4fc-3ba6a5e58205",
+  "name": "Prodigy's Prototype",
+  "faces": [
+    {
+      "name": "Prodigy's Prototype",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Whenever one or more Vehicles you control attack, create a 1/1 colorless Pilot creature token with \"This token crews Vehicles as though its power were 2 greater.\"\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more Vehicles you control attack, create a 1/1 colorless Pilot creature token with \"This token crews Vehicles as though its power were 2 greater.\"",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Vehicle"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 colorless Pilot creature token with \"This token crews Vehicles as though its power were 2 greater",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Pilot"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

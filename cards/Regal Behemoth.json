@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "797c2b1c-c373-4735-b397-f561559c7c61",
+  "name": "Regal Behemoth",
+  "faces": [
+    {
+      "name": "Regal Behemoth",
+      "type_line": "Creature \u2014 Dinosaur",
+      "oracle_text": "Trample\nWhen this creature enters, you become the monarch.\nWhenever you tap a land for mana while you're the monarch, add an additional one mana of any color.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you tap a land for mana while you're the monarch, add an additional one mana of any color.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you tap a land for mana while you're the monarch"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "add an additional one mana of any color"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

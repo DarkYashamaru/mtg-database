@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "96d1bfc1-b80f-466f-b07d-df1ab361e8e0",
+  "name": "Summon: G.F. Ifrit",
+  "faces": [
+    {
+      "name": "Summon: G.F. Ifrit",
+      "type_line": "Enchantment Creature \u2014 Saga Demon",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI, II \u2014 You may discard a card. If you do, draw a card.\nIII, IV \u2014 Add {R}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 You may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "III, IV \u2014 Add {R}.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III",
+              "IV"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

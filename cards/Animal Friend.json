@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ae4249de-1b8c-4b15-8960-180557a15065",
+  "name": "Animal Friend",
+  "faces": [
+    {
+      "name": "Animal Friend",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature has \"Whenever this creature attacks, create a 1/1 green Squirrel creature token. Put a +1/+1 counter on that token for each Aura and Equipment attached to this creature other than Animal Friend.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has \"Whenever this creature attacks, create a 1/1 green Squirrel creature token. Put a +1/+1 counter on that token for each Aura and Equipment attached to this creature other than Animal Friend.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has \"Whenever this creature attacks, create a 1/1 green Squirrel creature token"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "that_token_for_each_aura_and_equipment_attached_to_self_other_than_self",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

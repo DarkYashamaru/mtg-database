@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "109cdefd-e8cc-4ac7-b6ba-2cfdef8d780f",
+  "name": "Icetill Explorer",
+  "faces": [
+    {
+      "name": "Icetill Explorer",
+      "type_line": "Creature \u2014 Insect Scout",
+      "oracle_text": "You may play an additional land on each of your turns.\nYou may play lands from your graveyard.\nLandfall \u2014 Whenever a land you control enters, mill a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, mill a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may play an additional land on each of your turns.",
+          "effects": [
+            {
+              "action": "additional_land_play",
+              "amount": 1,
+              "scope": "each_of_your_turns",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "You may play lands from your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may play lands from your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8186a992-9065-4a7f-bb00-1c20e01e8fb6",
+  "name": "Cryptex",
+  "faces": [
+    {
+      "name": "Cryptex",
+      "type_line": "Artifact",
+      "oracle_text": "{T}, Collect evidence 3: Add one mana of any color. Put an unlock counter on this artifact. (To collect evidence 3, exile cards with total mana value 3 or greater from your graveyard.)\nSacrifice this artifact: Surveil 3, then draw three cards. Activate only if this artifact has five or more unlock counters on it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Collect evidence 3: Add one mana of any color. Put an unlock counter on this artifact. (To collect evidence 3, exile cards with total mana value 3 or greater from your graveyard.)",
+          "cost": "{T}, Collect evidence 3",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put an unlock counter on this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "Sacrifice this artifact: Surveil 3, then draw three cards. Activate only if this artifact has five or more unlock counters on it.",
+          "cost": "Sacrifice this artifact",
+          "condition": [
+            {
+              "condition_text": "this artifact has five or more unlock counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 3
+            },
+            {
+              "action": "draw_cards",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

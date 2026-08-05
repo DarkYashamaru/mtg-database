@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5d520476-740a-4005-801e-472b24fa6497",
+  "name": "Ink-Eyes, Servant of Oni",
+  "faces": [
+    {
+      "name": "Ink-Eyes, Servant of Oni",
+      "type_line": "Legendary Creature \u2014 Rat Ninja",
+      "oracle_text": "Ninjutsu {3}{B}{B} ({3}{B}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Ink-Eyes deals combat damage to a player, you may put target creature card from that player's graveyard onto the battlefield under your control.\n{1}{B}: Regenerate Ink-Eyes.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Ink-Eyes deals combat damage to a player, you may put target creature card from that player's graveyard onto the battlefield under your control.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put target creature card from that player's graveyard onto the battlefield under your control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Ninjutsu {3}{B}{B} ({3}{B}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)",
+          "cost": "Ninjutsu {3}{B}{B} ({3}{B}{B}, Return an unblocked attacker you control to hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "object": "self",
+              "source_zone": "hand",
+              "destination_zone": "battlefield",
+              "tapped": true,
+              "attacking": true
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{B}: Regenerate Ink-Eyes.",
+          "cost": "{1}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Regenerate Ink-Eyes"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

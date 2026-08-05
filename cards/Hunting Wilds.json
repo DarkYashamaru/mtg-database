@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e9bc324e-c200-45ef-8b9b-52a61d0f7374",
+  "name": "Hunting Wilds",
+  "faces": [
+    {
+      "name": "Hunting Wilds",
+      "type_line": "Sorcery",
+      "oracle_text": "Kicker {3}{G} (You may pay an additional {3}{G} as you cast this spell.)\nSearch your library for up to two Forest cards, put them onto the battlefield tapped, then shuffle.\nIf this spell was kicked, untap all Forests put onto the battlefield this way. They become 3/3 green creatures with haste that are still lands.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {3}{G} (You may pay an additional {3}{G} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {3}{G}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Search your library for up to two Forest cards, put them onto the battlefield tapped, then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for up to two forest cards, put them onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "If this spell was kicked, untap all Forests put onto the battlefield this way. They become 3/3 green creatures with haste that are still lands.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap all forests put onto the battlefield this way",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "They become 3/3 green creatures with haste that are still lands"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

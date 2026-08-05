@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1c44856-ca53-4b6e-902e-8d9c6fe1f61c",
+  "name": "Foundry Champion",
+  "faces": [
+    {
+      "name": "Foundry Champion",
+      "type_line": "Creature \u2014 Elemental Soldier",
+      "oracle_text": "When this creature enters, it deals damage to any target equal to the number of creatures you control.\n{R}: This creature gets +1/+0 until end of turn.\n{W}: This creature gets +0/+1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, it deals damage to any target equal to the number of creatures you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals damage to any target equal to the number of creatures you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R}: This creature gets +1/+0 until end of turn.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "{W}: This creature gets +0/+1 until end of turn.",
+          "cost": "{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 0,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

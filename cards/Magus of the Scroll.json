@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "992df446-75a1-4174-9fde-9a912d332172",
+  "name": "Magus of the Scroll",
+  "faces": [
+    {
+      "name": "Magus of the Scroll",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "{3}, {T}: Choose a card name, then reveal a card at random from your hand. If that card has the chosen name, this creature deals 2 damage to any target.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}, {T}: Choose a card name, then reveal a card at random from your hand. If that card has the chosen name, this creature deals 2 damage to any target.",
+          "cost": "{3}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose a card name"
+            },
+            {
+              "action": "custom_effect",
+              "text": "reveal a card at random from your hand"
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "that card has the chosen name"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

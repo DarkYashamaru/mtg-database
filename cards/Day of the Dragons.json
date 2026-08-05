@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c4df259a-cdd4-420a-8e3d-7b69da5c9f6f",
+  "name": "Day of the Dragons",
+  "faces": [
+    {
+      "name": "Day of the Dragons",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, exile all creatures you control. Then create that many 5/5 red Dragon creature tokens with flying.\nWhen this enchantment leaves the battlefield, sacrifice all Dragons you control. Then return the exiled cards to the battlefield under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, exile all creatures you control. Then create that many 5/5 red Dragon creature tokens with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile all creatures you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then create that many 5/5 red Dragon creature tokens with flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this enchantment leaves the battlefield, sacrifice all Dragons you control. Then return the exiled cards to the battlefield under your control.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "all_dragons_you_control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then return the exiled cards to the battlefield under your control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fe9f6825-597b-4d80-ab7c-f4ee4e824b6f",
+  "name": "Summon: Bahamut",
+  "faces": [
+    {
+      "name": "Summon: Bahamut",
+      "type_line": "Enchantment Creature \u2014 Saga Dragon",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI, II \u2014 Destroy up to one target nonland permanent.\nIII \u2014 Draw two cards.\nIV \u2014 Mega Flare \u2014 This creature deals damage equal to the total mana value of other permanents you control to each opponent.\nFlying",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Destroy up to one target nonland permanent.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy up to one target nonland permanent"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Draw two cards.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "IV \u2014 Mega Flare \u2014 This creature deals damage equal to the total mana value of other permanents you control to each opponent.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "IV"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Mega Flare \u2014 This creature deals damage equal to the total mana value of other permanents you control to each opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

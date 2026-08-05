@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d8fe9672-0ead-4f47-abd8-e1ee133c5c60",
+  "name": "Domri, City Smasher",
+  "faces": [
+    {
+      "name": "Domri, City Smasher",
+      "type_line": "Legendary Planeswalker \u2014 Domri",
+      "oracle_text": "+2: Creatures you control get +1/+1 and gain haste until end of turn.\n\u22123: Domri deals 3 damage to any target.\n\u22128: Put three +1/+1 counters on each creature you control. Those creatures gain trample until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+2: Creatures you control get +1/+1 and gain haste until end of turn.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control_get_11_and",
+              "keyword": "haste"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Domri deals 3 damage to any target.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22128: Put three +1/+1 counters on each creature you control. Those creatures gain trample until end of turn.",
+          "cost": "\u22128",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 3
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "those_creatures",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

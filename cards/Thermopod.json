@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c886fa01-bcee-4c73-9c46-2328711fc4f0",
+  "name": "Thermopod",
+  "faces": [
+    {
+      "name": "Thermopod",
+      "type_line": "Snow Creature \u2014 Slug",
+      "oracle_text": "{S}: This creature gains haste until end of turn. ({S} can be paid with one mana from a snow source.)\nSacrifice a creature: Add {R}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{S}: This creature gains haste until end of turn. ({S} can be paid with one mana from a snow source.)",
+          "cost": "{S}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "haste"
+            }
+          ]
+        },
+        {
+          "raw_text": "Sacrifice a creature: Add {R}.",
+          "cost": "Sacrifice a creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

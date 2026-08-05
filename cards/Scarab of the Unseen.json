@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5f085af7-ce66-4019-9516-d1650ee7b6e0",
+  "name": "Scarab of the Unseen",
+  "faces": [
+    {
+      "name": "Scarab of the Unseen",
+      "type_line": "Artifact",
+      "oracle_text": "{T}, Sacrifice this artifact: Return all Auras attached to target permanent you own to their owners' hands. Draw a card at the beginning of the next turn's upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice this artifact: Return all Auras attached to target permanent you own to their owners' hands. Draw a card at the beginning of the next turn's upkeep.",
+          "cost": "{T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return all Auras attached to target permanent you own to their owners' hands"
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_turns_upkeep"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

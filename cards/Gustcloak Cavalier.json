@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2e818d7e-169c-4909-969e-42e9f5d5c08a",
+  "name": "Gustcloak Cavalier",
+  "faces": [
+    {
+      "name": "Gustcloak Cavalier",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Flanking (Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.)\nWhenever this creature attacks, you may tap target creature.\nWhenever this creature becomes blocked, you may untap this creature and remove it from combat.",
+      "static": [
+        {
+          "keyword": "flanking"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may tap target creature.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature becomes blocked, you may untap this creature and remove it from combat.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may untap this creature and remove it from combat"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

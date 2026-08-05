@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9780d975-acbe-40c6-b444-1e1e6b772788",
+  "name": "Poetic Ingenuity",
+  "faces": [
+    {
+      "name": "Poetic Ingenuity",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever one or more Dinosaurs you control attack, create that many Treasure tokens.\nWhenever you cast an artifact spell, create a 3/1 red Dinosaur creature token. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more Dinosaurs you control attack, create that many Treasure tokens.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Dinosaur"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "that",
+              "token": {
+                "raw": "many Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast an artifact spell, create a 3/1 red Dinosaur creature token. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Artifact"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/1 red Dinosaur creature token",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "3/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Dinosaur"
+                ]
+              }
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

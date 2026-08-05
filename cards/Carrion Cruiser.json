@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "98a61659-9882-417c-9c16-16ebb26f9037",
+  "name": "Carrion Cruiser",
+  "faces": [
+    {
+      "name": "Carrion Cruiser",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "When this Vehicle enters, mill two cards. Then return a creature or Vehicle card from your graveyard to your hand. (To mill two cards, put the top two cards of your library into your graveyard.)\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, mill two cards. Then return a creature or Vehicle card from your graveyard to your hand. (To mill two cards, put the top two cards of your library into your graveyard.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then return a creature or Vehicle card from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

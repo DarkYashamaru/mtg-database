@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "865e569b-6999-4a03-ad02-4bfd595d5820",
+  "name": "Iname as One",
+  "faces": [
+    {
+      "name": "Iname as One",
+      "type_line": "Legendary Creature \u2014 Spirit",
+      "oracle_text": "When Iname as One enters, if you cast it from your hand, you may search your library for a Spirit permanent card, put it onto the battlefield, then shuffle.\nWhen Iname as One dies, you may exile it. If you do, return target Spirit permanent card from your graveyard to the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Iname as One enters, if you cast it from your hand, you may search your library for a Spirit permanent card, put it onto the battlefield, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you cast it from your hand"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a spirit permanent card, put it onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "When Iname as One dies, you may exile it. If you do, return target Spirit permanent card from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return target spirit permanent card from your graveyard to the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

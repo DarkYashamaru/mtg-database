@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "72d3b499-dbff-4631-b6e3-0a292b39d527",
+  "name": "Horn of Plenty",
+  "faces": [
+    {
+      "name": "Horn of Plenty",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a player casts a spell, they may pay {1}. If the player does, they draw a card at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts a spell, they may pay {1}. If the player does, they draw a card at the beginning of the next end step.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "any_player"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "they may pay {1}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they draw a card at the beginning of the next end step",
+              "condition": [
+                {
+                  "condition_text": "the player does"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d145e4d4-a190-4c0b-8dfd-401c0111e995",
+  "name": "Go-Shintai of Ancient Wars",
+  "faces": [
+    {
+      "name": "Go-Shintai of Ancient Wars",
+      "type_line": "Legendary Enchantment Creature \u2014 Shrine",
+      "oracle_text": "First strike\nAt the beginning of your end step, you may pay {1}. When you do, Go-Shintai of Ancient Wars deals X damage to target player or planeswalker, where X is the number of Shrines you control.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, you may pay {1}. When you do, Go-Shintai of Ancient Wars deals X damage to target player or planeswalker, where X is the number of Shrines you control.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "go-shintai of ancient wars deals x damage to target player or planeswalker, where x is the number of shrines you control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

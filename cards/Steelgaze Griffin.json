@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3fdc082b-1abf-4715-9d66-105981c1f989",
+  "name": "Steelgaze Griffin",
+  "faces": [
+    {
+      "name": "Steelgaze Griffin",
+      "type_line": "Creature \u2014 Griffin",
+      "oracle_text": "Flying\nWhenever you draw your second card each turn, this creature gets +2/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, this creature gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

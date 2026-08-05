@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ae63fd5c-46ff-41fb-a1f6-6259336525c1",
+  "name": "The Huntsman's Redemption",
+  "faces": [
+    {
+      "name": "The Huntsman's Redemption",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Create a 3/3 green Beast creature token.\nII \u2014 You may sacrifice a creature. If you do, search your library for a creature or basic land card, reveal it, put it into your hand, then shuffle.\nIII \u2014 Up to two target creatures each get +2/+2 and gain trample until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Create a 3/3 green Beast creature token.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/3 green Beast creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Beast"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 You may sacrifice a creature. If you do, search your library for a creature or basic land card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "search your library for a creature or basic land card, reveal it, put it into your hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Up to two target creatures each get +2/+2 and gain trample until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "up_to_two_target_creatures_each_get_22_and",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

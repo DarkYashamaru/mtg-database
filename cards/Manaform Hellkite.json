@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f426aa1a-e1dc-4563-b450-2e23d6bd980b",
+  "name": "Manaform Hellkite",
+  "faces": [
+    {
+      "name": "Manaform Hellkite",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever you cast a noncreature spell, create an X/X red Dragon Illusion creature token with flying and haste, where X is the amount of mana spent to cast that spell. Exile that token at the beginning of the next end step.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, create an X/X red Dragon Illusion creature token with flying and haste, where X is the amount of mana spent to cast that spell. Exile that token at the beginning of the next end step.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "an X/X red Dragon Illusion creature token with flying and haste, where X is the amount of mana spent to cast that spell",
+                "colors": [
+                  "red"
+                ],
+                "card_types": [
+                  "creature"
+                ],
+                "keywords": [
+                  "flying",
+                  "haste",
+                  "where_X_is_the_amount_of_mana_spent_to_cast_that_spell"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Exile that token at the beginning of the next end step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

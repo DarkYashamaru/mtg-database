@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8973bd99-20f8-4867-90ef-50392147ee1b",
+  "name": "Wood Elves",
+  "faces": [
+    {
+      "name": "Wood Elves",
+      "type_line": "Creature \u2014 Elf Scout",
+      "oracle_text": "When this creature enters, search your library for a Forest card, put that card onto the battlefield, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, search your library for a Forest card, put that card onto the battlefield, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "subtypes_any": [
+                  "Forest"
+                ]
+              },
+              "destination": "battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

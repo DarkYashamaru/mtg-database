@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c62c8006-5650-43cb-8247-da097aa42376",
+  "name": "Magnetic Web",
+  "faces": [
+    {
+      "name": "Magnetic Web",
+      "type_line": "Artifact",
+      "oracle_text": "If a creature with a magnet counter on it attacks, all creatures with magnet counters on them attack if able.\nWhenever a creature with a magnet counter on it attacks, all creatures with magnet counters on them block that creature this turn if able.\n{1}, {T}: Put a magnet counter on target creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature with a magnet counter on it attacks, all creatures with magnet counters on them block that creature this turn if able.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "a_creature_with_a_magnet_counter_on_it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "all creatures with magnet counters on them block that creature this turn if able"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}: Put a magnet counter on target creature.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a magnet counter on target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If a creature with a magnet counter on it attacks, all creatures with magnet counters on them attack if able.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "all creatures with magnet counters on them attack if able",
+              "condition": [
+                {
+                  "condition_text": "a creature with a magnet counter on it attacks"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

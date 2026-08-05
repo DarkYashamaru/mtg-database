@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "371e8e29-f569-4b23-bae4-cf89e5b09fd3",
+  "name": "Traveling Plague",
+  "faces": [
+    {
+      "name": "Traveling Plague",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nAt the beginning of each upkeep, put a plague counter on this Aura.\nEnchanted creature gets -1/-1 for each plague counter on this Aura.\nWhen enchanted creature leaves the battlefield, that creature's controller returns this Aura from its owner's graveyard to the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, put a plague counter on this Aura.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a plague counter on this Aura"
+            }
+          ]
+        },
+        {
+          "raw_text": "When enchanted creature leaves the battlefield, that creature's controller returns this Aura from its owner's graveyard to the battlefield.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that creature's controller returns this Aura from its owner's graveyard to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets -1/-1 for each plague counter on this Aura.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets -1/-1 for each plague counter on this Aura"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

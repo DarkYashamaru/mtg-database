@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "90fdfba8-f29e-44f9-91d2-7bf3c458a9c1",
+  "name": "Molten Gatekeeper",
+  "faces": [
+    {
+      "name": "Molten Gatekeeper",
+      "type_line": "Artifact Creature \u2014 Golem",
+      "oracle_text": "Whenever another creature you control enters, this creature deals 1 damage to each opponent.\nUnearth {R} ({R}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, this creature deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Unearth {R} ({R}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+          "cost": "Unearth {R} ({R}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "temporary_reanimation_clause",
+              "target": "it",
+              "expire_at": "beginning_of_next_end_step",
+              "exile_if_would_leave_battlefield": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

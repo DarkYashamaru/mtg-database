@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a0753b28-e693-4f5b-a4e4-846e933058d3",
+  "name": "Roar of Resistance",
+  "faces": [
+    {
+      "name": "Roar of Resistance",
+      "type_line": "Enchantment",
+      "oracle_text": "Creature tokens you control have haste.\nWhenever one or more creatures attack, you may pay {1}{R}. If you do, creatures attacking your opponents and/or planeswalkers they control get +2/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures attack, you may pay {1}{R}. If you do, creatures attacking your opponents and/or planeswalkers they control get +2/+0 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "creatures"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{R}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "creatures attacking your opponents and/or planeswalkers they control get +2/+0 until end of turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creature tokens you control have haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Token"
+                ]
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

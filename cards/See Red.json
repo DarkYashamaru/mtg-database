@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dd33af3e-ab8c-486c-baae-a37cc857f180",
+  "name": "See Red",
+  "faces": [
+    {
+      "name": "See Red",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +2/+1 and has first strike.\nAt the beginning of your end step, if you didn't attack with a creature this turn, sacrifice this Aura.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if you didn't attack with a creature this turn, sacrifice this Aura.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you didn't attack with a creature this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_aura"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+1 and has first strike.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +2/+1 and has first strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

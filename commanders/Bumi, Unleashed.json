@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1fef13d8-5da2-46a6-91ed-7a31bd46e538",
+  "name": "Bumi, Unleashed",
+  "faces": [
+    {
+      "name": "Bumi, Unleashed",
+      "type_line": "Legendary Creature \u2014 Human Noble Ally",
+      "oracle_text": "Trample\nWhen Bumi enters, earthbend 4.\nWhenever Bumi deals combat damage to a player, untap all lands you control. After this phase, there is an additional combat phase. Only land creatures can attack during that combat phase.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Bumi enters, earthbend 4.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "earthbend 4"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Bumi deals combat damage to a player, untap all lands you control. After this phase, there is an additional combat phase. Only land creatures can attack during that combat phase.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap all lands you control"
+            },
+            {
+              "action": "add_combat_phase_after_this_phase"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Only land creatures can attack during that combat phase"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

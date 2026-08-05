@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6c3df703-e96a-4ee4-b449-b8e1e3460bd3",
+  "name": "Obzedat, Ghost Council",
+  "faces": [
+    {
+      "name": "Obzedat, Ghost Council",
+      "type_line": "Legendary Creature \u2014 Spirit Advisor",
+      "oracle_text": "When Obzedat enters, target opponent loses 2 life and you gain 2 life.\nAt the beginning of your end step, you may exile Obzedat. If you do, return it to the battlefield under its owner's control at the beginning of your next upkeep. It gains haste.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Obzedat enters, target opponent loses 2 life and you gain 2 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "target_opponent",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, you may exile Obzedat. If you do, return it to the battlefield under its owner's control at the beginning of your next upkeep. It gains haste.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile Obzedat"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield under its owner's control at the beginning of your next upkeep",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

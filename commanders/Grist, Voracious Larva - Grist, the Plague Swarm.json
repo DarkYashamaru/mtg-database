@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "oracle_id": "196f8f13-d4df-4740-8746-8fed3bc71840",
+  "name": "Grist, Voracious Larva // Grist, the Plague Swarm",
+  "faces": [
+    {
+      "name": "Grist, Voracious Larva",
+      "type_line": "Legendary Creature \u2014 Insect",
+      "oracle_text": "Deathtouch\nWhenever Grist or another creature you control enters, if it entered from your graveyard or you cast it from your graveyard, you may pay {G}. If you do, exile Grist, then return it to the battlefield transformed under its owner's control.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Grist or another creature you control enters, if it entered from your graveyard or you cast it from your graveyard, you may pay {G}. If you do, exile Grist, then return it to the battlefield transformed under its owner's control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Grist",
+                "Or",
+                "Another"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "it entered from your graveyard or you cast it from your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{g}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile grist",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield transformed under its owner's control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Grist, the Plague Swarm",
+      "type_line": "Legendary Planeswalker \u2014 Grist",
+      "oracle_text": "+1: Create a 1/1 black and green Insect creature token, then mill two cards. Put a deathtouch counter on the token if a black card was milled this way.\n\u22122: Destroy target artifact or enchantment.\n\u22126: For each creature card in your graveyard, create a token that's a copy of it, except it's a 1/1 black and green Insect.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Create a 1/1 black and green Insect creature token, then mill two cards. Put a deathtouch counter on the token if a black card was milled this way.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 black and green insect creature token",
+                "colors": [
+                  "black",
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "insect"
+                ]
+              }
+            },
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a deathtouch counter on the token if a black card was milled this way"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Destroy target artifact or enchantment.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Artifact",
+                  "Enchantment"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: For each creature card in your graveyard, create a token that's a copy of it, except it's a 1/1 black and green Insect.",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each creature card in your graveyard, create a token that's a copy of it, except it's a 1/1 black and green Insect"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

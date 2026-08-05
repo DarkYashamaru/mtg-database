@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "38d2176c-1a1e-4030-9c63-e28ba4a69b6d",
+  "name": "Dune Mover",
+  "faces": [
+    {
+      "name": "Dune Mover",
+      "type_line": "Artifact Creature \u2014 Phyrexian Golem",
+      "oracle_text": "Toxic 1 (Players dealt combat damage by this creature also get a poison counter.)\nWhen this creature enters, you may search your library for a basic land card, reveal it, then shuffle and put that card on top.",
+      "static": [
+        {
+          "keyword": "toxic",
+          "amount": 1
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a basic land card, reveal it, then shuffle and put that card on top.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a basic land card, reveal it"
+            },
+            {
+              "action": "shuffle_and_move_revealed_card",
+              "object": "that_card",
+              "destination_zone": "top_of_library"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

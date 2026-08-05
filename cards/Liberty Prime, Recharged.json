@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b31026fe-faad-49b3-93b0-1324e32bb816",
+  "name": "Liberty Prime, Recharged",
+  "faces": [
+    {
+      "name": "Liberty Prime, Recharged",
+      "type_line": "Legendary Artifact Creature \u2014 Robot",
+      "oracle_text": "Vigilance, trample, haste\nWhenever Liberty Prime attacks or blocks, sacrifice it unless you pay {E}{E} (two energy counters).\n{2}, {T}, Sacrifice an artifact: You get {E}{E} and draw a card.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Liberty Prime attacks or blocks, sacrifice it unless you pay {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "attacks_or_blocks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "it_unless_you_pay_ee"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}, Sacrifice an artifact: You get {E}{E} and draw a card.",
+          "cost": "{2}, {T}, Sacrifice an artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

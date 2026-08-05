@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b89b285d-62d3-4013-b881-23f0f236337d",
+  "name": "Gwyllion Hedge-Mage",
+  "faces": [
+    {
+      "name": "Gwyllion Hedge-Mage",
+      "type_line": "Creature \u2014 Hag Wizard",
+      "oracle_text": "When this creature enters, if you control two or more Plains, you may create a 1/1 white Kithkin Soldier creature token.\nWhen this creature enters, if you control two or more Swamps, you may put a -1/-1 counter on target creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if you control two or more Plains, you may create a 1/1 white Kithkin Soldier creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control two or more Plains"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Kithkin Soldier creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Kithkin",
+                  "Soldier"
+                ]
+              },
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature enters, if you control two or more Swamps, you may put a -1/-1 counter on target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control two or more Swamps"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a -1/-1 counter on target creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

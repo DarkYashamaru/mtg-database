@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "26a1b36c-3c27-4eb4-b85f-63459653b773",
+  "name": "Ms. Marvel, Elastic Ally",
+  "faces": [
+    {
+      "name": "Ms. Marvel, Elastic Ally",
+      "type_line": "Legendary Creature \u2014 Mutant Inhuman Hero",
+      "oracle_text": "Reach\nWhen Ms. Marvel enters, target creature gets +2/+0 until end of turn.\nWhenever a creature you control with power greater than its base power deals combat damage to a player, draw a card. This ability triggers only once each turn.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Ms. Marvel enters, target creature gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control with power greater than its base power deals combat damage to a player, draw a card. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "a_creature_you_control_with_power_greater_than_its_base_power"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2bcc9f11-5b12-433e-9680-0f4b18aa521c",
+  "name": "Ambrosia Whiteheart",
+  "faces": [
+    {
+      "name": "Ambrosia Whiteheart",
+      "type_line": "Legendary Creature \u2014 Bird",
+      "oracle_text": "Flash\nWhen Ambrosia Whiteheart enters, you may return another permanent you control to its owner's hand.\nLandfall \u2014 Whenever a land you control enters, Ambrosia Whiteheart gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Ambrosia Whiteheart enters, you may return another permanent you control to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return another permanent you control to its owner's hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a land you control enters, Ambrosia Whiteheart gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

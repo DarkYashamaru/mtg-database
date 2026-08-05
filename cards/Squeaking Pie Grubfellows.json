@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bb4107f8-817c-43b2-b64c-f3b4c64eb3f0",
+  "name": "Squeaking Pie Grubfellows",
+  "faces": [
+    {
+      "name": "Squeaking Pie Grubfellows",
+      "type_line": "Creature \u2014 Goblin Shaman",
+      "oracle_text": "Kinship \u2014 At the beginning of your upkeep, you may look at the top card of your library. If it shares a creature type with this creature, you may reveal it. If you do, each opponent discards a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may look at the top card of your library. If it shares a creature type with this creature, you may reveal it. If you do, each opponent discards a card.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it shares a creature type with this creature"
+                }
+              ]
+            },
+            {
+              "action": "discard_cards",
+              "target": "each_opponent",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

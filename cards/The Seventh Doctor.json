@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "43e1b053-2cb9-4b1d-9e38-100cfa7267b6",
+  "name": "The Seventh Doctor",
+  "faces": [
+    {
+      "name": "The Seventh Doctor",
+      "type_line": "Legendary Creature \u2014 Time Lord Doctor",
+      "oracle_text": "Whenever The Seventh Doctor attacks, choose a card in your hand. Defending player guesses whether that card's mana value is greater than the number of artifacts you control. If they guessed wrong, you may cast it without paying its mana cost. If you don't cast a spell this way, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever The Seventh Doctor attacks, choose a card in your hand. Defending player guesses whether that card's mana value is greater than the number of artifacts you control. If they guessed wrong, you may cast it without paying its mana cost. If you don't cast a spell this way, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose a card in your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Defending player guesses whether that card's mana value is greater than the number of artifacts you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast it without paying its mana cost",
+              "condition": [
+                {
+                  "condition_text": "they guessed wrong"
+                }
+              ]
+            },
+            {
+              "action": "investigate",
+              "condition": [
+                {
+                  "condition_text": "you don't cast a spell this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

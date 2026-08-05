@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "oracle_id": "94bcae2f-86a6-4d38-b8e1-5ebf69dc7cbc",
+  "name": "Fervent Cathar",
+  "faces": [
+    {
+      "name": "Fervent Cathar",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Haste\nWhen this creature enters, target creature can't block this turn.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target creature can't block this turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

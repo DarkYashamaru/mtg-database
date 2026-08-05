@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3a024389-91a1-460c-b4e8-3f212d2b8400",
+  "name": "Lost in the Maze",
+  "faces": [
+    {
+      "name": "Lost in the Maze",
+      "type_line": "Enchantment",
+      "oracle_text": "Flash\nWhen this enchantment enters, tap X target creatures. Put a stun counter on each of those creatures you don't control. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nTapped creatures you control have hexproof.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, tap X target creatures. Put a stun counter on each of those creatures you don't control. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap X target creatures"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a stun counter on each of those creatures you don't control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Tapped creatures you control have hexproof.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Tapped"
+                ]
+              },
+              "keywords": [
+                "hexproof"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

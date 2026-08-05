@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c51c429d-d8d7-40d6-9760-72c26acaed42",
+  "name": "Ant-Man, Reformed Rogue",
+  "faces": [
+    {
+      "name": "Ant-Man, Reformed Rogue",
+      "type_line": "Legendary Creature \u2014 Human Rogue Hero",
+      "oracle_text": "Whenever you cast a green spell, Ant-Man gets +1/+0 and gains trample until end of turn.\nWhenever you cast a blue spell, Ant-Man gets -1/-0 until end of turn and can't be blocked this turn.\nWhenever Ant-Man deals combat damage to a player, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a green spell, Ant-Man gets +1/+0 and gains trample until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Green"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self_gets_10_and",
+              "keyword": "trample"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a blue spell, Ant-Man gets -1/-0 until end of turn and can't be blocked this turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Blue"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ant-Man gets -1/-0 until end of turn and can't be blocked this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Ant-Man deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e461ef8d-59ca-440a-8773-da1de3b6b195",
+  "name": "Bill the Pony",
+  "faces": [
+    {
+      "name": "Bill the Pony",
+      "type_line": "Legendary Creature \u2014 Horse",
+      "oracle_text": "When Bill the Pony enters, create two Food tokens. (They're artifacts with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nSacrifice a Food: Until end of turn, target creature you control assigns combat damage equal to its toughness rather than its power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Bill the Pony enters, create two Food tokens. (They're artifacts with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "Food tokens"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice a Food: Until end of turn, target creature you control assigns combat damage equal to its toughness rather than its power.",
+          "cost": "Sacrifice a Food",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, target creature you control assigns combat damage equal to its toughness rather than its power"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

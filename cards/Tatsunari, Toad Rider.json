@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e87be082-eafd-480e-b150-d27fd937e1b1",
+  "name": "Tatsunari, Toad Rider",
+  "faces": [
+    {
+      "name": "Tatsunari, Toad Rider",
+      "type_line": "Legendary Creature \u2014 Human Ninja",
+      "oracle_text": "Whenever you cast an enchantment spell, if you don't control a creature named Keimi, create Keimi, a legendary 3/3 black and green Frog creature token with \"Whenever you cast an enchantment spell, each opponent loses 1 life and you gain 1 life.\"\n{1}{G/U}: Tatsunari and target Frog you control can't be blocked this turn except by creatures with flying or reach.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an enchantment spell, if you don't control a creature named Keimi, create Keimi, a legendary 3/3 black and green Frog creature token with \"Whenever you cast an enchantment spell, each opponent loses 1 life and you gain 1 life.\"",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Enchantment"
+              ]
+            },
+            {
+              "condition_text": "you don't control a creature named Keimi"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Keimi, a legendary 3/3 black and green Frog creature token with \"Whenever you cast an enchantment spell, each opponent loses 1 life and you gain 1 life",
+                "colors": [
+                  "black",
+                  "green"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Frog"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{G/U}: Tatsunari and target Frog you control can't be blocked this turn except by creatures with flying or reach.",
+          "cost": "{1}{G/U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Tatsunari and target Frog you control can't be blocked this turn except by creatures with flying or reach"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

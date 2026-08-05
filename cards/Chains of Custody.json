@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5acff7a3-bc84-4251-bd37-80231396ac38",
+  "name": "Chains of Custody",
+  "faces": [
+    {
+      "name": "Chains of Custody",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature you control\nWhen this Aura enters, exile target nonland permanent an opponent controls until this Aura leaves the battlefield.\nEnchanted creature has ward {2}. (Whenever it becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, exile target nonland permanent an opponent controls until this Aura leaves the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target nonland permanent an opponent controls until this Aura leaves the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has ward {2}. (Whenever it becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has ward {2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

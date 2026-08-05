@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ebb3e2ff-2214-4e11-88fb-e0fa84288cf1",
+  "name": "Forlorn Flats",
+  "faces": [
+    {
+      "name": "Forlorn Flats",
+      "type_line": "Land \u2014 Desert",
+      "oracle_text": "This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {W} or {B}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land enters, it deals 1 damage to target opponent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 1 damage to target opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W} or {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}",
+                "{b}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

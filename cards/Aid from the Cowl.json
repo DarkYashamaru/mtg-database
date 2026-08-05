@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9597c974-6120-43a7-9ad3-7e4fddc8c9f5",
+  "name": "Aid from the Cowl",
+  "faces": [
+    {
+      "name": "Aid from the Cowl",
+      "type_line": "Enchantment",
+      "oracle_text": "Revolt \u2014 At the beginning of your end step, if a permanent left the battlefield under your control this turn, reveal the top card of your library. If it's a permanent card, you may put it onto the battlefield. Otherwise, you may put it on the bottom of your library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if a permanent left the battlefield under your control this turn, reveal the top card of your library. If it's a permanent card, you may put it onto the battlefield. Otherwise, you may put it on the bottom of your library.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a permanent left the battlefield under your control this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "it's a permanent card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it on the bottom of your library",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

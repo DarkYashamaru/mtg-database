@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ce77fff1-32f8-4a55-9124-b1dafe95840d",
+  "name": "Bookwurm",
+  "faces": [
+    {
+      "name": "Bookwurm",
+      "type_line": "Creature \u2014 Wurm",
+      "oracle_text": "Trample\nWhen this creature enters, you gain 3 life and draw a card.\n{2}{G}: Put this card from your graveyard into your library third from the top.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you gain 3 life and draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{G}: Put this card from your graveyard into your library third from the top.",
+          "cost": "{2}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put this card from your graveyard into your library third from the top"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "oracle_id": "70773879-b773-4e81-99ca-8f4bba478962",
+  "name": "Ultimecia, Time Sorceress // Ultimecia, Omnipotent",
+  "faces": [
+    {
+      "name": "Ultimecia, Omnipotent",
+      "type_line": "Legendary Creature \u2014 Nightmare Warlock",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nTime Compression \u2014 When this creature transforms into Ultimecia, Omnipotent, take an extra turn after this one.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature transforms into Ultimecia, Omnipotent, take an extra turn after this one.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this creature transforms into Ultimecia"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Omnipotent, take an extra turn after this one"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Ultimecia, Time Sorceress",
+      "type_line": "Legendary Creature \u2014 Human Warlock",
+      "oracle_text": "Whenever Ultimecia enters or attacks, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\nAt the beginning of your end step, you may pay {4}{U}{U}{B}{B} and exile eight cards from your graveyard. If you do, transform Ultimecia.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Ultimecia enters or attacks, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, you may pay {4}{U}{U}{B}{B} and exile eight cards from your graveyard. If you do, transform Ultimecia.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {4}{U}{U}{B}{B} and exile eight cards from your graveyard"
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

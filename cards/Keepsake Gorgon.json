@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3aa58e5a-1b5e-4fb3-bf2d-9bad8126b6e6",
+  "name": "Keepsake Gorgon",
+  "faces": [
+    {
+      "name": "Keepsake Gorgon",
+      "type_line": "Creature \u2014 Gorgon",
+      "oracle_text": "Deathtouch\n{5}{B}{B}: Monstrosity 1. (If this creature isn't monstrous, put a +1/+1 counter on it and it becomes monstrous.)\nWhen this creature becomes monstrous, destroy target non-Gorgon creature an opponent controls.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature becomes monstrous, destroy target non-Gorgon creature an opponent controls.",
+          "trigger": {
+            "type": "becomes_monstrous",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target non-Gorgon creature an opponent controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{5}{B}{B}: Monstrosity 1. (If this creature isn't monstrous, put a +1/+1 counter on it and it becomes monstrous.)",
+          "cost": "{5}{B}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Monstrosity 1"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

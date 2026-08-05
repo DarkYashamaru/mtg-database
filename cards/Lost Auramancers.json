@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9adf1568-248a-4a41-807e-2d7bc6f4f84d",
+  "name": "Lost Auramancers",
+  "faces": [
+    {
+      "name": "Lost Auramancers",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Vanishing 3 (This creature enters with three time counters on it. At the beginning of your upkeep, remove a time counter from it. When the last is removed, sacrifice it.)\nWhen this creature dies, if it had no time counters on it, you may search your library for an enchantment card, put it onto the battlefield, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, if it had no time counters on it, you may search your library for an enchantment card, put it onto the battlefield, then shuffle.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it had no time counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for an enchantment card, put it onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Vanishing 3 (This creature enters with three time counters on it. At the beginning of your upkeep, remove a time counter from it. When the last is removed, sacrifice it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Vanishing 3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

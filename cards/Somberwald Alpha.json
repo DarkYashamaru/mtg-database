@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "11b12954-dd1b-4c50-8433-15d8c1a15e29",
+  "name": "Somberwald Alpha",
+  "faces": [
+    {
+      "name": "Somberwald Alpha",
+      "type_line": "Creature \u2014 Wolf",
+      "oracle_text": "Whenever a creature you control becomes blocked, it gets +1/+1 until end of turn.\n{1}{G}: Target creature you control gains trample until end of turn. (It can deal excess combat damage to the player or planeswalker it's attacking.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control becomes blocked, it gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{G}: Target creature you control gains trample until end of turn. (It can deal excess combat damage to the player or planeswalker it's attacking.)",
+          "cost": "{1}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

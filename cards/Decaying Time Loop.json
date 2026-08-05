@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "13e94530-defb-4c9b-9ec7-bb7789ec2630",
+  "name": "Decaying Time Loop",
+  "faces": [
+    {
+      "name": "Decaying Time Loop",
+      "type_line": "Instant",
+      "oracle_text": "Discard all the cards in your hand, then draw that many cards.\nRetrace (You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Discard all the cards in your hand, then draw that many cards.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "discard all the cards in your hand"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        },
+        {
+          "raw_text": "Retrace (You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Retrace"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "68a9565e-0000-49c9-8036-bc242d6d465e",
+  "name": "Priority Boarding",
+  "faces": [
+    {
+      "name": "Priority Boarding",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you roll a die, you may reveal the top card of your library. Do this only once each turn. Whenever you reveal a card with mana value less than the result this way, you may exile it. If you do, you may play it this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you roll a die, you may reveal the top card of your library. Do this only once each turn. Whenever you reveal a card with mana value less than the result this way, you may exile it. If you do, you may play it this turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you roll a die"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_uses": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Whenever you reveal a card with mana value less than the result this way, you may exile it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may play it this turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

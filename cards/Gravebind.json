@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0ce01e24-42db-42db-9ba2-38f653383991",
+  "name": "Gravebind",
+  "faces": [
+    {
+      "name": "Gravebind",
+      "type_line": "Instant",
+      "oracle_text": "Target creature can't be regenerated this turn.\nDraw a card at the beginning of the next turn's upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature can't be regenerated this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature can't be regenerated this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card at the beginning of the next turn's upkeep.",
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_turns_upkeep"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a1d2944e-6668-4157-aac5-54572759c05c",
+  "name": "Neko-Te",
+  "faces": [
+    {
+      "name": "Neko-Te",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature deals damage to a creature, tap that creature. That creature doesn't untap during its controller's untap step for as long as this Equipment remains on the battlefield.\nWhenever equipped creature deals damage to a player, that player loses 1 life.\nEquip {2}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals damage to a creature, tap that creature. That creature doesn't untap during its controller's untap step for as long as this Equipment remains on the battlefield.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever equipped creature deals damage to a creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "that_creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "That creature doesn't untap during its controller's untap step for as long as this Equipment remains on the battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever equipped creature deals damage to a player, that player loses 1 life.",
+          "trigger": {
+            "type": "deals_damage_to_player",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "that_player",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

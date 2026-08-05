@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "94779ca4-c202-4163-9c77-1036921a34bc",
+  "name": "Adrestia",
+  "faces": [
+    {
+      "name": "Adrestia",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Islandwalk (This creature can't be blocked as long as defending player controls an Island.)\nWhenever Adrestia attacks, if an Assassin crewed it this turn, draw a card. Adrestia becomes an Assassin in addition to its other types until end of turn.\nCrew 1",
+      "static": [
+        {
+          "keyword": "islandwalk"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Adrestia attacks, if an Assassin crewed it this turn, draw a card. Adrestia becomes an Assassin in addition to its other types until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "an Assassin crewed it this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Adrestia becomes an Assassin in addition to its other types until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

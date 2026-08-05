@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2ab88c99-aaa0-4a91-9225-0bbfba04b6bc",
+  "name": "Court of Cunning",
+  "faces": [
+    {
+      "name": "Court of Cunning",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, you become the monarch.\nAt the beginning of your upkeep, any number of target players each mill two cards. If you're the monarch, each of those players mills ten cards instead. (To mill a card, a player puts the top card of their library into their graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, any number of target players each mill two cards. If you're the monarch, each of those players mills ten cards instead. (To mill a card, a player puts the top card of their library into their graveyard.)",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "any number of target players each mill two cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "each of those players mills ten cards instead",
+              "condition": [
+                {
+                  "condition_text": "you're the monarch"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0214805d-d207-42da-a25f-2a8e1990904e",
+  "name": "Justiciar's Portal",
+  "faces": [
+    {
+      "name": "Justiciar's Portal",
+      "type_line": "Instant",
+      "oracle_text": "Exile target creature you control, then return that card to the battlefield under its owner's control. It gains first strike until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Exile target creature you control, then return that card to the battlefield under its owner's control. It gains first strike until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target creature you control"
+            },
+            {
+              "action": "move_card",
+              "target": "that_card",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "first_strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

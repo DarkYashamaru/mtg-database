@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d655a1c9-b84d-4069-a2ca-3aa0dacab3e1",
+  "name": "Fell Specter",
+  "faces": [
+    {
+      "name": "Fell Specter",
+      "type_line": "Creature \u2014 Specter",
+      "oracle_text": "Flying\nWhen this creature enters, target opponent discards a card.\nWhenever an opponent discards a card, that player loses 2 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target opponent discards a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent discards a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an opponent discards a card, that player loses 2 life.",
+          "trigger": {
+            "type": "discard_card",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player loses 2 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

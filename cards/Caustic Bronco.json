@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "165bdc68-1da0-47db-a069-978fc4c04b3f",
+  "name": "Caustic Bronco",
+  "faces": [
+    {
+      "name": "Caustic Bronco",
+      "type_line": "Creature \u2014 Snake Horse Mount",
+      "oracle_text": "Whenever this creature attacks, reveal the top card of your library and put it into your hand. You lose life equal to that card's mana value if this creature isn't saddled. Otherwise, each opponent loses that much life.\nSaddle 3 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, reveal the top card of your library and put it into your hand. You lose life equal to that card's mana value if this creature isn't saddled. Otherwise, each opponent loses that much life.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You lose life equal to that card's mana value if this creature isn't saddled"
+            },
+            {
+              "action": "custom_effect",
+              "text": "each opponent loses that much life",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Saddle 3 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+          "cost": "Saddle 3 (Tap any number of other creatures you control with total power 3 or more",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Mount becomes saddled until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

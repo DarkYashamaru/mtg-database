@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c6de0ee9-785d-4cd8-8a7f-5bb715763131",
+  "name": "Nantuko Monastery",
+  "faces": [
+    {
+      "name": "Nantuko Monastery",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\nThreshold \u2014 {G}{W}: This land becomes a 4/4 green and white Insect Monk creature with first strike until end of turn. It's still a land. Activate only if there are seven or more cards in your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "Threshold \u2014 {G}{W}: This land becomes a 4/4 green and white Insect Monk creature with first strike until end of turn. It's still a land. Activate only if there are seven or more cards in your graveyard.",
+          "cost": "Threshold \u2014 {G}{W}",
+          "condition": [
+            {
+              "condition_text": "there are seven or more cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land becomes a 4/4 green and white Insect Monk creature with first strike until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

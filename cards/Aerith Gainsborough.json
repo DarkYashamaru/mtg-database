@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dd9a6f6b-f9b7-4292-bc80-b7da326de032",
+  "name": "Aerith Gainsborough",
+  "faces": [
+    {
+      "name": "Aerith Gainsborough",
+      "type_line": "Legendary Creature \u2014 Human Cleric",
+      "oracle_text": "Lifelink\nWhenever you gain life, put a +1/+1 counter on Aerith Gainsborough.\nWhen Aerith Gainsborough dies, put X +1/+1 counters on each legendary creature you control, where X is the number of +1/+1 counters on Aerith Gainsborough.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, put a +1/+1 counter on Aerith Gainsborough.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When Aerith Gainsborough dies, put X +1/+1 counters on each legendary creature you control, where X is the number of +1/+1 counters on Aerith Gainsborough.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_legendary_creature_you_control_where_x_is_the_number_of_11_counters_on_self"
+              },
+              "amount": "X"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "939e8448-013a-4aef-9a92-7c883a77a1a0",
+  "name": "Cavern-Hoard Dragon",
+  "faces": [
+    {
+      "name": "Cavern-Hoard Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "This spell costs {X} less to cast, where X is the greatest number of artifacts an opponent controls.\nFlying, trample, haste\nWhenever this creature deals combat damage to a player, you create a Treasure token for each artifact that player controls.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you create a Treasure token for each artifact that player controls.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you create a Treasure token for each artifact that player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {X} less to cast, where X is the greatest number of artifacts an opponent controls.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {X} less to cast, where X is the greatest number of artifacts an opponent controls"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

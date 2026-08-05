@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d8956775-fda8-475d-9e8a-b61196a958ea",
+  "name": "Aether Syphon",
+  "faces": [
+    {
+      "name": "Aether Syphon",
+      "type_line": "Artifact",
+      "oracle_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{2}, {T}: Draw a card.\nMax speed \u2014 Whenever you draw a card, each opponent mills two cards. (Each opponent puts the top two cards of their library into their graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw a card, each opponent mills two cards. (Each opponent puts the top two cards of their library into their graveyard.)",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent mills two cards"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}: Draw a card.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)",
+          "effects": [
+            {
+              "action": "start_your_engines"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

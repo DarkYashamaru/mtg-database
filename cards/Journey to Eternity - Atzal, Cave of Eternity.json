@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7d6ccd0b-df16-40b2-930b-bcde0b6ef73f",
+  "name": "Journey to Eternity // Atzal, Cave of Eternity",
+  "faces": [
+    {
+      "name": "Atzal, Cave of Eternity",
+      "type_line": "Legendary Land",
+      "oracle_text": "(Transforms from Journey to Eternity.)\n{T}: Add one mana of any color.\n{3}{B}{G}, {T}: Return target creature card from your graveyard to the battlefield.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{B}{G}, {T}: Return target creature card from your graveyard to the battlefield.",
+          "cost": "{3}{B}{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": {
+                "card_types": [
+                  "Creature"
+                ],
+                "zone": "graveyard"
+              },
+              "destination": "battlefield"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Journey to Eternity",
+      "type_line": "Legendary Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature you control\nWhen enchanted creature dies, return it to the battlefield under your control, then return this card to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, return it to the battlefield under your control, then return this card to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield under your control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return this card to the battlefield transformed under your control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_control"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "13f63240-a6bb-4333-a3dd-818725c6fb73",
+  "name": "Abhorrent Overlord",
+  "faces": [
+    {
+      "name": "Abhorrent Overlord",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Flying\nWhen this creature enters, create a number of 1/1 black Harpy creature tokens with flying equal to your devotion to black. (Each {B} in the mana costs of permanents you control counts toward your devotion to black.)\nAt the beginning of your upkeep, sacrifice a creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a number of 1/1 black Harpy creature tokens with flying equal to your devotion to black. (Each {B} in the mana costs of permanents you control counts toward your devotion to black.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a number of 1/1 black Harpy creature tokens with flying equal to your devotion to black",
+                "colors": [
+                  "black",
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Harpy"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice a creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

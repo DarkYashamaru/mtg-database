@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e3955573-3db5-490e-903e-65e0172a9202",
+  "name": "Hammer of Nazahn",
+  "faces": [
+    {
+      "name": "Hammer of Nazahn",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Whenever Hammer of Nazahn or another Equipment you control enters, you may attach that Equipment to target creature you control.\nEquipped creature gets +2/+0 and has indestructible.\nEquip {4}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Hammer of Nazahn or another Equipment you control enters, you may attach that Equipment to target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Equipment"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may attach that Equipment to target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4}",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +2/+0 and has indestructible.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +2/+0 and has indestructible"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

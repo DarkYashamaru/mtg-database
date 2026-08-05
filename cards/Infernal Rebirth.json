@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "05a1e1ee-67f0-4158-a012-01612bc9cc70",
+  "name": "Infernal Rebirth",
+  "faces": [
+    {
+      "name": "Infernal Rebirth",
+      "type_line": "Instant",
+      "oracle_text": "Return one or two target creature cards from your graveyard to your hand.\nBasic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Basic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Basic landcycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Return one or two target creature cards from your graveyard to your hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return one or two target creature cards from your graveyard to your hand"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

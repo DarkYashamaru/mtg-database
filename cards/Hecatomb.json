@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0ec153ee-2a91-4196-9105-212dd1864aea",
+  "name": "Hecatomb",
+  "faces": [
+    {
+      "name": "Hecatomb",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, sacrifice this enchantment unless you sacrifice four creatures.\nTap an untapped Swamp you control: This enchantment deals 1 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, sacrifice this enchantment unless you sacrifice four creatures.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment_unless_you_sacrifice_four_creatures"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Tap an untapped Swamp you control: This enchantment deals 1 damage to any target.",
+          "cost": "Tap an untapped Swamp you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_enchantment",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "81a602b6-a4f9-4534-a84e-2fa7556c2309",
+  "name": "Greatsword of Tyr",
+  "faces": [
+    {
+      "name": "Greatsword of Tyr",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature attacks, put a +1/+1 counter on it and tap up to one target creature defending player controls.\nEquip {W} ({W}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, put a +1/+1 counter on it and tap up to one target creature defending player controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "it_and_tap_up_to_one_target_creature_defending_player_controls",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {W} ({W}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{W}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

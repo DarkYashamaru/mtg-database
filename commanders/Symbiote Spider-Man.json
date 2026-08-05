@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bc681ecf-2a52-4782-9a47-90f5a9f435d8",
+  "name": "Symbiote Spider-Man",
+  "faces": [
+    {
+      "name": "Symbiote Spider-Man",
+      "type_line": "Legendary Creature \u2014 Symbiote Spider Hero",
+      "oracle_text": "Whenever this creature deals combat damage to a player, look at that many cards from the top of your library. Put one of them into your hand and the rest into your graveyard.\nFind New Host \u2014 {2}{U/B}, Exile this card from your graveyard: Put a +1/+1 counter on target creature you control. It gains this card's other abilities. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, look at that many cards from the top of your library. Put one of them into your hand and the rest into your graveyard.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at that many cards from the top of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put one of them into your hand and the rest into your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Find New Host \u2014 {2}{U/B}, Exile this card from your graveyard: Put a +1/+1 counter on target creature you control. It gains this card's other abilities. Activate only as a sorcery.",
+          "cost": "Find New Host \u2014 {2}{U/B}, Exile this card from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "It gains this card's other abilities"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

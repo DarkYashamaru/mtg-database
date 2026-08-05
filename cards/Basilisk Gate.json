@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8733a4fc-4068-4af4-9598-dc3d895e8556",
+  "name": "Basilisk Gate",
+  "faces": [
+    {
+      "name": "Basilisk Gate",
+      "type_line": "Land \u2014 Gate",
+      "oracle_text": "{T}: Add {C}.\n{2}, {T}: Target creature gets +X/+X until end of turn, where X is the number of Gates you control. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}: Target creature gets +X/+X until end of turn, where X is the number of Gates you control. Activate only as a sorcery.",
+          "cost": "{2}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature gets +X/+X until end of turn, where X is the number of Gates you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

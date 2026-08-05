@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "21f1c6d7-8289-44b2-b88f-c09e202be200",
+  "name": "Fertilid",
+  "faces": [
+    {
+      "name": "Fertilid",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "This creature enters with two +1/+1 counters on it.\n{1}{G}, Remove a +1/+1 counter from this creature: Target player searches their library for a basic land card, puts it onto the battlefield tapped, then shuffles.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{G}, Remove a +1/+1 counter from this creature: Target player searches their library for a basic land card, puts it onto the battlefield tapped, then shuffles.",
+          "cost": "{1}{G}, Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target player searches their library for a basic land card, puts it onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "that_player"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with two +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

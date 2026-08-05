@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b5ef88c-f863-4f55-91fc-a63f7f3c1b3f",
+  "name": "Outlaws' Fury",
+  "faces": [
+    {
+      "name": "Outlaws' Fury",
+      "type_line": "Instant",
+      "oracle_text": "Creatures you control get +2/+0 until end of turn. If you control an outlaw, exile the top card of your library. Until the end of your next turn, you may play that card. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control get +2/+0 until end of turn. If you control an outlaw, exile the top card of your library. Until the end of your next turn, you may play that card. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 2,
+              "toughness_delta": 0
+            },
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1,
+              "condition": [
+                {
+                  "condition_text": "you control an outlaw"
+                }
+              ]
+            },
+            {
+              "action": "allow_play",
+              "object": "that_card",
+              "until": "end_of_your_next_turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

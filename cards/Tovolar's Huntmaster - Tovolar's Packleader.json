@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "oracle_id": "18563bc9-6090-4629-b304-89a67d93f635",
+  "name": "Tovolar's Huntmaster // Tovolar's Packleader",
+  "faces": [
+    {
+      "name": "Tovolar's Huntmaster",
+      "type_line": "Creature \u2014 Human Werewolf",
+      "oracle_text": "When this creature enters, create two 2/2 green Wolf creature tokens.\nDaybound (If a player casts no spells during their own turn, it becomes night next turn.)",
+      "static": [
+        {
+          "keyword": "daybound"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create two 2/2 green Wolf creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "2/2 green Wolf creature tokens",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Wolf"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Tovolar's Packleader",
+      "type_line": "Creature \u2014 Werewolf",
+      "oracle_text": "Whenever this creature enters or attacks, create two 2/2 green Wolf creature tokens.\n{2}{G}{G}: Another target Wolf or Werewolf you control fights target creature you don't control.\nNightbound (If a player casts at least two spells during their own turn, it becomes day next turn.)",
+      "static": [
+        {
+          "keyword": "nightbound"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or attacks, create two 2/2 green Wolf creature tokens.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "2/2 green Wolf creature tokens",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Wolf"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{G}{G}: Another target Wolf or Werewolf you control fights target creature you don't control.",
+          "cost": "{2}{G}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Another target Wolf or Werewolf you control fights target creature you don't control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "02f062f5-8012-4440-ac12-49fc49822106",
+  "name": "Spine of Ish Sah",
+  "faces": [
+    {
+      "name": "Spine of Ish Sah",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, destroy target permanent.\nWhen this artifact is put into a graveyard from the battlefield, return it to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, destroy target permanent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target permanent"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this artifact is put into a graveyard from the battlefield, return it to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

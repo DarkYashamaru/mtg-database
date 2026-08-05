@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b0cb089-087d-4b91-9e63-8186dc737a00",
+  "name": "Tahngarth's Rage",
+  "faces": [
+    {
+      "name": "Tahngarth's Rage",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +3/+0 as long as it's attacking. Otherwise, it gets -2/-1.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +3/+0 as long as it's attacking. Otherwise, it gets -2/-1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +3/+0 as long as it's attacking"
+            },
+            {
+              "action": "modify_stats",
+              "target": "self",
+              "power_delta": -2,
+              "toughness_delta": -1,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

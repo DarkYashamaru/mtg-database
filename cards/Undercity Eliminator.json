@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93cb9c7e-d6d3-4b1e-8bcf-2a4a1d95a549",
+  "name": "Undercity Eliminator",
+  "faces": [
+    {
+      "name": "Undercity Eliminator",
+      "type_line": "Creature \u2014 Gorgon Assassin",
+      "oracle_text": "When this creature enters, you may sacrifice an artifact or creature. When you do, exile target creature an opponent controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may sacrifice an artifact or creature. When you do, exile target creature an opponent controls.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "an_artifact_or_creature",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile target creature an opponent controls",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

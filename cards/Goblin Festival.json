@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "de21b90f-a268-46d6-b977-d5b0856176f3",
+  "name": "Goblin Festival",
+  "faces": [
+    {
+      "name": "Goblin Festival",
+      "type_line": "Enchantment",
+      "oracle_text": "{2}: This enchantment deals 1 damage to any target. Flip a coin. If you lose the flip, choose one of your opponents. That player gains control of this enchantment.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}: This enchantment deals 1 damage to any target. Flip a coin. If you lose the flip, choose one of your opponents. That player gains control of this enchantment.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_enchantment",
+              "target": "any_target",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin"
+            },
+            {
+              "action": "custom_effect",
+              "text": "choose one of your opponents",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "That player gains control of this enchantment"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

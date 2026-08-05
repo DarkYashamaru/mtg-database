@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "542831c6-6279-4977-9b29-0fb9c0ebf04d",
+  "name": "Mischievous Mystic",
+  "faces": [
+    {
+      "name": "Mischievous Mystic",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Flying\nWhenever you draw your second card each turn, create a 1/1 blue Faerie creature token with flying.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, create a 1/1 blue Faerie creature token with flying.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 blue Faerie creature token with flying",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Faerie"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

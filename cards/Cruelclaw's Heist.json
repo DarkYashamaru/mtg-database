@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7a0bc265-6b40-48d6-a588-c9624df7d1bc",
+  "name": "Cruelclaw's Heist",
+  "faces": [
+    {
+      "name": "Cruelclaw's Heist",
+      "type_line": "Sorcery",
+      "oracle_text": "Gift a card (You may promise an opponent a gift as you cast this spell. If you do, they draw a card before its other effects.)\nTarget opponent reveals their hand. You choose a nonland card from it. Exile that card. If the gift was promised, you may cast that card for as long as it remains exiled, and mana of any type can be spent to cast it.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Gift a card (You may promise an opponent a gift as you cast this spell. If you do, they draw a card before its other effects.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gift a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target opponent reveals their hand. You choose a nonland card from it. Exile that card. If the gift was promised, you may cast that card for as long as it remains exiled, and mana of any type can be spent to cast it.",
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a nonland card from it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Exile that card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast that card for as long as it remains exiled, and mana of any type can be spent to cast it",
+              "condition": [
+                {
+                  "condition_text": "the gift was promised"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

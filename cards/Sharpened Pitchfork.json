@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "409b44fc-fae2-4804-83a7-78cf95038f58",
+  "name": "Sharpened Pitchfork",
+  "faces": [
+    {
+      "name": "Sharpened Pitchfork",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has first strike.\nAs long as equipped creature is a Human, it gets +1/+1.\nEquip {1}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {1}",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has first strike.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature has first strike"
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as equipped creature is a Human, it gets +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "as_long_as_equipped_creature_is_a_human_it",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "15159091-84ec-4b8c-8d84-8a8bb8baf27d",
+  "name": "Reckoner Shakedown",
+  "faces": [
+    {
+      "name": "Reckoner Shakedown",
+      "type_line": "Sorcery",
+      "oracle_text": "Target opponent reveals their hand. You may choose a nonland card from it. If you do, that player discards that card. If you don't, put two +1/+1 counters on a creature or Vehicle you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target opponent reveals their hand. You may choose a nonland card from it. If you do, that player discards that card. If you don't, put two +1/+1 counters on a creature or Vehicle you control.",
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may choose a nonland card from it"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Or",
+                  "Vehicle"
+                ]
+              },
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

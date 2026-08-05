@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aeeb50f2-8e02-4d40-a1dd-28b1c5c85c7e",
+  "name": "Moonstone, Harsh Mistress",
+  "faces": [
+    {
+      "name": "Moonstone, Harsh Mistress",
+      "type_line": "Legendary Creature \u2014 Human Doctor Villain",
+      "oracle_text": "Flying\nWhenever you discard a card, you may exile that card from your graveyard. If you do, until the end of your next turn, you may play that card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you discard a card, you may exile that card from your graveyard. If you do, until the end of your next turn, you may play that card.",
+          "trigger": {
+            "type": "discard_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile that card from your graveyard"
+            },
+            {
+              "action": "allow_play",
+              "object": "that_card",
+              "until": "end_of_your_next_turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c247382f-821e-4f3c-9d34-450794ce74c3",
+  "name": "Kami of Fire's Roar",
+  "faces": [
+    {
+      "name": "Kami of Fire's Roar",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Whenever you cast a Spirit or Arcane spell, target creature can't block this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, target creature can't block this turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

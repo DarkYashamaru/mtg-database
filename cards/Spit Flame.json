@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f63278e0-3c67-421d-87ce-67725e5e74df",
+  "name": "Spit Flame",
+  "faces": [
+    {
+      "name": "Spit Flame",
+      "type_line": "Instant",
+      "oracle_text": "Spit Flame deals 4 damage to target creature.\nWhenever a Dragon you control enters, you may pay {R}. If you do, return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Dragon you control enters, you may pay {R}. If you do, return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Dragon"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{r}",
+              "optional": true
+            },
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Spit Flame deals 4 damage to target creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Spit Flame deals 4 damage to target creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9c5bc3a7-42fe-4f8f-b799-ece7dd98ea4d",
+  "name": "Thunderheads",
+  "faces": [
+    {
+      "name": "Thunderheads",
+      "type_line": "Instant",
+      "oracle_text": "Replicate {2}{U} (When you cast this spell, copy it for each time you paid its replicate cost.)\nCreate a 3/3 blue Weird creature token with defender and flying. Exile it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Replicate {2}{U} (When you cast this spell, copy it for each time you paid its replicate cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Replicate {2}{U}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Create a 3/3 blue Weird creature token with defender and flying. Exile it at the beginning of the next end step.",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 3/3 blue Weird creature token with defender and flying",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Weird"
+                ],
+                "keywords": [
+                  "defender",
+                  "flying"
+                ]
+              }
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_end_step"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": "it"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

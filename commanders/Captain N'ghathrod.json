@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cfb23c6b-6e4a-4fc9-b3bb-a3ddc2ba06b8",
+  "name": "Captain N'ghathrod",
+  "faces": [
+    {
+      "name": "Captain N'ghathrod",
+      "type_line": "Legendary Creature \u2014 Horror Pirate",
+      "oracle_text": "Horrors you control have menace.\nWhenever a Horror you control deals combat damage to a player, that player mills that many cards.\nAt the beginning of your end step, choose target artifact or creature card in an opponent's graveyard that was put there from their library this turn. Put it onto the battlefield under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Horror you control deals combat damage to a player, that player mills that many cards.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Horror"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player mills that many cards"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, choose target artifact or creature card in an opponent's graveyard that was put there from their library this turn. Put it onto the battlefield under your control.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose target artifact or creature card in an opponent's graveyard that was put there from their library this turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put it onto the battlefield under your control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Horrors you control have menace.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Horror"
+                ]
+              },
+              "keywords": [
+                "menace"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

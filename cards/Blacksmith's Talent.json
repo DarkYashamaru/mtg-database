@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9fdad42a-9db5-4d91-9e80-9d5ce19038b8",
+  "name": "Blacksmith's Talent",
+  "faces": [
+    {
+      "name": "Blacksmith's Talent",
+      "type_line": "Enchantment \u2014 Class",
+      "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nWhen this Class enters, create a colorless Equipment artifact token named Sword with \"Equipped creature gets +1/+1\" and equip {2}.\n{2}{R}: Level 2\nAt the beginning of combat on your turn, attach target Equipment you control to up to one target creature you control.\n{3}{R}: Level 3\nDuring your turn, equipped creatures you control have double strike and haste.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Class enters, create a colorless Equipment artifact token named Sword with \"Equipped creature gets +1/+1\" and equip {2}.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_class"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a colorless Equipment artifact token named Sword with \"Equipped creature gets +1/+1\" and equip {2}"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, attach target Equipment you control to up to one target creature you control.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach target Equipment you control to up to one target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{R}: Level 2",
+          "cost": "{2}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{R}: Level 3",
+          "cost": "{3}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "During your turn, equipped creatures you control have double strike and haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "during_you_control_turn_equipped_creatures_you_control"
+              },
+              "keywords": [
+                "double_strike",
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

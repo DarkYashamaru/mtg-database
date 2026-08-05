@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d3564614-4463-4683-83f0-07561ab3431c",
+  "name": "Forsworn Paladin",
+  "faces": [
+    {
+      "name": "Forsworn Paladin",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Menace\n{1}{B}, {T}, Pay 1 life: Create a Treasure token.\n{2}{B}: Target creature gets +2/+0 until end of turn. If mana from a Treasure was spent to activate this ability, that creature also gains deathtouch until end of turn.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{B}, {T}, Pay 1 life: Create a Treasure token.",
+          "cost": "{1}{B}, {T}, Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{B}: Target creature gets +2/+0 until end of turn. If mana from a Treasure was spent to activate this ability, that creature also gains deathtouch until end of turn.",
+          "cost": "{2}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 2,
+              "toughness_delta": 0
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature_also",
+              "keyword": "deathtouch",
+              "condition": [
+                {
+                  "condition_text": "mana from a treasure was spent to activate this ability"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

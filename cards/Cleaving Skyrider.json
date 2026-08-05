@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eb1ab332-5549-4ff4-8afa-b385a236fb9b",
+  "name": "Cleaving Skyrider",
+  "faces": [
+    {
+      "name": "Cleaving Skyrider",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Flash\nKicker {2}{R} (You may pay an additional {2}{R} as you cast this spell.)\nFlying\nWhen this creature enters, if it was kicked, it deals X damage to any target, where X is the number of attacking creatures.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, it deals X damage to any target, where X is the number of attacking creatures.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals X damage to any target, where X is the number of attacking creatures"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2}{R} (You may pay an additional {2}{R} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

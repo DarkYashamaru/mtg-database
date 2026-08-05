@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e875b468-b475-4573-adf6-312ca4ab6994",
+  "name": "Escape Protocol",
+  "faces": [
+    {
+      "name": "Escape Protocol",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cycle a card, you may pay {1}. When you do, exile target artifact or creature you control, then return it to the battlefield under its owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cycle a card, you may pay {1}. When you do, exile target artifact or creature you control, then return it to the battlefield under its owner's control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cycle a card"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile target artifact or creature you control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "its_owner",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

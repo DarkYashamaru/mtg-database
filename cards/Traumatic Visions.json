@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a30724f0-d174-408e-8baf-4bba3cbc45b5",
+  "name": "Traumatic Visions",
+  "faces": [
+    {
+      "name": "Traumatic Visions",
+      "type_line": "Instant",
+      "oracle_text": "Counter target spell.\nBasic landcycling {1}{U} ({1}{U}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Basic landcycling {1}{U} ({1}{U}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Basic landcycling {1}{U} ({1}{U}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Counter target spell.",
+          "effects": [
+            {
+              "action": "counter_spell",
+              "target": "target_spell"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

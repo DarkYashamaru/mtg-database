@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7e8198e9-0f3b-420b-ab09-74f13f4fd548",
+  "name": "Throne of Makindi",
+  "faces": [
+    {
+      "name": "Throne of Makindi",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{1}, {T}: Put a charge counter on this land.\n{T}, Remove a charge counter from this land: Add two mana of any one color. Spend this mana only to cast kicked spells.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Put a charge counter on this land.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a charge counter on this land"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Remove a charge counter from this land: Add two mana of any one color. Spend this mana only to cast kicked spells.",
+          "cost": "{T}, Remove a charge counter from this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "same_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to cast kicked spells"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "acc9c16a-5e72-43bd-87e1-56a16aa892f5",
+  "name": "Haven of the Spirit Dragon",
+  "faces": [
+    {
+      "name": "Haven of the Spirit Dragon",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a Dragon creature spell.\n{2}, {T}, Sacrifice this land: Return target Dragon creature card or Ugin planeswalker card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add one mana of any color. Spend this mana only to cast a Dragon creature spell.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "card_types": [
+                    "Creature"
+                  ],
+                  "subtypes_all": [
+                    "Dragon"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}, Sacrifice this land: Return target Dragon creature card or Ugin planeswalker card from your graveyard to your hand.",
+          "cost": "{2}, {T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target Dragon creature card or Ugin planeswalker card from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

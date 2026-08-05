@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "882ee72e-2149-4778-a81c-8bf09beb5d66",
+  "name": "Call of the Wild",
+  "faces": [
+    {
+      "name": "Call of the Wild",
+      "type_line": "Enchantment",
+      "oracle_text": "{2}{G}{G}: Reveal the top card of your library. If it's a creature card, put it onto the battlefield. Otherwise, put it into your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{G}{G}: Reveal the top card of your library. If it's a creature card, put it onto the battlefield. Otherwise, put it into your graveyard.",
+          "cost": "{2}{G}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "it's a creature card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it into your graveyard",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

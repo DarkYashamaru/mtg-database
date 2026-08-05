@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1a0162b9-7a7a-4ed9-9a70-189433932449",
+  "name": "Boltwing Marauder",
+  "faces": [
+    {
+      "name": "Boltwing Marauder",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever another creature you control enters, target creature gets +2/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, target creature gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

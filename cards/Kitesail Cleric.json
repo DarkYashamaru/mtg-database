@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0b9bb0d7-4139-46b6-a058-2f79be64aef2",
+  "name": "Kitesail Cleric",
+  "faces": [
+    {
+      "name": "Kitesail Cleric",
+      "type_line": "Creature \u2014 Kor Cleric",
+      "oracle_text": "Kicker {2}{W} (You may pay an additional {2}{W} as you cast this spell.)\nFlying\nWhen this creature enters, if it was kicked, tap up to two target creatures.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, tap up to two target creatures.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creatures",
+              "max_targets": 2,
+              "optional_targets": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2}{W} (You may pay an additional {2}{W} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

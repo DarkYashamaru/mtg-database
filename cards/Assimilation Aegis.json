@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6d39d218-254a-4886-907a-89df605d7ce4",
+  "name": "Assimilation Aegis",
+  "faces": [
+    {
+      "name": "Assimilation Aegis",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, exile up to one target creature until this Equipment leaves the battlefield.\nWhenever this Equipment becomes attached to a creature, for as long as this Equipment remains attached to it, that creature becomes a copy of a creature card exiled with this Equipment.\nEquip {2}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, exile up to one target creature until this Equipment leaves the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target creature until this Equipment leaves the battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this Equipment becomes attached to a creature, for as long as this Equipment remains attached to it, that creature becomes a copy of a creature card exiled with this Equipment.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this Equipment becomes attached to a creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for as long as this Equipment remains attached to it, that creature becomes a copy of a creature card exiled with this Equipment"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

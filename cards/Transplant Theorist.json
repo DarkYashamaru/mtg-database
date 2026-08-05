@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4a60db66-0347-4efc-8507-ab7ed8d984fe",
+  "name": "Transplant Theorist",
+  "faces": [
+    {
+      "name": "Transplant Theorist",
+      "type_line": "Artifact Creature \u2014 Phyrexian Artificer",
+      "oracle_text": "Whenever this creature or another artifact you control enters, you may draw a card. If you do, discard a card.\n{2}: Put target card from your graveyard on the bottom of your library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another artifact you control enters, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Artifact"
+              ],
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: Put target card from your graveyard on the bottom of your library.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put target card from your graveyard on the bottom of your library"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

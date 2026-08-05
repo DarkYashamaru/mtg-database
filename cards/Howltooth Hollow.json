@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "463fc699-f4fc-4112-a6b3-6dcb642203e6",
+  "name": "Howltooth Hollow",
+  "faces": [
+    {
+      "name": "Howltooth Hollow",
+      "type_line": "Land",
+      "oracle_text": "Hideaway 4 (When this land enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom in a random order.)\nThis land enters tapped.\n{T}: Add {B}.\n{B}, {T}: You may play the exiled card without paying its mana cost if each player has no cards in hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{B}, {T}: You may play the exiled card without paying its mana cost if each player has no cards in hand.",
+          "cost": "{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may play the exiled card without paying its mana cost if each player has no cards in hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Hideaway 4 (When this land enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom in a random order.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Hideaway 4"
+            }
+          ]
+        },
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f2ecb354-8f79-4c39-989e-7aa37ec75154",
+  "name": "Bomb Squad",
+  "faces": [
+    {
+      "name": "Bomb Squad",
+      "type_line": "Creature \u2014 Dwarf",
+      "oracle_text": "{T}: Put a fuse counter on target creature.\nAt the beginning of your upkeep, put a fuse counter on each creature with a fuse counter on it.\nWhenever a creature has four or more fuse counters on it, remove all fuse counters from it and destroy it. That creature deals 4 damage to its controller.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a fuse counter on each creature with a fuse counter on it.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a fuse counter on each creature with a fuse counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature has four or more fuse counters on it, remove all fuse counters from it and destroy it. That creature deals 4 damage to its controller.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature has four or more fuse counters on it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove all fuse counters from it and destroy it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "That creature deals 4 damage to its controller"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Put a fuse counter on target creature.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a fuse counter on target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

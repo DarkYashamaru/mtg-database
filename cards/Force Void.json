@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "469bdca3-d373-4420-9266-921b6605f327",
+  "name": "Force Void",
+  "faces": [
+    {
+      "name": "Force Void",
+      "type_line": "Instant",
+      "oracle_text": "Counter target spell unless its controller pays {1}.\nDraw a card at the beginning of the next turn's upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Counter target spell unless its controller pays {1}.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Counter target spell unless its controller pays {1}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card at the beginning of the next turn's upkeep.",
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_turns_upkeep"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "46c3a69a-4984-40b0-905f-4b0762c7ad72",
+  "name": "Titania, Nature's Force",
+  "faces": [
+    {
+      "name": "Titania, Nature's Force",
+      "type_line": "Legendary Creature \u2014 Elemental",
+      "oracle_text": "You may play Forests from your graveyard.\nWhenever a Forest you control enters, create a 5/3 green Elemental creature token.\nWhenever an Elemental you control dies, you may mill three cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Forest you control enters, create a 5/3 green Elemental creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Forest"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "5/3 green Elemental creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "5/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elemental"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an Elemental you control dies, you may mill three cards.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Elemental"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may play Forests from your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may play Forests from your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

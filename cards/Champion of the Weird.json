@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1726f9cd-6f18-4509-b95b-bca82ba795a4",
+  "name": "Champion of the Weird",
+  "faces": [
+    {
+      "name": "Champion of the Weird",
+      "type_line": "Creature \u2014 Goblin Berserker",
+      "oracle_text": "As an additional cost to cast this spell, behold a Goblin and exile it. (Exile a Goblin you control or a Goblin card from your hand.)\nPay 1 life, Blight 2: Target opponent blights 2. Activate only as a sorcery.\nWhen this creature leaves the battlefield, return the exiled card to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature leaves the battlefield, return the exiled card to its owner's hand.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return the exiled card to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay 1 life, Blight 2: Target opponent blights 2. Activate only as a sorcery.",
+          "cost": "Pay 1 life, Blight 2",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target opponent blights 2"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast this spell, behold a Goblin and exile it. (Exile a Goblin you control or a Goblin card from your hand.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As an additional cost to cast this spell, behold a Goblin and exile it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

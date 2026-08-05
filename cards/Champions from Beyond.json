@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "57e4a1c0-4218-4a07-88e7-d6083884c2b6",
+  "name": "Champions from Beyond",
+  "faces": [
+    {
+      "name": "Champions from Beyond",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create X 1/1 colorless Hero creature tokens.\nLight Party \u2014 Whenever you attack with four or more creatures, scry 2, then draw a card.\nFull Party \u2014 Whenever you attack with eight or more creatures, those creatures get +4/+4 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create X 1/1 colorless Hero creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "X",
+              "token": {
+                "raw": "1/1 colorless Hero creature tokens",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Hero"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack with four or more creatures, scry 2, then draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you attack with four or more creatures"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack with eight or more creatures, those creatures get +4/+4 until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you attack with eight or more creatures"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "those creatures get +4/+4 until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "da1ea03f-747f-46c9-8ff5-7e85996df804",
+  "name": "Thought Prison",
+  "faces": [
+    {
+      "name": "Thought Prison",
+      "type_line": "Artifact",
+      "oracle_text": "Imprint \u2014 When this artifact enters, you may have target player reveal their hand. If you do, choose a nonland card from it and exile that card.\nWhenever a player casts a spell that shares a color or mana value with the exiled card, this artifact deals 2 damage to that player.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, you may have target player reveal their hand. If you do, choose a nonland card from it and exile that card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have target player reveal their hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "choose a nonland card from it and exile that card",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a player casts a spell that shares a color or mana value with the exiled card, this artifact deals 2 damage to that player.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player casts a spell that shares a color or mana value with the exiled card"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this artifact deals 2 damage to that player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

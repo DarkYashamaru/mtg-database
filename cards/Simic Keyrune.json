@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9e737a22-a352-411d-8412-96770c7f6cce",
+  "name": "Simic Keyrune",
+  "faces": [
+    {
+      "name": "Simic Keyrune",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {G} or {U}.\n{G}{U}: This artifact becomes a 2/3 green and blue Crab artifact creature with hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G} or {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}",
+                "{u}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{G}{U}: This artifact becomes a 2/3 green and blue Crab artifact creature with hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)",
+          "cost": "{G}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact becomes a 2/3 green and blue Crab artifact creature with hexproof until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c808892a-83d5-4b09-b0da-118b0d6fe58e",
+  "name": "Charging Hooligan",
+  "faces": [
+    {
+      "name": "Charging Hooligan",
+      "type_line": "Creature \u2014 Human Peasant",
+      "oracle_text": "Whenever this creature attacks, it gets +1/+0 until end of turn for each attacking creature. If a Rat is attacking, this creature gains trample until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it gets +1/+0 until end of turn for each attacking creature. If a Rat is attacking, this creature gains trample until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gets +1/+0 until end of turn for each attacking creature"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "trample",
+              "condition": [
+                {
+                  "condition_text": "a rat is attacking"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

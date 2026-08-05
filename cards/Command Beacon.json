@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7e8c2a18-e404-40ff-a9e0-ec3eeb6d576e",
+  "name": "Command Beacon",
+  "faces": [
+    {
+      "name": "Command Beacon",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}, Sacrifice this land: Put your commander into your hand from the command zone.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Sacrifice this land: Put your commander into your hand from the command zone.",
+          "cost": "{T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "your_commander",
+              "source_zone": "command_zone",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

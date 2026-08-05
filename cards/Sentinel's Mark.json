@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ac34bc09-ba8a-4bfb-bc45-e9c3e4d7bdc0",
+  "name": "Sentinel's Mark",
+  "faces": [
+    {
+      "name": "Sentinel's Mark",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash\nEnchant creature\nEnchanted creature gets +1/+2 and has vigilance.\nAddendum \u2014 When this Aura enters, if you cast it during your main phase, enchanted creature gains lifelink until end of turn.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, if you cast it during your main phase, enchanted creature gains lifelink until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [
+            {
+              "condition_text": "you cast it during your main phase"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "enchanted_creature",
+              "keyword": "lifelink"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+2 and has vigilance.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+2 and has vigilance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

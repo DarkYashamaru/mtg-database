@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e2c00aff-696c-4b20-acd4-95b71b5f8b10",
+  "name": "Vault 11: Voter's Dilemma",
+  "faces": [
+    {
+      "name": "Vault 11: Voter's Dilemma",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 For each opponent, you create a 1/1 white Human Soldier creature token.\nII, III \u2014 Each player secretly votes for up to one creature, then those votes are revealed. If no creature got votes, each player draws a card. Otherwise, destroy each creature with the most votes or tied for most votes.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 For each opponent, you create a 1/1 white Human Soldier creature token.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each opponent, you create a 1/1 white Human Soldier creature token"
+            }
+          ]
+        },
+        {
+          "raw_text": "II, III \u2014 Each player secretly votes for up to one creature, then those votes are revealed. If no creature got votes, each player draws a card. Otherwise, destroy each creature with the most votes or tied for most votes.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II",
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player secretly votes for up to one creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "those votes are revealed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "each player draws a card",
+              "condition": [
+                {
+                  "condition_text": "no creature got votes"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy each creature with the most votes or tied for most votes",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

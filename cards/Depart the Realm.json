@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ae069ba4-8ca6-4eda-8f5d-fc82072d7d40",
+  "name": "Depart the Realm",
+  "faces": [
+    {
+      "name": "Depart the Realm",
+      "type_line": "Instant",
+      "oracle_text": "Return target nonland permanent to its owner's hand.\nForetell {U} (During your turn, you may pay {2} and exile this card from your hand face down. Cast it on a later turn for its foretell cost.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target nonland permanent to its owner's hand.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        },
+        {
+          "raw_text": "Foretell {U} (During your turn, you may pay {2} and exile this card from your hand face down. Cast it on a later turn for its foretell cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Foretell {U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

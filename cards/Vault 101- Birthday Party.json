@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "77322d69-330e-4b00-b984-62c6d45c9540",
+  "name": "Vault 101: Birthday Party",
+  "faces": [
+    {
+      "name": "Vault 101: Birthday Party",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Create a 1/1 white Human Soldier creature token and a Food token. (A Food token is an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nII, III \u2014 You may put an Aura or Equipment card from your hand or graveyard onto the battlefield. If an Equipment is put onto the battlefield this way, you may attach it to a creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Create a 1/1 white Human Soldier creature token and a Food token. (A Food token is an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Human Soldier creature token and a Food token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human",
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II, III \u2014 You may put an Aura or Equipment card from your hand or graveyard onto the battlefield. If an Equipment is put onto the battlefield this way, you may attach it to a creature you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II",
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may put an Aura or Equipment card from your hand or graveyard onto the battlefield"
+            },
+            {
+              "action": "attach_to_creature_you_control",
+              "object": "it",
+              "optional": true,
+              "condition": [
+                {
+                  "condition_text": "an equipment is put onto the battlefield this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

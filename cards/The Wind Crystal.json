@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "240f0835-36af-4ad8-9336-d6d3d816d293",
+  "name": "The Wind Crystal",
+  "faces": [
+    {
+      "name": "The Wind Crystal",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "White spells you cast cost {1} less to cast.\nIf you would gain life, you gain twice that much life instead.\n{4}{W}{W}, {T}: Creatures you control gain flying and lifelink until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{4}{W}{W}, {T}: Creatures you control gain flying and lifelink until end of turn.",
+          "cost": "{4}{W}{W}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "flying_and_lifelink"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "White spells you cast cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "White spells you cast cost {1} less to cast"
+            }
+          ]
+        },
+        {
+          "raw_text": "If you would gain life, you gain twice that much life instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain twice that much life instead",
+              "condition": [
+                {
+                  "condition_text": "you would gain life"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

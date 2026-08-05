@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a6091c3e-b227-4e84-b75d-69512a0bddfb",
+  "name": "Clockwork Swarm",
+  "faces": [
+    {
+      "name": "Clockwork Swarm",
+      "type_line": "Artifact Creature \u2014 Insect",
+      "oracle_text": "This creature enters with four +1/+0 counters on it.\nThis creature can't be blocked by Walls.\nAt end of combat, if this creature attacked or blocked this combat, remove a +1/+0 counter from it.\n{X}, {T}: Put up to X +1/+0 counters on this creature. This ability can't cause the total number of +1/+0 counters on this creature to be greater than four. Activate only during your upkeep.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At end of combat, if this creature attacked or blocked this combat, remove a +1/+0 counter from it.",
+          "trigger": {
+            "type": "end_of_combat"
+          },
+          "condition": [
+            {
+              "condition_text": "this creature attacked or blocked this combat"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove a +1/+0 counter from it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{X}, {T}: Put up to X +1/+0 counters on this creature. This ability can't cause the total number of +1/+0 counters on this creature to be greater than four. Activate only during your upkeep.",
+          "cost": "{X}, {T}",
+          "condition": [
+            {
+              "condition_text": "during your upkeep"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put up to X +1/+0 counters on this creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This ability can't cause the total number of +1/+0 counters on this creature to be greater than four"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with four +1/+0 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with four +1/+0 counters on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature can't be blocked by Walls.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature can't be blocked by Walls"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

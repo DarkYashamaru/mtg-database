@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2bd8a6a4-d0ac-4da3-be1d-5f404ae4b614",
+  "name": "Guardian Shield-Bearer",
+  "faces": [
+    {
+      "name": "Guardian Shield-Bearer",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Megamorph {3}{G} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its megamorph cost and put a +1/+1 counter on it.)\nWhen this creature is turned face up, put a +1/+1 counter on another target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, put a +1/+1 counter on another target creature you control.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Megamorph {3}{G} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its megamorph cost and put a +1/+1 counter on it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Megamorph {3}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

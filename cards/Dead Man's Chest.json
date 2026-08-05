@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e5fdd6fd-6492-47ec-8b74-9ff22ff9849a",
+  "name": "Dead Man's Chest",
+  "faces": [
+    {
+      "name": "Dead Man's Chest",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature an opponent controls\nWhen enchanted creature dies, exile cards equal to its power from the top of its owner's library. You may cast spells from among those cards for as long as they remain exiled, and mana of any type can be spent to cast them.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, exile cards equal to its power from the top of its owner's library. You may cast spells from among those cards for as long as they remain exiled, and mana of any type can be spent to cast them.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile cards equal to its power from the top of its owner's library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast spells from among those cards for as long as they remain exiled, and mana of any type can be spent to cast them"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature an opponent controls",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_an_opponent_controls"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

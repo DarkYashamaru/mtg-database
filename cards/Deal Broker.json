@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1269f7dc-a5d6-48e9-8887-b581ce38c204",
+  "name": "Deal Broker",
+  "faces": [
+    {
+      "name": "Deal Broker",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "Draft this card face up.\nImmediately after the draft, you may reveal a card in your card pool. Each other player may offer you one card in their card pool in exchange. You may accept any one offer.\n{T}: Draw a card, then discard a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Draw a card, then discard a card.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Draft this card face up.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Draft this card face up"
+            }
+          ]
+        },
+        {
+          "raw_text": "Immediately after the draft, you may reveal a card in your card pool. Each other player may offer you one card in their card pool in exchange. You may accept any one offer.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Immediately after the draft, you may reveal a card in your card pool"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each other player may offer you one card in their card pool in exchange"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may accept any one offer"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

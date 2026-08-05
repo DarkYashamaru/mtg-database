@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f3d3ed94-f32c-4a67-8e2a-765e454a80df",
+  "name": "Gunner Conscript",
+  "faces": [
+    {
+      "name": "Gunner Conscript",
+      "type_line": "Creature \u2014 Human Mercenary",
+      "oracle_text": "Trample\nThis creature gets +1/+1 for each Aura and Equipment attached to it.\nWhen this creature dies, if it was enchanted, create a Junk token.\nWhen this creature dies, if it was equipped, create a Junk token.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, if it was enchanted, create a Junk token.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was enchanted"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Junk token"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, if it was equipped, create a Junk token.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was equipped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Junk token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature gets +1/+1 for each Aura and Equipment attached to it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +1/+1 for each Aura and Equipment attached to it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "406e6db7-6e31-44b9-a793-57ee10688f71",
+  "name": "Auntie's Sentence",
+  "faces": [
+    {
+      "name": "Auntie's Sentence",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose one \u2014\n\u2022 Target opponent reveals their hand. You choose a nonland permanent card from it. That player discards that card.\n\u2022 Target creature gets -2/-2 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Target opponent reveals their hand. You choose a nonland permanent card from it. That player discards that card.\n\u2022 Target creature gets -2/-2 until end of turn.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Target opponent reveals their hand. You choose a nonland permanent card from it. That player discards that card.",
+              "effects": [
+                {
+                  "action": "reveal_hand",
+                  "target": "target_opponent"
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "You choose a nonland permanent card from it"
+                },
+                {
+                  "action": "discard_revealed_card",
+                  "target": "that_player"
+                }
+              ]
+            },
+            {
+              "raw_text": "Target creature gets -2/-2 until end of turn.",
+              "effects": [
+                {
+                  "action": "modify_stats_until_end_of_turn",
+                  "target": "target_creature",
+                  "power_delta": -2,
+                  "toughness_delta": -2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

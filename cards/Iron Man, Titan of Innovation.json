@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "67ab82de-1167-42f5-90bd-21c63edcc712",
+  "name": "Iron Man, Titan of Innovation",
+  "faces": [
+    {
+      "name": "Iron Man, Titan of Innovation",
+      "type_line": "Legendary Artifact Creature \u2014 Human Hero",
+      "oracle_text": "Flying, haste\nGenius Industrialist \u2014 Whenever Iron Man attacks, create a Treasure token, then you may sacrifice a noncreature artifact. If you do, search your library for an artifact card with mana value equal to 1 plus the sacrificed artifact's mana value, put it onto the battlefield tapped, then shuffle.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Iron Man attacks, create a Treasure token, then you may sacrifice a noncreature artifact. If you do, search your library for an artifact card with mana value equal to 1 plus the sacrificed artifact's mana value, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            },
+            {
+              "action": "sacrifice",
+              "target": "a_noncreature_artifact",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "search your library for an artifact card with mana value equal to 1 plus the sacrificed artifact's mana value, put it onto the battlefield tapped",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

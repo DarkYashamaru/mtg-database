@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2ded4b02-7aa4-46a1-b10f-8480eb942cd4",
+  "name": "Tundra Tank",
+  "faces": [
+    {
+      "name": "Tundra Tank",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Firebending 1 (Whenever this creature attacks, add {R}. This mana lasts until end of combat.)\nWhen this Vehicle enters, target creature you control gains indestructible until end of turn.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, target creature you control gains indestructible until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Firebending 1 (Whenever this creature attacks, add {R}. This mana lasts until end of combat.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Firebending 1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

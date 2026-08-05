@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "97e1fcdf-04e8-40cf-b04a-8505d9b7cecc",
+  "name": "Ennis, Debate Moderator",
+  "faces": [
+    {
+      "name": "Ennis, Debate Moderator",
+      "type_line": "Legendary Creature \u2014 Human Cleric",
+      "oracle_text": "When Ennis enters, exile up to one other target creature you control. Return that card to the battlefield under its owner's control at the beginning of the next end step.\nAt the beginning of your end step, if one or more cards were put into exile this turn, put a +1/+1 counter on Ennis.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Ennis enters, exile up to one other target creature you control. Return that card to the battlefield under its owner's control at the beginning of the next end step.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one other target creature you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Return that card to the battlefield under its owner's control at the beginning of the next end step"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if one or more cards were put into exile this turn, put a +1/+1 counter on Ennis.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "one or more cards were put into exile this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

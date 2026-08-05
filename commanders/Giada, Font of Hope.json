@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "48e6d3d8-2f27-4017-acdd-40bce8cdbc02",
+  "name": "Giada, Font of Hope",
+  "faces": [
+    {
+      "name": "Giada, Font of Hope",
+      "type_line": "Legendary Creature \u2014 Angel",
+      "oracle_text": "Flying, vigilance\nEach other Angel you control enters with an additional +1/+1 counter on it for each Angel you already control.\n{T}: Add {W}. Spend this mana only to cast an Angel spell.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W}. Spend this mana only to cast an Angel spell.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "subtypes_all": [
+                    "Angel"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Each other Angel you control enters with an additional +1/+1 counter on it for each Angel you already control.",
+          "effects": [
+            {
+              "action": "enters_with_additional_counters",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "subtypes": [
+                  "Angel"
+                ]
+              },
+              "counter_type": "+1/+1",
+              "amount": {
+                "kind": "count",
+                "object": {
+                  "selector": "creatures_you_control",
+                  "subtypes": [
+                    "Angel"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "83f776d9-f3b6-40c2-8008-1ace4d110825",
+  "name": "Barret, Avalanche Leader",
+  "faces": [
+    {
+      "name": "Barret, Avalanche Leader",
+      "type_line": "Legendary Creature \u2014 Human Rebel",
+      "oracle_text": "Reach\nAvalanche! \u2014 Whenever an Equipment you control enters, create a 2/2 red Rebel creature token.\nAt the beginning of combat on your turn, attach up to one target Equipment you control to target Rebel you control.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an Equipment you control enters, create a 2/2 red Rebel creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Equipment"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 red Rebel creature token",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Rebel"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, attach up to one target Equipment you control to target Rebel you control.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "attach_equipment",
+              "source": "target_equipment_you_control",
+              "target": {
+                "selector": "target_creature_you_control",
+                "subtypes": [
+                  "Rebel"
+                ]
+              },
+              "max_targets": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7d723a6f-854f-43df-9401-a4eb0c0f639f",
+  "name": "The Weatherseed Treaty",
+  "faces": [
+    {
+      "name": "The Weatherseed Treaty",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)\nI \u2014 Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\nII \u2014 Create a 1/1 green Saproling creature token.\nIII \u2014 Domain \u2014 Target creature you control gets +X/+X and gains trample until end of turn, where X is the number of basic land types among lands you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Create a 1/1 green Saproling creature token.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Saproling creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Saproling"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Domain \u2014 Target creature you control gets +X/+X and gains trample until end of turn, where X is the number of basic land types among lands you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Domain \u2014 Target creature you control gets +X/+X and gains trample until end of turn, where X is the number of basic land types among lands you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Read ahead"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

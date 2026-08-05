@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2b6cb199-1564-4214-b24f-624dc962c907",
+  "name": "Ostrich-Horse",
+  "faces": [
+    {
+      "name": "Ostrich-Horse",
+      "type_line": "Creature \u2014 Bird Horse",
+      "oracle_text": "When this creature enters, mill three cards. You may put a land card from among them into your hand. If you don't, put a +1/+1 counter on this creature. (To mill three cards, put the top three cards of your library into your graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, mill three cards. You may put a land card from among them into your hand. If you don't, put a +1/+1 counter on this creature. (To mill three cards, put the top three cards of your library into your graveyard.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put a land card from among them into your hand"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ff2448d0-7a45-45be-bf02-19650f490b54",
+  "name": "The Meep",
+  "faces": [
+    {
+      "name": "The Meep",
+      "type_line": "Legendary Creature \u2014 Alien",
+      "oracle_text": "Ward\u2014Pay 3 life.\nWhenever The Meep attacks, you may sacrifice another creature. If you do, creatures you control have base power and toughness X/X until end of turn, where X is the sacrificed creature's mana value.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever The Meep attacks, you may sacrifice another creature. If you do, creatures you control have base power and toughness X/X until end of turn, where X is the sacrificed creature's mana value.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "creatures you control have base power and toughness x/x until end of turn, where x is the sacrificed creature's mana value",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Ward\u2014Pay 3 life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ward\u2014Pay 3 life"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

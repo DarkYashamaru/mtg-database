@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4d6120d6-fcce-40bc-9fc6-e1f5beb6c728",
+  "name": "Embercleave",
+  "faces": [
+    {
+      "name": "Embercleave",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Flash\nThis spell costs {1} less to cast for each attacking creature you control.\nWhen Embercleave enters, attach it to target creature you control.\nEquipped creature gets +1/+1 and has double strike and trample.\nEquip {3}",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Embercleave enters, attach it to target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach it to target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {1} less to cast for each attacking creature you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {1} less to cast for each attacking creature you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Equipped creature gets +1/+1 and has double strike and trample.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +1/+1 and has double strike and trample"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

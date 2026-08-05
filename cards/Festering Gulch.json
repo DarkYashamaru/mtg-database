@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9d3b60af-3e38-4d36-95fc-11b31c38f955",
+  "name": "Festering Gulch",
+  "faces": [
+    {
+      "name": "Festering Gulch",
+      "type_line": "Land \u2014 Desert",
+      "oracle_text": "This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {B} or {G}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land enters, it deals 1 damage to target opponent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 1 damage to target opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B} or {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}",
+                "{g}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

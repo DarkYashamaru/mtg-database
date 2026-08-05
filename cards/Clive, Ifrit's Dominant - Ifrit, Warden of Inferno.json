@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ceba3d03-be5a-4dd7-b829-7db216a0f44e",
+  "name": "Clive, Ifrit's Dominant // Ifrit, Warden of Inferno",
+  "faces": [
+    {
+      "name": "Clive, Ifrit's Dominant",
+      "type_line": "Legendary Creature \u2014 Human Noble Warrior",
+      "oracle_text": "When Clive enters, you may discard your hand, then draw cards equal to your devotion to red. (Each {R} in the mana costs of permanents you control counts toward your devotion to red.)\n{4}{R}{R}, {T}: Exile Clive, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Clive enters, you may discard your hand, then draw cards equal to your devotion to red. (Each {R} in the mana costs of permanents you control counts toward your devotion to red.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_hand",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "draw cards equal to your devotion to red"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}{R}{R}, {T}: Exile Clive, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+          "cost": "{4}{R}{R}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile clive"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield transformed under its owner's control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Ifrit, Warden of Inferno",
+      "type_line": "Legendary Enchantment Creature \u2014 Saga Demon",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 Lunge \u2014 Ifrit fights up to one other target creature.\nII, III \u2014 Brimstone \u2014 Add {R}{R}{R}{R}. If Ifrit has three or more lore counters on it, exile it, then return it to the battlefield (front face up).",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Lunge \u2014 Ifrit fights up to one other target creature.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Lunge \u2014 Ifrit fights up to one other target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "II, III \u2014 Brimstone \u2014 Add {R}{R}{R}{R}. If Ifrit has three or more lore counters on it, exile it, then return it to the battlefield (front face up).",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II",
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Brimstone \u2014 Add {R}{R}{R}{R}"
+            },
+            {
+              "action": "exile",
+              "target": "it",
+              "condition": [
+                {
+                  "condition_text": "ifrit has three or more lore counters on it"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

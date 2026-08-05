@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c97957a2-8310-4cff-8aad-871b7901d124",
+  "name": "Caretaker's Talent",
+  "faces": [
+    {
+      "name": "Caretaker's Talent",
+      "type_line": "Enchantment \u2014 Class",
+      "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nWhenever one or more tokens you control enter, draw a card. This ability triggers only once each turn.\n{W}: Level 2\nWhen this Class becomes level 2, create a token that's a copy of target token you control.\n{3}{W}: Level 3\nCreature tokens you control get +2/+2.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more tokens you control enter, draw a card. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more tokens you control enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When this Class becomes level 2, create a token that's a copy of target token you control.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this Class becomes level 2"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of target token you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{W}: Level 2",
+          "cost": "{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{W}: Level 3",
+          "cost": "{3}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Creature tokens you control get +2/+2.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creature tokens you control get +2/+2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

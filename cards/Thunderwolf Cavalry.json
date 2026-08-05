@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3b36df26-6a41-4714-95a8-fd02e2fc845f",
+  "name": "Thunderwolf Cavalry",
+  "faces": [
+    {
+      "name": "Thunderwolf Cavalry",
+      "type_line": "Creature \u2014 Astartes Warrior",
+      "oracle_text": "First strike\nCrushing Teeth \u2014 Whenever this creature deals combat damage to a player, put a +1/+1 counter on each other creature you control.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, put a +1/+1 counter on each other creature you control.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Other"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

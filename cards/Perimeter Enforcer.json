@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "be8d3788-709b-4d10-861c-a6f27d4b63a6",
+  "name": "Perimeter Enforcer",
+  "faces": [
+    {
+      "name": "Perimeter Enforcer",
+      "type_line": "Creature \u2014 Human Detective",
+      "oracle_text": "Flying, lifelink\nWhenever another Detective you control enters and whenever a Detective you control is turned face up, this creature gets +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another Detective you control enters and whenever a Detective you control is turned face up, this creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Detective",
+                "You",
+                "Control",
+                "Enter",
+                "And",
+                "Whenever",
+                "Detective"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

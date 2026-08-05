@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2886f95e-c4e8-4770-b7de-40985f336cfb",
+  "name": "Crescent Island Temple",
+  "faces": [
+    {
+      "name": "Crescent Island Temple",
+      "type_line": "Legendary Enchantment \u2014 Shrine",
+      "oracle_text": "When Crescent Island Temple enters, for each Shrine you control, create a 1/1 red Monk creature token with prowess. (Whenever you cast a noncreature spell, it gets +1/+1 until end of turn.)\nWhenever another Shrine you control enters, create a 1/1 red Monk creature token with prowess.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Crescent Island Temple enters, for each Shrine you control, create a 1/1 red Monk creature token with prowess. (Whenever you cast a noncreature spell, it gets +1/+1 until end of turn.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each Shrine you control, create a 1/1 red Monk creature token with prowess"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another Shrine you control enters, create a 1/1 red Monk creature token with prowess.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Shrine"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 red Monk creature token with prowess",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Monk"
+                ],
+                "keywords": [
+                  "prowess"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

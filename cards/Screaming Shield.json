@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9c0aba12-4460-4150-b74f-93f5f8006cf5",
+  "name": "Screaming Shield",
+  "faces": [
+    {
+      "name": "Screaming Shield",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +0/+3 and has \"{2}, {T}: Target player mills three cards.\"\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equipped creature gets +0/+3 and has \"{2}, {T}: Target player mills three cards.\"",
+          "cost": "Equipped creature gets +0/+3 and has \"{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player mills three cards.\""
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

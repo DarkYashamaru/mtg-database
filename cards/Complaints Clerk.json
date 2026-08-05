@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "018627e1-ba32-4452-b3d1-6c2a39759aff",
+  "name": "Complaints Clerk",
+  "faces": [
+    {
+      "name": "Complaints Clerk",
+      "type_line": "Creature \u2014 Sloth Beast Employee",
+      "oracle_text": "When this creature enters, open an Attraction. (Put the top card of your Attraction deck onto the battlefield.)\nWhenever you roll a 1, create a 1/1 white Clown Robot artifact creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, open an Attraction. (Put the top card of your Attraction deck onto the battlefield.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "open an Attraction"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you roll a 1, create a 1/1 white Clown Robot artifact creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you roll a 1"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Clown Robot artifact creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Clown",
+                  "Robot",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

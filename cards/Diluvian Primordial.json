@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f21ce158-2925-4658-ab7b-b73718d31965",
+  "name": "Diluvian Primordial",
+  "faces": [
+    {
+      "name": "Diluvian Primordial",
+      "type_line": "Creature \u2014 Avatar",
+      "oracle_text": "Flying\nWhen this creature enters, for each opponent, you may cast up to one target instant or sorcery card from that player's graveyard without paying its mana cost. If a spell cast this way would be put into a graveyard, exile it instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, for each opponent, you may cast up to one target instant or sorcery card from that player's graveyard without paying its mana cost. If a spell cast this way would be put into a graveyard, exile it instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each opponent, you may cast up to one target instant or sorcery card from that player's graveyard without paying its mana cost"
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "a spell cast this way would be put into a graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

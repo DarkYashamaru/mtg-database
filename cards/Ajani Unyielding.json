@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8a70ddc5-bb51-45eb-96f2-8ecaecac0cc2",
+  "name": "Ajani Unyielding",
+  "faces": [
+    {
+      "name": "Ajani Unyielding",
+      "type_line": "Legendary Planeswalker \u2014 Ajani",
+      "oracle_text": "+2: Reveal the top three cards of your library. Put all nonland permanent cards revealed this way into your hand and the rest on the bottom of your library in any order.\n\u22122: Exile target creature. Its controller gains life equal to its power.\n\u22129: Put five +1/+1 counters on each creature you control and five loyalty counters on each other planeswalker you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+2: Reveal the top three cards of your library. Put all nonland permanent cards revealed this way into your hand and the rest on the bottom of your library in any order.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Reveal the top three cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put all nonland permanent cards revealed this way into your hand and the rest on the bottom of your library in any order"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Exile target creature. Its controller gains life equal to its power.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_creature"
+              }
+            },
+            {
+              "action": "gain_life",
+              "player": "its_controller",
+              "amount": {
+                "kind": "target_attribute",
+                "target": "that_creature",
+                "attribute": "power"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22129: Put five +1/+1 counters on each creature you control and five loyalty counters on each other planeswalker you control.",
+          "cost": "\u22129",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature",
+                  "Planeswalker"
+                ],
+                "subtypes": [
+                  "You",
+                  "Control",
+                  "And",
+                  "Five",
+                  "Loyalty",
+                  "Counter",
+                  "On",
+                  "Each",
+                  "Other"
+                ]
+              },
+              "amount": 5
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

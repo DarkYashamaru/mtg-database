@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d00a089b-7d0d-4b89-902b-7b914e892178",
+  "name": "Case of the Shattered Pact",
+  "faces": [
+    {
+      "name": "Case of the Shattered Pact",
+      "type_line": "Enchantment \u2014 Case",
+      "oracle_text": "When this Case enters, search your library for a basic land card, reveal it, put it into your hand, then shuffle.\nTo solve \u2014 There are five colors among permanents you control. (If unsolved, solve at the beginning of your end step.)\nSolved \u2014 At the beginning of combat on your turn, target creature you control gains flying, double strike, and vigilance until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Case enters, search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, target creature you control gains flying, double strike, and vigilance until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target creature you control gains flying, double strike, and vigilance until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "To solve \u2014 There are five colors among permanents you control. (If unsolved, solve at the beginning of your end step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "To solve \u2014 There are five colors among permanents you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

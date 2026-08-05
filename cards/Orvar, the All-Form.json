@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "276c4643-13ad-43bf-840b-08c025ebc065",
+  "name": "Orvar, the All-Form",
+  "faces": [
+    {
+      "name": "Orvar, the All-Form",
+      "type_line": "Legendary Creature \u2014 Shapeshifter",
+      "oracle_text": "Changeling\nWhenever you cast an instant or sorcery spell, if it targets one or more other permanents you control, create a token that's a copy of one of those permanents.\nWhen a spell or ability an opponent controls causes you to discard this card, create a token that's a copy of target permanent.",
+      "static": [
+        {
+          "keyword": "changeling"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, if it targets one or more other permanents you control, create a token that's a copy of one of those permanents.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            },
+            {
+              "condition_text": "it targets one or more other permanents you control"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of one of those permanents"
+            }
+          ]
+        },
+        {
+          "raw_text": "When a spell or ability an opponent controls causes you to discard this card, create a token that's a copy of target permanent.",
+          "trigger": {
+            "type": "custom",
+            "text": "When a spell or ability an opponent controls causes you to discard this card"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of target permanent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

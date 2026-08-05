@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0452be2a-e97a-4269-a9e3-b616265ecb2e",
+  "name": "Vivi Ornitier",
+  "faces": [
+    {
+      "name": "Vivi Ornitier",
+      "type_line": "Legendary Creature \u2014 Wizard",
+      "oracle_text": "{0}: Add X mana in any combination of {U} and/or {R}, where X is Vivi Ornitier's power. Activate only during your turn and only once each turn.\nWhenever you cast a noncreature spell, put a +1/+1 counter on Vivi Ornitier and it deals 1 damage to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, put a +1/+1 counter on Vivi Ornitier and it deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{0}: Add X mana in any combination of {U} and/or {R}, where X is Vivi Ornitier's power. Activate only during your turn and only once each turn.",
+          "cost": "{0}",
+          "condition": [
+            {
+              "turn_scope": "your_turn"
+            },
+            {
+              "max_uses_per_turn": 1
+            }
+          ],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": {
+                "kind": "subject_attribute",
+                "subject": "self",
+                "attribute": "power"
+              },
+              "colors_any_of": [
+                "{u}",
+                "{r}"
+              ],
+              "distribution": "any_combination"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

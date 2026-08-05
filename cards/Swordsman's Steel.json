@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e36100d6-d9ae-454a-bba1-b50a69d5a28f",
+  "name": "Swordsman's Steel",
+  "faces": [
+    {
+      "name": "Swordsman's Steel",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, draw a card for each Equipment you control.\nEquipped creature gets +2/+2 for each Equipment you control.\nEquip {3}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, draw a card for each Equipment you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "equipment_you_control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +2/+2 for each Equipment you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +2/+2 for each Equipment you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

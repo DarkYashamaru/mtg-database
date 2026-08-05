@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3dcbbbeb-4efe-4363-bfb4-b7d7f803bafa",
+  "name": "Glorious Enforcer",
+  "faces": [
+    {
+      "name": "Glorious Enforcer",
+      "type_line": "Creature \u2014 Angel",
+      "oracle_text": "Flying, lifelink\nAt the beginning of each combat, if you have more life than an opponent, this creature gains double strike until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each combat, if you have more life than an opponent, this creature gains double strike until end of turn.",
+          "trigger": {
+            "type": "beginning_of_each_combat"
+          },
+          "condition": [
+            {
+              "condition_text": "you have more life than an opponent"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "double_strike"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

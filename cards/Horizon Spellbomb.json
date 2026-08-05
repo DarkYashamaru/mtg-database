@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "12080ea9-0800-4601-b553-6711dd9f9806",
+  "name": "Horizon Spellbomb",
+  "faces": [
+    {
+      "name": "Horizon Spellbomb",
+      "type_line": "Artifact",
+      "oracle_text": "{2}, {T}, Sacrifice this artifact: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.\nWhen this artifact is put into a graveyard from the battlefield, you may pay {G}. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact is put into a graveyard from the battlefield, you may pay {G}. If you do, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{g}",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}, Sacrifice this artifact: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "cost": "{2}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

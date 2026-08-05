@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "993b7b94-ed06-422d-9c7e-52a74ce9d045",
+  "name": "Derelict Attic // Widow's Walk",
+  "faces": [
+    {
+      "name": "Derelict Attic",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "When you unlock this door, you draw two cards and you lose 2 life.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you unlock this door, you draw two cards and you lose 2 life.",
+          "trigger": {
+            "type": "unlock_door",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Widow's Walk",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "Whenever a creature you control attacks alone, it gets +1/+0 and gains deathtouch until end of turn.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control attacks alone, it gets +1/+0 and gains deathtouch until end of turn.",
+          "trigger": {
+            "type": "attacks_alone",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "it_gets_10_and",
+              "keyword": "deathtouch"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

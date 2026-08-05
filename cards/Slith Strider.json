@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6e52e48f-b7a0-4195-8fff-8baed7b7d3fc",
+  "name": "Slith Strider",
+  "faces": [
+    {
+      "name": "Slith Strider",
+      "type_line": "Creature \u2014 Slith",
+      "oracle_text": "Whenever this creature becomes blocked, draw a card.\nWhenever this creature deals combat damage to a player, put a +1/+1 counter on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes blocked, draw a card.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

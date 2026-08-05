@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "224f5f1a-4f31-4935-bf5a-910fd0a666a1",
+  "name": "Prophetic Titan",
+  "faces": [
+    {
+      "name": "Prophetic Titan",
+      "type_line": "Creature \u2014 Giant Wizard",
+      "oracle_text": "Delirium \u2014 When this creature enters, choose one. If there are four or more card types among cards in your graveyard, choose both instead.\n\u2022 This creature deals 4 damage to any target.\n\u2022 Look at the top four cards of your library. Put one of them into your hand and the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, choose one. If there are four or more card types among cards in your graveyard, choose both instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mode_selection",
+              "choose_count": 1
+            },
+            {
+              "action": "mode_selection_modifier",
+              "choose_count": 2,
+              "condition": [
+                {
+                  "you_control_commander": true
+                },
+                {
+                  "condition_text": "there are four or more card types among cards in your graveyard"
+                }
+              ],
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "\u2022 This creature deals 4 damage to any target.",
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "_self",
+              "target": "any_target",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Look at the top four cards of your library. Put one of them into your hand and the rest on the bottom of your library in a random order.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Look at the top four cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put one of them into your hand and the rest on the bottom of your library in a random order"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

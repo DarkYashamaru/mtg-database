@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f599e15-cbc5-4170-b6b4-efd16aa222ac",
+  "name": "Cragplate Baloth",
+  "faces": [
+    {
+      "name": "Cragplate Baloth",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "Kicker {2}{G}\nThis spell can't be countered.\nHexproof, haste\nIf this creature was kicked, it enters with four +1/+1 counters on it.",
+      "static": [
+        {
+          "keyword": "hexproof"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2}{G}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}{G}"
+            }
+          ]
+        },
+        {
+          "raw_text": "This spell can't be countered.",
+          "effects": [
+            {
+              "action": "cant_be_countered",
+              "target": "self_spell"
+            }
+          ]
+        },
+        {
+          "raw_text": "If this creature was kicked, it enters with four +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it enters with four +1/+1 counters on it",
+              "condition": [
+                {
+                  "condition_text": "this creature was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

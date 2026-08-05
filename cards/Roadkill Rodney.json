@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cd8761ef-b57b-456b-aa12-374ac825087e",
+  "name": "Roadkill Rodney",
+  "faces": [
+    {
+      "name": "Roadkill Rodney",
+      "type_line": "Artifact Creature \u2014 Robot",
+      "oracle_text": "Squad {3} (As an additional cost to cast this spell, you may pay {3} any number of times. When this creature enters, create that many tokens that are copies of it.)\nDeathtouch\nWhenever this creature deals combat damage to a player, create a Mutagen token.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, create a Mutagen token.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Mutagen token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Squad {3} (As an additional cost to cast this spell, you may pay {3} any number of times. When this creature enters, create that many tokens that are copies of it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Squad {3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

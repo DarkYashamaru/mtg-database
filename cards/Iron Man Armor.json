@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "958d81c2-ca09-4275-890e-3bb595317325",
+  "name": "Iron Man Armor",
+  "faces": [
+    {
+      "name": "Iron Man Armor",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, attach it to target creature you control.\nEquipped creature gets +2/+1 and has flying.\n{2}: If this Equipment isn't a creature, it becomes a 0/0 Construct Hero artifact creature with flying and \"This creature gets +1/+1 for each artifact you control\" until end of turn.\nEquip {2}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, attach it to target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach it to target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: If this Equipment isn't a creature, it becomes a 0/0 Construct Hero artifact creature with flying and \"This creature gets +1/+1 for each artifact you control\" until end of turn.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it becomes a 0/0 construct hero artifact creature with flying and \"this creature gets +1/+1 for each artifact you control\" until end of turn",
+              "condition": [
+                {
+                  "condition_text": "this equipment isn't a creature"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +2/+1 and has flying.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +2/+1 and has flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

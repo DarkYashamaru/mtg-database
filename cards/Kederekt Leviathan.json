@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "edf459c0-53e4-47e8-8098-105656f9b49c",
+  "name": "Kederekt Leviathan",
+  "faces": [
+    {
+      "name": "Kederekt Leviathan",
+      "type_line": "Creature \u2014 Leviathan",
+      "oracle_text": "When this creature enters, return all other nonland permanents to their owners' hands.\nUnearth {6}{U} ({6}{U}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, return all other nonland permanents to their owners' hands.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return all other nonland permanents to their owners' hands"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Unearth {6}{U} ({6}{U}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+          "cost": "Unearth {6}{U} ({6}{U}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "temporary_reanimation_clause",
+              "target": "it",
+              "expire_at": "beginning_of_next_end_step",
+              "exile_if_would_leave_battlefield": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

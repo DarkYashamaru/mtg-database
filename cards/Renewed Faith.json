@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aa4ecefa-808e-4706-af16-4ea5af9743fc",
+  "name": "Renewed Faith",
+  "faces": [
+    {
+      "name": "Renewed Faith",
+      "type_line": "Instant",
+      "oracle_text": "You gain 6 life.\nCycling {1}{W} ({1}{W}, Discard this card: Draw a card.)\nWhen you cycle this card, you may gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, you may gain 2 life.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may gain 2 life"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {1}{W} ({1}{W}, Discard this card: Draw a card.)",
+          "cost": "Cycling {1}{W} ({1}{W}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You gain 6 life.",
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

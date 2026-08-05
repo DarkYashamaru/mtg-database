@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3b03358d-f87e-4939-afc9-5ee3f044146a",
+  "name": "God-Eternal Oketra",
+  "faces": [
+    {
+      "name": "God-Eternal Oketra",
+      "type_line": "Legendary Creature \u2014 Zombie God",
+      "oracle_text": "Double strike\nWhenever you cast a creature spell, create a 4/4 black Zombie Warrior creature token with vigilance.\nWhen God-Eternal Oketra dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.",
+      "static": [
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a creature spell, create a 4/4 black Zombie Warrior creature token with vigilance.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/4 black Zombie Warrior creature token with vigilance",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie",
+                  "Warrior"
+                ],
+                "keywords": [
+                  "vigilance"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "When God-Eternal Oketra dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.",
+          "trigger": {
+            "type": "custom",
+            "text": "When God-Eternal Oketra dies or is put into exile from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put it into its owner's library third from the top"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

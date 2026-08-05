@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d98cc18b-6ebb-4f55-9d0d-b8fbe9a92bc1",
+  "name": "Thunder Lasso",
+  "faces": [
+    {
+      "name": "Thunder Lasso",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, attach it to target creature you control.\nEquipped creature gets +1/+1.\nWhenever equipped creature attacks, tap target creature defending player controls.\nEquip {2}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, attach it to target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach it to target creature you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever equipped creature attacks, tap target creature defending player controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap target creature defending player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

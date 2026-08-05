@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6c370299-9803-4cb5-97ba-c17831797b54",
+  "name": "Karvanista, Loyal Lupari // Lupari Shield",
+  "faces": [
+    {
+      "name": "Karvanista, Loyal Lupari",
+      "type_line": "Legendary Creature \u2014 Alien Dog Soldier",
+      "oracle_text": "Vigilance, trample, haste\nWhenever Karvanista attacks, put a +1/+1 counter on each Human you control.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Karvanista attacks, put a +1/+1 counter on each Human you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Human"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Lupari Shield",
+      "type_line": "Sorcery \u2014 Adventure",
+      "oracle_text": "Humans you control gain indestructible until your next turn. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Humans you control gain indestructible until your next turn. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Humans you control gain indestructible until your next turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

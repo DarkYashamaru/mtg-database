@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ab74c6b1-2099-4429-94b7-a5656ac04db3",
+  "name": "Kinetic Ooze",
+  "faces": [
+    {
+      "name": "Kinetic Ooze",
+      "type_line": "Creature \u2014 Ooze",
+      "oracle_text": "This creature enters with X +1/+1 counters on it.\nWhen this creature enters, destroy up to one target artifact or enchantment with mana value X or less. If X is 5 or more, you draw a card. If X is 10 or more, double the number of +1/+1 counters on any number of other target creatures.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, destroy up to one target artifact or enchantment with mana value X or less. If X is 5 or more, you draw a card. If X is 10 or more, double the number of +1/+1 counters on any number of other target creatures.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy up to one target artifact or enchantment with mana value X or less"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "x is 5 or more"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "double the number of +1/+1 counters on any number of other target creatures",
+              "condition": [
+                {
+                  "condition_text": "x is 10 or more"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "oracle_id": "08b3328c-1d96-4a05-ae8b-f1b654084faa",
+  "name": "Extricator of Sin // Extricator of Flesh",
+  "faces": [
+    {
+      "name": "Extricator of Flesh",
+      "type_line": "Creature \u2014 Eldrazi Horror",
+      "oracle_text": "Eldrazi you control have vigilance.\n{2}, {T}, Sacrifice a non-Eldrazi creature: Create a 3/2 colorless Eldrazi Horror creature token.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}, Sacrifice a non-Eldrazi creature: Create a 3/2 colorless Eldrazi Horror creature token.",
+          "cost": "{2}, {T}, Sacrifice a non-Eldrazi creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/2 colorless Eldrazi Horror creature token",
+                "power_toughness": "3/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Eldrazi",
+                  "Horror"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Eldrazi you control have vigilance.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Eldrazi"
+                ]
+              },
+              "keywords": [
+                "vigilance"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Extricator of Sin",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "When this creature enters, you may sacrifice another permanent. If you do, create a 3/2 colorless Eldrazi Horror creature token.\nDelirium \u2014 At the beginning of your upkeep, if there are four or more card types among cards in your graveyard, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may sacrifice another permanent. If you do, create a 3/2 colorless Eldrazi Horror creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_permanent",
+              "optional": true
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/2 colorless eldrazi horror creature token",
+                "power_toughness": "3/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "eldrazi",
+                  "horror"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if there are four or more card types among cards in your graveyard, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "there are four or more card types among cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

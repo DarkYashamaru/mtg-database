@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8a37ac5c-341b-48ab-9b0b-5ef8bf097aab",
+  "name": "Hans Eriksson",
+  "faces": [
+    {
+      "name": "Hans Eriksson",
+      "type_line": "Legendary Creature \u2014 Human Scout",
+      "oracle_text": "Whenever Hans Eriksson attacks, reveal the top card of your library. If it's a creature card, put it onto the battlefield tapped and attacking defending player or a planeswalker they control. Otherwise, put that card into your hand. When you put a creature card onto the battlefield this way, it fights Hans Eriksson.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Hans Eriksson attacks, reveal the top card of your library. If it's a creature card, put it onto the battlefield tapped and attacking defending player or a planeswalker they control. Otherwise, put that card into your hand. When you put a creature card onto the battlefield this way, it fights Hans Eriksson.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it onto the battlefield tapped and attacking defending player or a planeswalker they control",
+              "condition": [
+                {
+                  "condition_text": "it's a creature card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card into your hand",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "When you put a creature card onto the battlefield this way, it fights Hans Eriksson"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

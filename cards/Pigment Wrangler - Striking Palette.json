@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c008d60a-ee06-4411-b8e7-c2df13616105",
+  "name": "Pigment Wrangler // Striking Palette",
+  "faces": [
+    {
+      "name": "Pigment Wrangler",
+      "type_line": "Creature \u2014 Orc Sorcerer",
+      "oracle_text": "Flying\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters prepared"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Striking Palette",
+      "type_line": "Sorcery",
+      "oracle_text": "When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you next cast an instant or sorcery spell this turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy that spell"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

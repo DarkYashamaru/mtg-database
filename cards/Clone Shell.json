@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "94ab7d13-bcd7-419f-9e68-bd8e7ef66d42",
+  "name": "Clone Shell",
+  "faces": [
+    {
+      "name": "Clone Shell",
+      "type_line": "Artifact Creature \u2014 Shapeshifter",
+      "oracle_text": "Imprint \u2014 When this creature enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom of your library in any order.\nWhen this creature dies, turn the exiled card face up. If it's a creature card, put it onto the battlefield under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom of your library in any order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top four cards of your library, exile one face down"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "any"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, turn the exiled card face up. If it's a creature card, put it onto the battlefield under your control.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "turn the exiled card face up"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it onto the battlefield under your control",
+              "condition": [
+                {
+                  "condition_text": "it's a creature card"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

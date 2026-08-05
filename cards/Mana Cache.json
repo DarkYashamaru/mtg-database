@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1c09f2d1-413b-4a92-aa39-99c1a2106814",
+  "name": "Mana Cache",
+  "faces": [
+    {
+      "name": "Mana Cache",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of each player's end step, put a charge counter on this enchantment for each untapped land that player controls.\nRemove a charge counter from this enchantment: Add {C}. Any player may activate this ability but only during their turn before the end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each player's end step, put a charge counter on this enchantment for each untapped land that player controls.",
+          "trigger": {
+            "type": "beginning_of_each_players_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a charge counter on this enchantment for each untapped land that player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove a charge counter from this enchantment: Add {C}. Any player may activate this ability but only during their turn before the end step.",
+          "cost": "Remove a charge counter from this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Any player may activate this ability but only during their turn before the end step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

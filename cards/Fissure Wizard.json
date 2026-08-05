@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e3474632-6d81-43a8-9329-4c7e0c631755",
+  "name": "Fissure Wizard",
+  "faces": [
+    {
+      "name": "Fissure Wizard",
+      "type_line": "Creature \u2014 Goblin Wizard",
+      "oracle_text": "When this creature enters, you may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

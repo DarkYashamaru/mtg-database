@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0efb0d7e-dea0-4817-a243-15066e9ef333",
+  "name": "Grist, the Hunger Tide",
+  "faces": [
+    {
+      "name": "Grist, the Hunger Tide",
+      "type_line": "Legendary Planeswalker \u2014 Grist",
+      "oracle_text": "As long as Grist isn't on the battlefield, it's a 1/1 Insect creature in addition to its other types.\n+1: Create a 1/1 black and green Insect creature token, then mill a card. If an Insect card was milled this way, put a loyalty counter on Grist and repeat this process.\n\u22122: You may sacrifice a creature. When you do, destroy target creature or planeswalker.\n\u22125: Each opponent loses life equal to the number of creature cards in your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Create a 1/1 black and green Insect creature token, then mill a card. If an Insect card was milled this way, put a loyalty counter on Grist and repeat this process.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 black and green insect creature token",
+                "colors": [
+                  "black",
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "insect"
+                ]
+              }
+            },
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a loyalty counter on grist and repeat this process",
+              "condition": [
+                {
+                  "condition_text": "an insect card was milled this way"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: You may sacrifice a creature. When you do, destroy target creature or planeswalker.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature",
+              "optional": true
+            },
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Creature",
+                  "Planeswalker"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22125: Each opponent loses life equal to the number of creature cards in your graveyard.",
+          "cost": "\u22125",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent loses life equal to the number of creature cards in your graveyard"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As long as Grist isn't on the battlefield, it's a 1/1 Insect creature in addition to its other types.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as Grist isn't on the battlefield, it's a 1/1 Insect creature in addition to its other types"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

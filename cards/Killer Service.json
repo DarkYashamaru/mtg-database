@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0f30f32f-3c4c-4f73-8b2a-82045a40bda9",
+  "name": "Killer Service",
+  "faces": [
+    {
+      "name": "Killer Service",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create a number of Food tokens equal to the number of opponents you have. (They're artifacts with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nAt the beginning of your end step, you may pay {2} and sacrifice a token. If you do, create a 4/4 green Rhino Warrior creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create a number of Food tokens equal to the number of opponents you have. (They're artifacts with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a number of Food tokens equal to the number of opponents you have"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, you may pay {2} and sacrifice a token. If you do, create a 4/4 green Rhino Warrior creature token.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "sacrifice",
+              "target": "a_token"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "4/4 green rhino warrior creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "rhino",
+                  "warrior"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

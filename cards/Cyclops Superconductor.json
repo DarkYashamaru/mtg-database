@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "10bca1b1-4f92-40e8-b9c0-d08c534903e1",
+  "name": "Cyclops Superconductor",
+  "faces": [
+    {
+      "name": "Cyclops Superconductor",
+      "type_line": "Creature \u2014 Cyclops Wizard",
+      "oracle_text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhen this creature enters, you get {E}{E}{E} (three energy counters).\nWhen this creature dies, you may pay {E}{E}{E}. When you do, this creature deals damage equal to its power to any target.",
+      "static": [
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E}{E} (three energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, you may pay {E}{E}{E}. When you do, this creature deals damage equal to its power to any target.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {E}{E}{E}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals damage equal to its power to any target",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

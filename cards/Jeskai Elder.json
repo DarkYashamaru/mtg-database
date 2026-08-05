@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dfbd5ad1-0f68-4219-95c4-98f674f321be",
+  "name": "Jeskai Elder",
+  "faces": [
+    {
+      "name": "Jeskai Elder",
+      "type_line": "Creature \u2014 Human Monk",
+      "oracle_text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhenever this creature deals combat damage to a player, you may draw a card. If you do, discard a card.",
+      "static": [
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

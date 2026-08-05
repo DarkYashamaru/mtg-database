@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2dc6637a-0b51-462b-9f18-571146bb4558",
+  "name": "Shortcut to Mushrooms",
+  "faces": [
+    {
+      "name": "Shortcut to Mushrooms",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, the Ring tempts you.\nAt the beginning of your end step, if a permanent you controlled left the battlefield this turn, put a +1/+1 counter on target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, the Ring tempts you.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "ring_tempts_you"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if a permanent you controlled left the battlefield this turn, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a permanent you controlled left the battlefield this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

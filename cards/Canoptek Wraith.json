@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "61849685-b407-4ed0-aafc-ec3a003200b9",
+  "name": "Canoptek Wraith",
+  "faces": [
+    {
+      "name": "Canoptek Wraith",
+      "type_line": "Artifact Creature \u2014 Wraith",
+      "oracle_text": "Wraith Form \u2014 This creature can't be blocked.\nTransdimensional Scout \u2014 When this creature deals combat damage to a player, you may pay {3} and sacrifice it. If you do, choose a land you control. Then search your library for up to two basic land cards which have the same name as the chosen land, put them onto the battlefield tapped, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature deals combat damage to a player, you may pay {3} and sacrifice it. If you do, choose a land you control. Then search your library for up to two basic land cards which have the same name as the chosen land, put them onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{3}",
+              "optional": true
+            },
+            {
+              "action": "sacrifice",
+              "target": "self"
+            },
+            {
+              "action": "custom_effect",
+              "text": "choose a land you control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "then search your library for up to two basic land cards which have the same name as the chosen land, put them onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Wraith Form \u2014 This creature can't be blocked.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Wraith Form \u2014 This creature can't be blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

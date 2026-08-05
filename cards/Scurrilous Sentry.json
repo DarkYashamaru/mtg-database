@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52bfcb09-007c-47d8-8038-692e7dd8f922",
+  "name": "Scurrilous Sentry",
+  "faces": [
+    {
+      "name": "Scurrilous Sentry",
+      "type_line": "Creature \u2014 Human Knight Rogue",
+      "oracle_text": "Menace\nWhenever this creature enters or attacks, it connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or attacks, it connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "connive",
+              "target": "self",
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "self",
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

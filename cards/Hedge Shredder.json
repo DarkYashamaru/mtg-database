@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f22665cd-4710-48df-83c1-3c9081097cb5",
+  "name": "Hedge Shredder",
+  "faces": [
+    {
+      "name": "Hedge Shredder",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Whenever this Vehicle attacks, you may mill two cards.\nWhenever one or more land cards are put into your graveyard from your library, put them onto the battlefield tapped.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle attacks, you may mill two cards.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2,
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more land cards are put into your graveyard from your library, put them onto the battlefield tapped.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more land cards are put into your graveyard from your library"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put them onto the battlefield tapped"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

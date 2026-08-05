@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "32aee76a-e738-4898-985a-801d1cce15ea",
+  "name": "The Vision",
+  "faces": [
+    {
+      "name": "The Vision",
+      "type_line": "Legendary Artifact Creature \u2014 Robot Hero",
+      "oracle_text": "Flying, vigilance\nWhenever you cast a noncreature spell, choose one that hasn't been chosen this turn \u2014\n\u2022 Solar Beam \u2014 The Vision gains double strike until end of turn.\n\u2022 Density Control \u2014 The Vision gains indestructible until end of turn.\n\u2022 Technopathy \u2014 Draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, choose one that hasn't been chosen this turn \u2014\n\u2022 Solar Beam \u2014 The Vision gains double strike until end of turn.\n\u2022 Density Control \u2014 The Vision gains indestructible until end of turn.\n\u2022 Technopathy \u2014 Draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "choose_one_that_hasnt_been_chosen_this_turn___solar_beam__self",
+              "keyword": "double_strike"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "_density_control__self",
+              "keyword": "indestructible"
+            },
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Technopathy \u2014 Draw a card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

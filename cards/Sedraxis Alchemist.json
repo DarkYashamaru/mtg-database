@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "56f3f1b4-c36a-41f3-95a1-45e9d7e74cf9",
+  "name": "Sedraxis Alchemist",
+  "faces": [
+    {
+      "name": "Sedraxis Alchemist",
+      "type_line": "Creature \u2014 Zombie Wizard",
+      "oracle_text": "When this creature enters, if you control a blue permanent, return target nonland permanent to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if you control a blue permanent, return target nonland permanent to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control a blue permanent"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

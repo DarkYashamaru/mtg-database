@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "533d5bf9-0912-451f-a3f4-3842b0a75b1d",
+  "name": "Golbez, Crystal Collector",
+  "faces": [
+    {
+      "name": "Golbez, Crystal Collector",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Whenever an artifact you control enters, surveil 1.\nAt the beginning of your end step, if you control four or more artifacts, return target creature card from your graveyard to your hand. Then if you control eight or more artifacts, each opponent loses life equal to that card's power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an artifact you control enters, surveil 1.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Artifact"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if you control four or more artifacts, return target creature card from your graveyard to your hand. Then if you control eight or more artifacts, each opponent loses life equal to that card's power.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you control four or more artifacts"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "each opponent loses life equal to that card's power",
+              "condition": [
+                {
+                  "condition_text": "you control eight or more artifacts"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

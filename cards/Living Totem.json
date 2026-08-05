@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0a2e2d97-1348-4fa6-ad94-4da23ad8f43b",
+  "name": "Living Totem",
+  "faces": [
+    {
+      "name": "Living Totem",
+      "type_line": "Creature \u2014 Plant Elemental",
+      "oracle_text": "Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.)\nWhen this creature enters, you may put a +1/+1 counter on another target creature.",
+      "static": [
+        {
+          "keyword": "convoke"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may put a +1/+1 counter on another target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "another_target_creature",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

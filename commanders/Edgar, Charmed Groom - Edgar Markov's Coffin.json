@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "oracle_id": "96cb97ca-4ce0-4d33-86fb-4db4ce1956be",
+  "name": "Edgar, Charmed Groom // Edgar Markov's Coffin",
+  "faces": [
+    {
+      "name": "Edgar Markov's Coffin",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "At the beginning of your upkeep, create a 1/1 white and black Vampire creature token with lifelink and put a bloodline counter on Edgar Markov's Coffin. Then if there are three or more bloodline counters on it, remove those counters and transform it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, create a 1/1 white and black Vampire creature token with lifelink and put a bloodline counter on Edgar Markov's Coffin. Then if there are three or more bloodline counters on it, remove those counters and transform it.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white and black Vampire creature token with lifelink and put a bloodline counter on Edgar Markov's Coffin",
+                "colors": [
+                  "white",
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Vampire"
+                ],
+                "keywords": [
+                  "lifelink",
+                  "put_a_bloodline_counter_on_Edgar_Markov"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove those counters",
+              "condition": [
+                {
+                  "condition_text": "there are three or more bloodline counters on it"
+                }
+              ]
+            },
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Edgar, Charmed Groom",
+      "type_line": "Legendary Creature \u2014 Vampire Noble",
+      "oracle_text": "Other Vampires you control get +1/+1.\nWhen Edgar dies, return it to the battlefield transformed under its owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Edgar dies, return it to the battlefield transformed under its owner's control.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield transformed under its owner's control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Vampires you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other Vampires you control get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

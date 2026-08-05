@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b0a96e47-91da-43ee-93dd-f866721029c6",
+  "name": "Khalni Gem",
+  "faces": [
+    {
+      "name": "Khalni Gem",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, return two lands you control to their owner's hand.\n{T}: Add two mana of any one color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, return two lands you control to their owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return two lands you control to their owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add two mana of any one color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "same_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

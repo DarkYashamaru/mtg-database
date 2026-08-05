@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "34cadd9d-b8e6-422c-b0ec-a2420cd983ad",
+  "name": "Mourner's Shield",
+  "faces": [
+    {
+      "name": "Mourner's Shield",
+      "type_line": "Artifact",
+      "oracle_text": "Imprint \u2014 When this artifact enters, you may exile target card from a graveyard.\n{2}, {T}: Prevent all damage that would be dealt this turn by a source of your choice that shares a color with the exiled card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, you may exile target card from a graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_card_in_graveyard"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}: Prevent all damage that would be dealt this turn by a source of your choice that shares a color with the exiled card.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Prevent all damage that would be dealt this turn by a source of your choice that shares a color with the exiled card"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

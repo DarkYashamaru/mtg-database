@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "141a2757-8f20-4e10-9866-bb5d612ed62d",
+  "name": "Loxodon Eavesdropper",
+  "faces": [
+    {
+      "name": "Loxodon Eavesdropper",
+      "type_line": "Creature \u2014 Elephant Detective",
+      "oracle_text": "When this creature enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nWhenever you draw your second card each turn, this creature gets +1/+1 and gains vigilance until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "investigate"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you draw your second card each turn, this creature gets +1/+1 and gains vigilance until end of turn.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self_gets_11_and",
+              "keyword": "vigilance"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

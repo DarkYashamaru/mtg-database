@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f20f0bf4-c74b-4df7-a849-270c35f5d99e",
+  "name": "Shimian Specter",
+  "faces": [
+    {
+      "name": "Shimian Specter",
+      "type_line": "Creature \u2014 Specter",
+      "oracle_text": "Flying\nWhenever this creature deals combat damage to a player, that player reveals their hand. You choose a nonland card from it. Search that player's graveyard, hand, and library for all cards with the same name as that card and exile them. Then that player shuffles.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, that player reveals their hand. You choose a nonland card from it. Search that player's graveyard, hand, and library for all cards with the same name as that card and exile them. Then that player shuffles.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player reveals their hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a nonland card from it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Search that player's graveyard, hand, and library for all cards with the same name as that card and exile them"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "that_player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

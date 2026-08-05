@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "05e910aa-cf84-468c-8a48-256588cbbf08",
+  "name": "Rampaging War Mammoth",
+  "faces": [
+    {
+      "name": "Rampaging War Mammoth",
+      "type_line": "Creature \u2014 Elephant",
+      "oracle_text": "Trample\nCycling {X}{2}{R} ({X}{2}{R}, Discard this card: Draw a card.)\nWhen you cycle this card, destroy up to X target artifacts.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, destroy up to X target artifacts.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy up to X target artifacts"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {X}{2}{R} ({X}{2}{R}, Discard this card: Draw a card.)",
+          "cost": "Cycling {X}{2}{R} ({X}{2}{R}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

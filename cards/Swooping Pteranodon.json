@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0b1f6e77-55db-4638-9030-3f4e4d37eb1b",
+  "name": "Swooping Pteranodon",
+  "faces": [
+    {
+      "name": "Swooping Pteranodon",
+      "type_line": "Creature \u2014 Dinosaur",
+      "oracle_text": "Flying, haste\nWhenever this creature or another Dinosaur you control with flying enters, gain control of target creature an opponent controls until end of turn. Untap that creature. It gains flying and haste until end of turn. At the beginning of the next end step, target land deals 3 damage to that creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Dinosaur you control with flying enters, gain control of target creature an opponent controls until end of turn. Untap that creature. It gains flying and haste until end of turn. At the beginning of the next end step, target land deals 3 damage to that creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "self_or_another_dinosaur_you_control_with_flying"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "gain control of target creature an opponent controls until end of turn"
+            },
+            {
+              "action": "untap",
+              "target": "that_creature"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "flying_and_haste"
+            },
+            {
+              "action": "custom_effect",
+              "text": "At the beginning of the next end step, target land deals 3 damage to that creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e1bce9c3-300c-4a9d-abe0-a1f02d3a1105",
+  "name": "Underrealm Lich",
+  "faces": [
+    {
+      "name": "Underrealm Lich",
+      "type_line": "Creature \u2014 Zombie Elf Shaman",
+      "oracle_text": "If you would draw a card, instead look at the top three cards of your library, then put one into your hand and the rest into your graveyard.\nPay 4 life: This creature gains indestructible until end of turn. Tap it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Pay 4 life: This creature gains indestructible until end of turn. Tap it.",
+          "cost": "Pay 4 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            },
+            {
+              "action": "tap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If you would draw a card, instead look at the top three cards of your library, then put one into your hand and the rest into your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "instead look at the top three cards of your library",
+              "condition": [
+                {
+                  "condition_text": "you would draw a card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put one into your hand and the rest into your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

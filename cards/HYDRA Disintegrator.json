@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cf16702d-9a0e-4e4c-82cb-d9b0b1e23f15",
+  "name": "HYDRA Disintegrator",
+  "faces": [
+    {
+      "name": "HYDRA Disintegrator",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, create a 2/1 black Villain creature token with menace, then attach this Equipment to it. (A creature with menace can't be blocked except by two or more creatures.)\nEquipped creature gets +3/+3.\nEquip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, create a 2/1 black Villain creature token with menace, then attach this Equipment to it. (A creature with menace can't be blocked except by two or more creatures.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/1 black villain creature token with menace",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "villain"
+                ],
+                "keywords": [
+                  "menace"
+                ]
+              }
+            },
+            {
+              "action": "attach_equipment",
+              "source": "self",
+              "target": "it",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +3/+3.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 3,
+              "toughness_delta": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

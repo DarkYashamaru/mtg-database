@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1829f1dc-1fa9-4361-b318-d4dee280e6fd",
+  "name": "Anje, Maid of Dishonor",
+  "faces": [
+    {
+      "name": "Anje, Maid of Dishonor",
+      "type_line": "Legendary Creature \u2014 Vampire",
+      "oracle_text": "Whenever Anje and/or one or more other Vampires you control enter, create a Blood token. This ability triggers only once each turn. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")\n{2}, Sacrifice another creature or a Blood token: Each opponent loses 2 life and you gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Anje and/or one or more other Vampires you control enter, create a Blood token. This ability triggers only once each turn. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever Anje and/or one or more other Vampires you control enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Blood token"
+              }
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, Sacrifice another creature or a Blood token: Each opponent loses 2 life and you gain 2 life.",
+          "cost": "{2}, Sacrifice another creature or a Blood token",
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e35d7886-8c03-471c-b598-118d7eceddb4",
+  "name": "Enraged Flamecaster",
+  "faces": [
+    {
+      "name": "Enraged Flamecaster",
+      "type_line": "Creature \u2014 Elemental Sorcerer",
+      "oracle_text": "Reach\nWhenever you cast a spell with mana value 4 or greater, this creature deals 2 damage to each opponent.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell with mana value 4 or greater, this creature deals 2 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 4
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d6e68414-80cb-4e08-ae84-b084a3f4b6de",
+  "name": "Faerie Dreamthief",
+  "faces": [
+    {
+      "name": "Faerie Dreamthief",
+      "type_line": "Creature \u2014 Faerie Warlock",
+      "oracle_text": "Flying\nWhen this creature enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\n{2}{B}, Exile this card from your graveyard: You draw a card and you lose 1 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{B}, Exile this card from your graveyard: You draw a card and you lose 1 life.",
+          "cost": "{2}{B}, Exile this card from your graveyard",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

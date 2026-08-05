@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bf9221f5-a4b2-4074-901c-0fa3c2bda80c",
+  "name": "Mistbreath Elder",
+  "faces": [
+    {
+      "name": "Mistbreath Elder",
+      "type_line": "Creature \u2014 Frog Warrior",
+      "oracle_text": "At the beginning of your upkeep, return another creature you control to its owner's hand. If you do, put a +1/+1 counter on this creature. Otherwise, you may return this creature to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, return another creature you control to its owner's hand. If you do, put a +1/+1 counter on this creature. Otherwise, you may return this creature to its owner's hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return another creature you control to its owner's hand"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "54b44499-398b-47ad-b790-bd5b5994d1a6",
+  "name": "Village Pillagers",
+  "faces": [
+    {
+      "name": "Village Pillagers",
+      "type_line": "Creature \u2014 Goblin Warrior",
+      "oracle_text": "Wither (This deals damage to creatures in the form of -1/-1 counters.)\nWhen this creature enters, it deals 1 damage to each creature your opponents control.\nWhenever a creature an opponent controls with a counter on it dies, you create a tapped Treasure token.",
+      "static": [
+        {
+          "keyword": "wither"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, it deals 1 damage to each creature your opponents control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 1 damage to each creature your opponents control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature an opponent controls with a counter on it dies, you create a tapped Treasure token.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_an_opponent_controls_with_a_counter_on_it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you create a tapped Treasure token"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

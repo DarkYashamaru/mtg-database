@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "40d45c02-6416-4e19-8fe3-0ddadf5ba627",
+  "name": "Blinkmoth Nexus",
+  "faces": [
+    {
+      "name": "Blinkmoth Nexus",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{1}: This land becomes a 1/1 Blinkmoth artifact creature with flying until end of turn. It's still a land.\n{1}, {T}: Target Blinkmoth creature gets +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}: This land becomes a 1/1 Blinkmoth artifact creature with flying until end of turn. It's still a land.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land becomes a 1/1 Blinkmoth artifact creature with flying until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Target Blinkmoth creature gets +1/+1 until end of turn.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_self_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

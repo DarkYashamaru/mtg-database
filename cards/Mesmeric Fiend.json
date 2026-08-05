@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fb46b300-8a39-40d2-8bc7-31b90c822e22",
+  "name": "Mesmeric Fiend",
+  "faces": [
+    {
+      "name": "Mesmeric Fiend",
+      "type_line": "Creature \u2014 Nightmare Horror",
+      "oracle_text": "When this creature enters, target opponent reveals their hand and you choose a nonland card from it. Exile that card.\nWhen this creature leaves the battlefield, return the exiled card to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target opponent reveals their hand and you choose a nonland card from it. Exile that card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent reveals their hand and you choose a nonland card from it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Exile that card"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature leaves the battlefield, return the exiled card to its owner's hand.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return the exiled card to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

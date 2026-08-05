@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7bd3882-a0f2-4706-80e7-1d3ec455801f",
+  "name": "Stick, Fearless Mentor",
+  "faces": [
+    {
+      "name": "Stick, Fearless Mentor",
+      "type_line": "Legendary Creature \u2014 Human Monk Hero",
+      "oracle_text": "First strike\nWhenever a source you control deals damage to you, exile the top card of your library. You may play it until the end of your next turn. This ability triggers only once each turn.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a source you control deals damage to you, exile the top card of your library. You may play it until the end of your next turn. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a source you control deals damage to you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play it until the end of your next turn"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

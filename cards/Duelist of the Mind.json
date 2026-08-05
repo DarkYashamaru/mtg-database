@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ff78f166-cca2-44bc-abe3-3a338bf543be",
+  "name": "Duelist of the Mind",
+  "faces": [
+    {
+      "name": "Duelist of the Mind",
+      "type_line": "Creature \u2014 Human Advisor",
+      "oracle_text": "Flying, vigilance\nDuelist of the Mind's power is equal to the number of cards you've drawn this turn.\nWhenever you commit a crime, you may draw a card. If you do, discard a card. This ability triggers only once each turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you commit a crime, you may draw a card. If you do, discard a card. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "commit_crime",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Duelist of the Mind's power is equal to the number of cards you've drawn this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Duelist of the Mind's power is equal to the number of cards you've drawn this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

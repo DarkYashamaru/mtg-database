@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0d406496-e1c3-4e1c-976c-618d5ad67d0b",
+  "name": "Urza Assembles the Titans",
+  "faces": [
+    {
+      "name": "Urza Assembles the Titans",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)\nI \u2014 Scry 4, then you may reveal the top card of your library. If a planeswalker card is revealed this way, put it into your hand.\nII \u2014 You may put a planeswalker card with mana value 6 or less from your hand onto the battlefield.\nIII \u2014 You may activate the loyalty abilities of planeswalkers you control twice this turn rather than only once.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Scry 4, then you may reveal the top card of your library. If a planeswalker card is revealed this way, put it into your hand.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 4
+            },
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "a planeswalker card is revealed this way"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 You may put a planeswalker card with mana value 6 or less from your hand onto the battlefield.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may put a planeswalker card with mana value 6 or less from your hand onto the battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 You may activate the loyalty abilities of planeswalkers you control twice this turn rather than only once.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may activate the loyalty abilities of planeswalkers you control twice this turn rather than only once"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Read ahead"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

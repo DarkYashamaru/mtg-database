@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c02c5547-b9c9-4b2d-9d12-e87bfba8f2d2",
+  "name": "Herald's Horn",
+  "faces": [
+    {
+      "name": "Herald's Horn",
+      "type_line": "Artifact",
+      "oracle_text": "As this artifact enters, choose a creature type.\nCreature spells you cast of the chosen type cost {1} less to cast.\nAt the beginning of your upkeep, look at the top card of your library. If it's a creature card of the chosen type, you may reveal it and put it into your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, look at the top card of your library. If it's a creature card of the chosen type, you may reveal it and put it into your hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it's a creature card of the chosen type"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this artifact enters, choose a creature type.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this artifact enters, choose a creature type"
+            }
+          ]
+        },
+        {
+          "raw_text": "Creature spells you cast of the chosen type cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creature spells you cast of the chosen type cost {1} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

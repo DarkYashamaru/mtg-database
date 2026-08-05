@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8d708573-10b8-44fb-b61b-9ad65e3eb465",
+  "name": "Soulblade Corrupter",
+  "faces": [
+    {
+      "name": "Soulblade Corrupter",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Partner with Soulblade Renewer (When this creature enters, target player may put Soulblade Renewer into their hand from their library, then shuffle.)\nDeathtouch\nWhenever a creature with a +1/+1 counter on it attacks one of your opponents, that creature gains deathtouch until end of turn.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature with a +1/+1 counter on it attacks one of your opponents, that creature gains deathtouch until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature with a +1/+1 counter on it attacks one of your opponents"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature",
+              "keyword": "deathtouch"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Soulblade Renewer (When this creature enters, target player may put Soulblade Renewer into their hand from their library, then shuffle.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Soulblade Renewer"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

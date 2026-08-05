@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dc69a130-967a-4d9f-992f-db7fad2fcd6d",
+  "name": "Ondu Knotmaster // Throw a Line",
+  "faces": [
+    {
+      "name": "Ondu Knotmaster",
+      "type_line": "Creature \u2014 Kor Rogue",
+      "oracle_text": "Lifelink\nWhenever another modified creature you control dies, put two +1/+1 counters on this creature.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another modified creature you control dies, put two +1/+1 counters on this creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Modified"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Throw a Line",
+      "type_line": "Sorcery \u2014 Adventure",
+      "oracle_text": "Distribute two +1/+1 counters among one or two target creatures. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Distribute two +1/+1 counters among one or two target creatures. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Distribute two +1/+1 counters among one or two target creatures"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

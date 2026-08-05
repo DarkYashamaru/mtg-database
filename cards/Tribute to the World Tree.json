@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "72deedab-7c17-4505-aeca-4bc8596d80a5",
+  "name": "Tribute to the World Tree",
+  "faces": [
+    {
+      "name": "Tribute to the World Tree",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature you control enters, draw a card if its power is 3 or greater. Otherwise, put two +1/+1 counters on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control enters, draw a card if its power is 3 or greater. Otherwise, put two +1/+1 counters on it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "its power is 3 or greater"
+                }
+              ]
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

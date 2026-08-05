@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "116ef9ea-d199-49b8-89c7-d61dd92711f5",
+  "name": "Mirelurk Queen",
+  "faces": [
+    {
+      "name": "Mirelurk Queen",
+      "type_line": "Creature \u2014 Crab Mutant",
+      "oracle_text": "Vigilance\nWhen this creature enters, target player gets two rad counters.\nWhenever one or more nonland cards are milled, draw a card, then put a +1/+1 counter on this creature. This ability triggers only once each turn.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target player gets two rad counters.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target player gets two rad counters"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more nonland cards are milled, draw a card, then put a +1/+1 counter on this creature. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more nonland cards are milled"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

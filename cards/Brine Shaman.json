@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3e3e2f71-2159-4f83-a9c1-a67ecac8a711",
+  "name": "Brine Shaman",
+  "faces": [
+    {
+      "name": "Brine Shaman",
+      "type_line": "Creature \u2014 Human Cleric Shaman",
+      "oracle_text": "{T}, Sacrifice a creature: Target creature gets +2/+2 until end of turn.\n{1}{U}{U}, Sacrifice a creature: Counter target creature spell.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice a creature: Target creature gets +2/+2 until end of turn.",
+          "cost": "{T}, Sacrifice a creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{U}{U}, Sacrifice a creature: Counter target creature spell.",
+          "cost": "{1}{U}{U}, Sacrifice a creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "counter_spell",
+              "target": "target_creature_spell"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

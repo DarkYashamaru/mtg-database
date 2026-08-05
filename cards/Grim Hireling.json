@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "89738595-dafb-400a-bfba-91a53a37e717",
+  "name": "Grim Hireling",
+  "faces": [
+    {
+      "name": "Grim Hireling",
+      "type_line": "Creature \u2014 Tiefling Rogue",
+      "oracle_text": "Whenever one or more creatures you control deal combat damage to a player, create two Treasure tokens.\n{B}, Sacrifice X Treasures: Target creature gets -X/-X until end of turn. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control deal combat damage to a player, create two Treasure tokens.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}, Sacrifice X Treasures: Target creature gets -X/-X until end of turn. Activate only as a sorcery.",
+          "cost": "{B}, Sacrifice X Treasures",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature gets -X/-X until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "48a1d55e-0b71-4724-ab2a-6d2c87e86b5b",
+  "name": "Webstrike Elite",
+  "faces": [
+    {
+      "name": "Webstrike Elite",
+      "type_line": "Creature \u2014 Insect Archer",
+      "oracle_text": "Reach\nCycling {X}{G}{G} ({X}{G}{G}, Discard this card: Draw a card.)\nWhen you cycle this card, destroy up to one target artifact or enchantment with mana value X.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, destroy up to one target artifact or enchantment with mana value X.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy up to one target artifact or enchantment with mana value X"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {X}{G}{G} ({X}{G}{G}, Discard this card: Draw a card.)",
+          "cost": "Cycling {X}{G}{G} ({X}{G}{G}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

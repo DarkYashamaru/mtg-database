@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "de80c742-4da0-4d67-9711-2b4e6452e2d0",
+  "name": "Pristine Skywise",
+  "faces": [
+    {
+      "name": "Pristine Skywise",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever you cast a noncreature spell, untap this creature. It gains protection from the color of your choice until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, untap this creature. It gains protection from the color of your choice until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "protection_from_the_color_of_your_choice"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

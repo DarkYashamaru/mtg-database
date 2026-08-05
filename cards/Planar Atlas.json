@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4f14bf38-13ec-461d-8a1b-340843b5d95d",
+  "name": "Planar Atlas",
+  "faces": [
+    {
+      "name": "Planar Atlas",
+      "type_line": "Artifact",
+      "oracle_text": "This artifact enters tapped.\nWhen this artifact enters, you may look at the top four cards of your library. If you do, reveal up to one land card from among them, then put that card on top of your library and the rest on the bottom in a random order.\n{T}: Add {C}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, you may look at the top four cards of your library. If you do, reveal up to one land card from among them, then put that card on top of your library and the rest on the bottom in a random order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "custom_effect",
+              "text": "reveal up to one land card from among them",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card on top of your library and the rest on the bottom in a random order",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This artifact enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

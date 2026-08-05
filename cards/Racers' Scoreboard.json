@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "54c2b3b3-e247-4146-8045-d49480b795f2",
+  "name": "Racers' Scoreboard",
+  "faces": [
+    {
+      "name": "Racers' Scoreboard",
+      "type_line": "Artifact",
+      "oracle_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nWhen this artifact enters, draw two cards, then discard a card.\nMax speed \u2014 Spells you cast cost {1} less to cast.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, draw two cards, then discard a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)",
+          "effects": [
+            {
+              "action": "start_your_engines"
+            }
+          ]
+        },
+        {
+          "raw_text": "Max speed \u2014 Spells you cast cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Max speed \u2014 Spells you cast cost {1} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

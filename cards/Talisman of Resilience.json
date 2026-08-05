@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "42b8aa14-10bc-4bd6-88d9-4bb287eadd19",
+  "name": "Talisman of Resilience",
+  "faces": [
+    {
+      "name": "Talisman of Resilience",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {B} or {G}. This artifact deals 1 damage to you.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {B} or {G}. This artifact deals 1 damage to you.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}",
+                "{g}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This artifact deals 1 damage to you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

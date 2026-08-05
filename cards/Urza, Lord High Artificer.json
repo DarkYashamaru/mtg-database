@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e87906d2-db1a-4e19-b910-adb4eb339945",
+  "name": "Urza, Lord High Artificer",
+  "faces": [
+    {
+      "name": "Urza, Lord High Artificer",
+      "type_line": "Legendary Creature \u2014 Human Artificer",
+      "oracle_text": "When Urza enters, create a 0/0 colorless Construct artifact creature token with \"This token gets +1/+1 for each artifact you control.\"\nTap an untapped artifact you control: Add {U}.\n{5}: Shuffle your library, then exile the top card. Until end of turn, you may play that card without paying its mana cost.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Urza enters, create a 0/0 colorless Construct artifact creature token with \"This token gets +1/+1 for each artifact you control.\"",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 0/0 colorless Construct artifact creature token with \"This token gets +1/+1 for each artifact you control",
+                "power_toughness": "0/0",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Construct",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Tap an untapped artifact you control: Add {U}.",
+          "cost": "Tap an untapped artifact you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{5}: Shuffle your library, then exile the top card. Until end of turn, you may play that card without paying its mana cost.",
+          "cost": "{5}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "shuffle your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile the top card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may play that card without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

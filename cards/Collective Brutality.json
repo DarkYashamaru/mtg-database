@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "22a78443-db21-4656-b38a-e3e3186fd94b",
+  "name": "Collective Brutality",
+  "faces": [
+    {
+      "name": "Collective Brutality",
+      "type_line": "Sorcery",
+      "oracle_text": "Escalate\u2014Discard a card. (Pay this cost for each mode chosen beyond the first.)\nChoose one or more \u2014\n\u2022 Target opponent reveals their hand. You choose an instant or sorcery card from it. That player discards that card.\n\u2022 Target creature gets -2/-2 until end of turn.\n\u2022 Target opponent loses 2 life and you gain 2 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Escalate\u2014Discard a card. (Pay this cost for each mode chosen beyond the first.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Escalate\u2014Discard a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "Choose one or more \u2014\n\u2022 Target opponent reveals their hand. You choose an instant or sorcery card from it. That player discards that card.\n\u2022 Target creature gets -2/-2 until end of turn.\n\u2022 Target opponent loses 2 life and you gain 2 life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose one or more \u2014\n\u2022 Target opponent reveals their hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose an instant or sorcery card from it"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "_target_creature",
+              "power_delta": -2,
+              "toughness_delta": -2
+            },
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Target opponent loses 2 life and you gain 2 life"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

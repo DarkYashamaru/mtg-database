@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1e9b0fd6-5aae-401a-8df5-d94ce6442696",
+  "name": "Prosper, Tome-Bound",
+  "faces": [
+    {
+      "name": "Prosper, Tome-Bound",
+      "type_line": "Legendary Creature \u2014 Tiefling Warlock",
+      "oracle_text": "Deathtouch\nMystic Arcanum \u2014 At the beginning of your end step, exile the top card of your library. Until the end of your next turn, you may play that card.\nPact Boon \u2014 Whenever you play a card from exile, create a Treasure token.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, exile the top card of your library. Until the end of your next turn, you may play that card.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "allow_play",
+              "object": "that_card",
+              "until": "end_of_your_next_turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you play a card from exile, create a Treasure token.",
+          "trigger": {
+            "type": "play_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "from_zone": "exile"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

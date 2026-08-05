@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9196c8dc-bca6-4c35-949e-8c14a699a41d",
+  "name": "Flash of Insight",
+  "faces": [
+    {
+      "name": "Flash of Insight",
+      "type_line": "Instant",
+      "oracle_text": "Look at the top X cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.\nFlashback\u2014{1}{U}, Exile X blue cards from your graveyard. (You may cast this card from your graveyard for its flashback cost, then exile it. You can't exile Flash of Insight to pay for its own flashback cost.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Look at the top X cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": "X"
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "destination": "hand",
+              "remainder_destination": "bottom_of_library",
+              "remainder_order": "any"
+            }
+          ]
+        },
+        {
+          "raw_text": "Flashback\u2014{1}{U}, Exile X blue cards from your graveyard. (You may cast this card from your graveyard for its flashback cost, then exile it. You can't exile Flash of Insight to pay for its own flashback cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flashback\u2014{1}{U}, Exile X blue cards from your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

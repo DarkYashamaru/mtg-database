@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3debfa0d-9945-4a85-a714-7c3d3d74de4e",
+  "name": "Waterveil Cavern",
+  "faces": [
+    {
+      "name": "Waterveil Cavern",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {U} or {B}. This land doesn't untap during your next untap step.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {U} or {B}. This land doesn't untap during your next untap step.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}",
+                "{b}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This land doesn't untap during your next untap step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

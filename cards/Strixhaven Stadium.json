@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2ed0c6fc-b8b4-47da-a04b-1d995bdeecb0",
+  "name": "Strixhaven Stadium",
+  "faces": [
+    {
+      "name": "Strixhaven Stadium",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {C}. Put a point counter on this artifact.\nWhenever a creature deals combat damage to you, remove a point counter from this artifact.\nWhenever a creature you control deals combat damage to an opponent, put a point counter on this artifact. Then if it has ten or more point counters on it, remove them all and that player loses the game.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature deals combat damage to you, remove a point counter from this artifact.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature deals combat damage to you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove a point counter from this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control deals combat damage to an opponent, put a point counter on this artifact. Then if it has ten or more point counters on it, remove them all and that player loses the game.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature you control deals combat damage to an opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a point counter on this artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove them all and that player loses the game",
+              "condition": [
+                {
+                  "condition_text": "it has ten or more point counters on it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}. Put a point counter on this artifact.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a point counter on this artifact"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

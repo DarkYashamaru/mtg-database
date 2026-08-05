@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1009f979-b1fa-4427-bf9e-2a533a4ca19b",
+  "name": "_____ _____ Rocketship",
+  "faces": [
+    {
+      "name": "_____ _____ Rocketship",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nWhen this Vehicle enters, you may put up to two name stickers on it.\nWhenever this Vehicle attacks, choose a letter. This Vehicle gets +1/+1 until end of turn for each name sticker on it that begins with the chosen letter.\nCrew 2",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, you may put up to two name stickers on it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put up to two name stickers on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this Vehicle attacks, choose a letter. This Vehicle gets +1/+1 until end of turn for each name sticker on it that begins with the chosen letter.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose a letter"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This Vehicle gets +1/+1 until end of turn for each name sticker on it that begins with the chosen letter"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b6f4b524-1081-4263-b7e4-9aee93131b31",
+  "name": "Ultros, Obnoxious Octopus",
+  "faces": [
+    {
+      "name": "Ultros, Obnoxious Octopus",
+      "type_line": "Legendary Creature \u2014 Octopus",
+      "oracle_text": "Whenever you cast a noncreature spell, if at least four mana was spent to cast it, tap target creature an opponent controls and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nWhenever you cast a noncreature spell, if at least eight mana was spent to cast it, put eight +1/+1 counters on Ultros.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, if at least four mana was spent to cast it, tap target creature an opponent controls and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            },
+            {
+              "condition_text": "at least four mana was spent to cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap target creature an opponent controls and put a stun counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a noncreature spell, if at least eight mana was spent to cast it, put eight +1/+1 counters on Ultros.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            },
+            {
+              "condition_text": "at least eight mana was spent to cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

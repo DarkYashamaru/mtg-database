@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2bc38f14-0314-4351-8138-e2b8bf041404",
+  "name": "Memorial to Folly",
+  "faces": [
+    {
+      "name": "Memorial to Folly",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {B}.\n{2}{B}, {T}, Sacrifice this land: Return target creature card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{B}, {T}, Sacrifice this land: Return target creature card from your graveyard to your hand.",
+          "cost": "{2}{B}, {T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

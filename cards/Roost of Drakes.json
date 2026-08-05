@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "oracle_id": "05e73886-8311-4a0d-9c8d-4a03c7f20ea2",
+  "name": "Roost of Drakes",
+  "faces": [
+    {
+      "name": "Roost of Drakes",
+      "type_line": "Enchantment",
+      "oracle_text": "Kicker {2}{U} (You may pay an additional {2}{U} as you cast this spell.)\nWhen this enchantment enters, if it was kicked, create a 2/2 blue Drake creature token with flying.\nWhenever you cast a kicked spell, create a 2/2 blue Drake creature token with flying.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, if it was kicked, create a 2/2 blue Drake creature token with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 blue Drake creature token with flying",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Drake"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a kicked spell, create a 2/2 blue Drake creature token with flying.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Kicked"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 blue Drake creature token with flying",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Drake"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2}{U} (You may pay an additional {2}{U} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

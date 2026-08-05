@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2536750c-3c4f-4e00-b517-680ad4fd2ecc",
+  "name": "Skeleton Crew",
+  "faces": [
+    {
+      "name": "Skeleton Crew",
+      "type_line": "Creature \u2014 Skeleton Pirate",
+      "oracle_text": "Each other creature you control that's a Skeleton or Pirate gets +1/+1.\nWhenever one or more creature cards leave your graveyard, create a 2/2 black Skeleton Pirate creature token. (This ability triggers only from the battlefield.)\n{5}{B}: Return this card from your graveyard to the battlefield tapped.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creature cards leave your graveyard, create a 2/2 black Skeleton Pirate creature token. (This ability triggers only from the battlefield.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more creature cards leave your graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black Skeleton Pirate creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Skeleton",
+                  "Pirate"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{5}{B}: Return this card from your graveyard to the battlefield tapped.",
+          "cost": "{5}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield",
+              "tapped": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Each other creature you control that's a Skeleton or Pirate gets +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": {
+                "selector": "each_other_creature_you_control_thats_a_self_or_pirate"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

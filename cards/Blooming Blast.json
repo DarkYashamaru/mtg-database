@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2e5b8973-4f6e-4abe-bbbe-81fdca784997",
+  "name": "Blooming Blast",
+  "faces": [
+    {
+      "name": "Blooming Blast",
+      "type_line": "Instant",
+      "oracle_text": "Gift a Treasure (You may promise an opponent a gift as you cast this spell. If you do, they create a Treasure token before its other effects. It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nBlooming Blast deals 2 damage to target creature. If the gift was promised, Blooming Blast also deals 3 damage to that creature's controller.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Gift a Treasure (You may promise an opponent a gift as you cast this spell. If you do, they create a Treasure token before its other effects. It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "cost": "Gift a Treasure (You may promise an opponent a gift as you cast this spell. If you do, they create a Treasure token before its other effects. It's an artifact with \"{T}, Sacrifice this token",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Blooming Blast deals 2 damage to target creature. If the gift was promised, Blooming Blast also deals 3 damage to that creature's controller.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Blooming Blast deals 2 damage to target creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "blooming blast also deals 3 damage to that creature's controller",
+              "condition": [
+                {
+                  "condition_text": "the gift was promised"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

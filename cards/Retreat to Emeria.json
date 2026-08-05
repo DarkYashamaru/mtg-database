@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cc0cda37-9fea-48c6-897a-45f6b84e1eae",
+  "name": "Retreat to Emeria",
+  "faces": [
+    {
+      "name": "Retreat to Emeria",
+      "type_line": "Enchantment",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, choose one \u2014\n\u2022 Create a 1/1 white Kor Ally creature token.\n\u2022 Creatures you control get +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, choose one \u2014\n\u2022 Create a 1/1 white Kor Ally creature token.\n\u2022 Creatures you control get +1/+1 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Create a 1/1 white Kor Ally creature token.",
+              "effects": [
+                {
+                  "action": "create_token",
+                  "amount": 1,
+                  "token": {
+                    "raw": "1/1 white Kor Ally creature token",
+                    "colors": [
+                      "white"
+                    ],
+                    "power_toughness": "1/1",
+                    "card_types": [
+                      "creature"
+                    ],
+                    "subtypes": [
+                      "Kor",
+                      "Ally"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Creatures you control get +1/+1 until end of turn.",
+              "effects": [
+                {
+                  "action": "modify_stats_until_end_of_turn",
+                  "target": {
+                    "selector": "creatures_you_control"
+                  },
+                  "power_delta": 1,
+                  "toughness_delta": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

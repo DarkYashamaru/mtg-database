@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5dec1b09-4df0-4e9b-9dca-b80134be3343",
+  "name": "N'Yami-Class Mother Ship",
+  "faces": [
+    {
+      "name": "N'Yami-Class Mother Ship",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying, vigilance, haste\nWhenever this Vehicle deals combat damage to a player, look at the top card of your library. If it's a permanent card, you may put it onto the battlefield. If you don't put it onto the battlefield, put it into your hand.\nCrew 3",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle deals combat damage to a player, look at the top card of your library. If it's a permanent card, you may put it onto the battlefield. If you don't put it onto the battlefield, put it into your hand.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "it's a permanent card"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "you don't put it onto the battlefield"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 3",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

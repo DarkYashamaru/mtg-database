@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3a5a6732-bdfa-4b64-b897-6817983dbb0e",
+  "name": "Capricopian",
+  "faces": [
+    {
+      "name": "Capricopian",
+      "type_line": "Creature \u2014 Goat Hydra",
+      "oracle_text": "This creature enters with X +1/+1 counters on it.\n{2}: Put a +1/+1 counter on this creature, then you may reselect which player this creature is attacking. Only the player this creature is attacking may activate this ability and only during the declare attackers step. (It can't attack its controller.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}: Put a +1/+1 counter on this creature, then you may reselect which player this creature is attacking. Only the player this creature is attacking may activate this ability and only during the declare attackers step. (It can't attack its controller.)",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reselect which player this creature is attacking"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Only the player this creature is attacking may activate this ability and only during the declare attackers step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "227f95ba-65b1-4399-8b12-39f8b1327d62",
+  "name": "Intimidator Initiate",
+  "faces": [
+    {
+      "name": "Intimidator Initiate",
+      "type_line": "Creature \u2014 Goblin Shaman",
+      "oracle_text": "Whenever a player casts a red spell, you may pay {1}. If you do, target creature can't block this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts a red spell, you may pay {1}. If you do, target creature can't block this turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player casts a red spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

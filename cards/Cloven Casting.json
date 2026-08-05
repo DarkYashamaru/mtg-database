@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2b08e5f7-c771-4e03-8560-15de6a8bec71",
+  "name": "Cloven Casting",
+  "faces": [
+    {
+      "name": "Cloven Casting",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cast a multicolored instant or sorcery spell, you may pay {1}. If you do, copy that spell. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a multicolored instant or sorcery spell, you may pay {1}. If you do, copy that spell. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "multicolored_instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy that spell",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6f18ea44-3efa-4a45-abc6-86a0627e40f2",
+  "name": "Fungal Reaches",
+  "faces": [
+    {
+      "name": "Fungal Reaches",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{1}, {T}: Put a storage counter on this land.\n{1}, Remove X storage counters from this land: Add X mana in any combination of {R} and/or {G}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Put a storage counter on this land.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a storage counter on this land"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, Remove X storage counters from this land: Add X mana in any combination of {R} and/or {G}.",
+          "cost": "{1}, Remove X storage counters from this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add X mana in any combination of {R} and/or {G}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

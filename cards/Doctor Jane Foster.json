@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b1c8fddb-d686-4b4a-8aff-d79ea747801c",
+  "name": "Doctor Jane Foster",
+  "faces": [
+    {
+      "name": "Doctor Jane Foster",
+      "type_line": "Legendary Creature \u2014 Human Doctor",
+      "oracle_text": "Vigilance (Attacking doesn't cause this creature to tap.)\nWhen Doctor Jane Foster enters, return target creature card with mana value 3 or less from your graveyard to your hand. If you gained life this turn, return that card to the battlefield instead.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Doctor Jane Foster enters, return target creature card with mana value 3 or less from your graveyard to your hand. If you gained life this turn, return that card to the battlefield instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target creature card with mana value 3 or less from your graveyard to your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return that card to the battlefield instead",
+              "condition": [
+                {
+                  "condition_text": "you gained life this turn"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

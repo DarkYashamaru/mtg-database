@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "22195e0e-a426-48d6-b100-480c7e2bd5cc",
+  "name": "Mage Hunters' Onslaught",
+  "faces": [
+    {
+      "name": "Mage Hunters' Onslaught",
+      "type_line": "Sorcery",
+      "oracle_text": "Destroy target creature or planeswalker.\nWhenever a creature blocks this turn, its controller loses 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature blocks this turn, its controller loses 1 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature blocks this turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "its controller loses 1 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Destroy target creature or planeswalker.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Creature",
+                  "Planeswalker"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

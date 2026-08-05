@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "67175889-02f9-4ad8-a9ab-11db44328b67",
+  "name": "Green Goblin, Revenant",
+  "faces": [
+    {
+      "name": "Green Goblin, Revenant",
+      "type_line": "Legendary Creature \u2014 Goblin Human Villain",
+      "oracle_text": "Flying, deathtouch\nWhenever Green Goblin attacks, discard a card. Then draw a card for each card you've discarded this turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Green Goblin attacks, discard a card. Then draw a card for each card you've discarded this turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then draw a card for each card you've discarded this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

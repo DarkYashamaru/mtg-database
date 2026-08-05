@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8314bdf5-1539-4215-949e-f46584cb43bb",
+  "name": "Gargantuan Gorilla",
+  "faces": [
+    {
+      "name": "Gargantuan Gorilla",
+      "type_line": "Creature \u2014 Ape",
+      "oracle_text": "At the beginning of your upkeep, you may sacrifice a Forest. If you sacrifice a snow Forest this way, this creature gains trample until end of turn. If you don't sacrifice a Forest, sacrifice this creature and it deals 7 damage to you.\n{T}: This creature deals damage equal to its power to another target creature. That creature deals damage equal to its power to this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may sacrifice a Forest. If you sacrifice a snow Forest this way, this creature gains trample until end of turn. If you don't sacrifice a Forest, sacrifice this creature and it deals 7 damage to you.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_forest",
+              "optional": true
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "trample",
+              "condition": [
+                {
+                  "condition_text": "you sacrifice a snow forest this way"
+                }
+              ]
+            },
+            {
+              "action": "sacrifice",
+              "target": "self_and_it_deals_7_damage_to_you",
+              "condition": [
+                {
+                  "condition_text": "you don't sacrifice a forest"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: This creature deals damage equal to its power to another target creature. That creature deals damage equal to its power to this creature.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals damage equal to its power to another target creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "That creature deals damage equal to its power to this creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ece77a64-8d99-430e-8407-bdb321828d63",
+  "name": "Selfless Police Captain",
+  "faces": [
+    {
+      "name": "Selfless Police Captain",
+      "type_line": "Creature \u2014 Human Detective",
+      "oracle_text": "This creature enters with a +1/+1 counter on it.\nWhen this creature leaves the battlefield, put its +1/+1 counters on target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature leaves the battlefield, put its +1/+1 counters on target creature you control.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": "its"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with a +1/+1 counter on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

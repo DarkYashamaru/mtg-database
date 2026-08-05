@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "991ae2f7-3f8e-4364-8698-5277786d7dcd",
+  "name": "Boros Keyrune",
+  "faces": [
+    {
+      "name": "Boros Keyrune",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {R} or {W}.\n{R}{W}: This artifact becomes a 1/1 red and white Soldier artifact creature with double strike until end of turn. (It deals both first-strike and regular combat damage.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R} or {W}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{w}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{R}{W}: This artifact becomes a 1/1 red and white Soldier artifact creature with double strike until end of turn. (It deals both first-strike and regular combat damage.)",
+          "cost": "{R}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact becomes a 1/1 red and white Soldier artifact creature with double strike until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "87a44a87-a2a5-4193-a163-e4846e5b8387",
+  "name": "Nath of the Gilt-Leaf",
+  "faces": [
+    {
+      "name": "Nath of the Gilt-Leaf",
+      "type_line": "Legendary Creature \u2014 Elf Warrior",
+      "oracle_text": "At the beginning of your upkeep, you may have target opponent discard a card at random.\nWhenever an opponent discards a card, you may create a 1/1 green Elf Warrior creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may have target opponent discard a card at random.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have target opponent discard a card at random"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an opponent discards a card, you may create a 1/1 green Elf Warrior creature token.",
+          "trigger": {
+            "type": "discard_card",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Elf Warrior creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elf",
+                  "Warrior"
+                ]
+              },
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

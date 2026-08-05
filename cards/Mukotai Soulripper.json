@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "060d109f-2969-4f9e-a723-535d662a571a",
+  "name": "Mukotai Soulripper",
+  "faces": [
+    {
+      "name": "Mukotai Soulripper",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Whenever this Vehicle attacks, you may sacrifice another artifact or creature. If you do, put a +1/+1 counter on this Vehicle and it gains menace until end of turn.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle attacks, you may sacrifice another artifact or creature. If you do, put a +1/+1 counter on this Vehicle and it gains menace until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_artifact_or_creature",
+              "optional": true
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "this_vehicle",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

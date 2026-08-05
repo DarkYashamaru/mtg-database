@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "82076865-7917-4d3b-8fe8-c21bfcd64d29",
+  "name": "Slaughterhouse Bouncer",
+  "faces": [
+    {
+      "name": "Slaughterhouse Bouncer",
+      "type_line": "Creature \u2014 Ogre Warrior",
+      "oracle_text": "Hellbent \u2014 When this creature dies, if you have no cards in hand, target creature gets -3/-3 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, if you have no cards in hand, target creature gets -3/-3 until end of turn.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "zone_count": {
+                "zone": "hand",
+                "owner": "you",
+                "count_eq": 0
+              }
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -3,
+              "toughness_delta": -3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

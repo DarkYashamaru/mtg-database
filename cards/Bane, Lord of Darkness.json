@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ca507eea-1b04-4488-813e-ca970640e227",
+  "name": "Bane, Lord of Darkness",
+  "faces": [
+    {
+      "name": "Bane, Lord of Darkness",
+      "type_line": "Legendary Creature \u2014 God",
+      "oracle_text": "As long as your life total is less than or equal to half your starting life total, Bane has indestructible.\nWhenever another nontoken creature you control dies, target opponent may have you draw a card. If they don't, you may put a creature card with equal or lesser toughness from your hand onto the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken creature you control dies, target opponent may have you draw a card. If they don't, you may put a creature card with equal or lesser toughness from your hand onto the battlefield.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent may have you draw a card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put a creature card with equal or lesser toughness from your hand onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "they don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as your life total is less than or equal to half your starting life total, Bane has indestructible.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as your life total is less than or equal to half your starting life total, Bane has indestructible"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

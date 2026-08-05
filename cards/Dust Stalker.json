@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "69cd25d2-206c-4572-95e7-d66973c94358",
+  "name": "Dust Stalker",
+  "faces": [
+    {
+      "name": "Dust Stalker",
+      "type_line": "Creature \u2014 Eldrazi",
+      "oracle_text": "Devoid (This card has no color.)\nHaste\nAt the beginning of each end step, if you control no other colorless creatures, return this creature to its owner's hand.",
+      "static": [
+        {
+          "keyword": "devoid"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each end step, if you control no other colorless creatures, return this creature to its owner's hand.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you control no other colorless creatures"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

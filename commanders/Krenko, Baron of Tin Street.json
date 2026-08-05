@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91b2520e-85b6-4e1f-88cf-a585feeb8e65",
+  "name": "Krenko, Baron of Tin Street",
+  "faces": [
+    {
+      "name": "Krenko, Baron of Tin Street",
+      "type_line": "Legendary Creature \u2014 Goblin",
+      "oracle_text": "Haste\n{T}, Sacrifice an artifact: Put a +1/+1 counter on each Goblin you control.\nWhenever an artifact is put into a graveyard from the battlefield, you may pay {R}. If you do, create a 1/1 red Goblin creature token. It gains haste until end of turn.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an artifact is put into a graveyard from the battlefield, you may pay {R}. If you do, create a 1/1 red Goblin creature token. It gains haste until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an artifact is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{r}",
+              "optional": true
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 red goblin creature token",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "goblin"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice an artifact: Put a +1/+1 counter on each Goblin you control.",
+          "cost": "{T}, Sacrifice an artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Goblin"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

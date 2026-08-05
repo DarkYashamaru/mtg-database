@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb666ea8-55e3-4e27-ae6d-806677dfc17a",
+  "name": "Airtight Alibi",
+  "faces": [
+    {
+      "name": "Airtight Alibi",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash\nEnchant creature\nWhen this Aura enters, untap enchanted creature. It gains hexproof until end of turn. If it's suspected, it's no longer suspected.\nEnchanted creature gets +2/+2 and can't become suspected.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, untap enchanted creature. It gains hexproof until end of turn. If it's suspected, it's no longer suspected.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap enchanted creature"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "hexproof"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it's no longer suspected",
+              "condition": [
+                {
+                  "condition_text": "it's suspected"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+2 and can't become suspected.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +2/+2 and can't become suspected"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

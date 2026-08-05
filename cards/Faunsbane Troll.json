@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b707c131-de13-4d4d-839d-b9f47d62f090",
+  "name": "Faunsbane Troll",
+  "faces": [
+    {
+      "name": "Faunsbane Troll",
+      "type_line": "Creature \u2014 Troll",
+      "oracle_text": "When this creature enters, create a Monster Role token attached to it. (Enchanted creature gets +1/+1 and has trample.)\n{1}, Sacrifice an Aura attached to this creature: This creature fights target creature you don't control. If that creature would die this turn, exile it instead. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a Monster Role token attached to it. (Enchanted creature gets +1/+1 and has trample.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a Monster Role token attached to it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice an Aura attached to this creature: This creature fights target creature you don't control. If that creature would die this turn, exile it instead. Activate only as a sorcery.",
+          "cost": "{1}, Sacrifice an Aura attached to this creature",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature fights target creature you don't control"
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "that creature would die this turn"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

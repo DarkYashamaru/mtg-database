@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cbbcd3a3-6ddd-4511-a352-3055d0102e7c",
+  "name": "Soulgorger Orgg",
+  "faces": [
+    {
+      "name": "Soulgorger Orgg",
+      "type_line": "Creature \u2014 Nightmare Orgg",
+      "oracle_text": "Trample\nWhen this creature enters, you lose all but 1 life.\nWhen this creature leaves the battlefield, you gain life equal to the life you lost when it entered.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you lose all but 1 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you lose all but 1 life"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature leaves the battlefield, you gain life equal to the life you lost when it entered.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain life equal to the life you lost when it entered"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

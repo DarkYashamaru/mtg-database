@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3de0e14f-c917-4c00-8341-1170ac9b3cbc",
+  "name": "Origin Spellbomb",
+  "faces": [
+    {
+      "name": "Origin Spellbomb",
+      "type_line": "Artifact",
+      "oracle_text": "{1}, {T}, Sacrifice this artifact: Create a 1/1 colorless Myr artifact creature token.\nWhen this artifact is put into a graveyard from the battlefield, you may pay {W}. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact is put into a graveyard from the battlefield, you may pay {W}. If you do, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{w}",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Sacrifice this artifact: Create a 1/1 colorless Myr artifact creature token.",
+          "cost": "{1}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Myr artifact creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Myr",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

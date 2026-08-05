@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "08574d1b-4b76-42dd-884b-29c5a61cfdda",
+  "name": "Seraph of New Capenna // Seraph of New Phyrexia",
+  "faces": [
+    {
+      "name": "Seraph of New Capenna",
+      "type_line": "Creature \u2014 Angel Soldier",
+      "oracle_text": "Flying\n{4}{B/P}: Transform this creature. Activate only as a sorcery. ({B/P} can be paid with either {B} or 2 life.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{4}{B/P}: Transform this creature. Activate only as a sorcery. ({B/P} can be paid with either {B} or 2 life.)",
+          "cost": "{4}{B/P}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Seraph of New Phyrexia",
+      "type_line": "Creature \u2014 Phyrexian Angel",
+      "oracle_text": "Flying\nWhenever this creature attacks, you may sacrifice another creature or artifact. If you do, this creature gets +2/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may sacrifice another creature or artifact. If you do, this creature gets +2/+1 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature_or_artifact",
+              "optional": true
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

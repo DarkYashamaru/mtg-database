@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0dcd13ab-37f9-4d66-8227-1e72d920f297",
+  "name": "Balduvian Atrocity",
+  "faces": [
+    {
+      "name": "Balduvian Atrocity",
+      "type_line": "Creature \u2014 Phyrexian Berserker",
+      "oracle_text": "Kicker {R} (You may pay an additional {R} as you cast this spell.)\nMenace\nWhen this creature enters, if it was kicked, return target creature card with mana value 3 or less from your graveyard to the battlefield. It gains haste. Sacrifice it at the beginning of the next end step.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, return target creature card with mana value 3 or less from your graveyard to the battlefield. It gains haste. Sacrifice it at the beginning of the next end step.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target creature card with mana value 3 or less from your graveyard to the battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "it_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {R} (You may pay an additional {R} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

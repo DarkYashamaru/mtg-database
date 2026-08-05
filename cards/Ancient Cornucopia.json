@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f0950c95-a297-489d-b166-74bba6af5376",
+  "name": "Ancient Cornucopia",
+  "faces": [
+    {
+      "name": "Ancient Cornucopia",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever you cast a spell that's one or more colors, you may gain 1 life for each of that spell's colors. Do this only once each turn.\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that's one or more colors, you may gain 1 life for each of that spell's colors. Do this only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell that's one or more colors"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may gain 1 life for each of that spell's colors"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_uses": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

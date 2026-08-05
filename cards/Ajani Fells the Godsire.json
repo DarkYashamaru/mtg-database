@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0daefecb-7189-44bb-9ca0-96a9572cd240",
+  "name": "Ajani Fells the Godsire",
+  "faces": [
+    {
+      "name": "Ajani Fells the Godsire",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Exile target creature an opponent controls with power 3 or greater.\nII \u2014 Create a 2/1 white Cat Warrior creature token, then put a vigilance counter on a creature you control.\nIII \u2014 Target creature you control gains double strike until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Exile target creature an opponent controls with power 3 or greater.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target creature an opponent controls with power 3 or greater"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Create a 2/1 white Cat Warrior creature token, then put a vigilance counter on a creature you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/1 white cat warrior creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "cat",
+                  "warrior"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a vigilance counter on a creature you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Target creature you control gains double strike until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control",
+              "keyword": "double_strike"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

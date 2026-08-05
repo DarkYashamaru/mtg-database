@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6f498ff7-38c9-44ea-9cb5-994a003825ee",
+  "name": "Ingenious Prodigy",
+  "faces": [
+    {
+      "name": "Ingenious Prodigy",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Skulk (This creature can't be blocked by creatures with greater power.)\nThis creature enters with X +1/+1 counters on it.\nAt the beginning of your upkeep, if this creature has one or more +1/+1 counters on it, you may remove a +1/+1 counter from it. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if this creature has one or more +1/+1 counters on it, you may remove a +1/+1 counter from it. If you do, draw a card.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "this creature has one or more +1/+1 counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may remove a +1/+1 counter from it"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Skulk (This creature can't be blocked by creatures with greater power.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Skulk"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

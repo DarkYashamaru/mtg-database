@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "716b3ea2-45b7-4a8f-af72-de7f4e510eff",
+  "name": "Goldspan Dragon",
+  "faces": [
+    {
+      "name": "Goldspan Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying, haste\nWhenever this creature attacks or becomes the target of a spell, create a Treasure token.\nTreasures you control have \"{T}, Sacrifice this artifact: Add two mana of any one color.\"",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks or becomes the target of a spell, create a Treasure token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature attacks or becomes the target of a spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Treasures you control have \"{T}, Sacrifice this artifact: Add two mana of any one color.\"",
+          "cost": "Treasures you control have \"{T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "same_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

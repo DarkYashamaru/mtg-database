@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cc7dcb89-534b-4e86-abd2-8362855e2f66",
+  "name": "Vampire's Zeal",
+  "faces": [
+    {
+      "name": "Vampire's Zeal",
+      "type_line": "Instant",
+      "oracle_text": "Target creature gets +2/+2 until end of turn. If it's a Vampire, it gains first strike until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature gets +2/+2 until end of turn. If it's a Vampire, it gains first strike until end of turn.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "first_strike",
+              "condition": [
+                {
+                  "condition_text": "it's a vampire"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

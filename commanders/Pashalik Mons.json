@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bdb94ccd-1bb5-4bb7-9539-e1b1c97c19c5",
+  "name": "Pashalik Mons",
+  "faces": [
+    {
+      "name": "Pashalik Mons",
+      "type_line": "Legendary Creature \u2014 Goblin Warrior",
+      "oracle_text": "Whenever Pashalik Mons or another Goblin you control dies, Pashalik Mons deals 1 damage to any target.\n{3}{R}, Sacrifice a Goblin: Create two 1/1 red Goblin creature tokens.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Pashalik Mons or another Goblin you control dies, Pashalik Mons deals 1 damage to any target.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Goblin"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{R}, Sacrifice a Goblin: Create two 1/1 red Goblin creature tokens.",
+          "cost": "{3}{R}, Sacrifice a Goblin",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 red Goblin creature tokens",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Goblin"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ab31b652-ddf2-480f-a955-e8b5c87728f9",
+  "name": "Bohn, Beguiling Balladeer",
+  "faces": [
+    {
+      "name": "Bohn, Beguiling Balladeer",
+      "type_line": "Legendary Creature \u2014 Human Bard",
+      "oracle_text": "Each nonland card in your hand without foretell has foretell. Its foretell cost is equal to its mana cost reduced by {2}. (During your turn, you may pay {2} and exile it from your hand face down. Cast it on a later turn for its foretell cost.)\nWhenever you cast your second spell each turn, goad target creature an opponent controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, goad target creature an opponent controls.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "goad target creature an opponent controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Each nonland card in your hand without foretell has foretell. Its foretell cost is equal to its mana cost reduced by {2}. (During your turn, you may pay {2} and exile it from your hand face down. Cast it on a later turn for its foretell cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each nonland card in your hand without foretell has foretell"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Its foretell cost is equal to its mana cost reduced by {2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

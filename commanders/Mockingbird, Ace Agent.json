@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1fd00656-83ba-4feb-b089-224007936b99",
+  "name": "Mockingbird, Ace Agent",
+  "faces": [
+    {
+      "name": "Mockingbird, Ace Agent",
+      "type_line": "Legendary Creature \u2014 Human Spy Hero",
+      "oracle_text": "Double strike\nWhenever you cast a spell that targets a creature you control, put a +1/+1 counter on Mockingbird.",
+      "static": [
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that targets a creature you control, put a +1/+1 counter on Mockingbird.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_targets": "creature_you_control"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ee35de1c-aef1-4bd4-85fd-fe77bc927790",
+  "name": "Marwyn, the Nurturer",
+  "faces": [
+    {
+      "name": "Marwyn, the Nurturer",
+      "type_line": "Legendary Creature \u2014 Elf Druid",
+      "oracle_text": "Whenever another Elf you control enters, put a +1/+1 counter on Marwyn.\n{T}: Add an amount of {G} equal to Marwyn's power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another Elf you control enters, put a +1/+1 counter on Marwyn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Elf"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add an amount of {G} equal to Marwyn's power.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add an amount of {G} equal to Marwyn's power"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

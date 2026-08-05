@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "66c227f2-0e74-43e2-ab24-3866d15c5eef",
+  "name": "Gateway Sneak",
+  "faces": [
+    {
+      "name": "Gateway Sneak",
+      "type_line": "Creature \u2014 Vedalken Rogue",
+      "oracle_text": "Whenever a Gate you control enters, this creature can't be blocked this turn.\nWhenever this creature deals combat damage to a player, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Gate you control enters, this creature can't be blocked this turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Gate"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

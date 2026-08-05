@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b012cec9-2aff-4dfb-8db1-61e830c33926",
+  "name": "Two-Handed Axe // Sweeping Cleave",
+  "faces": [
+    {
+      "name": "Sweeping Cleave",
+      "type_line": "Instant \u2014 Adventure",
+      "oracle_text": "Target creature you control gains double strike until end of turn. (Then exile this card. You may cast the artifact later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature you control gains double strike until end of turn. (Then exile this card. You may cast the artifact later from exile.)",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control",
+              "keyword": "double_strike"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-Handed Axe",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature attacks, double its power until end of turn.\nEquip {1}{R}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, double its power until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "double its power until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {1}{R}",
+          "cost": "",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equip {1}{R}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

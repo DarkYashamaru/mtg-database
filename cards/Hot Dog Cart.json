@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cf27f1f8-2d95-4a00-97f8-72a244837f08",
+  "name": "Hot Dog Cart",
+  "faces": [
+    {
+      "name": "Hot Dog Cart",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b9176173-c4a1-45ae-8f34-bd6b31c141fe",
+  "name": "Cartouche of Solidarity",
+  "faces": [
+    {
+      "name": "Cartouche of Solidarity",
+      "type_line": "Enchantment \u2014 Aura Cartouche",
+      "oracle_text": "Enchant creature you control\nWhen this Aura enters, create a 1/1 white Warrior creature token with vigilance.\nEnchanted creature gets +1/+1 and has first strike. (It deals combat damage before creatures without first strike.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, create a 1/1 white Warrior creature token with vigilance.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white Warrior creature token with vigilance",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Warrior"
+                ],
+                "keywords": [
+                  "vigilance"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1 and has first strike. (It deals combat damage before creatures without first strike.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+1 and has first strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

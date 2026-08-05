@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ea7302b3-c9a2-4bc4-81b8-3a8d1d7c3b8b",
+  "name": "Kurkesh, Onakke Ancient",
+  "faces": [
+    {
+      "name": "Kurkesh, Onakke Ancient",
+      "type_line": "Legendary Creature \u2014 Ogre Spirit",
+      "oracle_text": "Whenever you activate an ability of an artifact, if it isn't a mana ability, you may pay {R}. If you do, copy that ability. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you activate an ability of an artifact, if it isn't a mana ability, you may pay {R}. If you do, copy that ability. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you activate an ability of an artifact"
+          },
+          "condition": [
+            {
+              "condition_text": "it isn't a mana ability"
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{r}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy that ability",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

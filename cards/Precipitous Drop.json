@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d60c8cfe-435c-419e-a44b-b47d49d1afef",
+  "name": "Precipitous Drop",
+  "faces": [
+    {
+      "name": "Precipitous Drop",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, venture into the dungeon. (Enter the first room or advance to the next room.)\nEnchanted creature gets -2/-2. It gets -5/-5 instead as long as you've completed a dungeon.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, venture into the dungeon. (Enter the first room or advance to the next room.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "venture_into_the_dungeon"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets -2/-2. It gets -5/-5 instead as long as you've completed a dungeon.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": -2,
+              "toughness_delta": -2
+            },
+            {
+              "action": "custom_effect",
+              "text": "It gets -5/-5 instead as long as you've completed a dungeon"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

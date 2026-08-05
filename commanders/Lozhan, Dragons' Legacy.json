@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "be2075af-1cd8-42fe-a29b-a0fd2b047a44",
+  "name": "Lozhan, Dragons' Legacy",
+  "faces": [
+    {
+      "name": "Lozhan, Dragons' Legacy",
+      "type_line": "Legendary Creature \u2014 Dragon Shaman",
+      "oracle_text": "Flying\nWhenever you cast an Adventure or Dragon spell, Lozhan deals damage equal to that spell's mana value to any target that isn't a commander.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an Adventure or Dragon spell, Lozhan deals damage equal to that spell's mana value to any target that isn't a commander.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "adventure",
+                "dragon"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Lozhan deals damage equal to that spell's mana value to any target that isn't a commander"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

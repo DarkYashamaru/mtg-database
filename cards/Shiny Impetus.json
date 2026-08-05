@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aae76e5c-f5e0-4d18-b465-e6a829be908a",
+  "name": "Shiny Impetus",
+  "faces": [
+    {
+      "name": "Shiny Impetus",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +2/+2 and is goaded. (It attacks each combat if able and attacks a player other than you if able.)\nWhenever enchanted creature attacks, you create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature attacks, you create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "attacks",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+2 and is goaded. (It attacks each combat if able and attacks a player other than you if able.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +2/+2 and is goaded"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d492eb9a-1f3b-4bf2-9a5d-0f4a4433f33f",
+  "name": "Nahiri, the Harbinger",
+  "faces": [
+    {
+      "name": "Nahiri, the Harbinger",
+      "type_line": "Legendary Planeswalker \u2014 Nahiri",
+      "oracle_text": "+2: You may discard a card. If you do, draw a card.\n\u22122: Exile target enchantment, tapped artifact, or tapped creature.\n\u22128: Search your library for an artifact or creature card, put it onto the battlefield, then shuffle. It gains haste. Return it to your hand at the beginning of the next end step.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+2: You may discard a card. If you do, draw a card.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Exile target enchantment, tapped artifact, or tapped creature.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target enchantment, tapped artifact, or tapped creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22128: Search your library for an artifact or creature card, put it onto the battlefield, then shuffle. It gains haste. Return it to your hand at the beginning of the next end step.",
+          "cost": "\u22128",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for an artifact or creature card, put it onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "delayed_return_to_hand",
+              "object": "it",
+              "trigger": "beginning_of_next_end_step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

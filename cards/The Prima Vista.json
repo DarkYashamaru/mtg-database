@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a09d9754-a321-4018-a237-e613e915b642",
+  "name": "The Prima Vista",
+  "faces": [
+    {
+      "name": "The Prima Vista",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nWhenever you cast a noncreature spell, if at least four mana was spent to cast it, The Prima Vista becomes an artifact creature until end of turn.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, if at least four mana was spent to cast it, The Prima Vista becomes an artifact creature until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            },
+            {
+              "condition_text": "at least four mana was spent to cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "The Prima Vista becomes an artifact creature until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

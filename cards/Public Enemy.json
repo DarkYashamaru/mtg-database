@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c5f360dc-fe4e-4796-b5c1-468cbd0f6d24",
+  "name": "Public Enemy",
+  "faces": [
+    {
+      "name": "Public Enemy",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nAll creatures attack enchanted creature's controller each combat if able.\nWhen enchanted creature dies, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, draw a card.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "All creatures attack enchanted creature's controller each combat if able.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "All creatures attack enchanted creature's controller each combat if able"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

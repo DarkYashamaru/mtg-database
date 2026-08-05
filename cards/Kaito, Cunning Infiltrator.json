@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f6d3f145-00e0-47cd-91d8-0381c19a000d",
+  "name": "Kaito, Cunning Infiltrator",
+  "faces": [
+    {
+      "name": "Kaito, Cunning Infiltrator",
+      "type_line": "Legendary Planeswalker \u2014 Kaito",
+      "oracle_text": "Whenever a creature you control deals combat damage to a player, put a loyalty counter on Kaito.\n+1: Up to one target creature you control can't be blocked this turn. Draw a card, then discard a card.\n\u22122: Create a 2/1 blue Ninja creature token.\n\u22129: You get an emblem with \"Whenever a player casts a spell, you create a 2/1 blue Ninja creature token.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control deals combat damage to a player, put a loyalty counter on Kaito.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a loyalty counter on Kaito"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+1: Up to one target creature you control can't be blocked this turn. Draw a card, then discard a card.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Up to one target creature you control can't be blocked this turn"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Create a 2/1 blue Ninja creature token.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/1 blue Ninja creature token",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Ninja"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22129: You get an emblem with \"Whenever a player casts a spell, you create a 2/1 blue Ninja creature token.\"",
+          "cost": "\u22129",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with \"Whenever a player casts a spell, you create a 2/1 blue Ninja creature token.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

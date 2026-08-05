@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1c55047d-badc-49bb-b791-e9759577e4eb",
+  "name": "The Duke, Rebel Sentry",
+  "faces": [
+    {
+      "name": "The Duke, Rebel Sentry",
+      "type_line": "Legendary Creature \u2014 Human Rebel Ally",
+      "oracle_text": "The Duke enters with a +1/+1 counter on him.\n{T}, Remove a counter from The Duke: Put a +1/+1 counter on another target creature you control. It gains hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Remove a counter from The Duke: Put a +1/+1 counter on another target creature you control. It gains hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)",
+          "cost": "{T}, Remove a counter from The Duke",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "hexproof"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "The Duke enters with a +1/+1 counter on him.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "The Duke enters with a +1/+1 counter on him"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "82a6fa6f-13c2-4ea3-bec2-c51b56b2783b",
+  "name": "The Ooze",
+  "faces": [
+    {
+      "name": "The Ooze",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "Whenever a creature you control with a +1/+1 counter on it leaves the battlefield, create a Mutagen token for each +1/+1 counter on it. (A Mutagen token is an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")\n{T}: Exile target card from a graveyard. Create a Mutagen token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control with a +1/+1 counter on it leaves the battlefield, create a Mutagen token for each +1/+1 counter on it. (A Mutagen token is an artifact with \"{1}, {T}, Sacrifice this token: Put a +1/+1 counter on target creature. Activate only as a sorcery.\")",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": {
+              "selector": "a_creature_you_control_with_a_11_counter_on_it"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a Mutagen token for each +1/+1 counter on it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Exile target card from a graveyard. Create a Mutagen token.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_card_in_graveyard"
+              }
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Mutagen token"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

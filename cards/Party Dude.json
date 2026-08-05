@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8df7a58c-053f-4ead-a778-2747718e5f10",
+  "name": "Party Dude",
+  "faces": [
+    {
+      "name": "Party Dude",
+      "type_line": "Enchantment \u2014 Class",
+      "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nWhen this Class enters, each player creates a Food token.\n{1}{G}: Level 2\nWhenever an artifact an opponent controls is put into a graveyard from the battlefield, draw a card.\n{4}{G}: Level 3\nWhenever one or more of your opponents are attacked, up to one target attacking creature gets +X/+X until end of turn, where X is the number of cards in your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Class enters, each player creates a Food token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_class"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player creates a Food token"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an artifact an opponent controls is put into a graveyard from the battlefield, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an artifact an opponent controls is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more of your opponents are attacked, up to one target attacking creature gets +X/+X until end of turn, where X is the number of cards in your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more of your opponents are attacked"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "up to one target attacking creature gets +X/+X until end of turn, where X is the number of cards in your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{G}: Level 2",
+          "cost": "{1}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}{G}: Level 3",
+          "cost": "{4}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

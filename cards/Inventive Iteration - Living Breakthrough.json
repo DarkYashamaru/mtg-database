@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e711a213-2a6b-4b34-a788-95b6c0b7ba48",
+  "name": "Inventive Iteration // Living Breakthrough",
+  "faces": [
+    {
+      "name": "Inventive Iteration",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 Return up to one target creature or planeswalker to its owner's hand.\nII \u2014 Return an artifact card from your graveyard to your hand. If you can't, draw a card.\nIII \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Return up to one target creature or planeswalker to its owner's hand.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return up to one target creature or planeswalker to its owner's hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Return an artifact card from your graveyard to your hand. If you can't, draw a card.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return an artifact card from your graveyard to your hand"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you can't"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Living Breakthrough",
+      "type_line": "Enchantment Creature \u2014 Moonfolk",
+      "oracle_text": "Flying\nWhenever you cast a spell, your opponents can't cast spells with the same mana value as that spell until your next turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, your opponents can't cast spells with the same mana value as that spell until your next turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "your opponents can't cast spells with the same mana value as that spell until your next turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "514df71a-138f-460f-a03c-bd1af8e146e2",
+  "name": "Shielded Aether Thief",
+  "faces": [
+    {
+      "name": "Shielded Aether Thief",
+      "type_line": "Creature \u2014 Vedalken Rogue",
+      "oracle_text": "Flash (You may cast this spell any time you could cast an instant.)\nWhenever this creature blocks, you get {E} (an energy counter).\n{T}, Pay {E}{E}{E}: Draw a card.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature blocks, you get {E} (an energy counter).",
+          "trigger": {
+            "type": "blocks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get {E}"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Pay {E}{E}{E}: Draw a card.",
+          "cost": "{T}, Pay {E}{E}{E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c6792d9f-8b74-43c4-814f-ba4adab2fdea",
+  "name": "Thawing Glaciers",
+  "faces": [
+    {
+      "name": "Thawing Glaciers",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{1}, {T}: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle. Return this land to its owner's hand at the beginning of the next cleanup step.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle. Return this land to its owner's hand at the beginning of the next cleanup step.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Return this land to its owner's hand at the beginning of the next cleanup step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

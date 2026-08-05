@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6e32b958-70d3-4f3d-b10e-d6c8cb27dd93",
+  "name": "Protean Hydra",
+  "faces": [
+    {
+      "name": "Protean Hydra",
+      "type_line": "Creature \u2014 Hydra",
+      "oracle_text": "This creature enters with X +1/+1 counters on it.\nIf damage would be dealt to this creature, prevent that damage and remove that many +1/+1 counters from it.\nWhenever a +1/+1 counter is removed from this creature, put two +1/+1 counters on it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a +1/+1 counter is removed from this creature, put two +1/+1 counters on it at the beginning of the next end step.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a +1/+1 counter is removed from this creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "it_at_the_beginning_of_the_next_end_step",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        },
+        {
+          "raw_text": "If damage would be dealt to this creature, prevent that damage and remove that many +1/+1 counters from it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent that damage and remove that many +1/+1 counters from it",
+              "condition": [
+                {
+                  "condition_text": "damage would be dealt to this creature"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c9048d35-aff7-45ae-ae97-db89397b3e74",
+  "name": "Avalanche Riders",
+  "faces": [
+    {
+      "name": "Avalanche Riders",
+      "type_line": "Creature \u2014 Human Nomad",
+      "oracle_text": "Haste\nEcho {3}{R} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nWhen this creature enters, destroy target land.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, destroy target land.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_land"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Echo {3}{R} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Echo {3}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

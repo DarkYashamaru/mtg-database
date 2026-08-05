@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "98e0b1a8-902d-4285-b13c-e63f2e1692f1",
+  "name": "Kinetic Augur",
+  "faces": [
+    {
+      "name": "Kinetic Augur",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "Trample (This creature can deal excess combat damage to the player or planeswalker it's attacking.)\nKinetic Augur's power is equal to the number of instant and sorcery cards in your graveyard.\nWhen this creature enters, discard up to two cards, then draw that many cards.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, discard up to two cards, then draw that many cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "discard up to two cards"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kinetic Augur's power is equal to the number of instant and sorcery cards in your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kinetic Augur's power is equal to the number of instant and sorcery cards in your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

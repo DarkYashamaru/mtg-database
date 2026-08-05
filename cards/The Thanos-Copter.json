@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e58e94dc-9602-48db-9dd9-9d3051c33a76",
+  "name": "The Thanos-Copter",
+  "faces": [
+    {
+      "name": "The Thanos-Copter",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Flying, haste\nWhen The Thanos-Copter enters, Vehicles you control become artifact creatures until end of turn.\nWhenever a Vehicle you control deals combat damage to a player, draw a card.\nCrew 2",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When The Thanos-Copter enters, Vehicles you control become artifact creatures until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Vehicles you control become artifact creatures until end of turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a Vehicle you control deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Vehicle"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

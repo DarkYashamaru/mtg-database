@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d00ade82-caab-43c6-9756-6e9e6edfc519",
+  "name": "Once Upon a Time",
+  "faces": [
+    {
+      "name": "Once Upon a Time",
+      "type_line": "Instant",
+      "oracle_text": "If this spell is the first spell you've cast this game, you may cast it without paying its mana cost.\nLook at the top five cards of your library. You may reveal a creature or land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If this spell is the first spell you've cast this game, you may cast it without paying its mana cost.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may cast it without paying its mana cost",
+              "condition": [
+                {
+                  "condition_text": "this spell is the first spell you've cast this game"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Look at the top five cards of your library. You may reveal a creature or land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 5
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature",
+                  "Land"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

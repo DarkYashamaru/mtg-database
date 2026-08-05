@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b25ccb64-e114-4d54-a07a-c8cd4560b511",
+  "name": "Snowmelt Stag",
+  "faces": [
+    {
+      "name": "Snowmelt Stag",
+      "type_line": "Creature \u2014 Elemental Elk",
+      "oracle_text": "Vigilance\nDuring your turn, this creature has base power and toughness 5/2.\n{5}{U}{U}: This creature can't be blocked this turn.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{5}{U}{U}: This creature can't be blocked this turn.",
+          "cost": "{5}{U}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "During your turn, this creature has base power and toughness 5/2.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "During your turn, this creature has base power and toughness 5/2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ccb39f4a-2684-4eb7-9066-aad81ae08962",
+  "name": "Massacre Girl, Known Killer",
+  "faces": [
+    {
+      "name": "Massacre Girl, Known Killer",
+      "type_line": "Legendary Creature \u2014 Human Assassin",
+      "oracle_text": "Menace\nCreatures you control have wither. (They deal damage to creatures in the form of -1/-1 counters.)\nWhenever a creature an opponent controls dies, if its toughness was less than 1, draw a card.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature an opponent controls dies, if its toughness was less than 1, draw a card.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_an_opponent_controls"
+          },
+          "condition": [
+            {
+              "condition_text": "its toughness was less than 1"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control have wither. (They deal damage to creatures in the form of -1/-1 counters.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures you control have wither"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

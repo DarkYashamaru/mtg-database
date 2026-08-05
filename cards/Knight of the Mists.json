@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e9893534-3d05-42c2-93ff-f28ffae89aa3",
+  "name": "Knight of the Mists",
+  "faces": [
+    {
+      "name": "Knight of the Mists",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Flanking (Whenever a creature without flanking blocks this creature, the blocking creature gets -1/-1 until end of turn.)\nWhen this creature enters, you may pay {U}. If you don't, destroy target Knight and it can't be regenerated.",
+      "static": [
+        {
+          "keyword": "flanking"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may pay {U}. If you don't, destroy target Knight and it can't be regenerated.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{u}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy target knight",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

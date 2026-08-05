@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4df179b4-7c6b-4e63-9d7d-62f4df377989",
+  "name": "Admiral Brass, Unsinkable",
+  "faces": [
+    {
+      "name": "Admiral Brass, Unsinkable",
+      "type_line": "Legendary Creature \u2014 Human Pirate",
+      "oracle_text": "When Admiral Brass enters, mill four cards.\nAt the beginning of combat on your turn, you may return target Pirate creature card from your graveyard to the battlefield with a finality counter on it. It has base power and toughness 4/4. It gains haste until end of turn. (If a creature with a finality counter on it would die, exile it instead.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Admiral Brass enters, mill four cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, you may return target Pirate creature card from your graveyard to the battlefield with a finality counter on it. It has base power and toughness 4/4. It gains haste until end of turn. (If a creature with a finality counter on it would die, exile it instead.)",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return target Pirate creature card from your graveyard to the battlefield with a finality counter on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It has base power and toughness 4/4"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

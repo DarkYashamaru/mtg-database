@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b7bdb688-f8ee-4d22-a679-37a2ecd390a1",
+  "name": "Casal, Lurkwood Pathfinder // Casal, Pathbreaker Owlbear",
+  "faces": [
+    {
+      "name": "Casal, Lurkwood Pathfinder",
+      "type_line": "Legendary Creature \u2014 Tiefling Druid",
+      "oracle_text": "Vigilance\nWhen Casal enters, search your library for a Forest card, put it onto the battlefield tapped, then shuffle.\nWhenever Casal attacks, you may pay {1}{G}. If you do, transform her.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Casal enters, search your library for a Forest card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a forest card, put it onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Casal attacks, you may pay {1}{G}. If you do, transform her.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{G}"
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Casal, Pathbreaker Owlbear",
+      "type_line": "Legendary Creature \u2014 Bird Bear",
+      "oracle_text": "Vigilance, trample\nWhen this creature transforms into Casal, Pathbreaker Owlbear, other legendary creatures you control get +2/+2 and gain trample until end of turn.\nAt the beginning of your upkeep, transform Casal.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature transforms into Casal, Pathbreaker Owlbear, other legendary creatures you control get +2/+2 and gain trample until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this creature transforms into Casal"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "pathbreaker_owlbear_other_legendary_creatures_you_control_get_22_and",
+              "keyword": "trample"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, transform Casal.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "871e4c4e-8105-4cb9-b1cd-53c5f8e64494",
+  "name": "Colossal Skyturtle",
+  "faces": [
+    {
+      "name": "Colossal Skyturtle",
+      "type_line": "Enchantment Creature \u2014 Turtle",
+      "oracle_text": "Flying, ward {2}\nChannel \u2014 {2}{G}, Discard this card: Return target card from your graveyard to your hand.\nChannel \u2014 {1}{U}, Discard this card: Return target creature to its owner's hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Channel \u2014 {2}{G}, Discard this card: Return target card from your graveyard to your hand.",
+          "cost": "Channel \u2014 {2}{G}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target card from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Channel \u2014 {1}{U}, Discard this card: Return target creature to its owner's hand.",
+          "cost": "Channel \u2014 {1}{U}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature"
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0561043a-3896-4bb1-8ff5-ee674ddfea2a",
+  "name": "Sengir Autocrat",
+  "faces": [
+    {
+      "name": "Sengir Autocrat",
+      "type_line": "Creature \u2014 Human",
+      "oracle_text": "When this creature enters, create three 0/1 black Serf creature tokens.\nWhen this creature leaves the battlefield, exile all Serf tokens.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create three 0/1 black Serf creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "0/1 black Serf creature tokens",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "0/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Serf"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature leaves the battlefield, exile all Serf tokens.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile all Serf tokens"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

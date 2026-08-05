@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9a0c9023-9431-4f98-b167-ab4c7215319c",
+  "name": "The Belligerent",
+  "faces": [
+    {
+      "name": "The Belligerent",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Whenever The Belligerent attacks, create a Treasure token. Until end of turn, you may look at the top card of your library any time, and you may play lands and cast spells from the top of your library.\nCrew 3",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever The Belligerent attacks, create a Treasure token. Until end of turn, you may look at the top card of your library any time, and you may play lands and cast spells from the top of your library.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may look at the top card of your library any time, and you may play lands and cast spells from the top of your library"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 3",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

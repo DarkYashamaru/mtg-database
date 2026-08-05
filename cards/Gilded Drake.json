@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7f06c098-6482-4bf3-a9a1-110d6d5b5703",
+  "name": "Gilded Drake",
+  "faces": [
+    {
+      "name": "Gilded Drake",
+      "type_line": "Creature \u2014 Drake",
+      "oracle_text": "Flying\nWhen this creature enters, exchange control of this creature and up to one target creature an opponent controls. If you don't or can't make an exchange, sacrifice this creature. This ability still resolves if its target becomes illegal.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, exchange control of this creature and up to one target creature an opponent controls. If you don't or can't make an exchange, sacrifice this creature. This ability still resolves if its target becomes illegal.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exchange control of this creature and up to one target creature an opponent controls"
+            },
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you don't or can't make an exchange"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "This ability still resolves if its target becomes illegal"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

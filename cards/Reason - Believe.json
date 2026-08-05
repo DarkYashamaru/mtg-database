@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e2b152ea-82d5-465e-8e13-3d62aacd6692",
+  "name": "Reason // Believe",
+  "faces": [
+    {
+      "name": "Believe",
+      "type_line": "Sorcery",
+      "oracle_text": "Aftermath (Cast this spell only from your graveyard. Then exile it.)\nLook at the top card of your library. You may put it onto the battlefield if it's a creature card. If you don't, put it into your hand.",
+      "static": [
+        {
+          "keyword": "aftermath"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Look at the top card of your library. You may put it onto the battlefield if it's a creature card. If you don't, put it into your hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put it onto the battlefield if it's a creature card"
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reason",
+      "type_line": "Sorcery",
+      "oracle_text": "Scry 3.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Scry 3.",
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

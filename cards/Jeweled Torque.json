@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91f36a03-6031-4834-98ee-20b36cdf5569",
+  "name": "Jeweled Torque",
+  "faces": [
+    {
+      "name": "Jeweled Torque",
+      "type_line": "Artifact",
+      "oracle_text": "As this artifact enters, choose a color.\nWhenever a player casts a spell of the chosen color, you may pay {2}. If you do, you gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts a spell of the chosen color, you may pay {2}. If you do, you gain 2 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player casts a spell of the chosen color"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this artifact enters, choose a color.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this artifact enters, choose a color"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

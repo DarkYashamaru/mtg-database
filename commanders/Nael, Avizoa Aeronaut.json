@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6044696a-0f64-474a-840e-8ed4dbd30221",
+  "name": "Nael, Avizoa Aeronaut",
+  "faces": [
+    {
+      "name": "Nael, Avizoa Aeronaut",
+      "type_line": "Legendary Creature \u2014 Elf Scout",
+      "oracle_text": "Flying\nDomain \u2014 Whenever Nael deals combat damage to a player, look at the top X cards of your library, where X is the number of basic land types among lands you control. Put up to one of them on top of your library and the rest on the bottom in a random order. Then if there are five basic land types among lands you control, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Nael deals combat damage to a player, look at the top X cards of your library, where X is the number of basic land types among lands you control. Put up to one of them on top of your library and the rest on the bottom in a random order. Then if there are five basic land types among lands you control, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top X cards of your library, where X is the number of basic land types among lands you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put up to one of them on top of your library and the rest on the bottom in a random order"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "there are five basic land types among lands you control"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

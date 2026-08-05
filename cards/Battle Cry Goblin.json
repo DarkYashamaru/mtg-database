@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e74c4001-d958-4d2b-b57d-c3601f01580c",
+  "name": "Battle Cry Goblin",
+  "faces": [
+    {
+      "name": "Battle Cry Goblin",
+      "type_line": "Creature \u2014 Goblin",
+      "oracle_text": "{1}{R}: Goblins you control get +1/+0 and gain haste until end of turn.\nPack tactics \u2014 Whenever this creature attacks, if you attacked with creatures with total power 6 or greater this combat, create a 1/1 red Goblin creature token that's tapped and attacking.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, if you attacked with creatures with total power 6 or greater this combat, create a 1/1 red Goblin creature token that's tapped and attacking.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you attacked with creatures with total power 6 or greater this combat"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a 1/1 red Goblin creature token that's tapped and attacking"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{R}: Goblins you control get +1/+0 and gain haste until end of turn.",
+          "cost": "{1}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "goblins_you_control_get_10_and",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "723398f2-eaf2-4615-9078-418b9f540a33",
+  "name": "Augur of Skulls",
+  "faces": [
+    {
+      "name": "Augur of Skulls",
+      "type_line": "Creature \u2014 Skeleton Wizard",
+      "oracle_text": "{1}{B}: Regenerate this creature.\nSacrifice this creature: Target player discards two cards. Activate only during your upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{B}: Regenerate this creature.",
+          "cost": "{1}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "raw_text": "Sacrifice this creature: Target player discards two cards. Activate only during your upkeep.",
+          "cost": "Sacrifice this creature",
+          "condition": [
+            {
+              "condition_text": "during your upkeep"
+            }
+          ],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "target_player",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

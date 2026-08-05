@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "770894c0-01e7-4c1e-bcfb-989eee221dd2",
+  "name": "Blightwing Bandit",
+  "faces": [
+    {
+      "name": "Blightwing Bandit",
+      "type_line": "Creature \u2014 Faerie Rogue",
+      "oracle_text": "Flying, deathtouch\nWhenever you cast your first spell during each opponent's turn, look at the top card of that player's library, then exile it face down. You may play that card for as long as it remains exiled, and mana of any type can be spent to cast it.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your first spell during each opponent's turn, look at the top card of that player's library, then exile it face down. You may play that card for as long as it remains exiled, and mana of any type can be spent to cast it.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "turn_scope": "each_opponents_turn"
+            },
+            {
+              "spell_cast_count_this_turn": 1
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of that player's library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile it face down"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card for as long as it remains exiled, and mana of any type can be spent to cast it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

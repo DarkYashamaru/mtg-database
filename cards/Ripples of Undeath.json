@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2acf8e34-9215-4a72-a24f-09d3bdd0083a",
+  "name": "Ripples of Undeath",
+  "faces": [
+    {
+      "name": "Ripples of Undeath",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your first main phase, mill three cards. Then you may pay {1} and 3 life. If you do, put a card from among those cards into your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your first main phase, mill three cards. Then you may pay {1} and 3 life. If you do, put a card from among those cards into your hand.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may pay {1} and 3 life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a card from among those cards into your hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

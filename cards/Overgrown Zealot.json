@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5146b291-1170-481f-a4b9-709dd5c4b09c",
+  "name": "Overgrown Zealot",
+  "faces": [
+    {
+      "name": "Overgrown Zealot",
+      "type_line": "Creature \u2014 Elf Druid",
+      "oracle_text": "{T}: Add one mana of any color.\n{T}: Add two mana of any one color. Spend this mana only to turn permanents face up.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add two mana of any one color. Spend this mana only to turn permanents face up.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "same_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to turn permanents face up"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

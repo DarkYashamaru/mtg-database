@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1f18e63d-ab1f-426c-afd5-ce89433394ca",
+  "name": "Banish into Fable",
+  "faces": [
+    {
+      "name": "Banish into Fable",
+      "type_line": "Instant",
+      "oracle_text": "When you cast this spell from your hand, copy it if you control an artifact, then copy it if you control an enchantment. You may choose new targets for the copies.\nReturn target nonland permanent to its owner's hand. You create a 2/2 white Knight creature token with vigilance.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell from your hand, copy it if you control an artifact, then copy it if you control an enchantment. You may choose new targets for the copies.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you cast this spell from your hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy it if you control an artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy it if you control an enchantment"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may choose new targets for the copies"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target nonland permanent to its owner's hand. You create a 2/2 white Knight creature token with vigilance.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You create a 2/2 white Knight creature token with vigilance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4c5b2be9-5d48-4e62-ae67-d61f3708bb4f",
+  "name": "Thieving Sprite",
+  "faces": [
+    {
+      "name": "Thieving Sprite",
+      "type_line": "Creature \u2014 Faerie Rogue",
+      "oracle_text": "Flying\nWhen this creature enters, target player reveals X cards from their hand, where X is the number of Faeries you control. You choose one of those cards. That player discards that card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target player reveals X cards from their hand, where X is the number of Faeries you control. You choose one of those cards. That player discards that card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target player reveals X cards from their hand, where X is the number of Faeries you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose one of those cards"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "064a2f4a-ff3f-4622-8727-24b22965416d",
+  "name": "H.E.R.B.I.E., Lovable Robot",
+  "faces": [
+    {
+      "name": "H.E.R.B.I.E., Lovable Robot",
+      "type_line": "Legendary Artifact Creature \u2014 Robot Scout",
+      "oracle_text": "Flying\nAt the beginning of combat on your turn, if you've cast a noncreature spell this turn, surveil 1.\n{T}: Add {C}.\n{1}, {T}: Add one mana of any color.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if you've cast a noncreature spell this turn, surveil 1.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you've cast a noncreature spell this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Add one mana of any color.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

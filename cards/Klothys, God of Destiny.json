@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e8473969-195f-41ee-a84d-463cc8c0ef02",
+  "name": "Klothys, God of Destiny",
+  "faces": [
+    {
+      "name": "Klothys, God of Destiny",
+      "type_line": "Legendary Enchantment Creature \u2014 God",
+      "oracle_text": "Indestructible\nAs long as your devotion to red and green is less than seven, Klothys isn't a creature.\nAt the beginning of your first main phase, exile target card from a graveyard. If it was a land card, add {R} or {G}. Otherwise, you gain 2 life and Klothys deals 2 damage to each opponent.",
+      "static": [
+        {
+          "keyword": "indestructible"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your first main phase, exile target card from a graveyard. If it was a land card, add {R} or {G}. Otherwise, you gain 2 life and Klothys deals 2 damage to each opponent.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_card_in_graveyard"
+              }
+            },
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{g}"
+              ],
+              "distribution": "choose_one",
+              "condition": [
+                {
+                  "condition_text": "it was a land card"
+                }
+              ]
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as your devotion to red and green is less than seven, Klothys isn't a creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as your devotion to red and green is less than seven, Klothys isn't a creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

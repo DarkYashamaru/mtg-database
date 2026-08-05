@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "baec04a1-3bc9-4618-afab-e42013e36648",
+  "name": "Metropolis Reformer",
+  "faces": [
+    {
+      "name": "Metropolis Reformer",
+      "type_line": "Creature \u2014 Angel Cleric",
+      "oracle_text": "Flying, vigilance\nYou have hexproof.\nWhenever this creature is dealt damage, you gain that much life.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature is dealt damage, you gain that much life.",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": "that_much"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You have hexproof.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "you"
+              },
+              "keywords": [
+                "hexproof"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

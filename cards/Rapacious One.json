@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3af03c99-d215-477b-ba49-51f4e87907ff",
+  "name": "Rapacious One",
+  "faces": [
+    {
+      "name": "Rapacious One",
+      "type_line": "Creature \u2014 Eldrazi Drone",
+      "oracle_text": "Trample\nWhenever this creature deals combat damage to a player, create that many 0/1 colorless Eldrazi Spawn creature tokens. They have \"Sacrifice this token: Add {C}.\"",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, create that many 0/1 colorless Eldrazi Spawn creature tokens. They have \"Sacrifice this token: Add {C}.\"",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "that",
+              "token": {
+                "raw": "many 0/1 colorless Eldrazi Spawn creature tokens",
+                "power_toughness": "0/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Eldrazi",
+                  "Spawn"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "They have \"Sacrifice this token: Add {C}.\""
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

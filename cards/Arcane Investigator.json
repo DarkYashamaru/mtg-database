@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "19b229c4-1c21-4c7c-a25e-4e8c1cd4ed4b",
+  "name": "Arcane Investigator",
+  "faces": [
+    {
+      "name": "Arcane Investigator",
+      "type_line": "Creature \u2014 Elf Wizard",
+      "oracle_text": "Search the Room \u2014 {5}{U}: Roll a d20.\n1\u20149 | Draw a card.\n10\u201420 | Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Search the Room \u2014 {5}{U}: Roll a d20.",
+          "cost": "Search the Room \u2014 {5}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Roll a d20"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "1\u20149 | Draw a card.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "1\u20149 | Draw a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "10\u201420 | Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "10\u201420 | Look at the top three cards of your library"
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "destination": "hand",
+              "remainder_destination": "bottom_of_library",
+              "remainder_order": "any"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "424084cf-418f-47b4-915f-b254c8adb3bd",
+  "name": "Surtr, Fiery J\u00f6tun",
+  "faces": [
+    {
+      "name": "Surtr, Fiery J\u00f6tun",
+      "type_line": "Legendary Creature \u2014 Giant God Warrior",
+      "oracle_text": "Trample (This creature can deal excess combat damage to the player it's attacking.)\nWhenever you cast a historic spell, Surtr deals 3 damage to any target. (Artifacts, legendaries, and Sagas are historic.)",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a historic spell, Surtr deals 3 damage to any target. (Artifacts, legendaries, and Sagas are historic.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Historic"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

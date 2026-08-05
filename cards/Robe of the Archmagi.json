@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "570de99a-7c65-4052-bc4b-cfb8caef40b3",
+  "name": "Robe of the Archmagi",
+  "faces": [
+    {
+      "name": "Robe of the Archmagi",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature deals combat damage to a player, you draw that many cards.\nEquip {4}\nEquip Shaman, Warlock, or Wizard {1}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals combat damage to a player, you draw that many cards.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you draw that many cards"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4}",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip Shaman, Warlock, or Wizard {1}",
+          "cost": "",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equip Shaman, Warlock, or Wizard {1}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

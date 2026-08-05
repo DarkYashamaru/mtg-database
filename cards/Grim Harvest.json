@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "oracle_id": "231ca538-b277-4c12-979f-57640a0e87f0",
+  "name": "Grim Harvest",
+  "faces": [
+    {
+      "name": "Grim Harvest",
+      "type_line": "Instant",
+      "oracle_text": "Return target creature card from your graveyard to your hand.\nRecover {2}{B} (When a creature is put into your graveyard from the battlefield, you may pay {2}{B}. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target creature card from your graveyard to your hand.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Recover {2}{B} (When a creature is put into your graveyard from the battlefield, you may pay {2}{B}. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Recover {2}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

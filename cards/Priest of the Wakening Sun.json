@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cc11efa2-27ca-4745-8178-31576539512a",
+  "name": "Priest of the Wakening Sun",
+  "faces": [
+    {
+      "name": "Priest of the Wakening Sun",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "At the beginning of your upkeep, you may reveal a Dinosaur card from your hand. If you do, you gain 2 life.\n{3}{W}{W}, Sacrifice this creature: Search your library for a Dinosaur card, reveal it, put it into your hand, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may reveal a Dinosaur card from your hand. If you do, you gain 2 life.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may reveal a Dinosaur card from your hand"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{W}{W}, Sacrifice this creature: Search your library for a Dinosaur card, reveal it, put it into your hand, then shuffle.",
+          "cost": "{3}{W}{W}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a dinosaur card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

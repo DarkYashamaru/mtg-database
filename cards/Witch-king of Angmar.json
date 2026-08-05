@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2eb1b429-8d11-42f3-8815-5a60b6a4e2d5",
+  "name": "Witch-king of Angmar",
+  "faces": [
+    {
+      "name": "Witch-king of Angmar",
+      "type_line": "Legendary Creature \u2014 Wraith Noble",
+      "oracle_text": "Flying\nWhenever one or more creatures deal combat damage to you, each opponent sacrifices a creature of their choice that dealt combat damage to you this turn. The Ring tempts you.\nDiscard a card: Witch-king of Angmar gains indestructible until end of turn. Tap it.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures deal combat damage to you, each opponent sacrifices a creature of their choice that dealt combat damage to you this turn. The Ring tempts you.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more creatures deal combat damage to you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent sacrifices a creature of their choice that dealt combat damage to you this turn"
+            },
+            {
+              "action": "ring_tempts_you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Discard a card: Witch-king of Angmar gains indestructible until end of turn. Tap it.",
+          "cost": "Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            },
+            {
+              "action": "tap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

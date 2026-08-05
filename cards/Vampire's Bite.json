@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9e88796b-f37f-4f9f-9a6f-695db2801f0e",
+  "name": "Vampire's Bite",
+  "faces": [
+    {
+      "name": "Vampire's Bite",
+      "type_line": "Instant",
+      "oracle_text": "Kicker {2}{B} (You may pay an additional {2}{B} as you cast this spell.)\nTarget creature gets +3/+0 until end of turn. If this spell was kicked, that creature gains lifelink until end of turn. (Damage dealt by the creature also causes its controller to gain that much life.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2}{B} (You may pay an additional {2}{B} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}{B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target creature gets +3/+0 until end of turn. If this spell was kicked, that creature gains lifelink until end of turn. (Damage dealt by the creature also causes its controller to gain that much life.)",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 3,
+              "toughness_delta": 0
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature",
+              "keyword": "lifelink",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

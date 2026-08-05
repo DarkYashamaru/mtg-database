@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "oracle_id": "443f2272-6475-4966-8ca2-717d4cf208ee",
+  "name": "Dinotomaton",
+  "faces": [
+    {
+      "name": "Dinotomaton",
+      "type_line": "Artifact Creature \u2014 Dinosaur Gnome",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen this creature enters, target creature you control gains menace until end of turn.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target creature you control gains menace until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a242c9bf-dab6-4996-bb3a-b4356f9ed0c9",
+  "name": "Key to the City",
+  "faces": [
+    {
+      "name": "Key to the City",
+      "type_line": "Artifact",
+      "oracle_text": "{T}, Discard a card: Up to one target creature can't be blocked this turn.\nWhenever this artifact becomes untapped, you may pay {2}. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this artifact becomes untapped, you may pay {2}. If you do, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this artifact becomes untapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Discard a card: Up to one target creature can't be blocked this turn.",
+          "cost": "{T}, Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Up to one target creature can't be blocked this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

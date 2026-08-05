@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "49039519-62db-4605-b600-cef6f34c893f",
+  "name": "Rampage of the Valkyries",
+  "faces": [
+    {
+      "name": "Rampage of the Valkyries",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create a 4/4 white Angel creature token with flying and vigilance.\nWhenever an Angel you control dies, each other player sacrifices a creature of their choice.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create a 4/4 white Angel creature token with flying and vigilance.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/4 white Angel creature token with flying and vigilance",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Angel"
+                ],
+                "keywords": [
+                  "flying",
+                  "vigilance"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an Angel you control dies, each other player sacrifices a creature of their choice.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Angel"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each other player sacrifices a creature of their choice"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

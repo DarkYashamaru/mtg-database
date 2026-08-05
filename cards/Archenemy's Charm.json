@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "edcb0248-e7c9-4df9-8dba-982048654fd2",
+  "name": "Archenemy's Charm",
+  "faces": [
+    {
+      "name": "Archenemy's Charm",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Exile target creature or planeswalker.\n\u2022 Return one or two target creature and/or planeswalker cards from your graveyard to your hand.\n\u2022 Put two +1/+1 counters on target creature you control. It gains lifelink until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Exile target creature or planeswalker.\n\u2022 Return one or two target creature and/or planeswalker cards from your graveyard to your hand.\n\u2022 Put two +1/+1 counters on target creature you control. It gains lifelink until end of turn.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Exile target creature or planeswalker.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Exile target creature or planeswalker"
+                }
+              ]
+            },
+            {
+              "raw_text": "Return one or two target creature and/or planeswalker cards from your graveyard to your hand.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Return one or two target creature and/or planeswalker cards from your graveyard to your hand"
+                }
+              ]
+            },
+            {
+              "raw_text": "Put two +1/+1 counters on target creature you control. It gains lifelink until end of turn.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control",
+                    "card_types": [
+                      "Creature"
+                    ],
+                    "subtypes": [
+                      "Target"
+                    ]
+                  },
+                  "amount": 2
+                },
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "previous_target",
+                  "keyword": "lifelink"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

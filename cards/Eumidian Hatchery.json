@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b6d933e-2830-4f5a-b244-a421aa9615dc",
+  "name": "Eumidian Hatchery",
+  "faces": [
+    {
+      "name": "Eumidian Hatchery",
+      "type_line": "Land",
+      "oracle_text": "{T}, Pay 1 life: Add {B}. Put a hatchling counter on this land.\nWhen this land is put into a graveyard from the battlefield, for each hatchling counter on it, create a 1/1 black Insect creature token with flying.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land is put into a graveyard from the battlefield, for each hatchling counter on it, create a 1/1 black Insect creature token with flying.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this land is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each hatchling counter on it, create a 1/1 black Insect creature token with flying"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Pay 1 life: Add {B}. Put a hatchling counter on this land.",
+          "cost": "{T}, Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a hatchling counter on this land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

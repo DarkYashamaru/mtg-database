@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ec463bde-dadf-4044-8e41-71338fd4d62f",
+  "name": "Arcum's Astrolabe",
+  "faces": [
+    {
+      "name": "Arcum's Astrolabe",
+      "type_line": "Snow Artifact",
+      "oracle_text": "({S} can be paid with one mana from a snow source.)\nWhen this artifact enters, draw a card.\n{1}, {T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}: Add one mana of any color.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

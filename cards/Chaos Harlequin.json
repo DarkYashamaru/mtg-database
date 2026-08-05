@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c8e96a51-24c9-4955-8bf0-6ef448fa8011",
+  "name": "Chaos Harlequin",
+  "faces": [
+    {
+      "name": "Chaos Harlequin",
+      "type_line": "Creature \u2014 Human",
+      "oracle_text": "{R}: Exile the top card of your library. If that card is a land card, this creature gets -4/-0 until end of turn. Otherwise, this creature gets +2/+0 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{R}: Exile the top card of your library. If that card is a land card, this creature gets -4/-0 until end of turn. Otherwise, this creature gets +2/+0 until end of turn.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": -4,
+              "toughness_delta": 0,
+              "condition": [
+                {
+                  "condition_text": "that card is a land card"
+                }
+              ]
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 0,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

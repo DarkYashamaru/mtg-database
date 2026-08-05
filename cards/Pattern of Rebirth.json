@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4b8856f8-3cd1-450c-a71b-eb0026e8e179",
+  "name": "Pattern of Rebirth",
+  "faces": [
+    {
+      "name": "Pattern of Rebirth",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen enchanted creature dies, that creature's controller may search their library for a creature card, put that card onto the battlefield, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, that creature's controller may search their library for a creature card, put that card onto the battlefield, then shuffle.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that creature's controller may search their library for a creature card, put that card onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

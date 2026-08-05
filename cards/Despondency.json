@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a68ac1ba-f51e-446c-abf0-7a2bd4d65a8c",
+  "name": "Despondency",
+  "faces": [
+    {
+      "name": "Despondency",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets -2/-0.\nWhen this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this Aura is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets -2/-0.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": -2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

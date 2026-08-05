@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e24916ff-7566-4f27-8e31-732311a4a88c",
+  "name": "Stormshriek Feral // Flush Out",
+  "faces": [
+    {
+      "name": "Flush Out",
+      "type_line": "Sorcery \u2014 Omen",
+      "oracle_text": "Discard a card. If you do, draw two cards. (Then shuffle this card into its owner's library.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Discard a card. If you do, draw two cards. (Then shuffle this card into its owner's library.)",
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stormshriek Feral",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying, haste\n{1}{R}: This creature gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{R}: This creature gets +1/+0 until end of turn.",
+          "cost": "{1}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

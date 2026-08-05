@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fdb51cc1-ce0e-4920-b123-1cdd570fc38b",
+  "name": "Specimen Collector",
+  "faces": [
+    {
+      "name": "Specimen Collector",
+      "type_line": "Creature \u2014 Vedalken Wizard",
+      "oracle_text": "When this creature enters, create a 1/1 green Squirrel creature token and a 0/3 blue Crab creature token.\nWhen this creature dies, create a token that's a copy of target token you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 1/1 green Squirrel creature token and a 0/3 blue Crab creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Squirrel creature token and a 0/3 blue Crab creature token",
+                "colors": [
+                  "green",
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Squirrel"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, create a token that's a copy of target token you control.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of target token you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

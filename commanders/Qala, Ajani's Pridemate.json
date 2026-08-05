@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1fc1b0d7-7f15-4d00-bc8f-e06489afd425",
+  "name": "Qala, Ajani's Pridemate",
+  "faces": [
+    {
+      "name": "Qala, Ajani's Pridemate",
+      "type_line": "Legendary Creature \u2014 Cat Warrior",
+      "oracle_text": "Whenever Qala attacks, other attacking creatures you control get +X/+0 until end of turn, where X is the number of counters on Qala.\nWhenever you gain life, put a +1/+1 counter on Qala.\n{3}{W}: You gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Qala attacks, other attacking creatures you control get +X/+0 until end of turn, where X is the number of counters on Qala.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "other attacking creatures you control get +X/+0 until end of turn, where X is the number of counters on Qala"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you gain life, put a +1/+1 counter on Qala.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{W}: You gain 1 life.",
+          "cost": "{3}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

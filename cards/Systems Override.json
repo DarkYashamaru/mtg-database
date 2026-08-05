@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4c9d9d47-1eb6-4981-ba83-d5ec04906e71",
+  "name": "Systems Override",
+  "faces": [
+    {
+      "name": "Systems Override",
+      "type_line": "Sorcery",
+      "oracle_text": "Gain control of target artifact or creature until end of turn. Untap that permanent. It gains haste until end of turn. If it's a Spacecraft, put ten charge counters on it. If you do, remove ten charge counters from it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Gain control of target artifact or creature until end of turn. Untap that permanent. It gains haste until end of turn. If it's a Spacecraft, put ten charge counters on it. If you do, remove ten charge counters from it at the beginning of the next end step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gain control of target artifact or creature until end of turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Untap that permanent"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put ten charge counters on it",
+              "condition": [
+                {
+                  "condition_text": "it's a spacecraft"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove ten charge counters from it at the beginning of the next end step",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

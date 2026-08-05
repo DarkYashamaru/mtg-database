@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8355d44d-cf03-4b19-b2dc-0ca3450dbf5c",
+  "name": "Tribute to Urborg",
+  "faces": [
+    {
+      "name": "Tribute to Urborg",
+      "type_line": "Instant",
+      "oracle_text": "Kicker {1}{U} (You may pay an additional {1}{U} as you cast this spell.)\nTarget creature gets -2/-2 until end of turn. If this spell was kicked, that creature gets an additional -1/-1 until end of turn for each instant and sorcery card in your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{U} (You may pay an additional {1}{U} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{U}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target creature gets -2/-2 until end of turn. If this spell was kicked, that creature gets an additional -1/-1 until end of turn for each instant and sorcery card in your graveyard.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -2,
+              "toughness_delta": -2
+            },
+            {
+              "action": "custom_effect",
+              "text": "that creature gets an additional -1/-1 until end of turn for each instant and sorcery card in your graveyard",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

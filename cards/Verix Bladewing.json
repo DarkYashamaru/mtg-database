@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d7315b3b-6e5d-4d28-a503-bfae1daf6c43",
+  "name": "Verix Bladewing",
+  "faces": [
+    {
+      "name": "Verix Bladewing",
+      "type_line": "Legendary Creature \u2014 Dragon",
+      "oracle_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)\nFlying\nWhen Verix Bladewing enters, if it was kicked, create Karox Bladewing, a legendary 4/4 red Dragon creature token with flying.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Verix Bladewing enters, if it was kicked, create Karox Bladewing, a legendary 4/4 red Dragon creature token with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Karox Bladewing, a legendary 4/4 red Dragon creature token with flying",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Dragon"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

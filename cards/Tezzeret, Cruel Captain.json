@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0eb11b2d-a397-48da-a0f3-9f0f83f42282",
+  "name": "Tezzeret, Cruel Captain",
+  "faces": [
+    {
+      "name": "Tezzeret, Cruel Captain",
+      "type_line": "Legendary Planeswalker \u2014 Tezzeret",
+      "oracle_text": "Whenever an artifact you control enters, put a loyalty counter on Tezzeret.\n0: Untap target artifact or creature. If it's an artifact creature, put a +1/+1 counter on it.\n\u22123: Search your library for an artifact card with mana value 1 or less, reveal it, put it into your hand, then shuffle.\n\u22127: You get an emblem with \"At the beginning of combat on your turn, put three +1/+1 counters on target artifact you control. If it's not a creature, it becomes a 0/0 Robot artifact creature.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an artifact you control enters, put a loyalty counter on Tezzeret.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Artifact"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a loyalty counter on Tezzeret"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "0: Untap target artifact or creature. If it's an artifact creature, put a +1/+1 counter on it.",
+          "cost": "0",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Untap target artifact or creature"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it's an artifact creature"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Search your library for an artifact card with mana value 1 or less, reveal it, put it into your hand, then shuffle.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for an artifact card with mana value 1 or less, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: You get an emblem with \"At the beginning of combat on your turn, put three +1/+1 counters on target artifact you control. If it's not a creature, it becomes a 0/0 Robot artifact creature.\"",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with \"At the beginning of combat on your turn, put three +1/+1 counters on target artifact you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it becomes a 0/0 robot artifact creature",
+              "condition": [
+                {
+                  "condition_text": "it's not a creature"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

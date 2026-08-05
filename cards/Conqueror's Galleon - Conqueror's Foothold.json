@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "oracle_id": "88b18901-50cd-461c-b1bc-be900210be8e",
+  "name": "Conqueror's Galleon // Conqueror's Foothold",
+  "faces": [
+    {
+      "name": "Conqueror's Foothold",
+      "type_line": "Land",
+      "oracle_text": "(Transforms from Conqueror's Galleon.)\n{T}: Add {C}.\n{2}, {T}: Draw a card, then discard a card.\n{4}, {T}: Draw a card.\n{6}, {T}: Return target card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}: Draw a card, then discard a card.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}, {T}: Draw a card.",
+          "cost": "{4}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{6}, {T}: Return target card from your graveyard to your hand.",
+          "cost": "{6}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target card from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Conqueror's Galleon",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "When this Vehicle attacks, exile it at end of combat, then return it to the battlefield transformed under your control.\nCrew 4 (Tap any number of creatures you control with total power 4 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle attacks, exile it at end of combat, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile it at end of combat"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 4 (Tap any number of creatures you control with total power 4 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 4,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

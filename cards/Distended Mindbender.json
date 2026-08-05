@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "36d32194-d547-4e2d-894f-f4bf13cf7da6",
+  "name": "Distended Mindbender",
+  "faces": [
+    {
+      "name": "Distended Mindbender",
+      "type_line": "Creature \u2014 Eldrazi Insect",
+      "oracle_text": "Emerge {5}{B}{B} (You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature's mana value.)\nWhen you cast this spell, target opponent reveals their hand. You choose from it a nonland card with mana value 3 or less and a card with mana value 4 or greater. That player discards those cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, target opponent reveals their hand. You choose from it a nonland card with mana value 3 or less and a card with mana value 4 or greater. That player discards those cards.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose from it a nonland card with mana value 3 or less and a card with mana value 4 or greater"
+            },
+            {
+              "action": "discard_cards",
+              "target": "that_player",
+              "amount": "those"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Emerge {5}{B}{B} (You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature's mana value.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Emerge {5}{B}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

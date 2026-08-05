@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "14df239a-c7cc-492a-94f5-2971f6efe17b",
+  "name": "Vampirism",
+  "faces": [
+    {
+      "name": "Vampirism",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, draw a card at the beginning of the next turn's upkeep.\nEnchanted creature gets +1/+1 for each other creature you control.\nOther creatures you control get -1/-1.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card at the beginning of the next turn's upkeep.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_turns_upkeep"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1 for each other creature you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+1 for each other creature you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Other creatures you control get -1/-1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other creatures you control get -1/-1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

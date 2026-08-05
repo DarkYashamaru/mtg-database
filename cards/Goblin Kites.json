@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6efd11c8-be8a-4d44-a776-66d058638ad1",
+  "name": "Goblin Kites",
+  "faces": [
+    {
+      "name": "Goblin Kites",
+      "type_line": "Enchantment",
+      "oracle_text": "{R}: Target creature you control with toughness 2 or less gains flying until end of turn. Flip a coin at the beginning of the next end step. If you lose the flip, sacrifice that creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{R}: Target creature you control with toughness 2 or less gains flying until end of turn. Flip a coin at the beginning of the next end step. If you lose the flip, sacrifice that creature.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control_with_toughness_2_or_less",
+              "keyword": "flying"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin at the beginning of the next end step"
+            },
+            {
+              "action": "sacrifice",
+              "target": "that_creature",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a5dfa7ad-9637-4da8-9ed2-0ac863617d9a",
+  "name": "The Spot, Living Portal",
+  "faces": [
+    {
+      "name": "The Spot, Living Portal",
+      "type_line": "Legendary Creature \u2014 Human Scientist Villain",
+      "oracle_text": "When The Spot enters, exile up to one target nonland permanent and up to one target nonland permanent card from a graveyard.\nWhen The Spot dies, put him on the bottom of his owner's library. If you do, return the exiled cards to their owners' hands.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When The Spot enters, exile up to one target nonland permanent and up to one target nonland permanent card from a graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target nonland permanent and up to one target nonland permanent card from a graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "When The Spot dies, put him on the bottom of his owner's library. If you do, return the exiled cards to their owners' hands.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put him on the bottom of his owner's library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return the exiled cards to their owners' hands",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

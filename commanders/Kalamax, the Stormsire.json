@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b8501a37-23e4-4873-80cb-d1c0f6c95155",
+  "name": "Kalamax, the Stormsire",
+  "faces": [
+    {
+      "name": "Kalamax, the Stormsire",
+      "type_line": "Legendary Creature \u2014 Elemental Dinosaur",
+      "oracle_text": "Whenever you cast your first instant spell each turn, if Kalamax is tapped, copy that spell. You may choose new targets for the copy.\nWhenever you copy an instant spell, put a +1/+1 counter on Kalamax.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your first instant spell each turn, if Kalamax is tapped, copy that spell. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast your first instant spell each turn"
+          },
+          "condition": [
+            {
+              "condition_text": "Kalamax is tapped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy that spell"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you copy an instant spell, put a +1/+1 counter on Kalamax.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you copy an instant spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

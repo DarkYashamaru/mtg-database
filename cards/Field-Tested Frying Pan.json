@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0c9e3e6a-0bab-4619-b135-d2dbe824b1f0",
+  "name": "Field-Tested Frying Pan",
+  "faces": [
+    {
+      "name": "Field-Tested Frying Pan",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, create a Food token, then create a 1/1 white Halfling creature token and attach this Equipment to it.\nEquipped creature has \"Whenever you gain life, this creature gets +X/+X until end of turn, where X is the amount of life you gained.\"\nEquip {2}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, create a Food token, then create a 1/1 white Halfling creature token and attach this Equipment to it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "food token"
+              }
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white halfling creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "halfling"
+                ]
+              }
+            },
+            {
+              "action": "attach_equipment",
+              "source": "self",
+              "target": "it",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has \"Whenever you gain life, this creature gets +X/+X until end of turn, where X is the amount of life you gained.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature has \"Whenever you gain life, this creature gets +X/+X until end of turn, where X is the amount of life you gained.\""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

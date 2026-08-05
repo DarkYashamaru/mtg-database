@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5f1fdc23-9af0-41a1-aeba-7288f9642734",
+  "name": "Mari, the Killing Quill",
+  "faces": [
+    {
+      "name": "Mari, the Killing Quill",
+      "type_line": "Legendary Creature \u2014 Vampire Assassin",
+      "oracle_text": "Whenever a creature an opponent controls dies, exile it with a hit counter on it.\nAssassins, Mercenaries, and Rogues you control have deathtouch and \"Whenever this creature deals combat damage to a player, you may remove a hit counter from a card that player owns in exile. If you do, draw a card and create two Treasure tokens.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature an opponent controls dies, exile it with a hit counter on it.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_an_opponent_controls"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile it with a hit counter on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Assassins, Mercenaries, and Rogues you control have deathtouch and \"Whenever this creature deals combat damage to a player, you may remove a hit counter from a card that player owns in exile. If you do, draw a card and create two Treasure tokens.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Assassins, Mercenaries, and Rogues you control have deathtouch and \"Whenever this creature deals combat damage to a player, you may remove a hit counter from a card that player owns in exile"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

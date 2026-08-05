@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c4c0a391-4549-4041-bc6d-09f8b756868e",
+  "name": "Gleam of Resistance",
+  "faces": [
+    {
+      "name": "Gleam of Resistance",
+      "type_line": "Instant",
+      "oracle_text": "Creatures you control get +1/+2 until end of turn. Untap those creatures.\nBasic landcycling {1}{W} ({1}{W}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Basic landcycling {1}{W} ({1}{W}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Basic landcycling {1}{W} ({1}{W}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control get +1/+2 until end of turn. Untap those creatures.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Untap those creatures"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8faccd56-dfc2-4cfc-880c-db40b935336a",
+  "name": "Trade Caravan",
+  "faces": [
+    {
+      "name": "Trade Caravan",
+      "type_line": "Creature \u2014 Human Nomad",
+      "oracle_text": "At the beginning of your upkeep, put a currency counter on this creature.\nRemove two currency counters from this creature: Untap target basic land. Activate only during an opponent's upkeep.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a currency counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a currency counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove two currency counters from this creature: Untap target basic land. Activate only during an opponent's upkeep.",
+          "cost": "Remove two currency counters from this creature",
+          "condition": [
+            {
+              "condition_text": "during an opponent's upkeep"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Untap target basic land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

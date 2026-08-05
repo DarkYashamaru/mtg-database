@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "956250da-532a-4457-8696-73915be56943",
+  "name": "Cradle of Vitality",
+  "faces": [
+    {
+      "name": "Cradle of Vitality",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you gain life, you may pay {1}{W}. If you do, put a +1/+1 counter on target creature for each 1 life you gained.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, you may pay {1}{W}. If you do, put a +1/+1 counter on target creature for each 1 life you gained.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{W}"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature_for_each_1_life_you_gained",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93fbf4a7-4283-4eec-afde-6780149b56df",
+  "name": "Minion of Tevesh Szat",
+  "faces": [
+    {
+      "name": "Minion of Tevesh Szat",
+      "type_line": "Creature \u2014 Demon Minion",
+      "oracle_text": "At the beginning of your upkeep, this creature deals 2 damage to you unless you pay {B}{B}.\n{T}: Target creature gets +3/-2 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, this creature deals 2 damage to you unless you pay {B}{B}.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 2 damage to you unless you pay {B}{B}"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Target creature gets +3/-2 until end of turn.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 3,
+              "toughness_delta": -2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

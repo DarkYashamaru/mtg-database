@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cec10abd-2a2d-4d89-9ecc-ea50c2ac1538",
+  "name": "Boosted Sloop",
+  "faces": [
+    {
+      "name": "Boosted Sloop",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Menace\nWhenever you attack, draw a card, then discard a card.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, draw a card, then discard a card.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

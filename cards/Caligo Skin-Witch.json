@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e62c943e-03ac-4a8a-ad3d-faa76b79824c",
+  "name": "Caligo Skin-Witch",
+  "faces": [
+    {
+      "name": "Caligo Skin-Witch",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Kicker {3}{B} (You may pay an additional {3}{B} as you cast this spell.)\nWhen this creature enters, if it was kicked, each opponent discards two cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, each opponent discards two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {3}{B} (You may pay an additional {3}{B} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {3}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "37162c6e-ac31-4386-9d1e-76aa66070b35",
+  "name": "Angelic Favor",
+  "faces": [
+    {
+      "name": "Angelic Favor",
+      "type_line": "Instant",
+      "oracle_text": "If you control a Plains, you may tap an untapped creature you control rather than pay this spell's mana cost.\nCast this spell only during combat.\nCreate a 4/4 white Angel creature token with flying. Exile it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If you control a Plains, you may tap an untapped creature you control rather than pay this spell's mana cost.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may tap an untapped creature you control rather than pay this spell's mana cost",
+              "condition": [
+                {
+                  "condition_text": "you control a plains"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Cast this spell only during combat.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cast this spell only during combat"
+            }
+          ]
+        },
+        {
+          "raw_text": "Create a 4/4 white Angel creature token with flying. Exile it at the beginning of the next end step.",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/4 white Angel creature token with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Angel"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_end_step"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": "it"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

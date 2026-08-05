@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8e68eba1-65ac-4c03-956f-45e7b5695e2a",
+  "name": "Lukka, Bound to Ruin",
+  "faces": [
+    {
+      "name": "Lukka, Bound to Ruin",
+      "type_line": "Legendary Planeswalker \u2014 Lukka",
+      "oracle_text": "Compleated ({R/G/P} can be paid with {R}, {G}, or 2 life. If life was paid, this planeswalker enters with two fewer loyalty counters.)\n+1: Add {R}{G}. Spend this mana only to cast creature spells or activate abilities of creatures.\n\u22121: Create a 3/3 green Phyrexian Beast creature token with toxic 1.\n\u22124: Lukka deals X damage divided as you choose among any number of target creatures and/or planeswalkers, where X is the greatest power among creatures you control as you activate this ability.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Add {R}{G}. Spend this mana only to cast creature spells or activate abilities of creatures.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{r}",
+                "{g}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to cast creature spells or activate abilities of creatures"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22121: Create a 3/3 green Phyrexian Beast creature token with toxic 1.",
+          "cost": "\u22121",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 3/3 green Phyrexian Beast creature token with toxic 1",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Phyrexian",
+                  "Beast"
+                ],
+                "keywords": [
+                  "toxic"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22124: Lukka deals X damage divided as you choose among any number of target creatures and/or planeswalkers, where X is the greatest power among creatures you control as you activate this ability.",
+          "cost": "\u22124",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Lukka deals X damage divided as you choose among any number of target creatures and/or planeswalkers, where X is the greatest power among creatures you control as you activate this ability"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Compleated ({R/G/P} can be paid with {R}, {G}, or 2 life. If life was paid, this planeswalker enters with two fewer loyalty counters.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Compleated"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "78301998-fd9b-4cd5-afad-dbcb43cac2a7",
+  "name": "Shatterskull Smashing // Shatterskull, the Hammer Pass",
+  "faces": [
+    {
+      "name": "Shatterskull Smashing",
+      "type_line": "Sorcery",
+      "oracle_text": "Shatterskull Smashing deals X damage divided as you choose among up to two target creatures and/or planeswalkers. If X is 6 or more, Shatterskull Smashing deals twice X damage divided as you choose among them instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Shatterskull Smashing deals X damage divided as you choose among up to two target creatures and/or planeswalkers. If X is 6 or more, Shatterskull Smashing deals twice X damage divided as you choose among them instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Shatterskull Smashing deals X damage divided as you choose among up to two target creatures and/or planeswalkers"
+            },
+            {
+              "action": "custom_effect",
+              "text": "shatterskull smashing deals twice x damage divided as you choose among them instead",
+              "condition": [
+                {
+                  "condition_text": "x is 6 or more"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shatterskull, the Hammer Pass",
+      "type_line": "Land",
+      "oracle_text": "As this land enters, you may pay 3 life. If you don't, it enters tapped.\n{T}: Add {R}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this land enters, you may pay 3 life. If you don't, it enters tapped.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this land enters, you may pay 3 life"
+            },
+            {
+              "action": "enters_tapped",
+              "target": "it",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

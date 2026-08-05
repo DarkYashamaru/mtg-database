@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b284913e-3530-4a7e-8c75-efb18788dad0",
+  "name": "Social Snub",
+  "faces": [
+    {
+      "name": "Social Snub",
+      "type_line": "Sorcery",
+      "oracle_text": "When you cast this spell while you control a creature, you may copy this spell.\nEach player sacrifices a creature of their choice. Each opponent loses 1 life and you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell while you control a creature, you may copy this spell.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you cast this spell while you control a creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may copy this spell"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Each player sacrifices a creature of their choice. Each opponent loses 1 life and you gain 1 life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each player sacrifices a creature of their choice"
+            },
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

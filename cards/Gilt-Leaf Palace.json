@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85573a3d-2993-491a-8f8d-bbdb844fa84e",
+  "name": "Gilt-Leaf Palace",
+  "faces": [
+    {
+      "name": "Gilt-Leaf Palace",
+      "type_line": "Land",
+      "oracle_text": "As this land enters, you may reveal an Elf card from your hand. If you don't, this land enters tapped.\n{T}: Add {B} or {G}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B} or {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}",
+                "{g}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this land enters, you may reveal an Elf card from your hand. If you don't, this land enters tapped.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this land enters, you may reveal an Elf card from your hand"
+            },
+            {
+              "action": "enters_tapped",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

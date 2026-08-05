@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3e5ca524-8dd1-4f7f-a467-5210d768b8a1",
+  "name": "Rampaging Ferocidon",
+  "faces": [
+    {
+      "name": "Rampaging Ferocidon",
+      "type_line": "Creature \u2014 Dinosaur",
+      "oracle_text": "Menace\nPlayers can't gain life.\nWhenever another creature enters, this creature deals 1 damage to that creature's controller.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature enters, this creature deals 1 damage to that creature's controller.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "another_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 1 damage to that creature's controller"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Players can't gain life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Players can't gain life"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

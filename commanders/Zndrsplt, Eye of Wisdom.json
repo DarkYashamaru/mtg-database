@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "502849a6-8e65-40f3-b348-a41c4f939768",
+  "name": "Zndrsplt, Eye of Wisdom",
+  "faces": [
+    {
+      "name": "Zndrsplt, Eye of Wisdom",
+      "type_line": "Legendary Creature \u2014 Homunculus",
+      "oracle_text": "Partner with Okaun, Eye of Chaos (When this creature enters, target player may put Okaun into their hand from their library, then shuffle.)\nAt the beginning of combat on your turn, flip a coin until you lose a flip.\nWhenever a player wins a coin flip, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, flip a coin until you lose a flip.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "flip a coin until you lose a flip"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a player wins a coin flip, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player wins a coin flip"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Okaun, Eye of Chaos (When this creature enters, target player may put Okaun into their hand from their library, then shuffle.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Okaun, Eye of Chaos"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

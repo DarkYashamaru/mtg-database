@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "40b82dee-98c7-4b86-88b8-28388cd0331f",
+  "name": "Silver Sable, Mercenary Leader",
+  "faces": [
+    {
+      "name": "Silver Sable, Mercenary Leader",
+      "type_line": "Legendary Creature \u2014 Human Mercenary Hero",
+      "oracle_text": "When Silver Sable enters, put a +1/+1 counter on another target creature.\nWhenever Silver Sable attacks, target modified creature you control gains lifelink until end of turn. (Equipment, Auras you control, and counters are modifications.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Silver Sable enters, put a +1/+1 counter on another target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "another_target_creature",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Silver Sable attacks, target modified creature you control gains lifelink until end of turn. (Equipment, Auras you control, and counters are modifications.)",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_modified_creature_you_control",
+              "keyword": "lifelink"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

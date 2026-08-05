@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ed77fdf2-59c0-4310-9b12-80d28beeaeef",
+  "name": "Chocobo Camp",
+  "faces": [
+    {
+      "name": "Chocobo Camp",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped unless you control a legendary creature.\n{T}: Add {G}. When you next cast a Bird creature spell this turn, it enters with an additional +1/+1 counter on it.\n{2}{G}{G}, {T}: Create a 2/2 green Bird creature token with \"Whenever a land you control enters, this token gets +1/+0 until end of turn.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}. When you next cast a Bird creature spell this turn, it enters with an additional +1/+1 counter on it.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "When you next cast a Bird creature spell this turn, it enters with an additional +1/+1 counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{G}{G}, {T}: Create a 2/2 green Bird creature token with \"Whenever a land you control enters, this token gets +1/+0 until end of turn.\"",
+          "cost": "{2}{G}{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "create_a_22_green_bird_creature_token_with_whenever_a_land_you_control_enters_this_token"
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped unless you control a legendary creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters tapped unless you control a legendary creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

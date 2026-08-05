@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "50676eba-a55a-4749-bb07-74a30e015781",
+  "name": "Omarthis, Ghostfire Initiate",
+  "faces": [
+    {
+      "name": "Omarthis, Ghostfire Initiate",
+      "type_line": "Legendary Creature \u2014 Spirit Snake",
+      "oracle_text": "Omarthis enters with X +1/+1 counters on it.\nWhenever you put one or more +1/+1 counters on another colorless creature, you may put a +1/+1 counter on Omarthis.\nWhen Omarthis dies, manifest a number of cards from the top of your library equal to the number of counters on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you put one or more +1/+1 counters on another colorless creature, you may put a +1/+1 counter on Omarthis.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you put one or more +1/+1 counters on another colorless creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "When Omarthis dies, manifest a number of cards from the top of your library equal to the number of counters on it.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "manifest a number of cards from the top of your library equal to the number of counters on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Omarthis enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Omarthis enters with X +1/+1 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

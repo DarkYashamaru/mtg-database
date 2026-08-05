@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1aabb6bd-8061-42a5-9a71-f9eac718bd22",
+  "name": "Wall of Limbs",
+  "faces": [
+    {
+      "name": "Wall of Limbs",
+      "type_line": "Creature \u2014 Zombie Wall",
+      "oracle_text": "Defender (This creature can't attack.)\nWhenever you gain life, put a +1/+1 counter on this creature.\n{5}{B}{B}, Sacrifice this creature: Target player loses X life, where X is this creature's power.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{5}{B}{B}, Sacrifice this creature: Target player loses X life, where X is this creature's power.",
+          "cost": "{5}{B}{B}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player loses X life, where X is this creature's power"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

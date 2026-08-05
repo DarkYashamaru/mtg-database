@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d5ea905b-4bb6-48d0-9082-c472703db550",
+  "name": "Bloodchief Ascension",
+  "faces": [
+    {
+      "name": "Bloodchief Ascension",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of each end step, if an opponent lost 2 or more life this turn, you may put a quest counter on this enchantment. (Damage causes loss of life.)\nWhenever a card is put into an opponent's graveyard from anywhere, if this enchantment has three or more quest counters on it, you may have that player lose 2 life. If you do, you gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each end step, if an opponent lost 2 or more life this turn, you may put a quest counter on this enchantment. (Damage causes loss of life.)",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "an opponent lost 2 or more life this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a quest counter on this enchantment"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a card is put into an opponent's graveyard from anywhere, if this enchantment has three or more quest counters on it, you may have that player lose 2 life. If you do, you gain 2 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a card is put into an opponent's graveyard from anywhere"
+          },
+          "condition": [
+            {
+              "condition_text": "this enchantment has three or more quest counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have that player lose 2 life"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

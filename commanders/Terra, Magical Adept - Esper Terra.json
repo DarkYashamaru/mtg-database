@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "oracle_id": "54ca5904-9099-497a-9684-101656025487",
+  "name": "Terra, Magical Adept // Esper Terra",
+  "faces": [
+    {
+      "name": "Esper Terra",
+      "type_line": "Legendary Enchantment Creature \u2014 Saga Wizard",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI, II, III \u2014 Create a token that's a copy of target nonlegendary enchantment you control. It gains haste. If it's a Saga, put up to three lore counters on it. Sacrifice it at the beginning of your next end step.\nIV \u2014 Add {W}{W}, {U}{U}, {B}{B}, {R}{R}, and {G}{G}. Exile Esper Terra, then return it to the battlefield (front face up).\nFlying",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "I, II, III \u2014 Create a token that's a copy of target nonlegendary enchantment you control. It gains haste. If it's a Saga, put up to three lore counters on it. Sacrifice it at the beginning of your next end step.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II",
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Create a token that's a copy of target nonlegendary enchantment you control"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put up to three lore counters on it",
+              "condition": [
+                {
+                  "condition_text": "it's a saga"
+                }
+              ]
+            },
+            {
+              "action": "sacrifice",
+              "target": "it_at_the_beginning_of_you_control_next_end_step"
+            }
+          ]
+        },
+        {
+          "raw_text": "IV \u2014 Add {W}{W}, {U}{U}, {B}{B}, {R}{R}, and {G}{G}. Exile Esper Terra, then return it to the battlefield (front face up).",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "IV"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {W}{W}, {U}{U}, {B}{B}, {R}{R}, and {G}{G}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile esper terra"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Terra, Magical Adept",
+      "type_line": "Legendary Creature \u2014 Human Wizard Warrior",
+      "oracle_text": "When Terra enters, mill five cards. Put up to one enchantment card milled this way into your hand.\nTrance \u2014 {4}{R}{G}, {T}: Exile Terra, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Terra enters, mill five cards. Put up to one enchantment card milled this way into your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 5
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put up to one enchantment card milled this way into your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Trance \u2014 {4}{R}{G}, {T}: Exile Terra, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+          "cost": "Trance \u2014 {4}{R}{G}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile terra"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield transformed under its owner's control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

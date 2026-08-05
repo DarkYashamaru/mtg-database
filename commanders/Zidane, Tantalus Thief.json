@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f267fb54-1881-464c-81af-9e03c3f3b41d",
+  "name": "Zidane, Tantalus Thief",
+  "faces": [
+    {
+      "name": "Zidane, Tantalus Thief",
+      "type_line": "Legendary Creature \u2014 Human Mutant Scout",
+      "oracle_text": "When Zidane enters, gain control of target creature an opponent controls until end of turn. Untap it. It gains lifelink and haste until end of turn.\nWhenever an opponent gains control of a permanent from you, you create a Treasure token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Zidane enters, gain control of target creature an opponent controls until end of turn. Untap it. It gains lifelink and haste until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "gain control of target creature an opponent controls until end of turn"
+            },
+            {
+              "action": "untap",
+              "target": "it"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "lifelink_and_haste"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an opponent gains control of a permanent from you, you create a Treasure token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an opponent gains control of a permanent from you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

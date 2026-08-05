@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb1e1acc-3805-418b-bed1-65838ddb1d62",
+  "name": "Whiskerquill Scribe",
+  "faces": [
+    {
+      "name": "Whiskerquill Scribe",
+      "type_line": "Creature \u2014 Mouse Citizen",
+      "oracle_text": "Valiant \u2014 Whenever this creature becomes the target of a spell or ability you control for the first time each turn, you may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes the target of a spell or ability you control for the first time each turn, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes the target of a spell or ability you control for the first time each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

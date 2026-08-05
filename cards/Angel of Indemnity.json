@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4f57a320-b6b5-49de-af0a-f2e2649758a7",
+  "name": "Angel of Indemnity",
+  "faces": [
+    {
+      "name": "Angel of Indemnity",
+      "type_line": "Creature \u2014 Angel Warrior",
+      "oracle_text": "Flying, lifelink\nWhen this creature enters, return target permanent card with mana value 4 or less from your graveyard to the battlefield.\nEncore {6}{W}{W} ({6}{W}{W}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, return target permanent card with mana value 4 or less from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target permanent card with mana value 4 or less from your graveyard to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Encore {6}{W}{W} ({6}{W}{W}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+          "cost": "Encore {6}{W}{W} ({6}{W}{W}, Exile this card from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each opponent, create a token copy that attacks that opponent this turn if able"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "they",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "them_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

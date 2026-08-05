@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5c104ac8-738a-4a9d-a68b-5706018d2061",
+  "name": "Threats Around Every Corner",
+  "faces": [
+    {
+      "name": "Threats Around Every Corner",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, manifest dread.\nWhenever a face-down permanent you control enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, manifest dread.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "manifest dread"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a face-down permanent you control enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Face-down",
+                "Permanent"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

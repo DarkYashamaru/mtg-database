@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6b7fb630-79eb-4337-a698-626e585a495f",
+  "name": "Space Marine Scout",
+  "faces": [
+    {
+      "name": "Space Marine Scout",
+      "type_line": "Creature \u2014 Astartes Scout",
+      "oracle_text": "First strike, vigilance\nConcealed Position \u2014 When this creature enters, if an opponent controls more lands than you, you may search your library for a Plains card, put it onto the battlefield tapped, then shuffle.",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if an opponent controls more lands than you, you may search your library for a Plains card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "an opponent controls more lands than you"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a plains card, put it onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

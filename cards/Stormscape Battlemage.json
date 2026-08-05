@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "38ee748d-adcd-41df-9b23-d2a34829784c",
+  "name": "Stormscape Battlemage",
+  "faces": [
+    {
+      "name": "Stormscape Battlemage",
+      "type_line": "Creature \u2014 Metathran Wizard",
+      "oracle_text": "Kicker {W} and/or {2}{B} (You may pay an additional {W} and/or {2}{B} as you cast this spell.)\nWhen this creature enters, if it was kicked with its {W} kicker, you gain 3 life.\nWhen this creature enters, if it was kicked with its {2}{B} kicker, destroy target nonblack creature. That creature can't be regenerated.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked with its {W} kicker, you gain 3 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked with its {W} kicker"
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature enters, if it was kicked with its {2}{B} kicker, destroy target nonblack creature. That creature can't be regenerated.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked with its {2}{B} kicker"
+            }
+          ],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature",
+                "not_colors": [
+                  "black"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "That creature can't be regenerated"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {W} and/or {2}{B} (You may pay an additional {W} and/or {2}{B} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {W} and/or {2}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

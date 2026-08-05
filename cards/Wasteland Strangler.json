@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "197f3b17-ce21-430e-8e41-f5d02d5e3637",
+  "name": "Wasteland Strangler",
+  "faces": [
+    {
+      "name": "Wasteland Strangler",
+      "type_line": "Creature \u2014 Eldrazi Processor",
+      "oracle_text": "Devoid (This card has no color.)\nWhen this creature enters, you may put a card an opponent owns from exile into that player's graveyard. If you do, target creature gets -3/-3 until end of turn.",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may put a card an opponent owns from exile into that player's graveyard. If you do, target creature gets -3/-3 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a card an opponent owns from exile into that player's graveyard"
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -3,
+              "toughness_delta": -3,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

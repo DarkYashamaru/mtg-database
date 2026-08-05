@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "58c615f3-8c3b-47bf-8032-809fc4232ccb",
+  "name": "Ninja Pizza",
+  "faces": [
+    {
+      "name": "Ninja Pizza",
+      "type_line": "Enchantment",
+      "oracle_text": "Foods you control have \"{T}, Sacrifice this artifact: Add one mana of any color.\"\nAt the beginning of your second main phase, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your second main phase, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "beginning_of_your_second_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Foods you control have \"{T}, Sacrifice this artifact: Add one mana of any color.\"",
+          "cost": "Foods you control have \"{T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

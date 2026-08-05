@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cd796e12-c422-4869-8d59-794600425381",
+  "name": "Packsong Pup",
+  "faces": [
+    {
+      "name": "Packsong Pup",
+      "type_line": "Creature \u2014 Wolf",
+      "oracle_text": "At the beginning of combat on your turn, if you control another Wolf or Werewolf, put a +1/+1 counter on this creature.\nWhen this creature dies, you gain life equal to its power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if you control another Wolf or Werewolf, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you control another Wolf or Werewolf"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, you gain life equal to its power.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain life equal to its power"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

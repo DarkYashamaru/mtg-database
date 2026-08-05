@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85dec6cf-6f27-4eb0-834b-5f6fbbe25fc8",
+  "name": "Spider-Man, To the Rescue",
+  "faces": [
+    {
+      "name": "Spider-Man, To the Rescue",
+      "type_line": "Legendary Creature \u2014 Spider Human Hero",
+      "oracle_text": "Flash\nVigilance, reach\nNo One Dies! \u2014 When Spider-Man enters, you may tap him. When you do, another target nonattacking creature you control gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Spider-Man enters, you may tap him. When you do, another target nonattacking creature you control gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may tap him"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_nonattacking_creature_you_control",
+              "keyword": "indestructible",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

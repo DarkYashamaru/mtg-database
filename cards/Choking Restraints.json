@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "42bc33dd-3bba-462d-b272-2e8bd58c649e",
+  "name": "Choking Restraints",
+  "faces": [
+    {
+      "name": "Choking Restraints",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature can't attack or block.\n{3}{W}{W}, Sacrifice this Aura: Exile enchanted creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{W}{W}, Sacrifice this Aura: Exile enchanted creature.",
+          "cost": "{3}{W}{W}, Sacrifice this Aura",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile enchanted creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature can't attack or block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "enchanted_creature",
+              "restriction": "cant_attack_or_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3aa83ed2-f48b-4ce6-a614-2c54ddf50538",
+  "name": "The One Ring",
+  "faces": [
+    {
+      "name": "The One Ring",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "Indestructible\nWhen The One Ring enters, if you cast it, you gain protection from everything until your next turn.\nAt the beginning of your upkeep, you lose 1 life for each burden counter on The One Ring.\n{T}: Put a burden counter on The One Ring, then draw a card for each burden counter on The One Ring.",
+      "static": [
+        {
+          "keyword": "indestructible"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When The One Ring enters, if you cast it, you gain protection from everything until your next turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain protection from everything until your next turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, you lose 1 life for each burden counter on The One Ring.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you lose 1 life for each burden counter on The One Ring"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Put a burden counter on The One Ring, then draw a card for each burden counter on The One Ring.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a burden counter on the one ring"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "burden_counter_on_self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

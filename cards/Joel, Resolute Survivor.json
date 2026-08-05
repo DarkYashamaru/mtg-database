@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "64611260-c9f7-4375-b67a-f88fee6d3bff",
+  "name": "Joel, Resolute Survivor",
+  "faces": [
+    {
+      "name": "Joel, Resolute Survivor",
+      "type_line": "Legendary Creature \u2014 Human Survivor",
+      "oracle_text": "Menace\nWhenever a creature token dies, put a +1/+1 counter on Joel and draw a card. This ability triggers only once each turn.\nPartner\u2014Survivors (You can have two commanders if both have this ability.)",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature token dies, put a +1/+1 counter on Joel and draw a card. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_token"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner\u2014Survivors (You can have two commanders if both have this ability.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner\u2014Survivors"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

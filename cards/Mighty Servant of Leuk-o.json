@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0b59099f-2172-4eab-9c0d-7048e6771018",
+  "name": "Mighty Servant of Leuk-o",
+  "faces": [
+    {
+      "name": "Mighty Servant of Leuk-o",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Trample\nWard\u2014Discard a card.\nWhenever this Vehicle becomes crewed for the first time each turn, if it was crewed by exactly two creatures, it gains \"Whenever this creature deals combat damage to a player, draw two cards\" until end of turn.\nCrew 4",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle becomes crewed for the first time each turn, if it was crewed by exactly two creatures, it gains \"Whenever this creature deals combat damage to a player, draw two cards\" until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this Vehicle becomes crewed for the first time each turn"
+          },
+          "condition": [
+            {
+              "condition_text": "it was crewed by exactly two creatures"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gains \"Whenever this creature deals combat damage to a player, draw two cards\" until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 4",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 4,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Ward\u2014Discard a card.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ward\u2014Discard a card"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

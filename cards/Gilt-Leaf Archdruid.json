@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0bd5cce9-364f-4d0d-85cb-1a0e09b4f015",
+  "name": "Gilt-Leaf Archdruid",
+  "faces": [
+    {
+      "name": "Gilt-Leaf Archdruid",
+      "type_line": "Creature \u2014 Elf Druid",
+      "oracle_text": "Whenever you cast a Druid spell, you may draw a card.\nTap seven untapped Druids you control: Gain control of all lands target player controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Druid spell, you may draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Druid"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Tap seven untapped Druids you control: Gain control of all lands target player controls.",
+          "cost": "Tap seven untapped Druids you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gain control of all lands target player controls"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

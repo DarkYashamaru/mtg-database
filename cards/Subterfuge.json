@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "687cfdf7-8f35-464a-8d6e-9f2d769ed6b4",
+  "name": "Subterfuge",
+  "faces": [
+    {
+      "name": "Subterfuge",
+      "type_line": "Creature \u2014 Elemental Incarnation",
+      "oracle_text": "When this creature enters, target creature gains flying and \"Whenever this creature deals combat damage to a player, draw that many cards\" until end of turn.\nEncore {7}{U}{U} ({7}{U}{U}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target creature gains flying and \"Whenever this creature deals combat damage to a player, draw that many cards\" until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target creature gains flying and \"Whenever this creature deals combat damage to a player, draw that many cards\" until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Encore {7}{U}{U} ({7}{U}{U}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+          "cost": "Encore {7}{U}{U} ({7}{U}{U}, Exile this card from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each opponent, create a token copy that attacks that opponent this turn if able"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "they",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "them_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

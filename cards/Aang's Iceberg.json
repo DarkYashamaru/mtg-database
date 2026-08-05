@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "646f9ad8-9d18-4b42-954a-e21a62e9f0e8",
+  "name": "Aang's Iceberg",
+  "faces": [
+    {
+      "name": "Aang's Iceberg",
+      "type_line": "Enchantment",
+      "oracle_text": "Flash\nWhen this enchantment enters, exile up to one other target nonland permanent until this enchantment leaves the battlefield.\nWaterbend {3}: Sacrifice this enchantment. If you do, scry 2. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, exile up to one other target nonland permanent until this enchantment leaves the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one other target nonland permanent until this enchantment leaves the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Waterbend {3}: Sacrifice this enchantment. If you do, scry 2. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+          "cost": "Waterbend {3}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment"
+            },
+            {
+              "action": "scry",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

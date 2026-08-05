@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0d71b157-09a0-4fd4-beb9-103117a784ad",
+  "name": "Farmstead",
+  "faces": [
+    {
+      "name": "Farmstead",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\nEnchanted land has \"At the beginning of your upkeep, you may pay {W}{W}. If you do, you gain 1 life.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted land has \"At the beginning of your upkeep, you may pay {W}{W}. If you do, you gain 1 life.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted land has \"At the beginning of your upkeep, you may pay {W}{W}"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a8f25e67-2112-4355-9298-363ed04a5cb8",
+  "name": "Ultron, Artificial Malevolence",
+  "faces": [
+    {
+      "name": "Ultron, Artificial Malevolence",
+      "type_line": "Legendary Artifact Creature \u2014 Robot Villain",
+      "oracle_text": "Whenever another nontoken artifact you control enters, you may pay {2}. If you do, create a token that's a copy of it. If the token isn't a creature, it becomes a 2/2 Robot Villain creature in addition to its other types.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken artifact you control enters, you may pay {2}. If you do, create a token that's a copy of it. If the token isn't a creature, it becomes a 2/2 Robot Villain creature in addition to its other types.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Artifact"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "it becomes a 2/2 robot villain creature in addition to its other types",
+              "condition": [
+                {
+                  "condition_text": "the token isn't a creature"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

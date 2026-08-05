@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f701ada1-e9e1-42ce-9a62-c11bcec03da7",
+  "name": "Surtland Flinger",
+  "faces": [
+    {
+      "name": "Surtland Flinger",
+      "type_line": "Creature \u2014 Giant Berserker",
+      "oracle_text": "Whenever this creature attacks, you may sacrifice another creature. When you do, this creature deals damage equal to the sacrificed creature's power to any target. If the sacrificed creature was a Giant, this creature deals twice that much damage instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may sacrifice another creature. When you do, this creature deals damage equal to the sacrificed creature's power to any target. If the sacrificed creature was a Giant, this creature deals twice that much damage instead.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals damage equal to the sacrificed creature's power to any target",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals twice that much damage instead",
+              "condition": [
+                {
+                  "condition_text": "the sacrificed creature was a giant"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

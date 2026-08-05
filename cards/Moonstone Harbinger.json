@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fcae4f9d-8f81-42f9-93a3-82a482851bdd",
+  "name": "Moonstone Harbinger",
+  "faces": [
+    {
+      "name": "Moonstone Harbinger",
+      "type_line": "Creature \u2014 Bat Warrior",
+      "oracle_text": "Flying, deathtouch\nWhenever you gain or lose life during your turn, Bats you control get +1/+0 and gain deathtouch until end of turn. This ability triggers only once each turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain or lose life during your turn, Bats you control get +1/+0 and gain deathtouch until end of turn. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you gain or lose life during your turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "bats_you_control_get_10_and",
+              "keyword": "deathtouch"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b8c0c102-f0ef-4ab6-9b1a-ee82ee159c54",
+  "name": "Keymaster Rogue",
+  "faces": [
+    {
+      "name": "Keymaster Rogue",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "This creature can't be blocked.\nWhen this creature enters, return a creature you control to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, return a creature you control to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return a creature you control to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

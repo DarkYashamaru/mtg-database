@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5924cbb0-19b5-449c-a7c5-722e744a54f8",
+  "name": "The War in Heaven",
+  "faces": [
+    {
+      "name": "The War in Heaven",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 You draw three cards and you lose 3 life.\nII \u2014 Mill three cards.\nIII \u2014 Choose up to three target creature cards with total mana value 8 or less in your graveyard. Return each of them to the battlefield with a necrodermis counter on it. They're artifacts in addition to their other types.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 You draw three cards and you lose 3 life.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Mill three cards.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Choose up to three target creature cards with total mana value 8 or less in your graveyard. Return each of them to the battlefield with a necrodermis counter on it. They're artifacts in addition to their other types.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose up to three target creature cards with total mana value 8 or less in your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Return each of them to the battlefield with a necrodermis counter on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "They're artifacts in addition to their other types"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

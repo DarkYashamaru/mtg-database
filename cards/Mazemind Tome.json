@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "800fb917-8898-4eba-9f94-aec6e9d75236",
+  "name": "Mazemind Tome",
+  "faces": [
+    {
+      "name": "Mazemind Tome",
+      "type_line": "Artifact \u2014 Book",
+      "oracle_text": "{T}, Put a page counter on this artifact: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)\n{2}, {T}, Put a page counter on this artifact: Draw a card.\nWhen there are four or more page counters on this artifact, exile it. If you do, you gain 4 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When there are four or more page counters on this artifact, exile it. If you do, you gain 4 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "When there are four or more page counters on this artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "it"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 4,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Put a page counter on this artifact: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+          "cost": "{T}, Put a page counter on this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}, Put a page counter on this artifact: Draw a card.",
+          "cost": "{2}, {T}, Put a page counter on this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

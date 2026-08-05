@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b0a0c17b-87c8-4610-adca-5e7f5ced49f6",
+  "name": "Tidal Courier",
+  "faces": [
+    {
+      "name": "Tidal Courier",
+      "type_line": "Creature \u2014 Merfolk",
+      "oracle_text": "When this creature enters, reveal the top four cards of your library. Put all Merfolk cards revealed this way into your hand and the rest on the bottom of your library in any order.\n{3}{U}: This creature gains flying until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, reveal the top four cards of your library. Put all Merfolk cards revealed this way into your hand and the rest on the bottom of your library in any order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "reveal the top four cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put all Merfolk cards revealed this way into your hand and the rest on the bottom of your library in any order"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{U}: This creature gains flying until end of turn.",
+          "cost": "{3}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

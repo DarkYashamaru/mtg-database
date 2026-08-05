@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4a6625bd-3dd2-45f1-8dc9-034c833fa90c",
+  "name": "Dwarven Hold",
+  "faces": [
+    {
+      "name": "Dwarven Hold",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\nYou may choose not to untap this land during your untap step.\nAt the beginning of your upkeep, if this land is tapped, put a storage counter on it.\n{T}, Remove any number of storage counters from this land: Add {R} for each storage counter removed this way.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if this land is tapped, put a storage counter on it.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "this land is tapped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a storage counter on it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Remove any number of storage counters from this land: Add {R} for each storage counter removed this way.",
+          "cost": "{T}, Remove any number of storage counters from this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {R} for each storage counter removed this way"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "raw_text": "You may choose not to untap this land during your untap step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may choose not to untap this land during your untap step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

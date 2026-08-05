@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3a3e8c9b-e458-4661-980d-0a84a4c2452b",
+  "name": "Glasswing Grace // Age-Graced Chapel",
+  "faces": [
+    {
+      "name": "Age-Graced Chapel",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {W} or {B}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W} or {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}",
+                "{b}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Glasswing Grace",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +2/+2 and has flying and lifelink.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+2 and has flying and lifelink.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +2/+2 and has flying and lifelink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

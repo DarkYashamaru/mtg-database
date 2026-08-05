@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c736935a-e006-4a67-b942-e8ccf1cd9abb",
+  "name": "Sharae of Numbing Depths",
+  "faces": [
+    {
+      "name": "Sharae of Numbing Depths",
+      "type_line": "Legendary Creature \u2014 Merfolk Wizard",
+      "oracle_text": "When Sharae enters, tap target creature an opponent controls and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nWhenever you tap one or more untapped creatures your opponents control, draw a card. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Sharae enters, tap target creature an opponent controls and put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap target creature an opponent controls and put a stun counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you tap one or more untapped creatures your opponents control, draw a card. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you tap one or more untapped creatures your opponents control"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "09070db6-01f6-4a8a-b167-a7825e6959f4",
+  "name": "Wolverine Riders",
+  "faces": [
+    {
+      "name": "Wolverine Riders",
+      "type_line": "Creature \u2014 Elf Warrior",
+      "oracle_text": "At the beginning of each upkeep, create a 1/1 green Elf Warrior creature token.\nWhenever another Elf you control enters, you gain life equal to its toughness.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, create a 1/1 green Elf Warrior creature token.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Elf Warrior creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elf",
+                  "Warrior"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another Elf you control enters, you gain life equal to its toughness.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Elf"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain life equal to its toughness"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

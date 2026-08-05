@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "33587cb2-0fd3-4e4c-bc5e-e7299cc9dab5",
+  "name": "Molten Slagheap",
+  "faces": [
+    {
+      "name": "Molten Slagheap",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{1}, {T}: Put a storage counter on this land.\n{1}, Remove X storage counters from this land: Add X mana in any combination of {B} and/or {R}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Put a storage counter on this land.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a storage counter on this land"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, Remove X storage counters from this land: Add X mana in any combination of {B} and/or {R}.",
+          "cost": "{1}, Remove X storage counters from this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add X mana in any combination of {B} and/or {R}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

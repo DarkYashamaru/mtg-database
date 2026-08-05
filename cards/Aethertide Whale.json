@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "53b2c8f2-db9a-4ab0-a4e8-17385b2fa3bd",
+  "name": "Aethertide Whale",
+  "faces": [
+    {
+      "name": "Aethertide Whale",
+      "type_line": "Creature \u2014 Whale",
+      "oracle_text": "Flying\nWhen this creature enters, you get six {E} (energy counters).\nPay {E}{E}{E}{E}: Return this creature to its owner's hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get six {E} (energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get six {E}"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay {E}{E}{E}{E}: Return this creature to its owner's hand.",
+          "cost": "Pay {E}{E}{E}{E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

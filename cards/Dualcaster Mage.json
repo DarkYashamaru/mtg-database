@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8eb7c0a5-6190-40de-b473-2d1daa3bbe28",
+  "name": "Dualcaster Mage",
+  "faces": [
+    {
+      "name": "Dualcaster Mage",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Flash\nWhen this creature enters, copy target instant or sorcery spell. You may choose new targets for the copy.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, copy target instant or sorcery spell. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy target instant or sorcery spell"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a76adc88-e7db-43e2-8fbf-bae95c0838ef",
+  "name": "Living History",
+  "faces": [
+    {
+      "name": "Living History",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create a 2/2 red and white Spirit creature token.\nWhenever you attack, if a card left your graveyard this turn, target attacking creature gets +2/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create a 2/2 red and white Spirit creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 red and white Spirit creature token",
+                "colors": [
+                  "red",
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Spirit"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack, if a card left your graveyard this turn, target attacking creature gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "a card left your graveyard this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_attacking_creature",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

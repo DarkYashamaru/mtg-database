@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "82fa14d8-5019-4e1b-a86c-923d9292b87a",
+  "name": "Frozen in Ice",
+  "faces": [
+    {
+      "name": "Frozen in Ice",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, tap enchanted creature.\nEnchanted creature loses all abilities and can't become untapped.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, tap enchanted creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "enchanted_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature loses all abilities and can't become untapped.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature loses all abilities and can't become untapped"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "78427103-9543-41fb-b6d4-72963fe87275",
+  "name": "The Great Henge",
+  "faces": [
+    {
+      "name": "The Great Henge",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "This spell costs {X} less to cast, where X is the greatest power among creatures you control.\n{T}: Add {G}{G}. You gain 2 life.\nWhenever a nontoken creature you control enters, put a +1/+1 counter on it and draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken creature you control enters, put a +1/+1 counter on it and draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}{G}. You gain 2 life.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{g}",
+                "{g}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {X} less to cast, where X is the greatest power among creatures you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {X} less to cast, where X is the greatest power among creatures you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

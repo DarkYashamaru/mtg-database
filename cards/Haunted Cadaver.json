@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7f46839f-175d-4292-8057-c3e0da206075",
+  "name": "Haunted Cadaver",
+  "faces": [
+    {
+      "name": "Haunted Cadaver",
+      "type_line": "Creature \u2014 Zombie",
+      "oracle_text": "Whenever this creature deals combat damage to a player, you may sacrifice it. If you do, that player discards three cards.\nMorph {1}{B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may sacrifice it. If you do, that player discards three cards.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "target": "that_player",
+              "amount": 3,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Morph {1}{B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morph {1}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

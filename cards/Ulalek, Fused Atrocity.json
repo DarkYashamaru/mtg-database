@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9f6828e3-39d9-45d9-9bf1-0e3737a0321e",
+  "name": "Ulalek, Fused Atrocity",
+  "faces": [
+    {
+      "name": "Ulalek, Fused Atrocity",
+      "type_line": "Legendary Creature \u2014 Eldrazi",
+      "oracle_text": "Devoid (This card has no color.)\nWhenever you cast an Eldrazi spell, you may pay {C}{C}. If you do, copy all spells you control, then copy all other activated and triggered abilities you control. You may choose new targets for the copies. (Mana abilities can't be copied.)",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an Eldrazi spell, you may pay {C}{C}. If you do, copy all spells you control, then copy all other activated and triggered abilities you control. You may choose new targets for the copies. (Mana abilities can't be copied.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Eldrazi"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {C}{C}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy all spells you control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy all other activated and triggered abilities you control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may choose new targets for the copies"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

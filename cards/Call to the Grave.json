@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "db5a4c25-5ae5-4a04-be79-bdee39b9152c",
+  "name": "Call to the Grave",
+  "faces": [
+    {
+      "name": "Call to the Grave",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of each player's upkeep, that player sacrifices a non-Zombie creature of their choice.\nAt the beginning of the end step, if no creatures are on the battlefield, sacrifice this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each player's upkeep, that player sacrifices a non-Zombie creature of their choice.",
+          "trigger": {
+            "type": "beginning_of_each_players_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player sacrifices a non-Zombie creature of their choice"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of the end step, if no creatures are on the battlefield, sacrifice this enchantment.",
+          "trigger": {
+            "type": "beginning_of_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "no creatures are on the battlefield"
+            }
+          ],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

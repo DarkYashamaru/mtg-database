@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "82d8732b-8246-4fbf-96aa-e192daf527f1",
+  "name": "Cloudhoof Kirin",
+  "faces": [
+    {
+      "name": "Cloudhoof Kirin",
+      "type_line": "Legendary Creature \u2014 Kirin Spirit",
+      "oracle_text": "Flying\nWhenever you cast a Spirit or Arcane spell, you may have target player mill X cards, where X is that spell's mana value.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, you may have target player mill X cards, where X is that spell's mana value.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have target player mill X cards, where X is that spell's mana value"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

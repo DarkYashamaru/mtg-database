@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e73efb04-30ac-4484-b11b-e98f0353b9b6",
+  "name": "Sorcerer's Broom",
+  "faces": [
+    {
+      "name": "Sorcerer's Broom",
+      "type_line": "Artifact Creature \u2014 Spirit",
+      "oracle_text": "Whenever you sacrifice another permanent, you may pay {3}. If you do, create a token that's a copy of this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you sacrifice another permanent, you may pay {3}. If you do, create a token that's a copy of this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice another permanent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{3}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of this creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

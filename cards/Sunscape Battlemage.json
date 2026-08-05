@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c8fd2232-e499-4889-a2ca-e486ea87d02b",
+  "name": "Sunscape Battlemage",
+  "faces": [
+    {
+      "name": "Sunscape Battlemage",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Kicker {1}{G} and/or {2}{U} (You may pay an additional {1}{G} and/or {2}{U} as you cast this spell.)\nWhen this creature enters, if it was kicked with its {1}{G} kicker, destroy target creature with flying.\nWhen this creature enters, if it was kicked with its {2}{U} kicker, draw two cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked with its {1}{G} kicker, destroy target creature with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked with its {1}{G} kicker"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target creature with flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature enters, if it was kicked with its {2}{U} kicker, draw two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked with its {2}{U} kicker"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{G} and/or {2}{U} (You may pay an additional {1}{G} and/or {2}{U} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{G} and/or {2}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

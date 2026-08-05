@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1c6d4322-1588-4fc2-a60a-5b5e724638c5",
+  "name": "Numot, the Devastator",
+  "faces": [
+    {
+      "name": "Numot, the Devastator",
+      "type_line": "Legendary Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever Numot deals combat damage to a player, you may pay {2}{R}. If you do, destroy up to two target lands.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Numot deals combat damage to a player, you may pay {2}{R}. If you do, destroy up to two target lands.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {2}{R}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy up to two target lands",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9d14c7bd-7802-401c-b02b-c7f3c51b007f",
+  "name": "Wandertale Mentor",
+  "faces": [
+    {
+      "name": "Wandertale Mentor",
+      "type_line": "Creature \u2014 Raccoon Bard",
+      "oracle_text": "Whenever you expend 4, put a +1/+1 counter on this creature. (You expend 4 as you spend your fourth total mana to cast spells during a turn.)\n{T}: Add {R} or {G}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you expend 4, put a +1/+1 counter on this creature. (You expend 4 as you spend your fourth total mana to cast spells during a turn.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you expend 4"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R} or {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{g}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bdec1d22-2f89-424b-b48f-46c9158943af",
+  "name": "Paperfin Rascal",
+  "faces": [
+    {
+      "name": "Paperfin Rascal",
+      "type_line": "Creature \u2014 Merfolk Rogue",
+      "oracle_text": "When this creature enters, clash with an opponent. If you win, put a +1/+1 counter on this creature. (Each clashing player reveals the top card of their library, then puts that card on their choice of the top or bottom. A player wins if their card had a greater mana value.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, clash with an opponent. If you win, put a +1/+1 counter on this creature. (Each clashing player reveals the top card of their library, then puts that card on their choice of the top or bottom. A player wins if their card had a greater mana value.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "clash with an opponent"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you win"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

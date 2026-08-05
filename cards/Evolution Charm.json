@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5f73fd4e-0d24-4daa-8d82-73c0cf7f801d",
+  "name": "Evolution Charm",
+  "faces": [
+    {
+      "name": "Evolution Charm",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n\u2022 Return target creature card from your graveyard to your hand.\n\u2022 Target creature gains flying until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n\u2022 Return target creature card from your graveyard to your hand.\n\u2022 Target creature gains flying until end of turn.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+              "effects": [
+                {
+                  "action": "search_library",
+                  "player": "you",
+                  "filter": {
+                    "card_types": [
+                      "Land"
+                    ],
+                    "supertypes": [
+                      "Basic"
+                    ]
+                  },
+                  "reveal": true,
+                  "destination": "hand"
+                },
+                {
+                  "action": "shuffle_library",
+                  "player": "you"
+                }
+              ]
+            },
+            {
+              "raw_text": "Return target creature card from your graveyard to your hand.",
+              "effects": [
+                {
+                  "action": "move_card",
+                  "target": {
+                    "selector": "target_creature_card_in_your_graveyard"
+                  },
+                  "destination_zone": "hand"
+                }
+              ]
+            },
+            {
+              "raw_text": "Target creature gains flying until end of turn.",
+              "effects": [
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "target_creature",
+                  "keyword": "flying"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

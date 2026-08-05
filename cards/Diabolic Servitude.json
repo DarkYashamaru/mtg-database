@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e275cbfb-3d25-4189-84f0-3162eadc7d65",
+  "name": "Diabolic Servitude",
+  "faces": [
+    {
+      "name": "Diabolic Servitude",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, return target creature card from your graveyard to the battlefield.\nWhen the creature put onto the battlefield with this enchantment dies, exile it and return this enchantment to its owner's hand.\nWhen this enchantment leaves the battlefield, exile the creature put onto the battlefield with this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, return target creature card from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": {
+                "card_types": [
+                  "Creature"
+                ],
+                "zone": "graveyard"
+              },
+              "destination": "battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "When the creature put onto the battlefield with this enchantment dies, exile it and return this enchantment to its owner's hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": "the_creature_put_onto_the_battlefield_with_this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile it and return this enchantment to its owner's hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this enchantment leaves the battlefield, exile the creature put onto the battlefield with this enchantment.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile the creature put onto the battlefield with this enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

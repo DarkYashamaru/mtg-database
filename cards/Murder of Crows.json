@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "babab2f5-fd1f-4e0a-a692-6c2ce35df708",
+  "name": "Murder of Crows",
+  "faces": [
+    {
+      "name": "Murder of Crows",
+      "type_line": "Creature \u2014 Bird",
+      "oracle_text": "Flying\nWhenever another creature dies, you may draw a card. If you do, discard a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature dies, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "dies",
+            "subject": "another_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

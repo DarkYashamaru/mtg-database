@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2a62b226-d317-4212-9781-9c1d72056f11",
+  "name": "Blisterpod",
+  "faces": [
+    {
+      "name": "Blisterpod",
+      "type_line": "Creature \u2014 Eldrazi Drone",
+      "oracle_text": "Devoid (This card has no color.)\nWhen this creature dies, create a 1/1 colorless Eldrazi Scion creature token. It has \"Sacrifice this token: Add {C}.\"",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, create a 1/1 colorless Eldrazi Scion creature token. It has \"Sacrifice this token: Add {C}.\"",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Eldrazi Scion creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Eldrazi",
+                  "Scion"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "It has \"Sacrifice this token: Add {C}.\""
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

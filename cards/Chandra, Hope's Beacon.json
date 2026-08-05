@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "oracle_id": "53231b31-fb3c-4b30-bfe9-0ee8e754247b",
+  "name": "Chandra, Hope's Beacon",
+  "faces": [
+    {
+      "name": "Chandra, Hope's Beacon",
+      "type_line": "Legendary Planeswalker \u2014 Chandra",
+      "oracle_text": "Whenever you cast an instant or sorcery spell, copy it. You may choose new targets for the copy. This ability triggers only once each turn.\n+2: Add two mana in any combination of colors.\n+1: Exile the top five cards of your library. Until the end of your next turn, you may cast an instant or sorcery spell from among those exiled cards.\n\u2212X: Chandra deals X damage to each of up to two targets.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, copy it. You may choose new targets for the copy. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy it"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+2: Add two mana in any combination of colors.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add two mana in any combination of colors"
+            }
+          ]
+        },
+        {
+          "raw_text": "+1: Exile the top five cards of your library. Until the end of your next turn, you may cast an instant or sorcery spell from among those exiled cards.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile the top five cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until the end of your next turn, you may cast an instant or sorcery spell from among those exiled cards"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2212X: Chandra deals X damage to each of up to two targets.",
+          "cost": "\u2212X",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Chandra deals X damage to each of up to two targets"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

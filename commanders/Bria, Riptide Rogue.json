@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d627996b-cbcd-4162-bd13-9ab286de64d1",
+  "name": "Bria, Riptide Rogue",
+  "faces": [
+    {
+      "name": "Bria, Riptide Rogue",
+      "type_line": "Legendary Creature \u2014 Otter Rogue",
+      "oracle_text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nOther creatures you control have prowess. (If a creature has multiple instances of prowess, each triggers separately.)\nWhenever you cast a noncreature spell, target creature you control can't be blocked this turn.",
+      "static": [
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, target creature you control can't be blocked this turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target creature you control can't be blocked this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other creatures you control have prowess. (If a creature has multiple instances of prowess, each triggers separately.)",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true
+              },
+              "keywords": [
+                "prowess"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bb81aa50-49db-4743-85fc-6b4d9ed29bc6",
+  "name": "Soul Link",
+  "faces": [
+    {
+      "name": "Soul Link",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhenever enchanted creature deals damage, you gain that much life.\nWhenever enchanted creature is dealt damage, you gain that much life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature deals damage, you gain that much life.",
+          "trigger": {
+            "type": "deals_damage",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": "that_much"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever enchanted creature is dealt damage, you gain that much life.",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": "that_much"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

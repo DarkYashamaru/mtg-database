@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "071e15b5-6d21-4695-9ad0-69f40eb8f4ef",
+  "name": "Sporoloth Ancient",
+  "faces": [
+    {
+      "name": "Sporoloth Ancient",
+      "type_line": "Creature \u2014 Fungus",
+      "oracle_text": "At the beginning of your upkeep, put a spore counter on this creature.\nCreatures you control have \"Remove two spore counters from this creature: Create a 1/1 green Saproling creature token.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a spore counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a spore counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Creatures you control have \"Remove two spore counters from this creature: Create a 1/1 green Saproling creature token.\"",
+          "cost": "Creatures you control have \"Remove two spore counters from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Saproling creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Saproling"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "71d09e00-e526-4899-beb3-0ee6d9b87f44",
+  "name": "Fantastic Bounce",
+  "faces": [
+    {
+      "name": "Fantastic Bounce",
+      "type_line": "Sorcery",
+      "oracle_text": "This spell costs {2} less to cast if it targets a tapped creature.\nReturn target nonland permanent to its owner's hand.\nDraw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {2} less to cast if it targets a tapped creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {2} less to cast if it targets a tapped creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Return target nonland permanent to its owner's hand.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

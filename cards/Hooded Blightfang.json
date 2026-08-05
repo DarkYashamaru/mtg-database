@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "342eb666-838c-43d0-bf52-2f704f2a80e3",
+  "name": "Hooded Blightfang",
+  "faces": [
+    {
+      "name": "Hooded Blightfang",
+      "type_line": "Creature \u2014 Snake",
+      "oracle_text": "Deathtouch\nWhenever a creature you control with deathtouch attacks, each opponent loses 1 life and you gain 1 life.\nWhenever a creature you control with deathtouch deals damage to a planeswalker, destroy that planeswalker.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control with deathtouch attacks, each opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "a_creature_you_control_with_deathtouch"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control with deathtouch deals damage to a planeswalker, destroy that planeswalker.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature you control with deathtouch deals damage to a planeswalker"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy that planeswalker"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

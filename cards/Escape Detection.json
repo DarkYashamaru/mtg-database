@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e16c5516-f73c-40c4-9ffa-39c6b2e92ab7",
+  "name": "Escape Detection",
+  "faces": [
+    {
+      "name": "Escape Detection",
+      "type_line": "Instant",
+      "oracle_text": "Freerunning\u2014Return a blue creature you control to its owner's hand. (You may cast this spell for its freerunning cost if you dealt combat damage to a player this turn with an Assassin or commander.)\nReturn target creature to its owner's hand.\nDraw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Freerunning\u2014Return a blue creature you control to its owner's hand. (You may cast this spell for its freerunning cost if you dealt combat damage to a player this turn with an Assassin or commander.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Freerunning\u2014Return a blue creature you control to its owner's hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Return target creature to its owner's hand.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature"
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

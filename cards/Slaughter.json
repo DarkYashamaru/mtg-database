@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "37de575d-15d4-42a2-a3d2-3855fb6ab110",
+  "name": "Slaughter",
+  "faces": [
+    {
+      "name": "Slaughter",
+      "type_line": "Instant",
+      "oracle_text": "Buyback\u2014Pay 4 life. (You may pay 4 life in addition to any other costs as you cast this spell. If you do, put this card into your hand as it resolves.)\nDestroy target nonblack creature. It can't be regenerated.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Buyback\u2014Pay 4 life. (You may pay 4 life in addition to any other costs as you cast this spell. If you do, put this card into your hand as it resolves.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Buyback\u2014Pay 4 life"
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy target nonblack creature. It can't be regenerated.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature",
+                "not_colors": [
+                  "black"
+                ]
+              }
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

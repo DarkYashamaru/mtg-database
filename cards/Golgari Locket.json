@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dba6e24e-7875-46b9-b51d-4cd71568ecfa",
+  "name": "Golgari Locket",
+  "faces": [
+    {
+      "name": "Golgari Locket",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {B} or {G}.\n{B/G}{B/G}{B/G}{B/G}, {T}, Sacrifice this artifact: Draw two cards.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B} or {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}",
+                "{g}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{B/G}{B/G}{B/G}{B/G}, {T}, Sacrifice this artifact: Draw two cards.",
+          "cost": "{B/G}{B/G}{B/G}{B/G}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

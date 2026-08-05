@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c5e7ba95-c9b9-45e8-9551-dba892d90683",
+  "name": "Siren of the Fanged Coast",
+  "faces": [
+    {
+      "name": "Siren of the Fanged Coast",
+      "type_line": "Creature \u2014 Siren",
+      "oracle_text": "Flying\nTribute 3 (As this creature enters, an opponent of your choice may put three +1/+1 counters on it.)\nWhen this creature enters, if tribute wasn't paid, gain control of target creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if tribute wasn't paid, gain control of target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "tribute wasn't paid"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "gain control of target creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Tribute 3 (As this creature enters, an opponent of your choice may put three +1/+1 counters on it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Tribute 3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7423b3b9-56eb-4cf2-8ada-135918219c4b",
+  "name": "Tempest Hawk",
+  "faces": [
+    {
+      "name": "Tempest Hawk",
+      "type_line": "Creature \u2014 Bird",
+      "oracle_text": "Flying\nWhenever this creature deals combat damage to a player, you may search your library for a card named Tempest Hawk, reveal it, put it into your hand, then shuffle.\nA deck can have any number of cards named Tempest Hawk.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may search your library for a card named Tempest Hawk, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a card named tempest hawk, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "A deck can have any number of cards named Tempest Hawk.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "A deck can have any number of cards named Tempest Hawk"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

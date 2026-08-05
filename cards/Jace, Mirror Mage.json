@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7ca99e2f-faf2-4301-a0ae-7cb880ba965b",
+  "name": "Jace, Mirror Mage",
+  "faces": [
+    {
+      "name": "Jace, Mirror Mage",
+      "type_line": "Legendary Planeswalker \u2014 Jace",
+      "oracle_text": "Kicker {2}\nWhen Jace enters, if Jace was kicked, create a token that's a copy of Jace, except it's not legendary and its starting loyalty is 1.\n+1: Scry 2.\n0: Draw a card and reveal it. Remove a number of loyalty counters equal to that card's mana value from Jace.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Jace enters, if Jace was kicked, create a token that's a copy of Jace, except it's not legendary and its starting loyalty is 1.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "Jace was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of Jace, except it's not legendary and its starting loyalty is 1"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+1: Scry 2.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "0: Draw a card and reveal it. Remove a number of loyalty counters equal to that card's mana value from Jace.",
+          "cost": "0",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Draw a card and reveal it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Remove a number of loyalty counters equal to that card's mana value from Jace"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

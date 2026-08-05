@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d46c3fb6-f1c7-4a96-ae42-5bce17fc7c1d",
+  "name": "Ziatora, the Incinerator",
+  "faces": [
+    {
+      "name": "Ziatora, the Incinerator",
+      "type_line": "Legendary Creature \u2014 Demon Dragon",
+      "oracle_text": "Flying\nAt the beginning of your end step, you may sacrifice another creature. When you do, Ziatora deals damage equal to that creature's power to any target and you create three Treasure tokens.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, you may sacrifice another creature. When you do, Ziatora deals damage equal to that creature's power to any target and you create three Treasure tokens.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "ziatora deals damage equal to that creature's power to any target and you create three treasure tokens",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

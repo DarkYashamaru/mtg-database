@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b3235d21-ce52-4a99-a2fe-99b0fe7cc8bc",
+  "name": "Malignant Growth",
+  "faces": [
+    {
+      "name": "Malignant Growth",
+      "type_line": "Enchantment",
+      "oracle_text": "Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nAt the beginning of your upkeep, put a growth counter on this enchantment.\nAt the beginning of each opponent's draw step, that player draws an additional card for each growth counter on this enchantment, then this enchantment deals damage to the player equal to the number of cards they drew this way.",
+      "static": [
+        {
+          "keyword": "cumulative_upkeep",
+          "cost": "{1}"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a growth counter on this enchantment.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a growth counter on this enchantment"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each opponent's draw step, that player draws an additional card for each growth counter on this enchantment, then this enchantment deals damage to the player equal to the number of cards they drew this way.",
+          "trigger": {
+            "type": "custom",
+            "text": "At the beginning of each opponent's draw step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player draws an additional card for each growth counter on this enchantment"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this enchantment deals damage to the player equal to the number of cards they drew this way"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

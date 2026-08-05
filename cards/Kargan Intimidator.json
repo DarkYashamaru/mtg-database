@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "045bf1fd-f375-47a0-9983-7e2ebfed7854",
+  "name": "Kargan Intimidator",
+  "faces": [
+    {
+      "name": "Kargan Intimidator",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Cowards can't block Warriors.\n{1}: Choose one that hasn't been chosen this turn \u2014\n\u2022 This creature gets +1/+1 until end of turn.\n\u2022 Target creature becomes a Coward until end of turn.\n\u2022 Target Warrior gains trample until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}: Choose one that hasn't been chosen this turn \u2014\n\u2022 This creature gets +1/+1 until end of turn.\n\u2022 Target creature becomes a Coward until end of turn.\n\u2022 Target Warrior gains trample until end of turn.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "choose_one_that_hasnt_been_chosen_this_turn___self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Target creature becomes a Coward until end of turn"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "_target_warrior",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Cowards can't block Warriors.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cowards can't block Warriors"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

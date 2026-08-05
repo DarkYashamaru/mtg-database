@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7b03910a-2ca7-40cb-9c71-1c2cc856a287",
+  "name": "Archpriest of Shadows",
+  "faces": [
+    {
+      "name": "Archpriest of Shadows",
+      "type_line": "Creature \u2014 Human Warlock",
+      "oracle_text": "Backup 1 (When this creature enters, put a +1/+1 counter on target creature. If that's another creature, it gains the following abilities until end of turn.)\nDeathtouch\nWhenever this creature deals combat damage to a player or battle, return target creature card from your graveyard to the battlefield.",
+      "static": [
+        {
+          "keyword": "backup",
+          "amount": 1
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player or battle, return target creature card from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature deals combat damage to a player or battle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": {
+                "card_types": [
+                  "Creature"
+                ],
+                "zone": "graveyard"
+              },
+              "destination": "battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

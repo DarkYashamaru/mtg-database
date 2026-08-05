@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0dcee3a3-6cb1-45ce-958c-1f57ced80be4",
+  "name": "Roots",
+  "faces": [
+    {
+      "name": "Roots",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature without flying\nWhen this Aura enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, tap enchanted creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "enchanted_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature without flying",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_without_flying"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "enchanted_creature",
+              "scope": "controllers_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

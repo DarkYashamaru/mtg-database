@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "176f5ba8-6e7b-4234-a298-b6164f51656f",
+  "name": "Inti, Seneschal of the Sun",
+  "faces": [
+    {
+      "name": "Inti, Seneschal of the Sun",
+      "type_line": "Legendary Creature \u2014 Human Knight",
+      "oracle_text": "Whenever you attack, you may discard a card. When you do, put a +1/+1 counter on target attacking creature. It gains trample until end of turn.\nWhenever you discard one or more cards, exile the top card of your library. You may play that card until your next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, you may discard a card. When you do, put a +1/+1 counter on target attacking creature. It gains trample until end of turn.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_attacking_creature",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "trample"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you discard one or more cards, exile the top card of your library. You may play that card until your next end step.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you discard one or more cards"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card until your next end step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

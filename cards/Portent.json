@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e744dbb6-2d56-462a-8d49-d79c73944048",
+  "name": "Portent",
+  "faces": [
+    {
+      "name": "Portent",
+      "type_line": "Sorcery",
+      "oracle_text": "Look at the top three cards of target player's library, then put them back in any order. You may have that player shuffle.\nDraw a card at the beginning of the next turn's upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Look at the top three cards of target player's library, then put them back in any order. You may have that player shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top three cards of target player's library"
+            },
+            {
+              "action": "return_looked_at_cards",
+              "destination": "top_of_library",
+              "order": "any"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may have that player shuffle"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card at the beginning of the next turn's upkeep.",
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_turns_upkeep"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

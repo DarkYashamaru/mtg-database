@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6702fcdb-0b06-4b17-966a-3c5e033c3341",
+  "name": "Thought Dissector",
+  "faces": [
+    {
+      "name": "Thought Dissector",
+      "type_line": "Artifact",
+      "oracle_text": "{X}, {T}: Target opponent reveals cards from the top of their library until an artifact card or X cards are revealed, whichever comes first. If an artifact card is revealed this way, put it onto the battlefield under your control and sacrifice this artifact. Put the rest of the revealed cards into that player's graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{X}, {T}: Target opponent reveals cards from the top of their library until an artifact card or X cards are revealed, whichever comes first. If an artifact card is revealed this way, put it onto the battlefield under your control and sacrifice this artifact. Put the rest of the revealed cards into that player's graveyard.",
+          "cost": "{X}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target opponent reveals cards from the top of their library until an artifact card or X cards are revealed, whichever comes first"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it onto the battlefield under your control",
+              "condition": [
+                {
+                  "condition_text": "an artifact card is revealed this way"
+                }
+              ]
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put the rest of the revealed cards into that player's graveyard"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

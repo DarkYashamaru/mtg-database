@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e157ad1e-be35-47f3-92db-01799f8fb6a5",
+  "name": "Psychic Frog",
+  "faces": [
+    {
+      "name": "Psychic Frog",
+      "type_line": "Creature \u2014 Frog",
+      "oracle_text": "Whenever this creature deals combat damage to a player or planeswalker, draw a card.\nDiscard a card: Put a +1/+1 counter on this creature.\nExile three cards from your graveyard: This creature gains flying until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player or planeswalker, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature deals combat damage to a player or planeswalker"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Discard a card: Put a +1/+1 counter on this creature.",
+          "cost": "Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Exile three cards from your graveyard: This creature gains flying until end of turn.",
+          "cost": "Exile three cards from your graveyard",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

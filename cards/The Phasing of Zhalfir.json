@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6b92a5f4-a241-48c8-9aec-c8e9d5b01fa5",
+  "name": "The Phasing of Zhalfir",
+  "faces": [
+    {
+      "name": "The Phasing of Zhalfir",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)\nI, II \u2014 Another target nonland permanent phases out. It can't phase in for as long as you control this Saga.\nIII \u2014 Destroy all creatures. For each creature destroyed this way, its controller creates a 2/2 black Phyrexian creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Another target nonland permanent phases out. It can't phase in for as long as you control this Saga.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Another target nonland permanent phases out"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It can't phase in for as long as you control this Saga"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Destroy all creatures. For each creature destroyed this way, its controller creates a 2/2 black Phyrexian creature token.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "all_creatures"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "For each creature destroyed this way, its controller creates a 2/2 black Phyrexian creature token"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Read ahead"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fe174586-d36b-40f6-babd-1f98e76eec22",
+  "name": "Amonkhet Raceway",
+  "faces": [
+    {
+      "name": "Amonkhet Raceway",
+      "type_line": "Land",
+      "oracle_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\n{T}: Add {C}.\nMax speed \u2014 {T}: Target creature gains haste until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "Max speed \u2014 {T}: Target creature gains haste until end of turn.",
+          "cost": "Max speed \u2014 {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)",
+          "effects": [
+            {
+              "action": "start_your_engines"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

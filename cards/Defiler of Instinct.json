@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "590137df-af61-4e93-b6f1-3a2e438b8037",
+  "name": "Defiler of Instinct",
+  "faces": [
+    {
+      "name": "Defiler of Instinct",
+      "type_line": "Creature \u2014 Phyrexian Kavu",
+      "oracle_text": "First strike\nAs an additional cost to cast red permanent spells, you may pay 2 life. Those spells cost {R} less to cast if you paid life this way. This effect reduces only the amount of red mana you pay.\nWhenever you cast a red permanent spell, this creature deals 1 damage to any target.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a red permanent spell, this creature deals 1 damage to any target.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Red",
+                "Permanent"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast red permanent spells, you may pay 2 life. Those spells cost {R} less to cast if you paid life this way. This effect reduces only the amount of red mana you pay.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As an additional cost to cast red permanent spells, you may pay 2 life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Those spells cost {R} less to cast if you paid life this way"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This effect reduces only the amount of red mana you pay"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

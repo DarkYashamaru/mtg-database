@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "076584c8-ec58-4711-8f59-4839a4fa88ad",
+  "name": "Battle at the Helvault",
+  "faces": [
+    {
+      "name": "Battle at the Helvault",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II \u2014 For each player, exile up to one target non-Saga, nonland permanent that player controls until this Saga leaves the battlefield.\nIII \u2014 Create Avacyn, a legendary 8/8 white Angel creature token with flying, vigilance, and indestructible.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 For each player, exile up to one target non-Saga, nonland permanent that player controls until this Saga leaves the battlefield.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each player, exile up to one target non-Saga, nonland permanent that player controls until this Saga leaves the battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Create Avacyn, a legendary 8/8 white Angel creature token with flying, vigilance, and indestructible.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Avacyn, a legendary 8/8 white Angel creature token with flying, vigilance, and indestructible",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "8/8",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Angel"
+                ],
+                "keywords": [
+                  "flying",
+                  "vigilance",
+                  "indestructible"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

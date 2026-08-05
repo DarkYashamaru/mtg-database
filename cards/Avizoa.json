@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91520db8-2d50-4c17-9f0e-2f92f63285f7",
+  "name": "Avizoa",
+  "faces": [
+    {
+      "name": "Avizoa",
+      "type_line": "Creature \u2014 Jellyfish",
+      "oracle_text": "Flying\n{0}: This creature gets +2/+2 until end of turn. You skip your next untap step. Activate only once each turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{0}: This creature gets +2/+2 until end of turn. You skip your next untap step. Activate only once each turn.",
+          "cost": "{0}",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "You skip your next untap step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

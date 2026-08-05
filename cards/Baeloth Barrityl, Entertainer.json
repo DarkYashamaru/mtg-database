@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "33b401b1-cf94-4c7a-8a8a-426ac3d87bd0",
+  "name": "Baeloth Barrityl, Entertainer",
+  "faces": [
+    {
+      "name": "Baeloth Barrityl, Entertainer",
+      "type_line": "Legendary Creature \u2014 Elf Shaman",
+      "oracle_text": "Creatures your opponents control with power less than Baeloth Barrityl's power are goaded. (They attack each combat if able and attack a player other than you if able.)\nWhenever a goaded attacking or blocking creature dies, you create a Treasure token.\nChoose a Background (You can have a Background as a second commander.)",
+      "static": [
+        {
+          "keyword": "choose_a_background"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a goaded attacking or blocking creature dies, you create a Treasure token.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_goaded_attacking_or_blocking_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures your opponents control with power less than Baeloth Barrityl's power are goaded. (They attack each combat if able and attack a player other than you if able.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures your opponents control with power less than Baeloth Barrityl's power are goaded"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

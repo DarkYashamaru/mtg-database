@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7f65178e-dd2e-44aa-a68f-f8694e0b250a",
+  "name": "Quest for the Nihil Stone",
+  "faces": [
+    {
+      "name": "Quest for the Nihil Stone",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever an opponent discards a card, you may put a quest counter on this enchantment.\nAt the beginning of each opponent's upkeep, if that player has no cards in hand and this enchantment has two or more quest counters on it, you may have that player lose 5 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent discards a card, you may put a quest counter on this enchantment.",
+          "trigger": {
+            "type": "discard_card",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a quest counter on this enchantment"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each opponent's upkeep, if that player has no cards in hand and this enchantment has two or more quest counters on it, you may have that player lose 5 life.",
+          "trigger": {
+            "type": "beginning_of_each_opponents_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "that player has no cards in hand and this enchantment has two or more quest counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have that player lose 5 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

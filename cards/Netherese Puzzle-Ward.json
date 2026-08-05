@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "561e8ecc-1f2b-4fd4-8f92-a0acea449816",
+  "name": "Netherese Puzzle-Ward",
+  "faces": [
+    {
+      "name": "Netherese Puzzle-Ward",
+      "type_line": "Enchantment",
+      "oracle_text": "Focus Beam \u2014 At the beginning of your upkeep, roll a d4. Scry X, where X is the result.\nPerfect Illumination \u2014 Whenever you roll a die's highest natural result, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, roll a d4. Scry X, where X is the result.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "roll a d4"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Scry X, where X is the result"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you roll a die's highest natural result, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you roll a die's highest natural result"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

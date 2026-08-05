@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1d8bd391-b133-4c8b-95ad-7f7ab99137c7",
+  "name": "Immortal Phoenix",
+  "faces": [
+    {
+      "name": "Immortal Phoenix",
+      "type_line": "Creature \u2014 Phoenix",
+      "oracle_text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nWhen this creature dies, return it to its owner's hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, return it to its owner's hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

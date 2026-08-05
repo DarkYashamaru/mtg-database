@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c2b2b743-dfc7-439e-8563-1ccce54422bd",
+  "name": "Death to Our Enemies",
+  "faces": [
+    {
+      "name": "Death to Our Enemies",
+      "type_line": "Enchantment \u2014 Plan",
+      "oracle_text": "Whenever you cast a noncreature spell, create a tapped Treasure token and put a plan counter on this enchantment.\nWhen the fourth plan counter is put on this enchantment, sacrifice it. When you do, it deals 7 damage divided as you choose among one or two targets.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, create a tapped Treasure token and put a plan counter on this enchantment.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a tapped Treasure token and put a plan counter on this enchantment"
+            }
+          ]
+        },
+        {
+          "raw_text": "When the fourth plan counter is put on this enchantment, sacrifice it. When you do, it deals 7 damage divided as you choose among one or two targets.",
+          "trigger": {
+            "type": "custom",
+            "text": "When the fourth plan counter is put on this enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it deals 7 damage divided as you choose among one or two targets",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

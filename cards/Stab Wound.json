@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aad212b2-57ba-4e70-869b-636842eb7a88",
+  "name": "Stab Wound",
+  "faces": [
+    {
+      "name": "Stab Wound",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets -2/-2.\nAt the beginning of the upkeep of enchanted creature's controller, that player loses 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of the upkeep of enchanted creature's controller, that player loses 2 life.",
+          "trigger": {
+            "type": "beginning_of_upkeep_of_enchanted_creatures_controller"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player loses 2 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets -2/-2.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": -2,
+              "toughness_delta": -2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

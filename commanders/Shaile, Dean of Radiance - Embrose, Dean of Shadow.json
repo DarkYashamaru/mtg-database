@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b0907441-30fe-436a-b29c-585b57eabfc3",
+  "name": "Shaile, Dean of Radiance // Embrose, Dean of Shadow",
+  "faces": [
+    {
+      "name": "Embrose, Dean of Shadow",
+      "type_line": "Legendary Creature \u2014 Human Warlock",
+      "oracle_text": "{T}: Put a +1/+1 counter on another target creature, then Embrose deals 2 damage to that creature.\nWhenever a creature you control with a +1/+1 counter on it dies, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control with a +1/+1 counter on it dies, draw a card.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "a_creature_you_control_with_a_11_counter_on_it"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Put a +1/+1 counter on another target creature, then Embrose deals 2 damage to that creature.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "another_target_creature",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "embrose deals 2 damage to that creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Shaile, Dean of Radiance",
+      "type_line": "Legendary Creature \u2014 Bird Cleric",
+      "oracle_text": "Flying, vigilance\n{T}: Put a +1/+1 counter on each creature that entered the battlefield under your control this turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Put a +1/+1 counter on each creature that entered the battlefield under your control this turn.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "each_creature_that_entered_the_battlefield_under_you_control_control_this_turn",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

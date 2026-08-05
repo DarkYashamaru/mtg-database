@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5a44062b-f1db-4122-8570-1241a16cb895",
+  "name": "Sumala Woodshaper",
+  "faces": [
+    {
+      "name": "Sumala Woodshaper",
+      "type_line": "Creature \u2014 Elf Druid",
+      "oracle_text": "When this creature enters, look at the top four cards of your library. You may reveal a creature or enchantment card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at the top four cards of your library. You may reveal a creature or enchantment card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature",
+                  "Enchantment"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

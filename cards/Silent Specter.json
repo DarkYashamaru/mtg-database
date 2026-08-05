@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "49e70569-b0bc-4705-927e-eb1504925210",
+  "name": "Silent Specter",
+  "faces": [
+    {
+      "name": "Silent Specter",
+      "type_line": "Creature \u2014 Specter",
+      "oracle_text": "Flying\nWhenever this creature deals combat damage to a player, that player discards two cards.\nMorph {3}{B}{B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, that player discards two cards.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "that_player",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Morph {3}{B}{B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morph {3}{B}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

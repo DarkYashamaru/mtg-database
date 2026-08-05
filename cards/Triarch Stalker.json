@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1b3ae9c3-1940-4fb8-a47c-2d9e1790f4a3",
+  "name": "Triarch Stalker",
+  "faces": [
+    {
+      "name": "Triarch Stalker",
+      "type_line": "Artifact Creature \u2014 Necron",
+      "oracle_text": "Targeting Relay \u2014 At the beginning of combat on your turn, choose an opponent.\nCreatures attacking the last chosen player have menace.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, choose an opponent.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose an opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures attacking the last chosen player have menace.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_attacking_the_last_chosen_player"
+              },
+              "keywords": [
+                "menace"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

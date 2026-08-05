@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4e6238d8-bd6a-4952-a7dd-9c41a78a2cba",
+  "name": "Gonti's Machinations",
+  "faces": [
+    {
+      "name": "Gonti's Machinations",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you lose life for the first time each turn, you get {E}. (You get an energy counter. Damage causes loss of life.)\nPay {E}{E}, Sacrifice this enchantment: Each opponent loses 3 life. You gain life equal to the life lost this way.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you lose life for the first time each turn, you get {E}. (You get an energy counter. Damage causes loss of life.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you lose life for the first time each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get {E}"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay {E}{E}, Sacrifice this enchantment: Each opponent loses 3 life. You gain life equal to the life lost this way.",
+          "cost": "Pay {E}{E}, Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "You gain life equal to the life lost this way"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

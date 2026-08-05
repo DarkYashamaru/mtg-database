@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a6cefecd-459e-439a-a62c-689c2919b689",
+  "name": "Arbiter of the Ideal",
+  "faces": [
+    {
+      "name": "Arbiter of the Ideal",
+      "type_line": "Creature \u2014 Sphinx",
+      "oracle_text": "Flying\nInspired \u2014 Whenever this creature becomes untapped, reveal the top card of your library. If it's an artifact, creature, or land card, you may put it onto the battlefield with a manifestation counter on it. That permanent is an enchantment in addition to its other types.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes untapped, reveal the top card of your library. If it's an artifact, creature, or land card, you may put it onto the battlefield with a manifestation counter on it. That permanent is an enchantment in addition to its other types.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes untapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "creature, or land card, you may put it onto the battlefield with a manifestation counter on it",
+              "condition": [
+                {
+                  "condition_text": "it's an artifact"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "That permanent is an enchantment in addition to its other types"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

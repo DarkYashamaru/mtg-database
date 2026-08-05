@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "376cbc85-2941-4d97-b031-bffff86550e7",
+  "name": "Congregation Gryff",
+  "faces": [
+    {
+      "name": "Congregation Gryff",
+      "type_line": "Creature \u2014 Hippogriff Mount",
+      "oracle_text": "Flying, lifelink\nWhenever this creature attacks while saddled, it gets +X/+X until end of turn, where X is the number of Mounts you control.\nSaddle 3 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks while saddled, it gets +X/+X until end of turn, where X is the number of Mounts you control.",
+          "trigger": {
+            "type": "attacks_while_saddled",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gets +X/+X until end of turn, where X is the number of Mounts you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Saddle 3 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+          "cost": "Saddle 3 (Tap any number of other creatures you control with total power 3 or more",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Mount becomes saddled until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

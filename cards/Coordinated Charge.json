@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "688a0b7d-bf00-45ab-ab3f-9d19f52f019a",
+  "name": "Coordinated Charge",
+  "faces": [
+    {
+      "name": "Coordinated Charge",
+      "type_line": "Instant",
+      "oracle_text": "Creatures you control get +2/+1 until end of turn.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Cycling {2} ({2}, Discard this card: Draw a card.)",
+          "cost": "Cycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control get +2/+1 until end of turn.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 2,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ca8950ce-43d9-47bd-85f3-58c1fad42420",
+  "name": "Flame Channeler // Embodiment of Flame",
+  "faces": [
+    {
+      "name": "Embodiment of Flame",
+      "type_line": "Creature \u2014 Elemental Wizard",
+      "oracle_text": "Whenever a spell you control deals damage, put a flame counter on this creature.\n{1}, Remove a flame counter from this creature: Exile the top card of your library. You may play that card this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a spell you control deals damage, put a flame counter on this creature.",
+          "trigger": {
+            "type": "deals_damage",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Spell"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a flame counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, Remove a flame counter from this creature: Exile the top card of your library. You may play that card this turn.",
+          "cost": "{1}, Remove a flame counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Flame Channeler",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "When a spell you control deals damage, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When a spell you control deals damage, transform this creature.",
+          "trigger": {
+            "type": "deals_damage",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Spell"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

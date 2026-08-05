@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7a49f3a1-abdb-4bf3-b5ed-f54349ab40fd",
+  "name": "Skarrg Guildmage",
+  "faces": [
+    {
+      "name": "Skarrg Guildmage",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "{R}{G}: Creatures you control gain trample until end of turn.\n{1}{R}{G}: Target land you control becomes a 4/4 Elemental creature until end of turn. It's still a land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{R}{G}: Creatures you control gain trample until end of turn.",
+          "cost": "{R}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "trample"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{R}{G}: Target land you control becomes a 4/4 Elemental creature until end of turn. It's still a land.",
+          "cost": "{1}{R}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target land you control becomes a 4/4 Elemental creature until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

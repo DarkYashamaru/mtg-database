@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ba11a517-1dbd-4797-9f5e-46ce0f6c77c0",
+  "name": "Scene of the Crime",
+  "faces": [
+    {
+      "name": "Scene of the Crime",
+      "type_line": "Artifact Land \u2014 Clue",
+      "oracle_text": "This land enters tapped.\n{T}: Add {C}.\n{T}, Tap an untapped creature you control: Add one mana of any color.\n{2}, Sacrifice this land: Draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Tap an untapped creature you control: Add one mana of any color.",
+          "cost": "{T}, Tap an untapped creature you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, Sacrifice this land: Draw a card.",
+          "cost": "{2}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

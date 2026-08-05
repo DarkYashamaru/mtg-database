@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85c799e9-74d5-459e-b168-b95ed78cd4e9",
+  "name": "Etched Host Doombringer",
+  "faces": [
+    {
+      "name": "Etched Host Doombringer",
+      "type_line": "Creature \u2014 Phyrexian Demon",
+      "oracle_text": "When this creature enters, choose one \u2014\n\u2022 Target opponent loses 2 life and you gain 2 life.\n\u2022 Choose target battle. If an opponent protects it, remove three defense counters from it. Otherwise, put three defense counters on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, choose one \u2014\n\u2022 Target opponent loses 2 life and you gain 2 life.\n\u2022 Choose target battle. If an opponent protects it, remove three defense counters from it. Otherwise, put three defense counters on it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Target opponent loses 2 life and you gain 2 life.",
+              "effects": [
+                {
+                  "action": "lose_life",
+                  "target": "target_opponent",
+                  "amount": 2
+                },
+                {
+                  "action": "gain_life",
+                  "player": "you",
+                  "amount": 2
+                }
+              ]
+            },
+            {
+              "raw_text": "Choose target battle. If an opponent protects it, remove three defense counters from it. Otherwise, put three defense counters on it.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Choose target battle"
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "remove three defense counters from it",
+                  "condition": [
+                    {
+                      "condition_text": "an opponent protects it"
+                    }
+                  ]
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "put three defense counters on it",
+                  "condition": [
+                    {
+                      "not": {
+                        "zone_count": {
+                          "zone": "hand",
+                          "owner": "you",
+                          "count_eq": 0
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

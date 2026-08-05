@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd43b485-e42e-4c20-adcb-799b0ce18a59",
+  "name": "Jorn, God of Winter // Kaldring, the Rimestaff",
+  "faces": [
+    {
+      "name": "Jorn, God of Winter",
+      "type_line": "Legendary Snow Creature \u2014 God",
+      "oracle_text": "Whenever Jorn attacks, untap each snow permanent you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Jorn attacks, untap each snow permanent you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap each snow permanent you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Kaldring, the Rimestaff",
+      "type_line": "Legendary Snow Artifact",
+      "oracle_text": "{T}: You may play target snow permanent card from your graveyard this turn. If you do, it enters tapped.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: You may play target snow permanent card from your graveyard this turn. If you do, it enters tapped.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may play target snow permanent card from your graveyard this turn"
+            },
+            {
+              "action": "enters_tapped",
+              "target": "it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

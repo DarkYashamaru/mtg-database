@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93cddbad-92ef-4b30-a0e7-981aee714bce",
+  "name": "Radiant Grace // Radiant Restraints",
+  "faces": [
+    {
+      "name": "Radiant Grace",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +1/+0 and has vigilance.\nWhen enchanted creature dies, return this card to the battlefield transformed under your control attached to target opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, return this card to the battlefield transformed under your control attached to target opponent.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return this card to the battlefield transformed under your control attached to target opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+0 and has vigilance.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+0 and has vigilance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Radiant Restraints",
+      "type_line": "Enchantment \u2014 Aura Curse",
+      "oracle_text": "Enchant player\nCreatures enchanted player controls enter tapped.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant player",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "player"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures enchanted player controls enter tapped.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures enchanted player controls enter tapped"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f6476884-f73f-465f-8e7f-ea312a5b306d",
+  "name": "Loot, Exuberant Explorer",
+  "faces": [
+    {
+      "name": "Loot, Exuberant Explorer",
+      "type_line": "Legendary Creature \u2014 Beast Noble",
+      "oracle_text": "You may play an additional land on each of your turns.\n{4}{G}{G}, {T}: Look at the top six cards of your library. You may reveal a creature card with mana value less than or equal to the number of lands you control from among them and put it onto the battlefield. Put the rest on the bottom in a random order.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{4}{G}{G}, {T}: Look at the top six cards of your library. You may reveal a creature card with mana value less than or equal to the number of lands you control from among them and put it onto the battlefield. Put the rest on the bottom in a random order.",
+          "cost": "{4}{G}{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 6
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may reveal a creature card with mana value less than or equal to the number of lands you control from among them and put it onto the battlefield"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put the rest on the bottom in a random order"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may play an additional land on each of your turns.",
+          "effects": [
+            {
+              "action": "additional_land_play",
+              "amount": 1,
+              "scope": "each_of_your_turns",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

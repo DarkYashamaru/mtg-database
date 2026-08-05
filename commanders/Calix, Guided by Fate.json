@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1bcc8ca6-5fd0-4fc9-8f0c-f81d8abf9249",
+  "name": "Calix, Guided by Fate",
+  "faces": [
+    {
+      "name": "Calix, Guided by Fate",
+      "type_line": "Legendary Enchantment Creature \u2014 Human Druid",
+      "oracle_text": "Constellation \u2014 Whenever Calix or another enchantment you control enters, put a +1/+1 counter on target creature.\nWhenever Calix or an enchanted creature you control deals combat damage to a player, you may create a token that's a copy of a nonlegendary enchantment you control. Do this only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Calix or another enchantment you control enters, put a +1/+1 counter on target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Enchantment"
+              ],
+              "subtypes": [
+                "Calix",
+                "Or",
+                "Another"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Calix or an enchanted creature you control deals combat damage to a player, you may create a token that's a copy of a nonlegendary enchantment you control. Do this only once each turn.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Calix",
+                "Or",
+                "Enchanted"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may create a token that's a copy of a nonlegendary enchantment you control"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_uses": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

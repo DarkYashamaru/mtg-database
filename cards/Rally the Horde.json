@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fd9aeda1-9e44-4bc6-aa0d-19d58918d1f4",
+  "name": "Rally the Horde",
+  "faces": [
+    {
+      "name": "Rally the Horde",
+      "type_line": "Sorcery",
+      "oracle_text": "Exile the top card of your library. Exile the top card of your library. Exile the top card of your library. If the last card exiled isn't a land card, repeat this process. Create a 1/1 red Warrior creature token for each nonland card exiled this way.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Exile the top card of your library. Exile the top card of your library. Exile the top card of your library. If the last card exiled isn't a land card, repeat this process. Create a 1/1 red Warrior creature token for each nonland card exiled this way.",
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "repeat this process",
+              "condition": [
+                {
+                  "condition_text": "the last card exiled isn't a land card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Create a 1/1 red Warrior creature token for each nonland card exiled this way"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

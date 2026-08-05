@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "10e0b563-4dfc-4530-a010-0ba40bdf02ac",
+  "name": "Pinnacle Starcage",
+  "faces": [
+    {
+      "name": "Pinnacle Starcage",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, exile all artifacts and creatures with mana value 2 or less until this artifact leaves the battlefield.\n{6}{W}{W}: Put each card exiled with this artifact into its owner's graveyard, then create a 2/2 colorless Robot artifact creature token for each card put into a graveyard this way. Sacrifice this artifact.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, exile all artifacts and creatures with mana value 2 or less until this artifact leaves the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile all artifacts and creatures with mana value 2 or less until this artifact leaves the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{6}{W}{W}: Put each card exiled with this artifact into its owner's graveyard, then create a 2/2 colorless Robot artifact creature token for each card put into a graveyard this way. Sacrifice this artifact.",
+          "cost": "{6}{W}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put each card exiled with this artifact into its owner's graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a 2/2 colorless robot artifact creature token for each card put into a graveyard this way"
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_artifact"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

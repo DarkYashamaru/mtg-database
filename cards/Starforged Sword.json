@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2cdc1d82-30dc-4f0a-af20-33dde90269b1",
+  "name": "Starforged Sword",
+  "faces": [
+    {
+      "name": "Starforged Sword",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Gift a tapped Fish (You may promise an opponent a gift as you cast this spell. If you do, when it enters, they create a tapped 1/1 blue Fish creature token.)\nWhen this Equipment enters, if the gift was promised, attach this Equipment to target creature you control.\nEquipped creature gets +3/+3 and loses flying.\nEquip {3}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, if the gift was promised, attach this Equipment to target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [
+            {
+              "condition_text": "the gift was promised"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach this Equipment to target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Gift a tapped Fish (You may promise an opponent a gift as you cast this spell. If you do, when it enters, they create a tapped 1/1 blue Fish creature token.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gift a tapped Fish"
+            }
+          ]
+        },
+        {
+          "raw_text": "Equipped creature gets +3/+3 and loses flying.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +3/+3 and loses flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

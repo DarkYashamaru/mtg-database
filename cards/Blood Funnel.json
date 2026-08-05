@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "81dd22f7-f6c6-4cf2-9744-b1d918dbcf9a",
+  "name": "Blood Funnel",
+  "faces": [
+    {
+      "name": "Blood Funnel",
+      "type_line": "Enchantment",
+      "oracle_text": "Noncreature spells you cast cost {2} less to cast.\nWhenever you cast a noncreature spell, counter that spell unless you sacrifice a creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, counter that spell unless you sacrifice a creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "counter that spell unless you sacrifice a creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Noncreature spells you cast cost {2} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Noncreature spells you cast cost {2} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2705a288-3b9d-4452-a320-28b86331aa09",
+  "name": "Runeforge Champion",
+  "faces": [
+    {
+      "name": "Runeforge Champion",
+      "type_line": "Creature \u2014 Dwarf Warrior",
+      "oracle_text": "When this creature enters, you may search your library and/or graveyard for a Rune card, reveal it, and put it into your hand. If you search your library this way, shuffle.\nYou may pay {1} rather than pay the mana cost for Rune spells you cast.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library and/or graveyard for a Rune card, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library and/or graveyard for a Rune card, reveal it, and put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may pay {1} rather than pay the mana cost for Rune spells you cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may pay {1} rather than pay the mana cost for Rune spells you cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

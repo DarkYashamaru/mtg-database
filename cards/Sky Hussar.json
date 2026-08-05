@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "21b41dd6-bff7-4e3d-aa28-551a30194225",
+  "name": "Sky Hussar",
+  "faces": [
+    {
+      "name": "Sky Hussar",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Flying\nWhen this creature enters, untap all creatures you control.\nForecast \u2014 Tap two untapped white and/or blue creatures you control, Reveal this card from your hand: Draw a card. (Activate only during your upkeep and only once each turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, untap all creatures you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "untap",
+              "target": {
+                "selector": "creatures_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Forecast \u2014 Tap two untapped white and/or blue creatures you control, Reveal this card from your hand: Draw a card. (Activate only during your upkeep and only once each turn.)",
+          "cost": "Forecast \u2014 Tap two untapped white and/or blue creatures you control, Reveal this card from your hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

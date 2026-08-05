@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "debbbdb2-2fa8-413f-b394-977212915c65",
+  "name": "Mirkwood Trapper",
+  "faces": [
+    {
+      "name": "Mirkwood Trapper",
+      "type_line": "Creature \u2014 Elf Scout",
+      "oracle_text": "Whenever a player attacks you, target attacking creature gets -2/-0 until end of turn.\nWhenever a player attacks, if they aren't attacking you, that player chooses an attacking creature. It gets +2/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player attacks you, target attacking creature gets -2/-0 until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player attacks you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_attacking_creature",
+              "power_delta": -2,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a player attacks, if they aren't attacking you, that player chooses an attacking creature. It gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "a_player"
+          },
+          "condition": [
+            {
+              "condition_text": "they aren't attacking you"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player chooses an attacking creature"
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

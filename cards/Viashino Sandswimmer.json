@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1d82f01a-29be-4756-8745-e2c04bf77c61",
+  "name": "Viashino Sandswimmer",
+  "faces": [
+    {
+      "name": "Viashino Sandswimmer",
+      "type_line": "Creature \u2014 Lizard",
+      "oracle_text": "{R}: Flip a coin. If you win the flip, return this creature to its owner's hand. If you lose the flip, sacrifice this creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{R}: Flip a coin. If you win the flip, return this creature to its owner's hand. If you lose the flip, sacrifice this creature.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin"
+            },
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner",
+              "condition": [
+                {
+                  "condition_text": "you win the flip"
+                }
+              ]
+            },
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

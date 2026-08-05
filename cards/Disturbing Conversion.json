@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "adde6737-516c-4d6f-9363-388ad37d4114",
+  "name": "Disturbing Conversion",
+  "faces": [
+    {
+      "name": "Disturbing Conversion",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash\nEnchant creature\nWhen this Aura enters, each player mills two cards.\nEnchanted creature gets -X/-0, where X is the number of cards in its controller's graveyard.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, each player mills two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player mills two cards"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets -X/-0, where X is the number of cards in its controller's graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets -X/-0, where X is the number of cards in its controller's graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

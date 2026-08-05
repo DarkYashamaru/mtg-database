@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "37b7f044-f57b-4d13-82be-46fd01f1dba6",
+  "name": "Witherscale Wurm",
+  "faces": [
+    {
+      "name": "Witherscale Wurm",
+      "type_line": "Creature \u2014 Wurm",
+      "oracle_text": "Whenever this creature blocks or becomes blocked by a creature, that creature gains wither until end of turn. (It deals damage to creatures in the form of -1/-1 counters.)\nWhenever this creature deals damage to an opponent, remove all -1/-1 counters from it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature blocks or becomes blocked by a creature, that creature gains wither until end of turn. (It deals damage to creatures in the form of -1/-1 counters.)",
+          "trigger": {
+            "type": "becomes_blocked_by_creature",
+            "subject": "self_blocks_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature",
+              "keyword": "wither"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature deals damage to an opponent, remove all -1/-1 counters from it.",
+          "trigger": {
+            "type": "deals_damage_to_opponent",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove all -1/-1 counters from it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

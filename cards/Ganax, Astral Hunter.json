@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a3112971-3af4-46e8-b2d6-a8759b39d0d1",
+  "name": "Ganax, Astral Hunter",
+  "faces": [
+    {
+      "name": "Ganax, Astral Hunter",
+      "type_line": "Legendary Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever Ganax or another Dragon you control enters, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nChoose a Background (You can have a Background as a second commander.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "choose_a_background"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Ganax or another Dragon you control enters, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Ganax",
+                "Or",
+                "Another",
+                "Dragon"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

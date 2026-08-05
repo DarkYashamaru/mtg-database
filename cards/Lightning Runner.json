@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2f82b232-21ff-44cc-bc35-0999a1d1c52f",
+  "name": "Lightning Runner",
+  "faces": [
+    {
+      "name": "Lightning Runner",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Double strike, haste\nWhenever this creature attacks, you get {E}{E} (two energy counters), then you may pay eight {E}. If you pay, untap all creatures you control, and after this phase, there is an additional combat phase.",
+      "static": [
+        {
+          "keyword": "double strike"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you get {E}{E} (two energy counters), then you may pay eight {E}. If you pay, untap all creatures you control, and after this phase, there is an additional combat phase.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may pay eight {e}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap all creatures you control,",
+              "condition": [
+                {
+                  "condition_text": "you pay"
+                }
+              ]
+            },
+            {
+              "action": "add_combat_phase_after_this_phase"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c3da0550-b816-4aed-8174-ddde199b6589",
+  "name": "Syr Carah, the Bold",
+  "faces": [
+    {
+      "name": "Syr Carah, the Bold",
+      "type_line": "Legendary Creature \u2014 Human Knight",
+      "oracle_text": "Whenever Syr Carah or an instant or sorcery spell you control deals damage to a player, exile the top card of your library. You may play that card this turn.\n{T}: Syr Carah deals 1 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Syr Carah or an instant or sorcery spell you control deals damage to a player, exile the top card of your library. You may play that card this turn.",
+          "trigger": {
+            "type": "deals_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Instant",
+                "Sorcery"
+              ],
+              "subtypes": [
+                "Syr",
+                "Carah",
+                "Or",
+                "Or",
+                "Spell"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Syr Carah deals 1 damage to any target.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

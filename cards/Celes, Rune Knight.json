@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aea8345a-191d-4c62-8d15-a716a9934b66",
+  "name": "Celes, Rune Knight",
+  "faces": [
+    {
+      "name": "Celes, Rune Knight",
+      "type_line": "Legendary Creature \u2014 Human Wizard Knight",
+      "oracle_text": "When Celes enters, discard any number of cards, then draw that many cards plus one.\nWhenever one or more other creatures you control enter, if one or more of them entered from a graveyard or was cast from a graveyard, put a +1/+1 counter on each creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Celes enters, discard any number of cards, then draw that many cards plus one.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "discard any number of cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "draw that many cards plus one"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more other creatures you control enter, if one or more of them entered from a graveyard or was cast from a graveyard, put a +1/+1 counter on each creature you control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more other creatures you control enter"
+          },
+          "condition": [
+            {
+              "condition_text": "one or more of them entered from a graveyard or was cast from a graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

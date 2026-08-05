@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d40e5a76-6c9a-47eb-b412-d3056cf36b3f",
+  "name": "Reaper of Night // Harvest Fear",
+  "faces": [
+    {
+      "name": "Harvest Fear",
+      "type_line": "Sorcery \u2014 Adventure",
+      "oracle_text": "Target opponent discards two cards. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target opponent discards two cards. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target opponent discards two cards"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reaper of Night",
+      "type_line": "Creature \u2014 Specter",
+      "oracle_text": "Whenever this creature attacks, if defending player has two or fewer cards in hand, it gains flying until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, if defending player has two or fewer cards in hand, it gains flying until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "defending player has two or fewer cards in hand"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

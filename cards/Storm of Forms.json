@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e9a08492-3d2c-4c7a-8198-ef4193f5758a",
+  "name": "Storm of Forms",
+  "faces": [
+    {
+      "name": "Storm of Forms",
+      "type_line": "Instant",
+      "oracle_text": "When you cast this spell, copy it for each kind of counter among permanents you control. You may choose new targets for the copies.\nReturn target nonland permanent to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, copy it for each kind of counter among permanents you control. You may choose new targets for the copies.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy it for each kind of counter among permanents you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may choose new targets for the copies"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target nonland permanent to its owner's hand.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

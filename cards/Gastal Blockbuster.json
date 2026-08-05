@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3b601721-90ca-45d3-9a3a-19c719799bfa",
+  "name": "Gastal Blockbuster",
+  "faces": [
+    {
+      "name": "Gastal Blockbuster",
+      "type_line": "Creature \u2014 Human Berserker",
+      "oracle_text": "When this creature enters, you may sacrifice a creature or Vehicle. When you do, destroy target artifact an opponent controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may sacrifice a creature or Vehicle. When you do, destroy target artifact an opponent controls.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature_or_vehicle",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy target artifact an opponent controls",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

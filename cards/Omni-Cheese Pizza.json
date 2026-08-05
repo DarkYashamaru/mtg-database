@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "73144877-1d37-4c7a-8493-3cef191b9211",
+  "name": "Omni-Cheese Pizza",
+  "faces": [
+    {
+      "name": "Omni-Cheese Pizza",
+      "type_line": "Artifact \u2014 Food",
+      "oracle_text": "When this artifact enters, draw a card.\n{1}, {T}, Sacrifice this artifact: Add one mana of any color.\n{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Sacrifice this artifact: Add one mana of any color.",
+          "cost": "{1}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+          "cost": "{2}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

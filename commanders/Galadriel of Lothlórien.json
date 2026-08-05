@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8d3c9646-2b6b-4315-939d-5a920efc0a60",
+  "name": "Galadriel of Lothl\u00f3rien",
+  "faces": [
+    {
+      "name": "Galadriel of Lothl\u00f3rien",
+      "type_line": "Legendary Creature \u2014 Elf Noble",
+      "oracle_text": "Whenever the Ring tempts you, if you chose a creature other than Galadriel as your Ring-bearer, scry 3.\nWhenever you scry, you may reveal the top card of your library. If a land card is revealed this way, put it onto the battlefield tapped.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever the Ring tempts you, if you chose a creature other than Galadriel as your Ring-bearer, scry 3.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever the Ring tempts you"
+          },
+          "condition": [
+            {
+              "condition_text": "you chose a creature other than Galadriel as your Ring-bearer"
+            }
+          ],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you scry, you may reveal the top card of your library. If a land card is revealed this way, put it onto the battlefield tapped.",
+          "trigger": {
+            "type": "scry",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it onto the battlefield tapped",
+              "condition": [
+                {
+                  "condition_text": "a land card is revealed this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

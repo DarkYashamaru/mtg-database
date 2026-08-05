@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2373e035-25f7-473a-9386-2093f77d3f94",
+  "name": "Salt Road Ambushers",
+  "faces": [
+    {
+      "name": "Salt Road Ambushers",
+      "type_line": "Creature \u2014 Dog Warrior",
+      "oracle_text": "Whenever another permanent you control is turned face up, if it's a creature, put two +1/+1 counters on it.\nMegamorph {3}{G}{G} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its megamorph cost and put a +1/+1 counter on it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another permanent you control is turned face up, if it's a creature, put two +1/+1 counters on it.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Permanent"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "it's a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Megamorph {3}{G}{G} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its megamorph cost and put a +1/+1 counter on it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Megamorph {3}{G}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

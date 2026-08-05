@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "13f0863f-ae54-4bea-8f01-7f3891797577",
+  "name": "Songcrafter Mage",
+  "faces": [
+    {
+      "name": "Songcrafter Mage",
+      "type_line": "Creature \u2014 Human Bard",
+      "oracle_text": "Flash\nWhen this creature enters, target instant or sorcery card in your graveyard gains harmonize until end of turn. Its harmonize cost is equal to its mana cost. (You may cast that card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile the spell.)",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target instant or sorcery card in your graveyard gains harmonize until end of turn. Its harmonize cost is equal to its mana cost. (You may cast that card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {X}, where X is its power. Then exile the spell.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_instant_or_sorcery_card_in_you_control_graveyard",
+              "keyword": "harmonize"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Its harmonize cost is equal to its mana cost"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

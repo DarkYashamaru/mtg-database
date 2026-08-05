@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "74868bc0-6081-4f46-a2c6-9521cd5465aa",
+  "name": "Tender Wildguide",
+  "faces": [
+    {
+      "name": "Tender Wildguide",
+      "type_line": "Creature \u2014 Possum Druid",
+      "oracle_text": "Offspring {2} (You may pay an additional {2} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\n{T}: Add one mana of any color.\n{T}: Put a +1/+1 counter on this creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Put a +1/+1 counter on this creature.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Offspring {2} (You may pay an additional {2} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Offspring {2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "78afa295-c9f4-4a81-9f7b-5746a3cf6b31",
+  "name": "Inga Rune-Eyes",
+  "faces": [
+    {
+      "name": "Inga Rune-Eyes",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "When Inga Rune-Eyes enters, scry 3.\nWhen Inga Rune-Eyes dies, draw three cards if three or more creatures died this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Inga Rune-Eyes enters, scry 3.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "When Inga Rune-Eyes dies, draw three cards if three or more creatures died this turn.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3,
+              "condition": [
+                {
+                  "event_this_turn": "creature_died",
+                  "count_gte": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

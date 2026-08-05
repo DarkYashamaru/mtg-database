@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5e166b42-252e-4f34-9610-dcddc04a62ff",
+  "name": "Auron, Venerated Guardian",
+  "faces": [
+    {
+      "name": "Auron, Venerated Guardian",
+      "type_line": "Legendary Creature \u2014 Human Spirit Samurai",
+      "oracle_text": "Vigilance\nShooting Star \u2014 Whenever Auron attacks, put a +1/+1 counter on it. When you do, exile target creature defending player controls with power less than Auron's power until Auron leaves the battlefield.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Auron attacks, put a +1/+1 counter on it. When you do, exile target creature defending player controls with power less than Auron's power until Auron leaves the battlefield.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile target creature defending player controls with power less than auron's power until auron leaves the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

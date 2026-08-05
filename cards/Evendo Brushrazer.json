@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "795bc0b0-4b0a-49d6-ac8e-a52a10a93be8",
+  "name": "Evendo Brushrazer",
+  "faces": [
+    {
+      "name": "Evendo Brushrazer",
+      "type_line": "Creature \u2014 Insect Warrior",
+      "oracle_text": "Whenever you sacrifice a nontoken permanent, exile the top card of your library.\nDuring your turn, as long as you've sacrificed a nontoken permanent this turn, you may play cards exiled with this creature.\n{T}, Sacrifice a land: Add {R}{R}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you sacrifice a nontoken permanent, exile the top card of your library.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice a nontoken permanent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice a land: Add {R}{R}.",
+          "cost": "{T}, Sacrifice a land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{r}",
+                "{r}"
+              ],
+              "distribution": "fixed_sequence"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "During your turn, as long as you've sacrificed a nontoken permanent this turn, you may play cards exiled with this creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "During your turn, as long as you've sacrificed a nontoken permanent this turn, you may play cards exiled with this creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

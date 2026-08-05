@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6885aa03-fbfe-4c2e-a785-0865788574b4",
+  "name": "Celestus Sanctifier",
+  "faces": [
+    {
+      "name": "Celestus Sanctifier",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "If it's neither day nor night, it becomes day as this creature enters.\nWhenever day becomes night or night becomes day, look at the top two cards of your library. Put one of them into your graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever day becomes night or night becomes day, look at the top two cards of your library. Put one of them into your graveyard.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever day becomes night or night becomes day"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put one of them into your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If it's neither day nor night, it becomes day as this creature enters.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it becomes day as this creature enters",
+              "condition": [
+                {
+                  "condition_text": "it's neither day nor night"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

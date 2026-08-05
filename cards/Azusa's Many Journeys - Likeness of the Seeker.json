@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "oracle_id": "02c60b8b-f665-4279-a00f-ae03991df4a6",
+  "name": "Azusa's Many Journeys // Likeness of the Seeker",
+  "faces": [
+    {
+      "name": "Azusa's Many Journeys",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 You may play an additional land this turn.\nII \u2014 You gain 3 life.\nIII \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 You may play an additional land this turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may play an additional land this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 You gain 3 life.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Likeness of the Seeker",
+      "type_line": "Enchantment Creature \u2014 Human Monk",
+      "oracle_text": "Whenever this creature becomes blocked, untap up to three lands you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes blocked, untap up to three lands you control.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap up to three lands you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d3579282-5045-4b37-9998-9a282e9932b9",
+  "name": "Midsummer Revel",
+  "faces": [
+    {
+      "name": "Midsummer Revel",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, you may put a verse counter on this enchantment.\n{G}, Sacrifice this enchantment: Create X 3/3 green Beast creature tokens, where X is the number of verse counters on this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may put a verse counter on this enchantment.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a verse counter on this enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{G}, Sacrifice this enchantment: Create X 3/3 green Beast creature tokens, where X is the number of verse counters on this enchantment.",
+          "cost": "{G}, Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "count",
+              "count_object": "verse_counters_on_this_enchantment",
+              "token": {
+                "raw": "3/3 green Beast creature tokens",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Beast"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

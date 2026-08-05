@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "68c4f86f-ff12-44a6-8f18-f2ee9753b2cd",
+  "name": "Tavern Scoundrel",
+  "faces": [
+    {
+      "name": "Tavern Scoundrel",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "Whenever you win a coin flip, create two Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")\n{1}, {T}, Sacrifice another permanent: Flip a coin.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you win a coin flip, create two Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you win a coin flip"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Sacrifice another permanent: Flip a coin.",
+          "cost": "{1}, {T}, Sacrifice another permanent",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

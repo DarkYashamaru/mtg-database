@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7d84873a-c079-4a0f-8878-c62e4bade20a",
+  "name": "Intrepid Provisioner",
+  "faces": [
+    {
+      "name": "Intrepid Provisioner",
+      "type_line": "Creature \u2014 Human Scout",
+      "oracle_text": "Trample\nWhen this creature enters, another target Human you control gets +2/+2 until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, another target Human you control gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "subtypes": [
+                  "Target",
+                  "Human"
+                ]
+              },
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

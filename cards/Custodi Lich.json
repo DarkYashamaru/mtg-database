@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0d95ee14-9ff0-4d7f-be56-361a500ce36f",
+  "name": "Custodi Lich",
+  "faces": [
+    {
+      "name": "Custodi Lich",
+      "type_line": "Creature \u2014 Zombie Cleric",
+      "oracle_text": "When this creature enters, you become the monarch.\nWhenever you become the monarch, target player sacrifices a creature of their choice.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you become the monarch, target player sacrifices a creature of their choice.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you become the monarch"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target player sacrifices a creature of their choice"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

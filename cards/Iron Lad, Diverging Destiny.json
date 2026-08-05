@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3e715032-0d21-441b-b2d4-c91084728718",
+  "name": "Iron Lad, Diverging Destiny",
+  "faces": [
+    {
+      "name": "Iron Lad, Diverging Destiny",
+      "type_line": "Legendary Artifact Creature \u2014 Human Hero",
+      "oracle_text": "Flying, vigilance\nYou may look at the top card of your library any time.\n{T}: Reveal the top card of your library. If it's an artifact card, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Reveal the top card of your library. If it's an artifact card, draw a card.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it's an artifact card"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ecd3ddd7-2fa8-466b-9319-ae51c744a05f",
+  "name": "Magnanimous Magistrate",
+  "faces": [
+    {
+      "name": "Magnanimous Magistrate",
+      "type_line": "Creature \u2014 Human Advisor",
+      "oracle_text": "This creature enters with five reprieve counters on it.\nWhenever another nontoken creature you control dies, if its mana value was 1 or greater, you may remove that many reprieve counters from this creature. If you do, return that card to the battlefield under its owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken creature you control dies, if its mana value was 1 or greater, you may remove that many reprieve counters from this creature. If you do, return that card to the battlefield under its owner's control.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "its mana value was 1 or greater"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may remove that many reprieve counters from this creature"
+            },
+            {
+              "action": "move_card",
+              "target": "that_card",
+              "destination_zone": "battlefield",
+              "controller": "its_owner",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with five reprieve counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with five reprieve counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

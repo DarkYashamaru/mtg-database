@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f97de425-c7ab-4688-8606-159370d179ee",
+  "name": "Defiled Crypt // Cadaver Lab",
+  "faces": [
+    {
+      "name": "Cadaver Lab",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "When you unlock this door, return target creature card from your graveyard to your hand.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you unlock this door, return target creature card from your graveyard to your hand.",
+          "trigger": {
+            "type": "unlock_door",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Defiled Crypt",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "Whenever one or more cards leave your graveyard, create a 2/2 black Horror enchantment creature token. This ability triggers only once each turn.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more cards leave your graveyard, create a 2/2 black Horror enchantment creature token. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "cards_leave_graveyard",
+            "subject": "your_graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black Horror enchantment creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Horror",
+                  "enchantment"
+                ]
+              }
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

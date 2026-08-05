@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "33d6f4f0-e1ad-4363-a012-46a1bd9daeb7",
+  "name": "Sleep Magic",
+  "faces": [
+    {
+      "name": "Sleep Magic",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\nWhen enchanted creature is dealt damage, sacrifice this Aura.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, tap enchanted creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "enchanted_creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "When enchanted creature is dealt damage, sacrifice this Aura.",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_aura"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "enchanted_creature",
+              "scope": "controllers_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

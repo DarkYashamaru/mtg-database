@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a10b3e35-8cc4-450e-9e30-0fce8df0fea4",
+  "name": "Necrodominance",
+  "faces": [
+    {
+      "name": "Necrodominance",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "Skip your draw step.\nAt the beginning of your end step, you may pay any amount of life. If you do, draw that many cards.\nYour maximum hand size is five.\nIf a card or token would be put into your graveyard from anywhere, exile it instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, you may pay any amount of life. If you do, draw that many cards.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay any amount of life"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Skip your draw step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Skip your draw step"
+            }
+          ]
+        },
+        {
+          "raw_text": "Your maximum hand size is five.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Your maximum hand size is five"
+            }
+          ]
+        },
+        {
+          "raw_text": "If a card or token would be put into your graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "a card or token would be put into your graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

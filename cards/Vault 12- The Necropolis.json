@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bc9d75e7-1f64-4376-8e19-f6622ffbeb28",
+  "name": "Vault 12: The Necropolis",
+  "faces": [
+    {
+      "name": "Vault 12: The Necropolis",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Each player gets three rad counters.\nII \u2014 Create X 2/2 black Zombie Mutant creature tokens, where X is the total number of rad counters among players.\nIII \u2014 Put two +1/+1 counters on each creature you control that's a Zombie or Mutant.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Each player gets three rad counters.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each player gets three rad counters"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Create X 2/2 black Zombie Mutant creature tokens, where X is the total number of rad counters among players.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "X 2/2 black Zombie Mutant creature tokens, where X is the total number of rad counters among players",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie",
+                  "Mutant"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Put two +1/+1 counters on each creature you control that's a Zombie or Mutant.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_creature_you_control_thats_a_zombie_or_mutant"
+              },
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

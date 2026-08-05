@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b0c28b2b-a2dd-4b76-bb1c-cec55a0a6784",
+  "name": "Flotsam // Jetsam",
+  "faces": [
+    {
+      "name": "Flotsam",
+      "type_line": "Instant",
+      "oracle_text": "Mill three cards. Investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Mill three cards. Investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "cost": "Mill three cards. Investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Jetsam",
+      "type_line": "Sorcery",
+      "oracle_text": "Each opponent mills three cards, then you may cast a spell from each opponent's graveyard without paying its mana cost. If a spell cast this way would be put into a graveyard, exile it instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Each opponent mills three cards, then you may cast a spell from each opponent's graveyard without paying its mana cost. If a spell cast this way would be put into a graveyard, exile it instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent mills three cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast a spell from each opponent's graveyard without paying its mana cost"
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "a spell cast this way would be put into a graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

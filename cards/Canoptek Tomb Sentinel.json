@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "678b3fb5-aa9f-4268-9433-2a89dd37b927",
+  "name": "Canoptek Tomb Sentinel",
+  "faces": [
+    {
+      "name": "Canoptek Tomb Sentinel",
+      "type_line": "Artifact Creature \u2014 Insect",
+      "oracle_text": "Vigilance\nExile Cannon \u2014 When this creature enters from a graveyard, exile up to one target nonland permanent.\nUnearth {7} ({7}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters from a graveyard, exile up to one target nonland permanent.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this creature enters from a graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target nonland permanent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Unearth {7} ({7}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+          "cost": "Unearth {7} ({7}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "temporary_reanimation_clause",
+              "target": "it",
+              "expire_at": "beginning_of_next_end_step",
+              "exile_if_would_leave_battlefield": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

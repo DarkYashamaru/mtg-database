@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "306b6b9b-f488-4ea8-9f5e-9e8e7354df64",
+  "name": "The Master, Mesmerist",
+  "faces": [
+    {
+      "name": "The Master, Mesmerist",
+      "type_line": "Legendary Creature \u2014 Time Lord Rogue",
+      "oracle_text": "{T}: Target creature an opponent controls with power less than or equal to The Master's power gains skulk until end of turn. Goad it. (A creature with skulk can't be blocked by creatures with greater power.)\nWhenever a creature with skulk deals combat damage to one of your opponents, put a +1/+1 counter on The Master and draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature with skulk deals combat damage to one of your opponents, put a +1/+1 counter on The Master and draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature with skulk deals combat damage to one of your opponents"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Target creature an opponent controls with power less than or equal to The Master's power gains skulk until end of turn. Goad it. (A creature with skulk can't be blocked by creatures with greater power.)",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_an_opponent_controls_with_power_less_than_or_equal_to_selfs_power",
+              "keyword": "skulk"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Goad it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

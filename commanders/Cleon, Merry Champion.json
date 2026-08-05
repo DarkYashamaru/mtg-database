@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5e0e5060-2be0-476b-8108-c8c7cd76942f",
+  "name": "Cleon, Merry Champion",
+  "faces": [
+    {
+      "name": "Cleon, Merry Champion",
+      "type_line": "Legendary Creature \u2014 Human Soldier",
+      "oracle_text": "Double strike\nHeroic \u2014 Whenever you cast a spell that targets Cleon, exile the top card of your library. You may play that card until the end of your next turn.",
+      "static": [
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that targets Cleon, exile the top card of your library. You may play that card until the end of your next turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "that targets cleon"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card until the end of your next turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

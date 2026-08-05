@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bc983c67-eb5d-4a85-a12e-a410f85e949e",
+  "name": "Gila Courser",
+  "faces": [
+    {
+      "name": "Gila Courser",
+      "type_line": "Creature \u2014 Lizard Mount",
+      "oracle_text": "Whenever this creature attacks while saddled, exile the top card of your library. Until the end of your next turn, you may play that card.\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks while saddled, exile the top card of your library. Until the end of your next turn, you may play that card.",
+          "trigger": {
+            "type": "attacks_while_saddled",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "allow_play",
+              "object": "that_card",
+              "until": "end_of_your_next_turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Saddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+          "cost": "Saddle 1 (Tap any number of other creatures you control with total power 1 or more",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Mount becomes saddled until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1601e553-31c2-4e04-9f0c-bc17e49eeff7",
+  "name": "Basri, Devoted Paladin",
+  "faces": [
+    {
+      "name": "Basri, Devoted Paladin",
+      "type_line": "Legendary Planeswalker \u2014 Basri",
+      "oracle_text": "+1: Put a +1/+1 counter on up to one target creature. It gains vigilance until end of turn.\n\u22121: Whenever a creature attacks this turn, put a +1/+1 counter on it.\n\u22126: Creatures you control get +2/+2 and gain flying until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Put a +1/+1 counter on up to one target creature. It gains vigilance until end of turn.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "up_to_one_target_creature",
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "vigilance"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22121: Whenever a creature attacks this turn, put a +1/+1 counter on it.",
+          "cost": "\u22121",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Whenever a creature attacks this turn, put a +1/+1 counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: Creatures you control get +2/+2 and gain flying until end of turn.",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control_get_22_and",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

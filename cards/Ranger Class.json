@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1586808-efc2-469a-8384-ba4acf231e69",
+  "name": "Ranger Class",
+  "faces": [
+    {
+      "name": "Ranger Class",
+      "type_line": "Enchantment \u2014 Class",
+      "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nWhen this Class enters, create a 2/2 green Wolf creature token.\n{1}{G}: Level 2\nWhenever you attack, put a +1/+1 counter on target attacking creature.\n{3}{G}: Level 3\nYou may look at the top card of your library any time.\nYou may cast creature spells from the top of your library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Class enters, create a 2/2 green Wolf creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_class"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 green Wolf creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Wolf"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack, put a +1/+1 counter on target attacking creature.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_attacking_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{G}: Level 2",
+          "cost": "{1}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{G}: Level 3",
+          "cost": "{3}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "You may cast creature spells from the top of your library.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast creature spells from the top of your library"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

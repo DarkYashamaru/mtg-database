@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "40ed32a6-ad56-48c7-aecf-b4238c34c212",
+  "name": "Shiko and Narset, Unified",
+  "faces": [
+    {
+      "name": "Shiko and Narset, Unified",
+      "type_line": "Legendary Creature \u2014 Human Spirit Dragon",
+      "oracle_text": "Flying, vigilance\nFlurry \u2014 Whenever you cast your second spell each turn, copy that spell if it targets a permanent or player, and you may choose new targets for the copy. If you don't copy a spell this way, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, copy that spell if it targets a permanent or player, and you may choose new targets for the copy. If you don't copy a spell this way, draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy that spell if it targets a permanent or player, and you may choose new targets for the copy"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you don't copy a spell this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

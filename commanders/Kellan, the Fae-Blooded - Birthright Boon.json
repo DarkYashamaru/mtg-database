@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "10c48d19-d91f-4674-b186-477acaf08e5a",
+  "name": "Kellan, the Fae-Blooded // Birthright Boon",
+  "faces": [
+    {
+      "name": "Birthright Boon",
+      "type_line": "Sorcery \u2014 Adventure",
+      "oracle_text": "Search your library for an Aura or Equipment card, reveal it, put it into your hand, then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for an Aura or Equipment card, reveal it, put it into your hand, then shuffle.",
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types_any": [
+                  "Aura",
+                  "Equipment"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kellan, the Fae-Blooded",
+      "type_line": "Legendary Creature \u2014 Human Faerie",
+      "oracle_text": "Double strike\nOther creatures you control get +1/+0 for each Aura and Equipment attached to Kellan.",
+      "static": [
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other creatures you control get +1/+0 for each Aura and Equipment attached to Kellan.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true
+              },
+              "power_delta": {
+                "kind": "count_attached_aura_and_equipment",
+                "object": "self"
+              },
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

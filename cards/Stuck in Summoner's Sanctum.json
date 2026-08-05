@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "84d308ce-c3c5-4612-accc-6e6cc68a33be",
+  "name": "Stuck in Summoner's Sanctum",
+  "faces": [
+    {
+      "name": "Stuck in Summoner's Sanctum",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash\nEnchant artifact or creature\nWhen this Aura enters, tap enchanted permanent.\nEnchanted permanent doesn't untap during its controller's untap step and its activated abilities can't be activated.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, tap enchanted permanent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap enchanted permanent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant artifact or creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "artifact_or_creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted permanent doesn't untap during its controller's untap step and its activated abilities can't be activated.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted permanent doesn't untap during its controller's untap step and its activated abilities can't be activated"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

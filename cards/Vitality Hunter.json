@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d383c589-d8c7-4c4d-8084-37034d14b385",
+  "name": "Vitality Hunter",
+  "faces": [
+    {
+      "name": "Vitality Hunter",
+      "type_line": "Creature \u2014 Nightmare",
+      "oracle_text": "Lifelink\n{X}{W}{W}: Monstrosity X. (If this creature isn't monstrous, put X +1/+1 counters on it and it becomes monstrous.)\nWhen this creature becomes monstrous, put a lifelink counter on each of up to X target creatures.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature becomes monstrous, put a lifelink counter on each of up to X target creatures.",
+          "trigger": {
+            "type": "becomes_monstrous",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a lifelink counter on each of up to X target creatures"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{X}{W}{W}: Monstrosity X. (If this creature isn't monstrous, put X +1/+1 counters on it and it becomes monstrous.)",
+          "cost": "{X}{W}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Monstrosity X"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "32c14d7f-fdaa-4340-af94-1f10bf064f51",
+  "name": "Crystal, Inhuman Princess",
+  "faces": [
+    {
+      "name": "Crystal, Inhuman Princess",
+      "type_line": "Legendary Creature \u2014 Inhuman Noble Hero",
+      "oracle_text": "Flying\nWhenever you cast a noncreature spell, Crystal deals X damage to each opponent, where X is the number of colors that spell is.\n{T}: Add {R}, {G}, {W}, or {U}.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, Crystal deals X damage to each opponent, where X is the number of colors that spell is.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Crystal deals X damage to each opponent, where X is the number of colors that spell is"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R}, {G}, {W}, or {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {R}, {G}, {W}, or {U}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4d67357c-5939-45c8-a656-aaf76728a5a6",
+  "name": "Nightpack Ambusher",
+  "faces": [
+    {
+      "name": "Nightpack Ambusher",
+      "type_line": "Creature \u2014 Wolf",
+      "oracle_text": "Flash\nOther Wolves and Werewolves you control get +1/+1.\nAt the beginning of your end step, if you didn't cast a spell this turn, create a 2/2 green Wolf creature token.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if you didn't cast a spell this turn, create a 2/2 green Wolf creature token.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you didn't cast a spell this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 green Wolf creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Wolf"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Wolves and Werewolves you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other Wolves and Werewolves you control get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

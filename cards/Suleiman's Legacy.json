@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9888d67d-fcad-427f-8ba7-b6d421b3d88e",
+  "name": "Suleiman's Legacy",
+  "faces": [
+    {
+      "name": "Suleiman's Legacy",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, destroy all Djinns and Efreets. They can't be regenerated.\nWhenever a Djinn or Efreet enters, destroy it. It can't be regenerated.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, destroy all Djinns and Efreets. They can't be regenerated.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy all Djinns and Efreets"
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_targets"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a Djinn or Efreet enters, destroy it. It can't be regenerated.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "a_djinn_or_efreet"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": "it"
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

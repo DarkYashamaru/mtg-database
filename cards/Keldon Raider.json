@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "004f82f0-74cc-4bc7-ab22-ab1a5247bc29",
+  "name": "Keldon Raider",
+  "faces": [
+    {
+      "name": "Keldon Raider",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "When this creature enters, you may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

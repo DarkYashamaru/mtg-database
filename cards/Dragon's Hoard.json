@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8cf77dc4-763b-41b7-a5da-0ef2734f08e6",
+  "name": "Dragon's Hoard",
+  "faces": [
+    {
+      "name": "Dragon's Hoard",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a Dragon you control enters, put a gold counter on this artifact.\n{T}, Remove a gold counter from this artifact: Draw a card.\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Dragon you control enters, put a gold counter on this artifact.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Dragon"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a gold counter on this artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Remove a gold counter from this artifact: Draw a card.",
+          "cost": "{T}, Remove a gold counter from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

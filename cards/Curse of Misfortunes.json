@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b03c7c8d-8206-45cd-8ead-8f7b35c03a7a",
+  "name": "Curse of Misfortunes",
+  "faces": [
+    {
+      "name": "Curse of Misfortunes",
+      "type_line": "Enchantment \u2014 Aura Curse",
+      "oracle_text": "Enchant player\nAt the beginning of your upkeep, you may search your library for a Curse card that doesn't have the same name as a Curse attached to enchanted player, put it onto the battlefield attached to that player, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may search your library for a Curse card that doesn't have the same name as a Curse attached to enchanted player, put it onto the battlefield attached to that player, then shuffle.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a curse card that doesn't have the same name as a curse attached to enchanted player, put it onto the battlefield attached to that player"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant player",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "player"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4b1da9aa-a30c-44b8-a10e-f9dc3fe70b6f",
+  "name": "Urabrask // The Great Work",
+  "faces": [
+    {
+      "name": "The Great Work",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 This Saga deals 3 damage to target opponent and each creature they control.\nII \u2014 Create three Treasure tokens.\nIII \u2014 Until end of turn, you may cast instant and sorcery spells from any graveyard. If a spell cast this way would be put into a graveyard, exile it instead. Exile this Saga, then return it to the battlefield (front face up).",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 This Saga deals 3 damage to target opponent and each creature they control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Saga deals 3 damage to target opponent and each creature they control"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Create three Treasure tokens.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Until end of turn, you may cast instant and sorcery spells from any graveyard. If a spell cast this way would be put into a graveyard, exile it instead. Exile this Saga, then return it to the battlefield (front face up).",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may cast instant and sorcery spells from any graveyard"
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "a spell cast this way would be put into a graveyard"
+                }
+              ]
+            },
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Urabrask",
+      "type_line": "Legendary Creature \u2014 Phyrexian Praetor",
+      "oracle_text": "First strike\nWhenever you cast an instant or sorcery spell, Urabrask deals 1 damage to target opponent. Add {R}.\n{R}: Exile Urabrask, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery and only if you've cast three or more instant and/or sorcery spells this turn.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, Urabrask deals 1 damage to target opponent. Add {R}.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Urabrask deals 1 damage to target opponent"
+            },
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R}: Exile Urabrask, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery and only if you've cast three or more instant and/or sorcery spells this turn.",
+          "cost": "{R}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery and only if you've cast three or more instant and/or sorcery spells this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile urabrask"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield transformed under its owner's control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

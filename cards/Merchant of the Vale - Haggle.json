@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f88a096e-7497-4297-ab65-f18769b1cc47",
+  "name": "Merchant of the Vale // Haggle",
+  "faces": [
+    {
+      "name": "Haggle",
+      "type_line": "Instant \u2014 Adventure",
+      "oracle_text": "You may discard a card. If you do, draw a card. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may discard a card. If you do, draw a card. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Merchant of the Vale",
+      "type_line": "Creature \u2014 Human Peasant",
+      "oracle_text": "{2}{R}, Discard a card: Draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{R}, Discard a card: Draw a card.",
+          "cost": "{2}{R}, Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

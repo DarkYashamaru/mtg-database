@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "76ee013d-5293-4432-b425-649a2e82bd74",
+  "name": "Crop Sigil",
+  "faces": [
+    {
+      "name": "Crop Sigil",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, you may mill a card.\nDelirium \u2014 {2}{G}, Sacrifice this enchantment: Return up to one target creature card and up to one target land card from your graveyard to your hand. Activate only if there are four or more card types among cards in your graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may mill a card.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Delirium \u2014 {2}{G}, Sacrifice this enchantment: Return up to one target creature card and up to one target land card from your graveyard to your hand. Activate only if there are four or more card types among cards in your graveyard.",
+          "cost": "Delirium \u2014 {2}{G}, Sacrifice this enchantment",
+          "condition": [
+            {
+              "condition_text": "there are four or more card types among cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return up to one target creature card and up to one target land card from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

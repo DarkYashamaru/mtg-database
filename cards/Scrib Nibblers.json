@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "458800d3-47b7-4f28-8371-25c8d1e60011",
+  "name": "Scrib Nibblers",
+  "faces": [
+    {
+      "name": "Scrib Nibblers",
+      "type_line": "Creature \u2014 Rat",
+      "oracle_text": "{T}: Exile the top card of target player's library. If it's a land card, you gain 1 life.\nLandfall \u2014 Whenever a land you control enters, you may untap this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, you may untap this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Exile the top card of target player's library. If it's a land card, you gain 1 life.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile the top card of target player's library"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

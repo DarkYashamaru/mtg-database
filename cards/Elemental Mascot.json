@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "882f30e4-4ce1-4581-8d2d-d763aa13befe",
+  "name": "Elemental Mascot",
+  "faces": [
+    {
+      "name": "Elemental Mascot",
+      "type_line": "Creature \u2014 Elemental Bird",
+      "oracle_text": "Flying, vigilance\nOpus \u2014 Whenever you cast an instant or sorcery spell, this creature gets +1/+0 until end of turn. If five or more mana was spent to cast that spell, exile the top card of your library. You may play that card until the end of your next turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature gets +1/+0 until end of turn. If five or more mana was spent to cast that spell, exile the top card of your library. You may play that card until the end of your next turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            },
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1,
+              "condition": [
+                {
+                  "condition_text": "five or more mana was spent to cast that spell"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card until the end of your next turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

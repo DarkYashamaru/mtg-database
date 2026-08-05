@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1473580d-7cb2-48f5-a77d-08f49244c5e8",
+  "name": "Essence Channeler",
+  "faces": [
+    {
+      "name": "Essence Channeler",
+      "type_line": "Creature \u2014 Bat Cleric",
+      "oracle_text": "As long as you've lost life this turn, this creature has flying and vigilance.\nWhenever you gain life, put a +1/+1 counter on this creature.\nWhen this creature dies, put its counters on target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, put its counters on target creature you control.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put its counters on target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as you've lost life this turn, this creature has flying and vigilance.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as you've lost life this turn, this creature has flying and vigilance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

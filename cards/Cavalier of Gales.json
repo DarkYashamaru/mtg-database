@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "08e2fead-53e9-445b-8fd1-c108bb09d81c",
+  "name": "Cavalier of Gales",
+  "faces": [
+    {
+      "name": "Cavalier of Gales",
+      "type_line": "Creature \u2014 Elemental Knight",
+      "oracle_text": "Flying\nWhen this creature enters, draw three cards, then put two cards from your hand on top of your library in any order.\nWhen this creature dies, shuffle it into its owner's library, then scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, draw three cards, then put two cards from your hand on top of your library in any order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "put two cards from your hand on top of your library in any order"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, shuffle it into its owner's library, then scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "shuffle it into its owner's library"
+            },
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

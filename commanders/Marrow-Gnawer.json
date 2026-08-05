@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2b934761-5720-477b-94b7-d1d91dc581a6",
+  "name": "Marrow-Gnawer",
+  "faces": [
+    {
+      "name": "Marrow-Gnawer",
+      "type_line": "Legendary Creature \u2014 Rat Rogue",
+      "oracle_text": "All Rats have fear.\n{T}, Sacrifice a Rat: Create X 1/1 black Rat creature tokens, where X is the number of Rats you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice a Rat: Create X 1/1 black Rat creature tokens, where X is the number of Rats you control.",
+          "cost": "{T}, Sacrifice a Rat",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "count",
+              "count_object": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Rat"
+                ]
+              },
+              "token": {
+                "raw": "1/1 black Rat creature tokens",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Rat"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "All Rats have fear.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "all_rats"
+              },
+              "keywords": [
+                "fear"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

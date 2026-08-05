@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "54400ec3-f2ab-4cdf-9731-e04281bf7e90",
+  "name": "Overencumbered",
+  "faces": [
+    {
+      "name": "Overencumbered",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant opponent\nWhen this Aura enters, enchanted opponent creates a Clue token, a Food token, and a Junk token.\nAt the beginning of combat on enchanted opponent's turn, that player may pay {1} for each artifact they control. If they don't, creatures can't attack this combat.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, enchanted opponent creates a Clue token, a Food token, and a Junk token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "enchanted opponent creates a Clue token, a Food token, and a Junk token"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on enchanted opponent's turn, that player may pay {1} for each artifact they control. If they don't, creatures can't attack this combat.",
+          "trigger": {
+            "type": "custom",
+            "text": "At the beginning of combat on enchanted opponent's turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player may pay {1} for each artifact they control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "creatures can't attack this combat",
+              "condition": [
+                {
+                  "condition_text": "they don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant opponent",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "opponent"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

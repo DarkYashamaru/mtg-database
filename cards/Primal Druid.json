@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d031d7d2-1e41-4201-9073-c4c1be182ba4",
+  "name": "Primal Druid",
+  "faces": [
+    {
+      "name": "Primal Druid",
+      "type_line": "Creature \u2014 Human Druid",
+      "oracle_text": "When this creature dies, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

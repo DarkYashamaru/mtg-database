@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f6791df0-a37b-44dc-8bf3-40ac2304d188",
+  "name": "Dragonologist",
+  "faces": [
+    {
+      "name": "Dragonologist",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "When this creature enters, look at the top six cards of your library. You may reveal an instant, sorcery, or Dragon card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.\nUntapped Dragons you control have hexproof.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at the top six cards of your library. You may reveal an instant, sorcery, or Dragon card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 6
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Instant",
+                  "Sorcery"
+                ],
+                "subtypes_any": [
+                  "Dragon"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Untapped Dragons you control have hexproof.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Untapped",
+                  "Dragon"
+                ]
+              },
+              "keywords": [
+                "hexproof"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

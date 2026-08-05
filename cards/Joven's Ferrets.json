@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d2817b5f-f7a2-4254-a00f-e2e45d7a8cc0",
+  "name": "Joven's Ferrets",
+  "faces": [
+    {
+      "name": "Joven's Ferrets",
+      "type_line": "Creature \u2014 Ferret",
+      "oracle_text": "Whenever this creature attacks, it gets +0/+2 until end of turn.\nAt end of combat, tap all creatures that blocked this creature this turn. They don't untap during their controller's next untap step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it gets +0/+2 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 0,
+              "toughness_delta": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "At end of combat, tap all creatures that blocked this creature this turn. They don't untap during their controller's next untap step.",
+          "trigger": {
+            "type": "end_of_combat"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap all creatures that blocked this creature this turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "They don't untap during their controller's next untap step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

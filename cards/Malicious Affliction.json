@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "18f22cc4-e10b-4af0-9c1f-d7d15dbcce63",
+  "name": "Malicious Affliction",
+  "faces": [
+    {
+      "name": "Malicious Affliction",
+      "type_line": "Instant",
+      "oracle_text": "Morbid \u2014 When you cast this spell, if a creature died this turn, you may copy Malicious Affliction and may choose a new target for the copy.\nDestroy target nonblack creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, if a creature died this turn, you may copy Malicious Affliction and may choose a new target for the copy.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "a creature died this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may copy Malicious Affliction and may choose a new target for the copy"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Destroy target nonblack creature.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature",
+                "not_colors": [
+                  "black"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

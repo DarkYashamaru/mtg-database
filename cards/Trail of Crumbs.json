@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "185d6356-8f8d-4b32-8259-b4eb0a95866c",
+  "name": "Trail of Crumbs",
+  "faces": [
+    {
+      "name": "Trail of Crumbs",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nWhenever you sacrifice a Food, you may pay {1}. If you do, look at the top two cards of your library. You may reveal a permanent card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you sacrifice a Food, you may pay {1}. If you do, look at the top two cards of your library. You may reveal a permanent card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice a Food"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "subtypes_any": [
+                  "Permanent"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "any"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

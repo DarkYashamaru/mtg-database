@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2dc59566-10cb-468a-b6a2-17d6c0186e6d",
+  "name": "Capture Sphere",
+  "faces": [
+    {
+      "name": "Capture Sphere",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash (You may cast this spell any time you could cast an instant.)\nEnchant creature\nWhen this Aura enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, tap enchanted creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "enchanted_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "enchanted_creature",
+              "scope": "controllers_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

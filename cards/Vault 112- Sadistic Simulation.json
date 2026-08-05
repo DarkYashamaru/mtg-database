@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "480967df-a967-4093-a999-b71f6ee70688",
+  "name": "Vault 112: Sadistic Simulation",
+  "faces": [
+    {
+      "name": "Vault 112: Sadistic Simulation",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II \u2014 Tap up to one target creature and put a stun counter on it. You get {E}{E} (two energy counters).\nIII \u2014 Pay any amount of {E}. If you paid one or more {E} this way, shuffle your library, then exile that many cards from the top. You may play one of those cards without paying its mana cost.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Tap up to one target creature and put a stun counter on it. You get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Tap up to one target creature and put a stun counter on it"
+            },
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Pay any amount of {E}. If you paid one or more {E} this way, shuffle your library, then exile that many cards from the top. You may play one of those cards without paying its mana cost.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Pay any amount of {E}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "shuffle your library",
+              "condition": [
+                {
+                  "condition_text": "you paid one or more {e} this way"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile that many cards from the top"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play one of those cards without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

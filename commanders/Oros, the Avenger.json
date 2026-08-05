@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "454b898f-b134-4d63-ae7b-1e736964cd48",
+  "name": "Oros, the Avenger",
+  "faces": [
+    {
+      "name": "Oros, the Avenger",
+      "type_line": "Legendary Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever Oros deals combat damage to a player, you may pay {2}{W}. If you do, Oros deals 3 damage to each nonwhite creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Oros deals combat damage to a player, you may pay {2}{W}. If you do, Oros deals 3 damage to each nonwhite creature.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {2}{W}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "oros deals 3 damage to each nonwhite creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "51af3da5-0970-436e-baa6-3171889a40e0",
+  "name": "Primary Research",
+  "faces": [
+    {
+      "name": "Primary Research",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, return target nonland permanent card with mana value 3 or less from your graveyard to the battlefield.\nAt the beginning of your end step, if a card left your graveyard this turn, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, return target nonland permanent card with mana value 3 or less from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target nonland permanent card with mana value 3 or less from your graveyard to the battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if a card left your graveyard this turn, draw a card.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a card left your graveyard this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

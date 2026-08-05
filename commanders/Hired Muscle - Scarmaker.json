@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ea31c9a4-af4f-4cab-b53c-77ef4241d4a6",
+  "name": "Hired Muscle // Scarmaker",
+  "faces": [
+    {
+      "name": "Hired Muscle",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature.\nAt the beginning of the end step, if there are two or more ki counters on this creature, you may flip it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a ki counter on this creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of the end step, if there are two or more ki counters on this creature, you may flip it.",
+          "trigger": {
+            "type": "beginning_of_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "there are two or more ki counters on this creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may flip it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Scarmaker",
+      "type_line": "Legendary Creature \u2014 Spirit",
+      "oracle_text": "Remove a ki counter from Scarmaker: Target creature gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Remove a ki counter from Scarmaker: Target creature gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)",
+          "cost": "Remove a ki counter from Scarmaker",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "fear"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

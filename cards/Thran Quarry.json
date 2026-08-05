@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "57b4da3f-361a-4cbe-b77f-190ec33eefd8",
+  "name": "Thran Quarry",
+  "faces": [
+    {
+      "name": "Thran Quarry",
+      "type_line": "Land",
+      "oracle_text": "At the beginning of the end step, if you control no creatures, sacrifice this land.\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of the end step, if you control no creatures, sacrifice this land.",
+          "trigger": {
+            "type": "beginning_of_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you control no creatures"
+            }
+          ],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_land"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

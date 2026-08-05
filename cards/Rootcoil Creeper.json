@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "101f06f8-7980-41d1-98fa-3cb959380737",
+  "name": "Rootcoil Creeper",
+  "faces": [
+    {
+      "name": "Rootcoil Creeper",
+      "type_line": "Creature \u2014 Plant Horror",
+      "oracle_text": "{T}: Add one mana of any color.\n{T}: Add two mana of any one color. Spend this mana only to cast spells from your graveyard.\n{G}{U}, {T}, Exile this creature: Return target card with flashback you own from exile to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add two mana of any one color. Spend this mana only to cast spells from your graveyard.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "same_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to cast spells from your graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "{G}{U}, {T}, Exile this creature: Return target card with flashback you own from exile to your hand.",
+          "cost": "{G}{U}, {T}, Exile this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target card with flashback you own from exile to your hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

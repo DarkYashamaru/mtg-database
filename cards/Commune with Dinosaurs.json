@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "27ca27f0-95a5-4292-b30b-1db3e9d639f8",
+  "name": "Commune with Dinosaurs",
+  "faces": [
+    {
+      "name": "Commune with Dinosaurs",
+      "type_line": "Sorcery",
+      "oracle_text": "Look at the top five cards of your library. You may reveal a Dinosaur or land card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Look at the top five cards of your library. You may reveal a Dinosaur or land card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 5
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "subtypes_any": [
+                  "Dinosaur"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "any"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

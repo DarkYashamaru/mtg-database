@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f1f45310-d665-400d-934f-e48e7858ce8c",
+  "name": "Heavy Mattock",
+  "faces": [
+    {
+      "name": "Heavy Mattock",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +1/+1.\nAs long as equipped creature is a Human, it gets an additional +1/+1.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as equipped creature is a Human, it gets an additional +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as equipped creature is a Human, it gets an additional +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

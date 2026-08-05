@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a2aa2c8f-7058-4020-9881-663b104ea051",
+  "name": "Grimgrin, Corpse-Born",
+  "faces": [
+    {
+      "name": "Grimgrin, Corpse-Born",
+      "type_line": "Legendary Creature \u2014 Zombie Warrior",
+      "oracle_text": "Grimgrin enters tapped and doesn't untap during your untap step.\nSacrifice another creature: Untap Grimgrin and put a +1/+1 counter on it.\nWhenever Grimgrin attacks, destroy target creature defending player controls, then put a +1/+1 counter on Grimgrin.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Grimgrin attacks, destroy target creature defending player controls, then put a +1/+1 counter on Grimgrin.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target creature defending player controls"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice another creature: Untap Grimgrin and put a +1/+1 counter on it.",
+          "cost": "Sacrifice another creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Untap Grimgrin and put a +1/+1 counter on it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Grimgrin enters tapped and doesn't untap during your untap step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Grimgrin enters tapped and doesn't untap during your untap step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

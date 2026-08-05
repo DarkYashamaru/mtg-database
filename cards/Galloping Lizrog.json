@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3561cd52-961f-4098-9287-58ee43970f0f",
+  "name": "Galloping Lizrog",
+  "faces": [
+    {
+      "name": "Galloping Lizrog",
+      "type_line": "Creature \u2014 Frog Lizard",
+      "oracle_text": "Trample\nWhen this creature enters, you may remove any number of +1/+1 counters from among creatures you control. If you do, put twice that many +1/+1 counters on this creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may remove any number of +1/+1 counters from among creatures you control. If you do, put twice that many +1/+1 counters on this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may remove any number of +1/+1 counters from among creatures you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put twice that many +1/+1 counters on this creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fbffaf9f-40e7-4113-a037-533b733cebce",
+  "name": "Sorin the Mirthless",
+  "faces": [
+    {
+      "name": "Sorin the Mirthless",
+      "type_line": "Legendary Planeswalker \u2014 Sorin",
+      "oracle_text": "+1: Look at the top card of your library. You may reveal that card and put it into your hand. If you do, you lose life equal to its mana value.\n\u22122: Create a 2/3 black Vampire creature token with flying and lifelink.\n\u22127: Sorin deals 13 damage to any target. You gain 13 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Look at the top card of your library. You may reveal that card and put it into your hand. If you do, you lose life equal to its mana value.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may reveal that card and put it into your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you lose life equal to its mana value",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Create a 2/3 black Vampire creature token with flying and lifelink.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/3 black Vampire creature token with flying and lifelink",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Vampire"
+                ],
+                "keywords": [
+                  "flying",
+                  "lifelink"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: Sorin deals 13 damage to any target. You gain 13 life.",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 13
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 13
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

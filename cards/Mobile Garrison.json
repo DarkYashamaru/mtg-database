@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "14ef5aa4-5f61-4fbd-9a8d-35920c40ec25",
+  "name": "Mobile Garrison",
+  "faces": [
+    {
+      "name": "Mobile Garrison",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Whenever this Vehicle attacks, untap another target artifact or creature you control.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle attacks, untap another target artifact or creature you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap another target artifact or creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

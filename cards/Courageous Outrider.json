@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "00915480-ffa8-4930-a158-b1c1f75b7876",
+  "name": "Courageous Outrider",
+  "faces": [
+    {
+      "name": "Courageous Outrider",
+      "type_line": "Creature \u2014 Human Scout",
+      "oracle_text": "When this creature enters, look at the top four cards of your library. You may reveal a Human card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at the top four cards of your library. You may reveal a Human card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "subtypes_any": [
+                  "Human"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "any"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

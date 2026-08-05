@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1a4d16eb-343e-41ca-9363-90dc79da4769",
+  "name": "Armament of Nyx",
+  "faces": [
+    {
+      "name": "Armament of Nyx",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature has double strike as long as it's an enchantment. Otherwise, prevent all damage that would be dealt by enchanted creature. (A creature with double strike deals both first-strike and regular combat damage.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has double strike as long as it's an enchantment. Otherwise, prevent all damage that would be dealt by enchanted creature. (A creature with double strike deals both first-strike and regular combat damage.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has double strike as long as it's an enchantment"
+            },
+            {
+              "action": "custom_effect",
+              "text": "prevent all damage that would be dealt by enchanted creature",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

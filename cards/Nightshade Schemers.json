@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fd7b0b56-2f55-4933-bedc-e7711dbdd556",
+  "name": "Nightshade Schemers",
+  "faces": [
+    {
+      "name": "Nightshade Schemers",
+      "type_line": "Creature \u2014 Faerie Wizard",
+      "oracle_text": "Flying\nKinship \u2014 At the beginning of your upkeep, you may look at the top card of your library. If it shares a creature type with this creature, you may reveal it. If you do, each opponent loses 2 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may look at the top card of your library. If it shares a creature type with this creature, you may reveal it. If you do, each opponent loses 2 life.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it shares a creature type with this creature"
+                }
+              ]
+            },
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

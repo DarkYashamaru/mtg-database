@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "32845ed6-2328-462e-be3a-579589748588",
+  "name": "Blood Hypnotist",
+  "faces": [
+    {
+      "name": "Blood Hypnotist",
+      "type_line": "Creature \u2014 Vampire",
+      "oracle_text": "This creature can't block.\nWhenever you sacrifice one or more Blood tokens, target creature can't block this turn. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you sacrifice one or more Blood tokens, target creature can't block this turn. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice one or more Blood tokens"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

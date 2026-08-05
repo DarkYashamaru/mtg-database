@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4baf3db8-6f35-4101-9b21-15f4384c249a",
+  "name": "Krovikan Whispers",
+  "faces": [
+    {
+      "name": "Krovikan Whispers",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nCumulative upkeep {U} or {B} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nYou control enchanted creature.\nWhen this Aura is put into a graveyard from the battlefield, you lose 2 life for each age counter on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura is put into a graveyard from the battlefield, you lose 2 life for each age counter on it.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this Aura is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you lose 2 life for each age counter on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Cumulative upkeep {U} or {B} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cumulative upkeep {U} or {B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "You control enchanted creature.",
+          "effects": [
+            {
+              "action": "gain_control",
+              "target": "enchanted_creature",
+              "duration": "static"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

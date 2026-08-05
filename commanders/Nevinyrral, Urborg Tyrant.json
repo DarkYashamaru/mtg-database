@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3ddde895-12aa-488a-94fb-27a1064bdb72",
+  "name": "Nevinyrral, Urborg Tyrant",
+  "faces": [
+    {
+      "name": "Nevinyrral, Urborg Tyrant",
+      "type_line": "Legendary Creature \u2014 Zombie Wizard",
+      "oracle_text": "Hexproof from artifacts, creatures, and enchantments\nWhen Nevinyrral enters, create a tapped 2/2 black Zombie creature token for each creature that died this turn.\nWhen Nevinyrral dies, you may pay {1}. When you do, destroy all artifacts, creatures, and enchantments.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Nevinyrral enters, create a tapped 2/2 black Zombie creature token for each creature that died this turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a tapped 2/2 black Zombie creature token for each creature that died this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "When Nevinyrral dies, you may pay {1}. When you do, destroy all artifacts, creatures, and enchantments.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy all artifacts, creatures, and enchantments",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Hexproof from artifacts, creatures, and enchantments",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Hexproof from artifacts, creatures, and enchantments"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

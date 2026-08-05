@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fbd295ee-545a-4eab-b000-c0b228dd412d",
+  "name": "Cabal Torturer",
+  "faces": [
+    {
+      "name": "Cabal Torturer",
+      "type_line": "Creature \u2014 Human Minion",
+      "oracle_text": "{B}, {T}: Target creature gets -1/-1 until end of turn.\nThreshold \u2014 {3}{B}{B}, {T}: Target creature gets -2/-2 until end of turn. Activate only if there are seven or more cards in your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{B}, {T}: Target creature gets -1/-1 until end of turn.",
+          "cost": "{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -1,
+              "toughness_delta": -1
+            }
+          ]
+        },
+        {
+          "raw_text": "Threshold \u2014 {3}{B}{B}, {T}: Target creature gets -2/-2 until end of turn. Activate only if there are seven or more cards in your graveyard.",
+          "cost": "Threshold \u2014 {3}{B}{B}, {T}",
+          "condition": [
+            {
+              "condition_text": "there are seven or more cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -2,
+              "toughness_delta": -2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

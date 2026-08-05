@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "56f5ed8d-ef53-4766-9ef3-1e24a10e267b",
+  "name": "Buried Treasure",
+  "faces": [
+    {
+      "name": "Buried Treasure",
+      "type_line": "Artifact \u2014 Treasure",
+      "oracle_text": "{T}, Sacrifice this artifact: Add one mana of any color.\n{5}, Exile this card from your graveyard: Discover 5. Activate only as a sorcery. (Exile cards from the top of your library until you exile a nonland card with mana value 5 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice this artifact: Add one mana of any color.",
+          "cost": "{T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{5}, Exile this card from your graveyard: Discover 5. Activate only as a sorcery. (Exile cards from the top of your library until you exile a nonland card with mana value 5 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)",
+          "cost": "{5}, Exile this card from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Discover 5"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

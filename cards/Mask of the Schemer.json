@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "584f9c45-9737-47bb-8ba4-a7cd9b0b2c1f",
+  "name": "Mask of the Schemer",
+  "faces": [
+    {
+      "name": "Mask of the Schemer",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature deals combat damage to a player, it connives X, where X is the amount of damage it dealt to that player. (Draw X cards, then discard X cards. Put a +1/+1 counter on that creature for each nonland card discarded this way.)\nEquip {2}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals combat damage to a player, it connives X, where X is the amount of damage it dealt to that player. (Draw X cards, then discard X cards. Put a +1/+1 counter on that creature for each nonland card discarded this way.)",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it connives X, where X is the amount of damage it dealt to that player"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

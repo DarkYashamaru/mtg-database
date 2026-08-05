@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "555f9e75-8892-4c8e-9c5e-8ab14a589118",
+  "name": "Kangee, Aerie Keeper",
+  "faces": [
+    {
+      "name": "Kangee, Aerie Keeper",
+      "type_line": "Legendary Creature \u2014 Bird Wizard",
+      "oracle_text": "Kicker {X}{2} (You may pay an additional {X}{2} as you cast this spell.)\nFlying\nWhen Kangee enters, if it was kicked, put X feather counters on it.\nOther Bird creatures get +1/+1 for each feather counter on Kangee.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Kangee enters, if it was kicked, put X feather counters on it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put X feather counters on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {X}{2} (You may pay an additional {X}{2} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {X}{2}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Other Bird creatures get +1/+1 for each feather counter on Kangee.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other Bird creatures get +1/+1 for each feather counter on Kangee"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

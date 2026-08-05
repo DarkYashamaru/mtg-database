@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dfbce321-d3c1-4b76-a3fa-27f875015085",
+  "name": "Shaper Guildmage",
+  "faces": [
+    {
+      "name": "Shaper Guildmage",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "{W}, {T}: Target creature gains first strike until end of turn.\n{B}, {T}: Target creature gets +1/+0 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{W}, {T}: Target creature gains first strike until end of turn.",
+          "cost": "{W}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "first_strike"
+            }
+          ]
+        },
+        {
+          "raw_text": "{B}, {T}: Target creature gets +1/+0 until end of turn.",
+          "cost": "{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

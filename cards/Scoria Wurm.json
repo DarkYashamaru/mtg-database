@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ee45c80c-699c-4e37-97e6-1859c6601c99",
+  "name": "Scoria Wurm",
+  "faces": [
+    {
+      "name": "Scoria Wurm",
+      "type_line": "Creature \u2014 Wurm",
+      "oracle_text": "At the beginning of your upkeep, flip a coin. If you lose the flip, return this creature to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, flip a coin. If you lose the flip, return this creature to its owner's hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "flip a coin"
+            },
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

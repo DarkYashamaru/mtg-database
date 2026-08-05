@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6b336228-92c0-4f14-a479-1f97aaeae018",
+  "name": "Belisarius Cawl",
+  "faces": [
+    {
+      "name": "Belisarius Cawl",
+      "type_line": "Legendary Artifact Creature \u2014 Human",
+      "oracle_text": "Ultima Founding \u2014 {T}, Tap two untapped artifacts you control: Create a 2/2 white Astartes Warrior creature token with vigilance.\nMaster of Machines \u2014 {T}, Tap X untapped creatures you control: Look at the top X cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Ultima Founding \u2014 {T}, Tap two untapped artifacts you control: Create a 2/2 white Astartes Warrior creature token with vigilance.",
+          "cost": "Ultima Founding \u2014 {T}, Tap two untapped artifacts you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 white Astartes Warrior creature token with vigilance",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Astartes",
+                  "Warrior"
+                ],
+                "keywords": [
+                  "vigilance"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Master of Machines \u2014 {T}, Tap X untapped creatures you control: Look at the top X cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "cost": "Master of Machines \u2014 {T}, Tap X untapped creatures you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": "X"
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Artifact"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

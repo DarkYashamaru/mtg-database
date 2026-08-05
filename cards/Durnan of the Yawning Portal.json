@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "21d3858f-441d-4bb2-888e-8b147ecad7e9",
+  "name": "Durnan of the Yawning Portal",
+  "faces": [
+    {
+      "name": "Durnan of the Yawning Portal",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "Whenever Durnan attacks, look at the top four cards of your library. You may exile a creature card from among them. Put the rest on the bottom of your library in any order. For as long as that card remains exiled, you may cast it. That spell has undaunted. (It costs {1} less to cast for each opponent.)\nChoose a Background (You can have a Background as a second commander.)",
+      "static": [
+        {
+          "keyword": "choose_a_background"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Durnan attacks, look at the top four cards of your library. You may exile a creature card from among them. Put the rest on the bottom of your library in any order. For as long as that card remains exiled, you may cast it. That spell has undaunted. (It costs {1} less to cast for each opponent.)",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may exile a creature card from among them"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "any"
+            },
+            {
+              "action": "custom_effect",
+              "text": "For as long as that card remains exiled, you may cast it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "That spell has undaunted"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

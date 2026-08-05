@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d70ad04a-b940-4bb1-bcdc-408166e91723",
+  "name": "Rescue Leopard",
+  "faces": [
+    {
+      "name": "Rescue Leopard",
+      "type_line": "Creature \u2014 Cat",
+      "oracle_text": "Whenever this creature becomes tapped, you may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes tapped, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes tapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

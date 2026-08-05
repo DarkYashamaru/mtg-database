@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dfd12e3c-2b2a-4461-a08d-09d4e6c4626e",
+  "name": "Gandalf the Grey",
+  "faces": [
+    {
+      "name": "Gandalf the Grey",
+      "type_line": "Legendary Creature \u2014 Avatar Wizard",
+      "oracle_text": "Whenever you cast an instant or sorcery spell, choose one that hasn't been chosen \u2014\n\u2022 You may tap or untap target permanent.\n\u2022 Gandalf deals 3 damage to each opponent.\n\u2022 Copy target instant or sorcery spell you control. You may choose new targets for the copy.\n\u2022 Put Gandalf on top of its owner's library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, choose one that hasn't been chosen \u2014\n\u2022 You may tap or untap target permanent.\n\u2022 Gandalf deals 3 damage to each opponent.\n\u2022 Copy target instant or sorcery spell you control. You may choose new targets for the copy.\n\u2022 Put Gandalf on top of its owner's library.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose one that hasn't been chosen \u2014\n\u2022 You may tap or untap target permanent"
+            },
+            {
+              "action": "deal_damage",
+              "source": "_self",
+              "target": "each_opponent",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Copy target instant or sorcery spell you control"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Put Gandalf on top of its owner's library"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

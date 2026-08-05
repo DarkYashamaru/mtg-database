@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "21d90735-5e04-4a8c-a546-ff26d4d5998d",
+  "name": "Invasion of Ikoria // Zilortha, Apex of Ikoria",
+  "faces": [
+    {
+      "name": "Invasion of Ikoria",
+      "type_line": "Battle \u2014 Siege",
+      "oracle_text": "(As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.)\nWhen this Siege enters, search your library and/or graveyard for a non-Human creature card with mana value X or less and put it onto the battlefield. If you search your library this way, shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Siege enters, search your library and/or graveyard for a non-Human creature card with mana value X or less and put it onto the battlefield. If you search your library this way, shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_siege"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library and/or graveyard for a non-Human creature card with mana value X or less and put it onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Zilortha, Apex of Ikoria",
+      "type_line": "Legendary Creature \u2014 Dinosaur",
+      "oracle_text": "Reach\nFor each non-Human creature you control, you may have that creature assign its combat damage as though it weren't blocked.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "For each non-Human creature you control, you may have that creature assign its combat damage as though it weren't blocked.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each non-Human creature you control, you may have that creature assign its combat damage as though it weren't blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

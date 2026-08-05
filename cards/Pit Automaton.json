@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "49bfecc3-6258-454e-a8fd-fc49098a0898",
+  "name": "Pit Automaton",
+  "faces": [
+    {
+      "name": "Pit Automaton",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "Defender\n{T}: Add {C}{C}. Spend this mana only to activate abilities.\n{2}, {T}: When you next activate an exhaust ability that isn't a mana ability this turn, copy it. You may choose new targets for the copy.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}{C}. Spend this mana only to activate abilities.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{c}",
+                "{c}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to activate abilities"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}: When you next activate an exhaust ability that isn't a mana ability this turn, copy it. You may choose new targets for the copy.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "When you next activate an exhaust ability that isn't a mana ability this turn, copy it"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

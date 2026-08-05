@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a14c692e-dce6-4121-84ec-7fa28ffe4d6b",
+  "name": "Rohgahh, Kher Keep Overlord",
+  "faces": [
+    {
+      "name": "Rohgahh, Kher Keep Overlord",
+      "type_line": "Legendary Creature \u2014 Kobold Warrior",
+      "oracle_text": "Other Kobolds you control get +2/+2.\nWhenever you cast a Kobold spell, you may pay {2}. If you do, create a 4/4 red Dragon creature token with flying.\nWhenever you cast a Dragon spell, create a 0/1 red Kobold creature token named Kobolds of Kher Keep.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Kobold spell, you may pay {2}. If you do, create a 4/4 red Dragon creature token with flying.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Kobold"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/4 red dragon creature token with flying",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "dragon"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a Dragon spell, create a 0/1 red Kobold creature token named Kobolds of Kher Keep.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Dragon"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a 0/1 red Kobold creature token named Kobolds of Kher Keep"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Kobolds you control get +2/+2.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other Kobolds you control get +2/+2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

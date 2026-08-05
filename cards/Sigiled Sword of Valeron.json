@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f1c4269a-1d99-4f3b-8107-a005df3468d5",
+  "name": "Sigiled Sword of Valeron",
+  "faces": [
+    {
+      "name": "Sigiled Sword of Valeron",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +2/+0, has vigilance, and is a Knight in addition to its other types.\nWhenever equipped creature attacks, create a 2/2 white Knight creature token with vigilance that's attacking.\nEquip {3}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, create a 2/2 white Knight creature token with vigilance that's attacking.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 white Knight creature token with vigilance that's attacking",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Knight"
+                ],
+                "keywords": [
+                  "vigilance_that"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +2/+0, has vigilance, and is a Knight in addition to its other types.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +2/+0, has vigilance, and is a Knight in addition to its other types"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

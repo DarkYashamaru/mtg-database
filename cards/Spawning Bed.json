@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "49e43de3-460b-4562-aef6-da43bd56debc",
+  "name": "Spawning Bed",
+  "faces": [
+    {
+      "name": "Spawning Bed",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{6}, {T}, Sacrifice this land: Create three 1/1 colorless Eldrazi Scion creature tokens. They have \"Sacrifice this token: Add {C}.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{6}, {T}, Sacrifice this land: Create three 1/1 colorless Eldrazi Scion creature tokens. They have \"Sacrifice this token: Add {C}.\"",
+          "cost": "{6}, {T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "1/1 colorless Eldrazi Scion creature tokens",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Eldrazi",
+                  "Scion"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "They have \"Sacrifice this token: Add {C}.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

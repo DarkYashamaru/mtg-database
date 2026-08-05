@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ad0db433-a406-4ef0-8ffa-416af610c4e7",
+  "name": "Doomsday Excruciator",
+  "faces": [
+    {
+      "name": "Doomsday Excruciator",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Flying\nWhen this creature enters, if it was cast, each player exiles all but the bottom six cards of their library face down.\nAt the beginning of your upkeep, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was cast, each player exiles all but the bottom six cards of their library face down.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was cast"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player exiles all but the bottom six cards of their library face down"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, draw a card.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

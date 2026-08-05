@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c1fc5923-c3cd-448a-98d1-c154661c2812",
+  "name": "Nissa, Resurgent Animist",
+  "faces": [
+    {
+      "name": "Nissa, Resurgent Animist",
+      "type_line": "Legendary Creature \u2014 Elf Scout",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, add one mana of any color. Then if this is the second time this ability has resolved this turn, reveal cards from the top of your library until you reveal an Elf or Elemental card. Put that card into your hand and the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, add one mana of any color. Then if this is the second time this ability has resolved this turn, reveal cards from the top of your library until you reveal an Elf or Elemental card. Put that card into your hand and the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "reveal cards from the top of your library until you reveal an elf or elemental card",
+              "condition": [
+                {
+                  "ability_resolution_count_this_turn": 2
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put that card into your hand and the rest on the bottom of your library in a random order"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

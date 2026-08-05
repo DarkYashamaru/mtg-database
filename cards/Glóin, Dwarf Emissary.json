@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "29375a7a-af4e-46aa-8d1c-e8d22d3c0ea7",
+  "name": "Gl\u00f3in, Dwarf Emissary",
+  "faces": [
+    {
+      "name": "Gl\u00f3in, Dwarf Emissary",
+      "type_line": "Legendary Creature \u2014 Dwarf Advisor",
+      "oracle_text": "Whenever you cast a historic spell, create a Treasure token. This ability triggers only once each turn. (Artifacts, legendaries, and Sagas are historic.)\n{T}, Sacrifice a Treasure: Goad target creature. (Until your next turn, that creature attacks each combat if able and attacks a player other than you if able.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a historic spell, create a Treasure token. This ability triggers only once each turn. (Artifacts, legendaries, and Sagas are historic.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Historic"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice a Treasure: Goad target creature. (Until your next turn, that creature attacks each combat if able and attacks a player other than you if able.)",
+          "cost": "{T}, Sacrifice a Treasure",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Goad target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

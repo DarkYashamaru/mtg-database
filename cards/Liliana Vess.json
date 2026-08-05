@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a6c05941-2cfb-4dac-a7c0-ab808187eb7c",
+  "name": "Liliana Vess",
+  "faces": [
+    {
+      "name": "Liliana Vess",
+      "type_line": "Legendary Planeswalker \u2014 Liliana",
+      "oracle_text": "+1: Target player discards a card.\n\u22122: Search your library for a card, then shuffle and put that card on top.\n\u22128: Put all creature cards from all graveyards onto the battlefield under your control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Target player discards a card.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "target_player",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Search your library for a card, then shuffle and put that card on top.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a card"
+            },
+            {
+              "action": "shuffle_and_move_revealed_card",
+              "object": "that_card",
+              "destination_zone": "top_of_library"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22128: Put all creature cards from all graveyards onto the battlefield under your control.",
+          "cost": "\u22128",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put all creature cards from all graveyards onto the battlefield under your control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

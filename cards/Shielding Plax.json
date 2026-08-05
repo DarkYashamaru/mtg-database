@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e9bdb194-745d-4abb-9312-a65a68c40a18",
+  "name": "Shielding Plax",
+  "faces": [
+    {
+      "name": "Shielding Plax",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "({G/U} can be paid with either {G} or {U}.)\nEnchant creature\nWhen this Aura enters, draw a card.\nEnchanted creature can't be the target of spells or abilities your opponents control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature can't be the target of spells or abilities your opponents control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature can't be the target of spells or abilities your opponents control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

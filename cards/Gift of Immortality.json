@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2c11c72f-5b04-47d8-bdf8-8d9d197ebc1b",
+  "name": "Gift of Immortality",
+  "faces": [
+    {
+      "name": "Gift of Immortality",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen enchanted creature dies, return that card to the battlefield under its owner's control. Return this card to the battlefield attached to that creature at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, return that card to the battlefield under its owner's control. Return this card to the battlefield attached to that creature at the beginning of the next end step.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "that_card",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Return this card to the battlefield attached to that creature at the beginning of the next end step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7dd3e2c-34a5-4097-b6d1-2ccd097fe57f",
+  "name": "Foe-Razer Regent",
+  "faces": [
+    {
+      "name": "Foe-Razer Regent",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhen this creature enters, you may have it fight target creature you don't control.\nWhenever a creature you control fights, put two +1/+1 counters on it at the beginning of the next end step.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may have it fight target creature you don't control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have it fight target creature you don't control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control fights, put two +1/+1 counters on it at the beginning of the next end step.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature you control fights"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "it_at_the_beginning_of_the_next_end_step",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

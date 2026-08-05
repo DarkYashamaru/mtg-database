@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91f34686-cb96-49c0-b4a7-49dd1fd076e2",
+  "name": "Sea Gate Wreckage",
+  "faces": [
+    {
+      "name": "Sea Gate Wreckage",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}. ({C} represents colorless mana.)\n{2}{C}, {T}: Draw a card. Activate only if you have no cards in hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}. ({C} represents colorless mana.)",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{C}, {T}: Draw a card. Activate only if you have no cards in hand.",
+          "cost": "{2}{C}, {T}",
+          "condition": [
+            {
+              "zone_count": {
+                "zone": "hand",
+                "owner": "you",
+                "count_eq": 0
+              }
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

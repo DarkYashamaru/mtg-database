@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "89d1cd45-8148-4396-a9b8-e0f495e94b5b",
+  "name": "Savage Beating",
+  "faces": [
+    {
+      "name": "Savage Beating",
+      "type_line": "Instant",
+      "oracle_text": "Cast this spell only during combat on your turn.\nChoose one \u2014\n\u2022 Creatures you control gain double strike until end of turn.\n\u2022 Untap all creatures you control. After this phase, there is an additional combat phase.\nEntwine {1}{R} (Choose both if you pay the entwine cost.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Cast this spell only during combat on your turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cast this spell only during combat on your turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Creatures you control gain double strike until end of turn.\n\u2022 Untap all creatures you control. After this phase, there is an additional combat phase.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Creatures you control gain double strike until end of turn.",
+              "effects": [
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "creatures_you_control",
+                  "keyword": "double_strike"
+                }
+              ]
+            },
+            {
+              "raw_text": "Untap all creatures you control. After this phase, there is an additional combat phase.",
+              "effects": [
+                {
+                  "action": "untap",
+                  "target": {
+                    "selector": "creatures_you_control"
+                  }
+                },
+                {
+                  "action": "add_combat_phase_after_this_phase"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Entwine {1}{R} (Choose both if you pay the entwine cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Entwine {1}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

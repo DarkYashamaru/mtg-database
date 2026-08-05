@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dc36f81e-d1b0-44a4-bf82-4cd276bc0812",
+  "name": "Thancred Waters",
+  "faces": [
+    {
+      "name": "Thancred Waters",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "Flash\nRoyal Guard \u2014 When Thancred Waters enters, another target legendary permanent you control gains indestructible for as long as you control Thancred Waters.\nWhenever you cast a noncreature spell, Thancred Waters gains indestructible until end of turn.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Thancred Waters enters, another target legendary permanent you control gains indestructible for as long as you control Thancred Waters.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "another target legendary permanent you control gains indestructible for as long as you control Thancred Waters"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a noncreature spell, Thancred Waters gains indestructible until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

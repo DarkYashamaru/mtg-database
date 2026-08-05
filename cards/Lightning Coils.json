@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bbb16f23-fdb1-444b-bef8-ce3e177c2678",
+  "name": "Lightning Coils",
+  "faces": [
+    {
+      "name": "Lightning Coils",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a nontoken creature you control dies, put a charge counter on this artifact.\nAt the beginning of your upkeep, if this artifact has five or more charge counters on it, remove all of them from it and create that many 3/1 red Elemental creature tokens with haste. Exile them at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken creature you control dies, put a charge counter on this artifact.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a charge counter on this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if this artifact has five or more charge counters on it, remove all of them from it and create that many 3/1 red Elemental creature tokens with haste. Exile them at the beginning of the next end step.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "this artifact has five or more charge counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove all of them from it and create that many 3/1 red Elemental creature tokens with haste"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Exile them at the beginning of the next end step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

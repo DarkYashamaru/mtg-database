@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5a35201d-e9b1-433a-bb70-3280ceedbcd6",
+  "name": "Elmar, Ulvenwald Informant",
+  "faces": [
+    {
+      "name": "Elmar, Ulvenwald Informant",
+      "type_line": "Legendary Creature \u2014 Human",
+      "oracle_text": "Haste\nWhenever you cast your second spell each turn, untap target creature, then investigate. (Create a colorless Clue artifact token with \"{2}, Sacrifice this artifact: Draw a card.\")\nPartner\u2014Friends forever (You can have two commanders if both have this ability.)",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, untap target creature, then investigate. (Create a colorless Clue artifact token with \"{2}, Sacrifice this artifact: Draw a card.\")",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "target_creature"
+            },
+            {
+              "action": "investigate"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner\u2014Friends forever (You can have two commanders if both have this ability.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner\u2014Friends forever"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

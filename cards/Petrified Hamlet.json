@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "78a2972c-14f4-41f3-99f9-167948bdd73a",
+  "name": "Petrified Hamlet",
+  "faces": [
+    {
+      "name": "Petrified Hamlet",
+      "type_line": "Land",
+      "oracle_text": "When this land enters, choose a land card name.\nActivated abilities of sources with the chosen name can't be activated unless they're mana abilities.\nLands with the chosen name have \"{T}: Add {C}.\"\n{T}: Add {C}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land enters, choose a land card name.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose a land card name"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Lands with the chosen name have \"{T}: Add {C}.\"",
+          "cost": "Lands with the chosen name have \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Activated abilities of sources with the chosen name can't be activated unless they're mana abilities.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Activated abilities of sources with the chosen name can't be activated unless they're mana abilities"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

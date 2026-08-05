@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f67a599c-200a-4831-9e73-126c7435a396",
+  "name": "Viv Vision, Teen Synthezoid",
+  "faces": [
+    {
+      "name": "Viv Vision, Teen Synthezoid",
+      "type_line": "Legendary Artifact Creature \u2014 Robot Hero",
+      "oracle_text": "Flying\nCybernetic Senses \u2014 Whenever Viv Vision attacks, draw a card if her power is 4 or greater.\nPower-up \u2014 {7}: Put two +1/+1 counters on Viv Vision. (Activate each power-up ability only once. Reduce the cost by her mana cost if she entered this turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Viv Vision attacks, draw a card if her power is 4 or greater.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "her power is 4 or greater"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Power-up \u2014 {7}: Put two +1/+1 counters on Viv Vision. (Activate each power-up ability only once. Reduce the cost by her mana cost if she entered this turn.)",
+          "cost": "Power-up \u2014 {7}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "oracle_id": "594f6881-c059-46f8-aa4e-7151d502de73",
+  "name": "Jace, Vryn's Prodigy // Jace, Telepath Unbound",
+  "faces": [
+    {
+      "name": "Jace, Telepath Unbound",
+      "type_line": "Legendary Planeswalker \u2014 Jace",
+      "oracle_text": "+1: Up to one target creature gets -2/-0 until your next turn.\n\u22123: You may cast target instant or sorcery card from your graveyard this turn. If that spell would be put into your graveyard, exile it instead.\n\u22129: You get an emblem with \"Whenever you cast a spell, target opponent mills five cards.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Up to one target creature gets -2/-0 until your next turn.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Up to one target creature gets -2/-0 until your next turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: You may cast target instant or sorcery card from your graveyard this turn. If that spell would be put into your graveyard, exile it instead.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast target instant or sorcery card from your graveyard this turn"
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "that spell would be put into your graveyard"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22129: You get an emblem with \"Whenever you cast a spell, target opponent mills five cards.\"",
+          "cost": "\u22129",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with \"Whenever you cast a spell, target opponent mills five cards.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Jace, Vryn's Prodigy",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "{T}: Draw a card, then discard a card. If there are five or more cards in your graveyard, exile Jace, then return him to the battlefield transformed under his owner's control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Draw a card, then discard a card. If there are five or more cards in your graveyard, exile Jace, then return him to the battlefield transformed under his owner's control.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile jace",
+              "condition": [
+                {
+                  "condition_text": "there are five or more cards in your graveyard"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "return him to the battlefield transformed under his owner's control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c02ed1b7-1f8d-4196-a9b6-65e1b5a763d7",
+  "name": "Mordant Dragon",
+  "faces": [
+    {
+      "name": "Mordant Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\n{1}{R}: This creature gets +1/+0 until end of turn.\nWhenever this creature deals combat damage to a player, you may have it deal that much damage to target creature that player controls.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may have it deal that much damage to target creature that player controls.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have it deal that much damage to target creature that player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{R}: This creature gets +1/+0 until end of turn.",
+          "cost": "{1}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

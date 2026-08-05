@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2038f505-7b03-4c63-bc44-c5139729dd05",
+  "name": "Feat of Resistance",
+  "faces": [
+    {
+      "name": "Feat of Resistance",
+      "type_line": "Instant",
+      "oracle_text": "Put a +1/+1 counter on target creature you control. It gains protection from the color of your choice until end of turn. (It can't be blocked, targeted, dealt damage, enchanted, or equipped by anything of that color.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Put a +1/+1 counter on target creature you control. It gains protection from the color of your choice until end of turn. (It can't be blocked, targeted, dealt damage, enchanted, or equipped by anything of that color.)",
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "protection_from_the_color_of_your_choice"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "823cd586-92db-4e44-ba1f-394b2404cafc",
+  "name": "Salvage Titan",
+  "faces": [
+    {
+      "name": "Salvage Titan",
+      "type_line": "Artifact Creature \u2014 Golem",
+      "oracle_text": "You may sacrifice three artifacts rather than pay this spell's mana cost.\nExile three artifact cards from your graveyard: Return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Exile three artifact cards from your graveyard: Return this card from your graveyard to your hand.",
+          "cost": "Exile three artifact cards from your graveyard",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may sacrifice three artifacts rather than pay this spell's mana cost.",
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "three_artifacts_rather_than_pay_self_spells_mana_cost",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

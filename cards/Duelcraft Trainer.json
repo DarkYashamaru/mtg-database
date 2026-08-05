@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "81713b4d-85df-4b2c-9673-4f5162590149",
+  "name": "Duelcraft Trainer",
+  "faces": [
+    {
+      "name": "Duelcraft Trainer",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "First strike\nCoven \u2014 At the beginning of combat on your turn, if you control three or more creatures with different powers, target creature you control gains double strike until end of turn.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if you control three or more creatures with different powers, target creature you control gains double strike until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you control three or more creatures with different powers"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control",
+              "keyword": "double_strike"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

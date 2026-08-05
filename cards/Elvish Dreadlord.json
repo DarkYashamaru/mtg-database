@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "51b9d8ea-b0df-4a57-804e-6d395e301242",
+  "name": "Elvish Dreadlord",
+  "faces": [
+    {
+      "name": "Elvish Dreadlord",
+      "type_line": "Creature \u2014 Zombie Elf",
+      "oracle_text": "Deathtouch\nWhen this creature dies, non-Elf creatures get -3/-3 until end of turn.\nEncore {5}{B}{B} ({5}{B}{B}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, non-Elf creatures get -3/-3 until end of turn.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "non-Elf creatures get -3/-3 until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Encore {5}{B}{B} ({5}{B}{B}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+          "cost": "Encore {5}{B}{B} ({5}{B}{B}, Exile this card from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each opponent, create a token copy that attacks that opponent this turn if able"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "they",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "them_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

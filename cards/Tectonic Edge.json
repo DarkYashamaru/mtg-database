@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4927150d-7ff6-4232-b20e-d2ea245ac710",
+  "name": "Tectonic Edge",
+  "faces": [
+    {
+      "name": "Tectonic Edge",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{1}, {T}, Sacrifice this land: Destroy target nonbasic land. Activate only if an opponent controls four or more lands.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}, Sacrifice this land: Destroy target nonbasic land. Activate only if an opponent controls four or more lands.",
+          "cost": "{1}, {T}, Sacrifice this land",
+          "condition": [
+            {
+              "condition_text": "an opponent controls four or more lands"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy target nonbasic land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

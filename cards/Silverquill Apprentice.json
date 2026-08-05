@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5ab91144-5eb3-491b-a8be-7e1139d0d6c8",
+  "name": "Silverquill Apprentice",
+  "faces": [
+    {
+      "name": "Silverquill Apprentice",
+      "type_line": "Creature \u2014 Human Warlock",
+      "oracle_text": "Magecraft \u2014 Whenever you cast or copy an instant or sorcery spell, target creature gets +1/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast or copy an instant or sorcery spell, target creature gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "or_copy_an_instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9636073e-e361-4d2a-92f6-5fe049e5eb23",
+  "name": "Thraben Sentry // Thraben Militia",
+  "faces": [
+    {
+      "name": "Thraben Militia",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Trample",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Thraben Sentry",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Vigilance\nWhenever another creature you control dies, you may transform this creature.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control dies, you may transform this creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

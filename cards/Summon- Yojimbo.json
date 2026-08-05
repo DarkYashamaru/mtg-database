@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ff70d743-280e-476f-a3b8-92026419419d",
+  "name": "Summon: Yojimbo",
+  "faces": [
+    {
+      "name": "Summon: Yojimbo",
+      "type_line": "Enchantment Creature \u2014 Saga Samurai",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI \u2014 Exile target artifact, enchantment, or tapped creature an opponent controls.\nII, III \u2014 Until your next turn, creatures can't attack you unless their controller pays {2} for each of those creatures.\nIV \u2014 Create X Treasure tokens, where X is the number of opponents who control a creature with power 4 or greater.\nVigilance",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Exile target artifact, enchantment, or tapped creature an opponent controls.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_permanent",
+                "any_of": [
+                  {
+                    "card_types": [
+                      "Artifact"
+                    ]
+                  },
+                  {
+                    "card_types": [
+                      "Enchantment"
+                    ]
+                  },
+                  {
+                    "card_types": [
+                      "Creature"
+                    ],
+                    "state": "tapped",
+                    "controller": "an_opponent"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II, III \u2014 Until your next turn, creatures can't attack you unless their controller pays {2} for each of those creatures.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II",
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "attack_tax",
+              "target": "all_creatures",
+              "defender": "you",
+              "cost_per_attacker": "{2}",
+              "duration": "until_your_next_turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "IV \u2014 Create X Treasure tokens, where X is the number of opponents who control a creature with power 4 or greater.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "IV"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "count",
+              "count_object": "opponents_who_control_a_creature_with_power_4_or_greater",
+              "token": {
+                "raw": "Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

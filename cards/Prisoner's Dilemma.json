@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fecbbc79-2f74-46b3-a049-45736f904f58",
+  "name": "Prisoner's Dilemma",
+  "faces": [
+    {
+      "name": "Prisoner's Dilemma",
+      "type_line": "Sorcery",
+      "oracle_text": "Each opponent secretly chooses silence or snitch, then the choices are revealed. If each opponent chose silence, Prisoner's Dilemma deals 4 damage to each of them. If each opponent chose snitch, Prisoner's Dilemma deals 8 damage to each of them. Otherwise, Prisoner's Dilemma deals 12 damage to each opponent who chose silence.\nFlashback {5}{R}{R}",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Each opponent secretly chooses silence or snitch, then the choices are revealed. If each opponent chose silence, Prisoner's Dilemma deals 4 damage to each of them. If each opponent chose snitch, Prisoner's Dilemma deals 8 damage to each of them. Otherwise, Prisoner's Dilemma deals 12 damage to each opponent who chose silence.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent secretly chooses silence or snitch"
+            },
+            {
+              "action": "custom_effect",
+              "text": "the choices are revealed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "prisoner's dilemma deals 4 damage to each of them",
+              "condition": [
+                {
+                  "condition_text": "each opponent chose silence"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "prisoner's dilemma deals 8 damage to each of them",
+              "condition": [
+                {
+                  "condition_text": "each opponent chose snitch"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "prisoner's dilemma deals 12 damage to each opponent who chose silence",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Flashback {5}{R}{R}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flashback {5}{R}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

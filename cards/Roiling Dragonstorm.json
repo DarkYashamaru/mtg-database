@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6badc583-fabb-4d63-b70c-e7380acafc23",
+  "name": "Roiling Dragonstorm",
+  "faces": [
+    {
+      "name": "Roiling Dragonstorm",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, draw two cards, then discard a card.\nWhen a Dragon you control enters, return this enchantment to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, draw two cards, then discard a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When a Dragon you control enters, return this enchantment to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Dragon"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return this enchantment to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

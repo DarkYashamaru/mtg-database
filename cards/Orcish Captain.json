@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "76c06de7-39ff-4b80-8e54-20910372cffd",
+  "name": "Orcish Captain",
+  "faces": [
+    {
+      "name": "Orcish Captain",
+      "type_line": "Creature \u2014 Orc Warrior",
+      "oracle_text": "{1}: Flip a coin. If you win the flip, target Orc creature gets +2/+0 until end of turn. If you lose the flip, it gets -0/-2 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}: Flip a coin. If you win the flip, target Orc creature gets +2/+0 until end of turn. If you lose the flip, it gets -0/-2 until end of turn.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin"
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_orc_creature",
+              "power_delta": 2,
+              "toughness_delta": 0,
+              "condition": [
+                {
+                  "condition_text": "you win the flip"
+                }
+              ]
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 0,
+              "toughness_delta": -2,
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

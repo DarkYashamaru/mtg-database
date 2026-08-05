@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e43400fe-3df5-4942-abc3-b9bba34fc7cd",
+  "name": "Jaded Analyst",
+  "faces": [
+    {
+      "name": "Jaded Analyst",
+      "type_line": "Creature \u2014 Human Detective",
+      "oracle_text": "Defender\nWhenever you draw your second card each turn, this creature loses defender and gains vigilance until end of turn.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, this creature loses defender and gains vigilance until end of turn.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self_loses_defender_and",
+              "keyword": "vigilance"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

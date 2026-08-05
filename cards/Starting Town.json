@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d04e0975-f401-41b8-a9db-9bcf9cbbce66",
+  "name": "Starting Town",
+  "faces": [
+    {
+      "name": "Starting Town",
+      "type_line": "Land \u2014 Town",
+      "oracle_text": "This land enters tapped unless it's your first, second, or third turn of the game.\n{T}: Add {C}.\n{T}, Pay 1 life: Add one mana of any color.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Pay 1 life: Add one mana of any color.",
+          "cost": "{T}, Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped unless it's your first, second, or third turn of the game.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters tapped unless it's your first, second, or third turn of the game"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

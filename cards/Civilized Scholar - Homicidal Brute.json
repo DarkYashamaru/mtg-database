@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8662c9be-2244-4ea3-bf80-31a117f40a59",
+  "name": "Civilized Scholar // Homicidal Brute",
+  "faces": [
+    {
+      "name": "Civilized Scholar",
+      "type_line": "Creature \u2014 Human Advisor",
+      "oracle_text": "{T}: Draw a card, then discard a card. If a creature card is discarded this way, untap this creature, then transform it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Draw a card, then discard a card. If a creature card is discarded this way, untap this creature, then transform it.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "untap",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "a creature card is discarded this way"
+                }
+              ]
+            },
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Homicidal Brute",
+      "type_line": "Creature \u2014 Human Mutant",
+      "oracle_text": "At the beginning of your end step, if this creature didn't attack this turn, tap this creature, then transform it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if this creature didn't attack this turn, tap this creature, then transform it.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "this creature didn't attack this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap this creature"
+            },
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

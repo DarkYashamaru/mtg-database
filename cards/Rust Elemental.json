@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "21af6b08-1dd1-4e7f-be7b-cc8e70c578c7",
+  "name": "Rust Elemental",
+  "faces": [
+    {
+      "name": "Rust Elemental",
+      "type_line": "Artifact Creature \u2014 Elemental",
+      "oracle_text": "Flying\nAt the beginning of your upkeep, sacrifice another artifact. If you can't, tap this creature and you lose 4 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice another artifact. If you can't, tap this creature and you lose 4 life.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "tap this creature and you lose 4 life",
+              "condition": [
+                {
+                  "condition_text": "you can't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

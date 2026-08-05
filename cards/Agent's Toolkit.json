@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a87abe7a-fee9-45fd-b3d8-896e43ed6b3c",
+  "name": "Agent's Toolkit",
+  "faces": [
+    {
+      "name": "Agent's Toolkit",
+      "type_line": "Artifact \u2014 Clue",
+      "oracle_text": "This artifact enters with a +1/+1 counter, a flying counter, a deathtouch counter, and a shield counter on it. (If it would be dealt damage or destroyed, remove a shield counter from it instead.)\nWhenever a creature you control enters, you may move a counter from this artifact onto that creature.\n{2}, Sacrifice this artifact: Draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control enters, you may move a counter from this artifact onto that creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may move a counter from this artifact onto that creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, Sacrifice this artifact: Draw a card.",
+          "cost": "{2}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This artifact enters with a +1/+1 counter, a flying counter, a deathtouch counter, and a shield counter on it. (If it would be dealt damage or destroyed, remove a shield counter from it instead.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact enters with a +1/+1 counter, a flying counter, a deathtouch counter, and a shield counter on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

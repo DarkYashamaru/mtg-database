@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7e050495-bed7-43b9-abce-866c61beb1da",
+  "name": "Push // Pull",
+  "faces": [
+    {
+      "name": "Pull",
+      "type_line": "Sorcery",
+      "oracle_text": "Put up to two target creature cards from a single graveyard onto the battlefield under your control. They gain haste until end of turn. Sacrifice them at the beginning of the next end step.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Put up to two target creature cards from a single graveyard onto the battlefield under your control. They gain haste until end of turn. Sacrifice them at the beginning of the next end step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put up to two target creature cards from a single graveyard onto the battlefield under your control"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "they",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "them_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Push",
+      "type_line": "Sorcery",
+      "oracle_text": "Destroy target tapped creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Destroy target tapped creature.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature",
+                "state": "tapped"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

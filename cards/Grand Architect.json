@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7af1d7f9-058a-4ccb-96b7-fc391b615c09",
+  "name": "Grand Architect",
+  "faces": [
+    {
+      "name": "Grand Architect",
+      "type_line": "Creature \u2014 Vedalken Artificer",
+      "oracle_text": "Other blue creatures you control get +1/+1.\n{U}: Target artifact creature becomes blue until end of turn.\nTap an untapped blue creature you control: Add {C}{C}. Spend this mana only to cast artifact spells or activate abilities of artifacts.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{U}: Target artifact creature becomes blue until end of turn.",
+          "cost": "{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target artifact creature becomes blue until end of turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Tap an untapped blue creature you control: Add {C}{C}. Spend this mana only to cast artifact spells or activate abilities of artifacts.",
+          "cost": "Tap an untapped blue creature you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{c}",
+                "{c}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "actions_any": [
+                  {
+                    "action": "cast_spell",
+                    "filter": {
+                      "card_types": [
+                        "Artifact"
+                      ]
+                    }
+                  },
+                  {
+                    "action": "activate_ability",
+                    "filter": {
+                      "source_card_types": [
+                        "Artifact"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Other blue creatures you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other blue creatures you control get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

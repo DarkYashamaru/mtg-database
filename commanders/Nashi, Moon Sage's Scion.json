@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d04b6c2c-50fc-464d-9991-230efec70d2b",
+  "name": "Nashi, Moon Sage's Scion",
+  "faces": [
+    {
+      "name": "Nashi, Moon Sage's Scion",
+      "type_line": "Legendary Creature \u2014 Rat Ninja",
+      "oracle_text": "Ninjutsu {3}{B} ({3}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever Nashi deals combat damage to a player, exile the top card of each player's library. Until end of turn, you may play one of those cards. If you cast a spell this way, pay life equal to its mana value rather than paying its mana cost.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Nashi deals combat damage to a player, exile the top card of each player's library. Until end of turn, you may play one of those cards. If you cast a spell this way, pay life equal to its mana value rather than paying its mana cost.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile the top card of each player's library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may play one of those cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "pay life equal to its mana value rather than paying its mana cost",
+              "condition": [
+                {
+                  "condition_text": "you cast a spell this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Ninjutsu {3}{B} ({3}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)",
+          "cost": "Ninjutsu {3}{B} ({3}{B}, Return an unblocked attacker you control to hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "object": "self",
+              "source_zone": "hand",
+              "destination_zone": "battlefield",
+              "tapped": true,
+              "attacking": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

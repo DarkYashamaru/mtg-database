@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fedbd40b-e3a5-449c-a8a3-b42e9da191a9",
+  "name": "Chromatic Star",
+  "faces": [
+    {
+      "name": "Chromatic Star",
+      "type_line": "Artifact",
+      "oracle_text": "{1}, {T}, Sacrifice this artifact: Add one mana of any color.\nWhen this artifact is put into a graveyard from the battlefield, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact is put into a graveyard from the battlefield, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Sacrifice this artifact: Add one mana of any color.",
+          "cost": "{1}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

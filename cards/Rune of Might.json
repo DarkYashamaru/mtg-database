@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7826ce52-2fcc-422e-817e-6040de70f5f1",
+  "name": "Rune of Might",
+  "faces": [
+    {
+      "name": "Rune of Might",
+      "type_line": "Enchantment \u2014 Aura Rune",
+      "oracle_text": "Enchant permanent\nWhen this Aura enters, draw a card.\nAs long as enchanted permanent is a creature, it gets +1/+1 and has trample.\nAs long as enchanted permanent is an Equipment, it has \"Equipped creature gets +1/+1 and has trample.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant permanent",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "permanent"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted permanent is a creature, it gets +1/+1 and has trample.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as enchanted permanent is a creature, it gets +1/+1 and has trample"
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted permanent is an Equipment, it has \"Equipped creature gets +1/+1 and has trample.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as enchanted permanent is an Equipment, it has \"Equipped creature gets +1/+1 and has trample.\""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a3c1af66-63c8-41ec-a401-a3da1131dc67",
+  "name": "Invasion of Innistrad // Deluge of the Dead",
+  "faces": [
+    {
+      "name": "Deluge of the Dead",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create two 2/2 black Zombie creature tokens.\n{2}{B}: Exile target card from a graveyard. If it was a creature card, create a 2/2 black Zombie creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create two 2/2 black Zombie creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "2/2 black Zombie creature tokens",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{B}: Exile target card from a graveyard. If it was a creature card, create a 2/2 black Zombie creature token.",
+          "cost": "{2}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_card_in_graveyard"
+              }
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "zombie"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "it was a creature card"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Invasion of Innistrad",
+      "type_line": "Battle \u2014 Siege",
+      "oracle_text": "(As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.)\nFlash\nWhen this Siege enters, target creature an opponent controls gets -13/-13 until end of turn.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Siege enters, target creature an opponent controls gets -13/-13 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_siege"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature_an_opponent_controls",
+              "power_delta": -13,
+              "toughness_delta": -13
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

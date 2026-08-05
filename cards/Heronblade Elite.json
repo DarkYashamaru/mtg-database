@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e3e255e0-ab04-4488-bdc1-bb1542f51e16",
+  "name": "Heronblade Elite",
+  "faces": [
+    {
+      "name": "Heronblade Elite",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Vigilance\nWhenever another Human you control enters, put a +1/+1 counter on this creature.\n{T}: Add X mana of any one color, where X is this creature's power.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another Human you control enters, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Human"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add X mana of any one color, where X is this creature's power.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add X mana of any one color, where X is this creature's power"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

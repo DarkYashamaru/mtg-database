@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1eebc02a-9a64-49b0-8322-c5ce671457ce",
+  "name": "Graveshifter",
+  "faces": [
+    {
+      "name": "Graveshifter",
+      "type_line": "Creature \u2014 Shapeshifter",
+      "oracle_text": "Changeling (This card is every creature type.)\nWhen this creature enters, you may return target creature card from your graveyard to your hand.",
+      "static": [
+        {
+          "keyword": "changeling"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may return target creature card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

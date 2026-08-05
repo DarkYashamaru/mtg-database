@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fd09875f-71a1-41c2-b404-ff58f4d4cb6c",
+  "name": "Triad of Fates",
+  "faces": [
+    {
+      "name": "Triad of Fates",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "{1}, {T}: Put a fate counter on another target creature.\n{W}, {T}: Exile target creature that has a fate counter on it, then return it to the battlefield under its owner's control.\n{B}, {T}: Exile target creature that has a fate counter on it. Its controller draws two cards.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}: Put a fate counter on another target creature.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a fate counter on another target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "{W}, {T}: Exile target creature that has a fate counter on it, then return it to the battlefield under its owner's control.",
+          "cost": "{W}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target creature that has a fate counter on it"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            }
+          ]
+        },
+        {
+          "raw_text": "{B}, {T}: Exile target creature that has a fate counter on it. Its controller draws two cards.",
+          "cost": "{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target creature that has a fate counter on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Its controller draws two cards"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

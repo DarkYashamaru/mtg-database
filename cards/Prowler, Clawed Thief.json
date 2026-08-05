@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "76742bfc-ae99-4b06-b29d-e0e41d92ae14",
+  "name": "Prowler, Clawed Thief",
+  "faces": [
+    {
+      "name": "Prowler, Clawed Thief",
+      "type_line": "Legendary Creature \u2014 Human Rogue Villain",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever another Villain you control enters, Prowler connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another Villain you control enters, Prowler connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Villain"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "connive",
+              "target": "self",
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "self",
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

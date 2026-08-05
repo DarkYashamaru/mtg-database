@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "70dd5013-f18f-4501-882f-70590c424e20",
+  "name": "Tataru Taru",
+  "faces": [
+    {
+      "name": "Tataru Taru",
+      "type_line": "Legendary Creature \u2014 Dwarf Advisor",
+      "oracle_text": "When Tataru Taru enters, you draw a card and target opponent may draw a card.\nScions' Secretary \u2014 Whenever an opponent draws a card, if it isn't that player's turn, create a tapped Treasure token. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Tataru Taru enters, you draw a card and target opponent may draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you draw a card and target opponent may draw a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an opponent draws a card, if it isn't that player's turn, create a tapped Treasure token. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "an_opponent"
+          },
+          "condition": [
+            {
+              "condition_text": "it isn't that player's turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "tapped Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

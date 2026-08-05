@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b34b211-985b-4934-bb3b-8e6672685ac2",
+  "name": "Forbidden Crypt",
+  "faces": [
+    {
+      "name": "Forbidden Crypt",
+      "type_line": "Enchantment",
+      "oracle_text": "If you would draw a card, return a card from your graveyard to your hand instead. If you can't, you lose the game.\nIf a card would be put into your graveyard from anywhere, exile that card instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If you would draw a card, return a card from your graveyard to your hand instead. If you can't, you lose the game.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return a card from your graveyard to your hand instead",
+              "condition": [
+                {
+                  "condition_text": "you would draw a card"
+                }
+              ]
+            },
+            {
+              "action": "lose_the_game",
+              "condition": [
+                {
+                  "condition_text": "you can't"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "If a card would be put into your graveyard from anywhere, exile that card instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile that card instead",
+              "condition": [
+                {
+                  "condition_text": "a card would be put into your graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

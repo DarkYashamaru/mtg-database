@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d985b12e-2731-4ccf-9f51-90218b20b42a",
+  "name": "Silverquill Charm",
+  "faces": [
+    {
+      "name": "Silverquill Charm",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Put two +1/+1 counters on target creature.\n\u2022 Exile target creature with power 2 or less.\n\u2022 Each opponent loses 3 life and you gain 3 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Put two +1/+1 counters on target creature.\n\u2022 Exile target creature with power 2 or less.\n\u2022 Each opponent loses 3 life and you gain 3 life.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Put two +1/+1 counters on target creature.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "target_creature",
+                  "amount": 2
+                }
+              ]
+            },
+            {
+              "raw_text": "Exile target creature with power 2 or less.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Exile target creature with power 2 or less"
+                }
+              ]
+            },
+            {
+              "raw_text": "Each opponent loses 3 life and you gain 3 life.",
+              "effects": [
+                {
+                  "action": "lose_life",
+                  "target": "each_opponent",
+                  "amount": 3
+                },
+                {
+                  "action": "gain_life",
+                  "player": "you",
+                  "amount": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

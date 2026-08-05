@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0c729806-3a23-491e-847f-23a394d27291",
+  "name": "Observed Stasis",
+  "faces": [
+    {
+      "name": "Observed Stasis",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash\nEnchant creature an opponent controls\nWhen this Aura enters, remove enchanted creature from combat. Then draw a card for each tapped creature its controller controls.\nEnchanted creature loses all abilities and can't attack or block.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, remove enchanted creature from combat. Then draw a card for each tapped creature its controller controls.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove enchanted creature from combat"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then draw a card for each tapped creature its controller controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature an opponent controls",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_an_opponent_controls"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature loses all abilities and can't attack or block.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature loses all abilities and can't attack or block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

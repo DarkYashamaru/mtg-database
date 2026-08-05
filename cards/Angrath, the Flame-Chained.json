@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "092ceffb-1ee4-452c-b15e-5b79267d42a6",
+  "name": "Angrath, the Flame-Chained",
+  "faces": [
+    {
+      "name": "Angrath, the Flame-Chained",
+      "type_line": "Legendary Planeswalker \u2014 Angrath",
+      "oracle_text": "+1: Each opponent discards a card and loses 2 life.\n\u22123: Gain control of target creature until end of turn. Untap it. It gains haste until end of turn. Sacrifice it at the beginning of the next end step if it has mana value 3 or less.\n\u22128: Each opponent loses life equal to the number of cards in their graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Each opponent discards a card and loses 2 life.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent discards a card and loses 2 life"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Gain control of target creature until end of turn. Untap it. It gains haste until end of turn. Sacrifice it at the beginning of the next end step if it has mana value 3 or less.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_control",
+              "target": "target_creature",
+              "duration": "until_end_of_turn"
+            },
+            {
+              "action": "untap",
+              "target": "it"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "it_at_the_beginning_of_the_next_end_step_if_it_has_mana_value_3_or_less"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22128: Each opponent loses life equal to the number of cards in their graveyard.",
+          "cost": "\u22128",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent loses life equal to the number of cards in their graveyard"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

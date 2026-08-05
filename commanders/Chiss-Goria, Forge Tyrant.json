@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f4d1ae1-d5c6-4afb-94c8-8e0ae4891501",
+  "name": "Chiss-Goria, Forge Tyrant",
+  "faces": [
+    {
+      "name": "Chiss-Goria, Forge Tyrant",
+      "type_line": "Legendary Creature \u2014 Dragon",
+      "oracle_text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nFlying, haste\nWhenever Chiss-Goria attacks, exile the top five cards of your library. You may cast an artifact spell from among them this turn. If you do, it has affinity for artifacts.",
+      "static": [
+        {
+          "keyword": "affinity",
+          "quality": "artifacts"
+        },
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Chiss-Goria attacks, exile the top five cards of your library. You may cast an artifact spell from among them this turn. If you do, it has affinity for artifacts.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile the top five cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast an artifact spell from among them this turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it has affinity for artifacts",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f1ecb3d7-5ea0-45b2-b1b0-d7ae304db2a1",
+  "name": "Archmage of Echoes",
+  "faces": [
+    {
+      "name": "Archmage of Echoes",
+      "type_line": "Creature \u2014 Faerie Wizard",
+      "oracle_text": "Flying, ward {2}\nWhenever you cast a Faerie or Wizard permanent spell, copy it. (The copy becomes a token.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Faerie or Wizard permanent spell, copy it. (The copy becomes a token.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "faerie",
+                "wizard_permanent"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

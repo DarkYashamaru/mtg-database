@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7811b50d-af76-43cd-8753-43cf65fbefa3",
+  "name": "Dune Chanter",
+  "faces": [
+    {
+      "name": "Dune Chanter",
+      "type_line": "Creature \u2014 Plant Druid",
+      "oracle_text": "Reach\nLands you control and land cards you own that aren't on the battlefield are Deserts in addition to their other types.\nLands you control have \"{T}: Add one mana of any color.\"\n{T}: Mill two cards. You gain 1 life for each land card milled this way.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Lands you control have \"{T}: Add one mana of any color.\"",
+          "cost": "Lands you control have \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Mill two cards. You gain 1 life for each land card milled this way.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "You gain 1 life for each land card milled this way"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Lands you control and land cards you own that aren't on the battlefield are Deserts in addition to their other types.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Lands you control and land cards you own that aren't on the battlefield are Deserts in addition to their other types"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c9ed4397-e7b7-469c-94e3-8fc70d88664f",
+  "name": "Cytoplast Root-Kin",
+  "faces": [
+    {
+      "name": "Cytoplast Root-Kin",
+      "type_line": "Creature \u2014 Elemental Mutant",
+      "oracle_text": "Graft 4 (This creature enters with four +1/+1 counters on it. Whenever another creature enters, you may move a +1/+1 counter from this creature onto it.)\nWhen this creature enters, put a +1/+1 counter on each other creature you control with a +1/+1 counter on it.\n{2}: Move a +1/+1 counter from target creature you control onto this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on each other creature you control with a +1/+1 counter on it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_other_creature_you_control_with_a_11_counter_on_it"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: Move a +1/+1 counter from target creature you control onto this creature.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Move a +1/+1 counter from target creature you control onto this creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Graft 4 (This creature enters with four +1/+1 counters on it. Whenever another creature enters, you may move a +1/+1 counter from this creature onto it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Graft 4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

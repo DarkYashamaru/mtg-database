@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dcebce37-02eb-4b5d-86be-42b4a0287624",
+  "name": "Bloodmist Infiltrator",
+  "faces": [
+    {
+      "name": "Bloodmist Infiltrator",
+      "type_line": "Creature \u2014 Vampire",
+      "oracle_text": "Whenever this creature attacks, you may sacrifice another creature. If you do, this creature can't be blocked this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may sacrifice another creature. If you do, this creature can't be blocked this turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature",
+              "optional": true
+            },
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "self",
+              "restriction": "cant_be_blocked",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

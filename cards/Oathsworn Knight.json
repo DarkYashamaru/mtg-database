@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "16c293c8-bd1d-4db9-b197-da14f2f37cb1",
+  "name": "Oathsworn Knight",
+  "faces": [
+    {
+      "name": "Oathsworn Knight",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "This creature enters with four +1/+1 counters on it.\nThis creature attacks each combat if able.\nIf damage would be dealt to this creature while it has a +1/+1 counter on it, prevent that damage and remove a +1/+1 counter from it.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with four +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature attacks each combat if able.",
+          "effects": [
+            {
+              "action": "attack_requirement",
+              "target": "self",
+              "requirement": "each_combat_if_able"
+            }
+          ]
+        },
+        {
+          "raw_text": "If damage would be dealt to this creature while it has a +1/+1 counter on it, prevent that damage and remove a +1/+1 counter from it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent that damage and remove a +1/+1 counter from it",
+              "condition": [
+                {
+                  "condition_text": "damage would be dealt to this creature while it has a +1/+1 counter on it"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

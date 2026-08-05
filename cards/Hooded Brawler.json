@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4e40a68a-5e0c-4f4f-9757-02f8139797e2",
+  "name": "Hooded Brawler",
+  "faces": [
+    {
+      "name": "Hooded Brawler",
+      "type_line": "Creature \u2014 Snake Warrior",
+      "oracle_text": "You may exert this creature as it attacks. When you do, it gets +2/+2 until end of turn. (An exerted creature won't untap during your next untap step.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may exert this creature as it attacks. When you do, it gets +2/+2 until end of turn. (An exerted creature won't untap during your next untap step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may exert this creature as it attacks"
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 2,
+              "toughness_delta": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

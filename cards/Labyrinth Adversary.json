@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "00a9bdd0-8a39-4489-bd42-2ac92e550781",
+  "name": "Labyrinth Adversary",
+  "faces": [
+    {
+      "name": "Labyrinth Adversary",
+      "type_line": "Creature \u2014 Minotaur",
+      "oracle_text": "Trample (This creature can deal excess combat damage to the player it's attacking.)\nWhenever you attack, you may pay {1}{R}. When you do, target creature can't block this turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, you may pay {1}{R}. When you do, target creature can't block this turn.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{R}"
+            },
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

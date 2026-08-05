@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "oracle_id": "166e5680-b8cf-47da-bcae-3591367c5fb4",
+  "name": "Vorinclex // The Grand Evolution",
+  "faces": [
+    {
+      "name": "The Grand Evolution",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 Mill ten cards. Put up to two creature cards from among the milled cards onto the battlefield.\nII \u2014 Distribute seven +1/+1 counters among any number of target creatures you control.\nIII \u2014 Until end of turn, creatures you control gain \"{1}: This creature fights target creature you don't control.\" Exile this Saga, then return it to the battlefield (front face up).",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Mill ten cards. Put up to two creature cards from among the milled cards onto the battlefield.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 10
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put up to two creature cards from among the milled cards onto the battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Distribute seven +1/+1 counters among any number of target creatures you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Distribute seven +1/+1 counters among any number of target creatures you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Until end of turn, creatures you control gain \"{1}: This creature fights target creature you don't control.\" Exile this Saga, then return it to the battlefield (front face up).",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "until end of turn, creatures you control gain \"{1}: this creature fights target creature you don't control.\" exile this saga"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Vorinclex",
+      "type_line": "Legendary Creature \u2014 Phyrexian Praetor",
+      "oracle_text": "Trample, reach\nWhen Vorinclex enters, search your library for up to two Forest cards, reveal them, put them into your hand, then shuffle.\n{6}{G}{G}: Exile Vorinclex, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Vorinclex enters, search your library for up to two Forest cards, reveal them, put them into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for up to two forest cards, reveal them, put them into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{6}{G}{G}: Exile Vorinclex, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+          "cost": "{6}{G}{G}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile vorinclex"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield transformed under its owner's control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

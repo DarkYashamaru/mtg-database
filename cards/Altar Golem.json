@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ac143b8e-f993-4989-8833-e26dc9faffa4",
+  "name": "Altar Golem",
+  "faces": [
+    {
+      "name": "Altar Golem",
+      "type_line": "Artifact Creature \u2014 Golem",
+      "oracle_text": "Trample\nAltar Golem's power and toughness are each equal to the number of creatures on the battlefield.\nThis creature doesn't untap during your untap step.\nTap five untapped creatures you control: Untap this creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Tap five untapped creatures you control: Untap this creature.",
+          "cost": "Tap five untapped creatures you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Altar Golem's power and toughness are each equal to the number of creatures on the battlefield.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Altar Golem's power and toughness are each equal to the number of creatures on the battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature doesn't untap during your untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "self",
+              "scope": "your_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

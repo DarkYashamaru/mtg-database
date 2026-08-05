@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6dd7e861-7ae2-49e6-a9ab-8fd761939e22",
+  "name": "Spring // Mind",
+  "faces": [
+    {
+      "name": "Mind",
+      "type_line": "Instant",
+      "oracle_text": "Aftermath (Cast this spell only from your graveyard. Then exile it.)\nDraw two cards.",
+      "static": [
+        {
+          "keyword": "aftermath"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Draw two cards.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spring",
+      "type_line": "Sorcery",
+      "oracle_text": "Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

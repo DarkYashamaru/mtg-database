@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c5a1516a-5e01-48c5-88c7-2178f4b2ad24",
+  "name": "Dogged Detective",
+  "faces": [
+    {
+      "name": "Dogged Detective",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "When this creature enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)\nWhenever an opponent draws their second card each turn, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an opponent draws their second card each turn, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an opponent draws their second card each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

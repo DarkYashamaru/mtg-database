@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "74a62c7b-4753-4af2-b7a1-9a4ae8988801",
+  "name": "Puresteel Paladin",
+  "faces": [
+    {
+      "name": "Puresteel Paladin",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Whenever an Equipment you control enters, you may draw a card.\nMetalcraft \u2014 Equipment you control have equip {0} as long as you control three or more artifacts.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an Equipment you control enters, you may draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Equipment"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Metalcraft \u2014 Equipment you control have equip {0} as long as you control three or more artifacts.",
+          "effects": [
+            {
+              "action": "grant_equip_cost",
+              "target": {
+                "selector": "permanents_you_control",
+                "card_types": [
+                  "Equipment"
+                ]
+              },
+              "cost": "{0}",
+              "condition": [
+                {
+                  "you_control_artifacts_gte": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

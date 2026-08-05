@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8f5ffb0b-0585-4a37-8048-eda53990d1dd",
+  "name": "Old Rutstein",
+  "faces": [
+    {
+      "name": "Old Rutstein",
+      "type_line": "Legendary Creature \u2014 Human Peasant",
+      "oracle_text": "When Old Rutstein enters and at the beginning of your upkeep, mill a card. If a land card is milled this way, create a Treasure token. If a creature card is milled this way, create a 1/1 green Insect creature token. If a noncreature, nonland card is milled this way, create a Blood token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Old Rutstein enters and at the beginning of your upkeep, mill a card. If a land card is milled this way, create a Treasure token. If a creature card is milled this way, create a 1/1 green Insect creature token. If a noncreature, nonland card is milled this way, create a Blood token.",
+          "trigger": {
+            "type": "custom",
+            "text": "When Old Rutstein enters and at the beginning of your upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "a land card is milled this way"
+                }
+              ]
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green insect creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "insect"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "a creature card is milled this way"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "nonland card is milled this way, create a blood token",
+              "condition": [
+                {
+                  "condition_text": "a noncreature"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

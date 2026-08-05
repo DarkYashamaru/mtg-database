@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a0be9bb2-3234-4c6c-b8ce-0879b1f43003",
+  "name": "Laelia, the Blade Reforged",
+  "faces": [
+    {
+      "name": "Laelia, the Blade Reforged",
+      "type_line": "Legendary Creature \u2014 Spirit Warrior",
+      "oracle_text": "Haste\nWhenever Laelia attacks, exile the top card of your library. You may play that card this turn.\nWhenever one or more cards are put into exile from your library and/or your graveyard, put a +1/+1 counter on Laelia.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Laelia attacks, exile the top card of your library. You may play that card this turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more cards are put into exile from your library and/or your graveyard, put a +1/+1 counter on Laelia.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more cards are put into exile from your library and/or your graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

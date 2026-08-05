@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "55cec4bc-3de6-4c0d-a4cc-c5a30849fbda",
+  "name": "Wildborn Preserver",
+  "faces": [
+    {
+      "name": "Wildborn Preserver",
+      "type_line": "Creature \u2014 Elf Archer",
+      "oracle_text": "Flash (You may cast this spell any time you could cast an instant.)\nReach (This creature can block creatures with flying.)\nWhenever another non-Human creature you control enters, you may pay {X}. When you do, put X +1/+1 counters on this creature.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another non-Human creature you control enters, you may pay {X}. When you do, put X +1/+1 counters on this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Non-human"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{x}",
+              "optional": true
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": "X",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fb82cd81-0e71-43ab-88f9-b1fa158f5138",
+  "name": "Zahur, Glory's Past",
+  "faces": [
+    {
+      "name": "Zahur, Glory's Past",
+      "type_line": "Legendary Creature \u2014 Zombie Cat Warrior",
+      "oracle_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nSacrifice another creature: Surveil 1. Activate only once each turn.\nMax speed \u2014 Whenever a nontoken creature you control dies, create a tapped 2/2 black Zombie creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken creature you control dies, create a tapped 2/2 black Zombie creature token.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "tapped 2/2 black Zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice another creature: Surveil 1. Activate only once each turn.",
+          "cost": "Sacrifice another creature",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)",
+          "effects": [
+            {
+              "action": "start_your_engines"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

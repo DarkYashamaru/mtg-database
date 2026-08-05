@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d37effd3-d194-4609-9994-6d70038a68f9",
+  "name": "Grizzled Angler // Grisly Anglerfish",
+  "faces": [
+    {
+      "name": "Grisly Anglerfish",
+      "type_line": "Creature \u2014 Eldrazi Fish",
+      "oracle_text": "{6}: Creatures your opponents control attack this turn if able.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{6}: Creatures your opponents control attack this turn if able.",
+          "cost": "{6}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures your opponents control attack this turn if able"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Grizzled Angler",
+      "type_line": "Creature \u2014 Human",
+      "oracle_text": "{T}: Mill two cards. Then if there is a colorless creature card in your graveyard, transform this creature. (To mill two cards, put the top two cards of your library into your graveyard.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Mill two cards. Then if there is a colorless creature card in your graveyard, transform this creature. (To mill two cards, put the top two cards of your library into your graveyard.)",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "there is a colorless creature card in your graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b4862430-e3d3-4f29-90ca-50141e36e2f1",
+  "name": "Ballista Charger",
+  "faces": [
+    {
+      "name": "Ballista Charger",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Whenever this Vehicle attacks, it deals 1 damage to any target.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle attacks, it deals 1 damage to any target.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

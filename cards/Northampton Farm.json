@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e05f1a43-16ce-4e88-b0ad-2202efb25516",
+  "name": "Northampton Farm",
+  "faces": [
+    {
+      "name": "Northampton Farm",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{1}, {T}: Exile target creature you own.\n{2}, {T}, Sacrifice this land: Return a creature card exiled with this land to the battlefield under your control. Return each other card exiled with this land to its owner's hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Exile target creature you own.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target creature you own"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}, Sacrifice this land: Return a creature card exiled with this land to the battlefield under your control. Return each other card exiled with this land to its owner's hand.",
+          "cost": "{2}, {T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return a creature card exiled with this land to the battlefield under your control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Return each other card exiled with this land to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

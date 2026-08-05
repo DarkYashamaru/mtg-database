@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "oracle_id": "180286e4-67fa-44d5-9e90-4a4e99c016a7",
+  "name": "Grub, Storied Matriarch // Grub, Notorious Auntie",
+  "faces": [
+    {
+      "name": "Grub, Notorious Auntie",
+      "type_line": "Legendary Creature \u2014 Goblin Warrior",
+      "oracle_text": "Menace\nWhenever Grub attacks, you may blight 1. If you do, create a tapped and attacking token that's a copy of the blighted creature, except it has \"At the beginning of the end step, sacrifice this token.\"\nAt the beginning of your first main phase, you may pay {B}. If you do, transform Grub.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Grub attacks, you may blight 1. If you do, create a tapped and attacking token that's a copy of the blighted creature, except it has \"At the beginning of the end step, sacrifice this token.\"",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may blight 1"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "tapped and attacking token that's a copy of the blighted creature, except it has \"at the beginning of the end step, sacrifice this token"
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your first main phase, you may pay {B}. If you do, transform Grub.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{b}",
+              "optional": true
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Grub, Storied Matriarch",
+      "type_line": "Legendary Creature \u2014 Goblin Warlock",
+      "oracle_text": "Menace\nWhenever this creature enters or transforms into Grub, Storied Matriarch, return up to one target Goblin card from your graveyard to your hand.\nAt the beginning of your first main phase, you may pay {R}. If you do, transform Grub.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or transforms into Grub, Storied Matriarch, return up to one target Goblin card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature enters or transforms into Grub"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Storied Matriarch, return up to one target Goblin card from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your first main phase, you may pay {R}. If you do, transform Grub.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{r}",
+              "optional": true
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

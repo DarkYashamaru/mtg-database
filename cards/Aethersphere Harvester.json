@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7b3e74ad-0179-480b-871c-9e3bc30a43ff",
+  "name": "Aethersphere Harvester",
+  "faces": [
+    {
+      "name": "Aethersphere Harvester",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nWhen this Vehicle enters, you get {E}{E} (two energy counters).\nPay {E}: This Vehicle gains lifelink until end of turn.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, you get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay {E}: This Vehicle gains lifelink until end of turn.",
+          "cost": "Pay {E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "this_vehicle",
+              "keyword": "lifelink"
+            }
+          ]
+        },
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

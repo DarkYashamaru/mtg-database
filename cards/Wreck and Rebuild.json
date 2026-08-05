@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7e10c141-dfb0-409b-b8c9-cdfe93b42a06",
+  "name": "Wreck and Rebuild",
+  "faces": [
+    {
+      "name": "Wreck and Rebuild",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose one \u2014\n\u2022 Destroy target artifact or enchantment.\n\u2022 Mill five cards, then you may put a land card from your graveyard onto the battlefield tapped.\nFlashback {3}{R}{G}",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Destroy target artifact or enchantment.\n\u2022 Mill five cards, then you may put a land card from your graveyard onto the battlefield tapped.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Destroy target artifact or enchantment.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_permanent",
+                    "card_types_any": [
+                      "Artifact",
+                      "Enchantment"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Mill five cards, then you may put a land card from your graveyard onto the battlefield tapped.",
+              "effects": [
+                {
+                  "action": "mill_cards",
+                  "player": "you",
+                  "amount": 5
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "you may put a land card from your graveyard onto the battlefield tapped"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Flashback {3}{R}{G}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flashback {3}{R}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

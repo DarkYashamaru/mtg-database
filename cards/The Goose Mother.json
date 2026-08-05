@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "de595f1b-3f7d-45e0-a31b-ed23e5d1ee48",
+  "name": "The Goose Mother",
+  "faces": [
+    {
+      "name": "The Goose Mother",
+      "type_line": "Legendary Creature \u2014 Bird Hydra",
+      "oracle_text": "Flying\nThe Goose Mother enters with X +1/+1 counters on it.\nWhen The Goose Mother enters, create half X Food tokens, rounded up.\nWhenever The Goose Mother attacks, you may sacrifice a Food. If you do, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When The Goose Mother enters, create half X Food tokens, rounded up.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create half X Food tokens, rounded up"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever The Goose Mother attacks, you may sacrifice a Food. If you do, draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_food",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "The Goose Mother enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "The Goose Mother enters with X +1/+1 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

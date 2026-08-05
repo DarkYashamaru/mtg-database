@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "620a2037-8bf5-48e0-af94-f4f7d3650c60",
+  "name": "Savai Thundermane",
+  "faces": [
+    {
+      "name": "Savai Thundermane",
+      "type_line": "Creature \u2014 Elemental Cat",
+      "oracle_text": "Whenever you cycle a card, you may pay {2}. When you do, this creature deals 2 damage to target creature and you gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cycle a card, you may pay {2}. When you do, this creature deals 2 damage to target creature and you gain 2 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cycle a card"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 2 damage to target creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

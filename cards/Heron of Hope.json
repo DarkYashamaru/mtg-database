@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f297648b-0dda-4c58-a3eb-fdabdfb42177",
+  "name": "Heron of Hope",
+  "faces": [
+    {
+      "name": "Heron of Hope",
+      "type_line": "Creature \u2014 Bird",
+      "oracle_text": "Flying\nIf you would gain life, you gain that much life plus 1 instead.\n{1}{W}: This creature gains lifelink until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{W}: This creature gains lifelink until end of turn.",
+          "cost": "{1}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "lifelink"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If you would gain life, you gain that much life plus 1 instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain that much life plus 1 instead",
+              "condition": [
+                {
+                  "condition_text": "you would gain life"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2f1ae834-f6b8-458c-ac0d-3510ddb85193",
+  "name": "Inherited Envelope",
+  "faces": [
+    {
+      "name": "Inherited Envelope",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, the Ring tempts you.\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, the Ring tempts you.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "ring_tempts_you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

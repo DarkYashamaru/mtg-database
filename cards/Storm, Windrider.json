@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "06e9287b-56d4-443e-97ba-b5dcdc4fa989",
+  "name": "Storm, Windrider",
+  "faces": [
+    {
+      "name": "Storm, Windrider",
+      "type_line": "Legendary Creature \u2014 Mutant Hero",
+      "oracle_text": "Flying\nCreatures with flying can't attack you or block creatures you control.\nWhenever you cast a spell that targets one or more creatures, those creatures gain flying until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that targets one or more creatures, those creatures gain flying until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "that targets one or more creatures"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "those_creatures",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures with flying can't attack you or block creatures you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures with flying can't attack you or block creatures you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

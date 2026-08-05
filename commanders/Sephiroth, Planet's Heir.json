@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6af71c5a-2c1b-4120-b3c9-c3c70d94a5c9",
+  "name": "Sephiroth, Planet's Heir",
+  "faces": [
+    {
+      "name": "Sephiroth, Planet's Heir",
+      "type_line": "Legendary Creature \u2014 Human Avatar Soldier",
+      "oracle_text": "Vigilance (Attacking doesn't cause this creature to tap.)\nWhen Sephiroth enters, creatures your opponents control get -2/-2 until end of turn.\nWhenever a creature an opponent controls dies, put a +1/+1 counter on Sephiroth.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Sephiroth enters, creatures your opponents control get -2/-2 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "creatures your opponents control get -2/-2 until end of turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature an opponent controls dies, put a +1/+1 counter on Sephiroth.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_an_opponent_controls"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

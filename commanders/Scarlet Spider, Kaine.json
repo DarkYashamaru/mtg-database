@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4ec8a5ea-b750-4711-8843-2bc98f4ce060",
+  "name": "Scarlet Spider, Kaine",
+  "faces": [
+    {
+      "name": "Scarlet Spider, Kaine",
+      "type_line": "Legendary Creature \u2014 Spider Human Hero",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen Scarlet Spider enters, you may discard a card. If you do, put a +1/+1 counter on him.\nMayhem {B/R} (You may cast this card from your graveyard for {B/R} if you discarded it this turn. Timing rules still apply.)",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Scarlet Spider enters, you may discard a card. If you do, put a +1/+1 counter on him.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Mayhem {B/R} (You may cast this card from your graveyard for {B/R} if you discarded it this turn. Timing rules still apply.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Mayhem {B/R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "11173ad3-c007-478f-bce0-d756eac07ccb",
+  "name": "Phyrexian Scriptures",
+  "faces": [
+    {
+      "name": "Phyrexian Scriptures",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Put a +1/+1 counter on up to one target creature. That creature becomes an artifact in addition to its other types.\nII \u2014 Destroy all nonartifact creatures.\nIII \u2014 Exile all opponents' graveyards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Put a +1/+1 counter on up to one target creature. That creature becomes an artifact in addition to its other types.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "up_to_one_target_creature",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "That creature becomes an artifact in addition to its other types"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Destroy all nonartifact creatures.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy all nonartifact creatures"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile all opponents' graveyards.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile all opponents' graveyards"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

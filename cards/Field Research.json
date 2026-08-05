@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bb377cf8-29ee-489e-86a9-93f4dc2ae02e",
+  "name": "Field Research",
+  "faces": [
+    {
+      "name": "Field Research",
+      "type_line": "Sorcery",
+      "oracle_text": "Kicker {2}{U} (You may pay an additional {2}{U} as you cast this spell.)\nDraw two cards. If this spell was kicked, draw three cards instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2}{U} (You may pay an additional {2}{U} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}{U}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw two cards. If this spell was kicked, draw three cards instead.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "draw three cards instead",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

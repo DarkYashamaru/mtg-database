@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2efd6494-c5e1-41de-bc6e-8490ff046cd1",
+  "name": "Spider-Man Noir",
+  "faces": [
+    {
+      "name": "Spider-Man Noir",
+      "type_line": "Legendary Creature \u2014 Spider Human Hero",
+      "oracle_text": "Menace\nWhenever a creature you control attacks alone, put a +1/+1 counter on it. Then surveil X, where X is the number of counters on it. (Look at the top X cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control attacks alone, put a +1/+1 counter on it. Then surveil X, where X is the number of counters on it. (Look at the top X cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)",
+          "trigger": {
+            "type": "attacks_alone",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then surveil X, where X is the number of counters on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

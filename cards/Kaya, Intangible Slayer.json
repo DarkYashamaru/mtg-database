@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9260ae3d-59bf-4e46-a13e-930754c3f0d2",
+  "name": "Kaya, Intangible Slayer",
+  "faces": [
+    {
+      "name": "Kaya, Intangible Slayer",
+      "type_line": "Legendary Planeswalker \u2014 Kaya",
+      "oracle_text": "Hexproof\n+2: Each opponent loses 3 life and you gain 3 life.\n0: You draw two cards. Then each opponent may scry 1.\n\u22123: Exile target creature or enchantment. If it wasn't an Aura, create a token that's a copy of it, except it's a 1/1 white Spirit creature with flying in addition to its other types.",
+      "static": [
+        {
+          "keyword": "hexproof"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+2: Each opponent loses 3 life and you gain 3 life.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 3
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "0: You draw two cards. Then each opponent may scry 1.",
+          "cost": "0",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then each opponent may scry 1"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Exile target creature or enchantment. If it wasn't an Aura, create a token that's a copy of it, except it's a 1/1 white Spirit creature with flying in addition to its other types.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target creature or enchantment"
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of it, except it's a 1/1 white spirit creature with flying in addition to its other types",
+              "condition": [
+                {
+                  "condition_text": "it wasn't an aura"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

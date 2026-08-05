@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a38f7ce1-6ccc-4fd3-9e02-631e8933c1f8",
+  "name": "Return of the Mole Man",
+  "faces": [
+    {
+      "name": "Return of the Mole Man",
+      "type_line": "Enchantment",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, you may mill two cards.\n{5}{G}, Sacrifice this enchantment: Create X 1/1 green Minion creature tokens named Moloid, where X is the number of permanent cards in your graveyard. The tokens have \"Whenever this token attacks, you may mill a card.\" Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, you may mill two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{5}{G}, Sacrifice this enchantment: Create X 1/1 green Minion creature tokens named Moloid, where X is the number of permanent cards in your graveyard. The tokens have \"Whenever this token attacks, you may mill a card.\" Activate only as a sorcery.",
+          "cost": "{5}{G}, Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Create X 1/1 green Minion creature tokens named Moloid, where X is the number of permanent cards in your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The tokens have \"Whenever this token attacks, you may mill a card.\" Activate only as a sorcery"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

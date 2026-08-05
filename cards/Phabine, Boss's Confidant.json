@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "70697ad7-d4bb-4b63-b895-bbb69e9d04e1",
+  "name": "Phabine, Boss's Confidant",
+  "faces": [
+    {
+      "name": "Phabine, Boss's Confidant",
+      "type_line": "Legendary Creature \u2014 Cat Advisor",
+      "oracle_text": "Creature tokens you control have haste.\nParley \u2014 At the beginning of combat on your turn, each player reveals the top card of their library. For each land card revealed this way, you create a 1/1 green and white Citizen creature token. Then creatures you control get +1/+1 until end of turn for each nonland card revealed this way. Then each player draws a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, each player reveals the top card of their library. For each land card revealed this way, you create a 1/1 green and white Citizen creature token. Then creatures you control get +1/+1 until end of turn for each nonland card revealed this way. Then each player draws a card.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player reveals the top card of their library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "For each land card revealed this way, you create a 1/1 green and white Citizen creature token"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then creatures you control get +1/+1 until end of turn for each nonland card revealed this way"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then each player draws a card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creature tokens you control have haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Token"
+                ]
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

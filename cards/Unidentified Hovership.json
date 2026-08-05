@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bde67dfb-706b-4942-a365-984ea6e97a2b",
+  "name": "Unidentified Hovership",
+  "faces": [
+    {
+      "name": "Unidentified Hovership",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nWhen this Vehicle enters, exile up to one target creature with toughness 5 or less.\nWhen this Vehicle leaves the battlefield, the exiled card's owner manifests dread.\nCrew 1",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, exile up to one target creature with toughness 5 or less.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target creature with toughness 5 or less"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this Vehicle leaves the battlefield, the exiled card's owner manifests dread.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "the exiled card's owner manifests dread"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

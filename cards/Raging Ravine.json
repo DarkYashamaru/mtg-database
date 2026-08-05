@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8d38194e-b607-4ff4-9c19-0e8636d463bf",
+  "name": "Raging Ravine",
+  "faces": [
+    {
+      "name": "Raging Ravine",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {R} or {G}.\n{2}{R}{G}: Until end of turn, this land becomes a 3/3 red and green Elemental creature with \"Whenever this creature attacks, put a +1/+1 counter on it.\" It's still a land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R} or {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{g}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{R}{G}: Until end of turn, this land becomes a 3/3 red and green Elemental creature with \"Whenever this creature attacks, put a +1/+1 counter on it.\" It's still a land.",
+          "cost": "{2}{R}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, this land becomes a 3/3 red and green Elemental creature with \"Whenever this creature attacks, put a +1/+1 counter on it.\" It's still a land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "02598a35-1b11-4abe-89cd-fc44c8c36c15",
+  "name": "Winota, Joiner of Forces",
+  "faces": [
+    {
+      "name": "Winota, Joiner of Forces",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "Whenever a non-Human creature you control attacks, look at the top six cards of your library. You may put a Human creature card from among them onto the battlefield tapped and attacking. It gains indestructible until end of turn. Put the rest of the cards on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a non-Human creature you control attacks, look at the top six cards of your library. You may put a Human creature card from among them onto the battlefield tapped and attacking. It gains indestructible until end of turn. Put the rest of the cards on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Non-human"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 6
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put a Human creature card from among them onto the battlefield tapped and attacking"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "indestructible"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put the rest of the cards on the bottom of your library in a random order"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3a07e22c-71cd-4723-b07e-0ff02009a878",
+  "name": "Steel Wrecking Ball",
+  "faces": [
+    {
+      "name": "Steel Wrecking Ball",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, it deals 5 damage to target creature.\n{1}{R}, Discard this card: Destroy target artifact.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, it deals 5 damage to target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 5 damage to target creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{R}, Discard this card: Destroy target artifact.",
+          "cost": "{1}{R}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_artifact"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4563ae4b-6226-4cc9-abde-582d0ab83433",
+  "name": "Gandalf, Westward Voyager",
+  "faces": [
+    {
+      "name": "Gandalf, Westward Voyager",
+      "type_line": "Legendary Creature \u2014 Avatar Wizard",
+      "oracle_text": "Whenever you cast a spell with mana value 5 or greater, each opponent reveals the top card of their library. If any of those cards shares a card type with that spell, copy that spell, you may choose new targets for the copy, and each opponent draws a card. Otherwise, you draw a card. (A copy of a permanent spell becomes a token.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell with mana value 5 or greater, each opponent reveals the top card of their library. If any of those cards shares a card type with that spell, copy that spell, you may choose new targets for the copy, and each opponent draws a card. Otherwise, you draw a card. (A copy of a permanent spell becomes a token.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 5
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent reveals the top card of their library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy that spell, you may choose new targets for the copy, and each opponent draws a card",
+              "condition": [
+                {
+                  "condition_text": "any of those cards shares a card type with that spell"
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

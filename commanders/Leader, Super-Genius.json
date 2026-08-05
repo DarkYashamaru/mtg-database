@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bec686dd-a9ea-4db5-bc20-8e40420b9a9b",
+  "name": "Leader, Super-Genius",
+  "faces": [
+    {
+      "name": "Leader, Super-Genius",
+      "type_line": "Legendary Creature \u2014 Gamma Scientist Villain",
+      "oracle_text": "If a creature you control would connive, instead you draw a card, then that creature connives.\nAt the beginning of combat on your turn, target creature you control connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, target creature you control connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "connive",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control",
+                    "card_types": [
+                      "Creature"
+                    ],
+                    "subtypes": [
+                      "Target"
+                    ]
+                  },
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If a creature you control would connive, instead you draw a card, then that creature connives.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "instead you draw a card",
+              "condition": [
+                {
+                  "condition_text": "a creature you control would connive"
+                }
+              ]
+            },
+            {
+              "action": "connive",
+              "target": "that_creature",
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "that_creature",
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

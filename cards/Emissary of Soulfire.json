@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bdacd7a4-3d14-45eb-85a6-33ee711b34af",
+  "name": "Emissary of Soulfire",
+  "faces": [
+    {
+      "name": "Emissary of Soulfire",
+      "type_line": "Creature \u2014 Djinn Monk",
+      "oracle_text": "When this creature enters, you get {E}{E}{E} (three energy counters).\nPay {E}{E}: Put an exalted counter on target creature you control. Activate only as a sorcery. (Whenever a creature you control attacks alone, it gets +1/+1 until end of turn for each instance of exalted among permanents you control.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E}{E} (three energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay {E}{E}: Put an exalted counter on target creature you control. Activate only as a sorcery. (Whenever a creature you control attacks alone, it gets +1/+1 until end of turn for each instance of exalted among permanents you control.)",
+          "cost": "Pay {E}{E}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put an exalted counter on target creature you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

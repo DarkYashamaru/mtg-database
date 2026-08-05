@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "43e7b834-d3a9-4297-bf79-2dab5507bebe",
+  "name": "Urgoros, the Empty One",
+  "faces": [
+    {
+      "name": "Urgoros, the Empty One",
+      "type_line": "Legendary Creature \u2014 Specter",
+      "oracle_text": "Flying\nWhenever Urgoros deals combat damage to a player, that player discards a card at random. If the player can't, you draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Urgoros deals combat damage to a player, that player discards a card at random. If the player can't, you draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player discards a card at random"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "the player can't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

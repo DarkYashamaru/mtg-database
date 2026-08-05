@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0edc8ad3-2920-4b25-8a86-98ce216111d1",
+  "name": "Sorcerer's Wand",
+  "faces": [
+    {
+      "name": "Sorcerer's Wand",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has \"{T}: This creature deals 1 damage to target player or planeswalker. If this creature is a Wizard, it deals 2 damage instead.\"\nEquip {3}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equipped creature has \"{T}: This creature deals 1 damage to target player or planeswalker. If this creature is a Wizard, it deals 2 damage instead.\"",
+          "cost": "Equipped creature has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals 1 damage to target player or planeswalker"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it deals 2 damage instead",
+              "condition": [
+                {
+                  "condition_text": "this creature is a wizard"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

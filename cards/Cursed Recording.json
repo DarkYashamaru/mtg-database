@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9adc3750-0ddb-4f2c-a0e7-131e59d4cba5",
+  "name": "Cursed Recording",
+  "faces": [
+    {
+      "name": "Cursed Recording",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever you cast an instant or sorcery spell, put a time counter on this artifact. Then if there are seven or more time counters on it, remove those counters and it deals 20 damage to you.\n{T}: When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, put a time counter on this artifact. Then if there are seven or more time counters on it, remove those counters and it deals 20 damage to you.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a time counter on this artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove those counters and it deals 20 damage to you",
+              "condition": [
+                {
+                  "condition_text": "there are seven or more time counters on it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "cast_spell",
+                "subject": "you"
+              },
+              "condition": [
+                {
+                  "spell_types_any": [
+                    "instant",
+                    "sorcery"
+                  ]
+                },
+                {
+                  "timing": "next_time_this_turn"
+                }
+              ],
+              "effects": [
+                {
+                  "action": "copy_spell",
+                  "object": "triggering_spell"
+                }
+              ]
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

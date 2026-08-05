@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dcc55415-216e-4e18-83d6-43f301359f84",
+  "name": "Aspect of Mongoose",
+  "faces": [
+    {
+      "name": "Aspect of Mongoose",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature has shroud. (It can't be the target of spells or abilities.)\nWhen this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this Aura is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has shroud. (It can't be the target of spells or abilities.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has shroud"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

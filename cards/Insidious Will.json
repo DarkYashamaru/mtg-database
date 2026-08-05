@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8088d110-2314-45c3-b6ee-3f55d1f388e4",
+  "name": "Insidious Will",
+  "faces": [
+    {
+      "name": "Insidious Will",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Counter target spell.\n\u2022 You may choose new targets for target spell.\n\u2022 Copy target instant or sorcery spell. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Counter target spell.\n\u2022 You may choose new targets for target spell.\n\u2022 Copy target instant or sorcery spell. You may choose new targets for the copy.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Counter target spell.",
+              "effects": [
+                {
+                  "action": "counter_spell",
+                  "target": "target_spell"
+                }
+              ]
+            },
+            {
+              "raw_text": "You may choose new targets for target spell.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "You may choose new targets for target spell"
+                }
+              ]
+            },
+            {
+              "raw_text": "Copy target instant or sorcery spell. You may choose new targets for the copy.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Copy target instant or sorcery spell"
+                },
+                {
+                  "action": "allow_new_targets",
+                  "object": "copied_spell",
+                  "optional": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

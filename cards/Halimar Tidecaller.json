@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3aa709b5-0465-4103-aea1-8cfb15086f76",
+  "name": "Halimar Tidecaller",
+  "faces": [
+    {
+      "name": "Halimar Tidecaller",
+      "type_line": "Creature \u2014 Human Wizard Ally",
+      "oracle_text": "When this creature enters, you may return target card with awaken from your graveyard to your hand.\nLand creatures you control have flying.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may return target card with awaken from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return target card with awaken from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Land creatures you control have flying.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "permanents_you_control",
+                "card_types": [
+                  "Land",
+                  "Creature"
+                ]
+              },
+              "keywords": [
+                "flying"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

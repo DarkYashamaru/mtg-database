@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b5f5d6e3-e72e-40a5-a5c7-410617b6f933",
+  "name": "Rampant Rejuvenator",
+  "faces": [
+    {
+      "name": "Rampant Rejuvenator",
+      "type_line": "Creature \u2014 Plant Hydra",
+      "oracle_text": "This creature enters with two +1/+1 counters on it.\nWhen this creature dies, search your library for up to X basic land cards, where X is this creature's power, put them onto the battlefield, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, search your library for up to X basic land cards, where X is this creature's power, put them onto the battlefield, then shuffle.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for up to x basic land cards, where x is this creature's power, put them onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with two +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

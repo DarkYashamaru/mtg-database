@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0068a341-92a5-470e-a565-9ace69eb04a8",
+  "name": "Warden of the First Tree",
+  "faces": [
+    {
+      "name": "Warden of the First Tree",
+      "type_line": "Creature \u2014 Human",
+      "oracle_text": "{1}{W/B}: This creature becomes a Human Warrior with base power and toughness 3/3.\n{2}{W/B}{W/B}: If this creature is a Warrior, it becomes a Human Spirit Warrior with trample and lifelink.\n{3}{W/B}{W/B}{W/B}: If this creature is a Spirit, put five +1/+1 counters on it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{W/B}: This creature becomes a Human Warrior with base power and toughness 3/3.",
+          "cost": "{1}{W/B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature becomes a Human Warrior with base power and toughness 3/3"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{W/B}{W/B}: If this creature is a Warrior, it becomes a Human Spirit Warrior with trample and lifelink.",
+          "cost": "{2}{W/B}{W/B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it becomes a human spirit warrior with trample and lifelink",
+              "condition": [
+                {
+                  "condition_text": "this creature is a warrior"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{W/B}{W/B}{W/B}: If this creature is a Spirit, put five +1/+1 counters on it.",
+          "cost": "{3}{W/B}{W/B}{W/B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 5,
+              "condition": [
+                {
+                  "condition_text": "this creature is a spirit"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

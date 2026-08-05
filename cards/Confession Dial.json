@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6316158c-2f66-4dc4-b78c-c6ff7c39bb77",
+  "name": "Confession Dial",
+  "faces": [
+    {
+      "name": "Confession Dial",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, surveil 3.\n{T}: Target legendary creature card in your graveyard gains escape until end of turn. The escape cost is equal to its mana cost plus exile three other cards from your graveyard. (You may cast it from your graveyard for its escape cost this turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, surveil 3.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Target legendary creature card in your graveyard gains escape until end of turn. The escape cost is equal to its mana cost plus exile three other cards from your graveyard. (You may cast it from your graveyard for its escape cost this turn.)",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_legendary_creature_card_in_you_control_graveyard",
+              "keyword": "escape"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The escape cost is equal to its mana cost plus exile three other cards from your graveyard"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

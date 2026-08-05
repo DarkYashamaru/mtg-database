@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6804e329-800b-4aa4-9a00-b9a1f4b9537b",
+  "name": "Malboro",
+  "faces": [
+    {
+      "name": "Malboro",
+      "type_line": "Creature \u2014 Plant Horror",
+      "oracle_text": "Bad Breath \u2014 When this creature enters, each opponent discards a card, loses 2 life, and exiles the top three cards of their library.\nSwampcycling {2} ({2}, Discard this card: Search your library for a Swamp card, reveal it, put it into your hand, then shuffle.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, each opponent discards a card, loses 2 life, and exiles the top three cards of their library.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent discards a card, loses 2 life, and exiles the top three cards of their library"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Swampcycling {2} ({2}, Discard this card: Search your library for a Swamp card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Swampcycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a swamp card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

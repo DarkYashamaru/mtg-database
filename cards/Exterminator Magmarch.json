@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f42c0b5b-7a86-4f79-a5d3-859ec25ed870",
+  "name": "Exterminator Magmarch",
+  "faces": [
+    {
+      "name": "Exterminator Magmarch",
+      "type_line": "Artifact Creature \u2014 Phyrexian Construct",
+      "oracle_text": "Whenever you cast an instant or sorcery spell that targets only a single nonland permanent an opponent controls, if another opponent controls one or more nonland permanents that spell could target, choose one of those permanents. Copy that spell. The copy targets the chosen permanent.\n{1}{B}: Regenerate this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell that targets only a single nonland permanent an opponent controls, if another opponent controls one or more nonland permanents that spell could target, choose one of those permanents. Copy that spell. The copy targets the chosen permanent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            },
+            {
+              "condition_text": "that targets only a single nonland permanent an opponent controls"
+            },
+            {
+              "condition_text": "another opponent controls one or more nonland permanents that spell could target"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose one of those permanents"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Copy that spell"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The copy targets the chosen permanent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}: Regenerate this creature.",
+          "cost": "{1}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9cd8ca01-e8a9-47ea-8899-b016a2dcaea8",
+  "name": "Infectious Bloodlust",
+  "faces": [
+    {
+      "name": "Infectious Bloodlust",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +2/+1, has haste, and attacks each combat if able.\nWhen enchanted creature dies, you may search your library for a card named Infectious Bloodlust, reveal it, put it into your hand, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, you may search your library for a card named Infectious Bloodlust, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a card named infectious bloodlust, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+1, has haste, and attacks each combat if able.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +2/+1, has haste, and attacks each combat if able"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

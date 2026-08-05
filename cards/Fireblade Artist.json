@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52630eaf-995e-4d08-be99-888a38b598b2",
+  "name": "Fireblade Artist",
+  "faces": [
+    {
+      "name": "Fireblade Artist",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "Haste\nAt the beginning of your upkeep, you may sacrifice a creature. When you do, this creature deals 2 damage to target opponent or planeswalker.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may sacrifice a creature. When you do, this creature deals 2 damage to target opponent or planeswalker.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 2 damage to target opponent or planeswalker",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5ded56df-c7d5-4043-85df-410f47219faa",
+  "name": "Corpseberry Cultivator",
+  "faces": [
+    {
+      "name": "Corpseberry Cultivator",
+      "type_line": "Creature \u2014 Squirrel Warlock",
+      "oracle_text": "At the beginning of combat on your turn, you may forage. (Exile three cards from your graveyard or sacrifice a Food.)\nWhenever you forage, put a +1/+1 counter on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, you may forage. (Exile three cards from your graveyard or sacrifice a Food.)",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may forage"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you forage, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you forage"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

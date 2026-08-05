@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0f2335bf-6a13-4483-997a-fd19d30c4d48",
+  "name": "S.H.I.E.L.D. Helicarrier",
+  "faces": [
+    {
+      "name": "S.H.I.E.L.D. Helicarrier",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nWhen this Vehicle enters, create two 1/1 white Soldier creature tokens.\nCrew 6 (Tap any number of creatures you control with total power 6 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, create two 1/1 white Soldier creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 white Soldier creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 6 (Tap any number of creatures you control with total power 6 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 6,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 6
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3c1ef404-e2c6-486d-a5a2-d5779c71d498",
+  "name": "Archdruid's Charm",
+  "faces": [
+    {
+      "name": "Archdruid's Charm",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Search your library for a creature or land card and reveal it. Put it onto the battlefield tapped if it's a land card. Otherwise, put it into your hand. Then shuffle.\n\u2022 Put a +1/+1 counter on target creature you control. It deals damage equal to its power to target creature you don't control.\n\u2022 Exile target artifact or enchantment.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Search your library for a creature or land card and reveal it. Put it onto the battlefield tapped if it's a land card. Otherwise, put it into your hand. Then shuffle.\n\u2022 Put a +1/+1 counter on target creature you control. It deals damage equal to its power to target creature you don't control.\n\u2022 Exile target artifact or enchantment.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Search your library for a creature or land card and reveal it. Put it onto the battlefield tapped if it's a land card. Otherwise, put it into your hand. Then shuffle.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Search your library for a creature or land card and reveal it"
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "Put it onto the battlefield tapped if it's a land card"
+                },
+                {
+                  "action": "move_card",
+                  "object": "it",
+                  "destination_zone": "hand",
+                  "condition": [
+                    {
+                      "not": {
+                        "zone_count": {
+                          "zone": "hand",
+                          "owner": "you",
+                          "count_eq": 0
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "action": "shuffle_library",
+                  "player": "you"
+                }
+              ]
+            },
+            {
+              "raw_text": "Put a +1/+1 counter on target creature you control. It deals damage equal to its power to target creature you don't control.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control",
+                    "card_types": [
+                      "Creature"
+                    ],
+                    "subtypes": [
+                      "Target"
+                    ]
+                  },
+                  "amount": 1
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "It deals damage equal to its power to target creature you don't control"
+                }
+              ]
+            },
+            {
+              "raw_text": "Exile target artifact or enchantment.",
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": {
+                    "selector": "target_permanent",
+                    "card_types_any": [
+                      "Artifact",
+                      "Enchantment"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

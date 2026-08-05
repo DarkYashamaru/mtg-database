@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a7c96442-706b-4fd8-9b38-052872dafe58",
+  "name": "Throne of the Grim Captain // The Grim Captain",
+  "faces": [
+    {
+      "name": "The Grim Captain",
+      "type_line": "Legendary Creature \u2014 Skeleton Spirit Pirate",
+      "oracle_text": "Menace, trample, lifelink, hexproof\nWhenever The Grim Captain attacks, each opponent sacrifices a nonland permanent of their choice. Then you may put an exiled creature card used to craft The Grim Captain onto the battlefield under your control tapped and attacking.",
+      "static": [
+        {
+          "keyword": "menace"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "lifelink"
+        },
+        {
+          "keyword": "hexproof"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever The Grim Captain attacks, each opponent sacrifices a nonland permanent of their choice. Then you may put an exiled creature card used to craft The Grim Captain onto the battlefield under your control tapped and attacking.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent sacrifices a nonland permanent of their choice"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may put an exiled creature card used to craft The Grim Captain onto the battlefield under your control tapped and attacking"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Throne of the Grim Captain",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "{T}: Mill two cards.\nCraft with a Dinosaur, a Merfolk, a Pirate, and a Vampire {4} ({4}, Exile this artifact, Exile the four from among permanents you control and/or cards in your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Mill two cards.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Craft with a Dinosaur, a Merfolk, a Pirate, and a Vampire {4} ({4}, Exile this artifact, Exile the four from among permanents you control and/or cards in your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+          "cost": "Craft with a Dinosaur, a Merfolk, a Pirate, and a Vampire {4} ({4}, Exile this artifact, Exile the four from among permanents you control and/or cards in your graveyard",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "battlefield",
+              "controller": "its_owner",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

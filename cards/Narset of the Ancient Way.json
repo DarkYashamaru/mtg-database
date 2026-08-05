@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b7ac6e89-941f-4ad9-a437-38ec38ec5263",
+  "name": "Narset of the Ancient Way",
+  "faces": [
+    {
+      "name": "Narset of the Ancient Way",
+      "type_line": "Legendary Planeswalker \u2014 Narset",
+      "oracle_text": "+1: You gain 2 life. Add {U}, {R}, or {W}. Spend this mana only to cast a noncreature spell.\n\u22122: Draw a card, then you may discard a card. When you discard a nonland card this way, Narset deals damage equal to that card's mana value to target creature or planeswalker.\n\u22126: You get an emblem with \"Whenever you cast a noncreature spell, this emblem deals 2 damage to any target.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: You gain 2 life. Add {U}, {R}, or {W}. Spend this mana only to cast a noncreature spell.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Add {U}, {R}, or {W}"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "subtypes_all": [
+                    "Noncreature"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Draw a card, then you may discard a card. When you discard a nonland card this way, Narset deals damage equal to that card's mana value to target creature or planeswalker.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "When you discard a nonland card this way, Narset deals damage equal to that card's mana value to target creature or planeswalker"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: You get an emblem with \"Whenever you cast a noncreature spell, this emblem deals 2 damage to any target.\"",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "you_get_an_emblem_with_whenever_you_cast_a_noncreature_spell_this_emblem",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

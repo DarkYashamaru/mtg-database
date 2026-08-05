@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "oracle_id": "486bb9a5-73f1-4cec-b097-fb07ac80b72e",
+  "name": "Ojer Taq, Deepest Foundation // Temple of Civilization",
+  "faces": [
+    {
+      "name": "Ojer Taq, Deepest Foundation",
+      "type_line": "Legendary Creature \u2014 God",
+      "oracle_text": "Vigilance\nIf one or more creature tokens would be created under your control, three times that many of those tokens are created instead.\nWhen Ojer Taq dies, return it to the battlefield tapped and transformed under its owner's control.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Ojer Taq dies, return it to the battlefield tapped and transformed under its owner's control.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield tapped and transformed under its owner's control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If one or more creature tokens would be created under your control, three times that many of those tokens are created instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "three times that many of those tokens are created instead",
+              "condition": [
+                {
+                  "condition_text": "one or more creature tokens would be created under your control"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Temple of Civilization",
+      "type_line": "Land",
+      "oracle_text": "(Transforms from Ojer Taq, Deepest Foundation.)\n{T}: Add {W}.\n{2}{W}, {T}: Transform this land. Activate only if you attacked with three or more creatures this turn and only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{W}, {T}: Transform this land. Activate only if you attacked with three or more creatures this turn and only as a sorcery.",
+          "cost": "{2}{W}, {T}",
+          "condition": [
+            {
+              "condition_text": "you attacked with three or more creatures this turn and only as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "this_land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

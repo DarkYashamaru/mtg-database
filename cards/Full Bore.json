@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4b96d003-d3b4-4181-9f50-06a3e6eb1916",
+  "name": "Full Bore",
+  "faces": [
+    {
+      "name": "Full Bore",
+      "type_line": "Instant",
+      "oracle_text": "Target creature you control gets +3/+2 until end of turn. If that creature was cast for its warp cost, it also gains trample and haste until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature you control gets +3/+2 until end of turn. If that creature was cast for its warp cost, it also gains trample and haste until end of turn.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "power_delta": 3,
+              "toughness_delta": 2
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "it_also",
+              "keyword": "trample_and_haste",
+              "condition": [
+                {
+                  "condition_text": "that creature was cast for its warp cost"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3fad7072-21e3-446e-a28f-615038c8bfea",
+  "name": "Sidisi, Brood Tyrant",
+  "faces": [
+    {
+      "name": "Sidisi, Brood Tyrant",
+      "type_line": "Legendary Creature \u2014 Snake Shaman",
+      "oracle_text": "Whenever Sidisi enters or attacks, mill three cards.\nWhenever one or more creature cards are put into your graveyard from your library, create a 2/2 black Zombie creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Sidisi enters or attacks, mill three cards.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more creature cards are put into your graveyard from your library, create a 2/2 black Zombie creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more creature cards are put into your graveyard from your library"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black Zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

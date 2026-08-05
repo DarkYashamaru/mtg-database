@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4da49285-e577-487f-9997-ba49f2b5753e",
+  "name": "Haradrim Spearmaster",
+  "faces": [
+    {
+      "name": "Haradrim Spearmaster",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Reach\nAt the beginning of combat on your turn, another target creature you control gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, another target creature you control gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

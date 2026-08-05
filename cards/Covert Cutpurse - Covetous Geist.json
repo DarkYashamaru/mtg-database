@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5d0b8dc6-f4b6-4650-805d-4240d4a4ab82",
+  "name": "Covert Cutpurse // Covetous Geist",
+  "faces": [
+    {
+      "name": "Covert Cutpurse",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "When this creature enters, destroy target creature you don't control that was dealt damage this turn.\nDisturb {4}{B} (You may cast this card from your graveyard transformed for its disturb cost.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, destroy target creature you don't control that was dealt damage this turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target creature you don't control that was dealt damage this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disturb {4}{B} (You may cast this card from your graveyard transformed for its disturb cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disturb {4}{B}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Covetous Geist",
+      "type_line": "Creature \u2014 Spirit Rogue",
+      "oracle_text": "Flying, deathtouch\nIf Covetous Geist would be put into a graveyard from anywhere, exile it instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If Covetous Geist would be put into a graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "covetous geist would be put into a graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "736892cb-a34b-4bb9-b56c-e26e3db207a2",
+  "name": "Mana Vault",
+  "faces": [
+    {
+      "name": "Mana Vault",
+      "type_line": "Artifact",
+      "oracle_text": "This artifact doesn't untap during your untap step.\nAt the beginning of your upkeep, you may pay {4}. If you do, untap this artifact.\nAt the beginning of your draw step, if this artifact is tapped, it deals 1 damage to you.\n{T}: Add {C}{C}{C}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may pay {4}. If you do, untap this artifact.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{4}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap this artifact",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your draw step, if this artifact is tapped, it deals 1 damage to you.",
+          "trigger": {
+            "type": "beginning_of_your_draw_step"
+          },
+          "condition": [
+            {
+              "condition_text": "this artifact is tapped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 1 damage to you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}{C}{C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {C}{C}{C}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This artifact doesn't untap during your untap step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact doesn't untap during your untap step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

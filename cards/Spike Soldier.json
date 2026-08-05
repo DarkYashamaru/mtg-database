@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a34d1845-e02f-4795-b445-d73366c2baea",
+  "name": "Spike Soldier",
+  "faces": [
+    {
+      "name": "Spike Soldier",
+      "type_line": "Creature \u2014 Spike Soldier",
+      "oracle_text": "This creature enters with three +1/+1 counters on it.\n{2}, Remove a +1/+1 counter from this creature: Put a +1/+1 counter on target creature.\nRemove a +1/+1 counter from this creature: This creature gets +2/+2 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, Remove a +1/+1 counter from this creature: Put a +1/+1 counter on target creature.",
+          "cost": "{2}, Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Remove a +1/+1 counter from this creature: This creature gets +2/+2 until end of turn.",
+          "cost": "Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with three +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

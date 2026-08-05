@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c21d3360-8be0-477e-a592-7e64a76570d3",
+  "name": "Frenetic Efreet",
+  "faces": [
+    {
+      "name": "Frenetic Efreet",
+      "type_line": "Creature \u2014 Efreet",
+      "oracle_text": "Flying\n{0}: Flip a coin. If you win the flip, this creature phases out. If you lose the flip, sacrifice this creature. (While it's phased out, it's treated as though it doesn't exist. It phases in before you untap during your next untap step.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{0}: Flip a coin. If you win the flip, this creature phases out. If you lose the flip, sacrifice this creature. (While it's phased out, it's treated as though it doesn't exist. It phases in before you untap during your next untap step.)",
+          "cost": "{0}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature phases out",
+              "condition": [
+                {
+                  "condition_text": "you win the flip"
+                }
+              ]
+            },
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "75a4ddf5-1b3c-4dde-a6e4-4346e46cebf1",
+  "name": "Druidic Satchel",
+  "faces": [
+    {
+      "name": "Druidic Satchel",
+      "type_line": "Artifact",
+      "oracle_text": "{2}, {T}: Reveal the top card of your library. If it's a creature card, create a 1/1 green Saproling creature token. If it's a land card, put that card onto the battlefield under your control. If it's a noncreature, nonland card, you gain 2 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}: Reveal the top card of your library. If it's a creature card, create a 1/1 green Saproling creature token. If it's a land card, put that card onto the battlefield under your control. If it's a noncreature, nonland card, you gain 2 life.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green saproling creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "saproling"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "it's a creature card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card onto the battlefield under your control",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "nonland card, you gain 2 life",
+              "condition": [
+                {
+                  "condition_text": "it's a noncreature"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

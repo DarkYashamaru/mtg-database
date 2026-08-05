@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2c18d692-612c-4d43-b5dd-bd2bff37bbcb",
+  "name": "Lorehold Pledgemage",
+  "faces": [
+    {
+      "name": "Lorehold Pledgemage",
+      "type_line": "Creature \u2014 Kor Shaman",
+      "oracle_text": "First strike\nMagecraft \u2014 Whenever you cast or copy an instant or sorcery spell, this creature gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast or copy an instant or sorcery spell, this creature gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "or_copy_an_instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

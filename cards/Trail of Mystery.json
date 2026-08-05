@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0e09aaba-5c32-4a45-8a07-b69e873510ef",
+  "name": "Trail of Mystery",
+  "faces": [
+    {
+      "name": "Trail of Mystery",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a face-down creature you control enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.\nWhenever a permanent you control is turned face up, if it's a creature, it gets +2/+2 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a face-down creature you control enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Face-down"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a permanent you control is turned face up, if it's a creature, it gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Permanent"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "it's a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

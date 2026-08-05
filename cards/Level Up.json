@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "88cd43ce-b168-45a4-8d29-6cac5ab42857",
+  "name": "Level Up",
+  "faces": [
+    {
+      "name": "Level Up",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, put a +1/+1 counter on enchanted creature.\nEnchanted creature has \"Whenever this creature attacks, double the number of +1/+1 counters on it. Then if it has power 10 or greater, draw a card.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, put a +1/+1 counter on enchanted creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "enchanted_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has \"Whenever this creature attacks, double the number of +1/+1 counters on it. Then if it has power 10 or greater, draw a card.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has \"Whenever this creature attacks, double the number of +1/+1 counters on it"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it has power 10 or greater"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "798a4a6f-7443-4e8e-afcb-0a694fdfcbb3",
+  "name": "Liberator, Urza's Battlethopter",
+  "faces": [
+    {
+      "name": "Liberator, Urza's Battlethopter",
+      "type_line": "Legendary Artifact Creature \u2014 Thopter",
+      "oracle_text": "Flash\nFlying\nYou may cast colorless spells and artifact spells as though they had flash.\nWhenever you cast a spell, if the amount of mana spent to cast that spell is greater than Liberator's power, put a +1/+1 counter on Liberator.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, if the amount of mana spent to cast that spell is greater than Liberator's power, put a +1/+1 counter on Liberator.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "the amount of mana spent to cast that spell is greater than Liberator's power"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may cast colorless spells and artifact spells as though they had flash.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast colorless spells and artifact spells as though they had flash"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

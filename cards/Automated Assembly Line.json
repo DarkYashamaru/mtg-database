@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6e24a5bd-0ce3-4dc1-98c6-60d527bfdcfd",
+  "name": "Automated Assembly Line",
+  "faces": [
+    {
+      "name": "Automated Assembly Line",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever one or more artifact creatures you control deal combat damage to a player, you get {E} (an energy counter).\nPay {E}{E}{E}: Create a tapped 3/3 colorless Robot artifact creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more artifact creatures you control deal combat damage to a player, you get {E} (an energy counter).",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Artifact",
+                "Creature"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get {E}"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay {E}{E}{E}: Create a tapped 3/3 colorless Robot artifact creature token.",
+          "cost": "Pay {E}{E}{E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "tapped 3/3 colorless Robot artifact creature token",
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Robot",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

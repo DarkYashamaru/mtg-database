@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d55cb52d-b35c-4602-a518-cd51f155a2d1",
+  "name": "Human Torch",
+  "faces": [
+    {
+      "name": "Human Torch",
+      "type_line": "Legendary Creature \u2014 Human Hero",
+      "oracle_text": "At the beginning of combat on your turn, if you've cast a noncreature spell this turn, Human Torch gains flying, double strike, and haste until end of turn.\nWhenever Human Torch attacks, you may pay {R}{G}{W}{U}. If you do, until end of turn, whenever he deals combat damage to an opponent, he deals that much damage to each other opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if you've cast a noncreature spell this turn, Human Torch gains flying, double strike, and haste until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you've cast a noncreature spell this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Human Torch gains flying, double strike, and haste until end of turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Human Torch attacks, you may pay {R}{G}{W}{U}. If you do, until end of turn, whenever he deals combat damage to an opponent, he deals that much damage to each other opponent.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {R}{G}{W}{U}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "until end of turn, whenever he deals combat damage to an opponent, he deals that much damage to each other opponent",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

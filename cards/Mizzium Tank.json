@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "60957bfd-2460-429a-a7a7-d99424946f83",
+  "name": "Mizzium Tank",
+  "faces": [
+    {
+      "name": "Mizzium Tank",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Trample\nWhenever you cast a noncreature spell, this Vehicle becomes an artifact creature and gets +1/+1 until end of turn.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, this Vehicle becomes an artifact creature and gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "this_vehicle_becomes_an_artifact_creature_and",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

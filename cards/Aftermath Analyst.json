@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "374e54d8-8e73-4268-9dde-c28c77bbbf32",
+  "name": "Aftermath Analyst",
+  "faces": [
+    {
+      "name": "Aftermath Analyst",
+      "type_line": "Creature \u2014 Elf Detective",
+      "oracle_text": "When this creature enters, mill three cards. (Put the top three cards of your library into your graveyard.)\n{3}{G}, Sacrifice this creature: Return all land cards from your graveyard to the battlefield tapped.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, mill three cards. (Put the top three cards of your library into your graveyard.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{G}, Sacrifice this creature: Return all land cards from your graveyard to the battlefield tapped.",
+          "cost": "{3}{G}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return all land cards from your graveyard to the battlefield tapped"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

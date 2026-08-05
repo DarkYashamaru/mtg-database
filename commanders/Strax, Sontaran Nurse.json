@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ffde2558-2168-4b40-a31a-86d160bdb289",
+  "name": "Strax, Sontaran Nurse",
+  "faces": [
+    {
+      "name": "Strax, Sontaran Nurse",
+      "type_line": "Legendary Creature \u2014 Alien Cleric",
+      "oracle_text": "Vigilance, trample\nGrenades! \u2014 {2}, {T}, Sacrifice an artifact: Choose a player at random. When you do, Strax fights another target creature that player controls.\nGlory of Battle \u2014 Whenever Strax deals damage to a creature, put a +1/+1 counter on Strax.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Strax deals damage to a creature, put a +1/+1 counter on Strax.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever Strax deals damage to a creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Grenades! \u2014 {2}, {T}, Sacrifice an artifact: Choose a player at random. When you do, Strax fights another target creature that player controls.",
+          "cost": "Grenades! \u2014 {2}, {T}, Sacrifice an artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose a player at random"
+            },
+            {
+              "action": "custom_effect",
+              "text": "strax fights another target creature that player controls",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

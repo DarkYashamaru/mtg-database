@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "469f25de-c180-47e9-9b1b-e23269139bbd",
+  "name": "Riveteers Requisitioner",
+  "faces": [
+    {
+      "name": "Riveteers Requisitioner",
+      "type_line": "Creature \u2014 Lizard Rogue",
+      "oracle_text": "When this creature dies, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nBlitz {2}{R} (If you cast this spell for its blitz cost, it gains haste and \"When this creature dies, draw a card.\" Sacrifice it at the beginning of the next end step.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Blitz {2}{R} (If you cast this spell for its blitz cost, it gains haste and \"When this creature dies, draw a card.\" Sacrifice it at the beginning of the next end step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Blitz {2}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

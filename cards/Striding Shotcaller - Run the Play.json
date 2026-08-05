@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "10389ff7-2ea4-4413-90cc-0e3ca268c64d",
+  "name": "Striding Shotcaller // Run the Play",
+  "faces": [
+    {
+      "name": "Run the Play",
+      "type_line": "Sorcery",
+      "oracle_text": "Put a +1/+1 counter on each of up to X target creatures. Those creatures gain flying until end of turn. Draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Put a +1/+1 counter on each of up to X target creatures. Those creatures gain flying until end of turn. Draw a card.",
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "each_of_up_to_x_target_creatures",
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "those_creatures",
+              "keyword": "flying"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Striding Shotcaller",
+      "type_line": "Creature \u2014 Troll Druid",
+      "oracle_text": "Reach\nWhenever one or more creatures you control deal combat damage to a player, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control deal combat damage to a player, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature becomes prepared"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

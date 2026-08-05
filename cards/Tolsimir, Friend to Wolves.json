@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3cef501b-5ce1-4699-89a5-3949f7e65bf1",
+  "name": "Tolsimir, Friend to Wolves",
+  "faces": [
+    {
+      "name": "Tolsimir, Friend to Wolves",
+      "type_line": "Legendary Creature \u2014 Elf Scout",
+      "oracle_text": "When Tolsimir enters, create Voja, Friend to Elves, a legendary 3/3 green and white Wolf creature token.\nWhenever a Wolf you control enters, you gain 3 life and that creature fights up to one target creature you don't control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Tolsimir enters, create Voja, Friend to Elves, a legendary 3/3 green and white Wolf creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Voja, Friend to Elves, a legendary 3/3 green and white Wolf creature token",
+                "colors": [
+                  "green",
+                  "white"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Wolf"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a Wolf you control enters, you gain 3 life and that creature fights up to one target creature you don't control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Wolf"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain 3 life and that creature fights up to one target creature you don't control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

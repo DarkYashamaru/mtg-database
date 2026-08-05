@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dcd5ab1b-adc5-486e-a1e0-636af6ee9470",
+  "name": "Ashnod the Uncaring",
+  "faces": [
+    {
+      "name": "Ashnod the Uncaring",
+      "type_line": "Legendary Creature \u2014 Human Artificer",
+      "oracle_text": "Deathtouch\nWhenever you activate an ability of an artifact or creature that isn't a mana ability, if one or more permanents were sacrificed to activate it, you may copy that ability. You may choose new targets for the copy. (Sacrificing an artifact for mana to activate an ability doesn't count.)",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you activate an ability of an artifact or creature that isn't a mana ability, if one or more permanents were sacrificed to activate it, you may copy that ability. You may choose new targets for the copy. (Sacrificing an artifact for mana to activate an ability doesn't count.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you activate an ability of an artifact or creature that isn't a mana ability"
+          },
+          "condition": [
+            {
+              "condition_text": "one or more permanents were sacrificed to activate it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may copy that ability"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

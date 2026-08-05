@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e43c31ee-1bac-4f96-8b74-334b3238ab73",
+  "name": "Earth Kingdom General",
+  "faces": [
+    {
+      "name": "Earth Kingdom General",
+      "type_line": "Creature \u2014 Human Soldier Ally",
+      "oracle_text": "When this creature enters, earthbend 2. (Target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)\nWhenever you put one or more +1/+1 counters on a creature, you may gain that much life. Do this only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, earthbend 2. (Target land you control becomes a 0/0 creature with haste that's still a land. Put two +1/+1 counters on it. When it dies or is exiled, return it to the battlefield tapped.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "earthbend 2"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you put one or more +1/+1 counters on a creature, you may gain that much life. Do this only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you put one or more +1/+1 counters on a creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may gain that much life"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_uses": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

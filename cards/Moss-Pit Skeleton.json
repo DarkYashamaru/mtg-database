@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "edf0e7c0-d9a1-4d29-9cee-5267d3a3978f",
+  "name": "Moss-Pit Skeleton",
+  "faces": [
+    {
+      "name": "Moss-Pit Skeleton",
+      "type_line": "Creature \u2014 Plant Skeleton",
+      "oracle_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)\nIf this creature was kicked, it enters with three +1/+1 counters on it.\nWhenever one or more +1/+1 counters are put on a creature you control, if this card is in your graveyard, you may put this card on top of your library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more +1/+1 counters are put on a creature you control, if this card is in your graveyard, you may put this card on top of your library.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more +1/+1 counters are put on a creature you control"
+          },
+          "condition": [
+            {
+              "condition_text": "this card is in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put this card on top of your library"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {3}"
+            }
+          ]
+        },
+        {
+          "raw_text": "If this creature was kicked, it enters with three +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it enters with three +1/+1 counters on it",
+              "condition": [
+                {
+                  "condition_text": "this creature was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

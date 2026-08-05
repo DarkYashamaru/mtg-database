@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "36633b43-855b-4620-8afb-70c39fc07280",
+  "name": "Dark Hatchling",
+  "faces": [
+    {
+      "name": "Dark Hatchling",
+      "type_line": "Creature \u2014 Horror",
+      "oracle_text": "Flying\nWhen this creature enters, destroy target nonblack creature. It can't be regenerated.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, destroy target nonblack creature. It can't be regenerated.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature",
+                "not_colors": [
+                  "black"
+                ]
+              }
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

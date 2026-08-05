@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5fcbb5d3-71d1-4946-b806-ba6376338eba",
+  "name": "Horrid Shadowspinner",
+  "faces": [
+    {
+      "name": "Horrid Shadowspinner",
+      "type_line": "Creature \u2014 Horror",
+      "oracle_text": "Lifelink\nWhenever this creature attacks, you may draw cards equal to its power. If you do, discard that many cards.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may draw cards equal to its power. If you do, discard that many cards.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may draw cards equal to its power"
+            },
+            {
+              "action": "custom_effect",
+              "text": "discard that many cards",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6f18f41e-df8d-4b59-87cc-ea167823fbda",
+  "name": "Pygmy Troll",
+  "faces": [
+    {
+      "name": "Pygmy Troll",
+      "type_line": "Creature \u2014 Troll",
+      "oracle_text": "Whenever this creature becomes blocked by a creature, this creature gets +1/+1 until end of turn.\n{G}: Regenerate this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes blocked by a creature, this creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "becomes_blocked_by_creature",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{G}: Regenerate this creature.",
+          "cost": "{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

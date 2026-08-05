@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c30f9be4-c274-4ad0-b5d7-7d3421aa4277",
+  "name": "Drownyard Temple",
+  "faces": [
+    {
+      "name": "Drownyard Temple",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{3}: Return this card from your graveyard to the battlefield tapped.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}: Return this card from your graveyard to the battlefield tapped.",
+          "cost": "{3}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield",
+              "tapped": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

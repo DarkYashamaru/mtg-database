@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f87bf51e-6218-4418-ae3e-98055e9601e4",
+  "name": "Gruesome Encore",
+  "faces": [
+    {
+      "name": "Gruesome Encore",
+      "type_line": "Sorcery",
+      "oracle_text": "Put target creature card from an opponent's graveyard onto the battlefield under your control. It gains haste. Exile it at the beginning of the next end step. If that creature would leave the battlefield, exile it instead of putting it anywhere else.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Put target creature card from an opponent's graveyard onto the battlefield under your control. It gains haste. Exile it at the beginning of the next end step. If that creature would leave the battlefield, exile it instead of putting it anywhere else.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put target creature card from an opponent's graveyard onto the battlefield under your control"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_end_step"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": "it"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile it instead of putting it anywhere else",
+              "condition": [
+                {
+                  "condition_text": "that creature would leave the battlefield"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

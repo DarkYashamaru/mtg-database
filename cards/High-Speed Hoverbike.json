@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9bf2f0d9-57fb-4e44-90a5-260d735076a0",
+  "name": "High-Speed Hoverbike",
+  "faces": [
+    {
+      "name": "High-Speed Hoverbike",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flash\nFlying\nWhen this Vehicle enters, tap up to one target creature.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, tap up to one target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap up to one target creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

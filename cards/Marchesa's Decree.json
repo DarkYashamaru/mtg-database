@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e4ab5ee4-4683-4219-9e15-31975e69efbb",
+  "name": "Marchesa's Decree",
+  "faces": [
+    {
+      "name": "Marchesa's Decree",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, you become the monarch.\nWhenever a creature attacks you or a planeswalker you control, that creature's controller loses 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature attacks you or a planeswalker you control, that creature's controller loses 1 life.",
+          "trigger": {
+            "type": "attacks_you_or_your_planeswalker",
+            "subject": "a_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that creature's controller loses 1 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

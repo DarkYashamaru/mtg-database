@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b10f6915-96b6-4e87-8171-4d3e96bfd48c",
+  "name": "Death's Oasis",
+  "faces": [
+    {
+      "name": "Death's Oasis",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a nontoken creature you control dies, mill two cards. Then return a creature card with lesser mana value than the creature that died from your graveyard to your hand.\n{1}, Sacrifice this enchantment: You gain life equal to the greatest mana value among creatures you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken creature you control dies, mill two cards. Then return a creature card with lesser mana value than the creature that died from your graveyard to your hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then return a creature card with lesser mana value than the creature that died from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice this enchantment: You gain life equal to the greatest mana value among creatures you control.",
+          "cost": "{1}, Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You gain life equal to the greatest mana value among creatures you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

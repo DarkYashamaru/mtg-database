@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e42a6880-7ca6-498d-abc9-fb7ccd08b111",
+  "name": "Rootwise Survivor",
+  "faces": [
+    {
+      "name": "Rootwise Survivor",
+      "type_line": "Creature \u2014 Human Survivor",
+      "oracle_text": "Haste\nSurvival \u2014 At the beginning of your second main phase, if this creature is tapped, put three +1/+1 counters on up to one target land you control. That land becomes a 0/0 Elemental creature in addition to its other types. It gains haste until your next turn.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your second main phase, if this creature is tapped, put three +1/+1 counters on up to one target land you control. That land becomes a 0/0 Elemental creature in addition to its other types. It gains haste until your next turn.",
+          "trigger": {
+            "type": "beginning_of_your_second_main_phase"
+          },
+          "condition": [
+            {
+              "condition_text": "this creature is tapped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Land"
+                ],
+                "subtypes": [
+                  "Up",
+                  "To",
+                  "One",
+                  "Target"
+                ]
+              },
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "That land becomes a 0/0 Elemental creature in addition to its other types"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It gains haste until your next turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

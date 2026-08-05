@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d7035db0-4bde-4ba3-9028-dd14191c8126",
+  "name": "Elvish Archivist",
+  "faces": [
+    {
+      "name": "Elvish Archivist",
+      "type_line": "Creature \u2014 Elf Artificer",
+      "oracle_text": "Whenever one or more artifacts you control enter, put two +1/+1 counters on this creature. This ability triggers only once each turn.\nWhenever one or more enchantments you control enter, draw a card. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more artifacts you control enter, put two +1/+1 counters on this creature. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more artifacts you control enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more enchantments you control enter, draw a card. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more enchantments you control enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

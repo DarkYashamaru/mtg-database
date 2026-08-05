@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a2fe5937-212c-4e71-8d6e-f408b38100aa",
+  "name": "Conclave Mentor",
+  "faces": [
+    {
+      "name": "Conclave Mentor",
+      "type_line": "Creature \u2014 Centaur Cleric",
+      "oracle_text": "If one or more +1/+1 counters would be put on a creature you control, that many plus one +1/+1 counters are put on that creature instead.\nWhen this creature dies, you gain life equal to its power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, you gain life equal to its power.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain life equal to its power"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If one or more +1/+1 counters would be put on a creature you control, that many plus one +1/+1 counters are put on that creature instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that many plus one +1/+1 counters are put on that creature instead",
+              "condition": [
+                {
+                  "condition_text": "one or more +1/+1 counters would be put on a creature you control"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

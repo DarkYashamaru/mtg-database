@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2345b243-ed0d-4556-8017-d533db1fbc74",
+  "name": "Skyclave Shade",
+  "faces": [
+    {
+      "name": "Skyclave Shade",
+      "type_line": "Creature \u2014 Shade",
+      "oracle_text": "Kicker {2}{B}\nThis creature can't block.\nIf this creature was kicked, it enters with two +1/+1 counters on it.\nLandfall \u2014 Whenever a land you control enters, if this card is in your graveyard and it's your turn, you may cast it from your graveyard this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, if this card is in your graveyard and it's your turn, you may cast it from your graveyard this turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "this card is in your graveyard and it's your turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may cast it from your graveyard this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2}{B}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}{B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        },
+        {
+          "raw_text": "If this creature was kicked, it enters with two +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it enters with two +1/+1 counters on it",
+              "condition": [
+                {
+                  "condition_text": "this creature was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c5c19d6e-16d5-4d24-be2d-c63646bdf00c",
+  "name": "Jon Irenicus, Shattered One",
+  "faces": [
+    {
+      "name": "Jon Irenicus, Shattered One",
+      "type_line": "Legendary Creature \u2014 Elf Wizard",
+      "oracle_text": "At the beginning of your end step, target opponent gains control of up to one target creature you control. Put two +1/+1 counters on it and tap it. It's goaded for the rest of the game and it gains \"This creature can't be sacrificed.\" (It attacks each combat if able and attacks a player other than you if able.)\nWhenever a creature you own but don't control attacks, you draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, target opponent gains control of up to one target creature you control. Put two +1/+1 counters on it and tap it. It's goaded for the rest of the game and it gains \"This creature can't be sacrificed.\" (It attacks each combat if able and attacks a player other than you if able.)",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent gains control of up to one target creature you control"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            },
+            {
+              "action": "tap",
+              "target": "it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's goaded for the rest of the game and it gains \"This creature can't be sacrificed.\""
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you own but don't control attacks, you draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "a_creature_you_own_but_dont_control"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

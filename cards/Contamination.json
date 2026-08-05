@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4013b4c2-c9ed-4d14-90f0-97214ec1fded",
+  "name": "Contamination",
+  "faces": [
+    {
+      "name": "Contamination",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, sacrifice this enchantment unless you sacrifice a creature.\nIf a land is tapped for mana, it produces {B} instead of any other type and amount.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice this enchantment unless you sacrifice a creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment_unless_you_sacrifice_a_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If a land is tapped for mana, it produces {B} instead of any other type and amount.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it produces {b} instead of any other type and amount",
+              "condition": [
+                {
+                  "condition_text": "a land is tapped for mana"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f6f684f6-0c8a-4676-ba4e-d3e064293128",
+  "name": "Ludevic, Necrogenius // Olag, Ludevic's Hubris",
+  "faces": [
+    {
+      "name": "Ludevic, Necrogenius",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Whenever Ludevic enters or attacks, mill a card.\n{X}{U}{U}{B}{B}, Exile X creature cards from your graveyard: Transform Ludevic. X can't be 0. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Ludevic enters or attacks, mill a card.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{X}{U}{U}{B}{B}, Exile X creature cards from your graveyard: Transform Ludevic. X can't be 0. Activate only as a sorcery.",
+          "cost": "{X}{U}{U}{B}{B}, Exile X creature cards from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            },
+            {
+              "action": "custom_effect",
+              "text": "X can't be 0"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Olag, Ludevic's Hubris",
+      "type_line": "Legendary Creature \u2014 Zombie",
+      "oracle_text": "As this creature transforms into Olag, Ludevic's Hubris, it becomes a copy of a creature card exiled with it, except its name is Olag, Ludevic's Hubris, it's 4/4, and it's a legendary blue and black Zombie in addition to its other colors and types. Put a number of +1/+1 counters on Olag equal to the number of creature cards exiled with it.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this creature transforms into Olag, Ludevic's Hubris, it becomes a copy of a creature card exiled with it, except its name is Olag, Ludevic's Hubris, it's 4/4, and it's a legendary blue and black Zombie in addition to its other colors and types. Put a number of +1/+1 counters on Olag equal to the number of creature cards exiled with it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this creature transforms into Olag, Ludevic's Hubris, it becomes a copy of a creature card exiled with it, except its name is Olag, Ludevic's Hubris, it's 4/4, and it's a legendary blue and black Zombie in addition to its other colors and types"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a number of +1/+1 counters on Olag equal to the number of creature cards exiled with it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

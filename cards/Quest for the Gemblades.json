@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c762361a-0b72-4db5-8b6f-715ca42d5067",
+  "name": "Quest for the Gemblades",
+  "faces": [
+    {
+      "name": "Quest for the Gemblades",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature you control deals combat damage to a creature, you may put a quest counter on this enchantment.\nRemove a quest counter from this enchantment and sacrifice it: Put four +1/+1 counters on target creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control deals combat damage to a creature, you may put a quest counter on this enchantment.",
+          "trigger": {
+            "type": "deals_combat_damage_to_creature",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a quest counter on this enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove a quest counter from this enchantment and sacrifice it: Put four +1/+1 counters on target creature.",
+          "cost": "Remove a quest counter from this enchantment and sacrifice it",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

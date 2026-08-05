@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c9f2f0ae-5869-43dc-a225-4dfe3d37c166",
+  "name": "Urge to Feed",
+  "faces": [
+    {
+      "name": "Urge to Feed",
+      "type_line": "Instant",
+      "oracle_text": "Target creature gets -3/-3 until end of turn. You may tap any number of untapped Vampire creatures you control. If you do, put a +1/+1 counter on each of those Vampires.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature gets -3/-3 until end of turn. You may tap any number of untapped Vampire creatures you control. If you do, put a +1/+1 counter on each of those Vampires.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -3,
+              "toughness_delta": -3
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may tap any number of untapped Vampire creatures you control"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "each_of_those_vampires",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

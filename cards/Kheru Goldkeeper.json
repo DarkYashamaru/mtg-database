@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aef4ab0e-c81f-428c-ab23-64504a9fb989",
+  "name": "Kheru Goldkeeper",
+  "faces": [
+    {
+      "name": "Kheru Goldkeeper",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever one or more cards leave your graveyard during your turn, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nRenew \u2014 {2}{B}{G}{U}, Exile this card from your graveyard: Put two +1/+1 counters and a flying counter on target creature. Activate only as a sorcery.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more cards leave your graveyard during your turn, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more cards leave your graveyard during your turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Renew \u2014 {2}{B}{G}{U}, Exile this card from your graveyard: Put two +1/+1 counters and a flying counter on target creature. Activate only as a sorcery.",
+          "cost": "Renew \u2014 {2}{B}{G}{U}, Exile this card from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put two +1/+1 counters and a flying counter on target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

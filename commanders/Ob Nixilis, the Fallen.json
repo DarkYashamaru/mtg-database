@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "154104b7-4125-4276-8bc7-9a6edfe48cb9",
+  "name": "Ob Nixilis, the Fallen",
+  "faces": [
+    {
+      "name": "Ob Nixilis, the Fallen",
+      "type_line": "Legendary Creature \u2014 Demon",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, you may have target player lose 3 life. If you do, put three +1/+1 counters on Ob Nixilis.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, you may have target player lose 3 life. If you do, put three +1/+1 counters on Ob Nixilis.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have target player lose 3 life"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 3,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

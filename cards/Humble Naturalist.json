@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ff3a69a7-a244-4958-9e8b-d153942c1ba6",
+  "name": "Humble Naturalist",
+  "faces": [
+    {
+      "name": "Humble Naturalist",
+      "type_line": "Creature \u2014 Human Druid",
+      "oracle_text": "{T}: Add one mana of any color. Spend this mana only to cast a creature spell.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color. Spend this mana only to cast a creature spell.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "card_types": [
+                    "Creature"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

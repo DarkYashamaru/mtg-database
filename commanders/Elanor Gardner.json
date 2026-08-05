@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ad4c39d6-a8b3-4dd9-816d-09761fc9651d",
+  "name": "Elanor Gardner",
+  "faces": [
+    {
+      "name": "Elanor Gardner",
+      "type_line": "Legendary Creature \u2014 Halfling Scout",
+      "oracle_text": "When Elanor enters, create a Food token.\nAt the beginning of your end step, if you sacrificed a Food this turn, you may search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Elanor enters, create a Food token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if you sacrificed a Food this turn, you may search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you sacrificed a Food this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true,
+              "optional": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

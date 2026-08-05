@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "230e0bf3-3f17-4968-8723-3fb6a0909816",
+  "name": "Mephitic Ooze",
+  "faces": [
+    {
+      "name": "Mephitic Ooze",
+      "type_line": "Creature \u2014 Ooze",
+      "oracle_text": "This creature gets +1/+0 for each artifact you control.\nWhenever this creature deals combat damage to a creature, destroy that creature. The creature can't be regenerated.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a creature, destroy that creature. The creature can't be regenerated.",
+          "trigger": {
+            "type": "deals_combat_damage_to_creature",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": "that_creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The creature can't be regenerated"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature gets +1/+0 for each artifact you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +1/+0 for each artifact you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

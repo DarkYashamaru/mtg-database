@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4686f776-2055-470c-bd99-7c4bb32902c0",
+  "name": "Chandra, Dressed to Kill",
+  "faces": [
+    {
+      "name": "Chandra, Dressed to Kill",
+      "type_line": "Legendary Planeswalker \u2014 Chandra",
+      "oracle_text": "+1: Add {R}. Chandra deals 1 damage to up to one target player or planeswalker.\n+1: Exile the top card of your library. If it's red, you may cast it this turn.\n\u22127: Exile the top five cards of your library. You may cast red spells from among them this turn. You get an emblem with \"Whenever you cast a red spell, this emblem deals X damage to any target, where X is the amount of mana spent to cast that spell.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Add {R}. Chandra deals 1 damage to up to one target player or planeswalker.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Chandra deals 1 damage to up to one target player or planeswalker"
+            }
+          ]
+        },
+        {
+          "raw_text": "+1: Exile the top card of your library. If it's red, you may cast it this turn.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast it this turn",
+              "condition": [
+                {
+                  "condition_text": "it's red"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: Exile the top five cards of your library. You may cast red spells from among them this turn. You get an emblem with \"Whenever you cast a red spell, this emblem deals X damage to any target, where X is the amount of mana spent to cast that spell.\"",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile the top five cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast red spells from among them this turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with \"Whenever you cast a red spell, this emblem deals X damage to any target, where X is the amount of mana spent to cast that spell.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

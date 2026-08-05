@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b8d019fa-3893-453e-a46d-aa53fc3f2f0e",
+  "name": "Strategic Intervention",
+  "faces": [
+    {
+      "name": "Strategic Intervention",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature you control attacks alone, it gets +1/+1 until end of turn. Tap up to one target creature defending player controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control attacks alone, it gets +1/+1 until end of turn. Tap up to one target creature defending player controls.",
+          "trigger": {
+            "type": "attacks_alone",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Tap up to one target creature defending player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "44bffa3e-4d31-4f9b-829c-e2066ab2f641",
+  "name": "Honored Dreyleader",
+  "faces": [
+    {
+      "name": "Honored Dreyleader",
+      "type_line": "Creature \u2014 Squirrel Warrior",
+      "oracle_text": "Trample\nWhen this creature enters, put a +1/+1 counter on it for each other Squirrel and/or Food you control.\nWhenever another Squirrel or Food you control enters, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on it for each other Squirrel and/or Food you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "it_for_each_other_squirrel_andor_food_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another Squirrel or Food you control enters, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Squirrel",
+                "Or",
+                "Food"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

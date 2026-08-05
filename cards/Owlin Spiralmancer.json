@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "36d6d6c0-721c-40c3-b81f-4f027fcf847e",
+  "name": "Owlin Spiralmancer",
+  "faces": [
+    {
+      "name": "Owlin Spiralmancer",
+      "type_line": "Creature \u2014 Bird Wizard",
+      "oracle_text": "Flying, vigilance\nWhenever you cast your first spell with {X} in its mana cost each turn, you may copy it. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your first spell with {X} in its mana cost each turn, you may copy it. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast your first spell with {X} in its mana cost each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may copy it"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

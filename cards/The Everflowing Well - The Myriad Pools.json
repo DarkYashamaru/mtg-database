@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1f57a9f1-6b95-4395-bdf0-c5289b786ab1",
+  "name": "The Everflowing Well // The Myriad Pools",
+  "faces": [
+    {
+      "name": "The Everflowing Well",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "When The Everflowing Well enters, mill two cards, then draw two cards.\nDescend 8 \u2014 At the beginning of your upkeep, if there are eight or more permanent cards in your graveyard, transform The Everflowing Well.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When The Everflowing Well enters, mill two cards, then draw two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if there are eight or more permanent cards in your graveyard, transform The Everflowing Well.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "there are eight or more permanent cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "The Myriad Pools",
+      "type_line": "Legendary Artifact Land",
+      "oracle_text": "(Transforms from The Everflowing Well.)\n{T}: Add {U}.\nWhenever you cast a permanent spell using mana produced by The Myriad Pools, up to one other target permanent you control becomes a copy of that spell until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a permanent spell using mana produced by The Myriad Pools, up to one other target permanent you control becomes a copy of that spell until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a permanent spell using mana produced by The Myriad Pools"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "up to one other target permanent you control becomes a copy of that spell until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

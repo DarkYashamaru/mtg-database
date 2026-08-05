@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fbe25c32-db20-464c-a0ed-d90e75b111a9",
+  "name": "Pincer Spider",
+  "faces": [
+    {
+      "name": "Pincer Spider",
+      "type_line": "Creature \u2014 Spider",
+      "oracle_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)\nReach (This creature can block creatures with flying.)\nIf this creature was kicked, it enters with a +1/+1 counter on it.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {3}"
+            }
+          ]
+        },
+        {
+          "raw_text": "If this creature was kicked, it enters with a +1/+1 counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it enters with a +1/+1 counter on it",
+              "condition": [
+                {
+                  "condition_text": "this creature was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

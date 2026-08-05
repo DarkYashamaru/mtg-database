@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91df4cf5-d7ec-4fcd-87ed-e075ef6ceba9",
+  "name": "The Deck of Many Things",
+  "faces": [
+    {
+      "name": "The Deck of Many Things",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "{2}, {T}: Roll a d20 and subtract the number of cards in your hand. If the result is 0 or less, discard your hand.\n1\u20149 | Return a card at random from your graveyard to your hand.\n10\u201419 | Draw two cards.\n20 | Put a creature card from any graveyard onto the battlefield under your control. When that creature dies, its owner loses the game.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}: Roll a d20 and subtract the number of cards in your hand. If the result is 0 or less, discard your hand.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Roll a d20 and subtract the number of cards in your hand"
+            },
+            {
+              "action": "discard_hand",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "the result is 0 or less"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "1\u20149 | Return a card at random from your graveyard to your hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "1\u20149 | Return a card at random from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "10\u201419 | Draw two cards.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "10\u201419 | Draw two cards"
+            }
+          ]
+        },
+        {
+          "raw_text": "20 | Put a creature card from any graveyard onto the battlefield under your control. When that creature dies, its owner loses the game.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "20 | Put a creature card from any graveyard onto the battlefield under your control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "When that creature dies, its owner loses the game"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

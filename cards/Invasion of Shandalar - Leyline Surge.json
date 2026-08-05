@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b5fe62f0-d914-4789-afd3-3831dcdbed7b",
+  "name": "Invasion of Shandalar // Leyline Surge",
+  "faces": [
+    {
+      "name": "Invasion of Shandalar",
+      "type_line": "Battle \u2014 Siege",
+      "oracle_text": "(As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.)\nWhen this Siege enters, return up to three target permanent cards from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Siege enters, return up to three target permanent cards from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_siege"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to three target permanent cards from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Leyline Surge",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, you may put a permanent card from your hand onto the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may put a permanent card from your hand onto the battlefield.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "source_zone": "hand",
+              "destination_zone": "battlefield",
+              "filter": {
+                "card_types": [
+                  "Permanent"
+                ]
+              },
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

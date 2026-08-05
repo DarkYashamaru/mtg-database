@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a5ba544f-b223-47c8-a408-b00512772107",
+  "name": "Shadows of the Past",
+  "faces": [
+    {
+      "name": "Shadows of the Past",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature dies, scry 1. (Look at the top card of your library. You may put that card on the bottom.)\n{4}{B}: Each opponent loses 2 life and you gain 2 life. Activate only if there are four or more creature cards in your graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature dies, scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}{B}: Each opponent loses 2 life and you gain 2 life. Activate only if there are four or more creature cards in your graveyard.",
+          "cost": "{4}{B}",
+          "condition": [
+            {
+              "condition_text": "there are four or more creature cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

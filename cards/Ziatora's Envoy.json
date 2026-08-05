@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93fe1d5b-3ab3-431a-9d78-175550ba9d43",
+  "name": "Ziatora's Envoy",
+  "faces": [
+    {
+      "name": "Ziatora's Envoy",
+      "type_line": "Creature \u2014 Lizard Warrior",
+      "oracle_text": "Trample\nWhenever this creature deals combat damage to a player, look at the top card of your library. You may play a land from the top of your library or cast a spell with mana value less than or equal to the damage dealt from the top of your library without paying its mana cost. If you don't, put that card into your hand.\nBlitz {2}{B}{R}{G}",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, look at the top card of your library. You may play a land from the top of your library or cast a spell with mana value less than or equal to the damage dealt from the top of your library without paying its mana cost. If you don't, put that card into your hand.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play a land from the top of your library or cast a spell with mana value less than or equal to the damage dealt from the top of your library without paying its mana cost"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card into your hand",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Blitz {2}{B}{R}{G}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Blitz {2}{B}{R}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

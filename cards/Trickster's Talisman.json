@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "17469f58-286e-4410-b717-5908d24eecdd",
+  "name": "Trickster's Talisman",
+  "faces": [
+    {
+      "name": "Trickster's Talisman",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Invoke Duplicity \u2014 Equipped creature gets +1/+1 and has \"Whenever this creature deals combat damage to a player, you may sacrifice Trickster's Talisman. If you do, create a token that's a copy of this creature.\"\nEquip {2}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Invoke Duplicity \u2014 Equipped creature gets +1/+1 and has \"Whenever this creature deals combat damage to a player, you may sacrifice Trickster's Talisman. If you do, create a token that's a copy of this creature.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Invoke Duplicity \u2014 Equipped creature gets +1/+1 and has \"Whenever this creature deals combat damage to a player, you may sacrifice Trickster's Talisman"
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of this creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

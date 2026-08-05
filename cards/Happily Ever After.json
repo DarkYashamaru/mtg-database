@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7a4cc57b-9f85-446c-9ca0-98c72b9bb732",
+  "name": "Happily Ever After",
+  "faces": [
+    {
+      "name": "Happily Ever After",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, each player gains 5 life and draws a card.\nAt the beginning of your upkeep, if there are five colors among permanents you control, there are six or more card types among permanents you control and/or cards in your graveyard, and your life total is greater than or equal to your starting life total, you win the game.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, each player gains 5 life and draws a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player gains 5 life and draws a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if there are five colors among permanents you control, there are six or more card types among permanents you control and/or cards in your graveyard, and your life total is greater than or equal to your starting life total, you win the game.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "there are five colors among permanents you control"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "there are six or more card types among permanents you control and/or cards in your graveyard, and your life total is greater than or equal to your starting life total, you win the game"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

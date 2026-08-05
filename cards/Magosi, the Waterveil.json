@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4bdffa67-e6b3-4588-b76e-c11db6f043ca",
+  "name": "Magosi, the Waterveil",
+  "faces": [
+    {
+      "name": "Magosi, the Waterveil",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {U}.\n{U}, {T}: Put an eon counter on this land. Skip your next turn.\n{T}, Remove an eon counter from this land and return it to its owner's hand: Take an extra turn after this one.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}, {T}: Put an eon counter on this land. Skip your next turn.",
+          "cost": "{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put an eon counter on this land"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Skip your next turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Remove an eon counter from this land and return it to its owner's hand: Take an extra turn after this one.",
+          "cost": "{T}, Remove an eon counter from this land and return it to its owner's hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Take an extra turn after this one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

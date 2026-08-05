@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1afb9ce6-658e-40e4-a4a2-9a68182a1e73",
+  "name": "Vengeful Possession",
+  "faces": [
+    {
+      "name": "Vengeful Possession",
+      "type_line": "Sorcery",
+      "oracle_text": "Gain control of target creature until end of turn. Untap it. It gains haste until end of turn. You may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Gain control of target creature until end of turn. Untap it. It gains haste until end of turn. You may discard a card. If you do, draw a card.",
+          "effects": [
+            {
+              "action": "gain_control",
+              "target": "target_creature",
+              "duration": "until_end_of_turn"
+            },
+            {
+              "action": "untap",
+              "target": "it"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

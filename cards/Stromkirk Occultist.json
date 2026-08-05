@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3bdd140b-1406-4d07-8f35-78f2ba92de64",
+  "name": "Stromkirk Occultist",
+  "faces": [
+    {
+      "name": "Stromkirk Occultist",
+      "type_line": "Creature \u2014 Vampire Horror",
+      "oracle_text": "Trample\nWhenever this creature deals combat damage to a player, exile the top card of your library. Until end of turn, you may play that card.\nMadness {1}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, exile the top card of your library. Until end of turn, you may play that card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may play that card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Madness {1}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Madness {1}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

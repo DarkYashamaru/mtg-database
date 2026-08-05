@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9ae669dd-7e60-4649-b96e-35da28be641a",
+  "name": "Korvold, Fae-Cursed King",
+  "faces": [
+    {
+      "name": "Korvold, Fae-Cursed King",
+      "type_line": "Legendary Creature \u2014 Dragon Noble",
+      "oracle_text": "Flying\nWhenever Korvold enters or attacks, sacrifice another permanent.\nWhenever you sacrifice a permanent, put a +1/+1 counter on Korvold and draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Korvold enters or attacks, sacrifice another permanent.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_permanent"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you sacrifice a permanent, put a +1/+1 counter on Korvold and draw a card.",
+          "trigger": {
+            "type": "sacrifice_permanent",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

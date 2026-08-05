@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4de0ccab-bb5d-4c7c-827e-36aa1d00b182",
+  "name": "Drake Hatcher",
+  "faces": [
+    {
+      "name": "Drake Hatcher",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Vigilance, prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhenever this creature deals combat damage to a player, put that many incubation counters on it.\nRemove three incubation counters from this creature: Create a 2/2 blue Drake creature token with flying.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, put that many incubation counters on it.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put that many incubation counters on it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove three incubation counters from this creature: Create a 2/2 blue Drake creature token with flying.",
+          "cost": "Remove three incubation counters from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 blue Drake creature token with flying",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Drake"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "04ea21b3-084b-4746-9b49-99b6ef4f0885",
+  "name": "Thrumming Hivepool",
+  "faces": [
+    {
+      "name": "Thrumming Hivepool",
+      "type_line": "Artifact",
+      "oracle_text": "Affinity for Slivers (This spell costs {1} less to cast for each Sliver you control.)\nSlivers you control have double strike and haste.\nAt the beginning of your upkeep, create two 1/1 colorless Sliver creature tokens.",
+      "static": [
+        {
+          "keyword": "affinity",
+          "quality": "slivers"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, create two 1/1 colorless Sliver creature tokens.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 colorless Sliver creature tokens",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Sliver"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Slivers you control have double strike and haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Sliver"
+                ]
+              },
+              "keywords": [
+                "double_strike",
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

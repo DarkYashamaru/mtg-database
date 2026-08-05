@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f93dc9cc-3dd2-4e2b-b972-217ab9d89dfe",
+  "name": "Brazen Collector",
+  "faces": [
+    {
+      "name": "Brazen Collector",
+      "type_line": "Creature \u2014 Raccoon Rogue",
+      "oracle_text": "First strike\nWhenever this creature attacks, add {R}. Until end of turn, you don't lose this mana as steps and phases end.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, add {R}. Until end of turn, you don't lose this mana as steps and phases end.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you don't lose this mana as steps and phases end"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

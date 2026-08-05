@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "292aafef-8945-4827-90b2-1dd9764e517b",
+  "name": "Osgood, Operation Double",
+  "faces": [
+    {
+      "name": "Osgood, Operation Double",
+      "type_line": "Legendary Creature \u2014 Human Alien Shapeshifter",
+      "oracle_text": "When you cast this spell, create a token that's a copy of it, except it isn't legendary.\n{T}: Add {C}. Spend this mana only to cast an artifact spell or activate an ability of an artifact.\nParadox \u2014 Whenever you cast a spell from anywhere other than your hand, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, create a token that's a copy of it, except it isn't legendary.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of it, except it isn't legendary"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a spell from anywhere other than your hand, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell from anywhere other than your hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "investigate"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}. Spend this mana only to cast an artifact spell or activate an ability of an artifact.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to cast an artifact spell or activate an ability of an artifact"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

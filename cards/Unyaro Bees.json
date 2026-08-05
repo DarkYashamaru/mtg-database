@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7baff5c8-5919-4cbf-961e-962e740ebd8f",
+  "name": "Unyaro Bees",
+  "faces": [
+    {
+      "name": "Unyaro Bees",
+      "type_line": "Creature \u2014 Insect",
+      "oracle_text": "Flying\n{G}: This creature gets +1/+1 until end of turn.\n{3}{G}, Sacrifice this creature: It deals 2 damage to any target.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{G}: This creature gets +1/+1 until end of turn.",
+          "cost": "{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{G}, Sacrifice this creature: It deals 2 damage to any target.",
+          "cost": "{3}{G}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

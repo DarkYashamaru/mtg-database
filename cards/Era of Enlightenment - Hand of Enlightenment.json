@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a6d646e8-0d84-489b-a46a-3bd5b1141864",
+  "name": "Era of Enlightenment // Hand of Enlightenment",
+  "faces": [
+    {
+      "name": "Era of Enlightenment",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 Scry 2.\nII \u2014 You gain 2 life.\nIII \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Scry 2.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 You gain 2 life.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Hand of Enlightenment",
+      "type_line": "Enchantment Creature \u2014 Human Monk",
+      "oracle_text": "First strike",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

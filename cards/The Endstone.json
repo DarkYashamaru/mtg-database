@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "57ee0730-3ac5-4f17-ac82-bd4a6673c2bb",
+  "name": "The Endstone",
+  "faces": [
+    {
+      "name": "The Endstone",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "Whenever you play a land or cast a spell, draw a card.\nAt the beginning of your end step, your life total becomes half your starting life total, rounded up.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you play a land or cast a spell, draw a card.",
+          "trigger": {
+            "type": "play_land_or_cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, your life total becomes half your starting life total, rounded up.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "your life total becomes half your starting life total, rounded up"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

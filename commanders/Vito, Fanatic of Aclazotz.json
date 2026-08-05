@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9768d43b-8b3f-4d03-ac1b-e603af832875",
+  "name": "Vito, Fanatic of Aclazotz",
+  "faces": [
+    {
+      "name": "Vito, Fanatic of Aclazotz",
+      "type_line": "Legendary Creature \u2014 Vampire Demon",
+      "oracle_text": "Flying\nWhenever you sacrifice another permanent, you gain 2 life if this is the first time this ability has resolved this turn. If it's the second time, each opponent loses 2 life. If it's the third time, create a 4/3 white and black Vampire Demon creature token with flying.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you sacrifice another permanent, you gain 2 life if this is the first time this ability has resolved this turn. If it's the second time, each opponent loses 2 life. If it's the third time, create a 4/3 white and black Vampire Demon creature token with flying.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice another permanent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain 2 life if this is the first time this ability has resolved this turn"
+            },
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "it's the second time"
+                }
+              ]
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/3 white and black vampire demon creature token with flying",
+                "colors": [
+                  "white",
+                  "black"
+                ],
+                "power_toughness": "4/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "vampire",
+                  "demon"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "it's the third time"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

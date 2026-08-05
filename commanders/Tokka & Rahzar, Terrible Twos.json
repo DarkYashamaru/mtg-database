@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "86ef86de-104f-4eae-a2db-893b50e95ad7",
+  "name": "Tokka & Rahzar, Terrible Twos",
+  "faces": [
+    {
+      "name": "Tokka & Rahzar, Terrible Twos",
+      "type_line": "Legendary Creature \u2014 Turtle Wolf Mutant",
+      "oracle_text": "This spell can't be countered.\nMenace\nWhenever a player casts a spell, if the amount of mana spent to cast it was less than its mana value, Tokka & Rahzar deal 3 damage to that player.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts a spell, if the amount of mana spent to cast it was less than its mana value, Tokka & Rahzar deal 3 damage to that player.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "any_player"
+          },
+          "condition": [
+            {
+              "condition_text": "the amount of mana spent to cast it was less than its mana value"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Tokka & Rahzar deal 3 damage to that player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell can't be countered.",
+          "effects": [
+            {
+              "action": "cant_be_countered",
+              "target": "self_spell"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

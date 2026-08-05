@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d37e8f75-c7cb-4270-bb2f-0125e972ed15",
+  "name": "Rampaging Yao Guai",
+  "faces": [
+    {
+      "name": "Rampaging Yao Guai",
+      "type_line": "Creature \u2014 Bear Mutant",
+      "oracle_text": "Vigilance, trample\nThis creature enters with X +1/+1 counters on it.\nWhen this creature enters, destroy any number of target artifacts and/or enchantments with total mana value X or less.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, destroy any number of target artifacts and/or enchantments with total mana value X or less.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy any number of target artifacts and/or enchantments with total mana value X or less"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

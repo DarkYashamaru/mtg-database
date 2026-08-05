@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "oracle_id": "60c8a1d4-8d0a-4906-bcaf-d3a09d57c452",
+  "name": "Cryptolith Fragment // Aurora of Emrakul",
+  "faces": [
+    {
+      "name": "Aurora of Emrakul",
+      "type_line": "Creature \u2014 Eldrazi Reflection",
+      "oracle_text": "Flying, deathtouch\nWhenever this creature attacks, each opponent loses 3 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, each opponent loses 3 life.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Cryptolith Fragment",
+      "type_line": "Artifact",
+      "oracle_text": "This artifact enters tapped.\n{T}: Add one mana of any color. Each player loses 1 life.\nAt the beginning of your upkeep, if each player has 10 or less life, transform this artifact.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if each player has 10 or less life, transform this artifact.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "each player has 10 or less life"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "this_artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color. Each player loses 1 life.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each player loses 1 life"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This artifact enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

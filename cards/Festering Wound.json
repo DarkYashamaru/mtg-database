@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "32638d03-c101-42f0-8a4b-8c6290257a28",
+  "name": "Festering Wound",
+  "faces": [
+    {
+      "name": "Festering Wound",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nAt the beginning of your upkeep, you may put an infection counter on this Aura.\nAt the beginning of the upkeep of enchanted creature's controller, this Aura deals X damage to that player, where X is the number of infection counters on this Aura.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may put an infection counter on this Aura.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put an infection counter on this Aura"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of the upkeep of enchanted creature's controller, this Aura deals X damage to that player, where X is the number of infection counters on this Aura.",
+          "trigger": {
+            "type": "beginning_of_upkeep_of_enchanted_creatures_controller"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this Aura deals X damage to that player, where X is the number of infection counters on this Aura"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "98d3d1f1-ac72-4b1e-87da-b4c1e4f03d08",
+  "name": "Battlewand Oak",
+  "faces": [
+    {
+      "name": "Battlewand Oak",
+      "type_line": "Creature \u2014 Treefolk Warrior",
+      "oracle_text": "Whenever a Forest you control enters, this creature gets +2/+2 until end of turn.\nWhenever you cast a Treefolk spell, this creature gets +2/+2 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Forest you control enters, this creature gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Forest"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a Treefolk spell, this creature gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Treefolk"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

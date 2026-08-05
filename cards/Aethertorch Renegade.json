@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7db864fe-e0b7-4b32-8706-2ad01f93f7ca",
+  "name": "Aethertorch Renegade",
+  "faces": [
+    {
+      "name": "Aethertorch Renegade",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "When this creature enters, you get {E}{E}{E}{E} (four energy counters).\n{T}, Pay {E}{E}: This creature deals 1 damage to target creature.\n{T}, Pay eight {E}: This creature deals 6 damage to target player or planeswalker.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E}{E}{E} (four energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Pay {E}{E}: This creature deals 1 damage to target creature.",
+          "cost": "{T}, Pay {E}{E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals 1 damage to target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Pay eight {E}: This creature deals 6 damage to target player or planeswalker.",
+          "cost": "{T}, Pay eight {E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals 6 damage to target player or planeswalker"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

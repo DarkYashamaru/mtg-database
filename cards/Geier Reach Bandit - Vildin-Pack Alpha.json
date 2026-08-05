@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "oracle_id": "64720167-b88b-47f7-bfc1-d5e005c9fd68",
+  "name": "Geier Reach Bandit // Vildin-Pack Alpha",
+  "faces": [
+    {
+      "name": "Geier Reach Bandit",
+      "type_line": "Creature \u2014 Human Rogue Werewolf",
+      "oracle_text": "Haste\nAt the beginning of each upkeep, if no spells were cast last turn, transform this creature.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, if no spells were cast last turn, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "no spells were cast last turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Vildin-Pack Alpha",
+      "type_line": "Creature \u2014 Werewolf",
+      "oracle_text": "Whenever a Werewolf you control enters, you may transform it.\nAt the beginning of each upkeep, if a player cast two or more spells last turn, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Werewolf you control enters, you may transform it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Werewolf"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each upkeep, if a player cast two or more spells last turn, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "a player cast two or more spells last turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

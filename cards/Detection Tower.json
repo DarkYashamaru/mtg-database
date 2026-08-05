@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93695c16-c441-492d-af12-b57df9739846",
+  "name": "Detection Tower",
+  "faces": [
+    {
+      "name": "Detection Tower",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{1}, {T}: Until end of turn, your opponents and creatures your opponents control with hexproof can be the targets of spells and abilities you control as though they didn't have hexproof.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Until end of turn, your opponents and creatures your opponents control with hexproof can be the targets of spells and abilities you control as though they didn't have hexproof.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "until_end_of_turn_you_control_opponents_and_creatures_you_control_opponents_control_with_hexproof_can_be_the_targets_of_spells_and_abilities_you_control_as_though_they_didnt"
+              },
+              "keywords": [
+                "hexproof"
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4993e373-4b76-4582-a789-6a3123e7ca89",
+  "name": "Bane Alley Broker",
+  "faces": [
+    {
+      "name": "Bane Alley Broker",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "{T}: Draw a card, then exile a card from your hand face down.\nYou may look at cards exiled with this creature.\n{U}{B}, {T}: Return a card exiled with this creature to its owner's hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Draw a card, then exile a card from your hand face down.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile a card from your hand face down"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}{B}, {T}: Return a card exiled with this creature to its owner's hand.",
+          "cost": "{U}{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return a card exiled with this creature to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at cards exiled with this creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may look at cards exiled with this creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

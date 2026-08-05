@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b2d5ba45-8674-4428-89db-c2bbbf0bf5c5",
+  "name": "Khalni Garden",
+  "faces": [
+    {
+      "name": "Khalni Garden",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\nWhen this land enters, create a 0/1 green Plant creature token.\n{T}: Add {G}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land enters, create a 0/1 green Plant creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "0/1 green Plant creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "0/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Plant"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

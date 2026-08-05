@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8d0445ef-370b-4f4f-8975-a40cb02c031e",
+  "name": "Ruin Grinder",
+  "faces": [
+    {
+      "name": "Ruin Grinder",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "Menace\nWhen this creature dies, each player may discard their hand and draw seven cards.\nMountaincycling {2} ({2}, Discard this card: Search your library for a Mountain card, reveal it, put it into your hand, then shuffle.)",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, each player may discard their hand and draw seven cards.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player may discard their hand and draw seven cards"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Mountaincycling {2} ({2}, Discard this card: Search your library for a Mountain card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Mountaincycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a mountain card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

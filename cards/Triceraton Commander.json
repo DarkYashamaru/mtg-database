@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "45d40cdb-21cc-4569-a894-83dd3026c947",
+  "name": "Triceraton Commander",
+  "faces": [
+    {
+      "name": "Triceraton Commander",
+      "type_line": "Creature \u2014 Dinosaur Soldier",
+      "oracle_text": "Flying\nWhenever this creature attacks, Dinosaurs you control other than this creature get +1/+1 and gain flying until end of turn.\nWhen this creature enters, create X 2/2 white Dinosaur Soldier creature tokens.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, Dinosaurs you control other than this creature get +1/+1 and gain flying until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "dinosaurs_you_control_other_than_self_get_11_and",
+              "keyword": "flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature enters, create X 2/2 white Dinosaur Soldier creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "X",
+              "token": {
+                "raw": "2/2 white Dinosaur Soldier creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Dinosaur",
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

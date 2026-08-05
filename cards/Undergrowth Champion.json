@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb0eb84d-b41b-4147-aa7c-089b7fabd835",
+  "name": "Undergrowth Champion",
+  "faces": [
+    {
+      "name": "Undergrowth Champion",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "If damage would be dealt to this creature while it has a +1/+1 counter on it, prevent that damage and remove a +1/+1 counter from this creature.\nLandfall \u2014 Whenever a land you control enters, put a +1/+1 counter on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If damage would be dealt to this creature while it has a +1/+1 counter on it, prevent that damage and remove a +1/+1 counter from this creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent that damage and remove a +1/+1 counter from this creature",
+              "condition": [
+                {
+                  "condition_text": "damage would be dealt to this creature while it has a +1/+1 counter on it"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

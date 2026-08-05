@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "75070eaf-c931-46e5-9aa1-b849e33580c6",
+  "name": "Ambling Stormshell",
+  "faces": [
+    {
+      "name": "Ambling Stormshell",
+      "type_line": "Creature \u2014 Turtle",
+      "oracle_text": "Ward {2}\nWhenever this creature attacks, put three stun counters on it and draw three cards. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nWhenever you cast a Turtle spell, untap this creature.",
+      "static": [
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, put three stun counters on it and draw three cards. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put three stun counters on it and draw three cards"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a Turtle spell, untap this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Turtle"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

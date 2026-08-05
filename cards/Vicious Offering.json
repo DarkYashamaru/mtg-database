@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c6adfaa7-d9cf-4501-8e7d-e035369390d2",
+  "name": "Vicious Offering",
+  "faces": [
+    {
+      "name": "Vicious Offering",
+      "type_line": "Instant",
+      "oracle_text": "Kicker\u2014Sacrifice a creature. (You may sacrifice a creature in addition to any other costs as you cast this spell.)\nTarget creature gets -2/-2 until end of turn. If this spell was kicked, that creature gets -5/-5 until end of turn instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker\u2014Sacrifice a creature. (You may sacrifice a creature in addition to any other costs as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker\u2014Sacrifice a creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target creature gets -2/-2 until end of turn. If this spell was kicked, that creature gets -5/-5 until end of turn instead.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -2,
+              "toughness_delta": -2
+            },
+            {
+              "action": "custom_effect",
+              "text": "that creature gets -5/-5 until end of turn instead",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

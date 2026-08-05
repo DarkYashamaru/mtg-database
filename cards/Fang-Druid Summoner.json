@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1a9bfe76-6c74-4393-b04e-461422a29ddb",
+  "name": "Fang-Druid Summoner",
+  "faces": [
+    {
+      "name": "Fang-Druid Summoner",
+      "type_line": "Creature \u2014 Ape Druid",
+      "oracle_text": "Reach\nWhen this creature enters, you may search your library and/or graveyard for a creature card with no abilities, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library and/or graveyard for a creature card with no abilities, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library and/or graveyard for a creature card with no abilities, reveal it, and put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

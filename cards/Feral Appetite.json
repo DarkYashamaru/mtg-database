@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "adf731a1-fc4d-4260-bb85-535edb1d82e9",
+  "name": "Feral Appetite",
+  "faces": [
+    {
+      "name": "Feral Appetite",
+      "type_line": "Enchantment",
+      "oracle_text": "Attacking Pests you control get +1/+0 and have deathtouch.\n{1}{G}: Exile target card from a graveyard. If a creature card is exiled this way, create a 1/1 black and green Pest creature token with \"When this token dies, you gain 1 life.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{G}: Exile target card from a graveyard. If a creature card is exiled this way, create a 1/1 black and green Pest creature token with \"When this token dies, you gain 1 life.\"",
+          "cost": "{1}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_card_in_graveyard"
+              }
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 black and green pest creature token with \"when this token dies, you gain 1 life",
+                "colors": [
+                  "black",
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "pest"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "a creature card is exiled this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Attacking Pests you control get +1/+0 and have deathtouch.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "attacking_pests_you_control_get_10_and"
+              },
+              "keywords": [
+                "deathtouch"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

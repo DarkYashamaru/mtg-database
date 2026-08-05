@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6ba0656f-e0d2-4735-9c66-3a00afa9fc23",
+  "name": "Koma, Cosmos Serpent",
+  "faces": [
+    {
+      "name": "Koma, Cosmos Serpent",
+      "type_line": "Legendary Creature \u2014 Serpent",
+      "oracle_text": "This spell can't be countered.\nAt the beginning of each upkeep, create a 3/3 blue Serpent creature token named Koma's Coil.\nSacrifice another Serpent: Choose one \u2014\n\u2022 Tap target permanent. Its activated abilities can't be activated this turn.\n\u2022 Koma gains indestructible until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, create a 3/3 blue Serpent creature token named Koma's Coil.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a 3/3 blue Serpent creature token named Koma's Coil"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice another Serpent: Choose one \u2014\n\u2022 Tap target permanent. Its activated abilities can't be activated this turn.\n\u2022 Koma gains indestructible until end of turn.",
+          "cost": "Sacrifice another Serpent",
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Tap target permanent. Its activated abilities can't be activated this turn.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Tap target permanent"
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "Its activated abilities can't be activated this turn"
+                }
+              ]
+            },
+            {
+              "raw_text": "Koma gains indestructible until end of turn.",
+              "effects": [
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "self",
+                  "keyword": "indestructible"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This spell can't be countered.",
+          "effects": [
+            {
+              "action": "cant_be_countered",
+              "target": "self_spell"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52f1b5a4-62ff-44de-80da-503d4e52d312",
+  "name": "Cat Collector",
+  "faces": [
+    {
+      "name": "Cat Collector",
+      "type_line": "Creature \u2014 Human Citizen",
+      "oracle_text": "When this creature enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nWhenever you gain life for the first time during each of your turns, create a 1/1 white Cat creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you gain life for the first time during each of your turns, create a 1/1 white Cat creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you gain life for the first time during each of your turns"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Cat creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Cat"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

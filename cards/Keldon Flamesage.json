@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0efedec3-b57c-4395-ad72-19d79560c99f",
+  "name": "Keldon Flamesage",
+  "faces": [
+    {
+      "name": "Keldon Flamesage",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "Enlist\nWhenever this creature attacks, look at the top X cards of your library, where X is this creature's power. You may exile an instant or sorcery card with mana value X or less from among them. Put the rest on the bottom of your library in a random order. You may cast the exiled card without paying its mana cost.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, look at the top X cards of your library, where X is this creature's power. You may exile an instant or sorcery card with mana value X or less from among them. Put the rest on the bottom of your library in a random order. You may cast the exiled card without paying its mana cost.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top X cards of your library, where X is this creature's power"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may exile an instant or sorcery card with mana value X or less from among them"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast the exiled card without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enlist",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enlist"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

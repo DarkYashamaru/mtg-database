@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c357230a-afde-4c2a-b390-9f6928599236",
+  "name": "Scorpion, Seething Striker",
+  "faces": [
+    {
+      "name": "Scorpion, Seething Striker",
+      "type_line": "Legendary Creature \u2014 Scorpion Human Villain",
+      "oracle_text": "Deathtouch\nAt the beginning of your end step, if a creature died this turn, target creature you control connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if a creature died this turn, target creature you control connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a creature died this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "connive",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control",
+                    "card_types": [
+                      "Creature"
+                    ],
+                    "subtypes": [
+                      "Target"
+                    ]
+                  },
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

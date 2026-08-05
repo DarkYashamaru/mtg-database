@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c549b0fd-1e08-4873-952e-a14dc45a0fd2",
+  "name": "Champion of Lambholt",
+  "faces": [
+    {
+      "name": "Champion of Lambholt",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Creatures with power less than this creature's power can't block creatures you control.\nWhenever another creature you control enters, put a +1/+1 counter on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures with power less than this creature's power can't block creatures you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures with power less than this creature's power can't block creatures you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

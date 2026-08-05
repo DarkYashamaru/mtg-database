@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "83e78565-e61f-4bbc-b834-f47941f7e3ec",
+  "name": "Resourceful Defense",
+  "faces": [
+    {
+      "name": "Resourceful Defense",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a permanent you control leaves the battlefield, if it had counters on it, put those counters on target permanent you control.\n{4}{W}: Move any number of counters from target permanent you control onto a second target permanent you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a permanent you control leaves the battlefield, if it had counters on it, put those counters on target permanent you control.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Permanent"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "it had counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put those counters on target permanent you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}{W}: Move any number of counters from target permanent you control onto a second target permanent you control.",
+          "cost": "{4}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Move any number of counters from target permanent you control onto a second target permanent you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

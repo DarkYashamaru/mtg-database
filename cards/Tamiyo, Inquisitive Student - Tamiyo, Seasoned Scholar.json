@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1ed9e351-0000-4b75-8ecb-d15bd88df68a",
+  "name": "Tamiyo, Inquisitive Student // Tamiyo, Seasoned Scholar",
+  "faces": [
+    {
+      "name": "Tamiyo, Inquisitive Student",
+      "type_line": "Legendary Creature \u2014 Moonfolk Wizard",
+      "oracle_text": "Flying\nWhenever Tamiyo attacks, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nWhen you draw your third card in a turn, exile Tamiyo, then return her to the battlefield transformed under her owner's control.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Tamiyo attacks, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "investigate"
+            }
+          ]
+        },
+        {
+          "raw_text": "When you draw your third card in a turn, exile Tamiyo, then return her to the battlefield transformed under her owner's control.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you draw your third card in a turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile tamiyo"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return her to the battlefield transformed under her owner's control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Tamiyo, Seasoned Scholar",
+      "type_line": "Legendary Planeswalker \u2014 Tamiyo",
+      "oracle_text": "+2: Until your next turn, whenever a creature attacks you or a planeswalker you control, it gets -1/-0 until end of turn.\n\u22123: Return target instant or sorcery card from your graveyard to your hand. If it's a green card, add one mana of any color.\n\u22127: Draw cards equal to half the number of cards in your library, rounded up. You get an emblem with \"You have no maximum hand size.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+2: Until your next turn, whenever a creature attacks you or a planeswalker you control, it gets -1/-0 until end of turn.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "until_you_control_next_turn_whenever_a_creature_attacks_you_or_a_planeswalker_you_control_it"
+              },
+              "power_delta": -1,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Return target instant or sorcery card from your graveyard to your hand. If it's a green card, add one mana of any color.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_instant_or_sorcery_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            },
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color",
+              "condition": [
+                {
+                  "condition_text": "it's a green card"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: Draw cards equal to half the number of cards in your library, rounded up. You get an emblem with \"You have no maximum hand size.\"",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Draw cards equal to half the number of cards in your library, rounded up"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with \"You have no maximum hand size.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

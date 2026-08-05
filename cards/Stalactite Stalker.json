@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c8c28807-8abf-4f91-81f3-1d7d9e856c25",
+  "name": "Stalactite Stalker",
+  "faces": [
+    {
+      "name": "Stalactite Stalker",
+      "type_line": "Creature \u2014 Goblin Rogue",
+      "oracle_text": "Menace\nAt the beginning of your end step, if you descended this turn, put a +1/+1 counter on this creature. (You descended if a permanent card was put into your graveyard from anywhere.)\n{2}{B}, Sacrifice this creature: Target creature gets -X/-X until end of turn, where X is this creature's power.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if you descended this turn, put a +1/+1 counter on this creature. (You descended if a permanent card was put into your graveyard from anywhere.)",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you descended this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{B}, Sacrifice this creature: Target creature gets -X/-X until end of turn, where X is this creature's power.",
+          "cost": "{2}{B}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature gets -X/-X until end of turn, where X is this creature's power"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

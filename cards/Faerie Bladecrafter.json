@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "164b064e-de50-468a-b874-b054897a5be9",
+  "name": "Faerie Bladecrafter",
+  "faces": [
+    {
+      "name": "Faerie Bladecrafter",
+      "type_line": "Creature \u2014 Faerie Rogue",
+      "oracle_text": "Flying\nWhenever one or more Faeries you control deal combat damage to a player, put a +1/+1 counter on this creature.\nWhen this creature dies, each opponent loses X life and you gain X life, where X is its power.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more Faeries you control deal combat damage to a player, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Faerie"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, each opponent loses X life and you gain X life, where X is its power.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent loses X life and you gain X life, where X is its power"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

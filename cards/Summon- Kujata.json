@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9fe77f70-85cf-4a18-9451-2fad4c341f07",
+  "name": "Summon: Kujata",
+  "faces": [
+    {
+      "name": "Summon: Kujata",
+      "type_line": "Enchantment Creature \u2014 Saga Ox",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Lightning \u2014 This creature deals 3 damage to each of up to two target creatures.\nII \u2014 Ice \u2014 Up to three target creatures can't block this turn.\nIII \u2014 Fire \u2014 Discard a card, then draw two cards. When you discard a card this way, this creature deals damage equal to that card's mana value to each opponent.\nTrample, haste",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Lightning \u2014 This creature deals 3 damage to each of up to two target creatures.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Lightning \u2014 This creature deals 3 damage to each of up to two target creatures"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Ice \u2014 Up to three target creatures can't block this turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ice \u2014 Up to three target creatures can't block this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Fire \u2014 Discard a card, then draw two cards. When you discard a card this way, this creature deals damage equal to that card's mana value to each opponent.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "fire \u2014 discard a card"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "When you discard a card this way, this creature deals damage equal to that card's mana value to each opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4be1ecd0-ee41-4ac0-9155-0fcae7a4d337",
+  "name": "Eel Umbra",
+  "faces": [
+    {
+      "name": "Eel Umbra",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash (You may cast this spell any time you could cast an instant.)\nEnchant creature\nEnchanted creature gets +1/+1.\nUmbra armor (If enchanted creature would be destroyed, instead remove all damage from it and destroy this Aura.)",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Umbra armor (If enchanted creature would be destroyed, instead remove all damage from it and destroy this Aura.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Umbra armor"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

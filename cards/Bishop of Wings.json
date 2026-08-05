@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "af4684cf-f109-44be-adfb-7c551a36635e",
+  "name": "Bishop of Wings",
+  "faces": [
+    {
+      "name": "Bishop of Wings",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "Whenever an Angel you control enters, you gain 4 life.\nWhenever an Angel you control dies, create a 1/1 white Spirit creature token with flying.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an Angel you control enters, you gain 4 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Angel"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an Angel you control dies, create a 1/1 white Spirit creature token with flying.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Angel"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white Spirit creature token with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Spirit"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

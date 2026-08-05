@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0f0959ff-4464-4738-9d79-5b06f368f144",
+  "name": "Inkling Mascot",
+  "faces": [
+    {
+      "name": "Inkling Mascot",
+      "type_line": "Creature \u2014 Inkling Cat",
+      "oracle_text": "Repartee \u2014 Whenever you cast an instant or sorcery spell that targets a creature, this creature gains flying until end of turn. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell that targets a creature, this creature gains flying until end of turn. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            },
+            {
+              "condition_text": "that targets a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "flying"
+            },
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

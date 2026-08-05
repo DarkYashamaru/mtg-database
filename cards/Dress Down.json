@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c1cbbda0-e02b-4b9c-8669-ea87ca629520",
+  "name": "Dress Down",
+  "faces": [
+    {
+      "name": "Dress Down",
+      "type_line": "Enchantment",
+      "oracle_text": "Flash\nWhen this enchantment enters, draw a card.\nCreatures lose all abilities.\nAt the beginning of the end step, sacrifice this enchantment.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of the end step, sacrifice this enchantment.",
+          "trigger": {
+            "type": "beginning_of_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures lose all abilities.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures lose all abilities"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

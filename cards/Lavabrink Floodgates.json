@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd4df73c-bbd5-47fd-a961-19f3a3c59381",
+  "name": "Lavabrink Floodgates",
+  "faces": [
+    {
+      "name": "Lavabrink Floodgates",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {R}{R}.\nAt the beginning of each player's upkeep, that player may put a doom counter on this artifact or remove a doom counter from it. Then if it has three or more doom counters on it, sacrifice this artifact. When you do, it deals 6 damage to each creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each player's upkeep, that player may put a doom counter on this artifact or remove a doom counter from it. Then if it has three or more doom counters on it, sacrifice this artifact. When you do, it deals 6 damage to each creature.",
+          "trigger": {
+            "type": "beginning_of_each_players_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player may put a doom counter on this artifact or remove a doom counter from it"
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_artifact",
+              "condition": [
+                {
+                  "condition_text": "it has three or more doom counters on it"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "it deals 6 damage to each creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R}{R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{r}",
+                "{r}"
+              ],
+              "distribution": "fixed_sequence"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1b600345-2b89-45bc-98c8-609fdd08a5fd",
+  "name": "Merry, Warden of Isengard",
+  "faces": [
+    {
+      "name": "Merry, Warden of Isengard",
+      "type_line": "Legendary Creature \u2014 Halfling Advisor",
+      "oracle_text": "Partner with Pippin, Warden of Isengard (When this creature enters, target player may put Pippin into their hand from their library, then shuffle.)\nWhenever one or more artifacts you control enter, create a 1/1 white Soldier creature token with lifelink. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more artifacts you control enter, create a 1/1 white Soldier creature token with lifelink. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more artifacts you control enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white Soldier creature token with lifelink",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Soldier"
+                ],
+                "keywords": [
+                  "lifelink"
+                ]
+              }
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Pippin, Warden of Isengard (When this creature enters, target player may put Pippin into their hand from their library, then shuffle.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Pippin, Warden of Isengard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

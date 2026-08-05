@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "491c6f69-9b75-4d5d-b41f-a14b2fbfdd07",
+  "name": "Gift of the Woods",
+  "faces": [
+    {
+      "name": "Gift of the Woods",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhenever enchanted creature blocks or becomes blocked, it gets +0/+3 until end of turn and you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature blocks or becomes blocked, it gets +0/+3 until end of turn and you gain 1 life.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": "enchanted_creature_blocks_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 0,
+              "toughness_delta": 3
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

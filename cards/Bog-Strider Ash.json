@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e3d4dd61-d646-449c-84f4-0ff927ca6b0a",
+  "name": "Bog-Strider Ash",
+  "faces": [
+    {
+      "name": "Bog-Strider Ash",
+      "type_line": "Creature \u2014 Treefolk Shaman",
+      "oracle_text": "Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.)\nWhenever a player casts a Goblin spell, you may pay {G}. If you do, you gain 2 life.",
+      "static": [
+        {
+          "keyword": "swampwalk"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts a Goblin spell, you may pay {G}. If you do, you gain 2 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player casts a Goblin spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{g}",
+              "optional": true
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

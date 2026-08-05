@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91f410c5-4313-462f-8d21-da63988d919f",
+  "name": "Sutina, Speaker of the Tajuru",
+  "faces": [
+    {
+      "name": "Sutina, Speaker of the Tajuru",
+      "type_line": "Legendary Creature \u2014 Elf Scout",
+      "oracle_text": "When Sutina enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\nWhenever Sutina attacks, you may return a land you control to its owner's hand. When you do, put a +1/+1 counter on target creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Sutina enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Sutina attacks, you may return a land you control to its owner's hand. When you do, put a +1/+1 counter on target creature.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return a land you control to its owner's hand"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

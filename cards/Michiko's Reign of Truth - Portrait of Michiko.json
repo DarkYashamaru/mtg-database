@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "94794f7c-62e7-43c8-ba7f-ac5c0bc9a712",
+  "name": "Michiko's Reign of Truth // Portrait of Michiko",
+  "faces": [
+    {
+      "name": "Michiko's Reign of Truth",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI, II \u2014 Target creature gets +1/+1 until end of turn for each artifact and/or enchantment you control.\nIII \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Target creature gets +1/+1 until end of turn for each artifact and/or enchantment you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature gets +1/+1 until end of turn for each artifact and/or enchantment you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Portrait of Michiko",
+      "type_line": "Enchantment Creature \u2014 Human Noble",
+      "oracle_text": "This creature gets +1/+1 for each artifact and/or enchantment you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature gets +1/+1 for each artifact and/or enchantment you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +1/+1 for each artifact and/or enchantment you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

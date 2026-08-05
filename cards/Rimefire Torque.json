@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c33e99c6-189e-4dcf-8b6a-64937dbad361",
+  "name": "Rimefire Torque",
+  "faces": [
+    {
+      "name": "Rimefire Torque",
+      "type_line": "Artifact",
+      "oracle_text": "As this artifact enters, choose a creature type.\nWhenever a permanent you control of the chosen type enters, put a charge counter on this artifact.\n{T}, Remove three charge counters from this artifact: When you next cast an instant or sorcery spell this turn, copy it. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a permanent you control of the chosen type enters, put a charge counter on this artifact.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "a_permanent_you_control_of_the_chosen_type"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a charge counter on this artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Remove three charge counters from this artifact: When you next cast an instant or sorcery spell this turn, copy it. You may choose new targets for the copy.",
+          "cost": "{T}, Remove three charge counters from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "cast_spell",
+                "subject": "you"
+              },
+              "condition": [
+                {
+                  "spell_types_any": [
+                    "instant",
+                    "sorcery"
+                  ]
+                },
+                {
+                  "timing": "next_time_this_turn"
+                }
+              ],
+              "effects": [
+                {
+                  "action": "copy_spell",
+                  "object": "triggering_spell"
+                }
+              ]
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this artifact enters, choose a creature type.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this artifact enters, choose a creature type"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "83798eb8-b14f-4620-bce2-1a6804a24dc7",
+  "name": "Hawkeye's Bow",
+  "faces": [
+    {
+      "name": "Hawkeye's Bow",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +1/+0 and has reach.\nWhenever equipped creature becomes tapped, it deals 1 damage to each opponent.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature becomes tapped, it deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever equipped creature becomes tapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +1/+0 and has reach.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +1/+0 and has reach"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

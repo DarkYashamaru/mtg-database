@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cfaf4871-2157-495d-bca8-d169bd1f7ae3",
+  "name": "Chainflinger",
+  "faces": [
+    {
+      "name": "Chainflinger",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "{1}{R}, {T}: This creature deals 1 damage to any target.\nThreshold \u2014 {2}{R}, {T}: This creature deals 2 damage to any target. Activate only if there are seven or more cards in your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{R}, {T}: This creature deals 1 damage to any target.",
+          "cost": "{1}{R}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Threshold \u2014 {2}{R}, {T}: This creature deals 2 damage to any target. Activate only if there are seven or more cards in your graveyard.",
+          "cost": "Threshold \u2014 {2}{R}, {T}",
+          "condition": [
+            {
+              "condition_text": "there are seven or more cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

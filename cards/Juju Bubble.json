@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9344ae2e-cb2e-400d-9157-e8158ce31813",
+  "name": "Juju Bubble",
+  "faces": [
+    {
+      "name": "Juju Bubble",
+      "type_line": "Artifact",
+      "oracle_text": "Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nWhen you play a card, sacrifice this artifact.\n{2}: You gain 1 life.",
+      "static": [
+        {
+          "keyword": "cumulative_upkeep",
+          "cost": "{1}"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you play a card, sacrifice this artifact.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you play a card"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: You gain 1 life.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

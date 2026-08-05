@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3e46381a-7850-4e50-9213-e1a180299977",
+  "name": "Booby Trap",
+  "faces": [
+    {
+      "name": "Booby Trap",
+      "type_line": "Artifact",
+      "oracle_text": "As this artifact enters, choose an opponent and a card name other than a basic land card name.\nThe chosen player reveals each card they draw.\nWhen the chosen player draws a card with the chosen name, sacrifice this artifact. If you do, this artifact deals 10 damage to that player.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When the chosen player draws a card with the chosen name, sacrifice this artifact. If you do, this artifact deals 10 damage to that player.",
+          "trigger": {
+            "type": "custom",
+            "text": "When the chosen player draws a card with the chosen name"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this artifact deals 10 damage to that player",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this artifact enters, choose an opponent and a card name other than a basic land card name.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this artifact enters, choose an opponent and a card name other than a basic land card name"
+            }
+          ]
+        },
+        {
+          "raw_text": "The chosen player reveals each card they draw.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "The chosen player reveals each card they draw"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

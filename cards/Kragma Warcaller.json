@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "da04b438-aa49-4736-b0ed-131bbe70b566",
+  "name": "Kragma Warcaller",
+  "faces": [
+    {
+      "name": "Kragma Warcaller",
+      "type_line": "Creature \u2014 Minotaur Warrior",
+      "oracle_text": "Minotaur creatures you control have haste.\nWhenever a Minotaur you control attacks, it gets +2/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Minotaur you control attacks, it gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Minotaur"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Minotaur creatures you control have haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Minotaur"
+                ]
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

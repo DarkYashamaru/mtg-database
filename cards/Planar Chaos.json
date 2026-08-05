@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f0864dbb-4d91-4282-a774-7b225e649ca8",
+  "name": "Planar Chaos",
+  "faces": [
+    {
+      "name": "Planar Chaos",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, flip a coin. If you lose the flip, sacrifice this enchantment.\nWhenever a player casts a spell, that player flips a coin. If they lose the flip, counter that spell.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, flip a coin. If you lose the flip, sacrifice this enchantment.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "flip a coin"
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a player casts a spell, that player flips a coin. If they lose the flip, counter that spell.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "any_player"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player flips a coin"
+            },
+            {
+              "action": "custom_effect",
+              "text": "counter that spell",
+              "condition": [
+                {
+                  "condition_text": "they lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

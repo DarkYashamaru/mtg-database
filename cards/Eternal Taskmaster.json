@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a7c000a8-1864-4bb2-80fa-a61d74dbd966",
+  "name": "Eternal Taskmaster",
+  "faces": [
+    {
+      "name": "Eternal Taskmaster",
+      "type_line": "Creature \u2014 Zombie",
+      "oracle_text": "This creature enters tapped.\nWhenever this creature attacks, you may pay {2}{B}. If you do, return target creature card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may pay {2}{B}. If you do, return target creature card from your graveyard to your hand.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {2}{B}"
+            },
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature_card_in_your_graveyard"
+              },
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

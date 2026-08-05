@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4f5ebbb8-f49b-488f-bb85-888aaa918bdd",
+  "name": "Gumdrop Poisoner // Tempt with Treats",
+  "faces": [
+    {
+      "name": "Gumdrop Poisoner",
+      "type_line": "Creature \u2014 Human Warlock",
+      "oracle_text": "Lifelink\nWhen this creature enters, up to one target creature gets -X/-X until end of turn, where X is the amount of life you gained this turn.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, up to one target creature gets -X/-X until end of turn, where X is the amount of life you gained this turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "up to one target creature gets -X/-X until end of turn, where X is the amount of life you gained this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Tempt with Treats",
+      "type_line": "Instant \u2014 Adventure",
+      "oracle_text": "Create a Food token. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Create a Food token. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

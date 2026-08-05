@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "602132c2-8ee8-41f8-bfac-cb17d32203f5",
+  "name": "Savvy Hunter",
+  "faces": [
+    {
+      "name": "Savvy Hunter",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Whenever this creature attacks or blocks, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nSacrifice two Foods: Draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks or blocks, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "attacks_or_blocks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice two Foods: Draw a card.",
+          "cost": "Sacrifice two Foods",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ed2af15e-955b-43a1-80af-2484be373db3",
+  "name": "Illuminator Virtuoso",
+  "faces": [
+    {
+      "name": "Illuminator Virtuoso",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "Double strike\nWhenever this creature becomes the target of a spell you control, it connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+      "static": [
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes the target of a spell you control, it connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes the target of a spell you control"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "connive",
+              "target": "self",
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "self",
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

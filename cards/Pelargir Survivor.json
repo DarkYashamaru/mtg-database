@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ce0b3c22-3f77-4a6c-a126-9ed3c06b4482",
+  "name": "Pelargir Survivor",
+  "faces": [
+    {
+      "name": "Pelargir Survivor",
+      "type_line": "Creature \u2014 Human Peasant",
+      "oracle_text": "{T}: Add one mana of any color. Spend this mana only to cast an instant or sorcery spell.\n{5}{U}, {T}: Target player mills three cards. (They put the top three cards of their library into their graveyard.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color. Spend this mana only to cast an instant or sorcery spell.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "card_types": [
+                    "Instant",
+                    "Sorcery"
+                  ],
+                  "subtypes_all": [
+                    "Or"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{5}{U}, {T}: Target player mills three cards. (They put the top three cards of their library into their graveyard.)",
+          "cost": "{5}{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player mills three cards"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

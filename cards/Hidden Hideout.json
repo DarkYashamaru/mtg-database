@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b639e1fe-d099-4cab-a0d0-a1b33c7f31dd",
+  "name": "Hidden Hideout",
+  "faces": [
+    {
+      "name": "Hidden Hideout",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add one mana of any color in your commander's color identity.\n{2}, {T}: Target creature you control with a counter on it gains lifelink until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color in your commander's color identity.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "distribution": "commanders_color_identity"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}: Target creature you control with a counter on it gains lifelink until end of turn.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control_with_a_counter_on_it",
+              "keyword": "lifelink"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

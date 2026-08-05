@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "06355d3f-a82d-4f12-a399-016a12824795",
+  "name": "Shefet Archfiend",
+  "faces": [
+    {
+      "name": "Shefet Archfiend",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Flying\nWhen this creature enters, all other creatures get -2/-2 until end of turn.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, all other creatures get -2/-2 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "all other creatures get -2/-2 until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {2} ({2}, Discard this card: Draw a card.)",
+          "cost": "Cycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

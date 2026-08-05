@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "84c00644-d0e2-418b-b931-4e972ecb3366",
+  "name": "Kavu Aggressor",
+  "faces": [
+    {
+      "name": "Kavu Aggressor",
+      "type_line": "Creature \u2014 Kavu",
+      "oracle_text": "Kicker {4} (You may pay an additional {4} as you cast this spell.)\nThis creature can't block.\nIf this creature was kicked, it enters with a +1/+1 counter on it.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {4} (You may pay an additional {4} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {4}"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        },
+        {
+          "raw_text": "If this creature was kicked, it enters with a +1/+1 counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it enters with a +1/+1 counter on it",
+              "condition": [
+                {
+                  "condition_text": "this creature was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

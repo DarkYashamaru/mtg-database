@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7f956a21-854e-41cc-96f9-ad774e69fa8e",
+  "name": "Wiitigo",
+  "faces": [
+    {
+      "name": "Wiitigo",
+      "type_line": "Creature \u2014 Yeti",
+      "oracle_text": "This creature enters with six +1/+1 counters on it.\nAt the beginning of your upkeep, put a +1/+1 counter on this creature if it has blocked or been blocked since your last upkeep. Otherwise, remove a +1/+1 counter from it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a +1/+1 counter on this creature if it has blocked or been blocked since your last upkeep. Otherwise, remove a +1/+1 counter from it.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_if_it_has_blocked_or_been_blocked_since_you_control_last_upkeep",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove a +1/+1 counter from it",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with six +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

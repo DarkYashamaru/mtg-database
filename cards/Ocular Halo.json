@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e649614a-ff23-4234-92f4-6f564cbfe648",
+  "name": "Ocular Halo",
+  "faces": [
+    {
+      "name": "Ocular Halo",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature has \"{T}: Draw a card.\"\n{W}: Enchanted creature gains vigilance until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Enchanted creature has \"{T}: Draw a card.\"",
+          "cost": "Enchanted creature has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{W}: Enchanted creature gains vigilance until end of turn.",
+          "cost": "{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "enchanted_creature",
+              "keyword": "vigilance"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

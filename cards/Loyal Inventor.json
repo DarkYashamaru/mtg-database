@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eff22b28-88b8-4251-937f-4c06b6ca7bd2",
+  "name": "Loyal Inventor",
+  "faces": [
+    {
+      "name": "Loyal Inventor",
+      "type_line": "Creature \u2014 Human Artificer",
+      "oracle_text": "Vigilance\nWhen this creature enters, you may search your library for an artifact card, reveal it, then shuffle. Put that card into your hand if you control an Assassin. Otherwise, put that card on top of your library.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for an artifact card, reveal it, then shuffle. Put that card into your hand if you control an Assassin. Otherwise, put that card on top of your library.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for an artifact card, reveal it"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put that card into your hand if you control an Assassin"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card on top of your library",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

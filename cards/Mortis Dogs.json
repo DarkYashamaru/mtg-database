@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a89994d0-2110-4ca0-abfc-5dd232981acf",
+  "name": "Mortis Dogs",
+  "faces": [
+    {
+      "name": "Mortis Dogs",
+      "type_line": "Creature \u2014 Phyrexian Dog",
+      "oracle_text": "Whenever this creature attacks, it gets +2/+0 until end of turn.\nWhen this creature dies, target player loses life equal to its power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, target player loses life equal to its power.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target player loses life equal to its power"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

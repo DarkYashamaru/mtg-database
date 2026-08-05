@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "98026d30-a29f-4590-968f-b1b36926a275",
+  "name": "Ovinomancer",
+  "faces": [
+    {
+      "name": "Ovinomancer",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "When this creature enters, sacrifice it unless you return three basic lands you control to their owner's hand.\n{T}, Return this creature to its owner's hand: Destroy target creature. It can't be regenerated. That creature's controller creates a 0/1 green Sheep creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, sacrifice it unless you return three basic lands you control to their owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "it_unless_you_return_three_basic_lands_you_control_to_their_owners_hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Return this creature to its owner's hand: Destroy target creature. It can't be regenerated. That creature's controller creates a 0/1 green Sheep creature token.",
+          "cost": "{T}, Return this creature to its owner's hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature"
+              }
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            },
+            {
+              "action": "custom_effect",
+              "text": "That creature's controller creates a 0/1 green Sheep creature token"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

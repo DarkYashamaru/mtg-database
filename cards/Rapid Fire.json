@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "63c7248e-a7a2-4e32-b4d2-55dbc63e51e5",
+  "name": "Rapid Fire",
+  "faces": [
+    {
+      "name": "Rapid Fire",
+      "type_line": "Instant",
+      "oracle_text": "Cast this spell only before blockers are declared.\nTarget creature gains first strike until end of turn. If it doesn't have rampage, that creature gains rampage 2 until end of turn. (Whenever the creature becomes blocked, it gets +2/+2 until end of turn for each creature blocking it beyond the first.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Cast this spell only before blockers are declared.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cast this spell only before blockers are declared"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target creature gains first strike until end of turn. If it doesn't have rampage, that creature gains rampage 2 until end of turn. (Whenever the creature becomes blocked, it gets +2/+2 until end of turn for each creature blocking it beyond the first.)",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "first_strike"
+            },
+            {
+              "action": "custom_effect",
+              "text": "that creature gains rampage 2 until end of turn",
+              "condition": [
+                {
+                  "condition_text": "it doesn't have rampage"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

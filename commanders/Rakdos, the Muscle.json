@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e2c141af-925e-42bd-8d83-e1a71f4c9794",
+  "name": "Rakdos, the Muscle",
+  "faces": [
+    {
+      "name": "Rakdos, the Muscle",
+      "type_line": "Legendary Creature \u2014 Demon Mercenary",
+      "oracle_text": "Flying, trample\nWhenever you sacrifice another creature, exile cards equal to its mana value from the top of target player's library. Until your next end step, you may play those cards, and mana of any type can be spent to cast those spells.\nSacrifice another creature: Rakdos gains indestructible until end of turn. Tap it. Activate only once each turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you sacrifice another creature, exile cards equal to its mana value from the top of target player's library. Until your next end step, you may play those cards, and mana of any type can be spent to cast those spells.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice another creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile cards equal to its mana value from the top of target player's library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until your next end step, you may play those cards, and mana of any type can be spent to cast those spells"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice another creature: Rakdos gains indestructible until end of turn. Tap it. Activate only once each turn.",
+          "cost": "Sacrifice another creature",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            },
+            {
+              "action": "tap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

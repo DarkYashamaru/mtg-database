@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dfc08963-132f-4ebf-9384-15d17d1098f7",
+  "name": "Bestial Fury",
+  "faces": [
+    {
+      "name": "Bestial Fury",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, draw a card at the beginning of the next turn's upkeep.\nWhenever enchanted creature becomes blocked, it gets +4/+0 and gains trample until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card at the beginning of the next turn's upkeep.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_turns_upkeep"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever enchanted creature becomes blocked, it gets +4/+0 and gains trample until end of turn.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "it_gets_40_and",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b067e44-2001-4b49-aa4a-2c86f8929751",
+  "name": "Omenpath Journey",
+  "faces": [
+    {
+      "name": "Omenpath Journey",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, search your library for up to five land cards that have different names, exile them, then shuffle.\nAt the beginning of your end step, choose a card at random exiled with this enchantment and put it onto the battlefield tapped.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, search your library for up to five land cards that have different names, exile them, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for up to five land cards that have different names, exile them"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, choose a card at random exiled with this enchantment and put it onto the battlefield tapped.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose a card at random exiled with this enchantment and put it onto the battlefield tapped"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

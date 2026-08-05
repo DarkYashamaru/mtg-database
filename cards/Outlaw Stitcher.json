@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9fda1239-97ca-41f0-8bfa-040484769396",
+  "name": "Outlaw Stitcher",
+  "faces": [
+    {
+      "name": "Outlaw Stitcher",
+      "type_line": "Creature \u2014 Human Warlock",
+      "oracle_text": "When this creature enters, create a 2/2 blue and black Zombie Rogue creature token, then put two +1/+1 counters on that token for each spell you've cast this turn other than the first.\nPlot {4}{U} (You may pay {4}{U} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 2/2 blue and black Zombie Rogue creature token, then put two +1/+1 counters on that token for each spell you've cast this turn other than the first.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 blue and black zombie rogue creature token",
+                "colors": [
+                  "blue",
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "zombie",
+                  "rogue"
+                ]
+              }
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "that_token_for_each_spell_youve_cast_this_turn_other_than_the_first",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Plot {4}{U} (You may pay {4}{U} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Plot {4}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

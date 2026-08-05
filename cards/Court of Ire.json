@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "13f58292-9b78-4cd1-a16e-b1779a170d33",
+  "name": "Court of Ire",
+  "faces": [
+    {
+      "name": "Court of Ire",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, you become the monarch.\nAt the beginning of your upkeep, this enchantment deals 2 damage to any target. If you're the monarch, it deals 7 damage instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, this enchantment deals 2 damage to any target. If you're the monarch, it deals 7 damage instead.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_enchantment",
+              "target": "any_target",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "it deals 7 damage instead",
+              "condition": [
+                {
+                  "condition_text": "you're the monarch"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

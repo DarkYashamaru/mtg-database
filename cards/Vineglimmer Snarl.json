@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "33f52df8-4b44-4422-8b0a-37fead9c894b",
+  "name": "Vineglimmer Snarl",
+  "faces": [
+    {
+      "name": "Vineglimmer Snarl",
+      "type_line": "Land",
+      "oracle_text": "As this land enters, you may reveal a Forest or Island card from your hand. If you don't, this land enters tapped.\n{T}: Add {G} or {U}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G} or {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}",
+                "{u}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this land enters, you may reveal a Forest or Island card from your hand. If you don't, this land enters tapped.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this land enters, you may reveal a Forest or Island card from your hand"
+            },
+            {
+              "action": "enters_tapped",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

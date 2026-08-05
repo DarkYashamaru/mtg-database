@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dac9bbfc-62e9-42a9-8ad6-2530ba47b990",
+  "name": "Kashi-Tribe Elite",
+  "faces": [
+    {
+      "name": "Kashi-Tribe Elite",
+      "type_line": "Creature \u2014 Snake Warrior",
+      "oracle_text": "Legendary Snakes you control have shroud. (They can't be the targets of spells or abilities.)\nWhenever this creature deals combat damage to a creature, tap that creature and it doesn't untap during its controller's next untap step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a creature, tap that creature and it doesn't untap during its controller's next untap step.",
+          "trigger": {
+            "type": "deals_combat_damage_to_creature",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap that creature and it doesn't untap during its controller's next untap step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Legendary Snakes you control have shroud. (They can't be the targets of spells or abilities.)",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Legendary",
+                  "Snake"
+                ]
+              },
+              "keywords": [
+                "shroud"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

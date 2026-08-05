@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d749d075-6135-486a-a94a-36c3142960d7",
+  "name": "Unbridled Growth",
+  "faces": [
+    {
+      "name": "Unbridled Growth",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\nEnchanted land has \"{T}: Add one mana of any color.\"\nSacrifice this Aura: Draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Enchanted land has \"{T}: Add one mana of any color.\"",
+          "cost": "Enchanted land has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "Sacrifice this Aura: Draw a card.",
+          "cost": "Sacrifice this Aura",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

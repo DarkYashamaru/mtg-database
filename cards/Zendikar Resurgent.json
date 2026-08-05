@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a0af158b-f42a-4022-a438-e0a2e1fd6d9e",
+  "name": "Zendikar Resurgent",
+  "faces": [
+    {
+      "name": "Zendikar Resurgent",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you tap a land for mana, add one mana of any type that land produced. (The types of mana are white, blue, black, red, green, and colorless.)\nWhenever you cast a creature spell, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you tap a land for mana, add one mana of any type that land produced. (The types of mana are white, blue, black, red, green, and colorless.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you tap a land for mana"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "add one mana of any type that land produced"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a creature spell, draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

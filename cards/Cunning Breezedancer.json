@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ba997e44-fc80-4463-ad3f-6497be26df0f",
+  "name": "Cunning Breezedancer",
+  "faces": [
+    {
+      "name": "Cunning Breezedancer",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever you cast a noncreature spell, this creature gets +2/+2 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, this creature gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3edd6272-20fa-4c3a-bf34-2f253cc8ac9e",
+  "name": "Glass-Cast Heart",
+  "faces": [
+    {
+      "name": "Glass-Cast Heart",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever one or more Vampires you control attack, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")\n{B}, {T}, Pay 1 life: Create a 1/1 white and black Vampire creature token with lifelink.\n{B}{B}, {T}, Sacrifice this artifact and thirteen Blood tokens: Each opponent loses 13 life and you gain 13 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more Vampires you control attack, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Vampire"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Blood token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}, {T}, Pay 1 life: Create a 1/1 white and black Vampire creature token with lifelink.",
+          "cost": "{B}, {T}, Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white and black Vampire creature token with lifelink",
+                "colors": [
+                  "white",
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Vampire"
+                ],
+                "keywords": [
+                  "lifelink"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{B}{B}, {T}, Sacrifice this artifact and thirteen Blood tokens: Each opponent loses 13 life and you gain 13 life.",
+          "cost": "{B}{B}, {T}, Sacrifice this artifact and thirteen Blood tokens",
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 13
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 13
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

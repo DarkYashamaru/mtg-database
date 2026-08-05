@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e536e0d2-7117-4ca8-bdb4-e7dd380113c6",
+  "name": "Rampaging Geoderm",
+  "faces": [
+    {
+      "name": "Rampaging Geoderm",
+      "type_line": "Creature \u2014 Dinosaur Beast",
+      "oracle_text": "Trample, haste\nWhenever you attack, target attacking creature gets +1/+1 until end of turn. If it's attacking a battle, put a +1/+1 counter on it instead.",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, target attacking creature gets +1/+1 until end of turn. If it's attacking a battle, put a +1/+1 counter on it instead.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_attacking_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "it_instead",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it's attacking a battle"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

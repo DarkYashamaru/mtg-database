@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8517e5f4-89c5-4879-9b4f-b35e268798df",
+  "name": "Aetherstream Leopard",
+  "faces": [
+    {
+      "name": "Aetherstream Leopard",
+      "type_line": "Creature \u2014 Cat",
+      "oracle_text": "Trample\nWhen this creature enters, you get {E} (an energy counter).\nWhenever this creature attacks, you may pay {E}. If you do, it gets +2/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E} (an energy counter).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get {E}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, you may pay {E}. If you do, it gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{e}",
+              "optional": true
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 2,
+              "toughness_delta": 0,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

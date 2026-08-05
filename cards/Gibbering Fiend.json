@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2aa03852-6c38-4e91-afed-0c4cd5964598",
+  "name": "Gibbering Fiend",
+  "faces": [
+    {
+      "name": "Gibbering Fiend",
+      "type_line": "Creature \u2014 Devil",
+      "oracle_text": "When this creature enters, it deals 1 damage to each opponent.\nDelirium \u2014 At the beginning of each opponent's upkeep, if there are four or more card types among cards in your graveyard, this creature deals 1 damage to that player.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, it deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each opponent's upkeep, if there are four or more card types among cards in your graveyard, this creature deals 1 damage to that player.",
+          "trigger": {
+            "type": "beginning_of_each_opponents_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "there are four or more card types among cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 1 damage to that player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

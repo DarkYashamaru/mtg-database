@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "77248a76-373c-48fc-939f-aa378ab57f7c",
+  "name": "Mortarpod",
+  "faces": [
+    {
+      "name": "Mortarpod",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.)\nEquipped creature gets +0/+1 and has \"Sacrifice this creature: This creature deals 1 damage to any target.\"\nEquip {2}",
+      "static": [
+        {
+          "keyword": "living_weapon"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equipped creature gets +0/+1 and has \"Sacrifice this creature: This creature deals 1 damage to any target.\"",
+          "cost": "Equipped creature gets +0/+1 and has \"Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

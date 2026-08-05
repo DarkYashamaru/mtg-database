@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "556dd333-4066-41f7-98f6-41794754de71",
+  "name": "Vile Entomber",
+  "faces": [
+    {
+      "name": "Vile Entomber",
+      "type_line": "Creature \u2014 Zombie Warlock",
+      "oracle_text": "Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.)\nWhen this creature enters, search your library for a card, put that card into your graveyard, then shuffle.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, search your library for a card, put that card into your graveyard, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a card, put that card into your graveyard"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

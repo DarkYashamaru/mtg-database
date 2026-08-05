@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6de20c2c-b8a8-4f12-897b-a2f55d7eed87",
+  "name": "Horror of the Broken Lands",
+  "faces": [
+    {
+      "name": "Horror of the Broken Lands",
+      "type_line": "Creature \u2014 Horror",
+      "oracle_text": "Whenever you cycle or discard another card, this creature gets +2/+1 until end of turn.\nCycling {B} ({B}, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cycle or discard another card, this creature gets +2/+1 until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cycle or discard another card"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {B} ({B}, Discard this card: Draw a card.)",
+          "cost": "Cycling {B} ({B}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

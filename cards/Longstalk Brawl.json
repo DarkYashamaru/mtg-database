@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "adc8976a-0871-4fd6-9c4c-822ba9549b4b",
+  "name": "Longstalk Brawl",
+  "faces": [
+    {
+      "name": "Longstalk Brawl",
+      "type_line": "Sorcery",
+      "oracle_text": "Gift a tapped Fish (You may promise an opponent a gift as you cast this spell. If you do, they create a tapped 1/1 blue Fish creature token before its other effects.)\nChoose target creature you control and target creature you don't control. Put a +1/+1 counter on the creature you control if the gift was promised. Then those creatures fight each other.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Gift a tapped Fish (You may promise an opponent a gift as you cast this spell. If you do, they create a tapped 1/1 blue Fish creature token before its other effects.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gift a tapped Fish"
+            }
+          ]
+        },
+        {
+          "raw_text": "Choose target creature you control and target creature you don't control. Put a +1/+1 counter on the creature you control if the gift was promised. Then those creatures fight each other.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose target creature you control and target creature you don't control"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "the_creature_you_control_if_the_gift_was_promised"
+              },
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then those creatures fight each other"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

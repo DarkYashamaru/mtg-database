@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3d5b71d4-ed5e-4c6d-be70-bebbb1475257",
+  "name": "Clockwork Avian",
+  "faces": [
+    {
+      "name": "Clockwork Avian",
+      "type_line": "Artifact Creature \u2014 Bird",
+      "oracle_text": "Flying\nThis creature enters with four +1/+0 counters on it.\nAt end of combat, if this creature attacked or blocked this combat, remove a +1/+0 counter from it.\n{X}, {T}: Put up to X +1/+0 counters on this creature. This ability can't cause the total number of +1/+0 counters on this creature to be greater than four. Activate only during your upkeep.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At end of combat, if this creature attacked or blocked this combat, remove a +1/+0 counter from it.",
+          "trigger": {
+            "type": "end_of_combat"
+          },
+          "condition": [
+            {
+              "condition_text": "this creature attacked or blocked this combat"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove a +1/+0 counter from it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{X}, {T}: Put up to X +1/+0 counters on this creature. This ability can't cause the total number of +1/+0 counters on this creature to be greater than four. Activate only during your upkeep.",
+          "cost": "{X}, {T}",
+          "condition": [
+            {
+              "condition_text": "during your upkeep"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put up to X +1/+0 counters on this creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This ability can't cause the total number of +1/+0 counters on this creature to be greater than four"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with four +1/+0 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with four +1/+0 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

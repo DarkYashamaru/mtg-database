@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bda87ca2-91d0-48fa-bb82-a3396f0438ac",
+  "name": "Tideforce Elemental",
+  "faces": [
+    {
+      "name": "Tideforce Elemental",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "{U}, {T}: You may tap or untap another target creature.\nLandfall \u2014 Whenever a land you control enters, you may untap this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, you may untap this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{U}, {T}: You may tap or untap another target creature.",
+          "cost": "{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may tap or untap another target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

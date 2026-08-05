@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4ff8c359-430f-434e-ac1e-822abdc28360",
+  "name": "Spellrune Painter // Spellrune Howler",
+  "faces": [
+    {
+      "name": "Spellrune Howler",
+      "type_line": "Creature \u2014 Werewolf",
+      "oracle_text": "Whenever you cast an instant or sorcery spell, this creature gets +2/+2 until end of turn.\nNightbound (If a player casts at least two spells during their own turn, it becomes day next turn.)",
+      "static": [
+        {
+          "keyword": "nightbound"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Spellrune Painter",
+      "type_line": "Creature \u2014 Human Shaman Werewolf",
+      "oracle_text": "Whenever you cast an instant or sorcery spell, this creature gets +1/+1 until end of turn.\nDaybound (If a player casts no spells during their own turn, it becomes night next turn.)",
+      "static": [
+        {
+          "keyword": "daybound"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

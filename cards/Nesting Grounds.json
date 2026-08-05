@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d27bb97d-286b-4947-8d7b-443e4df93319",
+  "name": "Nesting Grounds",
+  "faces": [
+    {
+      "name": "Nesting Grounds",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{1}, {T}: Move a counter from target permanent you control onto a second target permanent. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Move a counter from target permanent you control onto a second target permanent. Activate only as a sorcery.",
+          "cost": "{1}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Move a counter from target permanent you control onto a second target permanent"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

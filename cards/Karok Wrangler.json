@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "031f629f-7a9a-4143-9f5d-434ed1c23b7f",
+  "name": "Karok Wrangler",
+  "faces": [
+    {
+      "name": "Karok Wrangler",
+      "type_line": "Creature \u2014 Elf Druid",
+      "oracle_text": "Magecraft \u2014 Whenever you cast or copy an instant or sorcery spell, put a +1/+1 counter on target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast or copy an instant or sorcery spell, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "or_copy_an_instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

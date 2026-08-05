@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a138ca33-6ea4-468e-9cfb-c908ee62c516",
+  "name": "Ink Dissolver",
+  "faces": [
+    {
+      "name": "Ink Dissolver",
+      "type_line": "Creature \u2014 Merfolk Wizard",
+      "oracle_text": "Kinship \u2014 At the beginning of your upkeep, you may look at the top card of your library. If it shares a creature type with this creature, you may reveal it. If you do, each opponent mills three cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may look at the top card of your library. If it shares a creature type with this creature, you may reveal it. If you do, each opponent mills three cards.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it shares a creature type with this creature"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "each opponent mills three cards",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

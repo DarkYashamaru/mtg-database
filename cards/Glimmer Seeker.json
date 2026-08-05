@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cbb5526b-3aa1-43d9-acdb-bd230ce3fe63",
+  "name": "Glimmer Seeker",
+  "faces": [
+    {
+      "name": "Glimmer Seeker",
+      "type_line": "Creature \u2014 Human Survivor",
+      "oracle_text": "Survival \u2014 At the beginning of your second main phase, if this creature is tapped, draw a card if you control a Glimmer creature. If you don't control a Glimmer creature, create a 1/1 white Glimmer enchantment creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your second main phase, if this creature is tapped, draw a card if you control a Glimmer creature. If you don't control a Glimmer creature, create a 1/1 white Glimmer enchantment creature token.",
+          "trigger": {
+            "type": "beginning_of_your_second_main_phase"
+          },
+          "condition": [
+            {
+              "condition_text": "this creature is tapped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you control a glimmer creature"
+                }
+              ]
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white glimmer enchantment creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "glimmer",
+                  "enchantment"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "you don't control a glimmer creature"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6f72ce67-3c17-4338-904b-26e2bf4aecdc",
+  "name": "Loki, God of Lies",
+  "faces": [
+    {
+      "name": "Loki, God of Lies",
+      "type_line": "Legendary Creature \u2014 God Sorcerer Villain",
+      "oracle_text": "Whenever you cast a spell that targets only a single creature, gain control of that creature until end of turn. If it's your turn, untap that creature and it gains haste until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that targets only a single creature, gain control of that creature until end of turn. If it's your turn, untap that creature and it gains haste until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "that targets only a single creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "gain control of that creature until end of turn"
+            },
+            {
+              "action": "untap",
+              "target": "that_creature",
+              "condition": [
+                {
+                  "condition_text": "it's your turn"
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

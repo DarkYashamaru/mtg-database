@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "66944a11-40a1-4f3a-9f83-52324e0edfef",
+  "name": "Arahbo, Roar of the World",
+  "faces": [
+    {
+      "name": "Arahbo, Roar of the World",
+      "type_line": "Legendary Creature \u2014 Cat Avatar",
+      "oracle_text": "Eminence \u2014 At the beginning of combat on your turn, if Arahbo is in the command zone or on the battlefield, another target Cat you control gets +3/+3 until end of turn.\nWhenever another Cat you control attacks, you may pay {1}{G}{W}. If you do, it gains trample and gets +X/+X until end of turn, where X is its power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if Arahbo is in the command zone or on the battlefield, another target Cat you control gets +3/+3 until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "subject": "self",
+              "zones_any": [
+                "command_zone",
+                "battlefield"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "subtypes": [
+                  "Target",
+                  "Cat"
+                ]
+              },
+              "power_delta": 3,
+              "toughness_delta": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another Cat you control attacks, you may pay {1}{G}{W}. If you do, it gains trample and gets +X/+X until end of turn, where X is its power.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Cat"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{G}{W}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it gains trample and gets +x/+x until end of turn, where x is its power",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

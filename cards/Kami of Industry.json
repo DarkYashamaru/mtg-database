@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b308fa9a-3f69-4e59-9d4b-8007d9a2b1f1",
+  "name": "Kami of Industry",
+  "faces": [
+    {
+      "name": "Kami of Industry",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "When this creature enters, return target artifact card with mana value 3 or less from your graveyard to the battlefield. It gains haste. Sacrifice it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, return target artifact card with mana value 3 or less from your graveyard to the battlefield. It gains haste. Sacrifice it at the beginning of the next end step.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target artifact card with mana value 3 or less from your graveyard to the battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "it_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

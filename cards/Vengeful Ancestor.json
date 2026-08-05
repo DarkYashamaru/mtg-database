@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f3b3173b-f7ae-420e-84ec-ea61414674a0",
+  "name": "Vengeful Ancestor",
+  "faces": [
+    {
+      "name": "Vengeful Ancestor",
+      "type_line": "Creature \u2014 Spirit Dragon",
+      "oracle_text": "Flying\nWhenever this creature enters or attacks, goad target creature. (Until your next turn, that creature attacks each combat if able and attacks a player other than you if able.)\nWhenever a goaded creature attacks, it deals 1 damage to its controller.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or attacks, goad target creature. (Until your next turn, that creature attacks each combat if able and attacks a player other than you if able.)",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "goad target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a goaded creature attacks, it deals 1 damage to its controller.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "a_goaded_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 1 damage to its controller"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

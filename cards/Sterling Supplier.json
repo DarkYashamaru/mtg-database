@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ab23cca2-b59e-4d34-80de-98bd08985275",
+  "name": "Sterling Supplier",
+  "faces": [
+    {
+      "name": "Sterling Supplier",
+      "type_line": "Creature \u2014 Bird Soldier",
+      "oracle_text": "Flying\nWhen this creature enters, put a +1/+1 counter on another target creature you control.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on another target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

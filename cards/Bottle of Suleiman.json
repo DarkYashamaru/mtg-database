@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f32d19d6-8ac1-4744-b2c2-5c9d4cd0da70",
+  "name": "Bottle of Suleiman",
+  "faces": [
+    {
+      "name": "Bottle of Suleiman",
+      "type_line": "Artifact",
+      "oracle_text": "{1}, Sacrifice this artifact: Flip a coin. If you win the flip, create a 5/5 colorless Djinn artifact creature token with flying. If you lose the flip, this artifact deals 5 damage to you.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice this artifact: Flip a coin. If you win the flip, create a 5/5 colorless Djinn artifact creature token with flying. If you lose the flip, this artifact deals 5 damage to you.",
+          "cost": "{1}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 5/5 colorless djinn artifact creature token with flying",
+                "power_toughness": "5/5",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "djinn",
+                  "artifact"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "you win the flip"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "this artifact deals 5 damage to you",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

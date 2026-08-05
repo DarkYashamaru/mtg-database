@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d902074a-2a2b-42b7-a1e5-750862c64fbe",
+  "name": "Sarkhan Vol",
+  "faces": [
+    {
+      "name": "Sarkhan Vol",
+      "type_line": "Legendary Planeswalker \u2014 Sarkhan",
+      "oracle_text": "+1: Creatures you control get +1/+1 and gain haste until end of turn.\n\u22122: Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn.\n\u22126: Create five 4/4 red Dragon creature tokens with flying.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Creatures you control get +1/+1 and gain haste until end of turn.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control_get_11_and",
+              "keyword": "haste"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_control",
+              "target": "target_creature",
+              "duration": "until_end_of_turn"
+            },
+            {
+              "action": "untap",
+              "target": "that_creature"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: Create five 4/4 red Dragon creature tokens with flying.",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "five 4/4 red Dragon creature tokens with flying",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Dragon"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ac65ed8c-abe8-4044-9ce5-70b1370d0e19",
+  "name": "Boggart Mischief",
+  "faces": [
+    {
+      "name": "Boggart Mischief",
+      "type_line": "Kindred Enchantment \u2014 Goblin",
+      "oracle_text": "When this enchantment enters, you may blight 1. If you do, create two 1/1 black and red Goblin creature tokens. (To blight 1, put a -1/-1 counter on a creature you control.)\nWhenever a Goblin creature you control dies, each opponent loses 1 life and you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you may blight 1. If you do, create two 1/1 black and red Goblin creature tokens. (To blight 1, put a -1/-1 counter on a creature you control.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may blight 1"
+            },
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 black and red goblin creature tokens",
+                "colors": [
+                  "black",
+                  "red"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "goblin"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a Goblin creature you control dies, each opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Goblin"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

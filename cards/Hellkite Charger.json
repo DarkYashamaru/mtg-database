@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d4f28a4b-d821-4132-bdec-4c528318f8e2",
+  "name": "Hellkite Charger",
+  "faces": [
+    {
+      "name": "Hellkite Charger",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying, haste\nWhenever this creature attacks, you may pay {5}{R}{R}. If you do, untap all attacking creatures and after this phase, there is an additional combat phase.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may pay {5}{R}{R}. If you do, untap all attacking creatures and after this phase, there is an additional combat phase.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {5}{R}{R}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap all attacking creatures",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "add_combat_phase_after_this_phase"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

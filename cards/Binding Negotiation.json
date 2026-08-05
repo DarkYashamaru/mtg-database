@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "86dc3a41-4fb9-4b1f-8279-2b5edbc7e170",
+  "name": "Binding Negotiation",
+  "faces": [
+    {
+      "name": "Binding Negotiation",
+      "type_line": "Sorcery",
+      "oracle_text": "Target opponent reveals their hand. You may choose a nonland card from it. If you do, they discard it. Otherwise, you may put a face-up exiled card they own into their graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target opponent reveals their hand. You may choose a nonland card from it. If you do, they discard it. Otherwise, you may put a face-up exiled card they own into their graveyard.",
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may choose a nonland card from it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they discard it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put a face-up exiled card they own into their graveyard",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

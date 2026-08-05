@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3518e273-bd92-46bc-b361-da52c670dfe1",
+  "name": "Sunseed Nurturer",
+  "faces": [
+    {
+      "name": "Sunseed Nurturer",
+      "type_line": "Creature \u2014 Human Druid Wizard",
+      "oracle_text": "At the beginning of your end step, if you control a creature with power 5 or greater, you may gain 2 life.\n{T}: Add {C}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if you control a creature with power 5 or greater, you may gain 2 life.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you control a creature with power 5 or greater"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may gain 2 life"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

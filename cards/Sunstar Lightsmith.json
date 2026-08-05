@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "132de6c2-4ca2-41da-9c78-caa59838b641",
+  "name": "Sunstar Lightsmith",
+  "faces": [
+    {
+      "name": "Sunstar Lightsmith",
+      "type_line": "Creature \u2014 Human Artificer",
+      "oracle_text": "Whenever you cast your second spell each turn, put a +1/+1 counter on this creature and draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, put a +1/+1 counter on this creature and draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

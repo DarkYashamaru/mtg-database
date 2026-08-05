@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "oracle_id": "403e554b-72a5-48b3-acea-0b4062ffb913",
+  "name": "Built to Last",
+  "faces": [
+    {
+      "name": "Built to Last",
+      "type_line": "Instant",
+      "oracle_text": "Target creature gets +2/+2 until end of turn. If it's an artifact creature, it gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature gets +2/+2 until end of turn. If it's an artifact creature, it gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "indestructible",
+              "condition": [
+                {
+                  "condition_text": "it's an artifact creature"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

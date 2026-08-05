@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "116eea43-4235-4608-8c6a-599e860ae2f1",
+  "name": "Hardbristle Bandit",
+  "faces": [
+    {
+      "name": "Hardbristle Bandit",
+      "type_line": "Creature \u2014 Plant Rogue",
+      "oracle_text": "{T}: Add one mana of any color.\nWhenever you commit a crime, untap this creature. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you commit a crime, untap this creature. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+          "trigger": {
+            "type": "commit_crime",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

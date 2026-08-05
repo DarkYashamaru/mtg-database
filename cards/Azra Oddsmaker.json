@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "457470db-e664-4ca3-84ec-6cec2d4ae906",
+  "name": "Azra Oddsmaker",
+  "faces": [
+    {
+      "name": "Azra Oddsmaker",
+      "type_line": "Creature \u2014 Azra Warrior",
+      "oracle_text": "At the beginning of combat on your turn, you may discard a card. If you do, choose a creature. Whenever that creature deals combat damage to a player this turn, you draw two cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, you may discard a card. If you do, choose a creature. Whenever that creature deals combat damage to a player this turn, you draw two cards.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "choose a creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Whenever that creature deals combat damage to a player this turn, you draw two cards"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

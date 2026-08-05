@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2588f348-d7a3-46c8-9ace-dca53ed5ef99",
+  "name": "Ajani, Nacatl Pariah // Ajani, Nacatl Avenger",
+  "faces": [
+    {
+      "name": "Ajani, Nacatl Avenger",
+      "type_line": "Legendary Planeswalker \u2014 Ajani",
+      "oracle_text": "+2: Put a +1/+1 counter on each Cat you control.\n0: Create a 2/1 white Cat Warrior creature token. When you do, if you control a red permanent other than Ajani, he deals damage equal to the number of creatures you control to any target.\n\u22124: Each opponent chooses an artifact, a creature, an enchantment, and a planeswalker from among the nonland permanents they control, then sacrifices the rest.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+2: Put a +1/+1 counter on each Cat you control.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Cat"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "0: Create a 2/1 white Cat Warrior creature token. When you do, if you control a red permanent other than Ajani, he deals damage equal to the number of creatures you control to any target.",
+          "cost": "0",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/1 white Cat Warrior creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Cat",
+                  "Warrior"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "he deals damage equal to the number of creatures you control to any target",
+              "condition": [
+                {
+                  "condition_text": "you control a red permanent other than ajani"
+                },
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22124: Each opponent chooses an artifact, a creature, an enchantment, and a planeswalker from among the nonland permanents they control, then sacrifices the rest.",
+          "cost": "\u22124",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent chooses an artifact, a creature, an enchantment, and a planeswalker from among the nonland permanents they control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "sacrifices the rest"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Ajani, Nacatl Pariah",
+      "type_line": "Legendary Creature \u2014 Cat Warrior",
+      "oracle_text": "When Ajani enters, create a 2/1 white Cat Warrior creature token.\nWhenever one or more other Cats you control die, you may exile Ajani, then return him to the battlefield transformed under his owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Ajani enters, create a 2/1 white Cat Warrior creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/1 white Cat Warrior creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Cat",
+                  "Warrior"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more other Cats you control die, you may exile Ajani, then return him to the battlefield transformed under his owner's control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more other Cats you control die"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile ajani"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return him to the battlefield transformed under his owner's control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

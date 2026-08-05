@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "13cfc92c-142a-4016-b86f-ace6bda1a69c",
+  "name": "Chilling Apparition",
+  "faces": [
+    {
+      "name": "Chilling Apparition",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "{B}: Regenerate this creature.\nWhenever this creature deals combat damage to a player, that player discards a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, that player discards a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "that_player",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}: Regenerate this creature.",
+          "cost": "{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

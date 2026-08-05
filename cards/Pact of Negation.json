@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f3e213a4-ba5a-468a-93b3-c0a34e1bd725",
+  "name": "Pact of Negation",
+  "faces": [
+    {
+      "name": "Pact of Negation",
+      "type_line": "Instant",
+      "oracle_text": "Counter target spell.\nAt the beginning of your next upkeep, pay {3}{U}{U}. If you don't, you lose the game.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your next upkeep, pay {3}{U}{U}. If you don't, you lose the game.",
+          "trigger": {
+            "type": "beginning_of_your_next_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "pay {3}{U}{U}"
+            },
+            {
+              "action": "lose_the_game",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Counter target spell.",
+          "effects": [
+            {
+              "action": "counter_spell",
+              "target": "target_spell"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

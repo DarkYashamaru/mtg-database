@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b3726f1-20b8-42ec-8f9b-b361515c3f05",
+  "name": "Restless Fortress",
+  "faces": [
+    {
+      "name": "Restless Fortress",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {W} or {B}.\n{2}{W}{B}: This land becomes a 1/4 white and black Nightmare creature until end of turn. It's still a land.\nWhenever this land attacks, defending player loses 2 life and you gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this land attacks, defending player loses 2 life and you gain 2 life.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "defending player loses 2 life and you gain 2 life"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W} or {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}",
+                "{b}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{W}{B}: This land becomes a 1/4 white and black Nightmare creature until end of turn. It's still a land.",
+          "cost": "{2}{W}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land becomes a 1/4 white and black Nightmare creature until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9d581188-ce80-494e-bd38-f411e1f4efb5",
+  "name": "Bridgeworks Battle // Tanglespan Bridgeworks",
+  "faces": [
+    {
+      "name": "Bridgeworks Battle",
+      "type_line": "Sorcery",
+      "oracle_text": "Target creature you control gets +2/+2 until end of turn. It fights up to one target creature you don't control. (Each deals damage equal to its power to the other.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature you control gets +2/+2 until end of turn. It fights up to one target creature you don't control. (Each deals damage equal to its power to the other.)",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "It fights up to one target creature you don't control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tanglespan Bridgeworks",
+      "type_line": "Land",
+      "oracle_text": "As this land enters, you may pay 3 life. If you don't, it enters tapped.\n{T}: Add {G}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this land enters, you may pay 3 life. If you don't, it enters tapped.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this land enters, you may pay 3 life"
+            },
+            {
+              "action": "enters_tapped",
+              "target": "it",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

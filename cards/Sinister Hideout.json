@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "80f08b47-a237-4efd-8d86-dfe35a816b0e",
+  "name": "Sinister Hideout",
+  "faces": [
+    {
+      "name": "Sinister Hideout",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {U} or {B}.\n{4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U} or {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}",
+                "{b}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}, {T}: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+          "cost": "{4}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

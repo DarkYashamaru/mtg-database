@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e8fd428f-7521-4e6a-86b7-835f20ee3c5c",
+  "name": "Kellan, Planar Trailblazer",
+  "faces": [
+    {
+      "name": "Kellan, Planar Trailblazer",
+      "type_line": "Legendary Creature \u2014 Human Faerie Scout",
+      "oracle_text": "{1}{R}: If Kellan is a Scout, it becomes a Human Faerie Detective and gains \"Whenever Kellan deals combat damage to a player, exile the top card of your library. You may play that card this turn.\"\n{2}{R}: If Kellan is a Detective, it becomes a 3/2 Human Faerie Rogue and gains double strike.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{R}: If Kellan is a Scout, it becomes a Human Faerie Detective and gains \"Whenever Kellan deals combat damage to a player, exile the top card of your library. You may play that card this turn.\"",
+          "cost": "{1}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it becomes a human faerie detective and gains \"whenever kellan deals combat damage to a player, exile the top card of your library",
+              "condition": [
+                {
+                  "condition_text": "kellan is a scout"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card this turn.\""
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{R}: If Kellan is a Detective, it becomes a 3/2 Human Faerie Rogue and gains double strike.",
+          "cost": "{2}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword",
+              "target": "it_becomes_a_32_human_faerie_rogue_and",
+              "keyword": "double_strike",
+              "condition": [
+                {
+                  "condition_text": "kellan is a detective"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "45fa04ee-3b5c-45b3-8c09-bda08cca3630",
+  "name": "Excavation Elephant",
+  "faces": [
+    {
+      "name": "Excavation Elephant",
+      "type_line": "Creature \u2014 Elephant",
+      "oracle_text": "Kicker {1}{W} (You may pay an additional {1}{W} as you cast this spell.)\nWhen this creature enters, if it was kicked, return target artifact card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, return target artifact card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target artifact card from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{W} (You may pay an additional {1}{W} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

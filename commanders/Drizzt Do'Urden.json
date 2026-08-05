@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1e939df0-d421-42b7-b642-88b3555fd8df",
+  "name": "Drizzt Do'Urden",
+  "faces": [
+    {
+      "name": "Drizzt Do'Urden",
+      "type_line": "Legendary Creature \u2014 Elf Ranger",
+      "oracle_text": "Double strike\nWhen Drizzt enters, create Guenhwyvar, a legendary 4/1 green Cat creature token with trample.\nWhenever a creature dies, if it had power greater than Drizzt's power, put a number of +1/+1 counters on Drizzt equal to the difference.",
+      "static": [
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Drizzt enters, create Guenhwyvar, a legendary 4/1 green Cat creature token with trample.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Guenhwyvar, a legendary 4/1 green Cat creature token with trample",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "4/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Cat"
+                ],
+                "keywords": [
+                  "trample"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature dies, if it had power greater than Drizzt's power, put a number of +1/+1 counters on Drizzt equal to the difference.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature"
+          },
+          "condition": [
+            {
+              "condition_text": "it had power greater than Drizzt's power"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a number of +1/+1 counters on Drizzt equal to the difference"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

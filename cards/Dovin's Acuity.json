@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "898e480d-c44e-4080-910a-f53e4ee471e1",
+  "name": "Dovin's Acuity",
+  "faces": [
+    {
+      "name": "Dovin's Acuity",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, you gain 2 life and draw a card.\nWhenever you cast an instant spell during your main phase, you may return this enchantment to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you gain 2 life and draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast an instant spell during your main phase, you may return this enchantment to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast an instant spell during your main phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return this enchantment to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

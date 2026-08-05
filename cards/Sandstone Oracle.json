@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "850e2dbd-b904-41b9-8ffe-0aa562837bde",
+  "name": "Sandstone Oracle",
+  "faces": [
+    {
+      "name": "Sandstone Oracle",
+      "type_line": "Artifact Creature \u2014 Sphinx",
+      "oracle_text": "Flying\nWhen this creature enters, choose an opponent. If that player has more cards in hand than you, draw cards equal to the difference.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, choose an opponent. If that player has more cards in hand than you, draw cards equal to the difference.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose an opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "draw cards equal to the difference",
+              "condition": [
+                {
+                  "condition_text": "that player has more cards in hand than you"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c48cf069-eb20-4a61-b58c-b031ec22a5f0",
+  "name": "Grafted Wargear",
+  "faces": [
+    {
+      "name": "Grafted Wargear",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +3/+2.\nWhenever this Equipment becomes unattached from a permanent, sacrifice that permanent.\nEquip {0} ({0}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Equipment becomes unattached from a permanent, sacrifice that permanent.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this Equipment becomes unattached from a permanent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "that_permanent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {0} ({0}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{0}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +3/+2.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 3,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

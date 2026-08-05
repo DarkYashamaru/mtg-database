@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c910c1c0-2b78-4e0f-bb55-e0581b2e07e8",
+  "name": "Military Discipline",
+  "faces": [
+    {
+      "name": "Military Discipline",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash\nEnchant creature\nWhen this Aura enters, enchanted creature gains first strike until end of turn.\nEnchanted creature gets +1/+0.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, enchanted creature gains first strike until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "enchanted_creature",
+              "keyword": "first_strike"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+0.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

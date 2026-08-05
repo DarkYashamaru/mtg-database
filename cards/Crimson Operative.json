@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d8863742-6c1c-415a-ad27-7def6d119c6a",
+  "name": "Crimson Operative",
+  "faces": [
+    {
+      "name": "Crimson Operative",
+      "type_line": "Artifact Creature \u2014 Human Villain",
+      "oracle_text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhen this creature enters, exile the top card of your library. Until the end of your next turn, you may play that card.",
+      "static": [
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, exile the top card of your library. Until the end of your next turn, you may play that card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "allow_play",
+              "object": "that_card",
+              "until": "end_of_your_next_turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

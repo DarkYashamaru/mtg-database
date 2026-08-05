@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b347be2d-9aa1-42a9-b652-8fb032832f09",
+  "name": "Halana and Alena, Partners",
+  "faces": [
+    {
+      "name": "Halana and Alena, Partners",
+      "type_line": "Legendary Creature \u2014 Human Ranger",
+      "oracle_text": "First strike (This creature deals combat damage before creatures without first strike.)\nReach (This creature can block creatures with flying.)\nAt the beginning of combat on your turn, put X +1/+1 counters on another target creature you control, where X is Halana and Alena's power. That creature gains haste until end of turn.",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, put X +1/+1 counters on another target creature you control, where X is Halana and Alena's power. That creature gains haste until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "another_target_creature_you_control_where_x_is_selfs_power"
+              },
+              "amount": "X"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

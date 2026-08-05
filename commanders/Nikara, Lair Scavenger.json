@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2a2376b8-6962-4f9e-ba36-fd7de87dc77d",
+  "name": "Nikara, Lair Scavenger",
+  "faces": [
+    {
+      "name": "Nikara, Lair Scavenger",
+      "type_line": "Legendary Creature \u2014 Human Cleric",
+      "oracle_text": "Partner with Yannik, Scavenging Sentinel (When this creature enters, target player may put Yannik into their hand from their library, then shuffle.)\nMenace\nWhenever another creature you control leaves the battlefield, if it had one or more counters on it, you draw a card and you lose 1 life.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control leaves the battlefield, if it had one or more counters on it, you draw a card and you lose 1 life.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "it had one or more counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Yannik, Scavenging Sentinel (When this creature enters, target player may put Yannik into their hand from their library, then shuffle.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Yannik, Scavenging Sentinel"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

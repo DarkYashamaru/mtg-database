@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c15cad77-e70f-42cc-a9f5-50e1fd8c9c96",
+  "name": "Shoreline Looter",
+  "faces": [
+    {
+      "name": "Shoreline Looter",
+      "type_line": "Creature \u2014 Rat Rogue",
+      "oracle_text": "This creature can't be blocked.\nThreshold \u2014 Whenever this creature deals combat damage to a player, draw a card. Then discard a card unless there are seven or more cards in your graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, draw a card. Then discard a card unless there are seven or more cards in your graveyard.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then discard a card unless there are seven or more cards in your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

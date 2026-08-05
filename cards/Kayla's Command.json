@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3d937cd9-b1e1-406d-9e29-3b9d3ceea3be",
+  "name": "Kayla's Command",
+  "faces": [
+    {
+      "name": "Kayla's Command",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose two \u2014\n\u2022 Create a 2/2 colorless Construct artifact creature token.\n\u2022 Put a +1/+1 counter on a creature you control. It gains double strike until end of turn.\n\u2022 Search your library for a basic Plains card, reveal it, put it into your hand, then shuffle.\n\u2022 You gain 2 life and scry 2.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose two \u2014\n\u2022 Create a 2/2 colorless Construct artifact creature token.\n\u2022 Put a +1/+1 counter on a creature you control. It gains double strike until end of turn.\n\u2022 Search your library for a basic Plains card, reveal it, put it into your hand, then shuffle.\n\u2022 You gain 2 life and scry 2.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 2,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Create a 2/2 colorless Construct artifact creature token.",
+              "effects": [
+                {
+                  "action": "create_token",
+                  "amount": 1,
+                  "token": {
+                    "raw": "2/2 colorless Construct artifact creature token",
+                    "power_toughness": "2/2",
+                    "card_types": [
+                      "creature"
+                    ],
+                    "subtypes": [
+                      "colorless",
+                      "Construct",
+                      "artifact"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Put a +1/+1 counter on a creature you control. It gains double strike until end of turn.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control"
+                  },
+                  "amount": 1
+                },
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "previous_target",
+                  "keyword": "double_strike"
+                }
+              ]
+            },
+            {
+              "raw_text": "Search your library for a basic Plains card, reveal it, put it into your hand, then shuffle.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "search your library for a basic plains card, reveal it, put it into your hand"
+                },
+                {
+                  "action": "shuffle_library",
+                  "player": "you"
+                }
+              ]
+            },
+            {
+              "raw_text": "You gain 2 life and scry 2.",
+              "effects": [
+                {
+                  "action": "gain_life",
+                  "player": "you",
+                  "amount": 2
+                },
+                {
+                  "action": "scry",
+                  "amount": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

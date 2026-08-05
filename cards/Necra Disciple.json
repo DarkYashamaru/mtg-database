@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ef85a5eb-9cde-47b7-97e4-daa9aa9d4676",
+  "name": "Necra Disciple",
+  "faces": [
+    {
+      "name": "Necra Disciple",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "{G}, {T}: Add one mana of any color.\n{W}, {T}: Prevent the next 1 damage that would be dealt to any target this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{G}, {T}: Add one mana of any color.",
+          "cost": "{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{W}, {T}: Prevent the next 1 damage that would be dealt to any target this turn.",
+          "cost": "{W}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Prevent the next 1 damage that would be dealt to any target this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

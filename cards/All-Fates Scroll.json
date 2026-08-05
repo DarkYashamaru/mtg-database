@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cef5361a-a189-4e05-a8b8-fc764aed73b9",
+  "name": "All-Fates Scroll",
+  "faces": [
+    {
+      "name": "All-Fates Scroll",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add one mana of any color.\n{7}, {T}, Sacrifice this artifact: Draw X cards, where X is the number of differently named lands you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{7}, {T}, Sacrifice this artifact: Draw X cards, where X is the number of differently named lands you control.",
+          "cost": "{7}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Draw X cards, where X is the number of differently named lands you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

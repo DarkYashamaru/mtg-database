@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "edb6ae9e-a41c-4d82-97bf-4be00e98364c",
+  "name": "Militia Bugler",
+  "faces": [
+    {
+      "name": "Militia Bugler",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Vigilance (Attacking doesn't cause this creature to tap.)\nWhen this creature enters, look at the top four cards of your library. You may reveal a creature card with power 2 or less from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at the top four cards of your library. You may reveal a creature card with power 2 or less from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes_any": [
+                  "2",
+                  "Card",
+                  "Les",
+                  "Power",
+                  "With"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

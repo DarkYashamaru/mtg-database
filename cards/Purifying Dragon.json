@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a45762af-4aac-40b3-a983-ea441b04c5ee",
+  "name": "Purifying Dragon",
+  "faces": [
+    {
+      "name": "Purifying Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever this creature attacks, it deals 1 damage to target creature defending player controls. If that creature is a Zombie, this creature deals 2 damage to it instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it deals 1 damage to target creature defending player controls. If that creature is a Zombie, this creature deals 2 damage to it instead.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 1 damage to target creature defending player controls"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 2 damage to it instead",
+              "condition": [
+                {
+                  "condition_text": "that creature is a zombie"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

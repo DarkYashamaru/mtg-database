@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e9832d58-0ee6-4641-a9fd-d34d54b3b11c",
+  "name": "Passenger Ferry",
+  "faces": [
+    {
+      "name": "Passenger Ferry",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Whenever this Vehicle attacks, you may pay {U}. When you do, another target attacking creature can't be blocked this turn.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle attacks, you may pay {U}. When you do, another target attacking creature can't be blocked this turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{u}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "another target attacking creature can't be blocked this turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

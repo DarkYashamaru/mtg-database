@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a18e6468-b8a2-4681-b8fa-223ab5f3061a",
+  "name": "Phyrexian Boon",
+  "faces": [
+    {
+      "name": "Phyrexian Boon",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +2/+1 as long as it's black. Otherwise, it gets -1/-2.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+1 as long as it's black. Otherwise, it gets -1/-2.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +2/+1 as long as it's black"
+            },
+            {
+              "action": "modify_stats",
+              "target": "self",
+              "power_delta": -1,
+              "toughness_delta": -2,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

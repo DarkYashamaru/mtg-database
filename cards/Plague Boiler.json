@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fef502af-6e79-4c55-a86a-b45adb3fc64a",
+  "name": "Plague Boiler",
+  "faces": [
+    {
+      "name": "Plague Boiler",
+      "type_line": "Artifact",
+      "oracle_text": "At the beginning of your upkeep, put a plague counter on this artifact.\n{1}{B}{G}: Put a plague counter on this artifact or remove a plague counter from it.\nWhen this artifact has three or more plague counters on it, sacrifice it. If you do, destroy all nonland permanents.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a plague counter on this artifact.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a plague counter on this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this artifact has three or more plague counters on it, sacrifice it. If you do, destroy all nonland permanents.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact has three or more plague counters on it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy all nonland permanents",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}{G}: Put a plague counter on this artifact or remove a plague counter from it.",
+          "cost": "{1}{B}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a plague counter on this artifact or remove a plague counter from it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

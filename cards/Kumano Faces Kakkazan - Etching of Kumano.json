@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "oracle_id": "535916f8-b51a-4414-8ab0-fdccdefd9433",
+  "name": "Kumano Faces Kakkazan // Etching of Kumano",
+  "faces": [
+    {
+      "name": "Etching of Kumano",
+      "type_line": "Enchantment Creature \u2014 Human Shaman",
+      "oracle_text": "Haste\nIf a creature dealt damage this turn by a source you controlled would die, exile it instead.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If a creature dealt damage this turn by a source you controlled would die, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "a creature dealt damage this turn by a source you controlled would die"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kumano Faces Kakkazan",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 This Saga deals 1 damage to each opponent and each planeswalker they control.\nII \u2014 When you next cast a creature spell this turn, that creature enters with an additional +1/+1 counter on it.\nIII \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 This Saga deals 1 damage to each opponent and each planeswalker they control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Saga deals 1 damage to each opponent and each planeswalker they control"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 When you next cast a creature spell this turn, that creature enters with an additional +1/+1 counter on it.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "When you next cast a creature spell this turn, that creature enters with an additional +1/+1 counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a422a5b0-1aff-4d07-bcc5-edfbda09dc44",
+  "name": "Themberchaud",
+  "faces": [
+    {
+      "name": "Themberchaud",
+      "type_line": "Legendary Creature \u2014 Dragon",
+      "oracle_text": "Trample\nWhen Themberchaud enters, he deals X damage to each other creature without flying and each player, where X is the number of Mountains you control.\nYou may exert Themberchaud as he attacks. When you do, he gains flying until end of turn. (An exerted creature won't untap during your next untap step.)",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Themberchaud enters, he deals X damage to each other creature without flying and each player, where X is the number of Mountains you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "he deals X damage to each other creature without flying and each player, where X is the number of Mountains you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may exert Themberchaud as he attacks. When you do, he gains flying until end of turn. (An exerted creature won't untap during your next untap step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may exert Themberchaud as he attacks"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "he",
+              "keyword": "flying",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0d60ffba-9904-442e-8d4a-a6b1b50a38eb",
+  "name": "Prismari Apprentice",
+  "faces": [
+    {
+      "name": "Prismari Apprentice",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "Magecraft \u2014 Whenever you cast or copy an instant or sorcery spell, this creature can't be blocked this turn. If that spell has mana value 5 or greater, put a +1/+1 counter on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast or copy an instant or sorcery spell, this creature can't be blocked this turn. If that spell has mana value 5 or greater, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "or_copy_an_instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "that spell has mana value 5 or greater"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

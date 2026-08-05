@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "897eef47-3e99-4a5f-8a3e-ddb06bc95e9a",
+  "name": "Meat Locker // Drowned Diner",
+  "faces": [
+    {
+      "name": "Drowned Diner",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "When you unlock this door, draw three cards, then discard a card.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you unlock this door, draw three cards, then discard a card.",
+          "trigger": {
+            "type": "unlock_door",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Meat Locker",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "When you unlock this door, tap up to one target creature and put two stun counters on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you unlock this door, tap up to one target creature and put two stun counters on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+          "trigger": {
+            "type": "unlock_door",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap up to one target creature and put two stun counters on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

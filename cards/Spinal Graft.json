@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "70b5eca0-c61b-4066-ae5f-90948912c04e",
+  "name": "Spinal Graft",
+  "faces": [
+    {
+      "name": "Spinal Graft",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +3/+3.\nWhen enchanted creature becomes the target of a spell or ability, destroy that creature. It can't be regenerated.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature becomes the target of a spell or ability, destroy that creature. It can't be regenerated.",
+          "trigger": {
+            "type": "becomes_target_of_spell_or_ability",
+            "subject": "enchanted_creature_b"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": "that_creature"
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +3/+3.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 3,
+              "toughness_delta": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9ab36915-b600-4970-961a-403f5da0dba1",
+  "name": "Wanderwine Prophets",
+  "faces": [
+    {
+      "name": "Wanderwine Prophets",
+      "type_line": "Creature \u2014 Merfolk Wizard",
+      "oracle_text": "Champion a Merfolk (When this enters, sacrifice it unless you exile another Merfolk you control. When this leaves the battlefield, that card returns to the battlefield.)\nWhenever this creature deals combat damage to a player, you may sacrifice a Merfolk. If you do, take an extra turn after this one.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may sacrifice a Merfolk. If you do, take an extra turn after this one.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_merfolk",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "take an extra turn after this one",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Champion a Merfolk (When this enters, sacrifice it unless you exile another Merfolk you control. When this leaves the battlefield, that card returns to the battlefield.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Champion a Merfolk"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

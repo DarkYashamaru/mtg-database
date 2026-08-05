@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "89ca686a-7c72-4d8f-9290-e89635624a83",
+  "name": "Cavern of Souls",
+  "faces": [
+    {
+      "name": "Cavern of Souls",
+      "type_line": "Land",
+      "oracle_text": "As this land enters, choose a creature type.\n{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a creature spell of the chosen type, and that spell can't be countered.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add one mana of any color. Spend this mana only to cast a creature spell of the chosen type, and that spell can't be countered.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to cast a creature spell of the chosen type, and that spell can't be countered"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this land enters, choose a creature type.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this land enters, choose a creature type"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

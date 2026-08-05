@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6d8e464c-9df1-46b1-88e6-dcc7fe7b7caa",
+  "name": "Bog Badger",
+  "faces": [
+    {
+      "name": "Bog Badger",
+      "type_line": "Creature \u2014 Badger",
+      "oracle_text": "Kicker {B} (You may pay an additional {B} as you cast this spell.)\nWhen this creature enters, if it was kicked, creatures you control gain menace until end of turn. (A creature with menace can't be blocked except by two or more creatures.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, creatures you control gain menace until end of turn. (A creature with menace can't be blocked except by two or more creatures.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {B} (You may pay an additional {B} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f49f84f9-616e-495b-8d87-4de7941f230e",
+  "name": "Sengir, the Dark Baron",
+  "faces": [
+    {
+      "name": "Sengir, the Dark Baron",
+      "type_line": "Legendary Creature \u2014 Vampire Noble",
+      "oracle_text": "Flying\nWhenever another creature dies, put two +1/+1 counters on Sengir.\nWhenever another player loses the game, you gain life equal to that player's life total as the turn began.\nPartner (You can have two commanders if both have partner.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "partner"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature dies, put two +1/+1 counters on Sengir.",
+          "trigger": {
+            "type": "dies",
+            "subject": "another_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another player loses the game, you gain life equal to that player's life total as the turn began.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever another player loses the game"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain life equal to that player's life total as the turn began"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

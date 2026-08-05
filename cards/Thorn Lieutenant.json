@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2b761ce6-4fb1-4f22-b51c-d9f25f62b39a",
+  "name": "Thorn Lieutenant",
+  "faces": [
+    {
+      "name": "Thorn Lieutenant",
+      "type_line": "Creature \u2014 Elf Warrior",
+      "oracle_text": "Whenever this creature becomes the target of a spell or ability an opponent controls, create a 1/1 green Elf Warrior creature token.\n{5}{G}: This creature gets +4/+4 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes the target of a spell or ability an opponent controls, create a 1/1 green Elf Warrior creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes the target of a spell or ability an opponent controls"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Elf Warrior creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elf",
+                  "Warrior"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{5}{G}: This creature gets +4/+4 until end of turn.",
+          "cost": "{5}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 4,
+              "toughness_delta": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

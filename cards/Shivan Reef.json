@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0fe16212-66c3-4e45-a641-7391e9b2e304",
+  "name": "Shivan Reef",
+  "faces": [
+    {
+      "name": "Shivan Reef",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {U} or {R}. This land deals 1 damage to you.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {U} or {R}. This land deals 1 damage to you.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}",
+                "{r}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

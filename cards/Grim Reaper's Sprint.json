@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "99a6d7fe-40a1-4f2f-a3f6-6777884d5d1a",
+  "name": "Grim Reaper's Sprint",
+  "faces": [
+    {
+      "name": "Grim Reaper's Sprint",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Morbid \u2014 This spell costs {3} less to cast if a creature died this turn.\nEnchant creature\nWhen this Aura enters, untap each creature you control. If it's your main phase, there is an additional combat phase after this phase.\nEnchanted creature gets +2/+2 and has haste.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, untap each creature you control. If it's your main phase, there is an additional combat phase after this phase.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap each creature you control"
+            },
+            {
+              "action": "add_combat_phase_after_this_phase",
+              "condition": [
+                {
+                  "condition_text": "it's your main phase"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Morbid \u2014 This spell costs {3} less to cast if a creature died this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morbid \u2014 This spell costs {3} less to cast if a creature died this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+2 and has haste.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +2/+2 and has haste"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

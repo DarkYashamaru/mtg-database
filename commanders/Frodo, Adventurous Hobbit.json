@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "58ee8c10-7be8-4889-944d-13cae0a4166d",
+  "name": "Frodo, Adventurous Hobbit",
+  "faces": [
+    {
+      "name": "Frodo, Adventurous Hobbit",
+      "type_line": "Legendary Creature \u2014 Halfling Scout",
+      "oracle_text": "Partner with Sam, Loyal Attendant\nVigilance\nWhenever Frodo attacks, if you gained 3 or more life this turn, the Ring tempts you. Then if Frodo is your Ring-bearer and the Ring has tempted you two or more times this game, draw a card.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Frodo attacks, if you gained 3 or more life this turn, the Ring tempts you. Then if Frodo is your Ring-bearer and the Ring has tempted you two or more times this game, draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you gained 3 or more life this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "ring_tempts_you"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "frodo is your ring-bearer and the ring has tempted you two or more times this game"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Sam, Loyal Attendant",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Sam, Loyal Attendant"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

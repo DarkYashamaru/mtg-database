@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b69d2bd6-3e99-4c51-89af-0acedd48739e",
+  "name": "Fraying Line",
+  "faces": [
+    {
+      "name": "Fraying Line",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, put a rope counter on target creature you control.\nAt the beginning of each player's upkeep, that player may pay {2}. If they do, they put a rope counter on a creature they control. Otherwise, exile this artifact and each creature without a rope counter on it, then remove all rope counters from all creatures.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, put a rope counter on target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a rope counter on target creature you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each player's upkeep, that player may pay {2}. If they do, they put a rope counter on a creature they control. Otherwise, exile this artifact and each creature without a rope counter on it, then remove all rope counters from all creatures.",
+          "trigger": {
+            "type": "beginning_of_each_players_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player may pay {2}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they put a rope counter on a creature they control",
+              "condition": [
+                {
+                  "condition_text": "they do"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile this artifact",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "each creature without a rope counter on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove all rope counters from all creatures"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

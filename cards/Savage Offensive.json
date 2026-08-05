@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b5944ca8-d54e-4830-9f66-be8fe97d101d",
+  "name": "Savage Offensive",
+  "faces": [
+    {
+      "name": "Savage Offensive",
+      "type_line": "Sorcery",
+      "oracle_text": "Kicker {G} (You may pay an additional {G} as you cast this spell.)\nCreatures you control gain first strike until end of turn. If this spell was kicked, they get +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {G} (You may pay an additional {G} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {G}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures you control gain first strike until end of turn. If this spell was kicked, they get +1/+1 until end of turn.",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "first_strike"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they get +1/+1 until end of turn",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

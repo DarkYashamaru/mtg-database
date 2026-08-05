@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1efe7ed8-4e4a-48db-b1f2-6dfe349b98f5",
+  "name": "Spike Tiller",
+  "faces": [
+    {
+      "name": "Spike Tiller",
+      "type_line": "Creature \u2014 Spike",
+      "oracle_text": "This creature enters with three +1/+1 counters on it.\n{2}, Remove a +1/+1 counter from this creature: Put a +1/+1 counter on target creature.\n{2}, Remove a +1/+1 counter from this creature: Target land becomes a 2/2 creature that's still a land. Put a +1/+1 counter on it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, Remove a +1/+1 counter from this creature: Put a +1/+1 counter on target creature.",
+          "cost": "{2}, Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, Remove a +1/+1 counter from this creature: Target land becomes a 2/2 creature that's still a land. Put a +1/+1 counter on it.",
+          "cost": "{2}, Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target land becomes a 2/2 creature that's still a land"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with three +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

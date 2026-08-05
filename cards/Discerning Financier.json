@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "734a5186-caa6-4811-b6d7-91b7b32fc403",
+  "name": "Discerning Financier",
+  "faces": [
+    {
+      "name": "Discerning Financier",
+      "type_line": "Creature \u2014 Human Noble",
+      "oracle_text": "At the beginning of your upkeep, if an opponent controls more lands than you, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\n{2}{W}: Choose another player. That player gains control of target Treasure you control. You draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if an opponent controls more lands than you, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "an opponent controls more lands than you"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{W}: Choose another player. That player gains control of target Treasure you control. You draw a card.",
+          "cost": "{2}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose another player"
+            },
+            {
+              "action": "custom_effect",
+              "text": "That player gains control of target Treasure you control"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

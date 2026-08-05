@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e12fb44a-524e-4603-a89c-fad8204fdb2b",
+  "name": "Dawnhart Mentor",
+  "faces": [
+    {
+      "name": "Dawnhart Mentor",
+      "type_line": "Creature \u2014 Human Warlock",
+      "oracle_text": "When this creature enters, create a 1/1 white Human creature token.\nCoven \u2014 {5}{G}: Target creature you control gets +3/+3 and gains trample until end of turn. Activate only if you control three or more creatures with different powers.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 1/1 white Human creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Human creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Coven \u2014 {5}{G}: Target creature you control gets +3/+3 and gains trample until end of turn. Activate only if you control three or more creatures with different powers.",
+          "cost": "Coven \u2014 {5}{G}",
+          "condition": [
+            {
+              "condition_text": "you control three or more creatures with different powers"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control_gets_33_and",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

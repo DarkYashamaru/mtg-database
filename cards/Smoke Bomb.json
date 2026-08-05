@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c262e015-f379-484f-894f-1a1deb3c75cc",
+  "name": "Smoke Bomb",
+  "faces": [
+    {
+      "name": "Smoke Bomb",
+      "type_line": "Artifact",
+      "oracle_text": "Flash\nAll creatures have shroud. (They can't be the targets of spells or abilities.)\nAt the beginning of your upkeep, sacrifice this artifact. When you do, target creature you control can't be blocked this turn.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice this artifact. When you do, target creature you control can't be blocked this turn.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "target creature you control can't be blocked this turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "All creatures have shroud. (They can't be the targets of spells or abilities.)",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "all_creatures"
+              },
+              "keywords": [
+                "shroud"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

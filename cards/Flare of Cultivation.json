@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1766f1f4-0924-4436-8379-94030adcccc5",
+  "name": "Flare of Cultivation",
+  "faces": [
+    {
+      "name": "Flare of Cultivation",
+      "type_line": "Sorcery",
+      "oracle_text": "You may sacrifice a nontoken green creature rather than pay this spell's mana cost.\nSearch your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may sacrifice a nontoken green creature rather than pay this spell's mana cost.",
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_nontoken_green_creature_rather_than_pay_self_spells_mana_cost",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "Search your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.",
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "selected_count": {
+                "min": 0,
+                "max": 2
+              },
+              "distribution": [
+                {
+                  "destination": "battlefield",
+                  "tapped": true,
+                  "count": 1
+                },
+                {
+                  "destination": "hand",
+                  "count": 1
+                }
+              ],
+              "reveal": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

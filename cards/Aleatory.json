@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "da4cab2d-0068-440f-ba7c-f2d4e5fa976e",
+  "name": "Aleatory",
+  "faces": [
+    {
+      "name": "Aleatory",
+      "type_line": "Instant",
+      "oracle_text": "Cast this spell only during combat after blockers are declared.\nFlip a coin. If you win the flip, target creature gets +1/+1 until end of turn.\nDraw a card at the beginning of the next turn's upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Cast this spell only during combat after blockers are declared.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cast this spell only during combat after blockers are declared"
+            }
+          ]
+        },
+        {
+          "raw_text": "Flip a coin. If you win the flip, target creature gets +1/+1 until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin"
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 1,
+              "toughness_delta": 1,
+              "condition": [
+                {
+                  "condition_text": "you win the flip"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card at the beginning of the next turn's upkeep.",
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_turns_upkeep"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

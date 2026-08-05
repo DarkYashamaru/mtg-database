@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "637ddd65-112d-40f7-9bab-a61724d9165c",
+  "name": "Hooded Hydra",
+  "faces": [
+    {
+      "name": "Hooded Hydra",
+      "type_line": "Creature \u2014 Snake Hydra",
+      "oracle_text": "This creature enters with X +1/+1 counters on it.\nWhen this creature dies, create a 1/1 green Snake creature token for each +1/+1 counter on it.\nMorph {3}{G}{G}\nAs this creature is turned face up, put five +1/+1 counters on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, create a 1/1 green Snake creature token for each +1/+1 counter on it.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a 1/1 green Snake creature token for each +1/+1 counter on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        },
+        {
+          "raw_text": "Morph {3}{G}{G}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morph {3}{G}{G}"
+            }
+          ]
+        },
+        {
+          "raw_text": "As this creature is turned face up, put five +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this creature is turned face up, put five +1/+1 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

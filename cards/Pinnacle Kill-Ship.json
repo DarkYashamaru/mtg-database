@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ad556aee-3dbf-4c8b-9f3a-31947e26c6f5",
+  "name": "Pinnacle Kill-Ship",
+  "faces": [
+    {
+      "name": "Pinnacle Kill-Ship",
+      "type_line": "Artifact \u2014 Spacecraft",
+      "oracle_text": "When this Spacecraft enters, it deals 10 damage to up to one target creature.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 7+.)\n7+ | Flying",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Spacecraft enters, it deals 10 damage to up to one target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_spacecraft"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 10 damage to up to one target creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 7+.)",
+          "cost": "Station (Tap another creature you control",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put charge counters equal to its power on this Spacecraft"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's an artifact creature at 7+"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "7+ | Flying",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "7+ | Flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

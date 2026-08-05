@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "42750e30-d022-4623-a290-d91fa80721c9",
+  "name": "Nev, the Practical Dean",
+  "faces": [
+    {
+      "name": "Nev, the Practical Dean",
+      "type_line": "Legendary Creature \u2014 Merfolk Wizard",
+      "oracle_text": "Creatures you control with counters on them have trample.\nWhenever you cast your first spell with {X} in its mana cost each turn, put X +1/+1 counters on Nev.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your first spell with {X} in its mana cost each turn, put X +1/+1 counters on Nev.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast your first spell with {X} in its mana cost each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": "X"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control with counters on them have trample.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control_with_counters_on_self"
+              },
+              "keywords": [
+                "trample"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

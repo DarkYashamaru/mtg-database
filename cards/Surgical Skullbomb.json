@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6d364283-617a-4661-865d-abd9c304b2f9",
+  "name": "Surgical Skullbomb",
+  "faces": [
+    {
+      "name": "Surgical Skullbomb",
+      "type_line": "Artifact",
+      "oracle_text": "{1}, Sacrifice this artifact: Draw a card.\n{2}{U}, Sacrifice this artifact: Return target creature to its owner's hand. Draw a card. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice this artifact: Draw a card.",
+          "cost": "{1}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{U}, Sacrifice this artifact: Return target creature to its owner's hand. Draw a card. Activate only as a sorcery.",
+          "cost": "{2}{U}, Sacrifice this artifact",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature"
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

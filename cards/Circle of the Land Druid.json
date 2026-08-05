@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b6cc351e-6afd-4427-998d-e06e430cd0e6",
+  "name": "Circle of the Land Druid",
+  "faces": [
+    {
+      "name": "Circle of the Land Druid",
+      "type_line": "Creature \u2014 Gnome Druid",
+      "oracle_text": "When this creature enters, you may mill four cards. (You may put the top four cards of your library into your graveyard.)\nNatural Recovery \u2014 When this creature dies, return target land card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may mill four cards. (You may put the top four cards of your library into your graveyard.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 4,
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, return target land card from your graveyard to your hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target land card from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

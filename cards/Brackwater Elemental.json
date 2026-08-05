@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a8af4d61-1aed-415d-8d8e-7384194ee3e2",
+  "name": "Brackwater Elemental",
+  "faces": [
+    {
+      "name": "Brackwater Elemental",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "When this creature attacks or blocks, sacrifice it at the beginning of the next end step.\nUnearth {2}{U} ({2}{U}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature attacks or blocks, sacrifice it at the beginning of the next end step.",
+          "trigger": {
+            "type": "attacks_or_blocks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "it_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Unearth {2}{U} ({2}{U}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+          "cost": "Unearth {2}{U} ({2}{U}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "temporary_reanimation_clause",
+              "target": "it",
+              "expire_at": "beginning_of_next_end_step",
+              "exile_if_would_leave_battlefield": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

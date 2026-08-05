@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d68439b5-7011-4b1d-a7da-14ef0f4d9994",
+  "name": "Inevitable Defeat",
+  "faces": [
+    {
+      "name": "Inevitable Defeat",
+      "type_line": "Instant",
+      "oracle_text": "This spell can't be countered.\nExile target nonland permanent. Its controller loses 3 life and you gain 3 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell can't be countered.",
+          "effects": [
+            {
+              "action": "cant_be_countered",
+              "target": "self_spell"
+            }
+          ]
+        },
+        {
+          "raw_text": "Exile target nonland permanent. Its controller loses 3 life and you gain 3 life.",
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Its controller loses 3 life and you gain 3 life"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

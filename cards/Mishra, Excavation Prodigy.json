@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4eba0e29-985b-4763-9a70-0946ba044b43",
+  "name": "Mishra, Excavation Prodigy",
+  "faces": [
+    {
+      "name": "Mishra, Excavation Prodigy",
+      "type_line": "Legendary Creature \u2014 Human Artificer",
+      "oracle_text": "Haste\n{1}, {T}, Discard a card: Draw a card.\nWhenever you discard one or more artifact cards, add {R}{R}. This ability triggers only once each turn.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you discard one or more artifact cards, add {R}{R}. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you discard one or more artifact cards"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{r}",
+                "{r}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Discard a card: Draw a card.",
+          "cost": "{1}, {T}, Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

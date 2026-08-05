@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e35d4c62-5211-4785-b683-a83719195d87",
+  "name": "Spinerock Tyrant",
+  "faces": [
+    {
+      "name": "Spinerock Tyrant",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWither (This deals damage to creatures in the form of -1/-1 counters.)\nWhenever you cast an instant or sorcery spell with a single target, you may copy it. If you do, those spells gain wither. You may choose new targets for the copy.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "wither"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell with a single target, you may copy it. If you do, those spells gain wither. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast an instant or sorcery spell with a single target"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may copy it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "those spells gain wither",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

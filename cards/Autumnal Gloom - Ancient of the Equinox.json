@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "245aa786-d607-414f-ab55-b003b2b9faf4",
+  "name": "Autumnal Gloom // Ancient of the Equinox",
+  "faces": [
+    {
+      "name": "Ancient of the Equinox",
+      "type_line": "Creature \u2014 Treefolk",
+      "oracle_text": "Trample, hexproof",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "hexproof"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Autumnal Gloom",
+      "type_line": "Enchantment",
+      "oracle_text": "{B}: Mill a card.\nDelirium \u2014 At the beginning of your end step, if there are four or more card types among cards in your graveyard, transform this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if there are four or more card types among cards in your graveyard, transform this enchantment.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "there are four or more card types among cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "this_enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}: Mill a card.",
+          "cost": "{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

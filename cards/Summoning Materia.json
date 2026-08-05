@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2ca9e6e5-5eec-4593-8816-5c4317c79eb0",
+  "name": "Summoning Materia",
+  "faces": [
+    {
+      "name": "Summoning Materia",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "You may look at the top card of your library any time.\nAs long as this Equipment is attached to a creature, you may cast creature spells from the top of your library.\nEquipped creature gets +2/+2 and has vigilance and \"{T}: Add {G}.\"\nEquip {2}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equipped creature gets +2/+2 and has vigilance and \"{T}: Add {G}.\"",
+          "cost": "Equipped creature gets +2/+2 and has vigilance and \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as this Equipment is attached to a creature, you may cast creature spells from the top of your library.",
+          "effects": [
+            {
+              "action": "allow_cast_from_top_of_library",
+              "filter": {
+                "card_types": [
+                  "Creature"
+                ]
+              },
+              "condition": [
+                {
+                  "subject": "self",
+                  "state": "attached_to_creature"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

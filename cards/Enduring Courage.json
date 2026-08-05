@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b3de29cb-7d7d-4566-b5bf-37e571bd5d78",
+  "name": "Enduring Courage",
+  "faces": [
+    {
+      "name": "Enduring Courage",
+      "type_line": "Enchantment Creature \u2014 Dog Glimmer",
+      "oracle_text": "Whenever another creature you control enters, it gets +2/+0 and gains haste until end of turn.\nWhen Enduring Courage dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, it gets +2/+0 and gains haste until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "it_gets_20_and",
+              "keyword": "haste"
+            }
+          ]
+        },
+        {
+          "raw_text": "When Enduring Courage dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's an enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

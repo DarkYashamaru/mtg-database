@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "745b9a2c-bcd7-4db9-8cd0-d38be2ef6270",
+  "name": "Kassandra, Eagle Bearer",
+  "faces": [
+    {
+      "name": "Kassandra, Eagle Bearer",
+      "type_line": "Legendary Creature \u2014 Human Assassin Warrior",
+      "oracle_text": "Haste\nWhen Kassandra enters, search your graveyard, hand, and library for a card named The Spear of Leonidas, put it onto the battlefield, then shuffle.\nWhenever a creature you control with a legendary Equipment attached to it deals combat damage to a player, draw a card.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Kassandra enters, search your graveyard, hand, and library for a card named The Spear of Leonidas, put it onto the battlefield, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your graveyard, hand, and library for a card named the spear of leonidas, put it onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control with a legendary Equipment attached to it deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "a_creature_you_control_with_a_legendary_equipment_attached_to_it"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

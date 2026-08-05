@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fd541139-de13-4b32-93ba-070ecf711d33",
+  "name": "Slimefoot, the Stowaway",
+  "faces": [
+    {
+      "name": "Slimefoot, the Stowaway",
+      "type_line": "Legendary Creature \u2014 Fungus",
+      "oracle_text": "Whenever a Saproling you control dies, Slimefoot deals 1 damage to each opponent and you gain 1 life.\n{4}: Create a 1/1 green Saproling creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Saproling you control dies, Slimefoot deals 1 damage to each opponent and you gain 1 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Saproling"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}: Create a 1/1 green Saproling creature token.",
+          "cost": "{4}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Saproling creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Saproling"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

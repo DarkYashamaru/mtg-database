@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "900b9409-9c16-414d-8674-2ea42c2415a1",
+  "name": "Magmakin Artillerist",
+  "faces": [
+    {
+      "name": "Magmakin Artillerist",
+      "type_line": "Creature \u2014 Elemental Pirate",
+      "oracle_text": "Whenever you discard one or more cards, this creature deals that much damage to each opponent.\nCycling {1}{R} ({1}{R}, Discard this card: Draw a card.)\nWhen you cycle this card, it deals 1 damage to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you discard one or more cards, this creature deals that much damage to each opponent.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you discard one or more cards"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals that much damage to each opponent"
+            }
+          ]
+        },
+        {
+          "raw_text": "When you cycle this card, it deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {1}{R} ({1}{R}, Discard this card: Draw a card.)",
+          "cost": "Cycling {1}{R} ({1}{R}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

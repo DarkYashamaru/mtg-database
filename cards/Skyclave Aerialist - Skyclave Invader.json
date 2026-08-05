@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "29e96c47-94ad-4740-ba86-66dc2cf9ae2f",
+  "name": "Skyclave Aerialist // Skyclave Invader",
+  "faces": [
+    {
+      "name": "Skyclave Aerialist",
+      "type_line": "Creature \u2014 Merfolk Scout",
+      "oracle_text": "Flying\n{4}{G/P}: Transform this creature. Activate only as a sorcery. ({G/P} can be paid with either {G} or 2 life.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{4}{G/P}: Transform this creature. Activate only as a sorcery. ({G/P} can be paid with either {G} or 2 life.)",
+          "cost": "{4}{G/P}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Skyclave Invader",
+      "type_line": "Creature \u2014 Phyrexian Merfolk Scout",
+      "oracle_text": "Flying\nWhen this creature transforms into Skyclave Invader, look at the top card of your library. If it's a land card, you may put it onto the battlefield. If you don't put the card onto the battlefield, put it into your hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature transforms into Skyclave Invader, look at the top card of your library. If it's a land card, you may put it onto the battlefield. If you don't put the card onto the battlefield, put it into your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this creature transforms into Skyclave Invader"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "you don't put the card onto the battlefield"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd532f8d-789f-4ee1-a2f3-ae30e8282c76",
+  "name": "Gempalm Polluter",
+  "faces": [
+    {
+      "name": "Gempalm Polluter",
+      "type_line": "Creature \u2014 Zombie",
+      "oracle_text": "Cycling {B}{B} ({B}{B}, Discard this card: Draw a card.)\nWhen you cycle this card, you may have target player lose life equal to the number of Zombies on the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, you may have target player lose life equal to the number of Zombies on the battlefield.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have target player lose life equal to the number of Zombies on the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {B}{B} ({B}{B}, Discard this card: Draw a card.)",
+          "cost": "Cycling {B}{B} ({B}{B}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

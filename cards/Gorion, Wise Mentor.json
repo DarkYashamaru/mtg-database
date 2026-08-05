@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "195bd8fe-581c-44ed-b7f8-e800df3502ff",
+  "name": "Gorion, Wise Mentor",
+  "faces": [
+    {
+      "name": "Gorion, Wise Mentor",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Vigilance\nWhenever you cast an Adventure spell, you may copy it. You may choose new targets for the copy.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an Adventure spell, you may copy it. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Adventure"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may copy it"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

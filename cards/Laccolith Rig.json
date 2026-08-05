@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0b583980-1508-4247-8a28-7127241d8ec0",
+  "name": "Laccolith Rig",
+  "faces": [
+    {
+      "name": "Laccolith Rig",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhenever enchanted creature becomes blocked, you may have it deal damage equal to its power to target creature. If you do, the first creature assigns no combat damage this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature becomes blocked, you may have it deal damage equal to its power to target creature. If you do, the first creature assigns no combat damage this turn.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have it deal damage equal to its power to target creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "the first creature assigns no combat damage this turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

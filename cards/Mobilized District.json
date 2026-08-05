@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eb2094cf-b4be-4f52-8615-e179ef7c741d",
+  "name": "Mobilized District",
+  "faces": [
+    {
+      "name": "Mobilized District",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{4}: This land becomes a 3/3 Citizen creature with vigilance until end of turn. It's still a land. This ability costs {1} less to activate for each legendary creature and planeswalker you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}: This land becomes a 3/3 Citizen creature with vigilance until end of turn. It's still a land. This ability costs {1} less to activate for each legendary creature and planeswalker you control.",
+          "cost": "{4}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land becomes a 3/3 Citizen creature with vigilance until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This ability costs {1} less to activate for each legendary creature and planeswalker you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

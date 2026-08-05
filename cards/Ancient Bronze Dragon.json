@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8ce74097-97b1-493d-9585-bd1336f95927",
+  "name": "Ancient Bronze Dragon",
+  "faces": [
+    {
+      "name": "Ancient Bronze Dragon",
+      "type_line": "Creature \u2014 Elder Dragon",
+      "oracle_text": "Flying\nWhenever this creature deals combat damage to a player, roll a d20. When you do, put X +1/+1 counters on each of up to two target creatures, where X is the result.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, roll a d20. When you do, put X +1/+1 counters on each of up to two target creatures, where X is the result.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "roll a d20"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "each_of_up_to_two_target_creatures_where_x_is_the_result",
+              "amount": "X",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

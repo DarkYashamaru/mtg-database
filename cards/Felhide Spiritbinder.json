@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91e3f057-c24f-42b5-8525-74b44bdefc83",
+  "name": "Felhide Spiritbinder",
+  "faces": [
+    {
+      "name": "Felhide Spiritbinder",
+      "type_line": "Creature \u2014 Minotaur Shaman",
+      "oracle_text": "Inspired \u2014 Whenever this creature becomes untapped, you may pay {1}{R}. If you do, create a token that's a copy of another target creature, except it's an enchantment in addition to its other types. It gains haste. Exile it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes untapped, you may pay {1}{R}. If you do, create a token that's a copy of another target creature, except it's an enchantment in addition to its other types. It gains haste. Exile it at the beginning of the next end step.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes untapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{R}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of another target creature, except it's an enchantment in addition to its other types",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_end_step"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": "it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

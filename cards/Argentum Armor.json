@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d0a1f39b-cda4-4925-83f8-2161f575edfb",
+  "name": "Argentum Armor",
+  "faces": [
+    {
+      "name": "Argentum Armor",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +6/+6.\nWhenever equipped creature attacks, destroy target permanent.\nEquip {6}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, destroy target permanent.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target permanent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {6}",
+          "cost": "{6}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +6/+6.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 6,
+              "toughness_delta": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

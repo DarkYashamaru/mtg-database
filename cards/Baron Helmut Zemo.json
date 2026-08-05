@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0fe6c042-1182-4392-8938-fee36149d74f",
+  "name": "Baron Helmut Zemo",
+  "faces": [
+    {
+      "name": "Baron Helmut Zemo",
+      "type_line": "Legendary Creature \u2014 Human Noble Villain",
+      "oracle_text": "Whenever you cast a black spell from your hand, Baron Helmut Zemo connives.\nBoast \u2014 Exile any number of black cards from your graveyard with fifteen or more black mana symbols among their mana costs: Copy those exiled cards. You may cast up to three of the copies without paying their mana costs. (Activate only if this creature attacked this turn and only once each turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a black spell from your hand, Baron Helmut Zemo connives.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a black spell from your hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "connive",
+              "target": "self",
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "self",
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Boast \u2014 Exile any number of black cards from your graveyard with fifteen or more black mana symbols among their mana costs: Copy those exiled cards. You may cast up to three of the copies without paying their mana costs. (Activate only if this creature attacked this turn and only once each turn.)",
+          "cost": "Boast \u2014 Exile any number of black cards from your graveyard with fifteen or more black mana symbols among their mana costs",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Copy those exiled cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast up to three of the copies without paying their mana costs"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

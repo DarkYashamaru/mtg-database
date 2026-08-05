@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "29fd050c-dd1d-4e1b-b3cc-f7d8d18e4dcb",
+  "name": "Buzzard-Wasp Colony",
+  "faces": [
+    {
+      "name": "Buzzard-Wasp Colony",
+      "type_line": "Creature \u2014 Bird Insect",
+      "oracle_text": "Flying\nWhen this creature enters, you may sacrifice an artifact or creature. If you do, draw a card.\nWhenever another creature you control dies, if it had counters on it, put its counters on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may sacrifice an artifact or creature. If you do, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "an_artifact_or_creature",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another creature you control dies, if it had counters on it, put its counters on this creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "it had counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put its counters on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

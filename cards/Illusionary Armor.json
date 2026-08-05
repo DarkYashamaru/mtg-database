@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f36603d4-571d-4d03-a9cb-d1f2af3eb3c1",
+  "name": "Illusionary Armor",
+  "faces": [
+    {
+      "name": "Illusionary Armor",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +4/+4.\nWhen enchanted creature becomes the target of a spell or ability, sacrifice this Aura.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature becomes the target of a spell or ability, sacrifice this Aura.",
+          "trigger": {
+            "type": "becomes_target_of_spell_or_ability",
+            "subject": "enchanted_creature_b"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_aura"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +4/+4.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 4,
+              "toughness_delta": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b4dbbf56-d7df-4183-bb48-cfc6b4d0468f",
+  "name": "Armored Skyhunter",
+  "faces": [
+    {
+      "name": "Armored Skyhunter",
+      "type_line": "Creature \u2014 Cat Knight",
+      "oracle_text": "Flying\nWhenever this creature attacks, look at the top six cards of your library. You may put an Aura or Equipment card from among them onto the battlefield. If an Equipment is put onto the battlefield this way, you may attach it to a creature you control. Put the rest of those cards on the bottom of your library in a random order.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, look at the top six cards of your library. You may put an Aura or Equipment card from among them onto the battlefield. If an Equipment is put onto the battlefield this way, you may attach it to a creature you control. Put the rest of those cards on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 6
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "optional": true,
+              "selected_count": 1,
+              "filter": {
+                "card_types_any": [
+                  "Aura",
+                  "Equipment"
+                ]
+              },
+              "destination": "battlefield"
+            },
+            {
+              "action": "attach_to_creature_you_control",
+              "object": "it",
+              "optional": true,
+              "condition": [
+                {
+                  "condition_text": "an equipment is put onto the battlefield this way"
+                }
+              ]
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

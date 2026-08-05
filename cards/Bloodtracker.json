@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fcf9ced2-867d-4bc5-b7b6-6153ed2cac97",
+  "name": "Bloodtracker",
+  "faces": [
+    {
+      "name": "Bloodtracker",
+      "type_line": "Creature \u2014 Vampire Wizard",
+      "oracle_text": "Flying\n{B}, Pay 2 life: Put a +1/+1 counter on this creature.\nWhen this creature leaves the battlefield, draw a card for each +1/+1 counter on it.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature leaves the battlefield, draw a card for each +1/+1 counter on it.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "11_counter_on_it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}, Pay 2 life: Put a +1/+1 counter on this creature.",
+          "cost": "{B}, Pay 2 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

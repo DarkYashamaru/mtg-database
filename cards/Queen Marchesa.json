@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d7ac4be1-dcca-49b6-8ddb-d1b0e6cf2dcf",
+  "name": "Queen Marchesa",
+  "faces": [
+    {
+      "name": "Queen Marchesa",
+      "type_line": "Legendary Creature \u2014 Human Assassin",
+      "oracle_text": "Deathtouch, haste\nWhen Queen Marchesa enters, you become the monarch.\nAt the beginning of your upkeep, if an opponent is the monarch, create a 1/1 black Assassin creature token with deathtouch and haste.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Queen Marchesa enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if an opponent is the monarch, create a 1/1 black Assassin creature token with deathtouch and haste.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "an opponent is the monarch"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 black Assassin creature token with deathtouch and haste",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Assassin"
+                ],
+                "keywords": [
+                  "deathtouch",
+                  "haste"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "96742ebc-10a6-49e6-812a-631e5a60847d",
+  "name": "Dig Site Inventory",
+  "faces": [
+    {
+      "name": "Dig Site Inventory",
+      "type_line": "Sorcery",
+      "oracle_text": "Put a +1/+1 counter on target creature you control. It gains vigilance until end of turn.\nFlashback {W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Put a +1/+1 counter on target creature you control. It gains vigilance until end of turn.",
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "vigilance"
+            }
+          ]
+        },
+        {
+          "raw_text": "Flashback {W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flashback {W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f6daa28f-e5ce-440c-8dc2-b36f59ae0d4f",
+  "name": "Vodalian Knights",
+  "faces": [
+    {
+      "name": "Vodalian Knights",
+      "type_line": "Creature \u2014 Merfolk Knight",
+      "oracle_text": "First strike\nThis creature can't attack unless defending player controls an Island.\nWhen you control no Islands, sacrifice this creature.\n{U}: This creature gains flying until end of turn.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you control no Islands, sacrifice this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you control no Islands"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{U}: This creature gains flying until end of turn.",
+          "cost": "{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't attack unless defending player controls an Island.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature can't attack unless defending player controls an Island"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

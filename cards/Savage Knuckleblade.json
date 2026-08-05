@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5a4fabfe-a641-49b7-8134-9d9edeb8bf1b",
+  "name": "Savage Knuckleblade",
+  "faces": [
+    {
+      "name": "Savage Knuckleblade",
+      "type_line": "Creature \u2014 Ogre Warrior",
+      "oracle_text": "{2}{G}: This creature gets +2/+2 until end of turn. Activate only once each turn.\n{2}{U}: Return this creature to its owner's hand.\n{R}: This creature gains haste until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{G}: This creature gets +2/+2 until end of turn. Activate only once each turn.",
+          "cost": "{2}{G}",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{U}: Return this creature to its owner's hand.",
+          "cost": "{2}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        },
+        {
+          "raw_text": "{R}: This creature gains haste until end of turn.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

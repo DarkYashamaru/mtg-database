@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b653db44-ddae-44e8-8fa6-6af3232cd586",
+  "name": "Railway Brawler",
+  "faces": [
+    {
+      "name": "Railway Brawler",
+      "type_line": "Creature \u2014 Rhino Warrior",
+      "oracle_text": "Reach, trample\nWhenever another creature you control enters, put X +1/+1 counters on it, where X is its power.\nPlot {3}{G} (You may pay {3}{G} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "reach"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, put X +1/+1 counters on it, where X is its power.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "it_where_x_is_its_power",
+              "amount": "X"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Plot {3}{G} (You may pay {3}{G} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Plot {3}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

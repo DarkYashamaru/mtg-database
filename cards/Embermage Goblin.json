@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f6e75db5-b119-4401-942c-bbaeeb694761",
+  "name": "Embermage Goblin",
+  "faces": [
+    {
+      "name": "Embermage Goblin",
+      "type_line": "Creature \u2014 Goblin Wizard",
+      "oracle_text": "When this creature enters, you may search your library for a card named Embermage Goblin, reveal it, put it into your hand, then shuffle.\n{T}: This creature deals 1 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a card named Embermage Goblin, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a card named embermage goblin, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: This creature deals 1 damage to any target.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

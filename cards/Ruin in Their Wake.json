@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "68adbc52-34dd-47c4-bb1c-0c51033fe7cc",
+  "name": "Ruin in Their Wake",
+  "faces": [
+    {
+      "name": "Ruin in Their Wake",
+      "type_line": "Sorcery",
+      "oracle_text": "Devoid (This card has no color.)\nSearch your library for a basic land card and reveal it. You may put that card onto the battlefield tapped if you control a land named Wastes. Otherwise, put that card into your hand. Then shuffle.",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for a basic land card and reveal it. You may put that card onto the battlefield tapped if you control a land named Wastes. Otherwise, put that card into your hand. Then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Search your library for a basic land card and reveal it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put that card onto the battlefield tapped if you control a land named Wastes"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card into your hand",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "83cb9ab7-6a8f-40b5-b076-6fa669ff15f2",
+  "name": "Farid, Enterprising Salvager",
+  "faces": [
+    {
+      "name": "Farid, Enterprising Salvager",
+      "type_line": "Legendary Creature \u2014 Human Soldier",
+      "oracle_text": "Whenever a nontoken artifact you control is put into a graveyard from the battlefield, create a colorless artifact token named Scrap.\n{1}{R}, Sacrifice an artifact: Choose one \u2014\n\u2022 Put a +1/+1 counter on Farid. It gains menace until end of turn.\n\u2022 Goad target creature.\n\u2022 Discard a card, then draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken artifact you control is put into a graveyard from the battlefield, create a colorless artifact token named Scrap.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a nontoken artifact you control is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a colorless artifact token named Scrap"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{R}, Sacrifice an artifact: Choose one \u2014\n\u2022 Put a +1/+1 counter on Farid. It gains menace until end of turn.\n\u2022 Goad target creature.\n\u2022 Discard a card, then draw a card.",
+          "cost": "{1}{R}, Sacrifice an artifact",
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Put a +1/+1 counter on Farid. It gains menace until end of turn.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "self",
+                  "amount": 1
+                },
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "previous_target",
+                  "keyword": "menace"
+                }
+              ]
+            },
+            {
+              "raw_text": "Goad target creature.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Goad target creature"
+                }
+              ]
+            },
+            {
+              "raw_text": "Discard a card, then draw a card.",
+              "effects": [
+                {
+                  "action": "discard_cards",
+                  "player": "you",
+                  "amount": 1
+                },
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

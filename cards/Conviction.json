@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4374b6b1-e691-4823-802d-8de8530aa461",
+  "name": "Conviction",
+  "faces": [
+    {
+      "name": "Conviction",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +1/+3.\n{W}: Return this Aura to its owner's hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{W}: Return this Aura to its owner's hand.",
+          "cost": "{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return this Aura to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+3.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 1,
+              "toughness_delta": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

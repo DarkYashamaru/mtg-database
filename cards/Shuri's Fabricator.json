@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "127f6985-c1f4-487f-b5ee-c84524cd6c55",
+  "name": "Shuri's Fabricator",
+  "faces": [
+    {
+      "name": "Shuri's Fabricator",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, create two tapped Vibranium tokens. (They're artifacts with indestructible and \"{T}: Add {C}. This mana can't be spent to cast a nonartifact spell.\")\n{6}, {T}: Return target artifact card from your graveyard to the battlefield with a finality counter on it. Activate only as a sorcery. (If a permanent with a finality counter on it would be put into a graveyard, exile it instead.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, create two tapped Vibranium tokens. (They're artifacts with indestructible and \"{T}: Add {C}. This mana can't be spent to cast a nonartifact spell.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "tapped Vibranium tokens"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{6}, {T}: Return target artifact card from your graveyard to the battlefield with a finality counter on it. Activate only as a sorcery. (If a permanent with a finality counter on it would be put into a graveyard, exile it instead.)",
+          "cost": "{6}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target artifact card from your graveyard to the battlefield with a finality counter on it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9879a4f3-3b9c-45cf-af03-7f2ae4c689b4",
+  "name": "Tolaria",
+  "faces": [
+    {
+      "name": "Tolaria",
+      "type_line": "Legendary Land",
+      "oracle_text": "{T}: Add {U}.\n{T}: Target creature loses banding and all \"bands with other\" abilities until end of turn. Activate only during any upkeep step.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Target creature loses banding and all \"bands with other\" abilities until end of turn. Activate only during any upkeep step.",
+          "cost": "{T}",
+          "condition": [
+            {
+              "condition_text": "during any upkeep step"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature loses banding and all \"bands with other\" abilities until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

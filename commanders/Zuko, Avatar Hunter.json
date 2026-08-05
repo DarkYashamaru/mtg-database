@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d445a584-98e7-4501-bb20-e76c9cafa757",
+  "name": "Zuko, Avatar Hunter",
+  "faces": [
+    {
+      "name": "Zuko, Avatar Hunter",
+      "type_line": "Legendary Creature \u2014 Human Noble",
+      "oracle_text": "Reach (This creature can block creatures with flying.)\nWhenever you cast a red spell, create a 2/2 red Soldier creature token.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a red spell, create a 2/2 red Soldier creature token.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Red"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 red Soldier creature token",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

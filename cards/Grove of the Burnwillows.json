@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d33c3fbb-8306-4c2d-b0dd-88f12639da94",
+  "name": "Grove of the Burnwillows",
+  "faces": [
+    {
+      "name": "Grove of the Burnwillows",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {R} or {G}. Each opponent gains 1 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {R} or {G}. Each opponent gains 1 life.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{g}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each opponent gains 1 life"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

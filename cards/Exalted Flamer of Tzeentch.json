@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6591a589-deb4-462f-a4f1-f6261f3433c3",
+  "name": "Exalted Flamer of Tzeentch",
+  "faces": [
+    {
+      "name": "Exalted Flamer of Tzeentch",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Sorcerous Inspiration \u2014 At the beginning of your upkeep, return an instant or sorcery card at random from your graveyard to your hand.\nFire of Tzeentch \u2014 Whenever you cast an instant or sorcery spell, this creature deals 1 damage to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, return an instant or sorcery card at random from your graveyard to your hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return an instant or sorcery card at random from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

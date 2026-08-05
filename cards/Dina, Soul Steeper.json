@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2121bcb4-f5fe-447f-9112-c7e5b5c45baf",
+  "name": "Dina, Soul Steeper",
+  "faces": [
+    {
+      "name": "Dina, Soul Steeper",
+      "type_line": "Legendary Creature \u2014 Dryad Druid",
+      "oracle_text": "Whenever you gain life, each opponent loses 1 life.\n{1}, Sacrifice another creature: Dina gets +X/+0 until end of turn, where X is the sacrificed creature's power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, each opponent loses 1 life.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice another creature: Dina gets +X/+0 until end of turn, where X is the sacrificed creature's power.",
+          "cost": "{1}, Sacrifice another creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Dina gets +X/+0 until end of turn, where X is the sacrificed creature's power"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

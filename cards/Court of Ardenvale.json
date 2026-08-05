@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "be14d3be-295e-431c-b891-590164b730dd",
+  "name": "Court of Ardenvale",
+  "faces": [
+    {
+      "name": "Court of Ardenvale",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, you become the monarch.\nAt the beginning of your upkeep, return target permanent card with mana value 3 or less from your graveyard to your hand. If you're the monarch, return that permanent card to the battlefield instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, return target permanent card with mana value 3 or less from your graveyard to your hand. If you're the monarch, return that permanent card to the battlefield instead.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target permanent card with mana value 3 or less from your graveyard to your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return that permanent card to the battlefield instead",
+              "condition": [
+                {
+                  "condition_text": "you're the monarch"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

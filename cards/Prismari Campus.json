@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3a3a1b35-ae4d-49d5-ae09-5a1693ad53ce",
+  "name": "Prismari Campus",
+  "faces": [
+    {
+      "name": "Prismari Campus",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {U} or {R}.\n{4}, {T}: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U} or {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}",
+                "{r}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}, {T}: Scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+          "cost": "{4}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

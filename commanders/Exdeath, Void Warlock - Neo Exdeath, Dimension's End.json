@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "98c9d798-8c48-4a2d-a076-ce17d31df6f5",
+  "name": "Exdeath, Void Warlock // Neo Exdeath, Dimension's End",
+  "faces": [
+    {
+      "name": "Exdeath, Void Warlock",
+      "type_line": "Legendary Creature \u2014 Spirit Warlock",
+      "oracle_text": "When Exdeath enters, you gain 3 life.\nAt the beginning of your end step, if there are six or more permanent cards in your graveyard, transform Exdeath.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Exdeath enters, you gain 3 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if there are six or more permanent cards in your graveyard, transform Exdeath.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "there are six or more permanent cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Neo Exdeath, Dimension's End",
+      "type_line": "Legendary Creature \u2014 Spirit Avatar",
+      "oracle_text": "Trample\nNeo Exdeath's power is equal to the number of permanent cards in your graveyard.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Neo Exdeath's power is equal to the number of permanent cards in your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Neo Exdeath's power is equal to the number of permanent cards in your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

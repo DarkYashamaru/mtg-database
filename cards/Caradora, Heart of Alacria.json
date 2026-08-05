@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a9d60d80-bcef-45e0-8ded-d70bd3c2780f",
+  "name": "Caradora, Heart of Alacria",
+  "faces": [
+    {
+      "name": "Caradora, Heart of Alacria",
+      "type_line": "Legendary Creature \u2014 Human Knight",
+      "oracle_text": "When Caradora enters, you may search your library for a Mount or Vehicle card, reveal it, put it into your hand, then shuffle.\nIf one or more +1/+1 counters would be put on a creature or Vehicle you control, that many plus one +1/+1 counters are put on it instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Caradora enters, you may search your library for a Mount or Vehicle card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a mount or vehicle card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If one or more +1/+1 counters would be put on a creature or Vehicle you control, that many plus one +1/+1 counters are put on it instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that many plus one +1/+1 counters are put on it instead",
+              "condition": [
+                {
+                  "condition_text": "one or more +1/+1 counters would be put on a creature or vehicle you control"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

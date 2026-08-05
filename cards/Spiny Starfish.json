@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "663d6c61-e269-4f2f-9d8f-49c4c23f05d8",
+  "name": "Spiny Starfish",
+  "faces": [
+    {
+      "name": "Spiny Starfish",
+      "type_line": "Creature \u2014 Starfish",
+      "oracle_text": "{U}: Regenerate this creature.\nAt the beginning of each end step, if this creature regenerated this turn, create a 0/1 blue Starfish creature token for each time it regenerated this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each end step, if this creature regenerated this turn, create a 0/1 blue Starfish creature token for each time it regenerated this turn.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "this creature regenerated this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a 0/1 blue Starfish creature token for each time it regenerated this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{U}: Regenerate this creature.",
+          "cost": "{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

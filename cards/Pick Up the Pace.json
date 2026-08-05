@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "873e739c-edf4-46a7-9024-5caaf87f507e",
+  "name": "Pick Up the Pace",
+  "faces": [
+    {
+      "name": "Pick Up the Pace",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature you control that entered this turn attacks, exile the top card of your library.\nYou may play cards exiled with this enchantment as long as you attacked this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control that entered this turn attacks, exile the top card of your library.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "a_creature_you_control_that_entered_this_turn"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may play cards exiled with this enchantment as long as you attacked this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may play cards exiled with this enchantment as long as you attacked this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

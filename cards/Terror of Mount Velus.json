@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8161248c-16a3-47db-a3ae-cdfd878d49e0",
+  "name": "Terror of Mount Velus",
+  "faces": [
+    {
+      "name": "Terror of Mount Velus",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nDouble strike (This creature deals both first-strike and regular combat damage.)\nWhen this creature enters, creatures you control gain double strike until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, creatures you control gain double strike until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "double_strike"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

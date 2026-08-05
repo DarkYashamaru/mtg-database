@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b85a5d4-1cc3-412d-99e7-778af68d79a5",
+  "name": "Durable Handicraft",
+  "faces": [
+    {
+      "name": "Durable Handicraft",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature you control enters, you may pay {1}. If you do, put a +1/+1 counter on that creature.\n{5}{G}, Sacrifice this enchantment: Put a +1/+1 counter on each creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control enters, you may pay {1}. If you do, put a +1/+1 counter on that creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "that_creature",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{5}{G}, Sacrifice this enchantment: Put a +1/+1 counter on each creature you control.",
+          "cost": "{5}{G}, Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

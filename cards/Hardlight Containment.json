@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8054092a-1940-4f4b-991d-81f4d384cdb1",
+  "name": "Hardlight Containment",
+  "faces": [
+    {
+      "name": "Hardlight Containment",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant artifact you control\nWhen this Aura enters, exile target creature an opponent controls until this Aura leaves the battlefield.\nEnchanted permanent has ward {1}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, exile target creature an opponent controls until this Aura leaves the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target creature an opponent controls until this Aura leaves the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant artifact you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "artifact_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted permanent has ward {1}.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted permanent has ward {1}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

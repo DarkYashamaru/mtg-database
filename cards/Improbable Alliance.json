@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b4ca6a20-b1ba-4dee-ae8a-83f8edf360c4",
+  "name": "Improbable Alliance",
+  "faces": [
+    {
+      "name": "Improbable Alliance",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you draw your second card each turn, create a 1/1 blue Faerie creature token with flying.\n{4}{U}{R}: Draw a card, then discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, create a 1/1 blue Faerie creature token with flying.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 blue Faerie creature token with flying",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Faerie"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}{U}{R}: Draw a card, then discard a card.",
+          "cost": "{4}{U}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5fa4607a-6731-4599-80f3-19d6097b4b28",
+  "name": "Serrated Arrows",
+  "faces": [
+    {
+      "name": "Serrated Arrows",
+      "type_line": "Artifact",
+      "oracle_text": "This artifact enters with three arrowhead counters on it.\nAt the beginning of your upkeep, if there are no arrowhead counters on this artifact, sacrifice it.\n{T}, Remove an arrowhead counter from this artifact: Put a -1/-1 counter on target creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if there are no arrowhead counters on this artifact, sacrifice it.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "there are no arrowhead counters on this artifact"
+            }
+          ],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Remove an arrowhead counter from this artifact: Put a -1/-1 counter on target creature.",
+          "cost": "{T}, Remove an arrowhead counter from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a -1/-1 counter on target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This artifact enters with three arrowhead counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact enters with three arrowhead counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

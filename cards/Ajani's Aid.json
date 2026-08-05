@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b3779fbe-7701-433b-afad-bebd6096a3c8",
+  "name": "Ajani's Aid",
+  "faces": [
+    {
+      "name": "Ajani's Aid",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, you may search your library and/or graveyard for a card named Ajani, Valiant Protector, reveal it, and put it into your hand. If you search your library this way, shuffle.\nSacrifice this enchantment: Prevent all combat damage a creature of your choice would deal this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you may search your library and/or graveyard for a card named Ajani, Valiant Protector, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library and/or graveyard for a card named Ajani, Valiant Protector, reveal it, and put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice this enchantment: Prevent all combat damage a creature of your choice would deal this turn.",
+          "cost": "Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Prevent all combat damage a creature of your choice would deal this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

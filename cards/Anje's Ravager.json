@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8f1016c7-0551-4813-987d-36abf3b2ffeb",
+  "name": "Anje's Ravager",
+  "faces": [
+    {
+      "name": "Anje's Ravager",
+      "type_line": "Creature \u2014 Vampire Berserker",
+      "oracle_text": "This creature attacks each combat if able.\nWhenever this creature attacks, discard your hand, then draw three cards.\nMadness {1}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, discard your hand, then draw three cards.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_hand",
+              "player": "you"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature attacks each combat if able.",
+          "effects": [
+            {
+              "action": "attack_requirement",
+              "target": "self",
+              "requirement": "each_combat_if_able"
+            }
+          ]
+        },
+        {
+          "raw_text": "Madness {1}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Madness {1}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

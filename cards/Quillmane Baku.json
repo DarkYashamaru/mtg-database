@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "736168bb-0a5c-4b29-9f82-1319cd112873",
+  "name": "Quillmane Baku",
+  "faces": [
+    {
+      "name": "Quillmane Baku",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature.\n{1}, {T}, Remove X ki counters from this creature: Return target creature with mana value X or less to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a ki counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Remove X ki counters from this creature: Return target creature with mana value X or less to its owner's hand.",
+          "cost": "{1}, {T}, Remove X ki counters from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target creature with mana value X or less to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c2e54e13-dad5-4d01-850f-a1735eea54ae",
+  "name": "Mystic Redaction",
+  "faces": [
+    {
+      "name": "Mystic Redaction",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, scry 1.\nWhenever you discard a card, each opponent mills two cards. (They put the top two cards of their library into their graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, scry 1.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you discard a card, each opponent mills two cards. (They put the top two cards of their library into their graveyard.)",
+          "trigger": {
+            "type": "discard_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent mills two cards"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

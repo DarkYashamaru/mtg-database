@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "24fd1f47-bb15-45c6-a7b1-ba8eb3bb8b1d",
+  "name": "Vaan, Street Thief",
+  "faces": [
+    {
+      "name": "Vaan, Street Thief",
+      "type_line": "Legendary Creature \u2014 Human Scout",
+      "oracle_text": "Whenever one or more Scouts, Pirates, and/or Rogues you control deal combat damage to a player, exile the top card of that player's library. You may cast it. If you don't, create a Treasure token.\nWhenever you cast a spell you don't own, put a +1/+1 counter on each Scout, Pirate, and Rogue you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more Scouts, Pirates, and/or Rogues you control deal combat damage to a player, exile the top card of that player's library. You may cast it. If you don't, create a Treasure token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more Scouts"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Pirates, and/or Rogues you control deal combat damage to a player, exile the top card of that player's library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast it"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a spell you don't own, put a +1/+1 counter on each Scout, Pirate, and Rogue you control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell you don't own"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_scout_pirate_and_rogue_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

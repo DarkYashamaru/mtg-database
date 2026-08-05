@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7c5a568-3855-4a20-9edf-01a8a6a4ba97",
+  "name": "Vraska, the Silencer",
+  "faces": [
+    {
+      "name": "Vraska, the Silencer",
+      "type_line": "Legendary Creature \u2014 Gorgon Assassin",
+      "oracle_text": "Deathtouch\nWhenever a nontoken creature an opponent controls dies, you may pay {1}. If you do, return that card to the battlefield tapped under your control. It's a Treasure artifact with \"{T}, Sacrifice this artifact: Add one mana of any color,\" and it loses all other card types.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken creature an opponent controls dies, you may pay {1}. If you do, return that card to the battlefield tapped under your control. It's a Treasure artifact with \"{T}, Sacrifice this artifact: Add one mana of any color,\" and it loses all other card types.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_nontoken_creature_an_opponent_controls"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "return that card to the battlefield tapped under your control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's a Treasure artifact with \"{T}, Sacrifice this artifact: Add one mana of any color,\" and it loses all other card types"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

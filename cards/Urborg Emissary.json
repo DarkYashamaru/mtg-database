@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f30943f1-473f-4fa4-b6a7-3dfbd1995ba9",
+  "name": "Urborg Emissary",
+  "faces": [
+    {
+      "name": "Urborg Emissary",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Kicker {1}{U} (You may pay an additional {1}{U} as you cast this spell.)\nWhen this creature enters, if it was kicked, return target permanent to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, return target permanent to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target permanent to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{U} (You may pay an additional {1}{U} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "12956c07-e679-471b-8dcb-2a2d15b0be55",
+  "name": "Honest Work",
+  "faces": [
+    {
+      "name": "Honest Work",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature an opponent controls\nWhen this Aura enters, tap enchanted creature and remove all counters from it.\nEnchanted creature loses all abilities and is a Citizen with base power and toughness 1/1 and \"{T}: Add {C}\" named Humble Merchant. (It loses all other creature types and names.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, tap enchanted creature and remove all counters from it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap enchanted creature and remove all counters from it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Enchanted creature loses all abilities and is a Citizen with base power and toughness 1/1 and \"{T}: Add {C}\" named Humble Merchant. (It loses all other creature types and names.)",
+          "cost": "Enchanted creature loses all abilities and is a Citizen with base power and toughness 1/1 and \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {C}\" named Humble Merchant"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature an opponent controls",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_an_opponent_controls"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

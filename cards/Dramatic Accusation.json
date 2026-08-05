@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "677b9c19-4886-4e06-88f8-9afa94e58aa8",
+  "name": "Dramatic Accusation",
+  "faces": [
+    {
+      "name": "Dramatic Accusation",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\n{U}{U}: Shuffle enchanted creature into its owner's library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, tap enchanted creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "enchanted_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{U}{U}: Shuffle enchanted creature into its owner's library.",
+          "cost": "{U}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Shuffle enchanted creature into its owner's library"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "enchanted_creature",
+              "scope": "controllers_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

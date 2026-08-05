@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4d60dae0-7be4-4859-99ac-781a27bcfd93",
+  "name": "Thickest in the Thicket",
+  "faces": [
+    {
+      "name": "Thickest in the Thicket",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, put X +1/+1 counters on target creature, where X is that creature's power.\nAt the beginning of your end step, draw two cards if you control the creature with the greatest power or tied for the greatest power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, put X +1/+1 counters on target creature, where X is that creature's power.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature_where_x_is_that_creatures_power",
+              "amount": "X"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, draw two cards if you control the creature with the greatest power or tied for the greatest power.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "you control the creature with the greatest power or tied for the greatest power"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

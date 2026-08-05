@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f749a6d6-2c55-439f-bb02-e95fa54c2ef3",
+  "name": "Reno and Rude",
+  "faces": [
+    {
+      "name": "Reno and Rude",
+      "type_line": "Legendary Creature \u2014 Human Assassin",
+      "oracle_text": "Menace\nWhenever Reno and Rude deals combat damage to a player, exile the top card of that player's library. Then you may sacrifice another creature or artifact. If you do, you may play the exiled card this turn, and mana of any type can be spent to cast it.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Reno and Rude deals combat damage to a player, exile the top card of that player's library. Then you may sacrifice another creature or artifact. If you do, you may play the exiled card this turn, and mana of any type can be spent to cast it.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile the top card of that player's library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may sacrifice another creature or artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may play the exiled card this turn, and mana of any type can be spent to cast it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

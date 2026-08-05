@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4debd0e4-3bb6-4dd1-addc-08e4bda69d11",
+  "name": "Reckless Detective",
+  "faces": [
+    {
+      "name": "Reckless Detective",
+      "type_line": "Creature \u2014 Devil Detective",
+      "oracle_text": "Whenever this creature attacks, you may sacrifice an artifact or discard a card. If you do, draw a card and this creature gets +2/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may sacrifice an artifact or discard a card. If you do, draw a card and this creature gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "an_artifact_or_discard_a_card",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

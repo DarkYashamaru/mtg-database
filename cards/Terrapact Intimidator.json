@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c08e0958-8fa2-49c7-ab17-a70dfc1ef33a",
+  "name": "Terrapact Intimidator",
+  "faces": [
+    {
+      "name": "Terrapact Intimidator",
+      "type_line": "Creature \u2014 Kavu Scout",
+      "oracle_text": "When this creature enters, target opponent may have you create two Lander tokens. If they don't, put two +1/+1 counters on this creature. (A Lander token is an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target opponent may have you create two Lander tokens. If they don't, put two +1/+1 counters on this creature. (A Lander token is an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent may have you create two Lander tokens"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "they don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

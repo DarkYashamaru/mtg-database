@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1ba45691-417b-4e6a-be45-6027e4f04599",
+  "name": "Illusory Gains",
+  "faces": [
+    {
+      "name": "Illusory Gains",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nYou control enchanted creature.\nWhenever a creature an opponent controls enters, attach this Aura to that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature an opponent controls enters, attach this Aura to that creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "a_creature_an_opponent_controls"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach this Aura to that creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "You control enchanted creature.",
+          "effects": [
+            {
+              "action": "gain_control",
+              "target": "enchanted_creature",
+              "duration": "static"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "007c110d-4364-41e5-a8bc-6ac05ecbbd00",
+  "name": "Thopter Assembly",
+  "faces": [
+    {
+      "name": "Thopter Assembly",
+      "type_line": "Artifact Creature \u2014 Thopter",
+      "oracle_text": "Flying\nAt the beginning of your upkeep, if you control no Thopters other than this creature, return this creature to its owner's hand and create five 1/1 colorless Thopter artifact creature tokens with flying.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if you control no Thopters other than this creature, return this creature to its owner's hand and create five 1/1 colorless Thopter artifact creature tokens with flying.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you control no Thopters other than this creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "five 1/1 colorless Thopter artifact creature tokens with flying",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Thopter",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f1ae89ff-b23b-44b2-a30c-6f2ae3216189",
+  "name": "Petra Sphinx",
+  "faces": [
+    {
+      "name": "Petra Sphinx",
+      "type_line": "Creature \u2014 Sphinx",
+      "oracle_text": "{T}: Target player chooses a card name, then reveals the top card of their library. If that card has the chosen name, that player puts it into their hand. If it doesn't, the player puts it into their graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Target player chooses a card name, then reveals the top card of their library. If that card has the chosen name, that player puts it into their hand. If it doesn't, the player puts it into their graveyard.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target player chooses a card name"
+            },
+            {
+              "action": "custom_effect",
+              "text": "reveals the top card of their library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "that player puts it into their hand",
+              "condition": [
+                {
+                  "condition_text": "that card has the chosen name"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "the player puts it into their graveyard",
+              "condition": [
+                {
+                  "condition_text": "it doesn't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

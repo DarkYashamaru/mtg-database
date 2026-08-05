@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e1de0c94-0ecc-425a-9b92-27c2745d07e7",
+  "name": "Narset Transcendent",
+  "faces": [
+    {
+      "name": "Narset Transcendent",
+      "type_line": "Legendary Planeswalker \u2014 Narset",
+      "oracle_text": "+1: Look at the top card of your library. If it's a noncreature, nonland card, you may reveal it and put it into your hand.\n\u22122: When you next cast an instant or sorcery spell from your hand this turn, it gains rebound. (Exile the spell as it resolves. At the beginning of your next upkeep, you may cast that card from exile without paying its mana cost.)\n\u22129: You get an emblem with \"Your opponents can't cast noncreature spells.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Look at the top card of your library. If it's a noncreature, nonland card, you may reveal it and put it into your hand.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "nonland card, you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it's a noncreature"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: When you next cast an instant or sorcery spell from your hand this turn, it gains rebound. (Exile the spell as it resolves. At the beginning of your next upkeep, you may cast that card from exile without paying its mana cost.)",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword",
+              "target": "when_you_next_cast_an_instant_or_sorcery_spell_from_you_control_hand_this_turn_it",
+              "keyword": "rebound"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22129: You get an emblem with \"Your opponents can't cast noncreature spells.\"",
+          "cost": "\u22129",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with \"Your opponents can't cast noncreature spells.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

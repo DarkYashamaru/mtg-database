@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "636ed3e3-c31d-403a-a3e7-03e01350ce4f",
+  "name": "Mardu Woe-Reaper",
+  "faces": [
+    {
+      "name": "Mardu Woe-Reaper",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Whenever this creature or another Warrior you control enters, you may exile target creature card from a graveyard. If you do, you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Warrior you control enters, you may exile target creature card from a graveyard. If you do, you gain 1 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Warrior"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile target creature card from a graveyard"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

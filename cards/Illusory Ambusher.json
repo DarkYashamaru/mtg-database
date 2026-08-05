@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ad3add32-cb87-4cd4-8c36-a737a897a8c8",
+  "name": "Illusory Ambusher",
+  "faces": [
+    {
+      "name": "Illusory Ambusher",
+      "type_line": "Creature \u2014 Cat Illusion",
+      "oracle_text": "Flash (You may cast this spell any time you could cast an instant.)\nWhenever this creature is dealt damage, draw that many cards.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature is dealt damage, draw that many cards.",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

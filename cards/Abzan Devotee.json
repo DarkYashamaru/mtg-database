@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3d02ee2f-b7bd-40b0-b9be-2420991b2be0",
+  "name": "Abzan Devotee",
+  "faces": [
+    {
+      "name": "Abzan Devotee",
+      "type_line": "Creature \u2014 Dog Cleric",
+      "oracle_text": "{1}: Add {W}, {B}, or {G}. Activate only once each turn.\n{2}{B}: Return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}: Add {W}, {B}, or {G}. Activate only once each turn.",
+          "cost": "{1}",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {W}, {B}, or {G}"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{B}: Return this card from your graveyard to your hand.",
+          "cost": "{2}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

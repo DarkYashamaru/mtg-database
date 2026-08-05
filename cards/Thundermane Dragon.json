@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a1602bd0-f346-43cf-86ec-1dd300a7f2ed",
+  "name": "Thundermane Dragon",
+  "faces": [
+    {
+      "name": "Thundermane Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nYou may look at the top card of your library any time.\nYou may cast creature spells with power 4 or greater from the top of your library. If you cast a creature spell this way, it gains haste until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "You may cast creature spells with power 4 or greater from the top of your library. If you cast a creature spell this way, it gains haste until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast creature spells with power 4 or greater from the top of your library"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste",
+              "condition": [
+                {
+                  "condition_text": "you cast a creature spell this way"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

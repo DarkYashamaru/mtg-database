@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "566eafea-c8c2-43d6-b491-f20de276cdb6",
+  "name": "Stupefying Touch",
+  "faces": [
+    {
+      "name": "Stupefying Touch",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, draw a card.\nEnchanted creature's activated abilities can't be activated.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature's activated abilities can't be activated.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature's activated abilities can't be activated"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

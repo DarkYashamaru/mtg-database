@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "44a10a63-be9c-4f1d-aad6-b5337112bda5",
+  "name": "Giant Shark",
+  "faces": [
+    {
+      "name": "Giant Shark",
+      "type_line": "Creature \u2014 Shark",
+      "oracle_text": "This creature can't attack unless defending player controls an Island.\nWhenever this creature blocks or becomes blocked by a creature that has been dealt damage this turn, this creature gets +2/+0 and gains trample until end of turn.\nWhen you control no Islands, sacrifice this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature blocks or becomes blocked by a creature that has been dealt damage this turn, this creature gets +2/+0 and gains trample until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature blocks or becomes blocked by a creature that has been dealt damage this turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self_gets_20_and",
+              "keyword": "trample"
+            }
+          ]
+        },
+        {
+          "raw_text": "When you control no Islands, sacrifice this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you control no Islands"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't attack unless defending player controls an Island.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature can't attack unless defending player controls an Island"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

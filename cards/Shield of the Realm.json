@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d669ed30-efe9-4455-813a-c747b123333f",
+  "name": "Shield of the Realm",
+  "faces": [
+    {
+      "name": "Shield of the Realm",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "If a source would deal damage to equipped creature, prevent 2 of that damage.\nEquip {1}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {1}",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If a source would deal damage to equipped creature, prevent 2 of that damage.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent 2 of that damage",
+              "condition": [
+                {
+                  "condition_text": "a source would deal damage to equipped creature"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1ea71ea2-65ca-4907-b857-dbd1ba8efacd",
+  "name": "Cerebral Confiscation",
+  "faces": [
+    {
+      "name": "Cerebral Confiscation",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose one \u2014\n\u2022 Target opponent discards two cards.\n\u2022 Target opponent reveals their hand. You choose a nonland card from it. That player discards that card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Target opponent discards two cards.\n\u2022 Target opponent reveals their hand. You choose a nonland card from it. That player discards that card.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Target opponent discards two cards.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Target opponent discards two cards"
+                }
+              ]
+            },
+            {
+              "raw_text": "Target opponent reveals their hand. You choose a nonland card from it. That player discards that card.",
+              "effects": [
+                {
+                  "action": "reveal_hand",
+                  "target": "target_opponent"
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "You choose a nonland card from it"
+                },
+                {
+                  "action": "discard_revealed_card",
+                  "target": "that_player"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4c495e94-3194-47c7-8129-dd0a0f915daa",
+  "name": "Coveted Falcon",
+  "faces": [
+    {
+      "name": "Coveted Falcon",
+      "type_line": "Artifact Creature \u2014 Bird",
+      "oracle_text": "Flying\nWhenever this creature attacks, gain control of target permanent you own but don't control.\nDisguise {1}{U}\nWhen this creature is turned face up, target opponent gains control of any number of target permanents you control. Draw a card for each one they gained control of this way.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, gain control of target permanent you own but don't control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "gain control of target permanent you own but don't control"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature is turned face up, target opponent gains control of any number of target permanents you control. Draw a card for each one they gained control of this way.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent gains control of any number of target permanents you control"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "one_they_gained_control_of_this_way"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disguise {1}{U}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disguise {1}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

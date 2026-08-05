@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cf6dc79e-840c-4d47-8f94-c8623528acd2",
+  "name": "Angry Rabble",
+  "faces": [
+    {
+      "name": "Angry Rabble",
+      "type_line": "Creature \u2014 Human Citizen",
+      "oracle_text": "Trample\nWhenever you cast a spell with mana value 4 or greater, this creature deals 1 damage to each opponent.\n{5}{R}: Put two +1/+1 counters on this creature. Activate only as a sorcery.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell with mana value 4 or greater, this creature deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 4
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{5}{R}: Put two +1/+1 counters on this creature. Activate only as a sorcery.",
+          "cost": "{5}{R}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

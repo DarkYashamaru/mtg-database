@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c1aecc8a-db3a-4158-b1f1-bfe06d782482",
+  "name": "Tower Winder",
+  "faces": [
+    {
+      "name": "Tower Winder",
+      "type_line": "Creature \u2014 Snake",
+      "oracle_text": "Reach, deathtouch\nWhen this creature enters, search your library and/or graveyard for a card named Command Tower, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+      "static": [
+        {
+          "keyword": "reach"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, search your library and/or graveyard for a card named Command Tower, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library and/or graveyard for a card named Command Tower, reveal it, and put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

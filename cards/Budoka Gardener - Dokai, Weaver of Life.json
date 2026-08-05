@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb952c81-c7bb-4670-938d-296d35551986",
+  "name": "Budoka Gardener // Dokai, Weaver of Life",
+  "faces": [
+    {
+      "name": "Budoka Gardener",
+      "type_line": "Creature \u2014 Human Monk",
+      "oracle_text": "{T}: You may put a land card from your hand onto the battlefield. If you control ten or more lands, flip this creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: You may put a land card from your hand onto the battlefield. If you control ten or more lands, flip this creature.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may put a land card from your hand onto the battlefield"
+            },
+            {
+              "action": "custom_effect",
+              "text": "flip this creature",
+              "condition": [
+                {
+                  "condition_text": "you control ten or more lands"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Dokai, Weaver of Life",
+      "type_line": "Legendary Creature \u2014 Human Monk",
+      "oracle_text": "{4}{G}{G}, {T}: Create an X/X green Elemental creature token, where X is the number of lands you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{4}{G}{G}, {T}: Create an X/X green Elemental creature token, where X is the number of lands you control.",
+          "cost": "{4}{G}{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "an X/X green Elemental creature token, where X is the number of lands you control",
+                "colors": [
+                  "green"
+                ],
+                "card_types": [
+                  "creature"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

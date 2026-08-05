@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d8e585c5-1de3-4558-8a2f-0d9fb07edad6",
+  "name": "Storm, Queen of Wakanda",
+  "faces": [
+    {
+      "name": "Storm, Queen of Wakanda",
+      "type_line": "Legendary Creature \u2014 Mutant Noble Hero",
+      "oracle_text": "Flying\nWhenever Storm attacks, until end of turn, another target attacking creature gains flying and gets +X/+0, where X is Storm's power.\nWhenever a creature with flying attacks you, Storm deals damage equal to her power to that creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Storm attacks, until end of turn, another target attacking creature gains flying and gets +X/+0, where X is Storm's power.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "until end of turn, another target attacking creature gains flying and gets +X/+0, where X is Storm's power"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature with flying attacks you, Storm deals damage equal to her power to that creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature with flying attacks you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Storm deals damage equal to her power to that creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

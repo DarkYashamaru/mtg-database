@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0b55eac6-a745-4bf4-8926-5ce83bc38d7d",
+  "name": "Treasure Map // Treasure Cove",
+  "faces": [
+    {
+      "name": "Treasure Cove",
+      "type_line": "Land",
+      "oracle_text": "(Transforms from Treasure Map.)\n{T}: Add {C}.\n{T}, Sacrifice a Treasure: Draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Sacrifice a Treasure: Draw a card.",
+          "cost": "{T}, Sacrifice a Treasure",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Treasure Map",
+      "type_line": "Artifact",
+      "oracle_text": "{1}, {T}: Scry 1. Put a landmark counter on this artifact. Then if there are three or more landmark counters on it, remove those counters, transform this artifact, and create three Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}: Scry 1. Put a landmark counter on this artifact. Then if there are three or more landmark counters on it, remove those counters, transform this artifact, and create three Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a landmark counter on this artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove those counters, transform this artifact,",
+              "condition": [
+                {
+                  "condition_text": "there are three or more landmark counters on it"
+                }
+              ]
+            },
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "61495793-b0c7-40a5-ad3e-9df8e2b8096b",
+  "name": "Choreographed Sparks",
+  "faces": [
+    {
+      "name": "Choreographed Sparks",
+      "type_line": "Instant",
+      "oracle_text": "This spell can't be copied.\nChoose one or both \u2014\n\u2022 Copy target instant or sorcery spell you control. You may choose new targets for the copy.\n\u2022 Copy target creature spell you control. The copy gains haste and \"At the beginning of the end step, sacrifice this token.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell can't be copied.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell can't be copied"
+            }
+          ]
+        },
+        {
+          "raw_text": "Choose one or both \u2014\n\u2022 Copy target instant or sorcery spell you control. You may choose new targets for the copy.\n\u2022 Copy target creature spell you control. The copy gains haste and \"At the beginning of the end step, sacrifice this token.\"",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false,
+            "or_both": true
+          },
+          "modes": [
+            {
+              "raw_text": "Copy target instant or sorcery spell you control. You may choose new targets for the copy.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Copy target instant or sorcery spell you control"
+                },
+                {
+                  "action": "allow_new_targets",
+                  "object": "copied_spell",
+                  "optional": true
+                }
+              ]
+            },
+            {
+              "raw_text": "Copy target creature spell you control. The copy gains haste and \"At the beginning of the end step, sacrifice this token.\"",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Copy target creature spell you control"
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "The copy gains haste and \"At the beginning of the end step, sacrifice this token.\""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

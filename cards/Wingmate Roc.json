@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5badc2e8-a7d6-48c7-b594-65db953d9d57",
+  "name": "Wingmate Roc",
+  "faces": [
+    {
+      "name": "Wingmate Roc",
+      "type_line": "Creature \u2014 Bird",
+      "oracle_text": "Flying\nRaid \u2014 When this creature enters, if you attacked this turn, create a 3/4 white Bird creature token with flying.\nWhenever this creature attacks, you gain 1 life for each attacking creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if you attacked this turn, create a 3/4 white Bird creature token with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you attacked this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 3/4 white Bird creature token with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "3/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Bird"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, you gain 1 life for each attacking creature.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain 1 life for each attacking creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

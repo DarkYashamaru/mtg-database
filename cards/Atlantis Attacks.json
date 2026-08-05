@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b5c8e24a-f4d7-42dc-8117-905ad0bad888",
+  "name": "Atlantis Attacks",
+  "faces": [
+    {
+      "name": "Atlantis Attacks",
+      "type_line": "Sorcery",
+      "oracle_text": "Teamwork 4 (As an additional cost to cast this spell, you may tap any number of creatures you control with total power 4 or more.)\nChoose one. If this spell was cast using teamwork, choose both instead.\n\u2022 Target player creates a 6/5 blue Leviathan creature token with hexproof.\n\u2022 Return one or two target nonland permanents to their owners' hands.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Teamwork 4 (As an additional cost to cast this spell, you may tap any number of creatures you control with total power 4 or more.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Teamwork 4"
+            }
+          ]
+        },
+        {
+          "raw_text": "Choose one. If this spell was cast using teamwork, choose both instead.",
+          "effects": [
+            {
+              "action": "mode_selection",
+              "choose_count": 1
+            },
+            {
+              "action": "mode_selection_modifier",
+              "choose_count": 2,
+              "condition": [
+                {
+                  "you_control_commander": true
+                },
+                {
+                  "condition_text": "this spell was cast using teamwork"
+                }
+              ],
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Target player creates a 6/5 blue Leviathan creature token with hexproof.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Target player creates a 6/5 blue Leviathan creature token with hexproof"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Return one or two target nonland permanents to their owners' hands.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Return one or two target nonland permanents to their owners' hands"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

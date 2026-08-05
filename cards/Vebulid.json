@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a887def5-c9e1-4cbb-8b08-79b7bd808deb",
+  "name": "Vebulid",
+  "faces": [
+    {
+      "name": "Vebulid",
+      "type_line": "Creature \u2014 Phyrexian Horror",
+      "oracle_text": "This creature enters with a +1/+1 counter on it.\nAt the beginning of your upkeep, you may put a +1/+1 counter on this creature.\nWhen this creature attacks or blocks, destroy it at end of combat.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature attacks or blocks, destroy it at end of combat.",
+          "trigger": {
+            "type": "attacks_or_blocks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy it at end of combat"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with a +1/+1 counter on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a4c15223-784f-43a7-8626-30f96ccfdcaf",
+  "name": "Krovikan Horror",
+  "faces": [
+    {
+      "name": "Krovikan Horror",
+      "type_line": "Creature \u2014 Horror Spirit",
+      "oracle_text": "At the beginning of the end step, if this card is in your graveyard with a creature card directly above it, you may return this card to your hand.\n{1}, Sacrifice a creature: This creature deals 1 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of the end step, if this card is in your graveyard with a creature card directly above it, you may return this card to your hand.",
+          "trigger": {
+            "type": "beginning_of_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "this card is in your graveyard with a creature card directly above it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return this card to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice a creature: This creature deals 1 damage to any target.",
+          "cost": "{1}, Sacrifice a creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

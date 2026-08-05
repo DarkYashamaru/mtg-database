@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f4e8be6f-2a1f-47b2-a4d8-7e576e25ab60",
+  "name": "Akroan Skyguard",
+  "faces": [
+    {
+      "name": "Akroan Skyguard",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Flying\nHeroic \u2014 Whenever you cast a spell that targets this creature, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that targets this creature, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "that targets this creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

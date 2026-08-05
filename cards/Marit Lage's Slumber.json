@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a11d890e-38d4-467c-bc04-948979c142e0",
+  "name": "Marit Lage's Slumber",
+  "faces": [
+    {
+      "name": "Marit Lage's Slumber",
+      "type_line": "Legendary Snow Enchantment",
+      "oracle_text": "Whenever Marit Lage's Slumber or another snow permanent you control enters, scry 1.\nAt the beginning of your upkeep, if you control ten or more snow permanents, sacrifice Marit Lage's Slumber. If you do, create Marit Lage, a legendary 20/20 black Avatar creature token with flying and indestructible.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Marit Lage's Slumber or another snow permanent you control enters, scry 1.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Snow",
+                "Permanent"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if you control ten or more snow permanents, sacrifice Marit Lage's Slumber. If you do, create Marit Lage, a legendary 20/20 black Avatar creature token with flying and indestructible.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you control ten or more snow permanents"
+            }
+          ],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "marit lage, a legendary 20/20 black avatar creature token with flying and indestructible",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "20/20",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "avatar"
+                ],
+                "keywords": [
+                  "flying",
+                  "indestructible"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

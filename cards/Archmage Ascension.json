@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5966c464-5f63-4c71-9317-e2ca79da5aba",
+  "name": "Archmage Ascension",
+  "faces": [
+    {
+      "name": "Archmage Ascension",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of each end step, if you drew two or more cards this turn, you may put a quest counter on this enchantment.\nAs long as this enchantment has six or more quest counters on it, if you would draw a card, you may instead search your library for a card, put that card into your hand, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each end step, if you drew two or more cards this turn, you may put a quest counter on this enchantment.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you drew two or more cards this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a quest counter on this enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as this enchantment has six or more quest counters on it, if you would draw a card, you may instead search your library for a card, put that card into your hand, then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "as long as this enchantment has six or more quest counters on it, if you would draw a card, you may instead search your library for a card, put that card into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

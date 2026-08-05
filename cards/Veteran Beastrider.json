@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "29f1484c-91b6-436a-a6be-3ab8b58c0fc1",
+  "name": "Veteran Beastrider",
+  "faces": [
+    {
+      "name": "Veteran Beastrider",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "At the beginning of your end step, untap each creature you control.\n{2}{G}{W}: Creatures you control get +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, untap each creature you control.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap each creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{G}{W}: Creatures you control get +1/+1 until end of turn.",
+          "cost": "{2}{G}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

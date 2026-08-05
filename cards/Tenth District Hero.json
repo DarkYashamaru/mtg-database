@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0953772c-9374-4616-9c04-5838aaf626c9",
+  "name": "Tenth District Hero",
+  "faces": [
+    {
+      "name": "Tenth District Hero",
+      "type_line": "Creature \u2014 Human",
+      "oracle_text": "{1}{W}, Collect evidence 2: This creature becomes a Human Detective with base power and toughness 4/4 and gains vigilance.\n{2}{W}, Collect evidence 4: If this creature is a Detective, it becomes a legendary creature named Mileva, the Stalwart, it has base power and toughness 5/5, and it gains \"Other creatures you control have indestructible.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{W}, Collect evidence 2: This creature becomes a Human Detective with base power and toughness 4/4 and gains vigilance.",
+          "cost": "{1}{W}, Collect evidence 2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword",
+              "target": "self_becomes_a_human_detective_with_base_power_and_toughness_44_and",
+              "keyword": "vigilance"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{W}, Collect evidence 4: If this creature is a Detective, it becomes a legendary creature named Mileva, the Stalwart, it has base power and toughness 5/5, and it gains \"Other creatures you control have indestructible.\"",
+          "cost": "{2}{W}, Collect evidence 4",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "it_becomes_a_legendary_creature_named_mileva_the_stalwart_it_has_base_power_and_toughness_55_and_it_gains_other_creatures_you_control"
+              },
+              "keywords": [
+                "indestructible"
+              ],
+              "condition": [
+                {
+                  "condition_text": "this creature is a detective"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5241182d-e2ca-4b31-809f-fbff2822dbf6",
+  "name": "Traveler's Cloak",
+  "faces": [
+    {
+      "name": "Traveler's Cloak",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nAs this Aura enters, choose a land type.\nWhen this Aura enters, draw a card.\nEnchanted creature has landwalk of the chosen type. (It can't be blocked as long as defending player controls a land of that type.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As this Aura enters, choose a land type.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this Aura enters, choose a land type"
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has landwalk of the chosen type. (It can't be blocked as long as defending player controls a land of that type.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has landwalk of the chosen type"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

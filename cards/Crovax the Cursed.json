@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e1b74ef7-ab6b-4d40-8087-3f3a448b7e0a",
+  "name": "Crovax the Cursed",
+  "faces": [
+    {
+      "name": "Crovax the Cursed",
+      "type_line": "Legendary Creature \u2014 Vampire Noble",
+      "oracle_text": "Crovax enters with four +1/+1 counters on it.\nAt the beginning of your upkeep, you may sacrifice a creature. If you do, put a +1/+1 counter on Crovax. If you don't, remove a +1/+1 counter from Crovax.\n{B}: Crovax gains flying until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may sacrifice a creature. If you do, put a +1/+1 counter on Crovax. If you don't, remove a +1/+1 counter from Crovax.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature",
+              "optional": true
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove a +1/+1 counter from crovax",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}: Crovax gains flying until end of turn.",
+          "cost": "{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Crovax enters with four +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Crovax enters with four +1/+1 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

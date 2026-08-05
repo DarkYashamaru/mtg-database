@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a7308a1f-ec46-478e-86ea-33b2ebbd995f",
+  "name": "The Cauldron of Eternity",
+  "faces": [
+    {
+      "name": "The Cauldron of Eternity",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "This spell costs {2} less to cast for each creature card in your graveyard.\nWhenever a creature you control dies, put it on the bottom of its owner's library.\n{2}{B}, {T}, Pay 2 life: Return target creature card from your graveyard to the battlefield. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control dies, put it on the bottom of its owner's library.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put it on the bottom of its owner's library"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{B}, {T}, Pay 2 life: Return target creature card from your graveyard to the battlefield. Activate only as a sorcery.",
+          "cost": "{2}{B}, {T}, Pay 2 life",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": {
+                "card_types": [
+                  "Creature"
+                ],
+                "zone": "graveyard"
+              },
+              "destination": "battlefield"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {2} less to cast for each creature card in your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {2} less to cast for each creature card in your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

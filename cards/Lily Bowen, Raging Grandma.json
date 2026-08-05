@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6b2d92f5-b0a1-4f30-9140-da490bf01bda",
+  "name": "Lily Bowen, Raging Grandma",
+  "faces": [
+    {
+      "name": "Lily Bowen, Raging Grandma",
+      "type_line": "Legendary Creature \u2014 Mutant Warrior",
+      "oracle_text": "Vigilance\nLily Bowen enters with two +1/+1 counters on it.\nAt the beginning of your upkeep, double the number of +1/+1 counters on Lily Bowen if its power is 16 or less. Otherwise, remove all but one +1/+1 counter from it, then you gain 1 life for each +1/+1 counter removed this way.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, double the number of +1/+1 counters on Lily Bowen if its power is 16 or less. Otherwise, remove all but one +1/+1 counter from it, then you gain 1 life for each +1/+1 counter removed this way.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "double the number of +1/+1 counters on Lily Bowen if its power is 16 or less"
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove all but one +1/+1 counter from it",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you gain 1 life for each +1/+1 counter removed this way"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Lily Bowen enters with two +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Lily Bowen enters with two +1/+1 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

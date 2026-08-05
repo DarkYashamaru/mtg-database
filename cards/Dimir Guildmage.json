@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1b6c67e5-5913-4db9-85d9-8dae57da02ee",
+  "name": "Dimir Guildmage",
+  "faces": [
+    {
+      "name": "Dimir Guildmage",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "({U/B} can be paid with either {U} or {B}.)\n{3}{U}: Target player draws a card. Activate only as a sorcery.\n{3}{B}: Target player discards a card. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{U}: Target player draws a card. Activate only as a sorcery.",
+          "cost": "{3}{U}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player draws a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{B}: Target player discards a card. Activate only as a sorcery.",
+          "cost": "{3}{B}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "target_player",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

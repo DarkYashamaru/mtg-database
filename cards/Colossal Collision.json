@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c2f7f39b-0569-4c32-bdbf-7fb0a0efd5cf",
+  "name": "Colossal Collision",
+  "faces": [
+    {
+      "name": "Colossal Collision",
+      "type_line": "Sorcery",
+      "oracle_text": "Put a +1/+1 counter on target creature you control. Then that creature deals damage equal to its power to target creature an opponent controls.\nBasic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Basic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Basic landcycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Put a +1/+1 counter on target creature you control. Then that creature deals damage equal to its power to target creature an opponent controls.",
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then that creature deals damage equal to its power to target creature an opponent controls"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

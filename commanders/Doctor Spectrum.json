@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fad80e75-8d08-4a0b-a05e-14f4c96947bf",
+  "name": "Doctor Spectrum",
+  "faces": [
+    {
+      "name": "Doctor Spectrum",
+      "type_line": "Legendary Creature \u2014 Human Hero",
+      "oracle_text": "Flying\nWhen Doctor Spectrum enters, choose one \u2014\n\u2022 Create a 0/4 colorless Wall creature token with defender.\n\u2022 Put a +1/+1 counter on each other Hero you control.\n\u2022 Destroy target enchantment.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Doctor Spectrum enters, choose one \u2014\n\u2022 Create a 0/4 colorless Wall creature token with defender.\n\u2022 Put a +1/+1 counter on each other Hero you control.\n\u2022 Destroy target enchantment.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Create a 0/4 colorless Wall creature token with defender.",
+              "effects": [
+                {
+                  "action": "create_token",
+                  "amount": 1,
+                  "token": {
+                    "raw": "a 0/4 colorless Wall creature token with defender",
+                    "power_toughness": "0/4",
+                    "card_types": [
+                      "creature"
+                    ],
+                    "subtypes": [
+                      "colorless",
+                      "Wall"
+                    ],
+                    "keywords": [
+                      "defender"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Put a +1/+1 counter on each other Hero you control.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control",
+                    "subtypes": [
+                      "Other",
+                      "Hero"
+                    ]
+                  },
+                  "amount": 1
+                }
+              ]
+            },
+            {
+              "raw_text": "Destroy target enchantment.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_enchantment"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

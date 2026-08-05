@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9bf498ce-6d6d-462f-9ec3-b36a2184aff7",
+  "name": "C.A.M.P.",
+  "faces": [
+    {
+      "name": "C.A.M.P.",
+      "type_line": "Artifact \u2014 Fortification",
+      "oracle_text": "Whenever fortified land is tapped for mana, put a +1/+1 counter on target creature you control. If that creature shares a color with the mana that land produced, create a Junk token. (It's an artifact with \"{T}, Sacrifice this token: Exile the top card of your library. You may play that card this turn. Activate only as a sorcery.\")\nFortify {3} ({3}: Attach to target land you control. Fortify only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever fortified land is tapped for mana, put a +1/+1 counter on target creature you control. If that creature shares a color with the mana that land produced, create a Junk token. (It's an artifact with \"{T}, Sacrifice this token: Exile the top card of your library. You may play that card this turn. Activate only as a sorcery.\")",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever fortified land is tapped for mana"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "junk token"
+              },
+              "condition": [
+                {
+                  "condition_text": "that creature shares a color with the mana that land produced"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Fortify {3} ({3}: Attach to target land you control. Fortify only as a sorcery.)",
+          "cost": "Fortify {3} ({3}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Attach to target land you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Fortify only as a sorcery"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

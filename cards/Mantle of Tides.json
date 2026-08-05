@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "56a80bd3-b81b-428d-96e1-f03ab6199cf3",
+  "name": "Mantle of Tides",
+  "faces": [
+    {
+      "name": "Mantle of Tides",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +1/+2.\nWhenever you draw your second card each turn, attach this Equipment to target creature you control.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, attach this Equipment to target creature you control.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach this Equipment to target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +1/+2.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 1,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

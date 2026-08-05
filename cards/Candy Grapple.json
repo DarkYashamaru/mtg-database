@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9588a7fd-bbe5-4a81-9a7e-d8e8f6c0537d",
+  "name": "Candy Grapple",
+  "faces": [
+    {
+      "name": "Candy Grapple",
+      "type_line": "Instant",
+      "oracle_text": "Bargain (You may sacrifice an artifact, enchantment, or token as you cast this spell.)\nTarget creature gets -3/-3 until end of turn. If this spell was bargained, that creature gets -5/-5 until end of turn instead.",
+      "static": [
+        {
+          "keyword": "bargain"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature gets -3/-3 until end of turn. If this spell was bargained, that creature gets -5/-5 until end of turn instead.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -3,
+              "toughness_delta": -3
+            },
+            {
+              "action": "custom_effect",
+              "text": "that creature gets -5/-5 until end of turn instead",
+              "condition": [
+                {
+                  "condition_text": "this spell was bargained"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

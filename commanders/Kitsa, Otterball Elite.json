@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "16414460-11ce-481d-ab54-6f0e0ea7d83d",
+  "name": "Kitsa, Otterball Elite",
+  "faces": [
+    {
+      "name": "Kitsa, Otterball Elite",
+      "type_line": "Legendary Creature \u2014 Otter Wizard",
+      "oracle_text": "Vigilance\nProwess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\n{T}: Draw a card, then discard a card.\n{2}, {T}: Copy target instant or sorcery spell you control. You may choose new targets for the copy. Activate only if Kitsa's power is 3 or greater.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Draw a card, then discard a card.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}: Copy target instant or sorcery spell you control. You may choose new targets for the copy. Activate only if Kitsa's power is 3 or greater.",
+          "cost": "{2}, {T}",
+          "condition": [
+            {
+              "condition_text": "kitsa's power is 3 or greater"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Copy target instant or sorcery spell you control"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

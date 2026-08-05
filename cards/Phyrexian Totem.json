@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "65afedc9-9446-4417-8576-807279061342",
+  "name": "Phyrexian Totem",
+  "faces": [
+    {
+      "name": "Phyrexian Totem",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {B}.\n{2}{B}: This artifact becomes a 5/5 black Phyrexian Horror artifact creature with trample until end of turn.\nWhenever this permanent is dealt damage, if it's a creature, sacrifice that many permanents.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this permanent is dealt damage, if it's a creature, sacrifice that many permanents.",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "this_permanent"
+          },
+          "condition": [
+            {
+              "condition_text": "it's a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "that_many_permanents"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{B}: This artifact becomes a 5/5 black Phyrexian Horror artifact creature with trample until end of turn.",
+          "cost": "{2}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact becomes a 5/5 black Phyrexian Horror artifact creature with trample until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

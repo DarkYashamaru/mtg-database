@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "409697d5-ce3c-46aa-a97d-969d143a2a65",
+  "name": "Case of the Shifting Visage",
+  "faces": [
+    {
+      "name": "Case of the Shifting Visage",
+      "type_line": "Enchantment \u2014 Case",
+      "oracle_text": "At the beginning of your upkeep, surveil 1.\nTo solve \u2014 There are fifteen or more cards in your graveyard. (If unsolved, solve at the beginning of your end step.)\nSolved \u2014 Whenever you cast a nonlegendary creature spell, copy that spell. (The copy becomes a token.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, surveil 1.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a nonlegendary creature spell, copy that spell. (The copy becomes a token.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            },
+            {
+              "spell_subtypes_all": [
+                "Nonlegendary"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy that spell"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "To solve \u2014 There are fifteen or more cards in your graveyard. (If unsolved, solve at the beginning of your end step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "To solve \u2014 There are fifteen or more cards in your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

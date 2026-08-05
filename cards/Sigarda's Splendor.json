@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "71a3d0ce-052b-41eb-a70f-0c716149a55f",
+  "name": "Sigarda's Splendor",
+  "faces": [
+    {
+      "name": "Sigarda's Splendor",
+      "type_line": "Enchantment",
+      "oracle_text": "As this enchantment enters, note your life total.\nAt the beginning of your upkeep, draw a card if your life total is greater than or equal to the last noted life total for this enchantment. Then note your life total.\nWhenever you cast a white spell, you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, draw a card if your life total is greater than or equal to the last noted life total for this enchantment. Then note your life total.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "your life total is greater than or equal to the last noted life total for this enchantment"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then note your life total"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a white spell, you gain 1 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "White"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this enchantment enters, note your life total.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this enchantment enters, note your life total"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

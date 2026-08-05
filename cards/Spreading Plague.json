@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6c134ef7-5c2f-4e4c-ae40-ef338fbf41e6",
+  "name": "Spreading Plague",
+  "faces": [
+    {
+      "name": "Spreading Plague",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature enters, destroy all other creatures that share a color with it. They can't be regenerated.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature enters, destroy all other creatures that share a color with it. They can't be regenerated.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "a_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy all other creatures that share a color with it"
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_targets"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

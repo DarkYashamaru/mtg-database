@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f15349a-6ac6-4091-95a3-ae9f593e4650",
+  "name": "Surgespanner",
+  "faces": [
+    {
+      "name": "Surgespanner",
+      "type_line": "Creature \u2014 Merfolk Wizard",
+      "oracle_text": "Whenever this creature becomes tapped, you may pay {1}{U}. If you do, return target permanent to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes tapped, you may pay {1}{U}. If you do, return target permanent to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes tapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{U}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return target permanent to its owner's hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

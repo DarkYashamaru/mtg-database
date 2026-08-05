@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ae6dc45c-b8c9-4cbf-892f-8c00f4199aaf",
+  "name": "Laid to Rest",
+  "faces": [
+    {
+      "name": "Laid to Rest",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a Human you control dies, draw a card.\nWhenever a creature you control with a +1/+1 counter on it dies, you gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Human you control dies, draw a card.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Human"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control with a +1/+1 counter on it dies, you gain 2 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "a_creature_you_control_with_a_11_counter_on_it"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

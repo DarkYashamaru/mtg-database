@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "19a0d191-64c0-4e8a-8cb0-bf680cc681bb",
+  "name": "Beastrider Vanguard",
+  "faces": [
+    {
+      "name": "Beastrider Vanguard",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "{4}{G}: Look at the top three cards of your library. You may reveal a permanent card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{4}{G}: Look at the top three cards of your library. You may reveal a permanent card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+          "cost": "{4}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "subtypes_any": [
+                  "Permanent"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "any"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fdd4b3a9-83ce-41bf-82e2-7808657e2c09",
+  "name": "Transcendent Archaic",
+  "faces": [
+    {
+      "name": "Transcendent Archaic",
+      "type_line": "Creature \u2014 Avatar",
+      "oracle_text": "Vigilance\nConverge \u2014 When this creature enters, you may draw X cards, where X is the number of colors of mana spent to cast this spell. If you draw one or more cards this way, discard two cards.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may draw X cards, where X is the number of colors of mana spent to cast this spell. If you draw one or more cards this way, discard two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may draw X cards, where X is the number of colors of mana spent to cast this spell"
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "you draw one or more cards this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

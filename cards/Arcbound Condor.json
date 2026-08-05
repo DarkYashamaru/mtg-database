@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d484be42-5dd4-49e0-afcd-2d3c1a2c3037",
+  "name": "Arcbound Condor",
+  "faces": [
+    {
+      "name": "Arcbound Condor",
+      "type_line": "Artifact Creature \u2014 Bird",
+      "oracle_text": "Flying\nModular 3 (This creature enters with three +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.)\nWhenever another artifact you control enters, target creature an opponent controls gets -1/-1 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another artifact you control enters, target creature an opponent controls gets -1/-1 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Artifact"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature_an_opponent_controls",
+              "power_delta": -1,
+              "toughness_delta": -1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Modular 3 (This creature enters with three +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Modular 3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

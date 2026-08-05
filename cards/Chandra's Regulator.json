@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d8c95a86-2f05-44f9-8ed7-b1798eaed42f",
+  "name": "Chandra's Regulator",
+  "faces": [
+    {
+      "name": "Chandra's Regulator",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "Whenever you activate a loyalty ability of a Chandra planeswalker, you may pay {1}. If you do, copy that ability. You may choose new targets for the copy.\n{1}, {T}, Discard a Mountain card or a red card: Draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you activate a loyalty ability of a Chandra planeswalker, you may pay {1}. If you do, copy that ability. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you activate a loyalty ability of a Chandra planeswalker"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy that ability",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Discard a Mountain card or a red card: Draw a card.",
+          "cost": "{1}, {T}, Discard a Mountain card or a red card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e76a1371-76c8-46dd-ba43-87fb0ab940d4",
+  "name": "Pallid Mycoderm",
+  "faces": [
+    {
+      "name": "Pallid Mycoderm",
+      "type_line": "Creature \u2014 Fungus",
+      "oracle_text": "At the beginning of your upkeep, put a spore counter on this creature.\nRemove three spore counters from this creature: Create a 1/1 green Saproling creature token.\nSacrifice a Saproling: Each creature you control that's a Fungus or a Saproling gets +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a spore counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a spore counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove three spore counters from this creature: Create a 1/1 green Saproling creature token.",
+          "cost": "Remove three spore counters from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Saproling creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Saproling"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Sacrifice a Saproling: Each creature you control that's a Fungus or a Saproling gets +1/+1 until end of turn.",
+          "cost": "Sacrifice a Saproling",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "each_creature_you_control_thats_a_fungus_or_a_saproling"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

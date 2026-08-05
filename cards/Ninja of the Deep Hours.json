@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1f3c2b00-0000-4ae1-9650-9553accac52e",
+  "name": "Ninja of the Deep Hours",
+  "faces": [
+    {
+      "name": "Ninja of the Deep Hours",
+      "type_line": "Creature \u2014 Human Ninja",
+      "oracle_text": "Ninjutsu {1}{U} ({1}{U}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever this creature deals combat damage to a player, you may draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Ninjutsu {1}{U} ({1}{U}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)",
+          "cost": "Ninjutsu {1}{U} ({1}{U}, Return an unblocked attacker you control to hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "object": "self",
+              "source_zone": "hand",
+              "destination_zone": "battlefield",
+              "tapped": true,
+              "attacking": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "38e7be61-944e-46f2-be76-fde8b0c19905",
+  "name": "Ordeal of Thassa",
+  "faces": [
+    {
+      "name": "Ordeal of Thassa",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhenever enchanted creature attacks, put a +1/+1 counter on it. Then if it has three or more +1/+1 counters on it, sacrifice this Aura.\nWhen you sacrifice this Aura, draw two cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature attacks, put a +1/+1 counter on it. Then if it has three or more +1/+1 counters on it, sacrifice this Aura.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_aura",
+              "condition": [
+                {
+                  "condition_text": "it has three or more +1/+1 counters on it"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "When you sacrifice this Aura, draw two cards.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you sacrifice this Aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

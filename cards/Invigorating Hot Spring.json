@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a972630e-651e-439d-9412-5be50da9b934",
+  "name": "Invigorating Hot Spring",
+  "faces": [
+    {
+      "name": "Invigorating Hot Spring",
+      "type_line": "Enchantment",
+      "oracle_text": "This enchantment enters with four +1/+1 counters on it.\nModified creatures you control have haste. (Equipment, Auras you control, and counters are modifications.)\nRemove a +1/+1 counter from this enchantment: Put a +1/+1 counter on target creature you control. Activate only as a sorcery and only once each turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Remove a +1/+1 counter from this enchantment: Put a +1/+1 counter on target creature you control. Activate only as a sorcery and only once each turn.",
+          "cost": "Remove a +1/+1 counter from this enchantment",
+          "condition": [
+            {
+              "condition_text": "as a sorcery and only once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This enchantment enters with four +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This enchantment enters with four +1/+1 counters on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "Modified creatures you control have haste. (Equipment, Auras you control, and counters are modifications.)",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Modified"
+                ]
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

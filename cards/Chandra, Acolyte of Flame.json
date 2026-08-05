@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "oracle_id": "626e8acc-20da-496c-9a79-bfbf7529c01d",
+  "name": "Chandra, Acolyte of Flame",
+  "faces": [
+    {
+      "name": "Chandra, Acolyte of Flame",
+      "type_line": "Legendary Planeswalker \u2014 Chandra",
+      "oracle_text": "0: Put a loyalty counter on each red planeswalker you control.\n0: Create two 1/1 red Elemental creature tokens. They gain haste. Sacrifice them at the beginning of the next end step.\n\u22122: You may cast target instant or sorcery card with mana value 3 or less from your graveyard. If that spell would be put into your graveyard, exile it instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "0: Put a loyalty counter on each red planeswalker you control.",
+          "cost": "0",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a loyalty counter on each red planeswalker you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "0: Create two 1/1 red Elemental creature tokens. They gain haste. Sacrifice them at the beginning of the next end step.",
+          "cost": "0",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 red Elemental creature tokens",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elemental"
+                ]
+              }
+            },
+            {
+              "action": "grant_keyword",
+              "target": "they",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "them_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: You may cast target instant or sorcery card with mana value 3 or less from your graveyard. If that spell would be put into your graveyard, exile it instead.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast target instant or sorcery card with mana value 3 or less from your graveyard"
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "that spell would be put into your graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aa6723a2-75da-49f5-a1ba-cbfa82c55301",
+  "name": "Opal Palace",
+  "faces": [
+    {
+      "name": "Opal Palace",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{1}, {T}: Add one mana of any color in your commander's color identity. If you spend this mana to cast your commander, it enters with a number of additional +1/+1 counters on it equal to the number of times it's been cast from the command zone this game.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Add one mana of any color in your commander's color identity. If you spend this mana to cast your commander, it enters with a number of additional +1/+1 counters on it equal to the number of times it's been cast from the command zone this game.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "distribution": "commanders_color_identity"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it enters with a number of additional +1/+1 counters on it equal to the number of times it's been cast from the command zone this game",
+              "condition": [
+                {
+                  "condition_text": "you spend this mana to cast your commander"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

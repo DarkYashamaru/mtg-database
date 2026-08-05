@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b7bbc76-22cc-482e-8d65-34cff34c93c8",
+  "name": "Unstable Experiment",
+  "faces": [
+    {
+      "name": "Unstable Experiment",
+      "type_line": "Instant",
+      "oracle_text": "Target player draws a card, then up to one target creature you control connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target player draws a card, then up to one target creature you control connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target player draws a card"
+            },
+            {
+              "action": "connive",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Up",
+                  "To",
+                  "One",
+                  "Target"
+                ]
+              },
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control",
+                    "card_types": [
+                      "Creature"
+                    ],
+                    "subtypes": [
+                      "Up",
+                      "To",
+                      "One",
+                      "Target"
+                    ]
+                  },
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

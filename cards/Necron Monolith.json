@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "20932bca-52be-4288-9c7d-4154650c5ec9",
+  "name": "Necron Monolith",
+  "faces": [
+    {
+      "name": "Necron Monolith",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying, indestructible\nEternity Gate \u2014 Whenever this Vehicle attacks, mill three cards. For each creature card milled this way, create a 2/2 black Necron Warrior artifact creature token.\nCrew 4 (Tap any number of creatures you control with total power 4 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "indestructible"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle attacks, mill three cards. For each creature card milled this way, create a 2/2 black Necron Warrior artifact creature token.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "For each creature card milled this way, create a 2/2 black Necron Warrior artifact creature token"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 4 (Tap any number of creatures you control with total power 4 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 4,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

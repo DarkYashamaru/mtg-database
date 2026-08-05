@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "64824ae5-efab-4b55-9d3c-b9c690bad857",
+  "name": "Essence Flux",
+  "faces": [
+    {
+      "name": "Essence Flux",
+      "type_line": "Instant",
+      "oracle_text": "Exile target creature you control, then return that card to the battlefield under its owner's control. If it's a Spirit, put a +1/+1 counter on it.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Exile target creature you control, then return that card to the battlefield under its owner's control. If it's a Spirit, put a +1/+1 counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target creature you control"
+            },
+            {
+              "action": "move_card",
+              "target": "that_card",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it's a spirit"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

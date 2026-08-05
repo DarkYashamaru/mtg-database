@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb3edb86-ddd5-461c-98b5-ffb4df437a39",
+  "name": "Boommobile",
+  "faces": [
+    {
+      "name": "Boommobile",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "When this Vehicle enters, add four mana of any one color. Spend this mana only to activate abilities.\nExhaust \u2014 {X}{2}{R}: This Vehicle deals X damage to any target. Put a +1/+1 counter on this Vehicle. (Activate each exhaust ability only once.)\nCrew 2",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, add four mana of any one color. Spend this mana only to activate abilities.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "add four mana of any one color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to activate abilities"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Exhaust \u2014 {X}{2}{R}: This Vehicle deals X damage to any target. Put a +1/+1 counter on this Vehicle. (Activate each exhaust ability only once.)",
+          "cost": "Exhaust \u2014 {X}{2}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Vehicle deals X damage to any target"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "this_vehicle",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Crew 2",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

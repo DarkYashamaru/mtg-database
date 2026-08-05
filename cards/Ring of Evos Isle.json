@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4548f379-2647-4446-9e56-e7ef0662793a",
+  "name": "Ring of Evos Isle",
+  "faces": [
+    {
+      "name": "Ring of Evos Isle",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "{2}: Equipped creature gains hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)\nAt the beginning of your upkeep, put a +1/+1 counter on equipped creature if it's blue.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a +1/+1 counter on equipped creature if it's blue.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "equipped_creature_if_its_blue",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: Equipped creature gains hexproof until end of turn. (It can't be the target of spells or abilities your opponents control.)",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "equipped_creature",
+              "keyword": "hexproof"
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

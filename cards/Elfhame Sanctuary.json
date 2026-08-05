@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6f98f270-f6ff-4029-bcdd-3e7f6483eb5d",
+  "name": "Elfhame Sanctuary",
+  "faces": [
+    {
+      "name": "Elfhame Sanctuary",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, you may search your library for a basic land card, reveal that card, put it into your hand, then shuffle. If you do, you skip your draw step this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may search your library for a basic land card, reveal that card, put it into your hand, then shuffle. If you do, you skip your draw step this turn.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a basic land card, reveal that card, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you skip your draw step this turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

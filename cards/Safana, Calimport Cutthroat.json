@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "afc1c443-93e3-4ef4-a404-1d9fc13e0b02",
+  "name": "Safana, Calimport Cutthroat",
+  "faces": [
+    {
+      "name": "Safana, Calimport Cutthroat",
+      "type_line": "Legendary Creature \u2014 Human Rogue",
+      "oracle_text": "Menace\nAt the beginning of your end step, if you have the initiative, create a Treasure token. Create three of those tokens instead if you've completed a dungeon.\nChoose a Background (You can have a Background as a second commander.)",
+      "static": [
+        {
+          "keyword": "menace"
+        },
+        {
+          "keyword": "choose_a_background"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if you have the initiative, create a Treasure token. Create three of those tokens instead if you've completed a dungeon.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you have the initiative"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Create three of those tokens instead if you've completed a dungeon"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

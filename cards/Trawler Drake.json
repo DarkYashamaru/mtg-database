@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4fe38c9e-6fa0-4e05-9d3f-8fd635c457fb",
+  "name": "Trawler Drake",
+  "faces": [
+    {
+      "name": "Trawler Drake",
+      "type_line": "Creature \u2014 Phyrexian Drake",
+      "oracle_text": "Flying\nThis creature enters with an oil counter on it.\nThis creature gets +1/+1 for each oil counter on it.\nWhenever you cast a noncreature spell, put an oil counter on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, put an oil counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put an oil counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with an oil counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with an oil counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature gets +1/+1 for each oil counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +1/+1 for each oil counter on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

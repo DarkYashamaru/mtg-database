@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "84dc18f0-8225-4b40-a165-b10321e41769",
+  "name": "Nykthos, Shrine to Nyx",
+  "faces": [
+    {
+      "name": "Nykthos, Shrine to Nyx",
+      "type_line": "Legendary Land",
+      "oracle_text": "{T}: Add {C}.\n{2}, {T}: Choose a color. Add an amount of mana of that color equal to your devotion to that color. (Your devotion to a color is the number of mana symbols of that color in the mana costs of permanents you control.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}: Choose a color. Add an amount of mana of that color equal to your devotion to that color. (Your devotion to a color is the number of mana symbols of that color in the mana costs of permanents you control.)",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose a color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Add an amount of mana of that color equal to your devotion to that color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

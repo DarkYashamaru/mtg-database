@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85d87087-48ee-4dc8-a1c0-9c9ccb885adc",
+  "name": "Eshki Dragonclaw",
+  "faces": [
+    {
+      "name": "Eshki Dragonclaw",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "Vigilance, trample, ward {1}\nAt the beginning of combat on your turn, if you've cast both a creature spell and a noncreature spell this turn, draw a card and put two +1/+1 counters on Eshki Dragonclaw.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "ward",
+          "amount": 1
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if you've cast both a creature spell and a noncreature spell this turn, draw a card and put two +1/+1 counters on Eshki Dragonclaw.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "event_this_turn": "cast_creature_spell",
+              "count_gte": 1
+            },
+            {
+              "event_this_turn": "cast_noncreature_spell",
+              "count_gte": 1
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

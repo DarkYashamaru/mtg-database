@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "721e8249-ff1b-4c15-964b-4ba2a96beb75",
+  "name": "The Eleventh Doctor",
+  "faces": [
+    {
+      "name": "The Eleventh Doctor",
+      "type_line": "Legendary Creature \u2014 Time Lord Doctor",
+      "oracle_text": "I. AM. TALKING! \u2014 Whenever The Eleventh Doctor deals combat damage to a player, you may exile a card from your hand with a number of time counters on it equal to its mana value. If it doesn't have suspend, it gains suspend.\n{2}: Target creature with power 3 or less can't be blocked this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever The Eleventh Doctor deals combat damage to a player, you may exile a card from your hand with a number of time counters on it equal to its mana value. If it doesn't have suspend, it gains suspend.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile a card from your hand with a number of time counters on it equal to its mana value"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it gains suspend",
+              "condition": [
+                {
+                  "condition_text": "it doesn't have suspend"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: Target creature with power 3 or less can't be blocked this turn.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature with power 3 or less can't be blocked this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f244320-3e74-4eff-ba4e-a345700c40c9",
+  "name": "Javelin of Lightning",
+  "faces": [
+    {
+      "name": "Javelin of Lightning",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Flash\nWhen this Equipment enters, attach it to target creature you control.\nDuring your turn, equipped creature gets +2/+0 and has first strike.\nEquip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, attach it to target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach it to target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "During your turn, equipped creature gets +2/+0 and has first strike.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "During your turn, equipped creature gets +2/+0 and has first strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

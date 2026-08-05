@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6bb24767-687e-4ff6-b7ac-3bf969f4dfeb",
+  "name": "Aetherflame Wall",
+  "faces": [
+    {
+      "name": "Aetherflame Wall",
+      "type_line": "Creature \u2014 Wall",
+      "oracle_text": "Defender\nThis creature can block creatures with shadow as though they didn't have shadow.\n{R}: This creature gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{R}: This creature gets +1/+0 until end of turn.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can block creatures with shadow as though they didn't have shadow.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "self_can_block_creatures_with_shadow_as_though_they_didnt"
+              },
+              "keywords": [
+                "shadow"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

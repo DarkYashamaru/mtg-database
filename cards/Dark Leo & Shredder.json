@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c3ea6af5-48b9-45d2-9576-46cacb2db5b0",
+  "name": "Dark Leo & Shredder",
+  "faces": [
+    {
+      "name": "Dark Leo & Shredder",
+      "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle Human",
+      "oracle_text": "Sneak {W}{B}\nAttacking Ninjas you control have deathtouch.\nWhenever Dark Leo & Shredder deal combat damage to a player, create a 1/1 black Ninja creature token. Then if you control five or more Ninjas, that player loses half their life, rounded up.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Dark Leo & Shredder deal combat damage to a player, create a 1/1 black Ninja creature token. Then if you control five or more Ninjas, that player loses half their life, rounded up.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever Dark Leo & Shredder deal combat damage to a player"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 black Ninja creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Ninja"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "that player loses half their life, rounded up",
+              "condition": [
+                {
+                  "condition_text": "you control five or more ninjas"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Sneak {W}{B}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Sneak {W}{B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Attacking Ninjas you control have deathtouch.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Attacking",
+                  "Ninja"
+                ]
+              },
+              "keywords": [
+                "deathtouch"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

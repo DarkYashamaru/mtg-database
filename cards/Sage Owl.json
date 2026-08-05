@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d47fc902-51f7-4ad1-8ee4-c973e32192b8",
+  "name": "Sage Owl",
+  "faces": [
+    {
+      "name": "Sage Owl",
+      "type_line": "Creature \u2014 Bird",
+      "oracle_text": "Flying\nWhen this creature enters, look at the top four cards of your library, then put them back in any order.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at the top four cards of your library, then put them back in any order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "return_looked_at_cards",
+              "destination": "top_of_library",
+              "order": "any"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

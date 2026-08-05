@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "10b9bfb3-c478-45c6-b227-9c66b63bc79b",
+  "name": "Veldt",
+  "faces": [
+    {
+      "name": "Veldt",
+      "type_line": "Land",
+      "oracle_text": "This land doesn't untap during your untap step if it has a depletion counter on it.\nAt the beginning of your upkeep, remove a depletion counter from this land.\n{T}: Add {G} or {W}. Put a depletion counter on this land.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, remove a depletion counter from this land.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove a depletion counter from this land"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G} or {W}. Put a depletion counter on this land.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}",
+                "{w}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a depletion counter on this land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land doesn't untap during your untap step if it has a depletion counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land doesn't untap during your untap step if it has a depletion counter on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

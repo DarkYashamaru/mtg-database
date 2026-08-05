@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9c45682f-48b5-4e58-9277-ff4211f389ae",
+  "name": "Antiquities on the Loose",
+  "faces": [
+    {
+      "name": "Antiquities on the Loose",
+      "type_line": "Sorcery",
+      "oracle_text": "Create two 2/2 red and white Spirit creature tokens. Then if this spell was cast from anywhere other than your hand, put a +1/+1 counter on each Spirit you control.\nFlashback {4}{W}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Create two 2/2 red and white Spirit creature tokens. Then if this spell was cast from anywhere other than your hand, put a +1/+1 counter on each Spirit you control.",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "2/2 red and white Spirit creature tokens",
+                "colors": [
+                  "red",
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Spirit"
+                ]
+              }
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Spirit"
+                ]
+              },
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "this spell was cast from anywhere other than your hand"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Flashback {4}{W}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flashback {4}{W}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

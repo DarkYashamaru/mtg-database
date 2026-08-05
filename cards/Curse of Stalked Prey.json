@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7971a2a6-f89f-46a5-9008-96cfa49de41a",
+  "name": "Curse of Stalked Prey",
+  "faces": [
+    {
+      "name": "Curse of Stalked Prey",
+      "type_line": "Enchantment \u2014 Aura Curse",
+      "oracle_text": "Enchant player\nWhenever a creature deals combat damage to enchanted player, put a +1/+1 counter on that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature deals combat damage to enchanted player, put a +1/+1 counter on that creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature deals combat damage to enchanted player"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "that_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant player",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "player"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

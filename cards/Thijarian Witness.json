@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d273033b-3b8b-4ce9-afe8-208d82dd20f1",
+  "name": "Thijarian Witness",
+  "faces": [
+    {
+      "name": "Thijarian Witness",
+      "type_line": "Creature \u2014 Alien Cleric",
+      "oracle_text": "Flash\nBear Witness \u2014 Whenever another creature dies, if it was attacking or blocking alone, exile it and investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature dies, if it was attacking or blocking alone, exile it and investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "dies",
+            "subject": "another_creature"
+          },
+          "condition": [
+            {
+              "condition_text": "it was attacking or blocking alone"
+            }
+          ],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "it"
+            },
+            {
+              "action": "investigate"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

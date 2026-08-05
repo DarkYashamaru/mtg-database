@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5945306d-e792-4eae-999b-dfb44b10f062",
+  "name": "Fire Lord Ozai",
+  "faces": [
+    {
+      "name": "Fire Lord Ozai",
+      "type_line": "Legendary Creature \u2014 Human Noble",
+      "oracle_text": "Whenever Fire Lord Ozai attacks, you may sacrifice another creature. If you do, add an amount of {R} equal to the sacrificed creature's power. Until end of combat, you don't lose this mana as steps end.\n{6}: Exile the top card of each opponent's library. Until end of turn, you may play one of those cards without paying its mana cost.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Fire Lord Ozai attacks, you may sacrifice another creature. If you do, add an amount of {R} equal to the sacrificed creature's power. Until end of combat, you don't lose this mana as steps end.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "add an amount of {r} equal to the sacrificed creature's power",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of combat, you don't lose this mana as steps end"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{6}: Exile the top card of each opponent's library. Until end of turn, you may play one of those cards without paying its mana cost.",
+          "cost": "{6}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile the top card of each opponent's library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may play one of those cards without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

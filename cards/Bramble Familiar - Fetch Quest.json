@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "68f36dfa-bbd2-4860-b09b-37e35136be72",
+  "name": "Bramble Familiar // Fetch Quest",
+  "faces": [
+    {
+      "name": "Bramble Familiar",
+      "type_line": "Creature \u2014 Elemental Raccoon",
+      "oracle_text": "{T}: Add {G}.\n{1}{G}, {T}, Discard a card: Return this creature to its owner's hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{G}, {T}, Discard a card: Return this creature to its owner's hand.",
+          "cost": "{1}{G}, {T}, Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Fetch Quest",
+      "type_line": "Sorcery \u2014 Adventure",
+      "oracle_text": "Mill seven cards. Then put a creature, enchantment, or land card from among the milled cards onto the battlefield.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Mill seven cards. Then put a creature, enchantment, or land card from among the milled cards onto the battlefield.",
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 7
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then put a creature, enchantment, or land card from among the milled cards onto the battlefield"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

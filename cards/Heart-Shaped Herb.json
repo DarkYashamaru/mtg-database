@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "20418984-bc6d-42e5-ada6-30b5281925c0",
+  "name": "Heart-Shaped Herb",
+  "faces": [
+    {
+      "name": "Heart-Shaped Herb",
+      "type_line": "Artifact",
+      "oracle_text": "If a source an opponent controls would deal damage to you, prevent 1 of that damage.\n{2}, {T}, Sacrifice this artifact: You may sacrifice a creature. If you do, return that card to the battlefield under its owner's control with three +1/+1 counters on it and you become the monarch.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}, Sacrifice this artifact: You may sacrifice a creature. If you do, return that card to the battlefield under its owner's control with three +1/+1 counters on it and you become the monarch.",
+          "cost": "{2}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "return that card to the battlefield under its owner's control with three +1/+1 counters on it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If a source an opponent controls would deal damage to you, prevent 1 of that damage.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent 1 of that damage",
+              "condition": [
+                {
+                  "condition_text": "a source an opponent controls would deal damage to you"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

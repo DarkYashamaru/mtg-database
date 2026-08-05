@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d97a0e41-9dd7-4466-afb7-3d8bd6cd0eed",
+  "name": "Foreboding Steamboat",
+  "faces": [
+    {
+      "name": "Foreboding Steamboat",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "When this Vehicle enters, each player chooses two nontoken, non-Vehicle creatures they control. Exile them until this Vehicle leaves the battlefield.\nWhenever this Vehicle attacks, put a card exiled with it into its owner's graveyard. If you do, investigate.\nCrew 2",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, each player chooses two nontoken, non-Vehicle creatures they control. Exile them until this Vehicle leaves the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player chooses two nontoken, non-Vehicle creatures they control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Exile them until this Vehicle leaves the battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this Vehicle attacks, put a card exiled with it into its owner's graveyard. If you do, investigate.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a card exiled with it into its owner's graveyard"
+            },
+            {
+              "action": "investigate",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

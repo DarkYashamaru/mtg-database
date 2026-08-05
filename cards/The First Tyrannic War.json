@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85fd2f65-957e-446b-990a-8711a1e1c4f6",
+  "name": "The First Tyrannic War",
+  "faces": [
+    {
+      "name": "The First Tyrannic War",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 You may put a creature card from your hand onto the battlefield. If its mana cost contains {X}, it enters with a number of +1/+1 counters on it equal to the number of lands you control.\nII, III \u2014 Double the number of each kind of counter on target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 You may put a creature card from your hand onto the battlefield. If its mana cost contains {X}, it enters with a number of +1/+1 counters on it equal to the number of lands you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may put a creature card from your hand onto the battlefield"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it enters with a number of +1/+1 counters on it equal to the number of lands you control",
+              "condition": [
+                {
+                  "condition_text": "its mana cost contains {x}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "II, III \u2014 Double the number of each kind of counter on target creature you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II",
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Double the number of each kind of counter on target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

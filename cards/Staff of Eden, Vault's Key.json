@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c4fe63e7-bb4c-4aff-b74f-d385d0128def",
+  "name": "Staff of Eden, Vault's Key",
+  "faces": [
+    {
+      "name": "Staff of Eden, Vault's Key",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "When Staff of Eden enters, put target legendary permanent card not named Staff of Eden, Vault's Key from a graveyard onto the battlefield under your control.\n{T}: Draw a card for each permanent you control but don't own.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Staff of Eden enters, put target legendary permanent card not named Staff of Eden, Vault's Key from a graveyard onto the battlefield under your control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put target legendary permanent card not named Staff of Eden, Vault's Key from a graveyard onto the battlefield under your control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Draw a card for each permanent you control but don't own.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "permanent_you_control_but_dont_own"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

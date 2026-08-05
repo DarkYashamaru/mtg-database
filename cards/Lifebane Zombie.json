@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b31ac7b-7901-484c-b59f-556284fd562c",
+  "name": "Lifebane Zombie",
+  "faces": [
+    {
+      "name": "Lifebane Zombie",
+      "type_line": "Creature \u2014 Zombie Warrior",
+      "oracle_text": "Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)\nWhen this creature enters, target opponent reveals their hand. You choose a green or white creature card from it and exile that card.",
+      "static": [
+        {
+          "keyword": "intimidate"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target opponent reveals their hand. You choose a green or white creature card from it and exile that card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a green or white creature card from it and exile that card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

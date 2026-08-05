@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "652e71a9-e46f-41b3-8695-76b3606b1955",
+  "name": "Court of Ambition",
+  "faces": [
+    {
+      "name": "Court of Ambition",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, you become the monarch.\nAt the beginning of your upkeep, each opponent loses 3 life unless they discard a card. If you're the monarch, instead each opponent loses 6 life unless they discard two cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, each opponent loses 3 life unless they discard a card. If you're the monarch, instead each opponent loses 6 life unless they discard two cards.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent loses 3 life unless they discard a card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "instead each opponent loses 6 life unless they discard two cards",
+              "condition": [
+                {
+                  "condition_text": "you're the monarch"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

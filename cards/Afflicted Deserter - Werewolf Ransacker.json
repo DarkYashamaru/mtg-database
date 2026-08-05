@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52adc761-1a0a-43d1-a706-41a92bb7880c",
+  "name": "Afflicted Deserter // Werewolf Ransacker",
+  "faces": [
+    {
+      "name": "Afflicted Deserter",
+      "type_line": "Creature \u2014 Human Werewolf",
+      "oracle_text": "At the beginning of each upkeep, if no spells were cast last turn, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, if no spells were cast last turn, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "no spells were cast last turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Werewolf Ransacker",
+      "type_line": "Creature \u2014 Werewolf",
+      "oracle_text": "Whenever this creature transforms into Werewolf Ransacker, you may destroy target artifact. If that artifact is put into a graveyard this way, this creature deals 3 damage to that artifact's controller.\nAt the beginning of each upkeep, if a player cast two or more spells last turn, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature transforms into Werewolf Ransacker, you may destroy target artifact. If that artifact is put into a graveyard this way, this creature deals 3 damage to that artifact's controller.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature transforms into Werewolf Ransacker"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_artifact"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 3 damage to that artifact's controller",
+              "condition": [
+                {
+                  "condition_text": "that artifact is put into a graveyard this way"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each upkeep, if a player cast two or more spells last turn, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "a player cast two or more spells last turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cbd76b22-d04e-48e7-bcab-c7f5466d67d8",
+  "name": "Lux Artillery",
+  "faces": [
+    {
+      "name": "Lux Artillery",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever you cast an artifact creature spell, it gains sunburst. (It enters with a +1/+1 counter on it for each color of mana spent to cast it.)\nAt the beginning of your end step, if there are thirty or more counters among artifacts and creatures you control, this artifact deals 10 damage to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an artifact creature spell, it gains sunburst. (It enters with a +1/+1 counter on it for each color of mana spent to cast it.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Artifact",
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gains sunburst"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if there are thirty or more counters among artifacts and creatures you control, this artifact deals 10 damage to each opponent.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "there are thirty or more counters among artifacts and creatures you control"
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_artifact",
+              "target": "each_opponent",
+              "amount": 10
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

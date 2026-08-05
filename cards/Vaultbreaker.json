@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2577860a-663a-4b56-880c-05576522e3b7",
+  "name": "Vaultbreaker",
+  "faces": [
+    {
+      "name": "Vaultbreaker",
+      "type_line": "Creature \u2014 Orc Rogue",
+      "oracle_text": "Whenever this creature attacks, you may discard a card. If you do, draw a card.\nDash {2}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Dash {2}{R} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Dash {2}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

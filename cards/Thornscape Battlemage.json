@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8d4d6806-cb01-49e3-91cc-fb0e7f7a8684",
+  "name": "Thornscape Battlemage",
+  "faces": [
+    {
+      "name": "Thornscape Battlemage",
+      "type_line": "Creature \u2014 Elf Wizard",
+      "oracle_text": "Kicker {R} and/or {W} (You may pay an additional {R} and/or {W} as you cast this spell.)\nWhen this creature enters, if it was kicked with its {R} kicker, it deals 2 damage to any target.\nWhen this creature enters, if it was kicked with its {W} kicker, destroy target artifact.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked with its {R} kicker, it deals 2 damage to any target.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked with its {R} kicker"
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature enters, if it was kicked with its {W} kicker, destroy target artifact.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked with its {W} kicker"
+            }
+          ],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_artifact"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {R} and/or {W} (You may pay an additional {R} and/or {W} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {R} and/or {W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

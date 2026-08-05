@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ccc2eb6d-21cf-45cf-b4e4-4b2a2517136a",
+  "name": "Deconstruction Hammer",
+  "faces": [
+    {
+      "name": "Deconstruction Hammer",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +1/+1 and has \"{3}, {T}, Sacrifice Deconstruction Hammer: Destroy target artifact or enchantment.\"\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equipped creature gets +1/+1 and has \"{3}, {T}, Sacrifice Deconstruction Hammer: Destroy target artifact or enchantment.\"",
+          "cost": "Equipped creature gets +1/+1 and has \"{3}, {T}, Sacrifice Deconstruction Hammer",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Artifact",
+                  "Enchantment"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

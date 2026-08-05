@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "oracle_id": "650ed75c-20b0-45b8-a4d4-813e0369aaf1",
+  "name": "Elesh Norn // The Argent Etchings",
+  "faces": [
+    {
+      "name": "Elesh Norn",
+      "type_line": "Legendary Creature \u2014 Phyrexian Praetor",
+      "oracle_text": "Vigilance\nWhenever a source an opponent controls deals damage to you or a permanent you control, that source's controller loses 2 life unless they pay {1}.\n{2}{W}, Sacrifice three other creatures: Exile Elesh Norn, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a source an opponent controls deals damage to you or a permanent you control, that source's controller loses 2 life unless they pay {1}.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a source an opponent controls deals damage to you or a permanent you control"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that source's controller loses 2 life unless they pay {1}"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{W}, Sacrifice three other creatures: Exile Elesh Norn, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+          "cost": "{2}{W}, Sacrifice three other creatures",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile elesh norn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield transformed under its owner's control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "The Argent Etchings",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 Incubate 2 five times, then transform all Incubator tokens you control.\nII \u2014 Creatures you control get +1/+1 and gain double strike until end of turn.\nIII \u2014 Destroy all other permanents except for artifacts, lands, and Phyrexians. Exile this Saga, then return it to the battlefield (front face up).",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Incubate 2 five times, then transform all Incubator tokens you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "incubate 2 five times"
+            },
+            {
+              "action": "transform",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "All",
+                  "Incubator",
+                  "Token"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Creatures you control get +1/+1 and gain double strike until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control_get_11_and",
+              "keyword": "double_strike"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Destroy all other permanents except for artifacts, lands, and Phyrexians. Exile this Saga, then return it to the battlefield (front face up).",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy all other permanents except for artifacts, lands, and Phyrexians"
+            },
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0afcc646-cb34-4c0e-b3f5-4115ad4faa8e",
+  "name": "The Sound of Drums",
+  "faces": [
+    {
+      "name": "The Sound of Drums",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature is goaded.\nIf enchanted creature would deal combat damage to a permanent or player, it deals double that damage instead.\n{2}{R}: Return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{R}: Return this card from your graveyard to your hand.",
+          "cost": "{2}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature is goaded.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature is goaded"
+            }
+          ]
+        },
+        {
+          "raw_text": "If enchanted creature would deal combat damage to a permanent or player, it deals double that damage instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals double that damage instead",
+              "condition": [
+                {
+                  "condition_text": "enchanted creature would deal combat damage to a permanent or player"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

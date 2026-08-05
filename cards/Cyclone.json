@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fc9e82b2-f148-431b-9312-97b7101cffe4",
+  "name": "Cyclone",
+  "faces": [
+    {
+      "name": "Cyclone",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, put a wind counter on this enchantment, then sacrifice this enchantment unless you pay {G} for each wind counter on it. If you pay, this enchantment deals damage equal to the number of wind counters on it to each creature and each player.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a wind counter on this enchantment, then sacrifice this enchantment unless you pay {G} for each wind counter on it. If you pay, this enchantment deals damage equal to the number of wind counters on it to each creature and each player.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a wind counter on this enchantment"
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment_unless_you_pay_g_for_each_wind_counter_on_it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this enchantment deals damage equal to the number of wind counters on it to each creature and each player",
+              "condition": [
+                {
+                  "condition_text": "you pay"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1aba343-d85a-4829-bdfe-db31fcb3c320",
+  "name": "Deep Spawn",
+  "faces": [
+    {
+      "name": "Deep Spawn",
+      "type_line": "Creature \u2014 Homarid",
+      "oracle_text": "Trample\nAt the beginning of your upkeep, sacrifice this creature unless you mill two cards.\n{U}: This creature gains shroud until end of turn and doesn't untap during your next untap step. Tap this creature. (A creature with shroud can't be the target of spells or abilities.)",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice this creature unless you mill two cards.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self_unless_you_mill_two_cards"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{U}: This creature gains shroud until end of turn and doesn't untap during your next untap step. Tap this creature. (A creature with shroud can't be the target of spells or abilities.)",
+          "cost": "{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gains shroud until end of turn and doesn't untap during your next untap step"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Tap this creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

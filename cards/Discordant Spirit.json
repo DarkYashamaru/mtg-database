@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ce785306-eaf5-42b3-9840-884cd690ae0a",
+  "name": "Discordant Spirit",
+  "faces": [
+    {
+      "name": "Discordant Spirit",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "At the beginning of each end step, if it's an opponent's turn, put a +1/+1 counter on this creature for each 1 damage dealt to you this turn.\nAt the beginning of your end step, remove all +1/+1 counters from this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each end step, if it's an opponent's turn, put a +1/+1 counter on this creature for each 1 damage dealt to you this turn.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "it's an opponent's turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_for_each_1_damage_dealt_to_you_this_turn",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, remove all +1/+1 counters from this creature.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove all +1/+1 counters from this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

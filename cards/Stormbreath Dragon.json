@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7a770865-9383-45aa-883f-21ee649d1ea3",
+  "name": "Stormbreath Dragon",
+  "faces": [
+    {
+      "name": "Stormbreath Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying, haste, protection from white\n{5}{R}{R}: Monstrosity 3. (If this creature isn't monstrous, put three +1/+1 counters on it and it becomes monstrous.)\nWhen this creature becomes monstrous, it deals damage to each opponent equal to the number of cards in that player's hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        },
+        {
+          "keyword": "protection",
+          "quality": "white"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature becomes monstrous, it deals damage to each opponent equal to the number of cards in that player's hand.",
+          "trigger": {
+            "type": "becomes_monstrous",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals damage to each opponent equal to the number of cards in that player's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{5}{R}{R}: Monstrosity 3. (If this creature isn't monstrous, put three +1/+1 counters on it and it becomes monstrous.)",
+          "cost": "{5}{R}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Monstrosity 3"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

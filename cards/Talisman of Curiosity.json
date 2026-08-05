@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8c34b089-aad1-476e-958a-3077bf1bbb51",
+  "name": "Talisman of Curiosity",
+  "faces": [
+    {
+      "name": "Talisman of Curiosity",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {G} or {U}. This artifact deals 1 damage to you.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {G} or {U}. This artifact deals 1 damage to you.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}",
+                "{u}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This artifact deals 1 damage to you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

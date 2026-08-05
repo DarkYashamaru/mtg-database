@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7aba1039-f108-423e-8aa4-d9d8b4da2414",
+  "name": "Mold Shambler",
+  "faces": [
+    {
+      "name": "Mold Shambler",
+      "type_line": "Creature \u2014 Fungus Beast",
+      "oracle_text": "Kicker {1}{G} (You may pay an additional {1}{G} as you cast this spell.)\nWhen this creature enters, if it was kicked, destroy target noncreature permanent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, destroy target noncreature permanent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target noncreature permanent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{G} (You may pay an additional {1}{G} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

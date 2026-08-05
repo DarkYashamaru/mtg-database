@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8c105948-4b8f-4615-b66a-2bbdb3f3d6dd",
+  "name": "Rune-Brand Juggler",
+  "faces": [
+    {
+      "name": "Rune-Brand Juggler",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "When this creature enters, suspect up to one target creature you control. (A suspected creature has menace and can't block.)\n{3}{B}{R}, Sacrifice a suspected creature: Target creature gets -5/-5 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, suspect up to one target creature you control. (A suspected creature has menace and can't block.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "suspect up to one target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{B}{R}, Sacrifice a suspected creature: Target creature gets -5/-5 until end of turn.",
+          "cost": "{3}{B}{R}, Sacrifice a suspected creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -5,
+              "toughness_delta": -5
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

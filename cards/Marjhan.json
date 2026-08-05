@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3fdee2ab-7ec6-4fc6-ad99-f04571f94583",
+  "name": "Marjhan",
+  "faces": [
+    {
+      "name": "Marjhan",
+      "type_line": "Creature \u2014 Serpent",
+      "oracle_text": "This creature doesn't untap during your untap step.\n{U}{U}, Sacrifice a creature: Untap this creature. Activate only during your upkeep.\nThis creature can't attack unless defending player controls an Island.\n{U}{U}: This creature gets -1/-0 until end of turn and deals 1 damage to target attacking creature without flying.\nWhen you control no Islands, sacrifice this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you control no Islands, sacrifice this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you control no Islands"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{U}{U}, Sacrifice a creature: Untap this creature. Activate only during your upkeep.",
+          "cost": "{U}{U}, Sacrifice a creature",
+          "condition": [
+            {
+              "condition_text": "during your upkeep"
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}{U}: This creature gets -1/-0 until end of turn and deals 1 damage to target attacking creature without flying.",
+          "cost": "{U}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets -1/-0 until end of turn and deals 1 damage to target attacking creature without flying"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature doesn't untap during your untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "self",
+              "scope": "your_untap_step"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature can't attack unless defending player controls an Island.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature can't attack unless defending player controls an Island"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

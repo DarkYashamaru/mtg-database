@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b3ff8da4-f2cc-41c3-8950-9cc531854b78",
+  "name": "Plasmancer",
+  "faces": [
+    {
+      "name": "Plasmancer",
+      "type_line": "Artifact Creature \u2014 Necron Wizard",
+      "oracle_text": "Flying\nDynastic Advisor \u2014 When this creature enters, search your library for a basic Swamp card, reveal it, put it into your hand, then shuffle.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, search your library for a basic Swamp card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a basic swamp card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

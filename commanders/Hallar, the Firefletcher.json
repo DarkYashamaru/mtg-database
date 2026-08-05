@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "04559759-1afd-4785-badc-c3416041f016",
+  "name": "Hallar, the Firefletcher",
+  "faces": [
+    {
+      "name": "Hallar, the Firefletcher",
+      "type_line": "Legendary Creature \u2014 Elf Archer",
+      "oracle_text": "Trample\nWhenever you cast a spell, if that spell was kicked, put a +1/+1 counter on Hallar, then Hallar deals damage equal to the number of +1/+1 counters on it to each opponent.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, if that spell was kicked, put a +1/+1 counter on Hallar, then Hallar deals damage equal to the number of +1/+1 counters on it to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "that spell was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "hallar deals damage equal to the number of +1/+1 counters on it to each opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

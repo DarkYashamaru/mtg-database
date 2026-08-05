@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c7b235e1-746e-4467-be54-4e11e2bf6362",
+  "name": "Johann's Stopgap",
+  "faces": [
+    {
+      "name": "Johann's Stopgap",
+      "type_line": "Sorcery",
+      "oracle_text": "Bargain (You may sacrifice an artifact, enchantment, or token as you cast this spell.)\nThis spell costs {2} less to cast if it's bargained.\nReturn target nonland permanent to its owner's hand. Draw a card.",
+      "static": [
+        {
+          "keyword": "bargain"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {2} less to cast if it's bargained.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {2} less to cast if it's bargained"
+            }
+          ]
+        },
+        {
+          "raw_text": "Return target nonland permanent to its owner's hand. Draw a card.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

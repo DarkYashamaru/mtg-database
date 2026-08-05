@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a37f8381-83a4-4b6b-8176-c90f6a61da74",
+  "name": "Ratonhnhak\u00e9\ua789ton",
+  "faces": [
+    {
+      "name": "Ratonhnhak\u00e9\ua789ton",
+      "type_line": "Legendary Creature \u2014 Human Assassin",
+      "oracle_text": "As long as Ratonhnhak\u00e9\ua789ton hasn't dealt damage yet, it has hexproof and can't be blocked.\nWhenever Ratonhnhak\u00e9\ua789ton deals combat damage to a player, create a 1/1 black Assassin creature token with menace. When you do, return target Equipment card from your graveyard to the battlefield, then attach it to that token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Ratonhnhak\u00e9\ua789ton deals combat damage to a player, create a 1/1 black Assassin creature token with menace. When you do, return target Equipment card from your graveyard to the battlefield, then attach it to that token.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 black Assassin creature token with menace",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Assassin"
+                ],
+                "keywords": [
+                  "menace"
+                ]
+              }
+            },
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": {
+                "card_types": [
+                  "Equipment"
+                ],
+                "zone": "graveyard"
+              },
+              "destination": "battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "attach it to that token",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as Ratonhnhak\u00e9\ua789ton hasn't dealt damage yet, it has hexproof and can't be blocked.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as Ratonhnhak\u00e9\ua789ton hasn't dealt damage yet, it has hexproof and can't be blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

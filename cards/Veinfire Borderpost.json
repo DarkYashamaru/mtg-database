@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f65d1f8-3e46-4e3d-b087-5496a4106e4e",
+  "name": "Veinfire Borderpost",
+  "faces": [
+    {
+      "name": "Veinfire Borderpost",
+      "type_line": "Artifact",
+      "oracle_text": "You may pay {1} and return a basic land you control to its owner's hand rather than pay this spell's mana cost.\nThis artifact enters tapped.\n{T}: Add {B} or {R}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B} or {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}",
+                "{r}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may pay {1} and return a basic land you control to its owner's hand rather than pay this spell's mana cost.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may pay {1} and return a basic land you control to its owner's hand rather than pay this spell's mana cost"
+            }
+          ]
+        },
+        {
+          "raw_text": "This artifact enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

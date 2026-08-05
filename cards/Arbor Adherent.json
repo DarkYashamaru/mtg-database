@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9640225a-8f31-495f-b9de-53ed348ff24b",
+  "name": "Arbor Adherent",
+  "faces": [
+    {
+      "name": "Arbor Adherent",
+      "type_line": "Creature \u2014 Dog Druid",
+      "oracle_text": "{T}: Add one mana of any color.\n{T}: Add X mana of any one color, where X is the greatest toughness among other creatures you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add X mana of any one color, where X is the greatest toughness among other creatures you control.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add X mana of any one color, where X is the greatest toughness among other creatures you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

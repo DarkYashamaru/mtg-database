@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "153292f9-e0d1-43a7-a083-275c49d0554a",
+  "name": "Aeronaut Cavalry",
+  "faces": [
+    {
+      "name": "Aeronaut Cavalry",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Flying\nWhen this creature enters, put a +1/+1 counter on another target Soldier you control.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on another target Soldier you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "subtypes": [
+                  "Target",
+                  "Soldier"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

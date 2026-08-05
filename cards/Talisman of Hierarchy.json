@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b693c3de-2eaf-4850-b405-e79d00adefda",
+  "name": "Talisman of Hierarchy",
+  "faces": [
+    {
+      "name": "Talisman of Hierarchy",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {W} or {B}. This artifact deals 1 damage to you.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {W} or {B}. This artifact deals 1 damage to you.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}",
+                "{b}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This artifact deals 1 damage to you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

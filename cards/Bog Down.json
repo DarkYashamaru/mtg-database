@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8574f57a-768d-42a0-ac8c-cc0a1de181e0",
+  "name": "Bog Down",
+  "faces": [
+    {
+      "name": "Bog Down",
+      "type_line": "Sorcery",
+      "oracle_text": "Kicker\u2014Sacrifice two lands. (You may sacrifice two lands in addition to any other costs as you cast this spell.)\nTarget player discards two cards. If this spell was kicked, that player discards three cards instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker\u2014Sacrifice two lands. (You may sacrifice two lands in addition to any other costs as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker\u2014Sacrifice two lands"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target player discards two cards. If this spell was kicked, that player discards three cards instead.",
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "target_player",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "that player discards three cards instead",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

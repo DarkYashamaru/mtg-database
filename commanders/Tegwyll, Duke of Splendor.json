@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "868f0a0a-ca9e-4baf-8295-6b228aa834e5",
+  "name": "Tegwyll, Duke of Splendor",
+  "faces": [
+    {
+      "name": "Tegwyll, Duke of Splendor",
+      "type_line": "Legendary Creature \u2014 Faerie Noble",
+      "oracle_text": "Flying, deathtouch\nOther Faeries you control get +1/+1.\nWhenever another Faerie you control dies, you draw a card and you lose 1 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another Faerie you control dies, you draw a card and you lose 1 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Faerie"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Faeries you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other Faeries you control get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

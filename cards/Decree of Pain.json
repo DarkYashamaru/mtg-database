@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "932668fa-d6e3-41c0-ad0c-8e0a00e68d11",
+  "name": "Decree of Pain",
+  "faces": [
+    {
+      "name": "Decree of Pain",
+      "type_line": "Sorcery",
+      "oracle_text": "Destroy all creatures. They can't be regenerated. Draw a card for each creature destroyed this way.\nCycling {3}{B}{B} ({3}{B}{B}, Discard this card: Draw a card.)\nWhen you cycle this card, all creatures get -2/-2 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, all creatures get -2/-2 until end of turn.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "all creatures get -2/-2 until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {3}{B}{B} ({3}{B}{B}, Discard this card: Draw a card.)",
+          "cost": "Cycling {3}{B}{B} ({3}{B}{B}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Destroy all creatures. They can't be regenerated. Draw a card for each creature destroyed this way.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "all_creatures"
+              }
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_targets"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "creature_destroyed_this_way"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

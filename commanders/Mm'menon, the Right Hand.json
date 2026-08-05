@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "de58fa4b-eeeb-4dc8-aab9-6521b15678cc",
+  "name": "Mm'menon, the Right Hand",
+  "faces": [
+    {
+      "name": "Mm'menon, the Right Hand",
+      "type_line": "Legendary Creature \u2014 Jellyfish Advisor",
+      "oracle_text": "Flying\nYou may look at the top card of your library any time.\nYou may cast artifact spells from the top of your library.\nArtifacts you control have \"{T}: Add {U}. Spend this mana only to cast a spell from anywhere other than your hand.\"",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Artifacts you control have \"{T}: Add {U}. Spend this mana only to cast a spell from anywhere other than your hand.\"",
+          "cost": "Artifacts you control have \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to cast a spell from anywhere other than your hand.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "You may cast artifact spells from the top of your library.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast artifact spells from the top of your library"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

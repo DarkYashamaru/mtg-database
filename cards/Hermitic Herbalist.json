@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9928773d-3f35-4b0e-965d-4233e04398fb",
+  "name": "Hermitic Herbalist",
+  "faces": [
+    {
+      "name": "Hermitic Herbalist",
+      "type_line": "Creature \u2014 Human Druid Ally",
+      "oracle_text": "{T}: Add one mana of any color.\n{T}: Add two mana in any combination of colors. Spend this mana only to cast Lesson spells.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add two mana in any combination of colors. Spend this mana only to cast Lesson spells.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add two mana in any combination of colors"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to cast Lesson spells"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

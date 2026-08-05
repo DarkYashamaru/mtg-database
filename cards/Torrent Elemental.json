@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0335e7db-5e0e-4271-8ae7-437a1d2c16ac",
+  "name": "Torrent Elemental",
+  "faces": [
+    {
+      "name": "Torrent Elemental",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "Flying\nWhenever this creature attacks, tap all creatures defending player controls.\n{3}{B/G}{B/G}: Put this card from exile onto the battlefield tapped. Activate only as a sorcery.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, tap all creatures defending player controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap all creatures defending player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{B/G}{B/G}: Put this card from exile onto the battlefield tapped. Activate only as a sorcery.",
+          "cost": "{3}{B/G}{B/G}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put this card from exile onto the battlefield tapped"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

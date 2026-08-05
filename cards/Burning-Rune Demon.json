@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d551fae8-6b40-4118-b9db-29d2f5dff405",
+  "name": "Burning-Rune Demon",
+  "faces": [
+    {
+      "name": "Burning-Rune Demon",
+      "type_line": "Creature \u2014 Demon Berserker",
+      "oracle_text": "Flying\nWhen this creature enters, you may search your library for exactly two cards not named Burning-Rune Demon that have different names. If you do, reveal those cards. An opponent chooses one of them. Put the chosen card into your hand and the other into your graveyard, then shuffle.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for exactly two cards not named Burning-Rune Demon that have different names. If you do, reveal those cards. An opponent chooses one of them. Put the chosen card into your hand and the other into your graveyard, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for exactly two cards not named Burning-Rune Demon that have different names"
+            },
+            {
+              "action": "custom_effect",
+              "text": "reveal those cards",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "An opponent chooses one of them"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put the chosen card into your hand and the other into your graveyard"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

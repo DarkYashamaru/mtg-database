@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ce6f3c67-8806-416d-9156-6f5bb63d5f4c",
+  "name": "Reclaim the Wastes",
+  "faces": [
+    {
+      "name": "Reclaim the Wastes",
+      "type_line": "Sorcery",
+      "oracle_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)\nSearch your library for a basic land card, reveal it, put it into your hand, then shuffle. If this spell was kicked, search your library for two basic land cards instead of one.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {3}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Search your library for a basic land card, reveal it, put it into your hand, then shuffle. If this spell was kicked, search your library for two basic land cards instead of one.",
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "search your library for two basic land cards instead of one",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

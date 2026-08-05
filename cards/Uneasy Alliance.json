@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "989b93fe-cad0-4890-a228-8a20ca666f10",
+  "name": "Uneasy Alliance",
+  "faces": [
+    {
+      "name": "Uneasy Alliance",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature can't attack or block.\n{5}, Sacrifice this Aura: Exile enchanted creature. You create a 1/1 black Ninja creature token. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{5}, Sacrifice this Aura: Exile enchanted creature. You create a 1/1 black Ninja creature token. Activate only as a sorcery.",
+          "cost": "{5}, Sacrifice this Aura",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile enchanted creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You create a 1/1 black Ninja creature token"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature can't attack or block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "enchanted_creature",
+              "restriction": "cant_attack_or_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

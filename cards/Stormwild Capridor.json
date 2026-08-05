@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2e83e8c8-adc4-4e33-9f8b-966b7231a6c9",
+  "name": "Stormwild Capridor",
+  "faces": [
+    {
+      "name": "Stormwild Capridor",
+      "type_line": "Creature \u2014 Bird Goat",
+      "oracle_text": "Flying\nIf noncombat damage would be dealt to this creature, prevent that damage. Put a +1/+1 counter on this creature for each 1 damage prevented this way.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If noncombat damage would be dealt to this creature, prevent that damage. Put a +1/+1 counter on this creature for each 1 damage prevented this way.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent that damage",
+              "condition": [
+                {
+                  "condition_text": "noncombat damage would be dealt to this creature"
+                }
+              ]
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_for_each_1_damage_prevented_this_way",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

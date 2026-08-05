@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ad643992-eb9f-4a4a-9b74-a5aee2337f30",
+  "name": "Lo and Li, Twin Tutors",
+  "faces": [
+    {
+      "name": "Lo and Li, Twin Tutors",
+      "type_line": "Legendary Creature \u2014 Human Advisor",
+      "oracle_text": "When Lo and Li enter, search your library for a Lesson or Noble card, reveal it, put it into your hand, then shuffle.\nNoble creatures you control and Lesson spells you control have lifelink.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Lo and Li enter, search your library for a Lesson or Noble card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "custom",
+            "text": "When Lo and Li enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a lesson or noble card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Noble creatures you control and Lesson spells you control have lifelink.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Noble",
+                  "You",
+                  "Control",
+                  "And",
+                  "Lesson",
+                  "Spell"
+                ]
+              },
+              "keywords": [
+                "lifelink"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

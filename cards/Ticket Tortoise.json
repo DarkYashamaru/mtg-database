@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "952083c5-9ffa-4cd9-915f-b7de7f3e5326",
+  "name": "Ticket Tortoise",
+  "faces": [
+    {
+      "name": "Ticket Tortoise",
+      "type_line": "Artifact Creature \u2014 Turtle",
+      "oracle_text": "Defender\nWhen this creature enters, if an opponent controls more lands than you, you create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if an opponent controls more lands than you, you create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "an opponent controls more lands than you"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

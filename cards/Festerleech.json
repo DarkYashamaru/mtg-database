@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d14fdc1d-62bc-4e9c-b79b-8c9c3232f0bc",
+  "name": "Festerleech",
+  "faces": [
+    {
+      "name": "Festerleech",
+      "type_line": "Creature \u2014 Zombie Leech",
+      "oracle_text": "Whenever this creature deals combat damage to a player, you mill two cards.\n{1}{B}: This creature gets +2/+2 until end of turn. Activate only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you mill two cards.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you mill two cards"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}: This creature gets +2/+2 until end of turn. Activate only once each turn.",
+          "cost": "{1}{B}",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

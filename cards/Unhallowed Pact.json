@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "da1dd850-9118-42b9-8846-e6bd5042775c",
+  "name": "Unhallowed Pact",
+  "faces": [
+    {
+      "name": "Unhallowed Pact",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen enchanted creature dies, return that card to the battlefield under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, return that card to the battlefield under your control.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return that card to the battlefield under your control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

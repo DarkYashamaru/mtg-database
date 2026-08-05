@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "728e2960-1d85-4b3f-8b5b-915f9b9ffd2f",
+  "name": "Chaos Moon",
+  "faces": [
+    {
+      "name": "Chaos Moon",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of each upkeep, count the number of permanents. If the number is odd, until end of turn, red creatures get +1/+1 and whenever a player taps a Mountain for mana, that player adds an additional {R}. If the number is even, until end of turn, red creatures get -1/-1 and if a player taps a Mountain for mana, that Mountain produces colorless mana instead of any other type.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, count the number of permanents. If the number is odd, until end of turn, red creatures get +1/+1 and whenever a player taps a Mountain for mana, that player adds an additional {R}. If the number is even, until end of turn, red creatures get -1/-1 and if a player taps a Mountain for mana, that Mountain produces colorless mana instead of any other type.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "count the number of permanents"
+            },
+            {
+              "action": "custom_effect",
+              "text": "until end of turn, red creatures get +1/+1 and whenever a player taps a mountain for mana, that player adds an additional {r}",
+              "condition": [
+                {
+                  "condition_text": "the number is odd"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "until end of turn, red creatures get -1/-1",
+              "condition": [
+                {
+                  "condition_text": "the number is even"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "that mountain produces colorless mana instead of any other type",
+              "condition": [
+                {
+                  "condition_text": "a player taps a mountain for mana"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

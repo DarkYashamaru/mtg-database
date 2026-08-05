@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52c6afc6-aff1-46a8-b1ea-b183facec1ae",
+  "name": "Atmospheric Greenhouse",
+  "faces": [
+    {
+      "name": "Atmospheric Greenhouse",
+      "type_line": "Artifact \u2014 Spacecraft",
+      "oracle_text": "When this Spacecraft enters, put a +1/+1 counter on each creature you control.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.)\n8+ | Flying, trample",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Spacecraft enters, put a +1/+1 counter on each creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_spacecraft"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.)",
+          "cost": "Station (Tap another creature you control",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put charge counters equal to its power on this Spacecraft"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's an artifact creature at 8+"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "8+ | Flying, trample",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "8+ | Flying, trample"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

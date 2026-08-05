@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "44f3241f-af82-4f2e-b15d-7f279bf6e816",
+  "name": "Umbral Mantle",
+  "faces": [
+    {
+      "name": "Umbral Mantle",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has \"{3}, {Q}: This creature gets +2/+2 until end of turn.\" ({Q} is the untap symbol.)\nEquip {0}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equipped creature has \"{3}, {Q}: This creature gets +2/+2 until end of turn.\" ({Q} is the untap symbol.)",
+          "cost": "Equipped creature has \"{3}, {Q}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {0}",
+          "cost": "{0}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

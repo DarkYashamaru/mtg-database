@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "68d97ebb-63f8-4795-bddb-03582e13b34d",
+  "name": "Duskana, the Rage Mother",
+  "faces": [
+    {
+      "name": "Duskana, the Rage Mother",
+      "type_line": "Legendary Creature \u2014 Bear",
+      "oracle_text": "When Duskana enters, draw a card for each creature you control with base power and toughness 2/2.\nWhenever a creature you control with base power and toughness 2/2 attacks, it gets +3/+3 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Duskana enters, draw a card for each creature you control with base power and toughness 2/2.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "creature_you_control_with_base_power_and_toughness_22"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control with base power and toughness 2/2 attacks, it gets +3/+3 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "a_creature_you_control_with_base_power_and_toughness_22"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 3,
+              "toughness_delta": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

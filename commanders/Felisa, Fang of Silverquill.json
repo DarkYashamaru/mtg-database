@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "39144f72-789e-457a-a7e7-862f90c34e15",
+  "name": "Felisa, Fang of Silverquill",
+  "faces": [
+    {
+      "name": "Felisa, Fang of Silverquill",
+      "type_line": "Legendary Creature \u2014 Vampire Wizard",
+      "oracle_text": "Flying\nMentor (Whenever this creature attacks, put a +1/+1 counter on target attacking creature with lesser power.)\nWhenever a nontoken creature you control dies, if it had counters on it, create X tapped 2/1 white and black Inkling creature tokens with flying, where X is the number of counters it had on it.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "mentor"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken creature you control dies, if it had counters on it, create X tapped 2/1 white and black Inkling creature tokens with flying, where X is the number of counters it had on it.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "it had counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "count",
+              "count_object": "counters_it_had_on_it",
+              "token": {
+                "raw": "tapped 2/1 white and black Inkling creature tokens with flying",
+                "colors": [
+                  "white",
+                  "black"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Inkling"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

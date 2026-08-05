@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "994bc16d-fdc6-475c-96df-beeb4d5aa03e",
+  "name": "Mystic Forge",
+  "faces": [
+    {
+      "name": "Mystic Forge",
+      "type_line": "Artifact",
+      "oracle_text": "You may look at the top card of your library any time.\nYou may cast artifact spells and colorless spells from the top of your library.\n{T}, Pay 1 life: Exile the top card of your library.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Pay 1 life: Exile the top card of your library.",
+          "cost": "{T}, Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "You may cast artifact spells and colorless spells from the top of your library.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast artifact spells and colorless spells from the top of your library"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

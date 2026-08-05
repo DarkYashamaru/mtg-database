@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c22589e1-1721-43a3-897e-990af6ebcffa",
+  "name": "Bruse Tarl, Roving Rancher",
+  "faces": [
+    {
+      "name": "Bruse Tarl, Roving Rancher",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "Oxen you control have double strike.\nWhenever Bruse Tarl enters or attacks, exile the top card of your library. If it's a land card, create a 2/2 white Ox creature token. Otherwise, you may cast it until the end of your next turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Bruse Tarl enters or attacks, exile the top card of your library. If it's a land card, create a 2/2 white Ox creature token. Otherwise, you may cast it until the end of your next turn.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 white ox creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "ox"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast it until the end of your next turn",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Oxen you control have double strike.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Oxen"
+                ]
+              },
+              "keywords": [
+                "double_strike"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

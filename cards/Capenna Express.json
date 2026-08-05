@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "568432d1-c7fb-4da6-922a-22d4fa26284e",
+  "name": "Capenna Express",
+  "faces": [
+    {
+      "name": "Capenna Express",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Sacrifice a Treasure: This Vehicle becomes an artifact creature until end of turn.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice a Treasure: This Vehicle becomes an artifact creature until end of turn.",
+          "cost": "Sacrifice a Treasure",
+          "condition": [],
+          "effects": []
+        },
+        {
+          "raw_text": "Crew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

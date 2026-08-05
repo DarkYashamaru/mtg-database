@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d8b770c2-0406-4a2d-95d9-e14bb5d3bdc6",
+  "name": "Duskfang Mentor",
+  "faces": [
+    {
+      "name": "Duskfang Mentor",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "When this creature enters, put a lifelink counter on target non-Human creature you control.\n{1}{B}, {T}: Put a +1/+1 counter on each creature you control with lifelink.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a lifelink counter on target non-Human creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a lifelink counter on target non-Human creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}, {T}: Put a +1/+1 counter on each creature you control with lifelink.",
+          "cost": "{1}{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_creature_you_control_with_lifelink"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

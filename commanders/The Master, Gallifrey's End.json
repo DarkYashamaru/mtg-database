@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e5e2e4ef-1d78-41eb-b634-1a90d4cb7125",
+  "name": "The Master, Gallifrey's End",
+  "faces": [
+    {
+      "name": "The Master, Gallifrey's End",
+      "type_line": "Legendary Creature \u2014 Time Lord Rogue",
+      "oracle_text": "Make Them Pay \u2014 Whenever a nontoken artifact creature you control dies, you may exile it. If you do, choose an opponent with the most life among your opponents. That player faces a villainous choice \u2014 They lose 4 life, or you create a token that's a copy of that card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken artifact creature you control dies, you may exile it. If you do, choose an opponent with the most life among your opponents. That player faces a villainous choice \u2014 They lose 4 life, or you create a token that's a copy of that card.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Artifact",
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "choose an opponent with the most life among your opponents",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "That player faces a villainous choice \u2014 They lose 4 life, or you create a token that's a copy of that card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

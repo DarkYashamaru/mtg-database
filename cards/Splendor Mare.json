@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fd2a00d1-9f21-4d54-9458-024fa03354b8",
+  "name": "Splendor Mare",
+  "faces": [
+    {
+      "name": "Splendor Mare",
+      "type_line": "Creature \u2014 Elk Unicorn",
+      "oracle_text": "Lifelink\nCycling {1}{W} ({1}{W}, Discard this card: Draw a card.)\nWhen you cycle this card, put a lifelink counter on target creature you control.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, put a lifelink counter on target creature you control.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a lifelink counter on target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {1}{W} ({1}{W}, Discard this card: Draw a card.)",
+          "cost": "Cycling {1}{W} ({1}{W}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

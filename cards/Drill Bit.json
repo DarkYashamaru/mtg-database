@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0dbd6e47-a8b4-4268-ba44-8924cd4963a6",
+  "name": "Drill Bit",
+  "faces": [
+    {
+      "name": "Drill Bit",
+      "type_line": "Sorcery",
+      "oracle_text": "Spectacle {B} (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.)\nTarget player reveals their hand. You choose a nonland card from it. That player discards that card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Spectacle {B} (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Spectacle {B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target player reveals their hand. You choose a nonland card from it. That player discards that card.",
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_player"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a nonland card from it"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

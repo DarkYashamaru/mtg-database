@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "864a9276-2fec-49b3-bc53-008608de5ab6",
+  "name": "Mysterious Limousine",
+  "faces": [
+    {
+      "name": "Mysterious Limousine",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Whenever this Vehicle enters or attacks, exile up to one other target creature until this Vehicle leaves the battlefield. If a creature is put into exile this way, return each other card exiled with this Vehicle to the battlefield under its owner's control.\nCrew 2",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle enters or attacks, exile up to one other target creature until this Vehicle leaves the battlefield. If a creature is put into exile this way, return each other card exiled with this Vehicle to the battlefield under its owner's control.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one other target creature until this Vehicle leaves the battlefield"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return each other card exiled with this vehicle to the battlefield under its owner's control",
+              "condition": [
+                {
+                  "condition_text": "a creature is put into exile this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

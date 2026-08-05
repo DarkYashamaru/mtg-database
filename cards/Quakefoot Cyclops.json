@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cbb6139f-827f-490b-b9b7-e8c3ef714d44",
+  "name": "Quakefoot Cyclops",
+  "faces": [
+    {
+      "name": "Quakefoot Cyclops",
+      "type_line": "Creature \u2014 Cyclops",
+      "oracle_text": "When this creature enters, up to two target creatures can't block this turn.\nCycling {1}{R} ({1}{R}, Discard this card: Draw a card.)\nWhen you cycle this card, target creature can't block this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, up to two target creatures can't block this turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "up to two target creatures can't block this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "When you cycle this card, target creature can't block this turn.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {1}{R} ({1}{R}, Discard this card: Draw a card.)",
+          "cost": "Cycling {1}{R} ({1}{R}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "oracle_id": "34ef174e-1b3d-43d5-9f72-3d35befbdd7f",
+  "name": "Ojer Pakpatiq, Deepest Epoch // Temple of Cyclical Time",
+  "faces": [
+    {
+      "name": "Ojer Pakpatiq, Deepest Epoch",
+      "type_line": "Legendary Creature \u2014 God",
+      "oracle_text": "Flying\nWhenever you cast an instant spell from your hand, it gains rebound. (Exile it as it resolves. At the beginning of your next upkeep, you may cast it from exile without paying its mana cost.)\nWhen Ojer Pakpatiq dies, return it to the battlefield tapped and transformed under its owner's control with three time counters on it.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant spell from your hand, it gains rebound. (Exile it as it resolves. At the beginning of your next upkeep, you may cast it from exile without paying its mana cost.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast an instant spell from your hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "rebound"
+            }
+          ]
+        },
+        {
+          "raw_text": "When Ojer Pakpatiq dies, return it to the battlefield tapped and transformed under its owner's control with three time counters on it.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield tapped and transformed under its owner's control with three time counters on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Temple of Cyclical Time",
+      "type_line": "Land",
+      "oracle_text": "(Transforms from Ojer Pakpatiq, Deepest Epoch.)\n{T}: Add {U}. Remove a time counter from this land.\n{2}{U}, {T}: Transform this land. Activate only if it has no time counters on it and only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}. Remove a time counter from this land.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Remove a time counter from this land"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{U}, {T}: Transform this land. Activate only if it has no time counters on it and only as a sorcery.",
+          "cost": "{2}{U}, {T}",
+          "condition": [
+            {
+              "condition_text": "it has no time counters on it and only as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "this_land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

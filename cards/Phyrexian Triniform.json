@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f8526a36-eb8f-457d-b532-e12b47622cfa",
+  "name": "Phyrexian Triniform",
+  "faces": [
+    {
+      "name": "Phyrexian Triniform",
+      "type_line": "Artifact Creature \u2014 Phyrexian Golem",
+      "oracle_text": "When this creature dies, create three 3/3 colorless Phyrexian Golem artifact creature tokens.\nEncore {12} ({12}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, create three 3/3 colorless Phyrexian Golem artifact creature tokens.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "3/3 colorless Phyrexian Golem artifact creature tokens",
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Phyrexian",
+                  "Golem",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Encore {12} ({12}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+          "cost": "Encore {12} ({12}, Exile this card from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each opponent, create a token copy that attacks that opponent this turn if able"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "they",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "them_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

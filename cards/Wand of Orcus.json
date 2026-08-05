@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9fd521d5-baa3-4054-a990-d23265863c71",
+  "name": "Wand of Orcus",
+  "faces": [
+    {
+      "name": "Wand of Orcus",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature attacks or blocks, it and Zombies you control gain deathtouch until end of turn.\nWhenever equipped creature deals combat damage to a player, create that many 2/2 black Zombie creature tokens.\nEquip {3}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks or blocks, it and Zombies you control gain deathtouch until end of turn.",
+          "trigger": {
+            "type": "attacks_or_blocks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "it_and_zombies_you_control",
+              "keyword": "deathtouch"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever equipped creature deals combat damage to a player, create that many 2/2 black Zombie creature tokens.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "that",
+              "token": {
+                "raw": "many 2/2 black Zombie creature tokens",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

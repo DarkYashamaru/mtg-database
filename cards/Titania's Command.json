@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7aae0a3d-8882-4485-a126-f06ea6593dcb",
+  "name": "Titania's Command",
+  "faces": [
+    {
+      "name": "Titania's Command",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose two \u2014\n\u2022 Exile target player's graveyard. You gain 1 life for each card exiled this way.\n\u2022 Search your library for up to two land cards, put them onto the battlefield tapped, then shuffle.\n\u2022 Create two 2/2 green Bear creature tokens.\n\u2022 Put two +1/+1 counters on each creature you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose two \u2014\n\u2022 Exile target player's graveyard. You gain 1 life for each card exiled this way.\n\u2022 Search your library for up to two land cards, put them onto the battlefield tapped, then shuffle.\n\u2022 Create two 2/2 green Bear creature tokens.\n\u2022 Put two +1/+1 counters on each creature you control.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 2,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Exile target player's graveyard. You gain 1 life for each card exiled this way.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Exile target player's graveyard"
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "You gain 1 life for each card exiled this way"
+                }
+              ]
+            },
+            {
+              "raw_text": "Search your library for up to two land cards, put them onto the battlefield tapped, then shuffle.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "search your library for up to two land cards, put them onto the battlefield tapped"
+                },
+                {
+                  "action": "shuffle_library",
+                  "player": "you"
+                }
+              ]
+            },
+            {
+              "raw_text": "Create two 2/2 green Bear creature tokens.",
+              "effects": [
+                {
+                  "action": "create_token",
+                  "amount": 2,
+                  "token": {
+                    "raw": "2/2 green Bear creature tokens",
+                    "colors": [
+                      "green"
+                    ],
+                    "power_toughness": "2/2",
+                    "card_types": [
+                      "creature"
+                    ],
+                    "subtypes": [
+                      "Bear"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Put two +1/+1 counters on each creature you control.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control"
+                  },
+                  "amount": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

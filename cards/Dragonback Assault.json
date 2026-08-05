@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "413fb2db-f1a1-4d22-ac37-a52821d35ca2",
+  "name": "Dragonback Assault",
+  "faces": [
+    {
+      "name": "Dragonback Assault",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, it deals 3 damage to each creature and each planeswalker.\nLandfall \u2014 Whenever a land you control enters, create a 4/4 red Dragon creature token with flying.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, it deals 3 damage to each creature and each planeswalker.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 3 damage to each creature and each planeswalker"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a land you control enters, create a 4/4 red Dragon creature token with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/4 red Dragon creature token with flying",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Dragon"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

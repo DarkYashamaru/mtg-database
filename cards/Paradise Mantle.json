@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c1121b83-1ba2-473d-89c9-e3bbd4529072",
+  "name": "Paradise Mantle",
+  "faces": [
+    {
+      "name": "Paradise Mantle",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has \"{T}: Add one mana of any color.\"\nEquip {1}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equipped creature has \"{T}: Add one mana of any color.\"",
+          "cost": "Equipped creature has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {1}",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

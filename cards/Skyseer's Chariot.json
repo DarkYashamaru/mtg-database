@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "92d28545-4403-4c24-8547-efab4dde6a53",
+  "name": "Skyseer's Chariot",
+  "faces": [
+    {
+      "name": "Skyseer's Chariot",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nAs this Vehicle enters, choose a nonland card name.\nActivated abilities of sources with the chosen name cost {2} more to activate.\nCrew 2",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Crew 2",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this Vehicle enters, choose a nonland card name.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this Vehicle enters, choose a nonland card name"
+            }
+          ]
+        },
+        {
+          "raw_text": "Activated abilities of sources with the chosen name cost {2} more to activate.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Activated abilities of sources with the chosen name cost {2} more to activate"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "01cebebb-050c-4b69-8a13-c569183a3cc3",
+  "name": "Cogwork Assembler",
+  "faces": [
+    {
+      "name": "Cogwork Assembler",
+      "type_line": "Artifact Creature \u2014 Assembly-Worker",
+      "oracle_text": "{7}: Create a token that's a copy of target artifact. That token gains haste. Exile it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{7}: Create a token that's a copy of target artifact. That token gains haste. Exile it at the beginning of the next end step.",
+          "cost": "{7}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Create a token that's a copy of target artifact"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "that_token",
+              "keyword": "haste"
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_end_step"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": "it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

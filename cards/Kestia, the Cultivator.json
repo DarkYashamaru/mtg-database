@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "21620bfc-8ef0-4e43-b675-d0bbad86e83d",
+  "name": "Kestia, the Cultivator",
+  "faces": [
+    {
+      "name": "Kestia, the Cultivator",
+      "type_line": "Legendary Enchantment Creature \u2014 Nymph",
+      "oracle_text": "Bestow {3}{G}{W}{U} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.)\nEnchanted creature gets +4/+4.\nWhenever an enchanted creature or enchantment creature you control attacks, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an enchanted creature or enchantment creature you control attacks, draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature",
+                "Enchantment",
+                "Creature"
+              ],
+              "subtypes": [
+                "Enchanted",
+                "Or"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Bestow {3}{G}{W}{U} (If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Bestow {3}{G}{W}{U}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +4/+4.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 4,
+              "toughness_delta": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

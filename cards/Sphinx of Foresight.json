@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1108bd1-87b2-4795-9690-54ff4504e04f",
+  "name": "Sphinx of Foresight",
+  "faces": [
+    {
+      "name": "Sphinx of Foresight",
+      "type_line": "Creature \u2014 Sphinx",
+      "oracle_text": "You may reveal this card from your opening hand. If you do, scry 3 at the beginning of your first upkeep.\nFlying\nAt the beginning of your upkeep, scry 1.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, scry 1.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may reveal this card from your opening hand. If you do, scry 3 at the beginning of your first upkeep.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may reveal this card from your opening hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "scry 3 at the beginning of your first upkeep",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

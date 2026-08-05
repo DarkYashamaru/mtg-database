@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b72fd535-0051-4f59-9d99-75895f751006",
+  "name": "Twinshot Sniper",
+  "faces": [
+    {
+      "name": "Twinshot Sniper",
+      "type_line": "Artifact Creature \u2014 Goblin Archer",
+      "oracle_text": "Reach\nWhen this creature enters, it deals 2 damage to any target.\nChannel \u2014 {1}{R}, Discard this card: It deals 2 damage to any target.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, it deals 2 damage to any target.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Channel \u2014 {1}{R}, Discard this card: It deals 2 damage to any target.",
+          "cost": "Channel \u2014 {1}{R}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

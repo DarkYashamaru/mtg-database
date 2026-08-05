@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fdea1945-0bb6-4a83-8cb1-5ba6a4dc39bd",
+  "name": "Drifting Djinn",
+  "faces": [
+    {
+      "name": "Drifting Djinn",
+      "type_line": "Creature \u2014 Djinn",
+      "oracle_text": "Flying\nAt the beginning of your upkeep, sacrifice this creature unless you pay {1}{U}.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice this creature unless you pay {1}{U}.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self_unless_you_pay_1u"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {2} ({2}, Discard this card: Draw a card.)",
+          "cost": "Cycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

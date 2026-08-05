@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "21f507fd-6a26-455c-879a-f838e0aa2a43",
+  "name": "Grixis Sojourners",
+  "faces": [
+    {
+      "name": "Grixis Sojourners",
+      "type_line": "Creature \u2014 Zombie Ogre",
+      "oracle_text": "When you cycle this card and when this creature dies, you may exile target card from a graveyard.\nCycling {2}{B} ({2}{B}, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card and when this creature dies, you may exile target card from a graveyard.",
+          "trigger": {
+            "type": "dies",
+            "subject": "you_cycle_this_card_and_when_self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_card_in_graveyard"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {2}{B} ({2}{B}, Discard this card: Draw a card.)",
+          "cost": "Cycling {2}{B} ({2}{B}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

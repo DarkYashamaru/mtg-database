@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2e29efee-1eed-4bef-8574-0f6ff99d3cda",
+  "name": "Twisted Embrace",
+  "faces": [
+    {
+      "name": "Twisted Embrace",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant artifact or creature you control\nWhen this Aura enters, destroy target creature or planeswalker an opponent controls.\nAs long as enchanted permanent is a creature, it gets +1/+1.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, destroy target creature or planeswalker an opponent controls.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target creature or planeswalker an opponent controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant artifact or creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "artifact_or_creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted permanent is a creature, it gets +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "as_long_as_enchanted_permanent_is_a_creature_it",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

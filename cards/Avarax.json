@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2e1deb7e-d40d-437e-b817-b66132d2d1d6",
+  "name": "Avarax",
+  "faces": [
+    {
+      "name": "Avarax",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "Haste\nWhen this creature enters, you may search your library for a card named Avarax, reveal it, put it into your hand, then shuffle.\n{1}{R}: This creature gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a card named Avarax, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a card named avarax, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{R}: This creature gets +1/+0 until end of turn.",
+          "cost": "{1}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

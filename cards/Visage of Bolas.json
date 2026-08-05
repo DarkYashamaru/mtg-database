@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "21bb3c03-c1c0-40ec-8df4-8d0054c3742b",
+  "name": "Visage of Bolas",
+  "faces": [
+    {
+      "name": "Visage of Bolas",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, you may search your library and/or graveyard for a card named Nicol Bolas, the Deceiver, reveal it, and put it into your hand. If you search your library this way, shuffle.\n{T}: Add {U}, {B}, or {R}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, you may search your library and/or graveyard for a card named Nicol Bolas, the Deceiver, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library and/or graveyard for a card named Nicol Bolas, the Deceiver, reveal it, and put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}, {B}, or {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {U}, {B}, or {R}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d15dba3a-3b85-43fb-b5f3-c4d8d1e23b1d",
+  "name": "Echoing Assault",
+  "faces": [
+    {
+      "name": "Echoing Assault",
+      "type_line": "Enchantment",
+      "oracle_text": "Creature tokens you control have menace.\nWhenever you attack a player, choose target nontoken creature that's attacking that player. Create a token that's a copy of that creature, except it's 1/1. The token enters tapped and attacking that player. Sacrifice it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack a player, choose target nontoken creature that's attacking that player. Create a token that's a copy of that creature, except it's 1/1. The token enters tapped and attacking that player. Sacrifice it at the beginning of the next end step.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you attack a player"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose target nontoken creature that's attacking that player"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Create a token that's a copy of that creature, except it's 1/1"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The token enters tapped and attacking that player"
+            },
+            {
+              "action": "sacrifice",
+              "target": "it_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creature tokens you control have menace.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Token"
+                ]
+              },
+              "keywords": [
+                "menace"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

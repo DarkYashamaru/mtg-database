@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "58b27a79-ba63-45d4-84ee-423ce0d91f6b",
+  "name": "Projektor Inspector",
+  "faces": [
+    {
+      "name": "Projektor Inspector",
+      "type_line": "Creature \u2014 Human Detective",
+      "oracle_text": "Whenever this creature or another Detective you control enters and whenever a Detective you control is turned face up, you may draw a card. If you do, discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Detective you control enters and whenever a Detective you control is turned face up, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Detective",
+                "You",
+                "Control",
+                "Enter",
+                "And",
+                "Whenever",
+                "Detective"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

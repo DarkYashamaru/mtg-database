@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5cd35d18-115b-4d7c-8d05-3d4c8303f46e",
+  "name": "Genju of the Fields",
+  "faces": [
+    {
+      "name": "Genju of the Fields",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant Plains\n{2}: Until end of turn, enchanted Plains becomes a 2/5 white Spirit creature with \"Whenever this creature deals damage, its controller gains that much life.\" It's still a land.\nWhen enchanted Plains is put into a graveyard, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted Plains is put into a graveyard, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When enchanted Plains is put into a graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: Until end of turn, enchanted Plains becomes a 2/5 white Spirit creature with \"Whenever this creature deals damage, its controller gains that much life.\" It's still a land.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, enchanted Plains becomes a 2/5 white Spirit creature with \"Whenever this creature deals damage, its controller gains that much life.\" It's still a land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant Plains",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "plains"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

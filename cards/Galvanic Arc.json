@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "72a8620e-1ba2-40a8-9b22-11cc57864adf",
+  "name": "Galvanic Arc",
+  "faces": [
+    {
+      "name": "Galvanic Arc",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, it deals 3 damage to any target.\nEnchanted creature has first strike.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, it deals 3 damage to any target.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has first strike.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has first strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

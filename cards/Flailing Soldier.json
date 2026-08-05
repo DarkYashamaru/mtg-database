@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2c1dd6f4-2db5-449d-9ed8-579d98cfcfb8",
+  "name": "Flailing Soldier",
+  "faces": [
+    {
+      "name": "Flailing Soldier",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "{1}: This creature gets +1/+1 until end of turn. Any player may activate this ability.\n{1}: This creature gets -1/-1 until end of turn. Any player may activate this ability.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}: This creature gets +1/+1 until end of turn. Any player may activate this ability.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "activation_permission",
+              "player_scope": "any_player"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}: This creature gets -1/-1 until end of turn. Any player may activate this ability.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": -1,
+              "toughness_delta": -1
+            },
+            {
+              "action": "activation_permission",
+              "player_scope": "any_player"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

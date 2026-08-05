@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8c55039d-1303-420c-8547-ebdffb63bf89",
+  "name": "Liliana's Talent",
+  "faces": [
+    {
+      "name": "Liliana's Talent",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant planeswalker\nEnchanted planeswalker has \"[\u22128]: Put all creature cards from all graveyards onto the battlefield under your control.\"\nWhenever a creature deals damage to enchanted planeswalker, destroy that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature deals damage to enchanted planeswalker, destroy that creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature deals damage to enchanted planeswalker"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": "that_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Enchanted planeswalker has \"[\u22128]: Put all creature cards from all graveyards onto the battlefield under your control.\"",
+          "cost": "Enchanted planeswalker has \"[\u22128]",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put all creature cards from all graveyards onto the battlefield under your control.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant planeswalker",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "planeswalker"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

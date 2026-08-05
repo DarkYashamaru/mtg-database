@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e19e1e83-75e5-4cfa-8d50-8ed0b027a202",
+  "name": "Smuggler's Buggy",
+  "faces": [
+    {
+      "name": "Smuggler's Buggy",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Hideaway 4 (When this artifact enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom in a random order.)\nWhenever this Vehicle deals combat damage to a player, you may cast the exiled card without paying its mana cost. If you do, return this Vehicle to its owner's hand.\nCrew 2",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle deals combat damage to a player, you may cast the exiled card without paying its mana cost. If you do, return this Vehicle to its owner's hand.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may cast the exiled card without paying its mana cost"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return this vehicle to its owner's hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Hideaway 4 (When this artifact enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom in a random order.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Hideaway 4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

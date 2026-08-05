@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "151388a4-a24b-4089-a323-e7c1d5e6490a",
+  "name": "Slow Motion",
+  "faces": [
+    {
+      "name": "Slow Motion",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nAt the beginning of the upkeep of enchanted creature's controller, that player sacrifices that creature unless they pay {2}.\nWhen this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of the upkeep of enchanted creature's controller, that player sacrifices that creature unless they pay {2}.",
+          "trigger": {
+            "type": "beginning_of_upkeep_of_enchanted_creatures_controller"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player sacrifices that creature unless they pay {2}"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this Aura is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

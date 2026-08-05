@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b9be00a5-448f-4c90-b9ca-b30bcdfe95f2",
+  "name": "Shifty Doppelganger",
+  "faces": [
+    {
+      "name": "Shifty Doppelganger",
+      "type_line": "Creature \u2014 Shapeshifter",
+      "oracle_text": "{3}{U}, Exile this creature: You may put a creature card from your hand onto the battlefield. If you do, that creature gains haste until end of turn. At the beginning of the next end step, sacrifice that creature. If you do, return this card to the battlefield.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{U}, Exile this creature: You may put a creature card from your hand onto the battlefield. If you do, that creature gains haste until end of turn. At the beginning of the next end step, sacrifice that creature. If you do, return this card to the battlefield.",
+          "cost": "{3}{U}, Exile this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may put a creature card from your hand onto the battlefield"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature",
+              "keyword": "haste",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "At the beginning of the next end step, sacrifice that creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return this card to the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

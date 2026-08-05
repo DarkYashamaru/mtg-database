@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f748b2fb-6c2a-400a-8e96-fa4e4a1dfe80",
+  "name": "Shelldock Isle",
+  "faces": [
+    {
+      "name": "Shelldock Isle",
+      "type_line": "Land",
+      "oracle_text": "Hideaway 4 (When this land enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom in a random order.)\nThis land enters tapped.\n{T}: Add {U}.\n{U}, {T}: You may play the exiled card without paying its mana cost if a library has twenty or fewer cards in it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}, {T}: You may play the exiled card without paying its mana cost if a library has twenty or fewer cards in it.",
+          "cost": "{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may play the exiled card without paying its mana cost if a library has twenty or fewer cards in it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Hideaway 4 (When this land enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom in a random order.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Hideaway 4"
+            }
+          ]
+        },
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

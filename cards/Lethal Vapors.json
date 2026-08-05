@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9fe9650d-6c9b-4988-9ea4-79ba0d55a77b",
+  "name": "Lethal Vapors",
+  "faces": [
+    {
+      "name": "Lethal Vapors",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature enters, destroy it.\n{0}: Destroy this enchantment. You skip your next turn. Any player may activate this ability.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature enters, destroy it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "a_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{0}: Destroy this enchantment. You skip your next turn. Any player may activate this ability.",
+          "cost": "{0}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy this enchantment"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You skip your next turn"
+            },
+            {
+              "action": "activation_permission",
+              "player_scope": "any_player"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

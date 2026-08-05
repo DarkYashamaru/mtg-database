@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "43f135b5-d33e-4873-bc5a-8c939582d624",
+  "name": "Gallia of the Endless Dance",
+  "faces": [
+    {
+      "name": "Gallia of the Endless Dance",
+      "type_line": "Legendary Creature \u2014 Satyr",
+      "oracle_text": "Haste\nOther Satyrs you control get +1/+1 and have haste.\nWhenever you attack with three or more creatures, you may discard a card at random. If you do, draw two cards.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack with three or more creatures, you may discard a card at random. If you do, draw two cards.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you attack with three or more creatures"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may discard a card at random"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Satyrs you control get +1/+1 and have haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "other_satyrs_you_control_get_11_and"
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

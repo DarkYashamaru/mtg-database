@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "054c6250-ac96-42f6-931d-925761ab7764",
+  "name": "Power Plant Worker",
+  "faces": [
+    {
+      "name": "Power Plant Worker",
+      "type_line": "Artifact Creature \u2014 Assembly-Worker",
+      "oracle_text": "{3}: This creature gets +2/+2 until end of turn. If you control creatures named Mine Worker and Tower Worker, put two +1/+1 counters on this creature instead. Activate only once each turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}: This creature gets +2/+2 until end of turn. If you control creatures named Mine Worker and Tower Worker, put two +1/+1 counters on this creature instead. Activate only once each turn.",
+          "cost": "{3}",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_instead",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "you control creatures named mine worker and tower worker"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0f71416c-e244-48b4-acbe-2a8ef540db0f",
+  "name": "Llanowar Empath",
+  "faces": [
+    {
+      "name": "Llanowar Empath",
+      "type_line": "Creature \u2014 Elf Shaman",
+      "oracle_text": "When this creature enters, scry 2, then reveal the top card of your library. If it's a creature card, put it into your hand. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, scry 2, then reveal the top card of your library. If it's a creature card, put it into your hand. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            },
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "it's a creature card"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

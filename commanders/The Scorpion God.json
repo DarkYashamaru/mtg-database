@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aff223d4-6338-460d-a4d5-d45f522864dc",
+  "name": "The Scorpion God",
+  "faces": [
+    {
+      "name": "The Scorpion God",
+      "type_line": "Legendary Creature \u2014 God",
+      "oracle_text": "Whenever a creature with a -1/-1 counter on it dies, draw a card.\n{1}{B}{R}: Put a -1/-1 counter on another target creature.\nWhen The Scorpion God dies, return it to its owner's hand at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature with a -1/-1 counter on it dies, draw a card.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_with_a__1_1_counter_on_it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When The Scorpion God dies, return it to its owner's hand at the beginning of the next end step.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return it to its owner's hand at the beginning of the next end step"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}{R}: Put a -1/-1 counter on another target creature.",
+          "cost": "{1}{B}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a -1/-1 counter on another target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

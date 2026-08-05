@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d88f249f-5bf1-448a-91d1-f81538dfd475",
+  "name": "Clattering Augur",
+  "faces": [
+    {
+      "name": "Clattering Augur",
+      "type_line": "Creature \u2014 Skeleton Shaman",
+      "oracle_text": "This creature can't block.\nWhen this creature enters, you draw a card and you lose 1 life.\n{2}{B}{B}: Return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you draw a card and you lose 1 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{B}{B}: Return this card from your graveyard to your hand.",
+          "cost": "{2}{B}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

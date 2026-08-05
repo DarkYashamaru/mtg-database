@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85cf2403-b419-4364-8ac9-67dd1ceddf9e",
+  "name": "Tuktuk Scrapper",
+  "faces": [
+    {
+      "name": "Tuktuk Scrapper",
+      "type_line": "Creature \u2014 Goblin Artificer Ally",
+      "oracle_text": "Whenever this creature or another Ally you control enters, you may destroy target artifact. If that artifact is put into a graveyard this way, this creature deals damage to that artifact's controller equal to the number of Allies you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Ally you control enters, you may destroy target artifact. If that artifact is put into a graveyard this way, this creature deals damage to that artifact's controller equal to the number of Allies you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Ally"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_artifact"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals damage to that artifact's controller equal to the number of allies you control",
+              "condition": [
+                {
+                  "condition_text": "that artifact is put into a graveyard this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

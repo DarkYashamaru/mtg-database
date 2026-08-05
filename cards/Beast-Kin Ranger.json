@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "db794af5-ba2e-4b10-b213-e481e8a50432",
+  "name": "Beast-Kin Ranger",
+  "faces": [
+    {
+      "name": "Beast-Kin Ranger",
+      "type_line": "Creature \u2014 Elf Ranger",
+      "oracle_text": "Trample (This creature can deal excess combat damage to the player or planeswalker it's attacking.)\nWhenever another creature you control enters, this creature gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, this creature gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

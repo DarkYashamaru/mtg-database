@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "46abaabe-7015-4d82-a5aa-2706b1f51bed",
+  "name": "Thallid",
+  "faces": [
+    {
+      "name": "Thallid",
+      "type_line": "Creature \u2014 Fungus",
+      "oracle_text": "At the beginning of your upkeep, put a spore counter on this creature.\nRemove three spore counters from this creature: Create a 1/1 green Saproling creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a spore counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a spore counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove three spore counters from this creature: Create a 1/1 green Saproling creature token.",
+          "cost": "Remove three spore counters from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Saproling creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Saproling"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

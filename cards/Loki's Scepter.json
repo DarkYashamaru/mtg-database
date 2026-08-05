@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5f8941d8-f8f7-4ec3-86c3-88af8829080b",
+  "name": "Loki's Scepter",
+  "faces": [
+    {
+      "name": "Loki's Scepter",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "When Loki's Scepter enters, gain control of target creature until end of turn. Untap that creature. Until end of turn, it becomes a Villain in addition to its other types and gains haste.\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Loki's Scepter enters, gain control of target creature until end of turn. Untap that creature. Until end of turn, it becomes a Villain in addition to its other types and gains haste.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_control",
+              "target": "target_creature",
+              "duration": "until_end_of_turn"
+            },
+            {
+              "action": "untap",
+              "target": "that_creature"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "until_end_of_turn_it_becomes_a_villain_in_addition_to_its_other_types_and",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

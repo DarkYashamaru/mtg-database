@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "74f4d505-e114-47be-be27-a7949e8abdc7",
+  "name": "Escape Artist",
+  "faces": [
+    {
+      "name": "Escape Artist",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "This creature can't be blocked.\n{U}, Discard a card: Return this creature to its owner's hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{U}, Discard a card: Return this creature to its owner's hand.",
+          "cost": "{U}, Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

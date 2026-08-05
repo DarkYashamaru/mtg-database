@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a3ae6694-6314-42e2-bc12-d0e32d49b347",
+  "name": "Bestial Bloodline",
+  "faces": [
+    {
+      "name": "Bestial Bloodline",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +2/+2.\n{4}{G}: Return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{4}{G}: Return this card from your graveyard to your hand.",
+          "cost": "{4}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+2.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

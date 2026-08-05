@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1da1aa95-b587-4bc3-8bc1-7daa1fc33f00",
+  "name": "Windcaller Aven",
+  "faces": [
+    {
+      "name": "Windcaller Aven",
+      "type_line": "Creature \u2014 Bird Wizard",
+      "oracle_text": "Flying\nCycling {U} ({U}, Discard this card: Draw a card.)\nWhen you cycle this card, target creature gains flying until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, target creature gains flying until end of turn.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {U} ({U}, Discard this card: Draw a card.)",
+          "cost": "Cycling {U} ({U}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

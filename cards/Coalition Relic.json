@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "008cb342-79f5-4df6-a6b7-0e9e22ed693f",
+  "name": "Coalition Relic",
+  "faces": [
+    {
+      "name": "Coalition Relic",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add one mana of any color.\n{T}: Put a charge counter on this artifact.\nAt the beginning of your first main phase, remove all charge counters from this artifact. Add one mana of any color for each charge counter removed this way.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your first main phase, remove all charge counters from this artifact. Add one mana of any color for each charge counter removed this way.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove all charge counters from this artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Add one mana of any color for each charge counter removed this way"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Put a charge counter on this artifact.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a charge counter on this artifact"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c53c75a0-c248-4e76-8d28-f7e53b2dcc49",
+  "name": "Deadly Complication",
+  "faces": [
+    {
+      "name": "Deadly Complication",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose one or both \u2014\n\u2022 Destroy target creature.\n\u2022 Put a +1/+1 counter on target suspected creature you control. You may have it become no longer suspected.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one or both \u2014\n\u2022 Destroy target creature.\n\u2022 Put a +1/+1 counter on target suspected creature you control. You may have it become no longer suspected.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false,
+            "or_both": true
+          },
+          "modes": [
+            {
+              "raw_text": "Destroy target creature.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_creature"
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Put a +1/+1 counter on target suspected creature you control. You may have it become no longer suspected.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control",
+                    "card_types": [
+                      "Creature"
+                    ],
+                    "subtypes": [
+                      "Target",
+                      "Suspected"
+                    ]
+                  },
+                  "amount": 1
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "You may have it become no longer suspected"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

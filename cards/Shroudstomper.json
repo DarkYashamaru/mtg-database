@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "36415fe3-6bf3-4fec-909c-6c16584c44eb",
+  "name": "Shroudstomper",
+  "faces": [
+    {
+      "name": "Shroudstomper",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "Deathtouch\nWhenever this creature enters or attacks, each opponent loses 2 life. You gain 2 life and draw a card.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or attacks, each opponent loses 2 life. You gain 2 life and draw a card.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

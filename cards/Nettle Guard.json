@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9ac2dcb6-dacc-4fcb-b820-9fc6744ec503",
+  "name": "Nettle Guard",
+  "faces": [
+    {
+      "name": "Nettle Guard",
+      "type_line": "Creature \u2014 Mouse Soldier",
+      "oracle_text": "Valiant \u2014 Whenever this creature becomes the target of a spell or ability you control for the first time each turn, it gets +0/+2 until end of turn.\n{1}, Sacrifice this creature: Destroy target artifact or enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes the target of a spell or ability you control for the first time each turn, it gets +0/+2 until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes the target of a spell or ability you control for the first time each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 0,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice this creature: Destroy target artifact or enchantment.",
+          "cost": "{1}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Artifact",
+                  "Enchantment"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

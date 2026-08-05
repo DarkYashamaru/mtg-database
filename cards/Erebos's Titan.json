@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1341b64e-1f8f-4613-abea-a337cd0169de",
+  "name": "Erebos's Titan",
+  "faces": [
+    {
+      "name": "Erebos's Titan",
+      "type_line": "Creature \u2014 Giant",
+      "oracle_text": "As long as your opponents control no creatures, this creature has indestructible. (Damage and effects that say \"destroy\" don't destroy it.)\nWhenever a creature card leaves an opponent's graveyard, you may discard a card. If you do, return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature card leaves an opponent's graveyard, you may discard a card. If you do, return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature card leaves an opponent's graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as your opponents control no creatures, this creature has indestructible. (Damage and effects that say \"destroy\" don't destroy it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as your opponents control no creatures, this creature has indestructible"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

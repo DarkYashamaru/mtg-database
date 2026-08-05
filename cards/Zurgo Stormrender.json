@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0f93d88c-9d2e-416d-a10b-99483360b1fb",
+  "name": "Zurgo Stormrender",
+  "faces": [
+    {
+      "name": "Zurgo Stormrender",
+      "type_line": "Legendary Creature \u2014 Orc Warrior",
+      "oracle_text": "Mobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.)\nWhenever a creature token you control leaves the battlefield, draw a card if it was attacking. Otherwise, each opponent loses 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature token you control leaves the battlefield, draw a card if it was attacking. Otherwise, each opponent loses 1 life.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Token"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it was attacking"
+                }
+              ]
+            },
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Mobilize 1 (Whenever this creature attacks, create a tapped and attacking 1/1 red Warrior creature token. Sacrifice it at the beginning of the next end step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Mobilize 1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

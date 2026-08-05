@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2f33aced-c737-4b3c-ba25-aff7b340c2d7",
+  "name": "Infernal Denizen",
+  "faces": [
+    {
+      "name": "Infernal Denizen",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "At the beginning of your upkeep, sacrifice two Swamps. If you can't, tap this creature, and an opponent may gain control of a creature you control of their choice for as long as this creature remains on the battlefield.\n{T}: Gain control of target creature for as long as this creature remains on the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice two Swamps. If you can't, tap this creature, and an opponent may gain control of a creature you control of their choice for as long as this creature remains on the battlefield.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "two_swamps"
+            },
+            {
+              "action": "custom_effect",
+              "text": "tap this creature, and an opponent may gain control of a creature you control of their choice for as long as this creature remains on the battlefield",
+              "condition": [
+                {
+                  "condition_text": "you can't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Gain control of target creature for as long as this creature remains on the battlefield.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gain control of target creature for as long as this creature remains on the battlefield"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

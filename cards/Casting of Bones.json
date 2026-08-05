@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5a747256-4215-4334-98ab-0c2e4ed92e47",
+  "name": "Casting of Bones",
+  "faces": [
+    {
+      "name": "Casting of Bones",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen enchanted creature dies, draw three cards, then discard one of them.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, draw three cards, then discard one of them.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "discard one of them"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

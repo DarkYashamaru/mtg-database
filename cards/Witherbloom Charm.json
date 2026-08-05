@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ee1db746-f5c1-4dce-82eb-24b273cc9507",
+  "name": "Witherbloom Charm",
+  "faces": [
+    {
+      "name": "Witherbloom Charm",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 You may sacrifice a permanent. If you do, draw two cards.\n\u2022 You gain 5 life.\n\u2022 Destroy target nonland permanent with mana value 2 or less.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 You may sacrifice a permanent. If you do, draw two cards.\n\u2022 You gain 5 life.\n\u2022 Destroy target nonland permanent with mana value 2 or less.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "You may sacrifice a permanent. If you do, draw two cards.",
+              "effects": [
+                {
+                  "action": "sacrifice",
+                  "target": "a_permanent",
+                  "optional": true
+                },
+                {
+                  "action": "draw_cards",
+                  "amount": 2,
+                  "condition": [
+                    {
+                      "previous_optional_payment_made": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "raw_text": "You gain 5 life.",
+              "effects": [
+                {
+                  "action": "gain_life",
+                  "player": "you",
+                  "amount": 5
+                }
+              ]
+            },
+            {
+              "raw_text": "Destroy target nonland permanent with mana value 2 or less.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Destroy target nonland permanent with mana value 2 or less"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

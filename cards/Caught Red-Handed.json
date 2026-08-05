@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "484b3586-c0ed-4793-a3c0-e99f265e092d",
+  "name": "Caught Red-Handed",
+  "faces": [
+    {
+      "name": "Caught Red-Handed",
+      "type_line": "Instant",
+      "oracle_text": "This spell can't be countered. (This includes by the ward ability.)\nGain control of target creature until end of turn. Untap that creature. It gains haste until end of turn. Suspect it. (It has menace and can't block.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell can't be countered. (This includes by the ward ability.)",
+          "effects": [
+            {
+              "action": "cant_be_countered",
+              "target": "self_spell"
+            }
+          ]
+        },
+        {
+          "raw_text": "Gain control of target creature until end of turn. Untap that creature. It gains haste until end of turn. Suspect it. (It has menace and can't block.)",
+          "effects": [
+            {
+              "action": "gain_control",
+              "target": "target_creature",
+              "duration": "until_end_of_turn"
+            },
+            {
+              "action": "untap",
+              "target": "that_creature"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Suspect it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

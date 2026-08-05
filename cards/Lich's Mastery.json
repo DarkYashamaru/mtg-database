@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "785c306c-471c-4699-8ab2-43c253d569cf",
+  "name": "Lich's Mastery",
+  "faces": [
+    {
+      "name": "Lich's Mastery",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "Hexproof\nYou can't lose the game.\nWhenever you gain life, draw that many cards.\nWhenever you lose life, for each 1 life you lost, exile a permanent you control or a card from your hand or graveyard.\nWhen Lich's Mastery leaves the battlefield, you lose the game.",
+      "static": [
+        {
+          "keyword": "hexproof"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, draw that many cards.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you lose life, for each 1 life you lost, exile a permanent you control or a card from your hand or graveyard.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you lose life"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each 1 life you lost, exile a permanent you control or a card from your hand or graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "When Lich's Mastery leaves the battlefield, you lose the game.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_the_game"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You can't lose the game.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You can't lose the game"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

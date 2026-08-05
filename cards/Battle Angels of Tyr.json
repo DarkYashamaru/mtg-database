@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c2bd0c24-3973-48bc-a591-3779e3640c5d",
+  "name": "Battle Angels of Tyr",
+  "faces": [
+    {
+      "name": "Battle Angels of Tyr",
+      "type_line": "Creature \u2014 Angel Knight",
+      "oracle_text": "Flying, myriad\nWhenever this creature deals combat damage to a player, draw a card if that player has more cards in hand than each other player. Then you create a Treasure token if that player controls more lands than each other player. Then you gain 3 life if that player has more life than each other player.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "myriad"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, draw a card if that player has more cards in hand than each other player. Then you create a Treasure token if that player controls more lands than each other player. Then you gain 3 life if that player has more life than each other player.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "that player has more cards in hand than each other player"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you create a Treasure token if that player controls more lands than each other player"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you gain 3 life if that player has more life than each other player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

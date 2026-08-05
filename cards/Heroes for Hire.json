@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "45e5135b-274c-46b4-8249-7e05e37aaff7",
+  "name": "Heroes for Hire",
+  "faces": [
+    {
+      "name": "Heroes for Hire",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create three Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")\nSacrifice a Treasure: Exile the top card of your library. You may play it this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create three Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice a Treasure: Exile the top card of your library. You may play it this turn.",
+          "cost": "Sacrifice a Treasure",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play it this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

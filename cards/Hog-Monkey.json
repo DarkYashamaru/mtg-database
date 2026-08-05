@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e11591ee-7074-488e-8d2f-f8c89e385a55",
+  "name": "Hog-Monkey",
+  "faces": [
+    {
+      "name": "Hog-Monkey",
+      "type_line": "Creature \u2014 Boar Monkey",
+      "oracle_text": "At the beginning of combat on your turn, target creature you control with a +1/+1 counter on it gains menace until end of turn. (It can't be blocked except by two or more creatures.)\nExhaust \u2014 {5}: Put two +1/+1 counters on this creature. (Activate each exhaust ability only once.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, target creature you control with a +1/+1 counter on it gains menace until end of turn. (It can't be blocked except by two or more creatures.)",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control_with_a_11_counter_on_it",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Exhaust \u2014 {5}: Put two +1/+1 counters on this creature. (Activate each exhaust ability only once.)",
+          "cost": "Exhaust \u2014 {5}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

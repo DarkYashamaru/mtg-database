@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c2cb0afd-781f-4cfa-b680-ed1edfa81868",
+  "name": "Blighted Gorge",
+  "faces": [
+    {
+      "name": "Blighted Gorge",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{4}{R}, {T}, Sacrifice this land: It deals 2 damage to any target.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}{R}, {T}, Sacrifice this land: It deals 2 damage to any target.",
+          "cost": "{4}{R}, {T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

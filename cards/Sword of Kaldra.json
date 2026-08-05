@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "35f63c60-b0a1-459d-bf51-a8549fb06930",
+  "name": "Sword of Kaldra",
+  "faces": [
+    {
+      "name": "Sword of Kaldra",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +5/+5.\nWhenever equipped creature deals damage to a creature, exile that creature. (Exile it only if it's still on the battlefield.)\nEquip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals damage to a creature, exile that creature. (Exile it only if it's still on the battlefield.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever equipped creature deals damage to a creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile that creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +5/+5.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 5,
+              "toughness_delta": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

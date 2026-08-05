@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b9119b0-9948-497f-aa92-2879d07bed1c",
+  "name": "Viridian Longbow",
+  "faces": [
+    {
+      "name": "Viridian Longbow",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has \"{T}: This creature deals 1 damage to any target.\"\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equipped creature has \"{T}: This creature deals 1 damage to any target.\"",
+          "cost": "Equipped creature has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d965e8c2-34b1-42eb-9647-59951d9fc06b",
+  "name": "Bortuk Bonerattle",
+  "faces": [
+    {
+      "name": "Bortuk Bonerattle",
+      "type_line": "Legendary Creature \u2014 Troll Shaman",
+      "oracle_text": "Domain \u2014 When Bortuk Bonerattle enters, if you cast it, choose target creature card in your graveyard. Return that card to the battlefield if its mana value is less than or equal to the number of basic land types among lands you control. Otherwise, put it into your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Bortuk Bonerattle enters, if you cast it, choose target creature card in your graveyard. Return that card to the battlefield if its mana value is less than or equal to the number of basic land types among lands you control. Otherwise, put it into your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose target creature card in your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Return that card to the battlefield if its mana value is less than or equal to the number of basic land types among lands you control"
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

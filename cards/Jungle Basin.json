@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f922f90a-b1a2-4630-9266-40726ca89f74",
+  "name": "Jungle Basin",
+  "faces": [
+    {
+      "name": "Jungle Basin",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\nWhen this land enters, sacrifice it unless you return an untapped Forest you control to its owner's hand.\n{T}: Add {C}{G}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land enters, sacrifice it unless you return an untapped Forest you control to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "it_unless_you_return_an_untapped_forest_you_control_to_its_owners_hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}{G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{c}",
+                "{g}"
+              ],
+              "distribution": "fixed_sequence"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

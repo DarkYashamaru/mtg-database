@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "96232342-3ec7-4740-a114-969537b8f2fc",
+  "name": "Ballynock Trapper",
+  "faces": [
+    {
+      "name": "Ballynock Trapper",
+      "type_line": "Creature \u2014 Kithkin Soldier",
+      "oracle_text": "{T}: Tap target creature.\nWhenever you cast a white spell, you may untap this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a white spell, you may untap this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "White"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Tap target creature.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

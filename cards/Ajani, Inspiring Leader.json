@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "15474e82-94b4-47e1-b91c-3deaf4dbffd6",
+  "name": "Ajani, Inspiring Leader",
+  "faces": [
+    {
+      "name": "Ajani, Inspiring Leader",
+      "type_line": "Legendary Planeswalker \u2014 Ajani",
+      "oracle_text": "+2: You gain 2 life. Put two +1/+1 counters on up to one target creature.\n\u22123: Exile target creature. Its controller gains 2 life.\n\u221210: Creatures you control gain flying and double strike until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+2: You gain 2 life. Put two +1/+1 counters on up to one target creature.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "up_to_one_target_creature",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Exile target creature. Its controller gains 2 life.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_creature"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Its controller gains 2 life"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u221210: Creatures you control gain flying and double strike until end of turn.",
+          "cost": "\u221210",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "flying_and_double_strike"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

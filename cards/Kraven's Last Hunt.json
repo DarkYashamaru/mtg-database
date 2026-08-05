@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e74efcf2-d77f-4fb5-9027-77e462ec829e",
+  "name": "Kraven's Last Hunt",
+  "faces": [
+    {
+      "name": "Kraven's Last Hunt",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Mill five cards. When you do, this Saga deals damage equal to the greatest power among creature cards in your graveyard to target creature.\nII \u2014 Target creature you control gets +2/+2 until end of turn.\nIII \u2014 Return target creature card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Mill five cards. When you do, this Saga deals damage equal to the greatest power among creature cards in your graveyard to target creature.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 5
+            },
+            {
+              "action": "custom_effect",
+              "text": "this saga deals damage equal to the greatest power among creature cards in your graveyard to target creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Target creature you control gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Return target creature card from your graveyard to your hand.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

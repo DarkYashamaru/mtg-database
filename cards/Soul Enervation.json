@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b4508a3-1d21-46ec-8a50-cd3171a7348a",
+  "name": "Soul Enervation",
+  "faces": [
+    {
+      "name": "Soul Enervation",
+      "type_line": "Enchantment",
+      "oracle_text": "Flash\nWhen this enchantment enters, target creature gets -4/-4 until end of turn.\nWhenever one or more creature cards leave your graveyard, each opponent loses 1 life and you gain 1 life.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, target creature gets -4/-4 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -4,
+              "toughness_delta": -4
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more creature cards leave your graveyard, each opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more creature cards leave your graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

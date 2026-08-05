@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3d98a656-1737-486f-9b25-449b7c871d1f",
+  "name": "Aurification",
+  "faces": [
+    {
+      "name": "Aurification",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature deals damage to you, put a gold counter on it.\nEach creature with a gold counter on it is a Wall in addition to its other creature types and has defender. (Those creatures can't attack.)\nWhen this enchantment leaves the battlefield, remove all gold counters from all creatures.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature deals damage to you, put a gold counter on it.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature deals damage to you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a gold counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this enchantment leaves the battlefield, remove all gold counters from all creatures.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove all gold counters from all creatures"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Each creature with a gold counter on it is a Wall in addition to its other creature types and has defender. (Those creatures can't attack.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each creature with a gold counter on it is a Wall in addition to its other creature types and has defender"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

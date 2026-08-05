@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9bc966b3-1b6e-4bea-ab1d-321bc03d2bc7",
+  "name": "Dragonsguard Elite",
+  "faces": [
+    {
+      "name": "Dragonsguard Elite",
+      "type_line": "Creature \u2014 Human Druid",
+      "oracle_text": "Magecraft \u2014 Whenever you cast or copy an instant or sorcery spell, put a +1/+1 counter on this creature.\n{4}{G}{G}: Double the number of +1/+1 counters on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast or copy an instant or sorcery spell, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "or_copy_an_instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}{G}{G}: Double the number of +1/+1 counters on this creature.",
+          "cost": "{4}{G}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Double the number of +1/+1 counters on this creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8beaaf55-e05d-49c3-9320-c222c4d8ad12",
+  "name": "The Flux",
+  "faces": [
+    {
+      "name": "The Flux",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after VI.)\nI \u2014 This Saga deals 4 damage to target creature an opponent controls.\nII, III, IV, V \u2014 Exile the top card of your library. You may play that card this turn.\nVI \u2014 Add six {R}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 This Saga deals 4 damage to target creature an opponent controls.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Saga deals 4 damage to target creature an opponent controls"
+            }
+          ]
+        },
+        {
+          "raw_text": "II, III, IV, V \u2014 Exile the top card of your library. You may play that card this turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II",
+              "III",
+              "IV",
+              "V"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "VI \u2014 Add six {R}.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "VI"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add six {R}"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

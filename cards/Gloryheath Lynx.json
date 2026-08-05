@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "28673657-f05f-4b0a-b80c-939773abdefb",
+  "name": "Gloryheath Lynx",
+  "faces": [
+    {
+      "name": "Gloryheath Lynx",
+      "type_line": "Creature \u2014 Cat Mount",
+      "oracle_text": "Lifelink\nWhenever this creature attacks while saddled, search your library for a basic Plains card, reveal it, put it into your hand, then shuffle.\nSaddle 2 (Tap any number of other creatures you control with total power 2 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks while saddled, search your library for a basic Plains card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "attacks_while_saddled",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a basic plains card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Saddle 2 (Tap any number of other creatures you control with total power 2 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+          "cost": "Saddle 2 (Tap any number of other creatures you control with total power 2 or more",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Mount becomes saddled until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

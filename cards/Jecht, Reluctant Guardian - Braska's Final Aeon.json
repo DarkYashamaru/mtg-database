@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b6cebf8d-37e1-42de-b3f1-1c174ab17ac8",
+  "name": "Jecht, Reluctant Guardian // Braska's Final Aeon",
+  "faces": [
+    {
+      "name": "Braska's Final Aeon",
+      "type_line": "Legendary Enchantment Creature \u2014 Saga Nightmare",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II \u2014 Jecht Beam \u2014 Each opponent discards a card and you draw a card.\nIII \u2014 Ultimate Jecht Shot \u2014 Each opponent sacrifices two creatures of their choice.\nMenace",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Jecht Beam \u2014 Each opponent discards a card and you draw a card.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Jecht Beam \u2014 Each opponent discards a card and you draw a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Ultimate Jecht Shot \u2014 Each opponent sacrifices two creatures of their choice.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ultimate Jecht Shot \u2014 Each opponent sacrifices two creatures of their choice"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Jecht, Reluctant Guardian",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "Menace\nWhenever Jecht deals combat damage to a player, you may exile it, then return it to the battlefield transformed under its owner's control.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Jecht deals combat damage to a player, you may exile it, then return it to the battlefield transformed under its owner's control.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield transformed under its owner's control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

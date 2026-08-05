@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a720f3d3-c2d7-4e50-8cc6-600120380e9c",
+  "name": "Voldaren Bloodcaster // Bloodbat Summoner",
+  "faces": [
+    {
+      "name": "Bloodbat Summoner",
+      "type_line": "Creature \u2014 Vampire Wizard",
+      "oracle_text": "Flying\nAt the beginning of combat on your turn, up to one target Blood token you control becomes a 2/2 black Bat creature with flying and haste in addition to its other types.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, up to one target Blood token you control becomes a 2/2 black Bat creature with flying and haste in addition to its other types.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "up to one target Blood token you control becomes a 2/2 black Bat creature with flying and haste in addition to its other types"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Voldaren Bloodcaster",
+      "type_line": "Creature \u2014 Vampire Wizard",
+      "oracle_text": "Flying\nWhenever this creature or another nontoken creature you control dies, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")\nWhenever you create a Blood token, if you control five or more Blood tokens, transform this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another nontoken creature you control dies, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Blood token"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you create a Blood token, if you control five or more Blood tokens, transform this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you create a Blood token"
+          },
+          "condition": [
+            {
+              "condition_text": "you control five or more Blood tokens"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

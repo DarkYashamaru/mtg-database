@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d55f6c70-321f-4fb4-bd33-0850ae1a7c36",
+  "name": "Narset's Reversal",
+  "faces": [
+    {
+      "name": "Narset's Reversal",
+      "type_line": "Instant",
+      "oracle_text": "Copy target instant or sorcery spell, then return it to its owner's hand. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Copy target instant or sorcery spell, then return it to its owner's hand. You may choose new targets for the copy.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy target instant or sorcery spell"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

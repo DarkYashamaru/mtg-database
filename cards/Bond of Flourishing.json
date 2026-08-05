@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e9c9e730-3b73-48e3-845b-1b7f2d16050c",
+  "name": "Bond of Flourishing",
+  "faces": [
+    {
+      "name": "Bond of Flourishing",
+      "type_line": "Sorcery",
+      "oracle_text": "Look at the top three cards of your library. You may reveal a permanent card from among them and put it into your hand. Put the rest on the bottom of your library in any order. You gain 3 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Look at the top three cards of your library. You may reveal a permanent card from among them and put it into your hand. Put the rest on the bottom of your library in any order. You gain 3 life.",
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "subtypes_any": [
+                  "Permanent"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "any"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0b683611-e46f-4105-b336-014d1556c8de",
+  "name": "Haunt of the Dead Marshes",
+  "faces": [
+    {
+      "name": "Haunt of the Dead Marshes",
+      "type_line": "Creature \u2014 Nightmare Elf",
+      "oracle_text": "When this creature enters, scry 1.\n{2}{B}: Return this card from your graveyard to the battlefield tapped. Activate only if you control a legendary creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, scry 1.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{B}: Return this card from your graveyard to the battlefield tapped. Activate only if you control a legendary creature.",
+          "cost": "{2}{B}",
+          "condition": [
+            {
+              "condition_text": "you control a legendary creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield",
+              "tapped": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

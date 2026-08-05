@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ed622e71-f348-4e46-8fb9-05aae430983a",
+  "name": "Ugin's Binding",
+  "faces": [
+    {
+      "name": "Ugin's Binding",
+      "type_line": "Instant",
+      "oracle_text": "Devoid (This card has no color.)\nReturn target nonland permanent you don't control to its owner's hand.\nWhenever you cast a colorless spell with mana value 7 or greater, you may exile this card from your graveyard. When you do, return each nonland permanent you don't control to its owner's hand.",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a colorless spell with mana value 7 or greater, you may exile this card from your graveyard. When you do, return each nonland permanent you don't control to its owner's hand.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 7
+            },
+            {
+              "spell_subtypes_all": [
+                "Colorles"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile this card from your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return each nonland permanent you don't control to its owner's hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target nonland permanent you don't control to its owner's hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target nonland permanent you don't control to its owner's hand"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

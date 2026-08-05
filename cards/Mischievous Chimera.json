@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5cc57770-1070-45f6-9d76-d402c55a0d06",
+  "name": "Mischievous Chimera",
+  "faces": [
+    {
+      "name": "Mischievous Chimera",
+      "type_line": "Enchantment Creature \u2014 Chimera",
+      "oracle_text": "Flying\nWhenever you cast your first spell during each opponent's turn, this creature deals 1 damage to each opponent. Scry 1.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your first spell during each opponent's turn, this creature deals 1 damage to each opponent. Scry 1.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "turn_scope": "each_opponents_turn"
+            },
+            {
+              "spell_cast_count_this_turn": 1
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

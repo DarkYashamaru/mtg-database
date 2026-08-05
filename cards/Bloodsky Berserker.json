@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ed04f170-a4d9-4151-b4ae-1200d523dc6b",
+  "name": "Bloodsky Berserker",
+  "faces": [
+    {
+      "name": "Bloodsky Berserker",
+      "type_line": "Creature \u2014 Human Berserker",
+      "oracle_text": "Whenever you cast your second spell each turn, put two +1/+1 counters on this creature. It gains menace until end of turn. (It can't be blocked except by two or more creatures.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, put two +1/+1 counters on this creature. It gains menace until end of turn. (It can't be blocked except by two or more creatures.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

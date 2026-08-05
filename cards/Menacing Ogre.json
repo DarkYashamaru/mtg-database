@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8efcd591-c576-4d25-9670-578c5e3263a1",
+  "name": "Menacing Ogre",
+  "faces": [
+    {
+      "name": "Menacing Ogre",
+      "type_line": "Creature \u2014 Ogre",
+      "oracle_text": "Trample, haste\nWhen this creature enters, each player secretly chooses a number. Then those numbers are revealed. Each player with the highest number loses that much life. If you are one of those players, put two +1/+1 counters on this creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, each player secretly chooses a number. Then those numbers are revealed. Each player with the highest number loses that much life. If you are one of those players, put two +1/+1 counters on this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player secretly chooses a number"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then those numbers are revealed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each player with the highest number loses that much life"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "you are one of those players"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

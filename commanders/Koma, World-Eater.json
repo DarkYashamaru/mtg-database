@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1ebf2142-f171-40cd-8143-15f50084b707",
+  "name": "Koma, World-Eater",
+  "faces": [
+    {
+      "name": "Koma, World-Eater",
+      "type_line": "Legendary Creature \u2014 Serpent",
+      "oracle_text": "This spell can't be countered.\nTrample, ward {4}\nWhenever Koma deals combat damage to a player, create four 3/3 blue Serpent creature tokens named Koma's Coil.",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "ward",
+          "amount": 4
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Koma deals combat damage to a player, create four 3/3 blue Serpent creature tokens named Koma's Coil.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create four 3/3 blue Serpent creature tokens named Koma's Coil"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell can't be countered.",
+          "effects": [
+            {
+              "action": "cant_be_countered",
+              "target": "self_spell"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "15d5b198-edbe-40f3-87e2-d72f7f0c58ab",
+  "name": "Dance of the Dead",
+  "faces": [
+    {
+      "name": "Dance of the Dead",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature card in a graveyard\nWhen this Aura enters, if it's on the battlefield, it loses \"enchant creature card in a graveyard\" and gains \"enchant creature put onto the battlefield with this Aura.\" Put enchanted creature card onto the battlefield tapped under your control and attach this Aura to it. When this Aura leaves the battlefield, that creature's controller sacrifices it.\nEnchanted creature gets +1/+1 and doesn't untap during its controller's untap step.\nAt the beginning of the upkeep of enchanted creature's controller, that player may pay {1}{B}. If the player does, untap that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, if it's on the battlefield, it loses \"enchant creature card in a graveyard\" and gains \"enchant creature put onto the battlefield with this Aura.\" Put enchanted creature card onto the battlefield tapped under your control and attach this Aura to it. When this Aura leaves the battlefield, that creature's controller sacrifices it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [
+            {
+              "condition_text": "it's on the battlefield"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it loses \"enchant creature card in a graveyard\" and gains \"enchant creature put onto the battlefield with this Aura.\" Put enchanted creature card onto the battlefield tapped under your control and attach this Aura to it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "When this Aura leaves the battlefield, that creature's controller sacrifices it"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of the upkeep of enchanted creature's controller, that player may pay {1}{B}. If the player does, untap that creature.",
+          "trigger": {
+            "type": "beginning_of_upkeep_of_enchanted_creatures_controller"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player may pay {1}{B}"
+            },
+            {
+              "action": "untap",
+              "target": "that_creature",
+              "condition": [
+                {
+                  "condition_text": "the player does"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature card in a graveyard",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_card_in_a_graveyard"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1 and doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+1 and doesn't untap during its controller's untap step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

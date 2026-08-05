@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7baffe00-78a4-4675-9c74-29eb3882bd01",
+  "name": "Kami of Transience",
+  "faces": [
+    {
+      "name": "Kami of Transience",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Trample\nWhenever you cast an enchantment spell, put a +1/+1 counter on this creature.\nAt the beginning of each end step, if an enchantment was put into your graveyard from the battlefield this turn, you may return this card from your graveyard to your hand.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an enchantment spell, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Enchantment"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each end step, if an enchantment was put into your graveyard from the battlefield this turn, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "an enchantment was put into your graveyard from the battlefield this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

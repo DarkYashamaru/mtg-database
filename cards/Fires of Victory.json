@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d6afb1a9-c9ed-4a56-ba7d-700ab71f2e0d",
+  "name": "Fires of Victory",
+  "faces": [
+    {
+      "name": "Fires of Victory",
+      "type_line": "Instant",
+      "oracle_text": "Kicker {2}{U} (You may pay an additional {2}{U} as you cast this spell.)\nIf this spell was kicked, draw a card. Fires of Victory deals damage to target creature or planeswalker equal to the number of cards in your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2}{U} (You may pay an additional {2}{U} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}{U}"
+            }
+          ]
+        },
+        {
+          "raw_text": "If this spell was kicked, draw a card. Fires of Victory deals damage to target creature or planeswalker equal to the number of cards in your hand.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Fires of Victory deals damage to target creature or planeswalker equal to the number of cards in your hand"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

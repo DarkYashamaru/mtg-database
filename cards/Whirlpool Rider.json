@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "oracle_id": "13a3f2c1-0454-4661-a462-542254f8360d",
+  "name": "Whirlpool Rider",
+  "faces": [
+    {
+      "name": "Whirlpool Rider",
+      "type_line": "Creature \u2014 Merfolk",
+      "oracle_text": "When this creature enters, shuffle the cards from your hand into your library, then draw that many cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, shuffle the cards from your hand into your library, then draw that many cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "shuffle the cards from your hand into your library"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

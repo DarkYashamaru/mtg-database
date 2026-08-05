@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "99e96711-90ea-4f6b-a92d-d8ddd06e8750",
+  "name": "Sky Theater Strix",
+  "faces": [
+    {
+      "name": "Sky Theater Strix",
+      "type_line": "Creature \u2014 Bird",
+      "oracle_text": "Flying\nWhenever you cast a noncreature spell, this creature gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, this creature gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

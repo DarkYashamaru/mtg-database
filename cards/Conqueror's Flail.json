@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9aace0d3-89e6-4254-b96f-ee3a878f2f91",
+  "name": "Conqueror's Flail",
+  "faces": [
+    {
+      "name": "Conqueror's Flail",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +1/+1 for each color among permanents you control.\nAs long as this Equipment is attached to a creature, your opponents can't cast spells during your turn.\nEquip {2}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +1/+1 for each color among permanents you control.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": {
+                "kind": "count_colors_among",
+                "object": {
+                  "selector": "permanents_you_control"
+                }
+              },
+              "toughness_delta": {
+                "kind": "count_colors_among",
+                "object": {
+                  "selector": "permanents_you_control"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as this Equipment is attached to a creature, your opponents can't cast spells during your turn.",
+          "effects": [
+            {
+              "action": "casting_restriction",
+              "target": "your_opponents",
+              "restriction": "cant_cast_spells",
+              "condition": [
+                {
+                  "subject": "self",
+                  "state": "attached_to_creature"
+                },
+                {
+                  "turn_scope": "your_turn"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

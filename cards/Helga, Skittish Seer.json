@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0a0d25a8-4f28-453b-9270-4d449fe0ca65",
+  "name": "Helga, Skittish Seer",
+  "faces": [
+    {
+      "name": "Helga, Skittish Seer",
+      "type_line": "Legendary Creature \u2014 Frog Druid",
+      "oracle_text": "Whenever you cast a creature spell with mana value 4 or greater, you draw a card, gain 1 life, and put a +1/+1 counter on Helga.\n{T}: Add X mana of any one color, where X is Helga's power. Spend this mana only to cast creature spells with mana value 4 or greater or creature spells with {X} in their mana costs.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a creature spell with mana value 4 or greater, you draw a card, gain 1 life, and put a +1/+1 counter on Helga.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 4
+            },
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you draw a card, gain 1 life, and put a +1/+1 counter on Helga"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add X mana of any one color, where X is Helga's power. Spend this mana only to cast creature spells with mana value 4 or greater or creature spells with {X} in their mana costs.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add X mana of any one color, where X is Helga's power"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to cast creature spells with mana value 4 or greater or creature spells with {X} in their mana costs"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

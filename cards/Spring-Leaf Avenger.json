@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "19797dd6-6f48-47bc-a9ac-84d4acad3fa5",
+  "name": "Spring-Leaf Avenger",
+  "faces": [
+    {
+      "name": "Spring-Leaf Avenger",
+      "type_line": "Creature \u2014 Insect Ninja",
+      "oracle_text": "Ninjutsu {3}{G} ({3}{G}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever this creature deals combat damage to a player, return target permanent card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, return target permanent card from your graveyard to your hand.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target permanent card from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Ninjutsu {3}{G} ({3}{G}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)",
+          "cost": "Ninjutsu {3}{G} ({3}{G}, Return an unblocked attacker you control to hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "object": "self",
+              "source_zone": "hand",
+              "destination_zone": "battlefield",
+              "tapped": true,
+              "attacking": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8aac06d0-c353-4af9-a243-feb59b9d0c54",
+  "name": "Malicious Intent",
+  "faces": [
+    {
+      "name": "Malicious Intent",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature has \"{T}: Target creature can't block this turn.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Enchanted creature has \"{T}: Target creature can't block this turn.\"",
+          "cost": "Enchanted creature has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

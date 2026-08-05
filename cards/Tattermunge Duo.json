@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a56d13b5-a84d-4629-b9ec-4f407ee62596",
+  "name": "Tattermunge Duo",
+  "faces": [
+    {
+      "name": "Tattermunge Duo",
+      "type_line": "Creature \u2014 Goblin Warrior Shaman",
+      "oracle_text": "Whenever you cast a red spell, this creature gets +1/+1 until end of turn.\nWhenever you cast a green spell, this creature gains forestwalk until end of turn. (It can't be blocked as long as defending player controls a Forest.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a red spell, this creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Red"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a green spell, this creature gains forestwalk until end of turn. (It can't be blocked as long as defending player controls a Forest.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Green"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "forestwalk"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e554646f-27c0-49b3-a92c-2191e87d87b7",
+  "name": "Sunstrike Legionnaire",
+  "faces": [
+    {
+      "name": "Sunstrike Legionnaire",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "This creature doesn't untap during your untap step.\nWhenever another creature enters, untap this creature.\n{T}: Tap target creature with mana value 3 or less.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature enters, untap this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "another_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Tap target creature with mana value 3 or less.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Tap target creature with mana value 3 or less"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature doesn't untap during your untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "self",
+              "scope": "your_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

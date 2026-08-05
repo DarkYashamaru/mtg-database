@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "189131b7-ed59-4750-a4ed-453e4497a5c8",
+  "name": "Indulging Patrician",
+  "faces": [
+    {
+      "name": "Indulging Patrician",
+      "type_line": "Creature \u2014 Vampire Noble",
+      "oracle_text": "Flying\nLifelink (Damage dealt by this creature also causes you to gain that much life.)\nAt the beginning of your end step, if you gained 3 or more life this turn, each opponent loses 3 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if you gained 3 or more life this turn, each opponent loses 3 life.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you gained 3 or more life this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

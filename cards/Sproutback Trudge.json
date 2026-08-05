@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d9826660-0f34-4d82-8915-cf2796ab8d9a",
+  "name": "Sproutback Trudge",
+  "faces": [
+    {
+      "name": "Sproutback Trudge",
+      "type_line": "Creature \u2014 Fungus Beast",
+      "oracle_text": "This spell costs {X} less to cast, where X is the amount of life you gained this turn.\nTrample\nAt the beginning of your end step, if you gained life this turn, you may cast this creature from your graveyard.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if you gained life this turn, you may cast this creature from your graveyard.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you gained life this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may cast this creature from your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {X} less to cast, where X is the amount of life you gained this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {X} less to cast, where X is the amount of life you gained this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

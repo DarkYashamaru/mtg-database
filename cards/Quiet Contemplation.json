@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f87dfde4-8c57-4543-826c-6b3cf9c11b90",
+  "name": "Quiet Contemplation",
+  "faces": [
+    {
+      "name": "Quiet Contemplation",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cast a noncreature spell, you may pay {1}. If you do, tap target creature an opponent controls and it doesn't untap during its controller's next untap step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, you may pay {1}. If you do, tap target creature an opponent controls and it doesn't untap during its controller's next untap step.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "tap target creature an opponent controls and it doesn't untap during its controller's next untap step",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

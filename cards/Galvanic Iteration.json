@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c51ed6e3-813b-49c4-b1de-7f92a77f8f6e",
+  "name": "Galvanic Iteration",
+  "faces": [
+    {
+      "name": "Galvanic Iteration",
+      "type_line": "Instant",
+      "oracle_text": "When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.\nFlashback {1}{U}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you next cast an instant or sorcery spell this turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy that spell"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Flashback {1}{U}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flashback {1}{U}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

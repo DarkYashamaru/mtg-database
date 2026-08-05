@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "30af656a-99ab-4e0a-81fe-3cdb0ea6a0cc",
+  "name": "Curious Forager",
+  "faces": [
+    {
+      "name": "Curious Forager",
+      "type_line": "Creature \u2014 Squirrel Druid",
+      "oracle_text": "When this creature enters, you may forage. When you do, return target permanent card from your graveyard to your hand. (To forage, exile three cards from your graveyard or sacrifice a Food.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may forage. When you do, return target permanent card from your graveyard to your hand. (To forage, exile three cards from your graveyard or sacrifice a Food.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may forage"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return target permanent card from your graveyard to your hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9ec43ec6-b625-4be8-8f79-3679e6657dbc",
+  "name": "Mycosynth Wellspring",
+  "faces": [
+    {
+      "name": "Mycosynth Wellspring",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters or is put into a graveyard from the battlefield, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters or is put into a graveyard from the battlefield, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact enters or is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

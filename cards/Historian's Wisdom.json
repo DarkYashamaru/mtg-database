@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7c2c460d-8059-41ff-b2d7-374aa498f011",
+  "name": "Historian's Wisdom",
+  "faces": [
+    {
+      "name": "Historian's Wisdom",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant artifact or creature\nWhen this Aura enters, if enchanted permanent is a creature with the greatest power among creatures on the battlefield, draw a card.\nAs long as enchanted permanent is a creature, it gets +2/+1.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, if enchanted permanent is a creature with the greatest power among creatures on the battlefield, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [
+            {
+              "condition_text": "enchanted permanent is a creature with the greatest power among creatures on the battlefield"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant artifact or creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "artifact_or_creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted permanent is a creature, it gets +2/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "as_long_as_enchanted_permanent_is_a_creature_it",
+              "power_delta": 2,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

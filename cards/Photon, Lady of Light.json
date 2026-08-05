@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2d0aa801-1227-4226-8c27-3bdd441857aa",
+  "name": "Photon, Lady of Light",
+  "faces": [
+    {
+      "name": "Photon, Lady of Light",
+      "type_line": "Legendary Creature \u2014 Human Hero",
+      "oracle_text": "Flying\nWhenever Photon attacks, exile up to one other target creature you control, then return that card to the battlefield under its owner's control.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Photon attacks, exile up to one other target creature you control, then return that card to the battlefield under its owner's control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one other target creature you control"
+            },
+            {
+              "action": "move_card",
+              "target": "that_card",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

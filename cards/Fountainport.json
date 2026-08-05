@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "94e8b0a9-44a1-4dce-8d44-78681ae638a1",
+  "name": "Fountainport",
+  "faces": [
+    {
+      "name": "Fountainport",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{2}, {T}, Sacrifice a token: Draw a card.\n{3}, {T}, Pay 1 life: Create a 1/1 blue Fish creature token.\n{4}, {T}: Create a Treasure token.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}, Sacrifice a token: Draw a card.",
+          "cost": "{2}, {T}, Sacrifice a token",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}, {T}, Pay 1 life: Create a 1/1 blue Fish creature token.",
+          "cost": "{3}, {T}, Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 blue Fish creature token",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Fish"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}, {T}: Create a Treasure token.",
+          "cost": "{4}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

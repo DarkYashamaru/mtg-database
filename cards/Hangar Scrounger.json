@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1b74fb9-8ef3-40be-bc79-45ffb4c597eb",
+  "name": "Hangar Scrounger",
+  "faces": [
+    {
+      "name": "Hangar Scrounger",
+      "type_line": "Creature \u2014 Dwarf Pilot",
+      "oracle_text": "Backup 1 (When this creature enters, put a +1/+1 counter on target creature. If that's another creature, it gains the following ability until end of turn.)\nWhenever this creature becomes tapped, you may discard a card. If you do, draw a card.",
+      "static": [
+        {
+          "keyword": "backup",
+          "amount": 1
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes tapped, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes tapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

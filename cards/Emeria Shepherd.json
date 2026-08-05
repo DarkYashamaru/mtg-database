@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "473da1b6-232b-4428-a66d-30262246b47a",
+  "name": "Emeria Shepherd",
+  "faces": [
+    {
+      "name": "Emeria Shepherd",
+      "type_line": "Creature \u2014 Angel",
+      "oracle_text": "Flying\nLandfall \u2014 Whenever a land you control enters, you may return target nonland permanent card from your graveyard to your hand. If that land is a Plains, you may return that nonland permanent card to the battlefield instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, you may return target nonland permanent card from your graveyard to your hand. If that land is a Plains, you may return that nonland permanent card to the battlefield instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return target nonland permanent card from your graveyard to your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may return that nonland permanent card to the battlefield instead",
+              "condition": [
+                {
+                  "condition_text": "that land is a plains"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

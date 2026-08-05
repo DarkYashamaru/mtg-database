@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "87aa466e-7985-40ff-bef6-dcae35fe0106",
+  "name": "Mossbridge Troll",
+  "faces": [
+    {
+      "name": "Mossbridge Troll",
+      "type_line": "Creature \u2014 Troll",
+      "oracle_text": "If this creature would be destroyed, regenerate it.\nTap any number of untapped creatures you control other than this creature with total power 10 or greater: This creature gets +20/+20 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Tap any number of untapped creatures you control other than this creature with total power 10 or greater: This creature gets +20/+20 until end of turn.",
+          "cost": "Tap any number of untapped creatures you control other than this creature with total power 10 or greater",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 20,
+              "toughness_delta": 20
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If this creature would be destroyed, regenerate it.",
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "this creature would be destroyed"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

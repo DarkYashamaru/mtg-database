@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c90da077-de8c-4402-abfc-b63dd15853da",
+  "name": "Broodguard Elite",
+  "faces": [
+    {
+      "name": "Broodguard Elite",
+      "type_line": "Creature \u2014 Insect Knight",
+      "oracle_text": "This creature enters with X +1/+1 counters on it.\nWhen this creature leaves the battlefield, put its counters on target creature you control.\nWarp {X}{G} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature leaves the battlefield, put its counters on target creature you control.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put its counters on target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        },
+        {
+          "raw_text": "Warp {X}{G} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Warp {X}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

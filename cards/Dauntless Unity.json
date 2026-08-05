@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dc665ddc-4326-4860-94ba-c40ced8b0af6",
+  "name": "Dauntless Unity",
+  "faces": [
+    {
+      "name": "Dauntless Unity",
+      "type_line": "Instant",
+      "oracle_text": "Kicker {1}{W} (You may pay an additional {1}{W} as you cast this spell.)\nCreatures you control get +1/+1 until end of turn. If this spell was kicked, those creatures get +2/+1 until end of turn instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{W} (You may pay an additional {1}{W} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{W}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures you control get +1/+1 until end of turn. If this spell was kicked, those creatures get +2/+1 until end of turn instead.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "those creatures get +2/+1 until end of turn instead",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

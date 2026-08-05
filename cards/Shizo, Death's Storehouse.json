@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "008f2698-1721-45a3-8353-10f2f400dc8f",
+  "name": "Shizo, Death's Storehouse",
+  "faces": [
+    {
+      "name": "Shizo, Death's Storehouse",
+      "type_line": "Legendary Land",
+      "oracle_text": "{T}: Add {B}.\n{B}, {T}: Target legendary creature gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{B}, {T}: Target legendary creature gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)",
+          "cost": "{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_legendary_creature",
+              "keyword": "fear"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

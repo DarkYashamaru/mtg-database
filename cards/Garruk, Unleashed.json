@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "32ea6b1c-d48e-4663-ad5c-d7f4a85450af",
+  "name": "Garruk, Unleashed",
+  "faces": [
+    {
+      "name": "Garruk, Unleashed",
+      "type_line": "Legendary Planeswalker \u2014 Garruk",
+      "oracle_text": "+1: Up to one target creature gets +3/+3 and gains trample until end of turn.\n\u22122: Create a 3/3 green Beast creature token. Then if an opponent controls more creatures than you, put a loyalty counter on Garruk.\n\u22127: You get an emblem with \"At the beginning of your end step, you may search your library for a creature card, put it onto the battlefield, then shuffle.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Up to one target creature gets +3/+3 and gains trample until end of turn.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "up_to_one_target_creature_gets_33_and",
+              "keyword": "trample"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Create a 3/3 green Beast creature token. Then if an opponent controls more creatures than you, put a loyalty counter on Garruk.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/3 green Beast creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Beast"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a loyalty counter on garruk",
+              "condition": [
+                {
+                  "condition_text": "an opponent controls more creatures than you"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: You get an emblem with \"At the beginning of your end step, you may search your library for a creature card, put it onto the battlefield, then shuffle.\"",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get an emblem with \"at the beginning of your end step, you may search your library for a creature card, put it onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

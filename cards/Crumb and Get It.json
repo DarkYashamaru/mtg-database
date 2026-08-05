@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93596258-bb44-4aa3-833d-9a0ab16b5ec1",
+  "name": "Crumb and Get It",
+  "faces": [
+    {
+      "name": "Crumb and Get It",
+      "type_line": "Instant",
+      "oracle_text": "Gift a Food (You may promise an opponent a gift as you cast this spell. If you do, they create a Food token before its other effects. It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nTarget creature you control gets +2/+2 until end of turn. If the gift was promised, that creature also gains indestructible until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Gift a Food (You may promise an opponent a gift as you cast this spell. If you do, they create a Food token before its other effects. It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "cost": "Gift a Food (You may promise an opponent a gift as you cast this spell. If you do, they create a Food token before its other effects. It's an artifact with \"{2}, {T}, Sacrifice this token",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature you control gets +2/+2 until end of turn. If the gift was promised, that creature also gains indestructible until end of turn.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature_also",
+              "keyword": "indestructible",
+              "condition": [
+                {
+                  "condition_text": "the gift was promised"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

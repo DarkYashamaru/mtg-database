@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1d09ebb7-c4c9-4bb7-b6bf-3c8330b954e8",
+  "name": "Tymaret Calls the Dead",
+  "faces": [
+    {
+      "name": "Tymaret Calls the Dead",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II \u2014 Mill three cards. Then you may exile a creature or enchantment card from your graveyard. If you do, create a 2/2 black Zombie creature token.\nIII \u2014 You gain X life and scry X, where X is the number of Zombies you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Mill three cards. Then you may exile a creature or enchantment card from your graveyard. If you do, create a 2/2 black Zombie creature token.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may exile a creature or enchantment card from your graveyard"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "zombie"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 You gain X life and scry X, where X is the number of Zombies you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You gain X life and scry X, where X is the number of Zombies you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

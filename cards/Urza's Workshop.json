@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "71099427-e110-488f-ab29-7867241fc7f0",
+  "name": "Urza's Workshop",
+  "faces": [
+    {
+      "name": "Urza's Workshop",
+      "type_line": "Land \u2014 Urza's",
+      "oracle_text": "{T}: Add {C}.\nMetalcraft \u2014 {T}: Add {C} for each Urza's land you control. Activate only if you control three or more artifacts.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "Metalcraft \u2014 {T}: Add {C} for each Urza's land you control. Activate only if you control three or more artifacts.",
+          "cost": "Metalcraft \u2014 {T}",
+          "condition": [
+            {
+              "condition_text": "you control three or more artifacts"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {C} for each Urza's land you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

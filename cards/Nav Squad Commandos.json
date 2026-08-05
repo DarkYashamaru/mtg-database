@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "affdf41e-c851-4f5d-bd3a-7ca7ada4416a",
+  "name": "Nav Squad Commandos",
+  "faces": [
+    {
+      "name": "Nav Squad Commandos",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Battalion \u2014 Whenever this creature and at least two other creatures attack, this creature gets +1/+1 until end of turn. Untap it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature and at least two other creatures attack, this creature gets +1/+1 until end of turn. Untap it.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "attacking_creatures_you_control_gte": 3
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "untap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

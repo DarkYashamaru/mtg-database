@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fd62ad01-601f-4250-bc2a-8ef3982e45c4",
+  "name": "Diregraf Colossus",
+  "faces": [
+    {
+      "name": "Diregraf Colossus",
+      "type_line": "Creature \u2014 Zombie Giant",
+      "oracle_text": "This creature enters with a +1/+1 counter on it for each Zombie card in your graveyard.\nWhenever you cast a Zombie spell, create a tapped 2/2 black Zombie creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Zombie spell, create a tapped 2/2 black Zombie creature token.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Zombie"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "tapped 2/2 black Zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with a +1/+1 counter on it for each Zombie card in your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with a +1/+1 counter on it for each Zombie card in your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

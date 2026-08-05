@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "17e74c4b-435c-469e-a9a4-32bf0cb7634c",
+  "name": "Ravenous Sailback",
+  "faces": [
+    {
+      "name": "Ravenous Sailback",
+      "type_line": "Creature \u2014 Dinosaur",
+      "oracle_text": "When this creature enters, choose one \u2014\n\u2022 This creature gains haste until end of turn.\n\u2022 Destroy target artifact or enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, choose one \u2014\n\u2022 This creature gains haste until end of turn.\n\u2022 Destroy target artifact or enchantment.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "This creature gains haste until end of turn.",
+              "effects": [
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "self",
+                  "keyword": "haste"
+                }
+              ]
+            },
+            {
+              "raw_text": "Destroy target artifact or enchantment.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_permanent",
+                    "card_types_any": [
+                      "Artifact",
+                      "Enchantment"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

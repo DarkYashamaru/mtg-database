@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f4dd9e2-6460-413e-a3b8-96b20bf57f8b",
+  "name": "Warg Rider",
+  "faces": [
+    {
+      "name": "Warg Rider",
+      "type_line": "Creature \u2014 Orc Warrior",
+      "oracle_text": "Menace\nOther Orcs and Goblins you control have menace.\nAt the beginning of combat on your turn, amass Orcs 2. (Put two +1/+1 counters on an Army you control. It's also an Orc. If you don't control an Army, create a 0/0 black Orc Army creature token first.)",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, amass Orcs 2. (Put two +1/+1 counters on an Army you control. It's also an Orc. If you don't control an Army, create a 0/0 black Orc Army creature token first.)",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "amass Orcs 2"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Orcs and Goblins you control have menace.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "subtypes": [
+                  "Orc",
+                  "And",
+                  "Goblin"
+                ]
+              },
+              "keywords": [
+                "menace"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f4378682-359f-48b0-adb7-b996b8d972db",
+  "name": "Acid-Spewer Dragon",
+  "faces": [
+    {
+      "name": "Acid-Spewer Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying, deathtouch\nMegamorph {5}{B}{B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its megamorph cost and put a +1/+1 counter on it.)\nWhen this creature is turned face up, put a +1/+1 counter on each other Dragon creature you control.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, put a +1/+1 counter on each other Dragon creature you control.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Other",
+                  "Dragon"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Megamorph {5}{B}{B} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its megamorph cost and put a +1/+1 counter on it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Megamorph {5}{B}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

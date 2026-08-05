@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "780536da-2923-48e7-916a-61c701382d28",
+  "name": "Tenured Inkcaster",
+  "faces": [
+    {
+      "name": "Tenured Inkcaster",
+      "type_line": "Creature \u2014 Vampire Warlock",
+      "oracle_text": "When this creature enters, put a +1/+1 counter on target creature.\nWhenever a creature you control with a +1/+1 counter on it attacks, each opponent loses 1 life and you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control with a +1/+1 counter on it attacks, each opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "a_creature_you_control_with_a_11_counter_on_it"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

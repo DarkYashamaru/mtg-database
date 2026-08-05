@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93d1e21b-7326-4aad-9f6e-e0e391845a18",
+  "name": "Enduring Angel // Angelic Enforcer",
+  "faces": [
+    {
+      "name": "Angelic Enforcer",
+      "type_line": "Creature \u2014 Angel",
+      "oracle_text": "Flying\nYou have hexproof.\nAngelic Enforcer's power and toughness are each equal to your life total.\nWhenever this creature attacks, double your life total.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, double your life total.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "double your life total"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You have hexproof.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "you"
+              },
+              "keywords": [
+                "hexproof"
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Angelic Enforcer's power and toughness are each equal to your life total.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Angelic Enforcer's power and toughness are each equal to your life total"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Enduring Angel",
+      "type_line": "Creature \u2014 Angel",
+      "oracle_text": "Flying, double strike\nYou have hexproof.\nIf your life total would be reduced to 0 or less, instead transform this creature and your life total becomes 3. Then if this creature didn't transform this way, you lose the game.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You have hexproof.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "you"
+              },
+              "keywords": [
+                "hexproof"
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "If your life total would be reduced to 0 or less, instead transform this creature and your life total becomes 3. Then if this creature didn't transform this way, you lose the game.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "instead transform this creature and your life total becomes 3",
+              "condition": [
+                {
+                  "condition_text": "your life total would be reduced to 0 or less"
+                }
+              ]
+            },
+            {
+              "action": "lose_the_game",
+              "condition": [
+                {
+                  "condition_text": "this creature didn't transform this way"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

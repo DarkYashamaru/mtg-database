@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "oracle_id": "14c8a590-88ec-4982-ad7b-36a219ff6de7",
+  "name": "Tyvar Kell",
+  "faces": [
+    {
+      "name": "Tyvar Kell",
+      "type_line": "Legendary Planeswalker \u2014 Tyvar",
+      "oracle_text": "Elves you control have \"{T}: Add {B}.\"\n+1: Put a +1/+1 counter on up to one target Elf. Untap it. It gains deathtouch until end of turn.\n0: Create a 1/1 green Elf Warrior creature token.\n\u22126: You get an emblem with \"Whenever you cast an Elf spell, it gains haste until end of turn and you draw two cards.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Elves you control have \"{T}: Add {B}.\"",
+          "cost": "Elves you control have \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "+1: Put a +1/+1 counter on up to one target Elf. Untap it. It gains deathtouch until end of turn.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "up_to_one_target_elf",
+              "amount": 1
+            },
+            {
+              "action": "untap",
+              "target": "it"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "deathtouch"
+            }
+          ]
+        },
+        {
+          "raw_text": "0: Create a 1/1 green Elf Warrior creature token.",
+          "cost": "0",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Elf Warrior creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elf",
+                  "Warrior"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: You get an emblem with \"Whenever you cast an Elf spell, it gains haste until end of turn and you draw two cards.\"",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "you_get_an_emblem_with_whenever_you_cast_an_elf_spell_it",
+              "keyword": "haste"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

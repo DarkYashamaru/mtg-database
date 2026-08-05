@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0f12aec9-5898-4261-bebd-1b545e0aea68",
+  "name": "Mind Unbound",
+  "faces": [
+    {
+      "name": "Mind Unbound",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, put a lore counter on this enchantment, then draw a card for each lore counter on this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a lore counter on this enchantment, then draw a card for each lore counter on this enchantment.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a lore counter on this enchantment"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "lore_counter_on_this_enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

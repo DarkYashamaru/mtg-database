@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0d2cdcc6-da65-4f66-ba38-111efad44919",
+  "name": "Deadly Alliance",
+  "faces": [
+    {
+      "name": "Deadly Alliance",
+      "type_line": "Instant",
+      "oracle_text": "This spell costs {1} less to cast for each creature in your party. (Your party consists of up to one each of Cleric, Rogue, Warrior, and Wizard.)\nDestroy target creature or planeswalker.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {1} less to cast for each creature in your party. (Your party consists of up to one each of Cleric, Rogue, Warrior, and Wizard.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {1} less to cast for each creature in your party"
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy target creature or planeswalker.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Creature",
+                  "Planeswalker"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

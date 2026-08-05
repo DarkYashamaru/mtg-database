@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6a9cc11b-a223-46f0-bf58-c1e08ad1253d",
+  "name": "Forum Filibuster",
+  "faces": [
+    {
+      "name": "Forum Filibuster",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, create a 2/1 white and black Inkling creature token with flying. When you do, return up to one target Aura or Equipment card from your graveyard to the battlefield attached to that token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, create a 2/1 white and black Inkling creature token with flying. When you do, return up to one target Aura or Equipment card from your graveyard to the battlefield attached to that token.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/1 white and black Inkling creature token with flying",
+                "colors": [
+                  "white",
+                  "black"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Inkling"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "return up to one target aura or equipment card from your graveyard to the battlefield attached to that token",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

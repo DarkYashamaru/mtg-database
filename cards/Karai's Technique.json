@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e53fb128-bf90-4af6-b998-ef9c250001cb",
+  "name": "Karai's Technique",
+  "faces": [
+    {
+      "name": "Karai's Technique",
+      "type_line": "Sorcery",
+      "oracle_text": "Sneak {W}{B} (You may cast this spell for {W}{B} if you also return an unblocked attacker you control to hand during the declare blockers step.)\nChoose one or both \u2014\n\u2022 Target creature gets +3/+3 until end of turn.\n\u2022 Target creature gets -3/-3 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Sneak {W}{B} (You may cast this spell for {W}{B} if you also return an unblocked attacker you control to hand during the declare blockers step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Sneak {W}{B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Choose one or both \u2014\n\u2022 Target creature gets +3/+3 until end of turn.\n\u2022 Target creature gets -3/-3 until end of turn.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false,
+            "or_both": true
+          },
+          "modes": [
+            {
+              "raw_text": "Target creature gets +3/+3 until end of turn.",
+              "effects": [
+                {
+                  "action": "modify_stats_until_end_of_turn",
+                  "target": "target_creature",
+                  "power_delta": 3,
+                  "toughness_delta": 3
+                }
+              ]
+            },
+            {
+              "raw_text": "Target creature gets -3/-3 until end of turn.",
+              "effects": [
+                {
+                  "action": "modify_stats_until_end_of_turn",
+                  "target": "target_creature",
+                  "power_delta": -3,
+                  "toughness_delta": -3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

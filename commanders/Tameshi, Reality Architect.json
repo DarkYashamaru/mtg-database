@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b47b3cfe-7005-4b33-9d41-83b60808e12b",
+  "name": "Tameshi, Reality Architect",
+  "faces": [
+    {
+      "name": "Tameshi, Reality Architect",
+      "type_line": "Legendary Creature \u2014 Moonfolk Wizard",
+      "oracle_text": "Whenever one or more noncreature permanents are returned to hand, draw a card. This ability triggers only once each turn.\n{X}{W}, Return a land you control to its owner's hand: Return target artifact or enchantment card with mana value X or less from your graveyard to the battlefield. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more noncreature permanents are returned to hand, draw a card. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more noncreature permanents are returned to hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{X}{W}, Return a land you control to its owner's hand: Return target artifact or enchantment card with mana value X or less from your graveyard to the battlefield. Activate only as a sorcery.",
+          "cost": "{X}{W}, Return a land you control to its owner's hand",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target artifact or enchantment card with mana value X or less from your graveyard to the battlefield"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

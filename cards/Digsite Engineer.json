@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e57025ed-3de6-4b2f-92bd-5481fd33b7f1",
+  "name": "Digsite Engineer",
+  "faces": [
+    {
+      "name": "Digsite Engineer",
+      "type_line": "Creature \u2014 Dwarf Artificer",
+      "oracle_text": "Whenever you cast an artifact spell, you may pay {2}. If you do, create a 0/0 colorless Construct artifact creature token with \"This token gets +1/+1 for each artifact you control.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an artifact spell, you may pay {2}. If you do, create a 0/0 colorless Construct artifact creature token with \"This token gets +1/+1 for each artifact you control.\"",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Artifact"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 0/0 colorless construct artifact creature token with \"this token gets +1/+1 for each artifact you control",
+                "power_toughness": "0/0",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "construct",
+                  "artifact"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

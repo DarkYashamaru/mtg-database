@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "57f6a8c2-9d84-4640-9b92-8b8611e05773",
+  "name": "Rilsa Rael, Kingpin",
+  "faces": [
+    {
+      "name": "Rilsa Rael, Kingpin",
+      "type_line": "Legendary Creature \u2014 Human Rogue",
+      "oracle_text": "Deathtouch\nWhen Rilsa Rael enters, you take the initiative.\nWhenever you attack, target attacking creature gains deathtouch until end of turn. If you've completed a dungeon, that creature also gets +5/+0 and gains first strike and menace until end of turn.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Rilsa Rael enters, you take the initiative.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "take_the_initiative"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack, target attacking creature gains deathtouch until end of turn. If you've completed a dungeon, that creature also gets +5/+0 and gains first strike and menace until end of turn.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_attacking_creature",
+              "keyword": "deathtouch"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature_also_gets_50_and",
+              "keyword": "first_strike_and_menace",
+              "condition": [
+                {
+                  "condition_text": "you've completed a dungeon"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

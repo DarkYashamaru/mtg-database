@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "619e0686-e88c-4238-8364-75395e733533",
+  "name": "Kambal, Profiteering Mayor",
+  "faces": [
+    {
+      "name": "Kambal, Profiteering Mayor",
+      "type_line": "Legendary Creature \u2014 Human Advisor",
+      "oracle_text": "Whenever one or more tokens your opponents control enter, for each of them, create a tapped token that's a copy of it. This ability triggers only once each turn.\nWhenever one or more tokens you control enter, each opponent loses 1 life and you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more tokens your opponents control enter, for each of them, create a tapped token that's a copy of it. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more tokens your opponents control enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each of them, create a tapped token that's a copy of it"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more tokens you control enter, each opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more tokens you control enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

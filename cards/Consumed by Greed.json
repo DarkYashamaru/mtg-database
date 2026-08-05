@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b548578c-4910-402c-8e78-498924e0a9be",
+  "name": "Consumed by Greed",
+  "faces": [
+    {
+      "name": "Consumed by Greed",
+      "type_line": "Instant",
+      "oracle_text": "Gift a card (You may promise an opponent a gift as you cast this spell. If you do, they draw a card before its other effects.)\nTarget opponent sacrifices a creature with the greatest power among creatures they control. If the gift was promised, return target creature card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Gift a card (You may promise an opponent a gift as you cast this spell. If you do, they draw a card before its other effects.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gift a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target opponent sacrifices a creature with the greatest power among creatures they control. If the gift was promised, return target creature card from your graveyard to your hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target opponent sacrifices a creature with the greatest power among creatures they control"
+            },
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature_card_in_your_graveyard"
+              },
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "the gift was promised"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

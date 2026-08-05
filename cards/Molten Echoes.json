@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "26486a42-4dc6-472b-9a9b-3c3ca78cc3b5",
+  "name": "Molten Echoes",
+  "faces": [
+    {
+      "name": "Molten Echoes",
+      "type_line": "Enchantment",
+      "oracle_text": "As this enchantment enters, choose a creature type.\nWhenever a nontoken creature you control of the chosen type enters, create a token that's a copy of that creature. That token gains haste. Exile it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken creature you control of the chosen type enters, create a token that's a copy of that creature. That token gains haste. Exile it at the beginning of the next end step.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "a_nontoken_creature_you_control_of_the_chosen_type"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of that creature"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "that_token",
+              "keyword": "haste"
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_end_step"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": "it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this enchantment enters, choose a creature type.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this enchantment enters, choose a creature type"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c68faebc-b2cd-461b-b93e-e1fcd4816810",
+  "name": "Midnight Clock",
+  "faces": [
+    {
+      "name": "Midnight Clock",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {U}.\n{2}{U}: Put an hour counter on this artifact.\nAt the beginning of each upkeep, put an hour counter on this artifact.\nWhen the twelfth hour counter is put on this artifact, shuffle your hand and graveyard into your library, then draw seven cards. Exile this artifact.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, put an hour counter on this artifact.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put an hour counter on this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "When the twelfth hour counter is put on this artifact, shuffle your hand and graveyard into your library, then draw seven cards. Exile this artifact.",
+          "trigger": {
+            "type": "custom",
+            "text": "When the twelfth hour counter is put on this artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "shuffle your hand and graveyard into your library"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 7
+            },
+            {
+              "action": "custom_effect",
+              "text": "Exile this artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{U}: Put an hour counter on this artifact.",
+          "cost": "{2}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put an hour counter on this artifact"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

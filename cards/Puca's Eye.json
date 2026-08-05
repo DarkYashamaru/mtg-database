@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "499b4cf9-2aaa-45a0-8362-77b727b7f7cc",
+  "name": "Puca's Eye",
+  "faces": [
+    {
+      "name": "Puca's Eye",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, draw a card, then choose a color. This artifact becomes the chosen color.\n{3}, {T}: Draw a card. Activate only if there are five colors among permanents you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, draw a card, then choose a color. This artifact becomes the chosen color.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "choose a color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This artifact becomes the chosen color"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}, {T}: Draw a card. Activate only if there are five colors among permanents you control.",
+          "cost": "{3}, {T}",
+          "condition": [
+            {
+              "condition_text": "there are five colors among permanents you control"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

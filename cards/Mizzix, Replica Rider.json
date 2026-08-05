@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "24a7e1d2-0bc9-40a9-a606-f0017bde3dab",
+  "name": "Mizzix, Replica Rider",
+  "faces": [
+    {
+      "name": "Mizzix, Replica Rider",
+      "type_line": "Legendary Creature \u2014 Goblin Wizard",
+      "oracle_text": "Flying\nWhenever you cast a spell from anywhere other than your hand, you may pay {1}{U/R}. If you do, copy that spell and you may choose new targets for the copy. If the copy is a permanent spell, it gains haste and \"At the beginning of your end step, sacrifice this permanent.\" (A copy of a permanent spell becomes a token.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell from anywhere other than your hand, you may pay {1}{U/R}. If you do, copy that spell and you may choose new targets for the copy. If the copy is a permanent spell, it gains haste and \"At the beginning of your end step, sacrifice this permanent.\" (A copy of a permanent spell becomes a token.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell from anywhere other than your hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{U/R}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy that spell",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "it gains haste and \"at the beginning of your end step, sacrifice this permanent",
+              "condition": [
+                {
+                  "condition_text": "the copy is a permanent spell"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

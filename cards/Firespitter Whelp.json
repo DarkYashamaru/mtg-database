@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1cad92ce-55c8-4b78-8d8c-56645ef8e6ee",
+  "name": "Firespitter Whelp",
+  "faces": [
+    {
+      "name": "Firespitter Whelp",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever you cast a noncreature or Dragon spell, this creature deals 1 damage to each opponent.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature or Dragon spell, this creature deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "noncreature",
+                "dragon"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

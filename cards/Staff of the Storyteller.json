@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0c4e2c90-c17b-42cc-b4d7-cf75970fbe90",
+  "name": "Staff of the Storyteller",
+  "faces": [
+    {
+      "name": "Staff of the Storyteller",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, create a 1/1 white Spirit creature token with flying.\nWhenever you create one or more creature tokens, put a story counter on this artifact.\n{W}, {T}, Remove a story counter from this artifact: Draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, create a 1/1 white Spirit creature token with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white Spirit creature token with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Spirit"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you create one or more creature tokens, put a story counter on this artifact.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you create one or more creature tokens"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a story counter on this artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{W}, {T}, Remove a story counter from this artifact: Draw a card.",
+          "cost": "{W}, {T}, Remove a story counter from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

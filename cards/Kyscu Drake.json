@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "94806688-329d-429d-8126-2c9187e71f54",
+  "name": "Kyscu Drake",
+  "faces": [
+    {
+      "name": "Kyscu Drake",
+      "type_line": "Creature \u2014 Drake",
+      "oracle_text": "Flying\n{G}: This creature gets +0/+1 until end of turn. Activate only once each turn.\nSacrifice this creature and a creature named Spitting Drake: Search your library for a card named Viashivan Dragon, put that card onto the battlefield, then shuffle.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{G}: This creature gets +0/+1 until end of turn. Activate only once each turn.",
+          "cost": "{G}",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 0,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Sacrifice this creature and a creature named Spitting Drake: Search your library for a card named Viashivan Dragon, put that card onto the battlefield, then shuffle.",
+          "cost": "Sacrifice this creature and a creature named Spitting Drake",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a card named viashivan dragon, put that card onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

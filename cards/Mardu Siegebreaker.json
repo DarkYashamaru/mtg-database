@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1f82e4b9-e67f-4f34-ac4c-57b0b300ee42",
+  "name": "Mardu Siegebreaker",
+  "faces": [
+    {
+      "name": "Mardu Siegebreaker",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Deathtouch, haste\nWhen this creature enters, exile up to one other target creature you control until this creature leaves the battlefield.\nWhenever this creature attacks, for each opponent, create a tapped token that's a copy of the exiled card attacking that opponent. At the beginning of your next end step, sacrifice those tokens.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, exile up to one other target creature you control until this creature leaves the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one other target creature you control until this creature leaves the battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, for each opponent, create a tapped token that's a copy of the exiled card attacking that opponent. At the beginning of your next end step, sacrifice those tokens.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each opponent, create a tapped token that's a copy of the exiled card attacking that opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "At the beginning of your next end step, sacrifice those tokens"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

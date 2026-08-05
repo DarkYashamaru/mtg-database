@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2b87bcac-ec64-4012-9e75-f459d3640eb3",
+  "name": "Earth's Mightiest Heroes",
+  "faces": [
+    {
+      "name": "Earth's Mightiest Heroes",
+      "type_line": "Sorcery",
+      "oracle_text": "Teamwork 5 (As an additional cost to cast this spell, you may tap any number of creatures you control with total power 5 or more.)\nReveal the top eight cards of your library. You may put a creature card from among them onto the battlefield. If this spell was cast using teamwork, put any number of creature cards from among them onto the battlefield instead. Put the rest into your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Teamwork 5 (As an additional cost to cast this spell, you may tap any number of creatures you control with total power 5 or more.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Teamwork 5"
+            }
+          ]
+        },
+        {
+          "raw_text": "Reveal the top eight cards of your library. You may put a creature card from among them onto the battlefield. If this spell was cast using teamwork, put any number of creature cards from among them onto the battlefield instead. Put the rest into your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Reveal the top eight cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put a creature card from among them onto the battlefield"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put any number of creature cards from among them onto the battlefield instead",
+              "condition": [
+                {
+                  "condition_text": "this spell was cast using teamwork"
+                }
+              ]
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

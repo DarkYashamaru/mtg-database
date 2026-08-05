@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "89812139-9fc1-4fc9-b1d0-d07067d62083",
+  "name": "Azor, the Lawbringer",
+  "faces": [
+    {
+      "name": "Azor, the Lawbringer",
+      "type_line": "Legendary Creature \u2014 Sphinx",
+      "oracle_text": "Flying\nWhen Azor enters, each opponent can't cast instant or sorcery spells during that player's next turn.\nWhenever Azor attacks, you may pay {X}{W}{U}{U}. If you do, you gain X life and draw X cards.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Azor enters, each opponent can't cast instant or sorcery spells during that player's next turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent can't cast instant or sorcery spells during that player's next turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Azor attacks, you may pay {X}{W}{U}{U}. If you do, you gain X life and draw X cards.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {X}{W}{U}{U}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you gain x life",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": "X"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

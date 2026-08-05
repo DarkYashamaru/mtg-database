@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fa5aefaf-432f-41d0-8e54-0e8b7bc7ba98",
+  "name": "Ninja's Kunai",
+  "faces": [
+    {
+      "name": "Ninja's Kunai",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has \"{1}, {T}, Sacrifice Ninja's Kunai: Ninja's Kunai deals 3 damage to any target.\"\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equipped creature has \"{1}, {T}, Sacrifice Ninja's Kunai: Ninja's Kunai deals 3 damage to any target.\"",
+          "cost": "Equipped creature has \"{1}, {T}, Sacrifice Ninja's Kunai",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "363f8c66-fe0c-44b9-987d-1d160e3f9c54",
+  "name": "Urza's Rage",
+  "faces": [
+    {
+      "name": "Urza's Rage",
+      "type_line": "Instant",
+      "oracle_text": "Kicker {8}{R} (You may pay an additional {8}{R} as you cast this spell.)\nThis spell can't be countered.\nUrza's Rage deals 3 damage to any target. If this spell was kicked, instead it deals 10 damage to that permanent or player and the damage can't be prevented.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {8}{R} (You may pay an additional {8}{R} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {8}{R}"
+            }
+          ]
+        },
+        {
+          "raw_text": "This spell can't be countered.",
+          "effects": [
+            {
+              "action": "cant_be_countered",
+              "target": "self_spell"
+            }
+          ]
+        },
+        {
+          "raw_text": "Urza's Rage deals 3 damage to any target. If this spell was kicked, instead it deals 10 damage to that permanent or player and the damage can't be prevented.",
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "instead it deals 10 damage to that permanent or player and the damage can't be prevented",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

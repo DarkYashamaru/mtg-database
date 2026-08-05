@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b2ba6f8-1060-4167-9941-3ab7bd4e0ca8",
+  "name": "Stasis Cell",
+  "faces": [
+    {
+      "name": "Stasis Cell",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature doesn't untap during its controller's untap step.\n{3}{U}: Attach this Aura to target creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{U}: Attach this Aura to target creature.",
+          "cost": "{3}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Attach this Aura to target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "enchanted_creature",
+              "scope": "controllers_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

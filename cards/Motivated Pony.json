@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "44906d21-83cc-49ec-8505-4f7b020ac05f",
+  "name": "Motivated Pony",
+  "faces": [
+    {
+      "name": "Motivated Pony",
+      "type_line": "Creature \u2014 Horse",
+      "oracle_text": "Trample, haste\nWhenever this creature attacks, attacking creatures get +1/+1 until end of turn. If a Food entered under your control this turn, untap those creatures and they get an additional +2/+2 until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, attacking creatures get +1/+1 until end of turn. If a Food entered under your control this turn, untap those creatures and they get an additional +2/+2 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attacking creatures get +1/+1 until end of turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap those creatures and they get an additional +2/+2 until end of turn",
+              "condition": [
+                {
+                  "condition_text": "a food entered under your control this turn"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

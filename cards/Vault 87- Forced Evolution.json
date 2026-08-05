@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1eb22223-edd4-42bf-a127-e16191cbd1c1",
+  "name": "Vault 87: Forced Evolution",
+  "faces": [
+    {
+      "name": "Vault 87: Forced Evolution",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Gain control of target non-Mutant creature for as long as you control this Saga.\nII \u2014 Put a +1/+1 counter on target creature you control. It becomes a Mutant in addition to its other types.\nIII \u2014 Draw cards equal to the greatest power among Mutants you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Gain control of target non-Mutant creature for as long as you control this Saga.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gain control of target non-Mutant creature for as long as you control this Saga"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Put a +1/+1 counter on target creature you control. It becomes a Mutant in addition to its other types.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "It becomes a Mutant in addition to its other types"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Draw cards equal to the greatest power among Mutants you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Draw cards equal to the greatest power among Mutants you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

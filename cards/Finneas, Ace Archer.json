@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "69924636-138e-4baa-a378-0fd7df5b847d",
+  "name": "Finneas, Ace Archer",
+  "faces": [
+    {
+      "name": "Finneas, Ace Archer",
+      "type_line": "Legendary Creature \u2014 Rabbit Archer",
+      "oracle_text": "Vigilance, reach\nWhenever Finneas attacks, put a +1/+1 counter on each other creature you control that's a token or a Rabbit. Then if creatures you control have total power 10 or greater, draw a card.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Finneas attacks, put a +1/+1 counter on each other creature you control that's a token or a Rabbit. Then if creatures you control have total power 10 or greater, draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_other_creature_you_control_thats_a_token_or_a_rabbit"
+              },
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "creatures you control have total power 10 or greater"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

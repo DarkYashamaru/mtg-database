@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1692f19e-4906-4808-965f-5f0284004f55",
+  "name": "Mirko, Obsessive Theorist",
+  "faces": [
+    {
+      "name": "Mirko, Obsessive Theorist",
+      "type_line": "Legendary Creature \u2014 Vampire Detective",
+      "oracle_text": "Flying, vigilance\nWhenever you surveil, put a +1/+1 counter on Mirko.\nAt the beginning of your end step, you may return target creature card with power less than Mirko's from your graveyard to the battlefield with a finality counter on it. (If it would die, exile it instead.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you surveil, put a +1/+1 counter on Mirko.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you surveil"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, you may return target creature card with power less than Mirko's from your graveyard to the battlefield with a finality counter on it. (If it would die, exile it instead.)",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return target creature card with power less than Mirko's from your graveyard to the battlefield with a finality counter on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

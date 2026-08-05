@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e1105d84-86b5-44ef-9efc-d994ee1c35cc",
+  "name": "Geyadrone Dihada",
+  "faces": [
+    {
+      "name": "Geyadrone Dihada",
+      "type_line": "Legendary Planeswalker \u2014 Dihada",
+      "oracle_text": "Protection from permanents with corruption counters on them\n+1: Each opponent loses 2 life and you gain 2 life. Put a corruption counter on up to one other target creature or planeswalker.\n\u22123: Gain control of target creature or planeswalker until end of turn. Untap it and put a corruption counter on it. It gains haste until end of turn.\n\u22127: Gain control of each permanent with a corruption counter on it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Each opponent loses 2 life and you gain 2 life. Put a corruption counter on up to one other target creature or planeswalker.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a corruption counter on up to one other target creature or planeswalker"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Gain control of target creature or planeswalker until end of turn. Untap it and put a corruption counter on it. It gains haste until end of turn.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gain control of target creature or planeswalker until end of turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Untap it and put a corruption counter on it"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: Gain control of each permanent with a corruption counter on it.",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gain control of each permanent with a corruption counter on it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Protection from permanents with corruption counters on them",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Protection from permanents with corruption counters on them"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

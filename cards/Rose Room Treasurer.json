@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d73f02e0-53fa-4437-ab3a-89a9a1db27c5",
+  "name": "Rose Room Treasurer",
+  "faces": [
+    {
+      "name": "Rose Room Treasurer",
+      "type_line": "Creature \u2014 Ogre Warrior",
+      "oracle_text": "Alliance \u2014 Whenever another creature you control enters, create a Treasure token if this is the first or second time this ability has resolved this turn. Otherwise, you may pay {X}. When you do, this creature deals X damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, create a Treasure token if this is the first or second time this ability has resolved this turn. Otherwise, you may pay {X}. When you do, this creature deals X damage to any target.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a Treasure token if this is the first or second time this ability has resolved this turn"
+            },
+            {
+              "action": "pay_mana",
+              "cost": "{x}",
+              "optional": true,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals x damage to any target",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

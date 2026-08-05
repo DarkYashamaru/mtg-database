@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7aef5d2e-b66d-4822-b563-44d21d008272",
+  "name": "Restless Bloodseeker // Bloodsoaked Reveler",
+  "faces": [
+    {
+      "name": "Bloodsoaked Reveler",
+      "type_line": "Creature \u2014 Vampire",
+      "oracle_text": "At the beginning of your end step, if you gained life this turn, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")\n{4}{B}: Each opponent loses 2 life and you gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if you gained life this turn, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you gained life this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Blood token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}{B}: Each opponent loses 2 life and you gain 2 life.",
+          "cost": "{4}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Restless Bloodseeker",
+      "type_line": "Creature \u2014 Vampire",
+      "oracle_text": "At the beginning of your end step, if you gained life this turn, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")\nSacrifice two Blood tokens: Transform this creature. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if you gained life this turn, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you gained life this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Blood token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice two Blood tokens: Transform this creature. Activate only as a sorcery.",
+          "cost": "Sacrifice two Blood tokens",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

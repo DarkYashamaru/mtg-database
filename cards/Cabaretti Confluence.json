@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "99c32f20-da98-477d-9eb2-9c0b189d8d88",
+  "name": "Cabaretti Confluence",
+  "faces": [
+    {
+      "name": "Cabaretti Confluence",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose three. You may choose the same mode more than once.\n\u2022 Create a token that's a copy of target creature you control. It gains haste. Sacrifice it at the beginning of the next end step.\n\u2022 Exile target artifact or enchantment.\n\u2022 Creatures target player controls get +1/+1 and gain first strike until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose three. You may choose the same mode more than once.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose three"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may choose the same mode more than once"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Create a token that's a copy of target creature you control. It gains haste. Sacrifice it at the beginning of the next end step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Create a token that's a copy of target creature you control"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "it_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Exile target artifact or enchantment.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Exile target artifact or enchantment"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Creatures target player controls get +1/+1 and gain first strike until end of turn.",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "_creatures_target_player_controls_get_11_and",
+              "keyword": "first_strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

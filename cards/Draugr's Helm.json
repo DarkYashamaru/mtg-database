@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8762e9ec-e026-45aa-9c7b-d894d17c75a2",
+  "name": "Draugr's Helm",
+  "faces": [
+    {
+      "name": "Draugr's Helm",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, you may pay {2}{B}. If you do, create a 2/2 black Zombie Berserker creature token, then attach this Equipment to it.\nEquipped creature gets +2/+2 and has menace. (It can't be blocked except by two or more creatures.)\nEquip {4}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, you may pay {2}{B}. If you do, create a 2/2 black Zombie Berserker creature token, then attach this Equipment to it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {2}{B}"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black zombie berserker creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "zombie",
+                  "berserker"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "attach_equipment",
+              "source": "self",
+              "target": "it",
+              "optional": true,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4}",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +2/+2 and has menace. (It can't be blocked except by two or more creatures.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +2/+2 and has menace"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

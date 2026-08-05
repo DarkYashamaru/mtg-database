@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cf18a1ca-1fb5-4c90-b20a-6ae2fb54a9bb",
+  "name": "Humiliate",
+  "faces": [
+    {
+      "name": "Humiliate",
+      "type_line": "Sorcery",
+      "oracle_text": "Target opponent reveals their hand. You choose a nonland card from it. That player discards that card. Put a +1/+1 counter on a creature you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target opponent reveals their hand. You choose a nonland card from it. That player discards that card. Put a +1/+1 counter on a creature you control.",
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a nonland card from it"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

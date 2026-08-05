@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0dab592c-a230-408d-a383-044e561dbe5d",
+  "name": "Voidwing Hybrid",
+  "faces": [
+    {
+      "name": "Voidwing Hybrid",
+      "type_line": "Creature \u2014 Phyrexian Bat",
+      "oracle_text": "Flying\nToxic 1 (Players dealt combat damage by this creature also get a poison counter.)\nWhen you proliferate, return this card from your graveyard to your hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "toxic",
+          "amount": 1
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you proliferate, return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you proliferate"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

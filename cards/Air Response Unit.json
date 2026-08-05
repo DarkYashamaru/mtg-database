@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "18a22d9f-81bc-4ed5-bd83-e3f8ec5e38c8",
+  "name": "Air Response Unit",
+  "faces": [
+    {
+      "name": "Air Response Unit",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying, vigilance\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

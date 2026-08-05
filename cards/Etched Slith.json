@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f1bd0d32-7513-4d1d-94aa-d06101a940c0",
+  "name": "Etched Slith",
+  "faces": [
+    {
+      "name": "Etched Slith",
+      "type_line": "Artifact Creature \u2014 Phyrexian Slith",
+      "oracle_text": "Menace\nWhenever this creature deals combat damage to a player, put a +1/+1 counter on it. When you do, you may remove a counter from another target permanent or opponent.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, put a +1/+1 counter on it. When you do, you may remove a counter from another target permanent or opponent.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may remove a counter from another target permanent or opponent",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

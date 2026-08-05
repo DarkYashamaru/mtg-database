@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9357fc7f-c9d0-4ce2-a6dd-0ff1f24bfc56",
+  "name": "Spellscorn Coven // Take It Back",
+  "faces": [
+    {
+      "name": "Spellscorn Coven",
+      "type_line": "Creature \u2014 Faerie Warlock",
+      "oracle_text": "Flying\nWhen this creature enters, each opponent discards a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, each opponent discards a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Take It Back",
+      "type_line": "Instant \u2014 Adventure",
+      "oracle_text": "Return target spell to its owner's hand. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target spell to its owner's hand. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target spell to its owner's hand"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

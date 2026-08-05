@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "61816f98-9d1a-4b16-9194-cb7249880710",
+  "name": "Leitmotif Composer",
+  "faces": [
+    {
+      "name": "Leitmotif Composer",
+      "type_line": "Creature \u2014 Human Bard",
+      "oracle_text": "Whenever this creature deals combat damage to a player, draw a card.\nWhenever you cast an instant or sorcery spell with mana value 5 or greater, create a token that's a copy of this creature.\n{2}{U}: Creatures named Leitmotif Composer can't be blocked this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell with mana value 5 or greater, create a token that's a copy of this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 5
+            },
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{U}: Creatures named Leitmotif Composer can't be blocked this turn.",
+          "cost": "{2}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures named Leitmotif Composer can't be blocked this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

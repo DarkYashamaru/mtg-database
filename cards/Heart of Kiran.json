@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e2ee410f-2467-4f1f-84a0-8a79faedc0b3",
+  "name": "Heart of Kiran",
+  "faces": [
+    {
+      "name": "Heart of Kiran",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Flying, vigilance\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)\nYou may remove a loyalty counter from a planeswalker you control rather than pay Heart of Kiran's crew cost.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Crew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may remove a loyalty counter from a planeswalker you control rather than pay Heart of Kiran's crew cost.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may remove a loyalty counter from a planeswalker you control rather than pay Heart of Kiran's crew cost"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "72524f3c-674b-4ebf-9526-18737b354010",
+  "name": "Treva, the Renewer",
+  "faces": [
+    {
+      "name": "Treva, the Renewer",
+      "type_line": "Legendary Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever Treva deals combat damage to a player, you may pay {2}{W}. If you do, choose a color, then you gain 1 life for each permanent of that color.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Treva deals combat damage to a player, you may pay {2}{W}. If you do, choose a color, then you gain 1 life for each permanent of that color.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {2}{W}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "choose a color",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you gain 1 life for each permanent of that color",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

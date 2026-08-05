@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "10db57b4-f895-4514-b610-2252ba676353",
+  "name": "Bullseye, Death Dealer",
+  "faces": [
+    {
+      "name": "Bullseye, Death Dealer",
+      "type_line": "Legendary Creature \u2014 Human Assassin Villain",
+      "oracle_text": "When Bullseye enters, you may sacrifice an artifact or discard a nonland card. When you do, Bullseye deals 2 damage to any target.\n{3}, {T}, Sacrifice an artifact or discard a nonland card: Bullseye deals 2 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Bullseye enters, you may sacrifice an artifact or discard a nonland card. When you do, Bullseye deals 2 damage to any target.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "an_artifact_or_discard_a_nonland_card",
+              "optional": true
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}, {T}, Sacrifice an artifact or discard a nonland card: Bullseye deals 2 damage to any target.",
+          "cost": "{3}, {T}, Sacrifice an artifact or discard a nonland card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

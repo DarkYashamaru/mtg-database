@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a6c5c5ea-0bd0-4d5a-bd3f-6217f14c9939",
+  "name": "Piper of the Swarm",
+  "faces": [
+    {
+      "name": "Piper of the Swarm",
+      "type_line": "Creature \u2014 Human Warlock",
+      "oracle_text": "Rats you control have menace.\n{1}{B}, {T}: Create a 1/1 black Rat creature token.\n{2}{B}{B}, {T}, Sacrifice three Rats: Gain control of target creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{B}, {T}: Create a 1/1 black Rat creature token.",
+          "cost": "{1}{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 black Rat creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Rat"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{B}{B}, {T}, Sacrifice three Rats: Gain control of target creature.",
+          "cost": "{2}{B}{B}, {T}, Sacrifice three Rats",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gain control of target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Rats you control have menace.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Rat"
+                ]
+              },
+              "keywords": [
+                "menace"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

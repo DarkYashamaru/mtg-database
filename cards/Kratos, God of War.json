@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "42e55b84-8250-441d-a09e-7c61bf7661cc",
+  "name": "Kratos, God of War",
+  "faces": [
+    {
+      "name": "Kratos, God of War",
+      "type_line": "Legendary Creature \u2014 God Warrior",
+      "oracle_text": "Double strike\nAll creatures have haste.\nAt the beginning of each player's end step, Kratos deals damage to that player equal to the number of creatures that player controls that didn't attack this turn.",
+      "static": [
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each player's end step, Kratos deals damage to that player equal to the number of creatures that player controls that didn't attack this turn.",
+          "trigger": {
+            "type": "beginning_of_each_players_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kratos deals damage to that player equal to the number of creatures that player controls that didn't attack this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "All creatures have haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "all_creatures"
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b20d74a4-0e08-4779-972a-499f1a2be15a",
+  "name": "Mendicant Core, Guidelight",
+  "faces": [
+    {
+      "name": "Mendicant Core, Guidelight",
+      "type_line": "Legendary Artifact Creature \u2014 Robot",
+      "oracle_text": "Mendicant Core's power is equal to the number of artifacts you control.\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed \u2014 Whenever you cast an artifact spell, you may pay {1}. If you do, copy it. (The copy becomes a token.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an artifact spell, you may pay {1}. If you do, copy it. (The copy becomes a token.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Artifact"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Mendicant Core's power is equal to the number of artifacts you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Mendicant Core's power is equal to the number of artifacts you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)",
+          "effects": [
+            {
+              "action": "start_your_engines"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3cbed112-9f2b-46b4-a9c3-bfd8a6856f79",
+  "name": "Printlifter Ooze",
+  "faces": [
+    {
+      "name": "Printlifter Ooze",
+      "type_line": "Creature \u2014 Ooze",
+      "oracle_text": "Deathtouch\nWhenever this creature or another creature you control is turned face up, create a 0/0 green Ooze creature token with trample. The token enters with X +1/+1 counters on it, where X is the number of other creatures you control.\nDisguise {3}{G}",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another creature you control is turned face up, create a 0/0 green Ooze creature token with trample. The token enters with X +1/+1 counters on it, where X is the number of other creatures you control.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 0/0 green Ooze creature token with trample",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "0/0",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Ooze"
+                ],
+                "keywords": [
+                  "trample"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "The token enters with X +1/+1 counters on it, where X is the number of other creatures you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disguise {3}{G}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disguise {3}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

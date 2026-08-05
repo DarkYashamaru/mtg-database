@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9360d30c-4556-4b41-bd50-08b4367e5efb",
+  "name": "Sawback Manticore",
+  "faces": [
+    {
+      "name": "Sawback Manticore",
+      "type_line": "Creature \u2014 Manticore",
+      "oracle_text": "{4}: This creature gains flying until end of turn.\n{1}: This creature deals 2 damage to target attacking or blocking creature. Activate only if this creature is attacking or blocking and only once each turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{4}: This creature gains flying until end of turn.",
+          "cost": "{4}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}: This creature deals 2 damage to target attacking or blocking creature. Activate only if this creature is attacking or blocking and only once each turn.",
+          "cost": "{1}",
+          "condition": [
+            {
+              "condition_text": "this creature is attacking or blocking and only once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals 2 damage to target attacking or blocking creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

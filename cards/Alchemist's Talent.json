@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5a2dfff5-9dba-42f5-bcca-918c16f23807",
+  "name": "Alchemist's Talent",
+  "faces": [
+    {
+      "name": "Alchemist's Talent",
+      "type_line": "Enchantment \u2014 Class",
+      "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nWhen this Class enters, create two tapped Treasure tokens.\n{1}{R}: Level 2\nTreasures you control have \"{T}, Sacrifice this artifact: Add two mana of any one color.\"\n{4}{R}: Level 3\nWhenever you cast a spell, if mana from a Treasure was spent to cast it, this Class deals damage equal to that spell's mana value to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Class enters, create two tapped Treasure tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_class"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "tapped Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a spell, if mana from a Treasure was spent to cast it, this Class deals damage equal to that spell's mana value to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "mana from a Treasure was spent to cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this Class deals damage equal to that spell's mana value to each opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{R}: Level 2",
+          "cost": "{1}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Treasures you control have \"{T}, Sacrifice this artifact: Add two mana of any one color.\"",
+          "cost": "Treasures you control have \"{T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "same_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}{R}: Level 3",
+          "cost": "{4}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

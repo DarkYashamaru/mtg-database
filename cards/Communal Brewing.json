@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "99deac41-584b-43f2-804e-c56ae0fef047",
+  "name": "Communal Brewing",
+  "faces": [
+    {
+      "name": "Communal Brewing",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, any number of target opponents each draw a card. Put an ingredient counter on this enchantment, then put an ingredient counter on it for each card drawn this way.\nWhenever you cast a creature spell, that creature enters with X additional +1/+1 counters on it, where X is the number of ingredient counters on this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, any number of target opponents each draw a card. Put an ingredient counter on this enchantment, then put an ingredient counter on it for each card drawn this way.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "any number of target opponents each draw a card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put an ingredient counter on this enchantment"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put an ingredient counter on it for each card drawn this way"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a creature spell, that creature enters with X additional +1/+1 counters on it, where X is the number of ingredient counters on this enchantment.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that creature enters with X additional +1/+1 counters on it, where X is the number of ingredient counters on this enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

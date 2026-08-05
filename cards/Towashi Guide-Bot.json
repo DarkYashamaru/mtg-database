@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "28bb9a58-f45a-4452-a1f4-c7609373085f",
+  "name": "Towashi Guide-Bot",
+  "faces": [
+    {
+      "name": "Towashi Guide-Bot",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "When this creature enters, put a +1/+1 counter on target creature you control.\n{4}, {T}: Draw a card. This ability costs {1} less to activate for each modified creature you control. (Equipment, Auras you control, and counters are modifications.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}, {T}: Draw a card. This ability costs {1} less to activate for each modified creature you control. (Equipment, Auras you control, and counters are modifications.)",
+          "cost": "{4}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "This ability costs {1} less to activate for each modified creature you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

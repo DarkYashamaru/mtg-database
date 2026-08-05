@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6b384c3c-0d6b-4bba-b4c7-5af8b32bdf1c",
+  "name": "Olivia's Attendants",
+  "faces": [
+    {
+      "name": "Olivia's Attendants",
+      "type_line": "Creature \u2014 Vampire",
+      "oracle_text": "Menace\nWhenever this creature deals damage, create that many Blood tokens. (They're artifacts with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")\n{2}{R}: This creature deals 1 damage to any target.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals damage, create that many Blood tokens. (They're artifacts with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "deals_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "that",
+              "token": {
+                "raw": "many Blood tokens"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{R}: This creature deals 1 damage to any target.",
+          "cost": "{2}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

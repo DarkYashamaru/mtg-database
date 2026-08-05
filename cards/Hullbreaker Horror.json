@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d4a84e78-d9b9-4c67-8a4b-4329e65f0f15",
+  "name": "Hullbreaker Horror",
+  "faces": [
+    {
+      "name": "Hullbreaker Horror",
+      "type_line": "Creature \u2014 Kraken Horror",
+      "oracle_text": "Flash\nThis spell can't be countered.\nWhenever you cast a spell, choose up to one \u2014\n\u2022 Return target spell you don't control to its owner's hand.\n\u2022 Return target nonland permanent to its owner's hand.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, choose up to one \u2014\n\u2022 Return target spell you don't control to its owner's hand.\n\u2022 Return target nonland permanent to its owner's hand.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose up to one \u2014\n\u2022 Return target spell you don't control to its owner's hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Return target nonland permanent to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell can't be countered.",
+          "effects": [
+            {
+              "action": "cant_be_countered",
+              "target": "self_spell"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

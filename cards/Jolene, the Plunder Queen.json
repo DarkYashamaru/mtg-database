@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8215f4a2-7131-426b-ad9c-6427caabd715",
+  "name": "Jolene, the Plunder Queen",
+  "faces": [
+    {
+      "name": "Jolene, the Plunder Queen",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "Whenever a player attacks one or more of your opponents, that attacking player creates a Treasure token.\nIf you would create one or more Treasure tokens, instead create those tokens plus an additional Treasure token.\nSacrifice five Treasures: Put five +1/+1 counters on Jolene.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player attacks one or more of your opponents, that attacking player creates a Treasure token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player attacks one or more of your opponents"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that attacking player creates a Treasure token"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice five Treasures: Put five +1/+1 counters on Jolene.",
+          "cost": "Sacrifice five Treasures",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 5
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If you would create one or more Treasure tokens, instead create those tokens plus an additional Treasure token.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "instead create those tokens plus an additional treasure token",
+              "condition": [
+                {
+                  "condition_text": "you would create one or more treasure tokens"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

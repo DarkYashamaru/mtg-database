@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7f691e0d-dac5-4d7e-8727-dd2cab9a7863",
+  "name": "Ire Shaman",
+  "faces": [
+    {
+      "name": "Ire Shaman",
+      "type_line": "Creature \u2014 Orc Shaman",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nMegamorph {R} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its megamorph cost and put a +1/+1 counter on it.)\nWhen this creature is turned face up, exile the top card of your library. Until end of turn, you may play that card.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, exile the top card of your library. Until end of turn, you may play that card.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may play that card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Megamorph {R} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its megamorph cost and put a +1/+1 counter on it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Megamorph {R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

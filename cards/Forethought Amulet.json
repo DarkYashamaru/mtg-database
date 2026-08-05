@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0edf0988-9ed8-4fe6-aa47-4921870f05a8",
+  "name": "Forethought Amulet",
+  "faces": [
+    {
+      "name": "Forethought Amulet",
+      "type_line": "Artifact",
+      "oracle_text": "At the beginning of your upkeep, sacrifice this artifact unless you pay {3}.\nIf an instant or sorcery source would deal 3 or more damage to you, it deals 2 damage to you instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice this artifact unless you pay {3}.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_artifact_unless_you_pay_3"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If an instant or sorcery source would deal 3 or more damage to you, it deals 2 damage to you instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 2 damage to you instead",
+              "condition": [
+                {
+                  "condition_text": "an instant or sorcery source would deal 3 or more damage to you"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

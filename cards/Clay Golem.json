@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8773c2ea-ef41-4403-bb52-07f0d70d9bbe",
+  "name": "Clay Golem",
+  "faces": [
+    {
+      "name": "Clay Golem",
+      "type_line": "Artifact Creature \u2014 Golem",
+      "oracle_text": "{6}, Roll a d8: Monstrosity X, where X is the result. (If this creature isn't monstrous, put X +1/+1 counters on it and it becomes monstrous.)\nBerserk \u2014 When this creature becomes monstrous, destroy target permanent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature becomes monstrous, destroy target permanent.",
+          "trigger": {
+            "type": "becomes_monstrous",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target permanent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{6}, Roll a d8: Monstrosity X, where X is the result. (If this creature isn't monstrous, put X +1/+1 counters on it and it becomes monstrous.)",
+          "cost": "{6}, Roll a d8",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Monstrosity X, where X is the result"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

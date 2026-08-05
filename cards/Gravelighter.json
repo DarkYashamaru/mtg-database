@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "45ef5ea9-70a6-4999-8778-6a11cb97d28e",
+  "name": "Gravelighter",
+  "faces": [
+    {
+      "name": "Gravelighter",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Flying\nWhen this creature enters, draw a card if a creature died this turn. Otherwise, each player sacrifices a creature of their choice.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, draw a card if a creature died this turn. Otherwise, each player sacrifices a creature of their choice.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "a creature died this turn"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "each player sacrifices a creature of their choice",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

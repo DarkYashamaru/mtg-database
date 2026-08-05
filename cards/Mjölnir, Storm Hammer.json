@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f497e9a5-0ad3-4aec-8422-14be8e0dba4c",
+  "name": "Mj\u00f6lnir, Storm Hammer",
+  "faces": [
+    {
+      "name": "Mj\u00f6lnir, Storm Hammer",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "When Mj\u00f6lnir enters, attach it to target legendary creature you control.\nWhenever equipped creature attacks, tap target creature defending player controls and put a stun counter on it. Then Mj\u00f6lnir deals damage to each opponent equal to the number of tapped creatures that opponent controls.\nEquip {4}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Mj\u00f6lnir enters, attach it to target legendary creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach it to target legendary creature you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever equipped creature attacks, tap target creature defending player controls and put a stun counter on it. Then Mj\u00f6lnir deals damage to each opponent equal to the number of tapped creatures that opponent controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap target creature defending player controls and put a stun counter on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then Mj\u00f6lnir deals damage to each opponent equal to the number of tapped creatures that opponent controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4}",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

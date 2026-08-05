@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1a4c03ab-519a-4840-893a-769dfc5cf161",
+  "name": "Risky Move",
+  "faces": [
+    {
+      "name": "Risky Move",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of each player's upkeep, that player gains control of this enchantment.\nWhen you gain control of this enchantment from another player, choose a creature you control and an opponent. Flip a coin. If you lose the flip, that opponent gains control of that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each player's upkeep, that player gains control of this enchantment.",
+          "trigger": {
+            "type": "beginning_of_each_players_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player gains control of this enchantment"
+            }
+          ]
+        },
+        {
+          "raw_text": "When you gain control of this enchantment from another player, choose a creature you control and an opponent. Flip a coin. If you lose the flip, that opponent gains control of that creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you gain control of this enchantment from another player"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose a creature you control and an opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin"
+            },
+            {
+              "action": "custom_effect",
+              "text": "that opponent gains control of that creature",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

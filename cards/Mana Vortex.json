@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "98b88734-09e2-4209-a787-9b5b345391f9",
+  "name": "Mana Vortex",
+  "faces": [
+    {
+      "name": "Mana Vortex",
+      "type_line": "Enchantment",
+      "oracle_text": "When you cast this spell, counter it unless you sacrifice a land.\nAt the beginning of each player's upkeep, that player sacrifices a land of their choice.\nWhen there are no lands on the battlefield, sacrifice this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, counter it unless you sacrifice a land.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "counter it unless you sacrifice a land"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each player's upkeep, that player sacrifices a land of their choice.",
+          "trigger": {
+            "type": "beginning_of_each_players_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player sacrifices a land of their choice"
+            }
+          ]
+        },
+        {
+          "raw_text": "When there are no lands on the battlefield, sacrifice this enchantment.",
+          "trigger": {
+            "type": "custom",
+            "text": "When there are no lands on the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

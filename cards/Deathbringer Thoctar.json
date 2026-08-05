@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2500a811-2435-4915-ac83-9bfe2887621a",
+  "name": "Deathbringer Thoctar",
+  "faces": [
+    {
+      "name": "Deathbringer Thoctar",
+      "type_line": "Creature \u2014 Zombie Beast",
+      "oracle_text": "Whenever another creature dies, you may put a +1/+1 counter on this creature.\nRemove a +1/+1 counter from this creature: It deals 1 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature dies, you may put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": "another_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove a +1/+1 counter from this creature: It deals 1 damage to any target.",
+          "cost": "Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

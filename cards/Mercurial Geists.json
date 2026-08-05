@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1f6bff6c-a2f0-4ed7-8169-acb4d31a7187",
+  "name": "Mercurial Geists",
+  "faces": [
+    {
+      "name": "Mercurial Geists",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Flying\nWhenever you cast an instant or sorcery spell, this creature gets +3/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature gets +3/+0 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 3,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

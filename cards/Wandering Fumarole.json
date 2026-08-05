@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "741c51f1-cfbe-4c29-ac8f-ca6bcd2652f9",
+  "name": "Wandering Fumarole",
+  "faces": [
+    {
+      "name": "Wandering Fumarole",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {U} or {R}.\n{2}{U}{R}: Until end of turn, this land becomes a 1/4 blue and red Elemental creature with \"{0}: Switch this creature's power and toughness until end of turn.\" It's still a land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U} or {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}",
+                "{r}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{U}{R}: Until end of turn, this land becomes a 1/4 blue and red Elemental creature with \"{0}: Switch this creature's power and toughness until end of turn.\" It's still a land.",
+          "cost": "{2}{U}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, this land becomes a 1/4 blue and red Elemental creature with \"{0}: Switch this creature's power and toughness until end of turn.\" It's still a land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

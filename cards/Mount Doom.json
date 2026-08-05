@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "995c8dac-fd27-468a-abd4-02372cf0c850",
+  "name": "Mount Doom",
+  "faces": [
+    {
+      "name": "Mount Doom",
+      "type_line": "Legendary Land",
+      "oracle_text": "{T}, Pay 1 life: Add {B} or {R}.\n{1}{B}{R}, {T}: Mount Doom deals 1 damage to each opponent.\n{5}{B}{R}, {T}, Sacrifice Mount Doom and a legendary artifact: Choose up to two creatures, then destroy the rest. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Pay 1 life: Add {B} or {R}.",
+          "cost": "{T}, Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}",
+                "{r}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{B}{R}, {T}: Mount Doom deals 1 damage to each opponent.",
+          "cost": "{1}{B}{R}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{5}{B}{R}, {T}, Sacrifice Mount Doom and a legendary artifact: Choose up to two creatures, then destroy the rest. Activate only as a sorcery.",
+          "cost": "{5}{B}{R}, {T}, Sacrifice Mount Doom and a legendary artifact",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose up to two creatures"
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy the rest"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

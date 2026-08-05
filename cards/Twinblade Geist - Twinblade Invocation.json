@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4db96d32-b4c2-44e9-a73f-aca7dad279b6",
+  "name": "Twinblade Geist // Twinblade Invocation",
+  "faces": [
+    {
+      "name": "Twinblade Geist",
+      "type_line": "Creature \u2014 Spirit Warrior",
+      "oracle_text": "Double strike\nDisturb {2}{W} (You may cast this card from your graveyard transformed for its disturb cost.)",
+      "static": [
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disturb {2}{W} (You may cast this card from your graveyard transformed for its disturb cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disturb {2}{W}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Twinblade Invocation",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature has double strike.\nIf Twinblade Invocation would be put into a graveyard from anywhere, exile it instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has double strike.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has double strike"
+            }
+          ]
+        },
+        {
+          "raw_text": "If Twinblade Invocation would be put into a graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "twinblade invocation would be put into a graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

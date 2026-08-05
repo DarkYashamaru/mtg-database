@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d99bcf62-db93-40db-8844-3d0af0756a0c",
+  "name": "Moonsilver Spear",
+  "faces": [
+    {
+      "name": "Moonsilver Spear",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has first strike.\nWhenever equipped creature attacks, create a 4/4 white Angel creature token with flying.\nEquip {4}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, create a 4/4 white Angel creature token with flying.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/4 white Angel creature token with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Angel"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4}",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has first strike.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature has first strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4c0f4a63-586a-4dde-9621-b0dd9118b2e5",
+  "name": "Restless Ridgeline",
+  "faces": [
+    {
+      "name": "Restless Ridgeline",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {R} or {G}.\n{2}{R}{G}: This land becomes a 3/4 red and green Dinosaur creature until end of turn. It's still a land.\nWhenever this land attacks, another target attacking creature gets +2/+0 until end of turn. Untap that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this land attacks, another target attacking creature gets +2/+0 until end of turn. Untap that creature.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "another_target_attacking_creature",
+              "power_delta": 2,
+              "toughness_delta": 0
+            },
+            {
+              "action": "untap",
+              "target": "that_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R} or {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{g}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{R}{G}: This land becomes a 3/4 red and green Dinosaur creature until end of turn. It's still a land.",
+          "cost": "{2}{R}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land becomes a 3/4 red and green Dinosaur creature until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

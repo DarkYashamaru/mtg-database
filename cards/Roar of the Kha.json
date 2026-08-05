@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9dddb69a-00a3-448b-8f8b-8e50cdd70d57",
+  "name": "Roar of the Kha",
+  "faces": [
+    {
+      "name": "Roar of the Kha",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Creatures you control get +1/+1 until end of turn.\n\u2022 Untap all creatures you control.\nEntwine {1}{W} (Choose both if you pay the entwine cost.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Creatures you control get +1/+1 until end of turn.\n\u2022 Untap all creatures you control.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Creatures you control get +1/+1 until end of turn.",
+              "effects": [
+                {
+                  "action": "modify_stats_until_end_of_turn",
+                  "target": {
+                    "selector": "creatures_you_control"
+                  },
+                  "power_delta": 1,
+                  "toughness_delta": 1
+                }
+              ]
+            },
+            {
+              "raw_text": "Untap all creatures you control.",
+              "effects": [
+                {
+                  "action": "untap",
+                  "target": {
+                    "selector": "creatures_you_control"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Entwine {1}{W} (Choose both if you pay the entwine cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Entwine {1}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

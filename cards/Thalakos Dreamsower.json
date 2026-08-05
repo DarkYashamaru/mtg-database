@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5f71c09a-47fb-4bb2-9329-78f5bb195e5d",
+  "name": "Thalakos Dreamsower",
+  "faces": [
+    {
+      "name": "Thalakos Dreamsower",
+      "type_line": "Creature \u2014 Thalakos Wizard",
+      "oracle_text": "Shadow (This creature can block or be blocked by only creatures with shadow.)\nYou may choose not to untap this creature during your untap step.\nWhenever this creature deals damage to an opponent, tap target creature. That creature doesn't untap during its controller's untap step for as long as this creature remains tapped.",
+      "static": [
+        {
+          "keyword": "shadow"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals damage to an opponent, tap target creature. That creature doesn't untap during its controller's untap step for as long as this creature remains tapped.",
+          "trigger": {
+            "type": "deals_damage_to_opponent",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "That creature doesn't untap during its controller's untap step for as long as this creature remains tapped"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may choose not to untap this creature during your untap step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may choose not to untap this creature during your untap step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

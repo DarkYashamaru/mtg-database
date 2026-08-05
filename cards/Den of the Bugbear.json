@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f451b8f0-1ff5-4e8d-9f30-9352d83ed687",
+  "name": "Den of the Bugbear",
+  "faces": [
+    {
+      "name": "Den of the Bugbear",
+      "type_line": "Land",
+      "oracle_text": "If you control two or more other lands, this land enters tapped.\n{T}: Add {R}.\n{3}{R}: Until end of turn, this land becomes a 3/2 red Goblin creature with \"Whenever this creature attacks, create a 1/1 red Goblin creature token that's tapped and attacking.\" It's still a land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{R}: Until end of turn, this land becomes a 3/2 red Goblin creature with \"Whenever this creature attacks, create a 1/1 red Goblin creature token that's tapped and attacking.\" It's still a land.",
+          "cost": "{3}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, this land becomes a 3/2 red Goblin creature with \"Whenever this creature attacks, create a 1/1 red Goblin creature token that's tapped and attacking.\" It's still a land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If you control two or more other lands, this land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you control two or more other lands"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a500b724-bf28-47a3-b434-6efdebbcc04c",
+  "name": "Strata Scythe",
+  "faces": [
+    {
+      "name": "Strata Scythe",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Imprint \u2014 When this Equipment enters, search your library for a land card, exile it, then shuffle.\nEquipped creature gets +1/+1 for each land on the battlefield with the same name as the exiled card.\nEquip {3}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, search your library for a land card, exile it, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a land card, exile it"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +1/+1 for each land on the battlefield with the same name as the exiled card.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +1/+1 for each land on the battlefield with the same name as the exiled card"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

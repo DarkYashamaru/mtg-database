@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "745efa76-7063-4971-9d1b-b2b4cb336a57",
+  "name": "Sin Prodder",
+  "faces": [
+    {
+      "name": "Sin Prodder",
+      "type_line": "Creature \u2014 Devil",
+      "oracle_text": "Menace\nAt the beginning of your upkeep, reveal the top card of your library. Any opponent may have you put that card into your graveyard. If a player does, this creature deals damage to that player equal to that card's mana value. Otherwise, put that card into your hand.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, reveal the top card of your library. Any opponent may have you put that card into your graveyard. If a player does, this creature deals damage to that player equal to that card's mana value. Otherwise, put that card into your hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Any opponent may have you put that card into your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals damage to that player equal to that card's mana value",
+              "condition": [
+                {
+                  "condition_text": "a player does"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card into your hand",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

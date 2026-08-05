@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "01590ff3-34fa-47aa-b5da-f0b8c1b031c6",
+  "name": "Icebreaker Kraken",
+  "faces": [
+    {
+      "name": "Icebreaker Kraken",
+      "type_line": "Snow Creature \u2014 Kraken",
+      "oracle_text": "Affinity for snow lands (This spell costs {1} less to cast for each snow land you control.)\nWhen this creature enters, artifacts and creatures target opponent controls don't untap during that player's next untap step.\nReturn three snow lands you control to their owner's hand: Return this creature to its owner's hand.",
+      "static": [
+        {
+          "keyword": "affinity",
+          "quality": "snow_lands"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, artifacts and creatures target opponent controls don't untap during that player's next untap step.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "artifacts and creatures target opponent controls don't untap during that player's next untap step"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Return three snow lands you control to their owner's hand: Return this creature to its owner's hand.",
+          "cost": "Return three snow lands you control to their owner's hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

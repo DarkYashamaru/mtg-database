@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fb84b94c-dc8c-4182-9b96-abd092b20981",
+  "name": "Specimen Freighter",
+  "faces": [
+    {
+      "name": "Specimen Freighter",
+      "type_line": "Artifact \u2014 Spacecraft",
+      "oracle_text": "When this Spacecraft enters, return up to two target non-Spacecraft creatures to their owners' hands.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 9+.)\n9+ | Flying\nWhenever this Spacecraft attacks, defending player mills four cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Spacecraft enters, return up to two target non-Spacecraft creatures to their owners' hands.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_spacecraft"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to two target non-Spacecraft creatures to their owners' hands"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this Spacecraft attacks, defending player mills four cards.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_spacecraft"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "defending player mills four cards"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 9+.)",
+          "cost": "Station (Tap another creature you control",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put charge counters equal to its power on this Spacecraft"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's an artifact creature at 9+"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "9+ | Flying",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "9+ | Flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

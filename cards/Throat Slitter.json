@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "56f782b7-d46c-4aa1-ae16-66d6401c72ae",
+  "name": "Throat Slitter",
+  "faces": [
+    {
+      "name": "Throat Slitter",
+      "type_line": "Creature \u2014 Rat Ninja",
+      "oracle_text": "Ninjutsu {2}{B} ({2}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nWhenever this creature deals combat damage to a player, destroy target nonblack creature that player controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, destroy target nonblack creature that player controls.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target nonblack creature that player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Ninjutsu {2}{B} ({2}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)",
+          "cost": "Ninjutsu {2}{B} ({2}{B}, Return an unblocked attacker you control to hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "object": "self",
+              "source_zone": "hand",
+              "destination_zone": "battlefield",
+              "tapped": true,
+              "attacking": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

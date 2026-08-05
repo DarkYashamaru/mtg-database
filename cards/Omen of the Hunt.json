@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "53295b03-717d-481d-9d5c-212c5f30bbbf",
+  "name": "Omen of the Hunt",
+  "faces": [
+    {
+      "name": "Omen of the Hunt",
+      "type_line": "Enchantment",
+      "oracle_text": "Flash\nWhen this enchantment enters, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\n{2}{G}, Sacrifice this enchantment: Scry 2.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{G}, Sacrifice this enchantment: Scry 2.",
+          "cost": "{2}{G}, Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b9efd1bd-d82a-43ad-aba7-df172b9751ce",
+  "name": "Nightsnare",
+  "faces": [
+    {
+      "name": "Nightsnare",
+      "type_line": "Sorcery",
+      "oracle_text": "Target opponent reveals their hand. You may choose a nonland card from it. If you do, that player discards that card. If you don't, that player discards two cards.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target opponent reveals their hand. You may choose a nonland card from it. If you do, that player discards that card. If you don't, that player discards two cards.",
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may choose a nonland card from it"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "discard_cards",
+              "target": "that_player",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

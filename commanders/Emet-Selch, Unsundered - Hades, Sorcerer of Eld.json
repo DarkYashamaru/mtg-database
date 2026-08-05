@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3b102ccc-7629-457c-aba6-e9b00fd50c85",
+  "name": "Emet-Selch, Unsundered // Hades, Sorcerer of Eld",
+  "faces": [
+    {
+      "name": "Emet-Selch, Unsundered",
+      "type_line": "Legendary Creature \u2014 Elder Wizard",
+      "oracle_text": "Vigilance\nWhenever Emet-Selch enters or attacks, draw a card, then discard a card.\nAt the beginning of your upkeep, if there are fourteen or more cards in your graveyard, you may transform Emet-Selch.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Emet-Selch enters or attacks, draw a card, then discard a card.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if there are fourteen or more cards in your graveyard, you may transform Emet-Selch.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "there are fourteen or more cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Hades, Sorcerer of Eld",
+      "type_line": "Legendary Creature \u2014 Avatar",
+      "oracle_text": "Vigilance\nEcho of the Lost \u2014 During your turn, you may play cards from your graveyard.\nIf a card or token would be put into your graveyard from anywhere, exile it instead.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Echo of the Lost \u2014 During your turn, you may play cards from your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "During your turn, you may play cards from your graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "If a card or token would be put into your graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "a card or token would be put into your graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7cad43df-31c9-47b5-bc05-4a0f6544b396",
+  "name": "Visage of Dread // Dread Osseosaur",
+  "faces": [
+    {
+      "name": "Dread Osseosaur",
+      "type_line": "Creature \u2014 Dinosaur Skeleton Horror",
+      "oracle_text": "Menace\nWhenever this creature enters or attacks, you may mill two cards. (You may put the top two cards of your library into your graveyard.)",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or attacks, you may mill two cards. (You may put the top two cards of your library into your graveyard.)",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Visage of Dread",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, target opponent reveals their hand. You choose an artifact or creature card from it. That player discards that card.\nCraft with two creatures {5}{B} ({5}{B}, Exile this artifact, Exile the two from among creatures you control and/or creature cards in your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, target opponent reveals their hand. You choose an artifact or creature card from it. That player discards that card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose an artifact or creature card from it"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Craft with two creatures {5}{B} ({5}{B}, Exile this artifact, Exile the two from among creatures you control and/or creature cards in your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+          "cost": "Craft with two creatures {5}{B} ({5}{B}, Exile this artifact, Exile the two from among creatures you control and/or creature cards in your graveyard",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "battlefield",
+              "controller": "its_owner",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

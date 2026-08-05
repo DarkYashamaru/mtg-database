@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "925a3ded-b7bc-4384-8684-79c20c59ab12",
+  "name": "Caravan Vigil",
+  "faces": [
+    {
+      "name": "Caravan Vigil",
+      "type_line": "Sorcery",
+      "oracle_text": "Search your library for a basic land card, reveal it, put it into your hand, then shuffle.\nMorbid \u2014 You may put that card onto the battlefield instead of putting it into your hand if a creature died this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Morbid \u2014 You may put that card onto the battlefield instead of putting it into your hand if a creature died this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morbid \u2014 You may put that card onto the battlefield instead of putting it into your hand if a creature died this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

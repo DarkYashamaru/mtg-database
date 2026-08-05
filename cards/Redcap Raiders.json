@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "05c42b13-5125-477c-991f-692c4e22bc53",
+  "name": "Redcap Raiders",
+  "faces": [
+    {
+      "name": "Redcap Raiders",
+      "type_line": "Creature \u2014 Goblin Warrior",
+      "oracle_text": "Whenever this creature attacks, you may tap an untapped non-Human creature you control. If you do, this creature gets +1/+1 and gains trample until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may tap an untapped non-Human creature you control. If you do, this creature gets +1/+1 and gains trample until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may tap an untapped non-Human creature you control"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self_gets_11_and",
+              "keyword": "trample",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

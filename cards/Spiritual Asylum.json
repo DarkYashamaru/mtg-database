@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91924536-7a2b-44ec-9835-2efa402c83f9",
+  "name": "Spiritual Asylum",
+  "faces": [
+    {
+      "name": "Spiritual Asylum",
+      "type_line": "Enchantment",
+      "oracle_text": "Creatures and lands you control have shroud. (They can't be the targets of spells or abilities.)\nWhen a creature you control attacks, sacrifice this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When a creature you control attacks, sacrifice this enchantment.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures and lands you control have shroud. (They can't be the targets of spells or abilities.)",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature",
+                  "Land"
+                ],
+                "subtypes": [
+                  "And"
+                ]
+              },
+              "keywords": [
+                "shroud"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

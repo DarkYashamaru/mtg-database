@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "12367806-5924-485c-814a-5b67dd79235e",
+  "name": "Evolved Sleeper",
+  "faces": [
+    {
+      "name": "Evolved Sleeper",
+      "type_line": "Creature \u2014 Human",
+      "oracle_text": "{B}: This creature becomes a Human Cleric with base power and toughness 2/2.\n{1}{B}: If this creature is a Cleric, put a deathtouch counter on it and it becomes a Phyrexian Human Cleric with base power and toughness 3/3.\n{1}{B}{B}: If this creature is a Phyrexian, put a +1/+1 counter on it, then you draw a card and you lose 1 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{B}: This creature becomes a Human Cleric with base power and toughness 2/2.",
+          "cost": "{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature becomes a Human Cleric with base power and toughness 2/2"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{B}: If this creature is a Cleric, put a deathtouch counter on it and it becomes a Phyrexian Human Cleric with base power and toughness 3/3.",
+          "cost": "{1}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a deathtouch counter on it and it becomes a phyrexian human cleric with base power and toughness 3/3",
+              "condition": [
+                {
+                  "condition_text": "this creature is a cleric"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{B}{B}: If this creature is a Phyrexian, put a +1/+1 counter on it, then you draw a card and you lose 1 life.",
+          "cost": "{1}{B}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "this creature is a phyrexian"
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

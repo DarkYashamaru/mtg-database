@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd213210-42d1-49af-9959-08188abe692a",
+  "name": "Ulamog's Nullifier",
+  "faces": [
+    {
+      "name": "Ulamog's Nullifier",
+      "type_line": "Creature \u2014 Eldrazi Processor",
+      "oracle_text": "Devoid (This card has no color.)\nFlash\nFlying\nWhen this creature enters, you may put two cards your opponents own from exile into their owners' graveyards. If you do, counter target spell.",
+      "static": [
+        {
+          "keyword": "devoid"
+        },
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may put two cards your opponents own from exile into their owners' graveyards. If you do, counter target spell.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put two cards your opponents own from exile into their owners' graveyards"
+            },
+            {
+              "action": "counter_spell",
+              "target": "target_spell",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

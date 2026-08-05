@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aa4cb5fb-e81c-410f-8986-645671b0a1d3",
+  "name": "Nivix Barrier",
+  "faces": [
+    {
+      "name": "Nivix Barrier",
+      "type_line": "Creature \u2014 Illusion Wall",
+      "oracle_text": "Flash (You may cast this spell any time you could cast an instant.)\nDefender (This creature can't attack.)\nWhen this creature enters, target attacking creature gets -4/-0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target attacking creature gets -4/-0 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_attacking_creature",
+              "power_delta": -4,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

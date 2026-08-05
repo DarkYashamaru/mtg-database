@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c248537f-e28f-47cb-9e47-a6eb05e1af63",
+  "name": "Fall of Gil-galad",
+  "faces": [
+    {
+      "name": "Fall of Gil-galad",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Scry 2.\nII \u2014 Put two +1/+1 counters on target creature you control.\nIII \u2014 Until end of turn, target creature you control gains \"When this creature dies, draw two cards.\" Then that creature fights up to one other target creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Scry 2.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Put two +1/+1 counters on target creature you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Until end of turn, target creature you control gains \"When this creature dies, draw two cards.\" Then that creature fights up to one other target creature.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, target creature you control gains \"When this creature dies, draw two cards.\" Then that creature fights up to one other target creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

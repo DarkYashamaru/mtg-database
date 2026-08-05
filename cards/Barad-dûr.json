@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "88159872-d37d-4847-b048-e4a9af6437bd",
+  "name": "Barad-d\u00fbr",
+  "faces": [
+    {
+      "name": "Barad-d\u00fbr",
+      "type_line": "Legendary Land",
+      "oracle_text": "Barad-d\u00fbr enters tapped unless you control a legendary creature.\n{T}: Add {B}.\n{X}{X}{B}, {T}: Amass Orcs X. Activate only if a creature died this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{X}{X}{B}, {T}: Amass Orcs X. Activate only if a creature died this turn.",
+          "cost": "{X}{X}{B}, {T}",
+          "condition": [
+            {
+              "condition_text": "a creature died this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Amass Orcs X"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Barad-d\u00fbr enters tapped unless you control a legendary creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Barad-d\u00fbr enters tapped unless you control a legendary creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

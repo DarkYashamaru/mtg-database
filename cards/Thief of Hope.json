@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d3fa1320-9e95-437a-aa36-102a2722fc42",
+  "name": "Thief of Hope",
+  "faces": [
+    {
+      "name": "Thief of Hope",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Whenever you cast a Spirit or Arcane spell, target opponent loses 1 life and you gain 1 life.\nSoulshift 2 (When this creature dies, you may return target Spirit card with mana value 2 or less from your graveyard to your hand.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, target opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "target_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Soulshift 2 (When this creature dies, you may return target Spirit card with mana value 2 or less from your graveyard to your hand.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Soulshift 2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

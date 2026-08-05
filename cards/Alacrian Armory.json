@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3fa2d51c-d549-4287-ac3b-76bc72bcd8bc",
+  "name": "Alacrian Armory",
+  "faces": [
+    {
+      "name": "Alacrian Armory",
+      "type_line": "Artifact",
+      "oracle_text": "Creatures you control get +0/+1 and have vigilance.\nAt the beginning of combat on your turn, choose up to one target Mount or Vehicle you control. Until end of turn, that permanent becomes saddled if it's a Mount and becomes an artifact creature if it's a Vehicle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, choose up to one target Mount or Vehicle you control. Until end of turn, that permanent becomes saddled if it's a Mount and becomes an artifact creature if it's a Vehicle.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose up to one target Mount or Vehicle you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, that permanent becomes saddled if it's a Mount and becomes an artifact creature if it's a Vehicle"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control get +0/+1 and have vigilance.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 0,
+              "toughness_delta": 1
+            },
+            {
+              "action": "grant_keyword",
+              "target": "custom",
+              "keyword": "vigilance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

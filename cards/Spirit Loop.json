@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6edf5767-10d3-40b0-bfce-daa8633888f6",
+  "name": "Spirit Loop",
+  "faces": [
+    {
+      "name": "Spirit Loop",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature you control\nWhenever enchanted creature deals damage, you gain that much life.\nWhen this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature deals damage, you gain that much life.",
+          "trigger": {
+            "type": "deals_damage",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": "that_much"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this Aura is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_control"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

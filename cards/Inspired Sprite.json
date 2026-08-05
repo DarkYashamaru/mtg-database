@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c3700173-d23a-4b73-b710-72aae82f0dfd",
+  "name": "Inspired Sprite",
+  "faces": [
+    {
+      "name": "Inspired Sprite",
+      "type_line": "Creature \u2014 Faerie Wizard",
+      "oracle_text": "Flash\nFlying\nWhenever you cast a Wizard spell, you may untap this creature.\n{T}: Draw a card, then discard a card.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Wizard spell, you may untap this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Wizard"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Draw a card, then discard a card.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b7a68899-c0d3-49e0-854b-19268ae9b89d",
+  "name": "Vivid Grove",
+  "faces": [
+    {
+      "name": "Vivid Grove",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped with two charge counters on it.\n{T}: Add {G}.\n{T}, Remove a charge counter from this land: Add one mana of any color.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Remove a charge counter from this land: Add one mana of any color.",
+          "cost": "{T}, Remove a charge counter from this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped with two charge counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters tapped with two charge counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

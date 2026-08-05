@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b1e4cf31-9efe-4aca-a3ba-cc2681109a2f",
+  "name": "Wintermoor Commander",
+  "faces": [
+    {
+      "name": "Wintermoor Commander",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Deathtouch\nWintermoor Commander's toughness is equal to the number of Knights you control.\nWhenever this creature attacks, another target Knight you control gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, another target Knight you control gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_knight_you_control",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Wintermoor Commander's toughness is equal to the number of Knights you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Wintermoor Commander's toughness is equal to the number of Knights you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd92cacd-c7d8-43a2-a261-ea4754fefdc5",
+  "name": "Sage's Reverie",
+  "faces": [
+    {
+      "name": "Sage's Reverie",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, draw a card for each Aura you control that's attached to a creature.\nEnchanted creature gets +1/+1 for each Aura you control that's attached to a creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card for each Aura you control that's attached to a creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "aura_you_control_thats_attached_to_a_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1 for each Aura you control that's attached to a creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+1 for each Aura you control that's attached to a creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

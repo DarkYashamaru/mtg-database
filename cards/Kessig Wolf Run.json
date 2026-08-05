@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c6911265-54ef-4c16-bcf2-1ffb24b7d426",
+  "name": "Kessig Wolf Run",
+  "faces": [
+    {
+      "name": "Kessig Wolf Run",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{X}{R}{G}, {T}: Target creature gets +X/+0 and gains trample until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{X}{R}{G}, {T}: Target creature gets +X/+0 and gains trample until end of turn.",
+          "cost": "{X}{R}{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_gets_x0_and",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

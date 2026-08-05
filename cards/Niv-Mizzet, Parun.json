@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "33666a98-812f-4892-9f8d-33e0cbecc340",
+  "name": "Niv-Mizzet, Parun",
+  "faces": [
+    {
+      "name": "Niv-Mizzet, Parun",
+      "type_line": "Legendary Creature \u2014 Dragon Wizard",
+      "oracle_text": "This spell can't be countered.\nFlying\nWhenever you draw a card, Niv-Mizzet deals 1 damage to any target.\nWhenever a player casts an instant or sorcery spell, you draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw a card, Niv-Mizzet deals 1 damage to any target.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a player casts an instant or sorcery spell, you draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player casts an instant or sorcery spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell can't be countered.",
+          "effects": [
+            {
+              "action": "cant_be_countered",
+              "target": "self_spell"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fe01c96b-eb78-4477-bec2-944b2a28c778",
+  "name": "Eddie Brock // Venom, Lethal Protector",
+  "faces": [
+    {
+      "name": "Eddie Brock",
+      "type_line": "Legendary Creature \u2014 Human Hero Villain",
+      "oracle_text": "When Eddie Brock enters, return target creature card with mana value 1 or less from your graveyard to the battlefield.\n{3}{B}{R}{G}: Transform Eddie Brock. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Eddie Brock enters, return target creature card with mana value 1 or less from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target creature card with mana value 1 or less from your graveyard to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{B}{R}{G}: Transform Eddie Brock. Activate only as a sorcery.",
+          "cost": "{3}{B}{R}{G}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Venom, Lethal Protector",
+      "type_line": "Legendary Creature \u2014 Symbiote Hero Villain",
+      "oracle_text": "Menace, trample, haste\nWhenever Venom attacks, you may sacrifice another creature. If you do, draw X cards, then you may put a permanent card with mana value X or less from your hand onto the battlefield, where X is the sacrificed creature's mana value.",
+      "static": [
+        {
+          "keyword": "menace"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Venom attacks, you may sacrifice another creature. If you do, draw X cards, then you may put a permanent card with mana value X or less from your hand onto the battlefield, where X is the sacrificed creature's mana value.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": "X",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put a permanent card with mana value x or less from your hand onto the battlefield, where x is the sacrificed creature's mana value",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

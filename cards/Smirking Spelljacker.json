@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b23c28ec-dc4d-4072-8fd8-6640a104335a",
+  "name": "Smirking Spelljacker",
+  "faces": [
+    {
+      "name": "Smirking Spelljacker",
+      "type_line": "Creature \u2014 Djinn Wizard Rogue",
+      "oracle_text": "Flash\nFlying\nWhen this creature enters, exile target spell an opponent controls.\nWhenever this creature attacks, if a card is exiled with it, you may cast the exiled card without paying its mana cost.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, exile target spell an opponent controls.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target spell an opponent controls"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, if a card is exiled with it, you may cast the exiled card without paying its mana cost.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "a card is exiled with it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may cast the exiled card without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

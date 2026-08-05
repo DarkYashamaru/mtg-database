@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fb29737c-2dfa-4139-988b-29dc8b829c08",
+  "name": "Shessra, Death's Whisper",
+  "faces": [
+    {
+      "name": "Shessra, Death's Whisper",
+      "type_line": "Legendary Creature \u2014 Human Elf Warlock",
+      "oracle_text": "Bewitching Whispers \u2014 When Shessra enters, target creature blocks this turn if able.\nWhispers of the Grave \u2014 At the beginning of your end step, if a creature died this turn, you may pay 2 life. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Shessra enters, target creature blocks this turn if able.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target creature blocks this turn if able"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if a creature died this turn, you may pay 2 life. If you do, draw a card.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a creature died this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay 2 life"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

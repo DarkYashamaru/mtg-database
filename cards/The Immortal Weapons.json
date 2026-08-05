@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "760d6cb2-5d8a-495c-9853-f96a1efa5775",
+  "name": "The Immortal Weapons",
+  "faces": [
+    {
+      "name": "The Immortal Weapons",
+      "type_line": "Legendary Creature \u2014 Human Warrior Hero",
+      "oracle_text": "When The Immortal Weapons enter, return target instant or sorcery card from your graveyard to your hand.\nWhenever you cast a noncreature spell, target creature gets +2/+0 and gains menace until end of turn. (It can't be blocked except by two or more creatures.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When The Immortal Weapons enter, return target instant or sorcery card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When The Immortal Weapons enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_instant_or_sorcery_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a noncreature spell, target creature gets +2/+0 and gains menace until end of turn. (It can't be blocked except by two or more creatures.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_gets_20_and",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

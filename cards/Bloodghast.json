@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e97f9c2b-b41e-4f36-9245-77c0ac125647",
+  "name": "Bloodghast",
+  "faces": [
+    {
+      "name": "Bloodghast",
+      "type_line": "Creature \u2014 Vampire Spirit",
+      "oracle_text": "This creature can't block.\nThis creature has haste as long as an opponent has 10 or less life.\nLandfall \u2014 Whenever a land you control enters, you may return this card from your graveyard to the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, you may return this card from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature has haste as long as an opponent has 10 or less life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature has haste as long as an opponent has 10 or less life"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

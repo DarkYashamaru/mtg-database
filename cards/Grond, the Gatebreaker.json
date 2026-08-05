@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ea52d9e8-5c25-429a-8de4-feb4558bdb99",
+  "name": "Grond, the Gatebreaker",
+  "faces": [
+    {
+      "name": "Grond, the Gatebreaker",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Trample\nAs long as it's your turn and you control an Army, Grond is an artifact creature.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Crew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As long as it's your turn and you control an Army, Grond is an artifact creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as it's your turn and you control an Army, Grond is an artifact creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

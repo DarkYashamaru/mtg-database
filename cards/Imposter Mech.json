@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f434e266-d9d6-4058-96ff-a1bd4029d8dc",
+  "name": "Imposter Mech",
+  "faces": [
+    {
+      "name": "Imposter Mech",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "You may have this Vehicle enter as a copy of a creature an opponent controls, except it's a Vehicle artifact with crew 3 and it loses all other card types.\nCrew 3",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Crew 3",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may have this Vehicle enter as a copy of a creature an opponent controls, except it's a Vehicle artifact with crew 3 and it loses all other card types.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may have this Vehicle enter as a copy of a creature an opponent controls, except it's a Vehicle artifact with crew 3 and it loses all other card types"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "77af5e31-ac4d-4112-9138-e12abb5ce144",
+  "name": "Spitting Slug",
+  "faces": [
+    {
+      "name": "Spitting Slug",
+      "type_line": "Creature \u2014 Slug",
+      "oracle_text": "Whenever this creature blocks or becomes blocked, you may pay {1}{G}. If you do, this creature gains first strike until end of turn. Otherwise, each creature blocking or blocked by this creature gains first strike until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature blocks or becomes blocked, you may pay {1}{G}. If you do, this creature gains first strike until end of turn. Otherwise, each creature blocking or blocked by this creature gains first strike until end of turn.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": "self_blocks_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{G}"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "first_strike",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "each_creature_blocking_or_blocked_by_self",
+              "keyword": "first_strike",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

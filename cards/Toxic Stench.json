@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9c3be33b-0be9-49ec-8160-898cbcab8814",
+  "name": "Toxic Stench",
+  "faces": [
+    {
+      "name": "Toxic Stench",
+      "type_line": "Instant",
+      "oracle_text": "Target nonblack creature gets -1/-1 until end of turn.\nThreshold \u2014 If there are seven or more cards in your graveyard, instead destroy that creature. It can't be regenerated.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target nonblack creature gets -1/-1 until end of turn.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_nonblack_creature",
+              "power_delta": -1,
+              "toughness_delta": -1
+            }
+          ]
+        },
+        {
+          "raw_text": "Threshold \u2014 If there are seven or more cards in your graveyard, instead destroy that creature. It can't be regenerated.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Threshold \u2014 If there are seven or more cards in your graveyard, instead destroy that creature"
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

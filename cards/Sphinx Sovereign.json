@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "41907508-9ffc-4e01-969a-4f9c35cdf548",
+  "name": "Sphinx Sovereign",
+  "faces": [
+    {
+      "name": "Sphinx Sovereign",
+      "type_line": "Artifact Creature \u2014 Sphinx",
+      "oracle_text": "Flying\nAt the beginning of your end step, you gain 3 life if this creature is untapped. Otherwise, each opponent loses 3 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, you gain 3 life if this creature is untapped. Otherwise, each opponent loses 3 life.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain 3 life if this creature is untapped"
+            },
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 3,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "84e8ca5e-730e-468b-943c-7c6358ade95c",
+  "name": "Ill-Gotten Inheritance",
+  "faces": [
+    {
+      "name": "Ill-Gotten Inheritance",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, this enchantment deals 1 damage to each opponent and you gain 1 life.\n{5}{B}, Sacrifice this enchantment: It deals 4 damage to target opponent and you gain 4 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, this enchantment deals 1 damage to each opponent and you gain 1 life.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_enchantment",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{5}{B}, Sacrifice this enchantment: It deals 4 damage to target opponent and you gain 4 life.",
+          "cost": "{5}{B}, Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "It deals 4 damage to target opponent and you gain 4 life"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

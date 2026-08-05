@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bb87ec08-bb1b-43d8-8809-92904cbba685",
+  "name": "Leyline of Lightning",
+  "faces": [
+    {
+      "name": "Leyline of Lightning",
+      "type_line": "Enchantment",
+      "oracle_text": "If this card is in your opening hand, you may begin the game with it on the battlefield.\nWhenever you cast a spell, you may pay {1}. If you do, this enchantment deals 1 damage to target player or planeswalker.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, you may pay {1}. If you do, this enchantment deals 1 damage to target player or planeswalker.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "this enchantment deals 1 damage to target player or planeswalker",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If this card is in your opening hand, you may begin the game with it on the battlefield.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may begin the game with it on the battlefield",
+              "condition": [
+                {
+                  "condition_text": "this card is in your opening hand"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7e60a641-1f2d-45ff-b3f2-d389be938b22",
+  "name": "Lumbering Worldwagon",
+  "faces": [
+    {
+      "name": "Lumbering Worldwagon",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "This Vehicle's power is equal to the number of lands you control.\nWhenever this Vehicle enters or attacks, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\nCrew 4",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle enters or attacks, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 4",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 4,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This Vehicle's power is equal to the number of lands you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Vehicle's power is equal to the number of lands you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

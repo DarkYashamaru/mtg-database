@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1e81454a-ce30-4e41-9d09-3256ae30efc2",
+  "name": "Elderscale Wurm",
+  "faces": [
+    {
+      "name": "Elderscale Wurm",
+      "type_line": "Creature \u2014 Wurm",
+      "oracle_text": "Trample\nWhen this creature enters, if your life total is less than 7, your life total becomes 7.\nAs long as you have 7 or more life, damage that would reduce your life total to less than 7 reduces it to 7 instead.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if your life total is less than 7, your life total becomes 7.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "your life total is less than 7"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "your life total becomes 7"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as you have 7 or more life, damage that would reduce your life total to less than 7 reduces it to 7 instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as you have 7 or more life, damage that would reduce your life total to less than 7 reduces it to 7 instead"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

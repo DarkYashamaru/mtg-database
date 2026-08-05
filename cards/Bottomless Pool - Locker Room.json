@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b9ac4856-5cdb-479f-b0f5-7fa0b232a5ff",
+  "name": "Bottomless Pool // Locker Room",
+  "faces": [
+    {
+      "name": "Bottomless Pool",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "When you unlock this door, return up to one target creature to its owner's hand.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you unlock this door, return up to one target creature to its owner's hand.",
+          "trigger": {
+            "type": "unlock_door",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to one target creature to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Locker Room",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "Whenever one or more creatures you control deal combat damage to a player, draw a card.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control deal combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

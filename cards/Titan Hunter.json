@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "abd9ed47-e3ef-40f3-9c18-769228e68792",
+  "name": "Titan Hunter",
+  "faces": [
+    {
+      "name": "Titan Hunter",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "At the beginning of each player's end step, if no creatures died this turn, this creature deals 4 damage to that player.\n{1}{B}, Sacrifice a creature: You gain 4 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each player's end step, if no creatures died this turn, this creature deals 4 damage to that player.",
+          "trigger": {
+            "type": "beginning_of_each_players_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "no creatures died this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 4 damage to that player"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}, Sacrifice a creature: You gain 4 life.",
+          "cost": "{1}{B}, Sacrifice a creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

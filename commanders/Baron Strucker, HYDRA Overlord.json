@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c91e64d4-e687-4ccd-a56e-796cff6e052c",
+  "name": "Baron Strucker, HYDRA Overlord",
+  "faces": [
+    {
+      "name": "Baron Strucker, HYDRA Overlord",
+      "type_line": "Legendary Creature \u2014 Human Villain",
+      "oracle_text": "Villain spells you cast cost {1} less to cast.\nWhenever another Villain you control enters, you may have it connive. Do this only once each turn. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another Villain you control enters, you may have it connive. Do this only once each turn. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Villain"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have it connive"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_uses": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Villain spells you cast cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Villain spells you cast cost {1} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

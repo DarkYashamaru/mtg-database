@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0f1b5cea-2035-444c-9f63-87dcb9782c74",
+  "name": "Gyome, Master Chef",
+  "faces": [
+    {
+      "name": "Gyome, Master Chef",
+      "type_line": "Legendary Creature \u2014 Troll Warlock",
+      "oracle_text": "Trample\nAt the beginning of your end step, create a number of Food tokens equal to the number of nontoken creatures you had enter the battlefield under your control this turn.\n{1}, Sacrifice a Food: Target creature gains indestructible until end of turn. Tap it.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, create a number of Food tokens equal to the number of nontoken creatures you had enter the battlefield under your control this turn.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a number of Food tokens equal to the number of nontoken creatures you had enter the battlefield under your control this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice a Food: Target creature gains indestructible until end of turn. Tap it.",
+          "cost": "{1}, Sacrifice a Food",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "indestructible"
+            },
+            {
+              "action": "tap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

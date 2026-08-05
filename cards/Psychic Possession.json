@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d2458d63-c627-4e75-8bda-23bca38cae93",
+  "name": "Psychic Possession",
+  "faces": [
+    {
+      "name": "Psychic Possession",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant opponent\nSkip your draw step.\nWhenever enchanted opponent draws a card, you may draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted opponent draws a card, you may draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever enchanted opponent draws a card"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant opponent",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "opponent"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Skip your draw step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Skip your draw step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

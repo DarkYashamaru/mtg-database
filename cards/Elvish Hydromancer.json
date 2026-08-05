@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9a708f82-a4a1-47f9-8ff3-65608269eebd",
+  "name": "Elvish Hydromancer",
+  "faces": [
+    {
+      "name": "Elvish Hydromancer",
+      "type_line": "Creature \u2014 Elf Wizard",
+      "oracle_text": "Kicker {3}{U} (You may pay an additional {3}{U} as you cast this spell.)\nWhen this creature enters, if it was kicked, create a token that's a copy of target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, create a token that's a copy of target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {3}{U} (You may pay an additional {3}{U} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {3}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

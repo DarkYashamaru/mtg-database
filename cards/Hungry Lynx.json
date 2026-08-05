@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a5fdc358-25de-4a5b-b965-53a01df6019c",
+  "name": "Hungry Lynx",
+  "faces": [
+    {
+      "name": "Hungry Lynx",
+      "type_line": "Creature \u2014 Cat",
+      "oracle_text": "Cats you control have protection from Rats. (They can't be blocked, targeted, or dealt damage by Rats.)\nAt the beginning of your end step, target opponent creates a 1/1 black Rat creature token with deathtouch.\nWhenever a Rat dies, put a +1/+1 counter on each Cat you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, target opponent creates a 1/1 black Rat creature token with deathtouch.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent creates a 1/1 black Rat creature token with deathtouch"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a Rat dies, put a +1/+1 counter on each Cat you control.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_rat"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Cat"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Cats you control have protection from Rats. (They can't be blocked, targeted, or dealt damage by Rats.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cats you control have protection from Rats"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

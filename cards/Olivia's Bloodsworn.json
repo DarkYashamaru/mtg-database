@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e2cfbaf5-903c-49fa-b7bf-2c55087f1ffa",
+  "name": "Olivia's Bloodsworn",
+  "faces": [
+    {
+      "name": "Olivia's Bloodsworn",
+      "type_line": "Creature \u2014 Vampire Soldier",
+      "oracle_text": "Flying\nThis creature can't block.\n{R}: Target Vampire gains haste until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{R}: Target Vampire gains haste until end of turn.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_vampire",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

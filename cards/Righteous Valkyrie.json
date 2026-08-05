@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "891d2690-7144-4f87-b6ef-96f2469780a9",
+  "name": "Righteous Valkyrie",
+  "faces": [
+    {
+      "name": "Righteous Valkyrie",
+      "type_line": "Creature \u2014 Angel Cleric",
+      "oracle_text": "Flying\nWhenever another Angel or Cleric you control enters, you gain life equal to that creature's toughness.\nAs long as you have at least 7 life more than your starting life total, creatures you control get +2/+2.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another Angel or Cleric you control enters, you gain life equal to that creature's toughness.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Angel",
+                "Or",
+                "Cleric"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain life equal to that creature's toughness"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as you have at least 7 life more than your starting life total, creatures you control get +2/+2.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as you have at least 7 life more than your starting life total, creatures you control get +2/+2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

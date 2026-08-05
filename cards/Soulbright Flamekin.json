@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7ea8426a-3b66-4fd0-9863-2b68d379671f",
+  "name": "Soulbright Flamekin",
+  "faces": [
+    {
+      "name": "Soulbright Flamekin",
+      "type_line": "Creature \u2014 Elemental Shaman",
+      "oracle_text": "{2}: Target creature gains trample until end of turn. If this is the third time this ability has resolved this turn, you may add {R}{R}{R}{R}{R}{R}{R}{R}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}: Target creature gains trample until end of turn. If this is the third time this ability has resolved this turn, you may add {R}{R}{R}{R}{R}{R}{R}{R}.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "trample"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may add {r}{r}{r}{r}{r}{r}{r}{r}",
+              "condition": [
+                {
+                  "ability_resolution_count_this_turn": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

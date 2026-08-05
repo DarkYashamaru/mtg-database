@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "497d7ab8-07f1-4c8a-a45a-52b9a4d9400f",
+  "name": "Basri Ket",
+  "faces": [
+    {
+      "name": "Basri Ket",
+      "type_line": "Legendary Planeswalker \u2014 Basri",
+      "oracle_text": "+1: Put a +1/+1 counter on up to one target creature. It gains indestructible until end of turn.\n\u22122: Whenever one or more nontoken creatures attack this turn, create that many 1/1 white Soldier creature tokens that are tapped and attacking.\n\u22126: You get an emblem with \"At the beginning of combat on your turn, create a 1/1 white Soldier creature token, then put a +1/+1 counter on each creature you control.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Put a +1/+1 counter on up to one target creature. It gains indestructible until end of turn.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "up_to_one_target_creature",
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "indestructible"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Whenever one or more nontoken creatures attack this turn, create that many 1/1 white Soldier creature tokens that are tapped and attacking.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Whenever one or more nontoken creatures attack this turn, create that many 1/1 white Soldier creature tokens that are tapped and attacking"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: You get an emblem with \"At the beginning of combat on your turn, create a 1/1 white Soldier creature token, then put a +1/+1 counter on each creature you control.\"",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get an emblem with \"at the beginning of combat on your turn, create a 1/1 white soldier creature token"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

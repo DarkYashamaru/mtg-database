@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7c3f2b3d-1517-4818-9675-189949175623",
+  "name": "Lightning Skelemental",
+  "faces": [
+    {
+      "name": "Lightning Skelemental",
+      "type_line": "Creature \u2014 Elemental Skeleton",
+      "oracle_text": "Trample, haste\nWhenever this creature deals combat damage to a player, that player discards two cards.\nAt the beginning of the end step, sacrifice this creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, that player discards two cards.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "that_player",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of the end step, sacrifice this creature.",
+          "trigger": {
+            "type": "beginning_of_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5464d5ae-5be5-4e52-b9d0-ddce48fd93b3",
+  "name": "Temur Monument",
+  "faces": [
+    {
+      "name": "Temur Monument",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, search your library for a basic Forest, Island, or Mountain card, reveal it, put it into your hand, then shuffle.\n{3}{G}{U}{R}, {T}, Sacrifice this artifact: Create a 5/5 green Elephant creature token. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, search your library for a basic Forest, Island, or Mountain card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a basic forest, island, or mountain card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{G}{U}{R}, {T}, Sacrifice this artifact: Create a 5/5 green Elephant creature token. Activate only as a sorcery.",
+          "cost": "{3}{G}{U}{R}, {T}, Sacrifice this artifact",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "5/5 green Elephant creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "5/5",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elephant"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

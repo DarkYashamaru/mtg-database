@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ca7d093c-0533-493f-9ad3-8af30118fbfc",
+  "name": "Abraded Bluffs",
+  "faces": [
+    {
+      "name": "Abraded Bluffs",
+      "type_line": "Land \u2014 Desert",
+      "oracle_text": "This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {R} or {W}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land enters, it deals 1 damage to target opponent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 1 damage to target opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R} or {W}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{w}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

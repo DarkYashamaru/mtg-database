@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ff768016-67f8-409e-8359-9ed05bcb46d2",
+  "name": "Elspeth's Nightmare",
+  "faces": [
+    {
+      "name": "Elspeth's Nightmare",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Destroy target creature an opponent controls with power 2 or less.\nII \u2014 Target opponent reveals their hand. You choose a noncreature, nonland card from it. That player discards that card.\nIII \u2014 Exile target opponent's graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Destroy target creature an opponent controls with power 2 or less.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy target creature an opponent controls with power 2 or less"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Target opponent reveals their hand. You choose a noncreature, nonland card from it. That player discards that card.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a noncreature, nonland card from it"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile target opponent's graveyard.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target opponent's graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

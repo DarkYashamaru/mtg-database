@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fde2653f-5270-4b8f-9642-0835dbb076c2",
+  "name": "Spiteful Banditry",
+  "faces": [
+    {
+      "name": "Spiteful Banditry",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, it deals X damage to each creature.\nWhenever one or more creatures your opponents control die, you create a Treasure token. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, it deals X damage to each creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals X damage to each creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more creatures your opponents control die, you create a Treasure token. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more creatures your opponents control die"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

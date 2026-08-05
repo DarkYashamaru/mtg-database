@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "952ab8fe-f7d3-4673-89de-8c6d3f8a081f",
+  "name": "Cavernous Maw",
+  "faces": [
+    {
+      "name": "Cavernous Maw",
+      "type_line": "Land \u2014 Cave",
+      "oracle_text": "{T}: Add {C}.\n{2}: This land becomes a 3/3 Elemental creature until end of turn. It's still a Cave land. Activate only if the number of other Caves you control plus the number of Cave cards in your graveyard is three or greater.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}: This land becomes a 3/3 Elemental creature until end of turn. It's still a Cave land. Activate only if the number of other Caves you control plus the number of Cave cards in your graveyard is three or greater.",
+          "cost": "{2}",
+          "condition": [
+            {
+              "condition_text": "the number of other caves you control plus the number of cave cards in your graveyard is three or greater"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land becomes a 3/3 Elemental creature until end of turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's still a Cave land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

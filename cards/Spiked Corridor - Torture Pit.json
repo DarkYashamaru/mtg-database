@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e49b902f-a556-4dab-8928-93caf0a3f609",
+  "name": "Spiked Corridor // Torture Pit",
+  "faces": [
+    {
+      "name": "Spiked Corridor",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "When you unlock this door, create three 1/1 red Devil creature tokens with \"When this token dies, it deals 1 damage to any target.\"\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you unlock this door, create three 1/1 red Devil creature tokens with \"When this token dies, it deals 1 damage to any target.\"",
+          "trigger": {
+            "type": "unlock_door",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "create_three_11_red_devil_creature_tokens_with_when_this_token_dies_it",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Torture Pit",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "If a source you control would deal noncombat damage to an opponent, it deals that much damage plus 2 instead.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If a source you control would deal noncombat damage to an opponent, it deals that much damage plus 2 instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals that much damage plus 2 instead",
+              "condition": [
+                {
+                  "condition_text": "a source you control would deal noncombat damage to an opponent"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

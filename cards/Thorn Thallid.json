@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1239d3bf-06e8-4732-b1e2-f6eb145e5894",
+  "name": "Thorn Thallid",
+  "faces": [
+    {
+      "name": "Thorn Thallid",
+      "type_line": "Creature \u2014 Fungus",
+      "oracle_text": "At the beginning of your upkeep, put a spore counter on this creature.\nRemove three spore counters from this creature: It deals 1 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a spore counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a spore counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove three spore counters from this creature: It deals 1 damage to any target.",
+          "cost": "Remove three spore counters from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "935bcf49-ec8b-4ad6-b12d-77dc7cccf1d4",
+  "name": "Geometric Nexus",
+  "faces": [
+    {
+      "name": "Geometric Nexus",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a player casts an instant or sorcery spell, put a number of charge counters on this artifact equal to that spell's mana value.\n{6}, {T}, Remove all charge counters from this artifact: Create a 0/0 green and blue Fractal creature token. Put X +1/+1 counters on it, where X is the number of charge counters removed this way.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts an instant or sorcery spell, put a number of charge counters on this artifact equal to that spell's mana value.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player casts an instant or sorcery spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a number of charge counters on this artifact equal to that spell's mana value"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{6}, {T}, Remove all charge counters from this artifact: Create a 0/0 green and blue Fractal creature token. Put X +1/+1 counters on it, where X is the number of charge counters removed this way.",
+          "cost": "{6}, {T}, Remove all charge counters from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "0/0 green and blue Fractal creature token",
+                "colors": [
+                  "green",
+                  "blue"
+                ],
+                "power_toughness": "0/0",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Fractal"
+                ]
+              }
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "it_where_x_is_the_number_of_charge_counters_removed_this_way",
+              "amount": "X"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

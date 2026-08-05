@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb99c675-adc5-4dad-8be8-524f5f921213",
+  "name": "Elenda's Hierophant",
+  "faces": [
+    {
+      "name": "Elenda's Hierophant",
+      "type_line": "Creature \u2014 Vampire Cleric",
+      "oracle_text": "Flying\nWhenever you gain life, put a +1/+1 counter on this creature.\nWhen this creature dies, create X 1/1 white Vampire creature tokens with lifelink, where X is its power.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, create X 1/1 white Vampire creature tokens with lifelink, where X is its power.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "X 1/1 white Vampire creature tokens with lifelink, where X is its power",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Vampire"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

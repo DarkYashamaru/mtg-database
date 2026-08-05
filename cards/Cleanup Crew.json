@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "12e0321b-1cd7-4519-8929-3261cf11a1a9",
+  "name": "Cleanup Crew",
+  "faces": [
+    {
+      "name": "Cleanup Crew",
+      "type_line": "Creature \u2014 Human Citizen",
+      "oracle_text": "When this creature enters, choose one \u2014\n\u2022 Destroy target artifact.\n\u2022 Destroy target enchantment.\n\u2022 Exile target card from a graveyard.\n\u2022 You gain 4 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, choose one \u2014\n\u2022 Destroy target artifact.\n\u2022 Destroy target enchantment.\n\u2022 Exile target card from a graveyard.\n\u2022 You gain 4 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Destroy target artifact.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_artifact"
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Destroy target enchantment.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_enchantment"
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Exile target card from a graveyard.",
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": {
+                    "selector": "target_card_in_graveyard"
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "You gain 4 life.",
+              "effects": [
+                {
+                  "action": "gain_life",
+                  "player": "you",
+                  "amount": 4
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f93c3468-5b1d-4fa7-a281-1009ea0f2062",
+  "name": "Longshot, Rebel Bowman",
+  "faces": [
+    {
+      "name": "Longshot, Rebel Bowman",
+      "type_line": "Legendary Creature \u2014 Human Rebel Ally",
+      "oracle_text": "Reach (This creature can block creatures with flying.)\nNoncreature spells you cast cost {1} less to cast.\nWhenever you cast a noncreature spell, Longshot deals 2 damage to each opponent.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, Longshot deals 2 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Noncreature spells you cast cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Noncreature spells you cast cost {1} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

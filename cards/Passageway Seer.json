@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2d8ebb48-5f37-4b7e-b8ec-3296d9a039c7",
+  "name": "Passageway Seer",
+  "faces": [
+    {
+      "name": "Passageway Seer",
+      "type_line": "Creature \u2014 Tiefling Warlock",
+      "oracle_text": "Lifelink\nWhen this creature enters, you take the initiative.\nAt the beginning of your end step, if you have the initiative, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you take the initiative.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "take_the_initiative"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if you have the initiative, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you have the initiative"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c8decfdf-1421-4649-acde-5215e7f08bb9",
+  "name": "Martial Impetus",
+  "faces": [
+    {
+      "name": "Martial Impetus",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +1/+1 and is goaded. (It attacks each combat if able and attacks a player other than you if able.)\nWhenever enchanted creature attacks, each other creature that's attacking one of your opponents gets +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature attacks, each other creature that's attacking one of your opponents gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "each_other_creature_thats_attacking_one_of_you_control_opponents",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1 and is goaded. (It attacks each combat if able and attacks a player other than you if able.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+1 and is goaded"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9d5917d5-4fb3-4f37-9278-e08c1f73aae5",
+  "name": "Forensic Gadgeteer",
+  "faces": [
+    {
+      "name": "Forensic Gadgeteer",
+      "type_line": "Creature \u2014 Vedalken Artificer Detective",
+      "oracle_text": "Whenever you cast an artifact spell, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nActivated abilities of artifacts you control cost {1} less to activate. This effect can't reduce the mana in that cost to less than one mana.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an artifact spell, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Artifact"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "investigate"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Activated abilities of artifacts you control cost {1} less to activate. This effect can't reduce the mana in that cost to less than one mana.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Activated abilities of artifacts you control cost {1} less to activate"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This effect can't reduce the mana in that cost to less than one mana"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

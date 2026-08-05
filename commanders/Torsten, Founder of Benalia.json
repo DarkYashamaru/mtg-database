@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3b1c6c1e-e298-4f45-8ab7-e0bb5358e11f",
+  "name": "Torsten, Founder of Benalia",
+  "faces": [
+    {
+      "name": "Torsten, Founder of Benalia",
+      "type_line": "Legendary Creature \u2014 Human Soldier",
+      "oracle_text": "When Torsten enters, reveal the top seven cards of your library. Put any number of creature and/or land cards from among them into your hand and the rest on the bottom of your library in a random order.\nWhen Torsten dies, create seven 1/1 white Soldier creature tokens.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Torsten enters, reveal the top seven cards of your library. Put any number of creature and/or land cards from among them into your hand and the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "reveal the top seven cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put any number of creature and/or land cards from among them into your hand and the rest on the bottom of your library in a random order"
+            }
+          ]
+        },
+        {
+          "raw_text": "When Torsten dies, create seven 1/1 white Soldier creature tokens.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 7,
+              "token": {
+                "raw": "1/1 white Soldier creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

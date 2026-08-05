@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7438616-cc42-4a6d-a7e3-5856cb0782fa",
+  "name": "Rooting Kavu",
+  "faces": [
+    {
+      "name": "Rooting Kavu",
+      "type_line": "Creature \u2014 Kavu",
+      "oracle_text": "When this creature dies, you may exile it. If you do, shuffle all creature cards from your graveyard into your library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, you may exile it. If you do, shuffle all creature cards from your graveyard into your library.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "shuffle all creature cards from your graveyard into your library",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

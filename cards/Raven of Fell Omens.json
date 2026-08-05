@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eec7d4f4-4141-49ed-8978-aefacc0a6609",
+  "name": "Raven of Fell Omens",
+  "faces": [
+    {
+      "name": "Raven of Fell Omens",
+      "type_line": "Creature \u2014 Bird",
+      "oracle_text": "Flying\nWhenever you commit a crime, each opponent loses 1 life and you gain 1 life. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you commit a crime, each opponent loses 1 life and you gain 1 life. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+          "trigger": {
+            "type": "commit_crime",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

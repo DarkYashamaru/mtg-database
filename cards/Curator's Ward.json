@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a89ad91e-2bc2-45f4-b32c-fb2b67a2019e",
+  "name": "Curator's Ward",
+  "faces": [
+    {
+      "name": "Curator's Ward",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant permanent\nEnchanted permanent has hexproof.\nWhen enchanted permanent leaves the battlefield, if it was historic, draw two cards. (Artifacts, legendaries, and Sagas are historic.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted permanent leaves the battlefield, if it was historic, draw two cards. (Artifacts, legendaries, and Sagas are historic.)",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "enchanted_permanent"
+          },
+          "condition": [
+            {
+              "condition_text": "it was historic"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant permanent",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "permanent"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted permanent has hexproof.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted permanent has hexproof"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

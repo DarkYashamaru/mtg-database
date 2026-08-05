@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "127f5b7e-79bc-4fe0-b9d4-1a267a6a4d46",
+  "name": "Undercellar Myconid",
+  "faces": [
+    {
+      "name": "Undercellar Myconid",
+      "type_line": "Creature \u2014 Fungus",
+      "oracle_text": "Whenever this creature enters or dies, create a 1/1 green Saproling creature token.\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or dies, create a 1/1 green Saproling creature token.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self_enters_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Saproling creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Saproling"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1b05e355-38a5-4307-9d8b-e99ec30f8ed3",
+  "name": "Brightfield Mustang",
+  "faces": [
+    {
+      "name": "Brightfield Mustang",
+      "type_line": "Creature \u2014 Horse Mount",
+      "oracle_text": "Whenever this creature attacks while saddled, untap it and put a +1/+1 counter on it.\nSaddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks while saddled, untap it and put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "attacks_while_saddled",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "it"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Saddle 1 (Tap any number of other creatures you control with total power 1 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+          "cost": "Saddle 1 (Tap any number of other creatures you control with total power 1 or more",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Mount becomes saddled until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

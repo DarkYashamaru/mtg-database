@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "24bc7bd5-f262-45a2-8e94-377fef2ba5d5",
+  "name": "Stubborn Burrowfiend",
+  "faces": [
+    {
+      "name": "Stubborn Burrowfiend",
+      "type_line": "Creature \u2014 Badger Beast Mount",
+      "oracle_text": "Whenever this creature becomes saddled for the first time each turn, mill two cards, then this creature gets +X/+X until end of turn, where X is the number of creature cards in your graveyard.\nSaddle 2 (Tap any number of other creatures you control with total power 2 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes saddled for the first time each turn, mill two cards, then this creature gets +X/+X until end of turn, where X is the number of creature cards in your graveyard.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes saddled for the first time each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature gets +x/+x until end of turn, where x is the number of creature cards in your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Saddle 2 (Tap any number of other creatures you control with total power 2 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+          "cost": "Saddle 2 (Tap any number of other creatures you control with total power 2 or more",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Mount becomes saddled until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

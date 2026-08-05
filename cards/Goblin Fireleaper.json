@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c5fa1631-8685-49e1-baad-86ef72a9499c",
+  "name": "Goblin Fireleaper",
+  "faces": [
+    {
+      "name": "Goblin Fireleaper",
+      "type_line": "Creature \u2014 Goblin Warrior",
+      "oracle_text": "{1}{R}: This creature gets +1/+0 until end of turn.\nWhen this creature dies, it deals damage equal to its power to target creature an opponent controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, it deals damage equal to its power to target creature an opponent controls.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals damage equal to its power to target creature an opponent controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{R}: This creature gets +1/+0 until end of turn.",
+          "cost": "{1}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a38ebf4a-064c-4517-a553-15f0a252c159",
+  "name": "The Three Seasons",
+  "faces": [
+    {
+      "name": "The Three Seasons",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Mill three cards.\nII \u2014 Return up to two target snow permanent cards from your graveyard to your hand.\nIII \u2014 Choose three cards in each graveyard. Their owners shuffle those cards into their libraries.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Mill three cards.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Return up to two target snow permanent cards from your graveyard to your hand.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return up to two target snow permanent cards from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Choose three cards in each graveyard. Their owners shuffle those cards into their libraries.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose three cards in each graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Their owners shuffle those cards into their libraries"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

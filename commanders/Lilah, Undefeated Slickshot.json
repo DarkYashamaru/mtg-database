@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0757c5a7-e51b-4c39-bb4d-b32657c10cb4",
+  "name": "Lilah, Undefeated Slickshot",
+  "faces": [
+    {
+      "name": "Lilah, Undefeated Slickshot",
+      "type_line": "Legendary Creature \u2014 Human Rogue",
+      "oracle_text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhenever you cast a multicolored instant or sorcery spell from your hand, exile that spell instead of putting it into your graveyard as it resolves. If you do, it becomes plotted. (You may cast it as a sorcery on a later turn without paying its mana cost.)",
+      "static": [
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a multicolored instant or sorcery spell from your hand, exile that spell instead of putting it into your graveyard as it resolves. If you do, it becomes plotted. (You may cast it as a sorcery on a later turn without paying its mana cost.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a multicolored instant or sorcery spell from your hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile that spell instead of putting it into your graveyard as it resolves"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it becomes plotted",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

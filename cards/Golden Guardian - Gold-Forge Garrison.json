@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "oracle_id": "58afb897-4d57-4b53-a5c3-b532cb3d5180",
+  "name": "Golden Guardian // Gold-Forge Garrison",
+  "faces": [
+    {
+      "name": "Gold-Forge Garrison",
+      "type_line": "Land",
+      "oracle_text": "(Transforms from Golden Guardian.)\n{T}: Add two mana of any one color.\n{4}, {T}: Create a 4/4 colorless Golem artifact creature token.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add two mana of any one color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "same_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}, {T}: Create a 4/4 colorless Golem artifact creature token.",
+          "cost": "{4}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "4/4 colorless Golem artifact creature token",
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Golem",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Golden Guardian",
+      "type_line": "Artifact Creature \u2014 Golem",
+      "oracle_text": "Defender\n{2}: This creature fights another target creature you control. When this creature dies this turn, return it to the battlefield transformed under your control.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}: This creature fights another target creature you control. When this creature dies this turn, return it to the battlefield transformed under your control.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature fights another target creature you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "When this creature dies this turn, return it to the battlefield transformed under your control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

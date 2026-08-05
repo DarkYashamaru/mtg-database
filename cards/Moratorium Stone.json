@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bb0d89e7-4ae6-4ac2-a0e6-51ab08226069",
+  "name": "Moratorium Stone",
+  "faces": [
+    {
+      "name": "Moratorium Stone",
+      "type_line": "Artifact",
+      "oracle_text": "{2}, {T}: Exile target card from a graveyard.\n{2}{W}{B}, {T}, Sacrifice this artifact: Exile target nonland card from a graveyard, all other cards from graveyards with the same name as that card, and all permanents with that name.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}: Exile target card from a graveyard.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_card_in_graveyard"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{W}{B}, {T}, Sacrifice this artifact: Exile target nonland card from a graveyard, all other cards from graveyards with the same name as that card, and all permanents with that name.",
+          "cost": "{2}{W}{B}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target nonland card from a graveyard, all other cards from graveyards with the same name as that card, and all permanents with that name"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

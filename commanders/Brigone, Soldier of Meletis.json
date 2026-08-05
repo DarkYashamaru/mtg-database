@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f328dfb1-0737-478b-bd40-dfcb9a35e5a5",
+  "name": "Brigone, Soldier of Meletis",
+  "faces": [
+    {
+      "name": "Brigone, Soldier of Meletis",
+      "type_line": "Legendary Creature \u2014 Human Soldier",
+      "oracle_text": "Vigilance\nHeroic \u2014 Whenever you cast a spell that targets Brigone, put a +1/+1 counter on Brigone.\n{T}, Remove a +1/+1 counter from Brigone: Draw a card.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that targets Brigone, put a +1/+1 counter on Brigone.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "that targets brigone"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Remove a +1/+1 counter from Brigone: Draw a card.",
+          "cost": "{T}, Remove a +1/+1 counter from Brigone",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

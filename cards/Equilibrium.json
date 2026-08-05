@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cbc052e7-817f-43b0-b8e3-96b1644d798b",
+  "name": "Equilibrium",
+  "faces": [
+    {
+      "name": "Equilibrium",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cast a creature spell, you may pay {1}. If you do, return target creature to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a creature spell, you may pay {1}. If you do, return target creature to its owner's hand.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature"
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

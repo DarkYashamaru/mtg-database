@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "oracle_id": "81622cf6-3021-4ad4-933d-a7e3d8ac817f",
+  "name": "Tribute to Horobi // Echo of Death's Wail",
+  "faces": [
+    {
+      "name": "Echo of Death's Wail",
+      "type_line": "Enchantment Creature \u2014 Spirit",
+      "oracle_text": "Flying, haste\nWhen this creature enters, gain control of all Rat tokens.\nWhenever this creature attacks, you may sacrifice another creature. If you do, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, gain control of all Rat tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "gain control of all Rat tokens"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, you may sacrifice another creature. If you do, draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Tribute to Horobi",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI, II \u2014 Each opponent creates a 1/1 black Rat Rogue creature token.\nIII \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Each opponent creates a 1/1 black Rat Rogue creature token.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent creates a 1/1 black Rat Rogue creature token"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

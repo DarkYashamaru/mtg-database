@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cf032b80-00d5-42fc-9e1a-16072b5fed55",
+  "name": "Hibernation's End",
+  "faces": [
+    {
+      "name": "Hibernation's End",
+      "type_line": "Enchantment",
+      "oracle_text": "Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nWhenever you pay this enchantment's cumulative upkeep, you may search your library for a creature card with mana value equal to the number of age counters on this enchantment, put it onto the battlefield, then shuffle.",
+      "static": [
+        {
+          "keyword": "cumulative_upkeep",
+          "cost": "{1}"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you pay this enchantment's cumulative upkeep, you may search your library for a creature card with mana value equal to the number of age counters on this enchantment, put it onto the battlefield, then shuffle.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you pay this enchantment's cumulative upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a creature card with mana value equal to the number of age counters on this enchantment, put it onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

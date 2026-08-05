@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9e9164be-3534-4445-bfad-00d16a50575c",
+  "name": "Workshop Elders",
+  "faces": [
+    {
+      "name": "Workshop Elders",
+      "type_line": "Creature \u2014 Human Artificer",
+      "oracle_text": "Artifact creatures you control have flying.\nAt the beginning of combat on your turn, you may have target noncreature artifact you control become a 0/0 artifact creature. If you do, put four +1/+1 counters on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, you may have target noncreature artifact you control become a 0/0 artifact creature. If you do, put four +1/+1 counters on it.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have target noncreature artifact you control become a 0/0 artifact creature"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 4,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Artifact creatures you control have flying.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "permanents_you_control",
+                "card_types": [
+                  "Artifact",
+                  "Creature"
+                ]
+              },
+              "keywords": [
+                "flying"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "688e5e19-8f28-45c4-ace4-a38144f494f1",
+  "name": "Sifter of Skulls",
+  "faces": [
+    {
+      "name": "Sifter of Skulls",
+      "type_line": "Creature \u2014 Eldrazi",
+      "oracle_text": "Devoid (This card has no color.)\nWhenever another nontoken creature you control dies, create a 1/1 colorless Eldrazi Scion creature token. It has \"Sacrifice this token: Add {C}.\" ({C} represents colorless mana.)",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken creature you control dies, create a 1/1 colorless Eldrazi Scion creature token. It has \"Sacrifice this token: Add {C}.\" ({C} represents colorless mana.)",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Eldrazi Scion creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Eldrazi",
+                  "Scion"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "It has \"Sacrifice this token: Add {C}.\""
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

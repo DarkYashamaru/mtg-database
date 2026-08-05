@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb8d80c9-ed58-4f2d-aa8c-c383370c7f1a",
+  "name": "Kaalia of the Vast",
+  "faces": [
+    {
+      "name": "Kaalia of the Vast",
+      "type_line": "Legendary Creature \u2014 Human Cleric",
+      "oracle_text": "Flying\nWhenever Kaalia attacks an opponent, you may put an Angel, Demon, or Dragon creature card from your hand onto the battlefield tapped and attacking that opponent.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Kaalia attacks an opponent, you may put an Angel, Demon, or Dragon creature card from your hand onto the battlefield tapped and attacking that opponent.",
+          "trigger": {
+            "type": "attacks_opponent",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "source_zone": "hand",
+              "destination_zone": "battlefield",
+              "filter": {
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes_any": [
+                  "Angel",
+                  "Demon",
+                  "Dragon"
+                ]
+              },
+              "tapped": true,
+              "attacking": "that_opponent",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

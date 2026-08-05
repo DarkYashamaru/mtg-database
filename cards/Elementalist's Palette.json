@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6d588e25-7b4d-43c0-b45b-1b0ffb277a78",
+  "name": "Elementalist's Palette",
+  "faces": [
+    {
+      "name": "Elementalist's Palette",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever you cast a spell with {X} in its mana cost, put two charge counters on this artifact.\n{T}: Add one mana of any color.\n{T}: Add {C} for each charge counter on this artifact. Spend this mana only on costs that contain {X}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell with {X} in its mana cost, put two charge counters on this artifact.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell with {X} in its mana cost"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put two charge counters on this artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {C} for each charge counter on this artifact. Spend this mana only on costs that contain {X}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {C} for each charge counter on this artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only on costs that contain {X}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

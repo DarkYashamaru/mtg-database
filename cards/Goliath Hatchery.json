@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c4d65bcd-f6c5-40c3-825d-06b5183e7dbe",
+  "name": "Goliath Hatchery",
+  "faces": [
+    {
+      "name": "Goliath Hatchery",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create two 3/3 green Phyrexian Beast creature tokens with toxic 1. (Players dealt combat damage by them also get a poison counter.)\nCorrupted \u2014 At the beginning of your upkeep, if an opponent has three or more poison counters, choose a creature you control, then draw cards equal to its total toxic value.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create two 3/3 green Phyrexian Beast creature tokens with toxic 1. (Players dealt combat damage by them also get a poison counter.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "two 3/3 green Phyrexian Beast creature tokens with toxic 1",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Phyrexian",
+                  "Beast"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if an opponent has three or more poison counters, choose a creature you control, then draw cards equal to its total toxic value.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "an opponent has three or more poison counters"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose a creature you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "draw cards equal to its total toxic value"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

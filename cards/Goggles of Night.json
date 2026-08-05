@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "af27761d-88df-4d4f-a366-d55ed62d1d33",
+  "name": "Goggles of Night",
+  "faces": [
+    {
+      "name": "Goggles of Night",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature deals combat damage to a player, scry 1, then draw a card. (To scry 1, look at the top card of your library, then you may put that card on the bottom.)\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals combat damage to a player, scry 1, then draw a card. (To scry 1, look at the top card of your library, then you may put that card on the bottom.)",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

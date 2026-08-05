@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7d5dcf8c-ecda-49ae-980c-c8c9016252d9",
+  "name": "Firja, Judge of Valor",
+  "faces": [
+    {
+      "name": "Firja, Judge of Valor",
+      "type_line": "Legendary Creature \u2014 Angel Cleric",
+      "oracle_text": "Flying, lifelink\nWhenever you cast your second spell each turn, look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put one of them into your hand and the rest into your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

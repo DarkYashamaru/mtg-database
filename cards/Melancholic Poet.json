@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "37731c49-1238-4e0e-8993-204e36c1f4ee",
+  "name": "Melancholic Poet",
+  "faces": [
+    {
+      "name": "Melancholic Poet",
+      "type_line": "Creature \u2014 Elf Bard",
+      "oracle_text": "Repartee \u2014 Whenever you cast an instant or sorcery spell that targets a creature, each opponent loses 1 life and you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell that targets a creature, each opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            },
+            {
+              "condition_text": "that targets a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

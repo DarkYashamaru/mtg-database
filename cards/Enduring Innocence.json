@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "98a389f4-2905-47f3-b60e-3d4afb3e5cb0",
+  "name": "Enduring Innocence",
+  "faces": [
+    {
+      "name": "Enduring Innocence",
+      "type_line": "Enchantment Creature \u2014 Sheep Glimmer",
+      "oracle_text": "Lifelink\nWhenever one or more other creatures you control with power 2 or less enter, draw a card. This ability triggers only once each turn.\nWhen Enduring Innocence dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more other creatures you control with power 2 or less enter, draw a card. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more other creatures you control with power 2 or less enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When Enduring Innocence dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's an enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

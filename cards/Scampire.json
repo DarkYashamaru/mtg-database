@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "64dbed80-b3a2-4a0f-afe4-c3d968173e50",
+  "name": "Scampire",
+  "faces": [
+    {
+      "name": "Scampire",
+      "type_line": "Creature \u2014 Vampire Employee",
+      "oracle_text": "When Scampire enters, you get {TK}, then you may put a sticker on a creature card in your graveyard.\n{3}{B}: Return target creature card with a sticker on it from your graveyard to the battlefield. That creature gains haste. Exile it at the beginning of the next end step. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Scampire enters, you get {TK}, then you may put a sticker on a creature card in your graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get {tk}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put a sticker on a creature card in your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{B}: Return target creature card with a sticker on it from your graveyard to the battlefield. That creature gains haste. Exile it at the beginning of the next end step. Activate only as a sorcery.",
+          "cost": "{3}{B}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target creature card with a sticker on it from your graveyard to the battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "that_creature",
+              "keyword": "haste"
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_end_step"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": "it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

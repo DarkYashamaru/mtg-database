@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c1d8e97b-f34b-4e52-9795-a4433f26725a",
+  "name": "Doomskar Oracle",
+  "faces": [
+    {
+      "name": "Doomskar Oracle",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "Whenever you cast your second spell each turn, you gain 2 life.\nForetell {W} (During your turn, you may pay {2} and exile this card from your hand face down. Cast it on a later turn for its foretell cost.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, you gain 2 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Foretell {W} (During your turn, you may pay {2} and exile this card from your hand face down. Cast it on a later turn for its foretell cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Foretell {W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

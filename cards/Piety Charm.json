@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3d4ec57a-8541-42ed-9790-7933f96c8adf",
+  "name": "Piety Charm",
+  "faces": [
+    {
+      "name": "Piety Charm",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Destroy target Aura attached to a creature.\n\u2022 Target Soldier creature gets +2/+2 until end of turn.\n\u2022 Creatures you control gain vigilance until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Destroy target Aura attached to a creature.\n\u2022 Target Soldier creature gets +2/+2 until end of turn.\n\u2022 Creatures you control gain vigilance until end of turn.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Destroy target Aura attached to a creature.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Destroy target Aura attached to a creature"
+                }
+              ]
+            },
+            {
+              "raw_text": "Target Soldier creature gets +2/+2 until end of turn.",
+              "effects": [
+                {
+                  "action": "modify_stats_until_end_of_turn",
+                  "target": "target_soldier_creature",
+                  "power_delta": 2,
+                  "toughness_delta": 2
+                }
+              ]
+            },
+            {
+              "raw_text": "Creatures you control gain vigilance until end of turn.",
+              "effects": [
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "creatures_you_control",
+                  "keyword": "vigilance"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

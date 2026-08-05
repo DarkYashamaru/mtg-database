@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "41fed659-237c-4d8e-ad31-d17fa0d3f764",
+  "name": "Ozolith, the Shattered Spire",
+  "faces": [
+    {
+      "name": "Ozolith, the Shattered Spire",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "If one or more +1/+1 counters would be put on an artifact or creature you control, that many plus one +1/+1 counters are put on it instead.\n{1}{G}, {T}: Put a +1/+1 counter on target artifact or creature you control. Activate only as a sorcery.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{G}, {T}: Put a +1/+1 counter on target artifact or creature you control. Activate only as a sorcery.",
+          "cost": "{1}{G}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Artifact",
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target",
+                  "Or"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Cycling {2} ({2}, Discard this card: Draw a card.)",
+          "cost": "Cycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If one or more +1/+1 counters would be put on an artifact or creature you control, that many plus one +1/+1 counters are put on it instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that many plus one +1/+1 counters are put on it instead",
+              "condition": [
+                {
+                  "condition_text": "one or more +1/+1 counters would be put on an artifact or creature you control"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

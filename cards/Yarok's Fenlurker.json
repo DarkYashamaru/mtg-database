@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6bb60f1f-9295-41ce-bdcd-3fe67f8e175c",
+  "name": "Yarok's Fenlurker",
+  "faces": [
+    {
+      "name": "Yarok's Fenlurker",
+      "type_line": "Creature \u2014 Horror",
+      "oracle_text": "When this creature enters, each opponent exiles a card from their hand.\n{2}{B}: This creature gets +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, each opponent exiles a card from their hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent exiles a card from their hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{B}: This creature gets +1/+1 until end of turn.",
+          "cost": "{2}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

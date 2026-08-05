@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "87f82d15-5b6b-400f-8a15-d45a2a735f7d",
+  "name": "Experimental Confectioner",
+  "faces": [
+    {
+      "name": "Experimental Confectioner",
+      "type_line": "Creature \u2014 Human Peasant",
+      "oracle_text": "When this creature enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nWhenever you sacrifice a Food, create a 1/1 black Rat creature token with \"This token can't block.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you sacrifice a Food, create a 1/1 black Rat creature token with \"This token can't block.\"",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice a Food"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 black Rat creature token with \"This token can't block",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Rat"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

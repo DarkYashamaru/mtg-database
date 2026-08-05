@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "oracle_id": "95630a83-3699-4340-b3e5-17e81db1b82f",
+  "name": "Hydro-Channeler",
+  "faces": [
+    {
+      "name": "Hydro-Channeler",
+      "type_line": "Creature \u2014 Merfolk Wizard",
+      "oracle_text": "{T}: Add {U}. Spend this mana only to cast an instant or sorcery spell.\n{1}, {T}: Add one mana of any color. Spend this mana only to cast an instant or sorcery spell.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}. Spend this mana only to cast an instant or sorcery spell.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "card_types": [
+                    "Instant",
+                    "Sorcery"
+                  ],
+                  "subtypes_all": [
+                    "Or"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Add one mana of any color. Spend this mana only to cast an instant or sorcery spell.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "card_types": [
+                    "Instant",
+                    "Sorcery"
+                  ],
+                  "subtypes_all": [
+                    "Or"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

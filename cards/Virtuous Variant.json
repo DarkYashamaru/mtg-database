@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fa4ed027-6e18-4a87-9845-e13f274d9994",
+  "name": "Virtuous Variant",
+  "faces": [
+    {
+      "name": "Virtuous Variant",
+      "type_line": "Creature \u2014 Spider Human Hero",
+      "oracle_text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nWhen this creature enters, put a +1/+1 counter on target creature you control.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

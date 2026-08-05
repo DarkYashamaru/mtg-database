@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "62916107-14c0-4516-9fed-a032b1a80e5d",
+  "name": "Nick Fury, Agent of S.H.I.E.L.D.",
+  "faces": [
+    {
+      "name": "Nick Fury, Agent of S.H.I.E.L.D.",
+      "type_line": "Legendary Creature \u2014 Human Spy Hero",
+      "oracle_text": "Power-up \u2014 {W}{U}{B}{R}{G}: Put two +1/+1 counters on Nick Fury, then look at the top seven cards of your library. You may put a Hero, Equipment, or Vehicle card from among them onto the battlefield. If it's a double-faced card, you may transform it. Put the rest on the bottom of your library in a random order. (Activate each power-up ability only once. Reduce the cost by his mana cost if he entered this turn.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Power-up \u2014 {W}{U}{B}{R}{G}: Put two +1/+1 counters on Nick Fury, then look at the top seven cards of your library. You may put a Hero, Equipment, or Vehicle card from among them onto the battlefield. If it's a double-faced card, you may transform it. Put the rest on the bottom of your library in a random order. (Activate each power-up ability only once. Reduce the cost by his mana cost if he entered this turn.)",
+          "cost": "Power-up \u2014 {W}{U}{B}{R}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            },
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 7
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put a Hero, Equipment, or Vehicle card from among them onto the battlefield"
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "optional": true,
+              "condition": [
+                {
+                  "condition_text": "it's a double-faced card"
+                }
+              ]
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

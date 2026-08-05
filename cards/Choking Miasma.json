@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "158aaeab-1646-4160-9615-bc8747620a03",
+  "name": "Choking Miasma",
+  "faces": [
+    {
+      "name": "Choking Miasma",
+      "type_line": "Sorcery",
+      "oracle_text": "Kicker {G} (You may pay an additional {G} as you cast this spell.)\nIf this spell was kicked, put a +1/+1 counter on a creature you control.\nAll creatures get -2/-2 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {G} (You may pay an additional {G} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {G}"
+            }
+          ]
+        },
+        {
+          "raw_text": "If this spell was kicked, put a +1/+1 counter on a creature you control.",
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "All creatures get -2/-2 until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "All creatures get -2/-2 until end of turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

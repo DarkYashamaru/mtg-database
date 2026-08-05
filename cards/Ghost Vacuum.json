@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4ef583ab-e0a0-4e4b-bd65-af766038b1fd",
+  "name": "Ghost Vacuum",
+  "faces": [
+    {
+      "name": "Ghost Vacuum",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Exile target card from a graveyard.\n{6}, {T}, Sacrifice this artifact: Put each creature card exiled with this artifact onto the battlefield under your control with a flying counter on it. Each of them is a 1/1 Spirit in addition to its other types. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Exile target card from a graveyard.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_card_in_graveyard"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{6}, {T}, Sacrifice this artifact: Put each creature card exiled with this artifact onto the battlefield under your control with a flying counter on it. Each of them is a 1/1 Spirit in addition to its other types. Activate only as a sorcery.",
+          "cost": "{6}, {T}, Sacrifice this artifact",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put each creature card exiled with this artifact onto the battlefield under your control with a flying counter on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each of them is a 1/1 Spirit in addition to its other types"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

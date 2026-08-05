@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bfa20bc7-4626-4a52-87f4-6e2763cb8ed5",
+  "name": "Archway of Innovation",
+  "faces": [
+    {
+      "name": "Archway of Innovation",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped unless you control an Island.\n{T}: Add {U}.\n{U}, {T}: The next spell you cast this turn has improvise. (Your artifacts can help cast that spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}, {T}: The next spell you cast this turn has improvise. (Your artifacts can help cast that spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)",
+          "cost": "{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "The next spell you cast this turn has improvise"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped unless you control an Island.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters tapped unless you control an Island"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

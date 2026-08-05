@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4b34a324-d939-453a-97e3-a21c584a0c74",
+  "name": "Altar of Shadows",
+  "faces": [
+    {
+      "name": "Altar of Shadows",
+      "type_line": "Artifact",
+      "oracle_text": "At the beginning of your first main phase, add {B} for each charge counter on this artifact.\n{7}, {T}: Destroy target creature. Then put a charge counter on this artifact.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your first main phase, add {B} for each charge counter on this artifact.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "add {B} for each charge counter on this artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{7}, {T}: Destroy target creature. Then put a charge counter on this artifact.",
+          "cost": "{7}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then put a charge counter on this artifact"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

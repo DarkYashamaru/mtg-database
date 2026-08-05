@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b3c7b46f-c9ab-40ca-b50b-a4e0d0bd9be8",
+  "name": "Restless Bivouac",
+  "faces": [
+    {
+      "name": "Restless Bivouac",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {R} or {W}.\n{1}{R}{W}: This land becomes a 2/2 red and white Ox creature until end of turn. It's still a land.\nWhenever this land attacks, put a +1/+1 counter on target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this land attacks, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R} or {W}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{w}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{R}{W}: This land becomes a 2/2 red and white Ox creature until end of turn. It's still a land.",
+          "cost": "{1}{R}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land becomes a 2/2 red and white Ox creature until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dc3073fc-dc23-426e-b867-fee5dd99fe25",
+  "name": "Shipwreck Dowser",
+  "faces": [
+    {
+      "name": "Shipwreck Dowser",
+      "type_line": "Creature \u2014 Merfolk Wizard",
+      "oracle_text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhen this creature enters, return target instant or sorcery card from your graveyard to your hand.",
+      "static": [
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, return target instant or sorcery card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_instant_or_sorcery_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

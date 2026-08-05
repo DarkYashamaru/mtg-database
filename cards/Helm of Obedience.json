@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "16cadebf-c484-41f8-9e38-5c2c528f5b54",
+  "name": "Helm of Obedience",
+  "faces": [
+    {
+      "name": "Helm of Obedience",
+      "type_line": "Artifact",
+      "oracle_text": "{X}, {T}: Target opponent mills a card, then repeats this process until a creature card or X cards have been put into their graveyard this way, whichever comes first. If one or more creature cards were put into that graveyard this way, sacrifice this artifact and put one of them onto the battlefield under your control. X can't be 0.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{X}, {T}: Target opponent mills a card, then repeats this process until a creature card or X cards have been put into their graveyard this way, whichever comes first. If one or more creature cards were put into that graveyard this way, sacrifice this artifact and put one of them onto the battlefield under your control. X can't be 0.",
+          "cost": "{X}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent mills a card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "repeats this process until a creature card or x cards have been put into their graveyard this way, whichever comes first"
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_artifact_and_put_one_of_self_onto_the_battlefield_under_you_control_control",
+              "condition": [
+                {
+                  "condition_text": "one or more creature cards were put into that graveyard this way"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "X can't be 0"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

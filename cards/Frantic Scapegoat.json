@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d181310f-404b-4f26-8024-b7b537d1fd90",
+  "name": "Frantic Scapegoat",
+  "faces": [
+    {
+      "name": "Frantic Scapegoat",
+      "type_line": "Creature \u2014 Goat",
+      "oracle_text": "Haste\nWhen this creature enters, suspect it. (It has menace and can't block.)\nWhenever one or more other creatures you control enter, if this creature is suspected, you may suspect one of the other creatures. If you do, this creature is no longer suspected.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, suspect it. (It has menace and can't block.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "suspect it"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more other creatures you control enter, if this creature is suspected, you may suspect one of the other creatures. If you do, this creature is no longer suspected.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more other creatures you control enter"
+          },
+          "condition": [
+            {
+              "condition_text": "this creature is suspected"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may suspect one of the other creatures"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature is no longer suspected",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "65e65eab-bc3f-4eae-8361-7f0a65fc1673",
+  "name": "Eloise, Nephalia Sleuth",
+  "faces": [
+    {
+      "name": "Eloise, Nephalia Sleuth",
+      "type_line": "Legendary Creature \u2014 Human Rogue",
+      "oracle_text": "Whenever another creature you control dies, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nWhenever you sacrifice a token, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control dies, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "investigate"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you sacrifice a token, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice a token"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

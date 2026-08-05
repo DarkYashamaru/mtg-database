@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7cdc9df9-ac6c-49c7-a521-921588696b17",
+  "name": "Hedron Alignment",
+  "faces": [
+    {
+      "name": "Hedron Alignment",
+      "type_line": "Enchantment",
+      "oracle_text": "Hexproof\nAt the beginning of your upkeep, you may reveal your hand. If you do, you win the game if you own a card named Hedron Alignment in exile, in your hand, in your graveyard, and on the battlefield.\n{1}{U}: Scry 1.",
+      "static": [
+        {
+          "keyword": "hexproof"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may reveal your hand. If you do, you win the game if you own a card named Hedron Alignment in exile, in your hand, in your graveyard, and on the battlefield.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may reveal your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you win the game if you own a card named hedron alignment in exile, in your hand, in your graveyard, and on the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{U}: Scry 1.",
+          "cost": "{1}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

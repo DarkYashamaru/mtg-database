@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "db659cae-2078-423e-a6ed-63898dbab87f",
+  "name": "Twisted Landscape",
+  "faces": [
+    {
+      "name": "Twisted Landscape",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}, Sacrifice this land: Search your library for a basic Swamp, Mountain, or Forest card, put it onto the battlefield tapped, then shuffle.\nCycling {B}{R}{G} ({B}{R}{G}, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Sacrifice this land: Search your library for a basic Swamp, Mountain, or Forest card, put it onto the battlefield tapped, then shuffle.",
+          "cost": "{T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a basic swamp, mountain, or forest card, put it onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Cycling {B}{R}{G} ({B}{R}{G}, Discard this card: Draw a card.)",
+          "cost": "Cycling {B}{R}{G} ({B}{R}{G}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

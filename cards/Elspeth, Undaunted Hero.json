@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f9a797b-85e7-474e-aefe-7e2ec08fc5b7",
+  "name": "Elspeth, Undaunted Hero",
+  "faces": [
+    {
+      "name": "Elspeth, Undaunted Hero",
+      "type_line": "Legendary Planeswalker \u2014 Elspeth",
+      "oracle_text": "+2: Put a +1/+1 counter on each of up to two target creatures.\n\u22122: Search your library and/or graveyard for a card named Sunlit Hoplite and put it onto the battlefield. If you search your library this way, shuffle.\n\u22128: Until end of turn, creatures you control gain flying and get +X/+X, where X is your devotion to white.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+2: Put a +1/+1 counter on each of up to two target creatures.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "each_of_up_to_two_target_creatures",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Search your library and/or graveyard for a card named Sunlit Hoplite and put it onto the battlefield. If you search your library this way, shuffle.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Search your library and/or graveyard for a card named Sunlit Hoplite and put it onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22128: Until end of turn, creatures you control gain flying and get +X/+X, where X is your devotion to white.",
+          "cost": "\u22128",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, creatures you control gain flying and get +X/+X, where X is your devotion to white"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

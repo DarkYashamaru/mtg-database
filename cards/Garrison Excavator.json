@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5d808e64-a648-4f1b-a3a9-fd09568db281",
+  "name": "Garrison Excavator",
+  "faces": [
+    {
+      "name": "Garrison Excavator",
+      "type_line": "Creature \u2014 Orc Sorcerer",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever one or more cards leave your graveyard, create a 2/2 red and white Spirit creature token.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more cards leave your graveyard, create a 2/2 red and white Spirit creature token.",
+          "trigger": {
+            "type": "cards_leave_graveyard",
+            "subject": "your_graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 red and white Spirit creature token",
+                "colors": [
+                  "red",
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Spirit"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

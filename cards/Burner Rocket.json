@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0d07eb9f-46f4-466d-acb6-609437c34f13",
+  "name": "Burner Rocket",
+  "faces": [
+    {
+      "name": "Burner Rocket",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flash\nWhen this Vehicle enters, target creature you control gets +2/+0 and gains trample until end of turn.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, target creature you control gets +2/+0 and gains trample until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control_gets_20_and",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

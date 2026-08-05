@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1b9df437-6988-4ddc-80c4-893e11076067",
+  "name": "Charmbreaker Devils",
+  "faces": [
+    {
+      "name": "Charmbreaker Devils",
+      "type_line": "Creature \u2014 Devil",
+      "oracle_text": "At the beginning of your upkeep, return an instant or sorcery card at random from your graveyard to your hand.\nWhenever you cast an instant or sorcery spell, this creature gets +4/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, return an instant or sorcery card at random from your graveyard to your hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return an instant or sorcery card at random from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature gets +4/+0 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 4,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

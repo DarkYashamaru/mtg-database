@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "oracle_id": "17b29350-4f37-4552-8192-4856b15345f9",
+  "name": "Smuggler's Share",
+  "faces": [
+    {
+      "name": "Smuggler's Share",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of each end step, draw a card for each opponent who drew two or more cards this turn, then create a Treasure token for each opponent who had two or more lands enter the battlefield under their control this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each end step, draw a card for each opponent who drew two or more cards this turn, then create a Treasure token for each opponent who had two or more lands enter the battlefield under their control this turn.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "opponent_who_drew_two_or_more_cards_this_turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a treasure token for each opponent who had two or more lands enter the battlefield under their control this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

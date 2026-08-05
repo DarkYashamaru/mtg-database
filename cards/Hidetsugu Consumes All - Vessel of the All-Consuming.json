@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b8be856-c08d-4356-925d-fce843565189",
+  "name": "Hidetsugu Consumes All // Vessel of the All-Consuming",
+  "faces": [
+    {
+      "name": "Hidetsugu Consumes All",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 Destroy each nonland permanent with mana value 1 or less.\nII \u2014 Exile all graveyards.\nIII \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Destroy each nonland permanent with mana value 1 or less.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy each nonland permanent with mana value 1 or less"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Exile all graveyards.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile all graveyards"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Vessel of the All-Consuming",
+      "type_line": "Enchantment Creature \u2014 Ogre Shaman",
+      "oracle_text": "Trample\nWhenever this creature deals damage, put a +1/+1 counter on it.\nWhenever this creature deals damage to a player, if it has dealt 10 or more damage to that player this turn, they lose the game.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals damage, put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "deals_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature deals damage to a player, if it has dealt 10 or more damage to that player this turn, they lose the game.",
+          "trigger": {
+            "type": "deals_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it has dealt 10 or more damage to that player this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "they lose the game"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

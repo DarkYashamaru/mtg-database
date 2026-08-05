@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "905e4bd1-f5f2-4691-b13f-ce2628d26a38",
+  "name": "Avengers Quinjet",
+  "faces": [
+    {
+      "name": "Avengers Quinjet",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nWhenever this Vehicle enters or attacks, choose one \u2014\n\u2022 You may put a Hero creature card from your hand onto the battlefield.\n\u2022 Return target Hero creature card from your graveyard to your hand.\nCrew 3",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle enters or attacks, choose one \u2014\n\u2022 You may put a Hero creature card from your hand onto the battlefield.\n\u2022 Return target Hero creature card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "You may put a Hero creature card from your hand onto the battlefield.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "You may put a Hero creature card from your hand onto the battlefield"
+                }
+              ]
+            },
+            {
+              "raw_text": "Return target Hero creature card from your graveyard to your hand.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Return target Hero creature card from your graveyard to your hand"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 3",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

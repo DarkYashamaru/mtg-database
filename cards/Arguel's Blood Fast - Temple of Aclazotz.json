@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "be2a4bc4-8af6-48c5-9421-32d26272e71a",
+  "name": "Arguel's Blood Fast // Temple of Aclazotz",
+  "faces": [
+    {
+      "name": "Arguel's Blood Fast",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "{1}{B}, Pay 2 life: Draw a card.\nAt the beginning of your upkeep, if you have 5 or less life, you may transform Arguel's Blood Fast.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if you have 5 or less life, you may transform Arguel's Blood Fast.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you have 5 or less life"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}, Pay 2 life: Draw a card.",
+          "cost": "{1}{B}, Pay 2 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Temple of Aclazotz",
+      "type_line": "Legendary Land",
+      "oracle_text": "(Transforms from Arguel's Blood Fast.)\n{T}: Add {B}.\n{T}, Sacrifice a creature: You gain life equal to the sacrificed creature's toughness.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Sacrifice a creature: You gain life equal to the sacrificed creature's toughness.",
+          "cost": "{T}, Sacrifice a creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You gain life equal to the sacrificed creature's toughness"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

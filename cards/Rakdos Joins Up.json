@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6a47865c-8fa2-4cb2-aebf-8009c065395f",
+  "name": "Rakdos Joins Up",
+  "faces": [
+    {
+      "name": "Rakdos Joins Up",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "When Rakdos Joins Up enters, return target creature card from your graveyard to the battlefield with two additional +1/+1 counters on it.\nWhenever a legendary creature you control dies, Rakdos Joins Up deals damage equal to that creature's power to target opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Rakdos Joins Up enters, return target creature card from your graveyard to the battlefield with two additional +1/+1 counters on it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target creature card from your graveyard to the battlefield with two additional +1/+1 counters on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a legendary creature you control dies, Rakdos Joins Up deals damage equal to that creature's power to target opponent.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Legendary"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Rakdos Joins Up deals damage equal to that creature's power to target opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

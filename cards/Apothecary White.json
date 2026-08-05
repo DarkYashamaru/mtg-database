@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7bf8bb41-6f46-492c-b6cf-5cfb29f973a4",
+  "name": "Apothecary White",
+  "faces": [
+    {
+      "name": "Apothecary White",
+      "type_line": "Legendary Creature \u2014 Human Cleric",
+      "oracle_text": "Vigilance\nWhenever you attack, you create a Food token for each player being attacked. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\n{W}, {T}, Tap X untapped Foods you control: Create X 1/1 white Human creature tokens.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, you create a Food token for each player being attacked. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you create a Food token for each player being attacked"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{W}, {T}, Tap X untapped Foods you control: Create X 1/1 white Human creature tokens.",
+          "cost": "{W}, {T}, Tap X untapped Foods you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "X",
+              "token": {
+                "raw": "1/1 white Human creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

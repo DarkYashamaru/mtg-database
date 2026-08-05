@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7dcb95a9-c114-4333-8b45-4380f92d9695",
+  "name": "Reiver Demon",
+  "faces": [
+    {
+      "name": "Reiver Demon",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Flying\nWhen this creature enters, if you cast it from your hand, destroy all nonartifact, nonblack creatures. They can't be regenerated.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if you cast it from your hand, destroy all nonartifact, nonblack creatures. They can't be regenerated.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you cast it from your hand"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy all nonartifact, nonblack creatures"
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_targets"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

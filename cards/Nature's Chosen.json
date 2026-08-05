@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7f425406-2746-45a1-86bf-f9645015ffc2",
+  "name": "Nature's Chosen",
+  "faces": [
+    {
+      "name": "Nature's Chosen",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature you control\n{0}: Untap enchanted creature. Activate only during your turn and only once each turn.\nTap enchanted creature: Untap target artifact, creature, or land. Activate only if enchanted creature is white and untapped and only once each turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{0}: Untap enchanted creature. Activate only during your turn and only once each turn.",
+          "cost": "{0}",
+          "condition": [
+            {
+              "turn_scope": "your_turn"
+            },
+            {
+              "max_uses_per_turn": 1
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Untap enchanted creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Tap enchanted creature: Untap target artifact, creature, or land. Activate only if enchanted creature is white and untapped and only once each turn.",
+          "cost": "Tap enchanted creature",
+          "condition": [
+            {
+              "condition_text": "enchanted creature is white and untapped and only once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Untap target artifact, creature, or land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_control"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aa1d8bfa-729a-4e10-8069-57a1d4f4392b",
+  "name": "Growing Dread",
+  "faces": [
+    {
+      "name": "Growing Dread",
+      "type_line": "Enchantment",
+      "oracle_text": "Flash\nWhen this enchantment enters, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)\nWhenever you turn a permanent face up, put a +1/+1 counter on it.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "manifest dread"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you turn a permanent face up, put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you turn a permanent face up"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

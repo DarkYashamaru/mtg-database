@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a341eb75-e6a0-468b-8c83-61102249c648",
+  "name": "Greenhouse // Rickety Gazebo",
+  "faces": [
+    {
+      "name": "Greenhouse",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "Lands you control have \"{T}: Add one mana of any color.\"\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Lands you control have \"{T}: Add one mana of any color.\"",
+          "cost": "Lands you control have \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Rickety Gazebo",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "When you unlock this door, mill four cards, then return up to two permanent cards from among them to your hand.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you unlock this door, mill four cards, then return up to two permanent cards from among them to your hand.",
+          "trigger": {
+            "type": "unlock_door",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 4
+            },
+            {
+              "action": "custom_effect",
+              "text": "return up to two permanent cards from among them to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

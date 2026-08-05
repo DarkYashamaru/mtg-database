@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8a98f48d-a5e6-497f-ba9a-92af7b489871",
+  "name": "Criminal Enterprise",
+  "faces": [
+    {
+      "name": "Criminal Enterprise",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create a 2/1 black Villain creature token with menace. (It can't be blocked except by two or more creatures.)\nWhenever a Villain you control dies, this enchantment deals 1 damage to each opponent and you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create a 2/1 black Villain creature token with menace. (It can't be blocked except by two or more creatures.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/1 black Villain creature token with menace",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Villain"
+                ],
+                "keywords": [
+                  "menace"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a Villain you control dies, this enchantment deals 1 damage to each opponent and you gain 1 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Villain"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_enchantment",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

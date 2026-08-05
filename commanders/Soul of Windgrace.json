@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2d73a3bd-f052-4f48-9a72-12db03e27249",
+  "name": "Soul of Windgrace",
+  "faces": [
+    {
+      "name": "Soul of Windgrace",
+      "type_line": "Legendary Creature \u2014 Cat Avatar",
+      "oracle_text": "Whenever Soul of Windgrace enters or attacks, you may put a land card from a graveyard onto the battlefield tapped under your control.\n{G}, Discard a land card: You gain 3 life.\n{1}{R}, Discard a land card: Draw a card.\n{2}{B}, Discard a land card: Soul of Windgrace gains indestructible until end of turn. Tap it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Soul of Windgrace enters or attacks, you may put a land card from a graveyard onto the battlefield tapped under your control.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a land card from a graveyard onto the battlefield tapped under your control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{G}, Discard a land card: You gain 3 life.",
+          "cost": "{G}, Discard a land card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{R}, Discard a land card: Draw a card.",
+          "cost": "{1}{R}, Discard a land card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{B}, Discard a land card: Soul of Windgrace gains indestructible until end of turn. Tap it.",
+          "cost": "{2}{B}, Discard a land card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            },
+            {
+              "action": "tap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

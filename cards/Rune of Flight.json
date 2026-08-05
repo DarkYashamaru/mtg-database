@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "829a4110-9209-45e9-b1a5-25e005711118",
+  "name": "Rune of Flight",
+  "faces": [
+    {
+      "name": "Rune of Flight",
+      "type_line": "Enchantment \u2014 Aura Rune",
+      "oracle_text": "Enchant permanent\nWhen this Aura enters, draw a card.\nAs long as enchanted permanent is a creature, it has flying.\nAs long as enchanted permanent is an Equipment, it has \"Equipped creature has flying.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant permanent",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "permanent"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted permanent is a creature, it has flying.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as enchanted permanent is a creature, it has flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted permanent is an Equipment, it has \"Equipped creature has flying.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as enchanted permanent is an Equipment, it has \"Equipped creature has flying.\""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

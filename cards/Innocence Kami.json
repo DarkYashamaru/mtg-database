@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dc9b963e-eae7-4919-a5a9-16aad04e4b22",
+  "name": "Innocence Kami",
+  "faces": [
+    {
+      "name": "Innocence Kami",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "{W}, {T}: Tap target creature.\nWhenever you cast a Spirit or Arcane spell, untap this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, untap this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{W}, {T}: Tap target creature.",
+          "cost": "{W}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

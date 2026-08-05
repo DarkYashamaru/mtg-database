@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2f2d75a0-d751-4c74-b357-8f92a992447f",
+  "name": "Kellan, Inquisitive Prodigy // Tail the Suspect",
+  "faces": [
+    {
+      "name": "Kellan, Inquisitive Prodigy",
+      "type_line": "Legendary Creature \u2014 Human Faerie Detective",
+      "oracle_text": "Flying, vigilance\nWhenever Kellan attacks, destroy up to one target artifact. If you controlled that permanent, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Kellan attacks, destroy up to one target artifact. If you controlled that permanent, draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy up to one target artifact"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you controlled that permanent"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Tail the Suspect",
+      "type_line": "Sorcery \u2014 Adventure",
+      "oracle_text": "Investigate. You may play an additional land this turn. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Investigate. You may play an additional land this turn. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "investigate"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play an additional land this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8a56c2a7-7131-4495-aa27-52f48e5f1fb6",
+  "name": "Prowler, Misguided Mentor",
+  "faces": [
+    {
+      "name": "Prowler, Misguided Mentor",
+      "type_line": "Legendary Creature \u2014 Human Rogue Villain",
+      "oracle_text": "Prowler can't be blocked by creatures with power 2 or less.\nWhenever Prowler deals combat damage to a player, put a +1/+1 counter on another target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Prowler deals combat damage to a player, put a +1/+1 counter on another target creature you control.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Prowler can't be blocked by creatures with power 2 or less.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Prowler can't be blocked by creatures with power 2 or less"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

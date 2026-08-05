@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eb100b3b-bc3f-48f3-8f28-bb2d80225ea9",
+  "name": "Hour of Victory",
+  "faces": [
+    {
+      "name": "Hour of Victory",
+      "type_line": "Enchantment",
+      "oracle_text": "Start your engines!\nWhen this enchantment enters, create a 2/2 black Zombie creature token.\nMax speed \u2014 {1}{B}, Sacrifice this enchantment: Search your library for a card, put it into your hand, then shuffle. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create a 2/2 black Zombie creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black Zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Max speed \u2014 {1}{B}, Sacrifice this enchantment: Search your library for a card, put it into your hand, then shuffle. Activate only as a sorcery.",
+          "cost": "Max speed \u2014 {1}{B}, Sacrifice this enchantment",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a card, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Start your engines!",
+          "effects": [
+            {
+              "action": "start_your_engines"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

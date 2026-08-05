@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "236ce592-1321-4a7c-b695-fd84496f8924",
+  "name": "Fear of Missing Out",
+  "faces": [
+    {
+      "name": "Fear of Missing Out",
+      "type_line": "Enchantment Creature \u2014 Nightmare",
+      "oracle_text": "When this creature enters, discard a card, then draw a card.\nDelirium \u2014 Whenever this creature attacks for the first time each turn, if there are four or more card types among cards in your graveyard, untap target creature. After this phase, there is an additional combat phase.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, discard a card, then draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks for the first time each turn, if there are four or more card types among cards in your graveyard, untap target creature. After this phase, there is an additional combat phase.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "attack_count_each_turn": 1
+            },
+            {
+              "condition_text": "there are four or more card types among cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "target_creature"
+            },
+            {
+              "action": "add_combat_phase_after_this_phase"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "95be5f72-1f81-4ec6-9bd9-f0b07bfc874b",
+  "name": "Surrak and Goreclaw",
+  "faces": [
+    {
+      "name": "Surrak and Goreclaw",
+      "type_line": "Legendary Creature \u2014 Human Bear",
+      "oracle_text": "Trample\nOther creatures you control have trample.\nWhenever another nontoken creature you control enters, put a +1/+1 counter on it. It gains haste until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken creature you control enters, put a +1/+1 counter on it. It gains haste until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other creatures you control have trample.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true
+              },
+              "keywords": [
+                "trample"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

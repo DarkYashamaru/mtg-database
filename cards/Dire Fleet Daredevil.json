@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7a3e50a5-c163-4c41-b62d-d52c233c55b7",
+  "name": "Dire Fleet Daredevil",
+  "faces": [
+    {
+      "name": "Dire Fleet Daredevil",
+      "type_line": "Creature \u2014 Human Pirate",
+      "oracle_text": "First strike\nWhen this creature enters, exile target instant or sorcery card from an opponent's graveyard. You may cast it this turn, and mana of any type can be spent to cast that spell. If that spell would be put into a graveyard, exile it instead.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, exile target instant or sorcery card from an opponent's graveyard. You may cast it this turn, and mana of any type can be spent to cast that spell. If that spell would be put into a graveyard, exile it instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target instant or sorcery card from an opponent's graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast it this turn, and mana of any type can be spent to cast that spell"
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "that spell would be put into a graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

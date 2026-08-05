@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "29263d48-cb28-478b-a99e-5a18dbc924f0",
+  "name": "Dawnbringer Charioteers",
+  "faces": [
+    {
+      "name": "Dawnbringer Charioteers",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Flying, lifelink\nHeroic \u2014 Whenever you cast a spell that targets this creature, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that targets this creature, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "that targets this creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

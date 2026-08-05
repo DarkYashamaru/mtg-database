@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4cd82c7a-86df-4d29-b578-c009208c0d4b",
+  "name": "Agent of Treachery",
+  "faces": [
+    {
+      "name": "Agent of Treachery",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "When this creature enters, gain control of target permanent.\nAt the beginning of your end step, if you control three or more permanents you don't own, draw three cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, gain control of target permanent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "gain control of target permanent"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if you control three or more permanents you don't own, draw three cards.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you control three or more permanents you don't own"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

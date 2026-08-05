@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4ecde8d1-e4ec-4bd9-8a80-49885b032557",
+  "name": "The Royal Scions",
+  "faces": [
+    {
+      "name": "The Royal Scions",
+      "type_line": "Legendary Planeswalker \u2014 Will Rowan",
+      "oracle_text": "+1: Draw a card, then discard a card.\n+1: Target creature gets +2/+0 and gains first strike and trample until end of turn.\n\u22128: Draw four cards. When you do, The Royal Scions deals damage to any target equal to the number of cards in your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Draw a card, then discard a card.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "+1: Target creature gets +2/+0 and gains first strike and trample until end of turn.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_gets_20_and",
+              "keyword": "first_strike_and_trample"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22128: Draw four cards. When you do, The Royal Scions deals damage to any target equal to the number of cards in your hand.",
+          "cost": "\u22128",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 4
+            },
+            {
+              "action": "custom_effect",
+              "text": "the royal scions deals damage to any target equal to the number of cards in your hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

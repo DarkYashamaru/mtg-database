@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a74e41b4-6284-453c-a586-d575735dca65",
+  "name": "Emergent Woodwurm",
+  "faces": [
+    {
+      "name": "Emergent Woodwurm",
+      "type_line": "Creature \u2014 Wurm",
+      "oracle_text": "Backup 3 (When this creature enters, put three +1/+1 counters on target creature. If that's another creature, it gains the following ability until end of turn.)\nWhenever this creature attacks, look at the top X cards of your library, where X is its power. You may put a permanent card with mana value X or less from among them onto the battlefield. Put the rest on the bottom of your library in a random order.",
+      "static": [
+        {
+          "keyword": "backup",
+          "amount": 3
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, look at the top X cards of your library, where X is its power. You may put a permanent card with mana value X or less from among them onto the battlefield. Put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top X cards of your library, where X is its power"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put a permanent card with mana value X or less from among them onto the battlefield"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

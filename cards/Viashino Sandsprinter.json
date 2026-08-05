@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6560517d-41c0-4c9c-b9d5-3ecfcb2b99fd",
+  "name": "Viashino Sandsprinter",
+  "faces": [
+    {
+      "name": "Viashino Sandsprinter",
+      "type_line": "Creature \u2014 Lizard Warrior",
+      "oracle_text": "Trample, haste\nAt the beginning of the end step, return this creature to its owner's hand. (Return it only if it's on the battlefield.)\nCycling {R} ({R}, Discard this card: Draw a card.)",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of the end step, return this creature to its owner's hand. (Return it only if it's on the battlefield.)",
+          "trigger": {
+            "type": "beginning_of_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {R} ({R}, Discard this card: Draw a card.)",
+          "cost": "Cycling {R} ({R}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

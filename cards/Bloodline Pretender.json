@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "51d6d164-6e5f-4be3-8f09-433e0b8d4c6b",
+  "name": "Bloodline Pretender",
+  "faces": [
+    {
+      "name": "Bloodline Pretender",
+      "type_line": "Artifact Creature \u2014 Shapeshifter",
+      "oracle_text": "Changeling (This card is every creature type.)\nAs this creature enters, choose a creature type.\nWhenever another creature you control of the chosen type enters, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "changeling"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control of the chosen type enters, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "another_creature_you_control_of_the_chosen_type"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this creature enters, choose a creature type.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this creature enters, choose a creature type"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

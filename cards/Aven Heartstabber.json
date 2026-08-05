@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fee73267-b0ef-4f43-a0bd-7728691d6f17",
+  "name": "Aven Heartstabber",
+  "faces": [
+    {
+      "name": "Aven Heartstabber",
+      "type_line": "Creature \u2014 Bird Assassin",
+      "oracle_text": "Flying\nAs long as there are five or more mana values among cards in your graveyard, this creature gets +2/+2 and has deathtouch.\nWhen this creature dies, mill two cards, then draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, mill two cards, then draw a card.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as there are five or more mana values among cards in your graveyard, this creature gets +2/+2 and has deathtouch.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as there are five or more mana values among cards in your graveyard, this creature gets +2/+2 and has deathtouch"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

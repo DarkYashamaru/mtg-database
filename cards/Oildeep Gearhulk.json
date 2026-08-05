@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aff0740f-51d5-41c7-ac13-97c298cfd743",
+  "name": "Oildeep Gearhulk",
+  "faces": [
+    {
+      "name": "Oildeep Gearhulk",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "Lifelink, ward {1}\nWhen this creature enters, look at target player's hand. You may choose a card from it. If you do, that player discards that card, then draws a card.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        },
+        {
+          "keyword": "ward",
+          "amount": 1
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at target player's hand. You may choose a card from it. If you do, that player discards that card, then draws a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at target player's hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may choose a card from it"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "draws a card",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

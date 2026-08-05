@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "606092eb-8fe3-4ef7-aaf1-2d3b2687d27a",
+  "name": "Super Suit",
+  "faces": [
+    {
+      "name": "Super Suit",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Flash\nWhen this Equipment enters, attach it to target creature you control. Untap that creature.\nEquipped creature gets +1/+2.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, attach it to target creature you control. Untap that creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach it to target creature you control"
+            },
+            {
+              "action": "untap",
+              "target": "that_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +1/+2.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 1,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

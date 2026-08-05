@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "04166d20-88c9-4c89-be9d-3e422f90959a",
+  "name": "Fangorn, Tree Shepherd",
+  "faces": [
+    {
+      "name": "Fangorn, Tree Shepherd",
+      "type_line": "Legendary Creature \u2014 Treefolk",
+      "oracle_text": "Treefolk you control have vigilance.\nWhenever one or more Treefolk you control attack, add twice that much {G}.\nYou don't lose unspent green mana as steps and phases end.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more Treefolk you control attack, add twice that much {G}.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Treefolk"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "add twice that much {G}"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Treefolk you control have vigilance.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Treefolk"
+                ]
+              },
+              "keywords": [
+                "vigilance"
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "You don't lose unspent green mana as steps and phases end.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You don't lose unspent green mana as steps and phases end"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

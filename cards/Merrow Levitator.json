@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a4154dac-3f6d-4f8f-a769-9f5b8acecda7",
+  "name": "Merrow Levitator",
+  "faces": [
+    {
+      "name": "Merrow Levitator",
+      "type_line": "Creature \u2014 Merfolk Wizard",
+      "oracle_text": "{T}: Target creature gains flying until end of turn.\nWhenever you cast a blue spell, you may untap this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a blue spell, you may untap this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Blue"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Target creature gains flying until end of turn.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

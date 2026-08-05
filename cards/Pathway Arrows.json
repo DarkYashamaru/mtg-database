@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb15bcc7-151f-44a4-90ee-2d39d8fd5299",
+  "name": "Pathway Arrows",
+  "faces": [
+    {
+      "name": "Pathway Arrows",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has \"{2}, {T}: This creature deals 1 damage to target creature. If a colorless creature is dealt damage this way, tap it.\"\nEquip {2}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equipped creature has \"{2}, {T}: This creature deals 1 damage to target creature. If a colorless creature is dealt damage this way, tap it.\"",
+          "cost": "Equipped creature has \"{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals 1 damage to target creature"
+            },
+            {
+              "action": "tap",
+              "target": "it",
+              "condition": [
+                {
+                  "condition_text": "a colorless creature is dealt damage this way"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

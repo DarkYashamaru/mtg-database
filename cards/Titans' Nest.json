@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "04505544-8341-4bd9-afa7-b31d6b415c47",
+  "name": "Titans' Nest",
+  "faces": [
+    {
+      "name": "Titans' Nest",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)\nExile a card from your graveyard: Add {C}. Spend this mana only to cast a spell that's one or more colors without {X} in its mana cost.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, surveil 1. (Look at the top card of your library. You may put that card into your graveyard.)",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Exile a card from your graveyard: Add {C}. Spend this mana only to cast a spell that's one or more colors without {X} in its mana cost.",
+          "cost": "Exile a card from your graveyard",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to cast a spell that's one or more colors without {X} in its mana cost"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

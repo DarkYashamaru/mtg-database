@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "73122880-d7f4-422f-a336-18773bcb7bfe",
+  "name": "Summon: Knights of Round",
+  "faces": [
+    {
+      "name": "Summon: Knights of Round",
+      "type_line": "Enchantment Creature \u2014 Saga Knight",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after V.)\nI, II, III, IV \u2014 Create three 2/2 white Knight creature tokens.\nV \u2014 Ultimate End \u2014 Other creatures you control get +2/+2 until end of turn. Put an indestructible counter on each of them.\nIndestructible",
+      "static": [
+        {
+          "keyword": "indestructible"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "I, II, III, IV \u2014 Create three 2/2 white Knight creature tokens.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II",
+              "III",
+              "IV"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "2/2 white Knight creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Knight"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "V \u2014 Ultimate End \u2014 Other creatures you control get +2/+2 until end of turn. Put an indestructible counter on each of them.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "V"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ultimate End \u2014 Other creatures you control get +2/+2 until end of turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put an indestructible counter on each of them"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

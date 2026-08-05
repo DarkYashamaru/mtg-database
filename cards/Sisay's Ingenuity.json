@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3a487f20-6b1d-4be3-b51f-0c8f0a611601",
+  "name": "Sisay's Ingenuity",
+  "faces": [
+    {
+      "name": "Sisay's Ingenuity",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, draw a card.\nEnchanted creature has \"{2}{U}: Target creature becomes the color of your choice until end of turn.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Enchanted creature has \"{2}{U}: Target creature becomes the color of your choice until end of turn.\"",
+          "cost": "Enchanted creature has \"{2}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature becomes the color of your choice until end of turn.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e25b516c-bf95-42bc-8b1e-04617a3d28df",
+  "name": "Baron Bertram Graywater",
+  "faces": [
+    {
+      "name": "Baron Bertram Graywater",
+      "type_line": "Legendary Creature \u2014 Vampire Noble",
+      "oracle_text": "Whenever one or more tokens you control enter, create a 1/1 black Vampire Rogue creature token with lifelink. This ability triggers only once each turn.\n{1}{B}, Sacrifice another creature or artifact: Draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more tokens you control enter, create a 1/1 black Vampire Rogue creature token with lifelink. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more tokens you control enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 black Vampire Rogue creature token with lifelink",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Vampire",
+                  "Rogue"
+                ],
+                "keywords": [
+                  "lifelink"
+                ]
+              }
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}, Sacrifice another creature or artifact: Draw a card.",
+          "cost": "{1}{B}, Sacrifice another creature or artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

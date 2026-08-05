@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eba01ee1-55c4-48db-843b-fd6d48c32eda",
+  "name": "Goblin Battle Jester",
+  "faces": [
+    {
+      "name": "Goblin Battle Jester",
+      "type_line": "Creature \u2014 Goblin",
+      "oracle_text": "Whenever you cast a red spell, target creature can't block this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a red spell, target creature can't block this turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Red"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

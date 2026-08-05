@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93409d98-93c8-4742-a635-2a4408e66c32",
+  "name": "Changeling Wayfinder",
+  "faces": [
+    {
+      "name": "Changeling Wayfinder",
+      "type_line": "Creature \u2014 Shapeshifter",
+      "oracle_text": "Changeling (This card is every creature type.)\nWhen this creature enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+      "static": [
+        {
+          "keyword": "changeling"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

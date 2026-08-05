@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6288865d-7f64-411f-a044-ca350cf6fb8d",
+  "name": "Dragon Tyrant",
+  "faces": [
+    {
+      "name": "Dragon Tyrant",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying, trample\nDouble strike (This creature deals both first-strike and regular combat damage.)\nAt the beginning of your upkeep, sacrifice this creature unless you pay {R}{R}{R}{R}.\n{R}: This creature gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice this creature unless you pay {R}{R}{R}{R}.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self_unless_you_pay_rrrr"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R}: This creature gets +1/+0 until end of turn.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

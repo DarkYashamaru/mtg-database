@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6c948f71-5c86-450c-8828-df4d8deaf1dd",
+  "name": "Intermediate Chirography",
+  "faces": [
+    {
+      "name": "Intermediate Chirography",
+      "type_line": "Enchantment \u2014 Class",
+      "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nWhen this Class enters, create a 2/1 white and black Inkling creature token with flying.\n{1}{B}: Level 2\nWhenever you lose life for the first time each turn, put a +1/+1 counter on target creature you control.\n{2}{B}: Level 3\nAt the beginning of each end step, if a modified creature died under your control this turn, create a 2/1 white and black Inkling creature token with flying. (Equipment, Auras you control, and counters are modifications.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Class enters, create a 2/1 white and black Inkling creature token with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_class"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/1 white and black Inkling creature token with flying",
+                "colors": [
+                  "white",
+                  "black"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Inkling"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you lose life for the first time each turn, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you lose life for the first time each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each end step, if a modified creature died under your control this turn, create a 2/1 white and black Inkling creature token with flying. (Equipment, Auras you control, and counters are modifications.)",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a modified creature died under your control this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/1 white and black Inkling creature token with flying",
+                "colors": [
+                  "white",
+                  "black"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Inkling"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}: Level 2",
+          "cost": "{1}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{B}: Level 3",
+          "cost": "{2}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

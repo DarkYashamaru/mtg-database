@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "67a025eb-6e65-435c-becb-b51085175292",
+  "name": "Lantern Bearer // Lanterns' Lift",
+  "faces": [
+    {
+      "name": "Lantern Bearer",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Flying\nDisturb {2}{U} (You may cast this card from your graveyard transformed for its disturb cost.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disturb {2}{U} (You may cast this card from your graveyard transformed for its disturb cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disturb {2}{U}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lanterns' Lift",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +1/+1 and has flying.\nIf Lanterns' Lift would be put into a graveyard from anywhere, exile it instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1 and has flying.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+1 and has flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "If Lanterns' Lift would be put into a graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "lanterns' lift would be put into a graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bb7cebb7-a979-4879-b834-deab13f2a22c",
+  "name": "Glimmer Lens",
+  "faces": [
+    {
+      "name": "Glimmer Lens",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "For Mirrodin! (When this Equipment enters, create a 2/2 red Rebel creature token, then attach this to it.)\nWhenever equipped creature and at least one other creature attack, draw a card.\nEquip {1}{W}",
+      "static": [
+        {
+          "keyword": "for_mirrodin"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature and at least one other creature attack, draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [
+            {
+              "attacking_creatures_you_control_gte": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {1}{W}",
+          "cost": "",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equip {1}{W}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

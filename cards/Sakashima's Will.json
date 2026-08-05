@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2c3c3bec-00f0-4de2-b929-73f1c9276ec4",
+  "name": "Sakashima's Will",
+  "faces": [
+    {
+      "name": "Sakashima's Will",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose one. If you control a commander as you cast this spell, you may choose both instead.\n\u2022 Target opponent chooses a creature they control. You gain control of it.\n\u2022 Choose a creature you control. Each other creature you control becomes a copy of that creature until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one. If you control a commander as you cast this spell, you may choose both instead.",
+          "effects": [
+            {
+              "action": "mode_selection",
+              "choose_count": 1
+            },
+            {
+              "action": "mode_selection_modifier",
+              "choose_count": 2,
+              "condition": [
+                {
+                  "you_control_commander": true
+                },
+                {
+                  "condition_text": "you control a commander as you cast this spell"
+                }
+              ],
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Target opponent chooses a creature they control. You gain control of it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Target opponent chooses a creature they control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You gain control of it"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Choose a creature you control. Each other creature you control becomes a copy of that creature until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Choose a creature you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each other creature you control becomes a copy of that creature until end of turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

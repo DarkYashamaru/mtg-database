@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "79af045e-2c73-4003-8f62-b8611a225f08",
+  "name": "Bonds of Faith",
+  "faces": [
+    {
+      "name": "Bonds of Faith",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +2/+2 as long as it's a Human. Otherwise, it can't attack or block.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+2 as long as it's a Human. Otherwise, it can't attack or block.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +2/+2 as long as it's a Human"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it can't attack or block",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

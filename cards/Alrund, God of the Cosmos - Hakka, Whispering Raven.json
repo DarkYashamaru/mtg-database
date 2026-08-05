@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0a69c3dd-52a3-4ef6-b53f-b0780e0dc5f8",
+  "name": "Alrund, God of the Cosmos // Hakka, Whispering Raven",
+  "faces": [
+    {
+      "name": "Alrund, God of the Cosmos",
+      "type_line": "Legendary Creature \u2014 God",
+      "oracle_text": "Alrund gets +1/+1 for each card in your hand and each foretold card you own in exile.\nAt the beginning of your end step, choose a card type, then reveal the top two cards of your library. Put all cards of the chosen type revealed this way into your hand and the rest on the bottom of your library in any order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, choose a card type, then reveal the top two cards of your library. Put all cards of the chosen type revealed this way into your hand and the rest on the bottom of your library in any order.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose a card type"
+            },
+            {
+              "action": "custom_effect",
+              "text": "reveal the top two cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put all cards of the chosen type revealed this way into your hand and the rest on the bottom of your library in any order"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Alrund gets +1/+1 for each card in your hand and each foretold card you own in exile.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Alrund gets +1/+1 for each card in your hand and each foretold card you own in exile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hakka, Whispering Raven",
+      "type_line": "Legendary Creature \u2014 Bird",
+      "oracle_text": "Flying\nWhenever Hakka deals combat damage to a player, return it to its owner's hand, then scry 2.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Hakka deals combat damage to a player, return it to its owner's hand, then scry 2.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

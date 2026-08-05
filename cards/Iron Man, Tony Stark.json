@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "188e1516-5766-406b-aacb-468f2d9a530a",
+  "name": "Iron Man, Tony Stark",
+  "faces": [
+    {
+      "name": "Iron Man, Tony Stark",
+      "type_line": "Legendary Artifact Creature \u2014 Human Hero",
+      "oracle_text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nAttacking creatures you control get +1/+0.\nWhenever you cast a red spell, create a 2/1 colorless Robot Hero artifact creature token with flying.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a red spell, create a 2/1 colorless Robot Hero artifact creature token with flying.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Red"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/1 colorless Robot Hero artifact creature token with flying",
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Robot",
+                  "Hero",
+                  "artifact"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Attacking creatures you control get +1/+0.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Attacking creatures you control get +1/+0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

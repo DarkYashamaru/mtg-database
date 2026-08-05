@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b9d9d118-a073-4e73-90fe-026462d1d895",
+  "name": "Grisly Sigil",
+  "faces": [
+    {
+      "name": "Grisly Sigil",
+      "type_line": "Sorcery",
+      "oracle_text": "Casualty 1 (As you cast this spell, you may sacrifice a creature with power 1 or greater. When you do, copy this spell and you may choose a new target for the copy.)\nChoose target creature or planeswalker. If it was dealt noncombat damage this turn, Grisly Sigil deals 3 damage to it and you gain 3 life. Otherwise, Grisly Sigil deals 1 damage to it and you gain 1 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Casualty 1 (As you cast this spell, you may sacrifice a creature with power 1 or greater. When you do, copy this spell and you may choose a new target for the copy.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Casualty 1"
+            }
+          ]
+        },
+        {
+          "raw_text": "Choose target creature or planeswalker. If it was dealt noncombat damage this turn, Grisly Sigil deals 3 damage to it and you gain 3 life. Otherwise, Grisly Sigil deals 1 damage to it and you gain 1 life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose target creature or planeswalker"
+            },
+            {
+              "action": "custom_effect",
+              "text": "grisly sigil deals 3 damage to it",
+              "condition": [
+                {
+                  "condition_text": "it was dealt noncombat damage this turn"
+                }
+              ]
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "grisly sigil deals 1 damage to it",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

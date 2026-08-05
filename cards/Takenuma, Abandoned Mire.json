@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ac2dd694-d2f1-4025-8400-12332bdc882a",
+  "name": "Takenuma, Abandoned Mire",
+  "faces": [
+    {
+      "name": "Takenuma, Abandoned Mire",
+      "type_line": "Legendary Land",
+      "oracle_text": "{T}: Add {B}.\nChannel \u2014 {3}{B}, Discard this card: Mill three cards, then return a creature or planeswalker card from your graveyard to your hand. This ability costs {1} less to activate for each legendary creature you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "Channel \u2014 {3}{B}, Discard this card: Mill three cards, then return a creature or planeswalker card from your graveyard to your hand. This ability costs {1} less to activate for each legendary creature you control.",
+          "cost": "Channel \u2014 {3}{B}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "return a creature or planeswalker card from your graveyard to your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This ability costs {1} less to activate for each legendary creature you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

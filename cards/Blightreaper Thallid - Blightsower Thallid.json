@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ea405cb4-a21b-4a26-98f3-251e65ea2aef",
+  "name": "Blightreaper Thallid // Blightsower Thallid",
+  "faces": [
+    {
+      "name": "Blightreaper Thallid",
+      "type_line": "Creature \u2014 Fungus",
+      "oracle_text": "{3}{G/P}: Transform this creature. Activate only as a sorcery. ({G/P} can be paid with either {G} or 2 life.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{G/P}: Transform this creature. Activate only as a sorcery. ({G/P} can be paid with either {G} or 2 life.)",
+          "cost": "{3}{G/P}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Blightsower Thallid",
+      "type_line": "Creature \u2014 Phyrexian Fungus",
+      "oracle_text": "When this creature transforms into Blightsower Thallid or dies, create a 1/1 green Phyrexian Saproling creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature transforms into Blightsower Thallid or dies, create a 1/1 green Phyrexian Saproling creature token.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self_transforms_into_self_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Phyrexian Saproling creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Phyrexian",
+                  "Saproling"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

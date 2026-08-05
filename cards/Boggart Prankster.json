@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1bcac664-835a-4474-8ca4-263801bde08e",
+  "name": "Boggart Prankster",
+  "faces": [
+    {
+      "name": "Boggart Prankster",
+      "type_line": "Creature \u2014 Goblin Warrior",
+      "oracle_text": "Whenever you attack, target attacking Goblin you control gets +1/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, target attacking Goblin you control gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Target",
+                  "Attacking",
+                  "Goblin"
+                ]
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

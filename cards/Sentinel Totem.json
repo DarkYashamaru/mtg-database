@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5432bd43-e92c-464b-9ad2-3515f3042799",
+  "name": "Sentinel Totem",
+  "faces": [
+    {
+      "name": "Sentinel Totem",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.)\n{T}, Exile this artifact: Exile all graveyards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Exile this artifact: Exile all graveyards.",
+          "cost": "{T}, Exile this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile all graveyards"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

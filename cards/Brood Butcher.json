@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a20edb8d-219d-4d0f-8346-0c31064eb49f",
+  "name": "Brood Butcher",
+  "faces": [
+    {
+      "name": "Brood Butcher",
+      "type_line": "Creature \u2014 Eldrazi Drone",
+      "oracle_text": "Devoid (This card has no color.)\nWhen this creature enters, create a 1/1 colorless Eldrazi Scion creature token. It has \"Sacrifice this token: Add {C}.\"\n{B}{G}, Sacrifice a creature: Target creature gets -2/-2 until end of turn.",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 1/1 colorless Eldrazi Scion creature token. It has \"Sacrifice this token: Add {C}.\"",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Eldrazi Scion creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Eldrazi",
+                  "Scion"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "It has \"Sacrifice this token: Add {C}.\""
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}{G}, Sacrifice a creature: Target creature gets -2/-2 until end of turn.",
+          "cost": "{B}{G}, Sacrifice a creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -2,
+              "toughness_delta": -2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

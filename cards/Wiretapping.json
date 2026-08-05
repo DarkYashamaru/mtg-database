@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "befc5986-f06c-40a4-98ee-ffcace4ceaa8",
+  "name": "Wiretapping",
+  "faces": [
+    {
+      "name": "Wiretapping",
+      "type_line": "Enchantment",
+      "oracle_text": "Hideaway 5 (When this enchantment enters, look at the top five cards of your library, exile one face down, then put the rest on the bottom in a random order.)\nWhenever you draw your first card during each of your draw steps, draw a card. Then if you have nine or more cards in hand, you may play the exiled card without paying its mana cost.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your first card during each of your draw steps, draw a card. Then if you have nine or more cards in hand, you may play the exiled card without paying its mana cost.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you draw your first card during each of your draw steps"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may play the exiled card without paying its mana cost",
+              "condition": [
+                {
+                  "condition_text": "you have nine or more cards in hand"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Hideaway 5 (When this enchantment enters, look at the top five cards of your library, exile one face down, then put the rest on the bottom in a random order.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Hideaway 5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

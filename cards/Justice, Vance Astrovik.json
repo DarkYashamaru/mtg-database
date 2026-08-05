@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "184dba74-63ed-4820-9174-68adf26bfabf",
+  "name": "Justice, Vance Astrovik",
+  "faces": [
+    {
+      "name": "Justice, Vance Astrovik",
+      "type_line": "Legendary Creature \u2014 Mutant Hero",
+      "oracle_text": "Flying\nWhen Justice enters, return up to one target nonland, nontoken permanent to its owner's hand.\nWhenever another nonland permanent you control is returned to its owner's hand, put a +1/+1 counter on Justice.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Justice enters, return up to one target nonland, nontoken permanent to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to one target nonland, nontoken permanent to its owner's hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another nonland permanent you control is returned to its owner's hand, put a +1/+1 counter on Justice.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever another nonland permanent you control is returned to its owner's hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

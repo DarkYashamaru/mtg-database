@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "92bf8f05-cbfd-42d8-8bc1-d7f2e46f9872",
+  "name": "Victor, Valgavoth's Seneschal",
+  "faces": [
+    {
+      "name": "Victor, Valgavoth's Seneschal",
+      "type_line": "Legendary Creature \u2014 Human Warlock",
+      "oracle_text": "Eerie \u2014 Whenever an enchantment you control enters and whenever you fully unlock a Room, surveil 2 if this is the first time this ability has resolved this turn. If it's the second time, each opponent discards a card. If it's the third time, put a creature card from a graveyard onto the battlefield under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an enchantment you control enters and whenever you fully unlock a Room, surveil 2 if this is the first time this ability has resolved this turn. If it's the second time, each opponent discards a card. If it's the third time, put a creature card from a graveyard onto the battlefield under your control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an enchantment you control enters and whenever you fully unlock a Room"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "surveil 2 if this is the first time this ability has resolved this turn"
+            },
+            {
+              "action": "discard_cards",
+              "target": "each_opponent",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it's the second time"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a creature card from a graveyard onto the battlefield under your control",
+              "condition": [
+                {
+                  "condition_text": "it's the third time"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

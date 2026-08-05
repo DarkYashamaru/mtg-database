@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "41d6cce0-b852-4d0e-aee2-081df13dd9b8",
+  "name": "Toothy, Imaginary Friend",
+  "faces": [
+    {
+      "name": "Toothy, Imaginary Friend",
+      "type_line": "Legendary Creature \u2014 Illusion",
+      "oracle_text": "Partner with Pir, Imaginative Rascal (When this creature enters, target player may put Pir into their hand from their library, then shuffle.)\nWhenever you draw a card, put a +1/+1 counter on Toothy.\nWhen Toothy leaves the battlefield, draw a card for each +1/+1 counter on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw a card, put a +1/+1 counter on Toothy.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When Toothy leaves the battlefield, draw a card for each +1/+1 counter on it.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "11_counter_on_it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Pir, Imaginative Rascal (When this creature enters, target player may put Pir into their hand from their library, then shuffle.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Pir, Imaginative Rascal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2ff309e3-90e0-40e7-a277-3df057f8f198",
+  "name": "Talons of Wildwood",
+  "faces": [
+    {
+      "name": "Talons of Wildwood",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +1/+1 and has trample. (It can deal excess combat damage to the player or planeswalker it's attacking.)\n{2}{G}: Return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{G}: Return this card from your graveyard to your hand.",
+          "cost": "{2}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1 and has trample. (It can deal excess combat damage to the player or planeswalker it's attacking.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+1 and has trample"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "69ac3757-66f8-47d4-af7b-dda66c96c254",
+  "name": "Lost in Memories",
+  "faces": [
+    {
+      "name": "Lost in Memories",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash\nEnchant creature you control\nEnchanted creature gets +1/+1 and has \"Whenever this creature deals combat damage to a player, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost.\" (You may cast that card from your graveyard for its flashback cost. Then exile it.)",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1 and has \"Whenever this creature deals combat damage to a player, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost.\" (You may cast that card from your graveyard for its flashback cost. Then exile it.)",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "has_whenever_self_deals_combat_damage_to_a_player_target_instant_or_sorcery_card_in_you_control_graveyard",
+              "keyword": "flashback"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The flashback cost is equal to its mana cost.\""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

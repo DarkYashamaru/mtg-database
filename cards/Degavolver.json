@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9431c81f-7b71-4c5d-a63c-1b5aba03601b",
+  "name": "Degavolver",
+  "faces": [
+    {
+      "name": "Degavolver",
+      "type_line": "Creature \u2014 Volver",
+      "oracle_text": "Kicker {1}{B} and/or {R} (You may pay an additional {1}{B} and/or {R} as you cast this spell.)\nIf this creature was kicked with its {1}{B} kicker, it enters with two +1/+1 counters on it and with \"Pay 3 life: Regenerate this creature.\"\nIf this creature was kicked with its {R} kicker, it enters with a +1/+1 counter on it and with first strike.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "If this creature was kicked with its {1}{B} kicker, it enters with two +1/+1 counters on it and with \"Pay 3 life: Regenerate this creature.\"",
+          "cost": "If this creature was kicked with its {1}{B} kicker, it enters with two +1/+1 counters on it and with \"Pay 3 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{B} and/or {R} (You may pay an additional {1}{B} and/or {R} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{B} and/or {R}"
+            }
+          ]
+        },
+        {
+          "raw_text": "If this creature was kicked with its {R} kicker, it enters with a +1/+1 counter on it and with first strike.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it enters with a +1/+1 counter on it and with first strike",
+              "condition": [
+                {
+                  "condition_text": "this creature was kicked with its {r} kicker"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

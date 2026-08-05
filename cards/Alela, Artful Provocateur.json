@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "936ae5dc-9838-47f3-ba1f-66523a7f5b76",
+  "name": "Alela, Artful Provocateur",
+  "faces": [
+    {
+      "name": "Alela, Artful Provocateur",
+      "type_line": "Legendary Creature \u2014 Faerie Warlock",
+      "oracle_text": "Flying, deathtouch, lifelink\nOther creatures you control with flying get +1/+0.\nWhenever you cast an artifact or enchantment spell, create a 1/1 blue Faerie creature token with flying.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "deathtouch"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an artifact or enchantment spell, create a 1/1 blue Faerie creature token with flying.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "artifact",
+                "enchantment"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 blue Faerie creature token with flying",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Faerie"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other creatures you control with flying get +1/+0.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "keywords": [
+                  "flying"
+                ]
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

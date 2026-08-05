@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "59d96fc0-6580-43c2-8c6a-dcf983644561",
+  "name": "Shredder, Unrelenting",
+  "faces": [
+    {
+      "name": "Shredder, Unrelenting",
+      "type_line": "Legendary Creature \u2014 Human Ninja",
+      "oracle_text": "Sneak {3}{B} (You may cast this spell for {3}{B} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)\nDeathtouch\nWhenever Shredder enters or attacks, another target creature you control gains deathtouch until end of turn.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Shredder enters or attacks, another target creature you control gains deathtouch until end of turn.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_creature_you_control",
+              "keyword": "deathtouch"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Sneak {3}{B} (You may cast this spell for {3}{B} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Sneak {3}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

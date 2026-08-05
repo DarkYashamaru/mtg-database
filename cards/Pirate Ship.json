@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c6b3f924-806d-47d3-b044-72b48470196c",
+  "name": "Pirate Ship",
+  "faces": [
+    {
+      "name": "Pirate Ship",
+      "type_line": "Creature \u2014 Human Pirate",
+      "oracle_text": "This creature can't attack unless defending player controls an Island.\n{T}: This creature deals 1 damage to any target.\nWhen you control no Islands, sacrifice this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you control no Islands, sacrifice this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you control no Islands"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: This creature deals 1 damage to any target.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't attack unless defending player controls an Island.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature can't attack unless defending player controls an Island"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dc3b2bab-755d-4b2f-97c0-70a74d721a79",
+  "name": "Black Mana Battery",
+  "faces": [
+    {
+      "name": "Black Mana Battery",
+      "type_line": "Artifact",
+      "oracle_text": "{2}, {T}: Put a charge counter on this artifact.\n{T}, Remove any number of charge counters from this artifact: Add {B}, then add an additional {B} for each charge counter removed this way.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}: Put a charge counter on this artifact.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a charge counter on this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Remove any number of charge counters from this artifact: Add {B}, then add an additional {B} for each charge counter removed this way.",
+          "cost": "{T}, Remove any number of charge counters from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "add an additional {b} for each charge counter removed this way"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

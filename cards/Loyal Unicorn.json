@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6cf8191c-acca-4145-86c2-53a138b3fe4a",
+  "name": "Loyal Unicorn",
+  "faces": [
+    {
+      "name": "Loyal Unicorn",
+      "type_line": "Creature \u2014 Unicorn",
+      "oracle_text": "Vigilance\nLieutenant \u2014 At the beginning of combat on your turn, if you control your commander, prevent all combat damage that would be dealt to creatures you control this turn. Other creatures you control gain vigilance until end of turn.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if you control your commander, prevent all combat damage that would be dealt to creatures you control this turn. Other creatures you control gain vigilance until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you control your commander"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent all combat damage that would be dealt to creatures you control this turn"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "other_creatures_you_control",
+              "keyword": "vigilance"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

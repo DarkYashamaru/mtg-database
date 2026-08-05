@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5fe3aabd-3271-41bf-ae50-f6efaba7c4ae",
+  "name": "Carrot Cake",
+  "faces": [
+    {
+      "name": "Carrot Cake",
+      "type_line": "Artifact \u2014 Food",
+      "oracle_text": "When this artifact enters and when you sacrifice it, create a 1/1 white Rabbit creature token and scry 1. (Look at the top card of your library. You may put that card on the bottom.)\n{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters and when you sacrifice it, create a 1/1 white Rabbit creature token and scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact enters and when you sacrifice it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Rabbit creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Rabbit"
+                ]
+              }
+            },
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+          "cost": "{2}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

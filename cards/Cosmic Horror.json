@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d73df13d-942a-4104-ac9d-de7c100c086f",
+  "name": "Cosmic Horror",
+  "faces": [
+    {
+      "name": "Cosmic Horror",
+      "type_line": "Creature \u2014 Horror",
+      "oracle_text": "First strike\nAt the beginning of your upkeep, destroy this creature unless you pay {3}{B}{B}{B}. If this creature is destroyed this way, it deals 7 damage to you.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, destroy this creature unless you pay {3}{B}{B}{B}. If this creature is destroyed this way, it deals 7 damage to you.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy this creature unless you pay {3}{B}{B}{B}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it deals 7 damage to you",
+              "condition": [
+                {
+                  "condition_text": "this creature is destroyed this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

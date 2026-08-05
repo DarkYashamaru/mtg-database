@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9c6ac895-0644-47ea-8a40-8f35cbbeba42",
+  "name": "Cybership",
+  "faces": [
+    {
+      "name": "Cybership",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nWhenever this Vehicle deals combat damage to a player, put the top two cards of that player's library onto the battlefield face down under your control. They're 2/2 Cyberman artifact creatures.\nCrew 4",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle deals combat damage to a player, put the top two cards of that player's library onto the battlefield face down under your control. They're 2/2 Cyberman artifact creatures.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put the top two cards of that player's library onto the battlefield face down under your control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "They're 2/2 Cyberman artifact creatures"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 4",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 4,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

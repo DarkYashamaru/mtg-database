@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8ab7358e-a0f5-4220-8769-25177237bcdf",
+  "name": "Tezzeret, Agent of Bolas",
+  "faces": [
+    {
+      "name": "Tezzeret, Agent of Bolas",
+      "type_line": "Legendary Planeswalker \u2014 Tezzeret",
+      "oracle_text": "+1: Look at the top five cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in any order.\n\u22121: Target artifact becomes an artifact creature with base power and toughness 5/5.\n\u22124: Target player loses X life and you gain X life, where X is twice the number of artifacts you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Look at the top five cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 5
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Artifact"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "any"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22121: Target artifact becomes an artifact creature with base power and toughness 5/5.",
+          "cost": "\u22121",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target artifact becomes an artifact creature with base power and toughness 5/5"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22124: Target player loses X life and you gain X life, where X is twice the number of artifacts you control.",
+          "cost": "\u22124",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player loses X life and you gain X life, where X is twice the number of artifacts you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

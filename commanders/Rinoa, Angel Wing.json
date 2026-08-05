@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "47b29cf9-8ef3-4b6a-a9a3-3ab822c5dea4",
+  "name": "Rinoa, Angel Wing",
+  "faces": [
+    {
+      "name": "Rinoa, Angel Wing",
+      "type_line": "Legendary Creature \u2014 Human Rebel Warlock",
+      "oracle_text": "At the beginning of combat on your turn, creatures you control with flying get +1/+1 and gain vigilance until end of turn.\nWhenever one or more attacking creatures you control die, you may return one of them to the battlefield tapped under its owner's control with a flying counter on it. Do this only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, creatures you control with flying get +1/+1 and gain vigilance until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control_with_flying_get_11_and",
+              "keyword": "vigilance"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more attacking creatures you control die, you may return one of them to the battlefield tapped under its owner's control with a flying counter on it. Do this only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more attacking creatures you control die"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return one of them to the battlefield tapped under its owner's control with a flying counter on it"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_uses": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "36780340-824d-420b-b41b-182f88d944de",
+  "name": "Plaxmanta",
+  "faces": [
+    {
+      "name": "Plaxmanta",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "Flash\nWhen this creature enters, creatures you control gain shroud until end of turn. (They can't be the targets of spells or abilities.)\nWhen this creature enters, sacrifice it unless {G} was spent to cast it.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, creatures you control gain shroud until end of turn. (They can't be the targets of spells or abilities.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "shroud"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature enters, sacrifice it unless {G} was spent to cast it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "it_unless_g_was_spent_to_cast_it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "72062fb6-0329-424d-936a-882b638d6d57",
+  "name": "Slobad, Iron Goblin",
+  "faces": [
+    {
+      "name": "Slobad, Iron Goblin",
+      "type_line": "Legendary Creature \u2014 Phyrexian Goblin Artificer",
+      "oracle_text": "{T}, Sacrifice an artifact: Add an amount of {R} equal to the sacrificed artifact's mana value. Spend this mana only to cast artifact spells or activate abilities of artifacts.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice an artifact: Add an amount of {R} equal to the sacrificed artifact's mana value. Spend this mana only to cast artifact spells or activate abilities of artifacts.",
+          "cost": "{T}, Sacrifice an artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add an amount of {R} equal to the sacrificed artifact's mana value"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "actions_any": [
+                  {
+                    "action": "cast_spell",
+                    "filter": {
+                      "card_types": [
+                        "Artifact"
+                      ]
+                    }
+                  },
+                  {
+                    "action": "activate_ability",
+                    "filter": {
+                      "source_card_types": [
+                        "Artifact"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

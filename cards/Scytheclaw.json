@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a75ddd9c-2574-46e9-ac85-58082789ff3e",
+  "name": "Scytheclaw",
+  "faces": [
+    {
+      "name": "Scytheclaw",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Living weapon (When this Equipment enters, create a 0/0 black Phyrexian Germ creature token, then attach this to it.)\nEquipped creature gets +1/+1.\nWhenever equipped creature deals combat damage to a player, that player loses half their life, rounded up.\nEquip {3}",
+      "static": [
+        {
+          "keyword": "living_weapon"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals combat damage to a player, that player loses half their life, rounded up.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player loses half their life, rounded up"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

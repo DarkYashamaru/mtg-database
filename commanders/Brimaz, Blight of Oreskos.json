@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a6e7cbfc-6d5a-4a67-9dad-d512d3c97bda",
+  "name": "Brimaz, Blight of Oreskos",
+  "faces": [
+    {
+      "name": "Brimaz, Blight of Oreskos",
+      "type_line": "Legendary Creature \u2014 Phyrexian Cat",
+      "oracle_text": "Whenever you cast a Phyrexian creature or artifact creature spell, incubate X, where X is that spell's mana value. (Create an Incubator token with X +1/+1 counters on it and \"{2}: Transform this token.\" It transforms into a 0/0 Phyrexian artifact creature.)\nAt the beginning of each end step, if a Phyrexian died under your control this turn, proliferate.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Phyrexian creature or artifact creature spell, incubate X, where X is that spell's mana value. (Create an Incubator token with X +1/+1 counters on it and \"{2}: Transform this token.\" It transforms into a 0/0 Phyrexian artifact creature.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "phyrexian_creature",
+                "artifact_creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "incubate X, where X is that spell's mana value"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each end step, if a Phyrexian died under your control this turn, proliferate.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a Phyrexian died under your control this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "proliferate"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

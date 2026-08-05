@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "da50989e-4fd4-4353-afd5-9c1354330ec2",
+  "name": "Spellbinder",
+  "faces": [
+    {
+      "name": "Spellbinder",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Imprint \u2014 When this Equipment enters, you may exile an instant card from your hand.\nWhenever equipped creature deals combat damage to a player, you may copy the exiled card. If you do, you may cast the copy without paying its mana cost.\nEquip {4}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, you may exile an instant card from your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile an instant card from your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever equipped creature deals combat damage to a player, you may copy the exiled card. If you do, you may cast the copy without paying its mana cost.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may copy the exiled card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast the copy without paying its mana cost",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4}",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

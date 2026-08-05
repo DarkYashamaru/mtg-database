@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "acb8d6a0-4bbd-4a42-bcac-3656367cc051",
+  "name": "Arcbound Shikari",
+  "faces": [
+    {
+      "name": "Arcbound Shikari",
+      "type_line": "Artifact Creature \u2014 Cat Soldier",
+      "oracle_text": "First strike\nWhen this creature enters, put a +1/+1 counter on each other artifact creature you control.\nModular 2 (This creature enters with two +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.)",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on each other artifact creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Artifact",
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Other"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Modular 2 (This creature enters with two +1/+1 counters on it. When it dies, you may put its +1/+1 counters on target artifact creature.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Modular 2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

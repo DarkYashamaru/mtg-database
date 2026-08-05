@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "oracle_id": "17fd42f6-f388-4ffc-8fec-ca9ada2506ee",
+  "name": "Kaito, Dancing Shadow",
+  "faces": [
+    {
+      "name": "Kaito, Dancing Shadow",
+      "type_line": "Legendary Planeswalker \u2014 Kaito",
+      "oracle_text": "Whenever one or more creatures you control deal combat damage to a player, you may return one of them to its owner's hand. If you do, you may activate loyalty abilities of Kaito twice this turn rather than only once.\n+1: Up to one target creature can't attack or block until your next turn.\n0: Draw a card.\n\u22122: Create a 2/2 colorless Drone artifact creature token with deathtouch and \"When this token leaves the battlefield, each opponent loses 2 life and you gain 2 life.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control deal combat damage to a player, you may return one of them to its owner's hand. If you do, you may activate loyalty abilities of Kaito twice this turn rather than only once.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return one of them to its owner's hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may activate loyalty abilities of kaito twice this turn rather than only once",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+1: Up to one target creature can't attack or block until your next turn.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Up to one target creature can't attack or block until your next turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "0: Draw a card.",
+          "cost": "0",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Create a 2/2 colorless Drone artifact creature token with deathtouch and \"When this token leaves the battlefield, each opponent loses 2 life and you gain 2 life.\"",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 colorless Drone artifact creature token with deathtouch and \"When this token leaves the battlefield, each opponent loses 2 life and you gain 2 life",
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Drone",
+                  "artifact"
+                ],
+                "keywords": [
+                  "deathtouch"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

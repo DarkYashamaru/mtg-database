@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a7243fd7-e30f-4b7a-a1e8-ca16366b6c49",
+  "name": "Nihilistic Glee",
+  "faces": [
+    {
+      "name": "Nihilistic Glee",
+      "type_line": "Enchantment",
+      "oracle_text": "{2}{B}, Discard a card: Target opponent loses 1 life and you gain 1 life.\nHellbent \u2014 {1}, Pay 2 life: Draw a card. Activate only if you have no cards in hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{B}, Discard a card: Target opponent loses 1 life and you gain 1 life.",
+          "cost": "{2}{B}, Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "target_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Hellbent \u2014 {1}, Pay 2 life: Draw a card. Activate only if you have no cards in hand.",
+          "cost": "Hellbent \u2014 {1}, Pay 2 life",
+          "condition": [
+            {
+              "zone_count": {
+                "zone": "hand",
+                "owner": "you",
+                "count_eq": 0
+              }
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

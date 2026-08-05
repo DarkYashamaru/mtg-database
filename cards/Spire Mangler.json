@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6416dae0-0d40-4d88-b30b-e1a0c8380e78",
+  "name": "Spire Mangler",
+  "faces": [
+    {
+      "name": "Spire Mangler",
+      "type_line": "Creature \u2014 Insect",
+      "oracle_text": "Flash\nFlying\nWhen this creature enters, target creature you control with flying gets +2/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target creature you control with flying gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "target_creature_you_control_with_flying"
+              },
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

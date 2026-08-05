@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e3fc10d2-2733-4265-8275-112c285fd11a",
+  "name": "Topiary Stomper",
+  "faces": [
+    {
+      "name": "Topiary Stomper",
+      "type_line": "Creature \u2014 Plant Dinosaur",
+      "oracle_text": "Vigilance (Attacking doesn't cause this creature to tap.)\nWhen this creature enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\nThis creature can't attack or block unless you control seven or more lands.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't attack or block unless you control seven or more lands.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature can't attack or block unless you control seven or more lands"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a823e880-3d5f-4186-a7da-e710a7db583c",
+  "name": "Deep Reconnaissance",
+  "faces": [
+    {
+      "name": "Deep Reconnaissance",
+      "type_line": "Sorcery",
+      "oracle_text": "Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.\nFlashback {4}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Flashback {4}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flashback {4}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

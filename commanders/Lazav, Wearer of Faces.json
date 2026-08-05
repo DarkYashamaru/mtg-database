@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4ec0b64d-c793-47a6-9c26-9ad4d9e9c182",
+  "name": "Lazav, Wearer of Faces",
+  "faces": [
+    {
+      "name": "Lazav, Wearer of Faces",
+      "type_line": "Legendary Creature \u2014 Shapeshifter Detective",
+      "oracle_text": "Whenever Lazav attacks, exile target card from a graveyard, then investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nWhenever you sacrifice a Clue, you may have Lazav become a copy of a creature card exiled with it until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Lazav attacks, exile target card from a graveyard, then investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_card_in_graveyard"
+              }
+            },
+            {
+              "action": "investigate"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you sacrifice a Clue, you may have Lazav become a copy of a creature card exiled with it until end of turn.",
+          "trigger": {
+            "type": "sacrifice_clue",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have Lazav become a copy of a creature card exiled with it until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

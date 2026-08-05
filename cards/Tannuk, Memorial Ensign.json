@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "76cb1912-3791-44b8-b594-b92dab21bafc",
+  "name": "Tannuk, Memorial Ensign",
+  "faces": [
+    {
+      "name": "Tannuk, Memorial Ensign",
+      "type_line": "Legendary Creature \u2014 Kavu Pilot",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, Tannuk deals 1 damage to each opponent. If this is the second time this ability has resolved this turn, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, Tannuk deals 1 damage to each opponent. If this is the second time this ability has resolved this turn, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "ability_resolution_count_this_turn": 2
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

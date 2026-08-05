@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "97f9b82f-b3cf-44ff-9abc-2d92d7cbaa27",
+  "name": "Ellivere of the Wild Court",
+  "faces": [
+    {
+      "name": "Ellivere of the Wild Court",
+      "type_line": "Legendary Creature \u2014 Human Knight",
+      "oracle_text": "Whenever Ellivere enters or attacks, create a Virtuous Role token attached to another target creature you control. (If you control another Role on it, put that one into the graveyard. Enchanted creature gets +1/+1 for each enchantment you control.)\nWhenever an enchanted creature you control deals combat damage to a player, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Ellivere enters or attacks, create a Virtuous Role token attached to another target creature you control. (If you control another Role on it, put that one into the graveyard. Enchanted creature gets +1/+1 for each enchantment you control.)",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a Virtuous Role token attached to another target creature you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an enchanted creature you control deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Enchanted"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

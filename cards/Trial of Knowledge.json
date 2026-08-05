@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6155908a-0079-42c7-ae81-326a6faccb89",
+  "name": "Trial of Knowledge",
+  "faces": [
+    {
+      "name": "Trial of Knowledge",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, draw three cards, then discard a card.\nWhen a Cartouche you control enters, return this enchantment to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, draw three cards, then discard a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When a Cartouche you control enters, return this enchantment to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Cartouche"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return this enchantment to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

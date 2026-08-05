@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bcb5af89-a304-4de0-86af-b3f4cfabafc4",
+  "name": "Leeching Licid",
+  "faces": [
+    {
+      "name": "Leeching Licid",
+      "type_line": "Creature \u2014 Licid",
+      "oracle_text": "{B}, {T}: This creature loses this ability and becomes an Aura enchantment with enchant creature. Attach it to target creature. You may pay {B} to end this effect.\nAt the beginning of the upkeep of enchanted creature's controller, this creature deals 1 damage to that player.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of the upkeep of enchanted creature's controller, this creature deals 1 damage to that player.",
+          "trigger": {
+            "type": "beginning_of_upkeep_of_enchanted_creatures_controller"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 1 damage to that player"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}, {T}: This creature loses this ability and becomes an Aura enchantment with enchant creature. Attach it to target creature. You may pay {B} to end this effect.",
+          "cost": "{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature loses this ability and becomes an Aura enchantment with enchant creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Attach it to target creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may pay {B} to end this effect"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

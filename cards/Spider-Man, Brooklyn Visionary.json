@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2ca85872-9436-4515-af50-c13e59605627",
+  "name": "Spider-Man, Brooklyn Visionary",
+  "faces": [
+    {
+      "name": "Spider-Man, Brooklyn Visionary",
+      "type_line": "Legendary Creature \u2014 Spider Human Hero",
+      "oracle_text": "Web-slinging {2}{G} (You may cast this spell for {2}{G} if you also return a tapped creature you control to its owner's hand.)\nWhen Spider-Man enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Spider-Man enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Web-slinging {2}{G} (You may cast this spell for {2}{G} if you also return a tapped creature you control to its owner's hand.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Web-slinging {2}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

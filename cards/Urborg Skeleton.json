@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "712d7eb4-4044-4852-a5da-57635d3086b0",
+  "name": "Urborg Skeleton",
+  "faces": [
+    {
+      "name": "Urborg Skeleton",
+      "type_line": "Creature \u2014 Skeleton",
+      "oracle_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)\n{B}: Regenerate this creature.\nIf this creature was kicked, it enters with a +1/+1 counter on it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{B}: Regenerate this creature.",
+          "cost": "{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {3}"
+            }
+          ]
+        },
+        {
+          "raw_text": "If this creature was kicked, it enters with a +1/+1 counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it enters with a +1/+1 counter on it",
+              "condition": [
+                {
+                  "condition_text": "this creature was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

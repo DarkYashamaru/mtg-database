@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a2900c79-8e55-49f9-b548-5890a753932e",
+  "name": "Helitrooper",
+  "faces": [
+    {
+      "name": "Helitrooper",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Flying\nWhenever this creature attacks, another target attacking creature gains flying until end of turn.\nEquip abilities you activate that target this creature cost {2} less to activate.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, another target attacking creature gains flying until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_attacking_creature",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip abilities you activate that target this creature cost {2} less to activate.",
+          "cost": "",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equip abilities you activate that target this creature cost {2} less to activate."
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

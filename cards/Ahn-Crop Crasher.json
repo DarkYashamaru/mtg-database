@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b3ef91a-5804-43cc-a947-f25f33b7b88c",
+  "name": "Ahn-Crop Crasher",
+  "faces": [
+    {
+      "name": "Ahn-Crop Crasher",
+      "type_line": "Creature \u2014 Minotaur Warrior",
+      "oracle_text": "Haste (This creature can attack and {T} as soon as it comes under your control.)\nYou may exert this creature as it attacks. When you do, target creature can't block this turn. (An exerted creature won't untap during your next untap step.)",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may exert this creature as it attacks. When you do, target creature can't block this turn. (An exerted creature won't untap during your next untap step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may exert this creature as it attacks"
+            },
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

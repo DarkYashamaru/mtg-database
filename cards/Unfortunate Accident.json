@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "011558f3-3c23-430e-a08b-8f91238e7971",
+  "name": "Unfortunate Accident",
+  "faces": [
+    {
+      "name": "Unfortunate Accident",
+      "type_line": "Instant",
+      "oracle_text": "Spree (Choose one or more additional costs.)\n+ {2}{B} \u2014 Destroy target creature.\n+ {1} \u2014 Create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+      "static": [
+        {
+          "keyword": "spree"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+ {1} \u2014 Create a 1/1 red Mercenary creature token with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+          "cost": "+ {1} \u2014 Create a 1/1 red Mercenary creature token with \"{T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "+ {2}{B} \u2014 Destroy target creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "+ {2}{B} \u2014 Destroy target creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

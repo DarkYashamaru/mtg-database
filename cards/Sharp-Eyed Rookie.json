@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0642fb0d-73cb-4989-852c-3233fe36c3b4",
+  "name": "Sharp-Eyed Rookie",
+  "faces": [
+    {
+      "name": "Sharp-Eyed Rookie",
+      "type_line": "Creature \u2014 Human Detective",
+      "oracle_text": "Vigilance\nWhenever a creature you control enters, if its power is greater than this creature's power or its toughness is greater than this creature's toughness, put a +1/+1 counter on this creature and investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control enters, if its power is greater than this creature's power or its toughness is greater than this creature's toughness, put a +1/+1 counter on this creature and investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "its power is greater than this creature's power or its toughness is greater than this creature's toughness"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "investigate"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

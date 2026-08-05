@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52d10e81-c8ae-44bb-bb83-f4fe737f30d7",
+  "name": "Information Dealer",
+  "faces": [
+    {
+      "name": "Information Dealer",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "{T}: Look at the top X cards of your library, where X is the number of Wizards on the battlefield, then put them back in any order.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Look at the top X cards of your library, where X is the number of Wizards on the battlefield, then put them back in any order.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top x cards of your library, where x is the number of wizards on the battlefield"
+            },
+            {
+              "action": "return_looked_at_cards",
+              "destination": "top_of_library",
+              "order": "any"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "55a519b4-61cb-448a-875b-4d6dbe00580f",
+  "name": "Spire of Industry",
+  "faces": [
+    {
+      "name": "Spire of Industry",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}, Pay 1 life: Add one mana of any color. Activate only if you control an artifact.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Pay 1 life: Add one mana of any color. Activate only if you control an artifact.",
+          "cost": "{T}, Pay 1 life",
+          "condition": [
+            {
+              "condition_text": "you control an artifact"
+            }
+          ],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

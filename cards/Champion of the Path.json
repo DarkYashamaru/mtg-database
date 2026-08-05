@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b326ccd5-8ad2-441c-9d73-82ee6390dd36",
+  "name": "Champion of the Path",
+  "faces": [
+    {
+      "name": "Champion of the Path",
+      "type_line": "Creature \u2014 Elemental Sorcerer",
+      "oracle_text": "As an additional cost to cast this spell, behold an Elemental and exile it. (Exile an Elemental you control or an Elemental card from your hand.)\nWhenever another Elemental you control enters, it deals damage equal to its power to each opponent.\nWhen this creature leaves the battlefield, return the exiled card to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another Elemental you control enters, it deals damage equal to its power to each opponent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Elemental"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals damage equal to its power to each opponent"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature leaves the battlefield, return the exiled card to its owner's hand.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return the exiled card to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast this spell, behold an Elemental and exile it. (Exile an Elemental you control or an Elemental card from your hand.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As an additional cost to cast this spell, behold an Elemental and exile it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

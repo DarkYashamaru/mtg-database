@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fbc7350c-d392-44bf-92f7-8dd4743a73b4",
+  "name": "Serum Snare",
+  "faces": [
+    {
+      "name": "Serum Snare",
+      "type_line": "Instant",
+      "oracle_text": "Return target nonland permanent to its owner's hand. If that permanent had mana value 3 or less, proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target nonland permanent to its owner's hand. If that permanent had mana value 3 or less, proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "proliferate",
+              "condition": [
+                {
+                  "condition_text": "that permanent had mana value 3 or less"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

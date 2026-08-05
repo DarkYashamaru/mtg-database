@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "63e596a2-9126-4af6-8782-c38687d664ad",
+  "name": "Heliod, Sun-Crowned",
+  "faces": [
+    {
+      "name": "Heliod, Sun-Crowned",
+      "type_line": "Legendary Enchantment Creature \u2014 God",
+      "oracle_text": "Indestructible\nAs long as your devotion to white is less than five, Heliod isn't a creature.\nWhenever you gain life, put a +1/+1 counter on target creature or enchantment you control.\n{1}{W}: Another target creature gains lifelink until end of turn.",
+      "static": [
+        {
+          "keyword": "indestructible"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, put a +1/+1 counter on target creature or enchantment you control.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature",
+                  "Enchantment"
+                ],
+                "subtypes": [
+                  "Target",
+                  "Or"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{W}: Another target creature gains lifelink until end of turn.",
+          "cost": "{1}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_creature",
+              "keyword": "lifelink"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As long as your devotion to white is less than five, Heliod isn't a creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as your devotion to white is less than five, Heliod isn't a creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

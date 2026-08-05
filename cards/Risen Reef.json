@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2ae71e86-4400-4a30-9077-4d57a43e7395",
+  "name": "Risen Reef",
+  "faces": [
+    {
+      "name": "Risen Reef",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "Whenever this creature or another Elemental you control enters, look at the top card of your library. If it's a land card, you may put it onto the battlefield tapped. If you don't put the card onto the battlefield, put it into your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Elemental you control enters, look at the top card of your library. If it's a land card, you may put it onto the battlefield tapped. If you don't put the card onto the battlefield, put it into your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Elemental"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it onto the battlefield tapped",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "you don't put the card onto the battlefield"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

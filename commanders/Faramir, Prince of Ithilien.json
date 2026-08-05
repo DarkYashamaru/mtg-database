@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8a8c7c20-beb7-4352-99ea-7f64a30b9f52",
+  "name": "Faramir, Prince of Ithilien",
+  "faces": [
+    {
+      "name": "Faramir, Prince of Ithilien",
+      "type_line": "Legendary Creature \u2014 Human Noble",
+      "oracle_text": "At the beginning of your end step, choose an opponent. At the beginning of that player's next end step, you draw a card if they didn't attack you that turn. Otherwise, create three 1/1 white Human Soldier creature tokens.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, choose an opponent. At the beginning of that player's next end step, you draw a card if they didn't attack you that turn. Otherwise, create three 1/1 white Human Soldier creature tokens.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose an opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "At the beginning of that player's next end step, you draw a card if they didn't attack you that turn"
+            },
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "1/1 white human soldier creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "human",
+                  "soldier"
+                ]
+              },
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

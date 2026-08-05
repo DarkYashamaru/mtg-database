@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7950a7ff-7c2e-40fe-b64a-324f4fbcf528",
+  "name": "Innocent Traveler // Malicious Invader",
+  "faces": [
+    {
+      "name": "Innocent Traveler",
+      "type_line": "Creature \u2014 Human",
+      "oracle_text": "At the beginning of your upkeep, any opponent may sacrifice a creature of their choice. If no one does, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, any opponent may sacrifice a creature of their choice. If no one does, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "any opponent may sacrifice a creature of their choice"
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "no one does"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Malicious Invader",
+      "type_line": "Creature \u2014 Vampire",
+      "oracle_text": "Flying\nThis creature gets +2/+0 as long as an opponent controls a Human.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature gets +2/+0 as long as an opponent controls a Human.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +2/+0 as long as an opponent controls a Human"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

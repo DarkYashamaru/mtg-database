@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7ceaddba-6301-45f8-86a1-ad4c6e6d3297",
+  "name": "Callow Jushi // Jaraku the Interloper",
+  "faces": [
+    {
+      "name": "Callow Jushi",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature.\nAt the beginning of the end step, if there are two or more ki counters on this creature, you may flip it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, you may put a ki counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a ki counter on this creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of the end step, if there are two or more ki counters on this creature, you may flip it.",
+          "trigger": {
+            "type": "beginning_of_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "there are two or more ki counters on this creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may flip it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Jaraku the Interloper",
+      "type_line": "Legendary Creature \u2014 Spirit",
+      "oracle_text": "Remove a ki counter from Jaraku: Counter target spell unless its controller pays {2}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Remove a ki counter from Jaraku: Counter target spell unless its controller pays {2}.",
+          "cost": "Remove a ki counter from Jaraku",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Counter target spell unless its controller pays {2}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

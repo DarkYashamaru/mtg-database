@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "652d282d-6dec-4043-a531-480f12ba471e",
+  "name": "Ordeal of Purphoros",
+  "faces": [
+    {
+      "name": "Ordeal of Purphoros",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhenever enchanted creature attacks, put a +1/+1 counter on it. Then if it has three or more +1/+1 counters on it, sacrifice this Aura.\nWhen you sacrifice this Aura, it deals 3 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature attacks, put a +1/+1 counter on it. Then if it has three or more +1/+1 counters on it, sacrifice this Aura.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_aura",
+              "condition": [
+                {
+                  "condition_text": "it has three or more +1/+1 counters on it"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "When you sacrifice this Aura, it deals 3 damage to any target.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you sacrifice this Aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

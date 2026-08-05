@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb5aa38e-6a76-4c0c-be14-3c546acd353d",
+  "name": "Vizier of the Anointed",
+  "faces": [
+    {
+      "name": "Vizier of the Anointed",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "When this creature enters, you may search your library for a creature card with eternalize or embalm, put that card into your graveyard, then shuffle.\nWhenever you activate an eternalize or embalm ability, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a creature card with eternalize or embalm, put that card into your graveyard, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a creature card with eternalize or embalm, put that card into your graveyard"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you activate an eternalize or embalm ability, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you activate an eternalize or embalm ability"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

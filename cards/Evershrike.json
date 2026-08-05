@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9f148f1f-53c5-477d-ba91-a2415db65adf",
+  "name": "Evershrike",
+  "faces": [
+    {
+      "name": "Evershrike",
+      "type_line": "Creature \u2014 Elemental Spirit",
+      "oracle_text": "Flying\nThis creature gets +2/+2 for each Aura attached to it.\n{X}{W/B}{W/B}: Return this card from your graveyard to the battlefield. You may put an Aura card with mana value X or less from your hand onto the battlefield attached to it. If you don't, exile this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{X}{W/B}{W/B}: Return this card from your graveyard to the battlefield. You may put an Aura card with mana value X or less from your hand onto the battlefield attached to it. If you don't, exile this creature.",
+          "cost": "{X}{W/B}{W/B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put an Aura card with mana value X or less from your hand onto the battlefield attached to it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile this creature",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature gets +2/+2 for each Aura attached to it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +2/+2 for each Aura attached to it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

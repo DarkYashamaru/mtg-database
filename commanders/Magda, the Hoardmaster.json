@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7fd2beb8-f823-4723-beec-e59b62127490",
+  "name": "Magda, the Hoardmaster",
+  "faces": [
+    {
+      "name": "Magda, the Hoardmaster",
+      "type_line": "Legendary Creature \u2014 Dwarf Berserker",
+      "oracle_text": "Whenever you commit a crime, create a tapped Treasure token. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)\nSacrifice three Treasures: Create a 4/4 red Scorpion Dragon creature token with flying and haste. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you commit a crime, create a tapped Treasure token. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+          "trigger": {
+            "type": "commit_crime",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "tapped Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice three Treasures: Create a 4/4 red Scorpion Dragon creature token with flying and haste. Activate only as a sorcery.",
+          "cost": "Sacrifice three Treasures",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/4 red Scorpion Dragon creature token with flying and haste",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Scorpion",
+                  "Dragon"
+                ],
+                "keywords": [
+                  "flying",
+                  "haste"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

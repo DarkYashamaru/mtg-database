@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ede2354a-64b0-402c-8fbe-9da90f811a9b",
+  "name": "Mishra's Domination",
+  "faces": [
+    {
+      "name": "Mishra's Domination",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nAs long as you control enchanted creature, it gets +2/+2. Otherwise, it can't block.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as you control enchanted creature, it gets +2/+2. Otherwise, it can't block.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": {
+                "selector": "as_long_as_you_control_enchanted_creature_it"
+              },
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "it can't block",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

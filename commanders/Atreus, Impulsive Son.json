@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f6a4298c-3d9d-43e1-b32c-b168c02ad503",
+  "name": "Atreus, Impulsive Son",
+  "faces": [
+    {
+      "name": "Atreus, Impulsive Son",
+      "type_line": "Legendary Creature \u2014 God Archer",
+      "oracle_text": "Reach\n{3}, {T}: Draw a card for each experience counter you have, then discard a card. Atreus deals 2 damage to each opponent.\nPartner\u2014Father & son (You can have two commanders if both have this ability.)",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}, {T}: Draw a card for each experience counter you have, then discard a card. Atreus deals 2 damage to each opponent.",
+          "cost": "{3}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "experience_counter_you_have"
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Partner\u2014Father & son (You can have two commanders if both have this ability.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner\u2014Father & son"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

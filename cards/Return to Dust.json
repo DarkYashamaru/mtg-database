@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3029df1d-d02a-4fed-8ab4-000a2096f823",
+  "name": "Return to Dust",
+  "faces": [
+    {
+      "name": "Return to Dust",
+      "type_line": "Instant",
+      "oracle_text": "Exile target artifact or enchantment. If you cast this spell during your main phase, you may exile up to one other target artifact or enchantment.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Exile target artifact or enchantment. If you cast this spell during your main phase, you may exile up to one other target artifact or enchantment.",
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Artifact",
+                  "Enchantment"
+                ]
+              }
+            },
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Artifact",
+                  "Enchantment"
+                ],
+                "exclude_previous_target": true
+              },
+              "max_targets": 1,
+              "optional": true,
+              "condition": [
+                {
+                  "condition_text": "you cast this spell during your main phase"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

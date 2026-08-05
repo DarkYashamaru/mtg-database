@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cd47eedd-57cb-460d-b339-4785f63a5475",
+  "name": "Leinore, Autumn Sovereign",
+  "faces": [
+    {
+      "name": "Leinore, Autumn Sovereign",
+      "type_line": "Legendary Creature \u2014 Human Noble",
+      "oracle_text": "Coven \u2014 At the beginning of combat on your turn, put a +1/+1 counter on up to one target creature you control. Then if you control three or more creatures with different powers, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, put a +1/+1 counter on up to one target creature you control. Then if you control three or more creatures with different powers, draw a card.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Up",
+                  "To",
+                  "One",
+                  "Target"
+                ]
+              },
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you control three or more creatures with different powers"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

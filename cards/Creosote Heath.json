@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c116b787-5f7e-47ef-a694-58709770dd32",
+  "name": "Creosote Heath",
+  "faces": [
+    {
+      "name": "Creosote Heath",
+      "type_line": "Land \u2014 Desert",
+      "oracle_text": "This land enters tapped.\nWhen this land enters, it deals 1 damage to target opponent.\n{T}: Add {G} or {W}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land enters, it deals 1 damage to target opponent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 1 damage to target opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G} or {W}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}",
+                "{w}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

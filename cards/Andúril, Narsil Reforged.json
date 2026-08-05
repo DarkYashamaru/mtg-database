@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b7d7c131-b628-4b35-b40b-1087589ebdd0",
+  "name": "And\u00faril, Narsil Reforged",
+  "faces": [
+    {
+      "name": "And\u00faril, Narsil Reforged",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Ascend (If you control ten or more permanents, you get the city's blessing for the rest of the game.)\nWhenever equipped creature attacks, put a +1/+1 counter on each creature you control. If you have the city's blessing, put two +1/+1 counters on each creature you control instead.\nEquip {3}",
+      "static": [
+        {
+          "keyword": "ascend"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, put a +1/+1 counter on each creature you control. If you have the city's blessing, put two +1/+1 counters on each creature you control instead.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_creature_you_control_instead"
+              },
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "you have the city's blessing"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

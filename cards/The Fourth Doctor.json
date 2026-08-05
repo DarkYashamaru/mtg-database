@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c19fdee3-5fbc-4e2d-ac23-85b46eacafdc",
+  "name": "The Fourth Doctor",
+  "faces": [
+    {
+      "name": "The Fourth Doctor",
+      "type_line": "Legendary Creature \u2014 Time Lord Doctor",
+      "oracle_text": "You may look at the top card of your library any time.\nWould You Like A...? \u2014 Once each turn, you may play a historic land or cast a historic spell from the top of your library. When you do, create a Food token. (Artifacts, legendaries, and Sagas are historic.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "Would You Like A...? \u2014 Once each turn, you may play a historic land or cast a historic spell from the top of your library. When you do, create a Food token. (Artifacts, legendaries, and Sagas are historic.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Would You Like A...? \u2014 Once each turn, you may play a historic land or cast a historic spell from the top of your library"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "food token"
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

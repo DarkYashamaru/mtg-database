@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d94144b0-8967-4904-bb6b-44b0022d1f19",
+  "name": "Goliath Truck",
+  "faces": [
+    {
+      "name": "Goliath Truck",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Stowage \u2014 Whenever this Vehicle attacks, put two +1/+1 counters on another target attacking creature.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle attacks, put two +1/+1 counters on another target attacking creature.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "another_target_attacking_creature",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

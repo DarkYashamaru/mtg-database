@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eb154ebb-d02f-405a-a557-3d5ec7648c42",
+  "name": "Harrier Strix",
+  "faces": [
+    {
+      "name": "Harrier Strix",
+      "type_line": "Creature \u2014 Bird",
+      "oracle_text": "Flying\nWhen this creature enters, tap target permanent.\n{2}{U}: Draw a card, then discard a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, tap target permanent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap target permanent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{U}: Draw a card, then discard a card.",
+          "cost": "{2}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

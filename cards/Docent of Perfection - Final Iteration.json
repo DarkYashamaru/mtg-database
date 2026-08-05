@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85e797de-da27-4cd5-8fa4-4aef948988b2",
+  "name": "Docent of Perfection // Final Iteration",
+  "faces": [
+    {
+      "name": "Docent of Perfection",
+      "type_line": "Creature \u2014 Insect Horror",
+      "oracle_text": "Flying\nWhenever you cast an instant or sorcery spell, create a 1/1 blue Human Wizard creature token. Then if you control three or more Wizards, transform this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, create a 1/1 blue Human Wizard creature token. Then if you control three or more Wizards, transform this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 blue Human Wizard creature token",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human",
+                  "Wizard"
+                ]
+              }
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you control three or more wizards"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Final Iteration",
+      "type_line": "Creature \u2014 Eldrazi Insect",
+      "oracle_text": "Flying\nWizards you control get +2/+1 and have flying.\nWhenever you cast an instant or sorcery spell, create a 1/1 blue Human Wizard creature token.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, create a 1/1 blue Human Wizard creature token.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 blue Human Wizard creature token",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human",
+                  "Wizard"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Wizards you control get +2/+1 and have flying.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "wizards_you_control_get_21_and"
+              },
+              "keywords": [
+                "flying"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c6321de2-80b0-4679-93cf-97df75344e97",
+  "name": "Relic Ward",
+  "faces": [
+    {
+      "name": "Relic Ward",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "You may cast this spell as though it had flash. If you cast it any time a sorcery couldn't have been cast, the controller of the permanent it becomes sacrifices it at the beginning of the next cleanup step.\nEnchant artifact\nEnchanted artifact has shroud. (It can't be the target of spells or abilities.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may cast this spell as though it had flash. If you cast it any time a sorcery couldn't have been cast, the controller of the permanent it becomes sacrifices it at the beginning of the next cleanup step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast this spell as though it had flash"
+            },
+            {
+              "action": "custom_effect",
+              "text": "the controller of the permanent it becomes sacrifices it at the beginning of the next cleanup step",
+              "condition": [
+                {
+                  "condition_text": "you cast it any time a sorcery couldn't have been cast"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchant artifact",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "artifact"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted artifact has shroud. (It can't be the target of spells or abilities.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted artifact has shroud"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

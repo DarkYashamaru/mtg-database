@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a3d8c0f8-ebe8-4e28-bef1-e2a45c0d86d5",
+  "name": "Galvanic Juggernaut",
+  "faces": [
+    {
+      "name": "Galvanic Juggernaut",
+      "type_line": "Artifact Creature \u2014 Juggernaut",
+      "oracle_text": "This creature attacks each combat if able.\nThis creature doesn't untap during your untap step.\nWhenever another creature dies, untap this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature dies, untap this creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": "another_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature attacks each combat if able.",
+          "effects": [
+            {
+              "action": "attack_requirement",
+              "target": "self",
+              "requirement": "each_combat_if_able"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature doesn't untap during your untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "self",
+              "scope": "your_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

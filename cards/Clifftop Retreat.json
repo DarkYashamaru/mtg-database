@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d7faa3c8-46cf-46b2-bfa4-89000307cf18",
+  "name": "Clifftop Retreat",
+  "faces": [
+    {
+      "name": "Clifftop Retreat",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped unless you control a Mountain or a Plains.\n{T}: Add {R} or {W}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R} or {W}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{w}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped unless you control a Mountain or a Plains.",
+          "effects": [
+            {
+              "action": "enters_tapped_unless",
+              "target": "self",
+              "condition": [
+                {
+                  "you_control_subtypes_any": [
+                    "Mountain",
+                    "Plains"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "99e89098-bc55-4297-9407-ab9256b609da",
+  "name": "Korvold, Gleeful Glutton",
+  "faces": [
+    {
+      "name": "Korvold, Gleeful Glutton",
+      "type_line": "Legendary Creature \u2014 Dragon Noble",
+      "oracle_text": "This spell costs {1} less to cast for each card type among permanents you've sacrificed this turn.\nFlying, trample, haste\nWhenever Korvold deals combat damage to a player, put X +1/+1 counters on Korvold and draw X cards, where X is the number of permanent types among cards in your graveyard.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Korvold deals combat damage to a player, put X +1/+1 counters on Korvold and draw X cards, where X is the number of permanent types among cards in your graveyard.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_and_draw_x_cards_where_x_is_the_number_of_permanent_types_among_cards_in_you_control_graveyard",
+              "amount": "X"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {1} less to cast for each card type among permanents you've sacrificed this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {1} less to cast for each card type among permanents you've sacrificed this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

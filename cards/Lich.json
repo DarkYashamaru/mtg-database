@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b7515f2-7a5a-4e2a-9784-6cbacd768172",
+  "name": "Lich",
+  "faces": [
+    {
+      "name": "Lich",
+      "type_line": "Enchantment",
+      "oracle_text": "As this enchantment enters, you lose life equal to your life total.\nYou don't lose the game for having 0 or less life.\nIf you would gain life, draw that many cards instead.\nWhenever you're dealt damage, sacrifice that many nontoken permanents. If you can't, you lose the game.\nWhen this enchantment is put into a graveyard from the battlefield, you lose the game.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you're dealt damage, sacrifice that many nontoken permanents. If you can't, you lose the game.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you're dealt damage"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "that_many_nontoken_permanents"
+            },
+            {
+              "action": "lose_the_game",
+              "condition": [
+                {
+                  "condition_text": "you can't"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "When this enchantment is put into a graveyard from the battlefield, you lose the game.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this enchantment is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_the_game"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this enchantment enters, you lose life equal to your life total.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this enchantment enters, you lose life equal to your life total"
+            }
+          ]
+        },
+        {
+          "raw_text": "You don't lose the game for having 0 or less life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You don't lose the game for having 0 or less life"
+            }
+          ]
+        },
+        {
+          "raw_text": "If you would gain life, draw that many cards instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "draw that many cards instead",
+              "condition": [
+                {
+                  "condition_text": "you would gain life"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

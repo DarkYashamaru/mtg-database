@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "24d373cd-245a-4051-b187-ba8cc83b0c48",
+  "name": "Bladed Bracers",
+  "faces": [
+    {
+      "name": "Bladed Bracers",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +1/+1.\nAs long as equipped creature is a Human or an Angel, it has vigilance.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as equipped creature is a Human or an Angel, it has vigilance.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as equipped creature is a Human or an Angel, it has vigilance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

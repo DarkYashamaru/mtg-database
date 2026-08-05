@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d27bebc9-348d-4b8e-816a-a4da66fb5618",
+  "name": "Writhing Chrysalis",
+  "faces": [
+    {
+      "name": "Writhing Chrysalis",
+      "type_line": "Creature \u2014 Eldrazi Drone",
+      "oracle_text": "Devoid (This card has no color.)\nWhen you cast this spell, create two 0/1 colorless Eldrazi Spawn creature tokens with \"Sacrifice this token: Add {C}.\"\nReach\nWhenever you sacrifice another Eldrazi, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "devoid"
+        },
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, create two 0/1 colorless Eldrazi Spawn creature tokens with \"Sacrifice this token: Add {C}.\"",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "two 0/1 colorless Eldrazi Spawn creature tokens with \"Sacrifice this token: Add {C}",
+                "power_toughness": "0/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Eldrazi",
+                  "Spawn"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you sacrifice another Eldrazi, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice another Eldrazi"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

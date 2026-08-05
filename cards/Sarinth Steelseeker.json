@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dacf7f0d-9ce2-4e28-98a5-e7ec270a4c83",
+  "name": "Sarinth Steelseeker",
+  "faces": [
+    {
+      "name": "Sarinth Steelseeker",
+      "type_line": "Creature \u2014 Human Artificer Scout",
+      "oracle_text": "Whenever an artifact you control enters, look at the top card of your library. If it's a land card, you may reveal it and put it into your hand. If you don't put the card into your hand, you may put it into your graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an artifact you control enters, look at the top card of your library. If it's a land card, you may reveal it and put it into your hand. If you don't put the card into your hand, you may put it into your graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Artifact"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it into your graveyard",
+              "condition": [
+                {
+                  "condition_text": "you don't put the card into your hand"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dffa7c06-096a-47f8-9645-1ba7306ba5b0",
+  "name": "Necromancer's Magemark",
+  "faces": [
+    {
+      "name": "Necromancer's Magemark",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nCreatures you control that are enchanted get +1/+1.\nIf a creature you control that's enchanted would die, return it to its owner's hand instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures you control that are enchanted get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures you control that are enchanted get +1/+1"
+            }
+          ]
+        },
+        {
+          "raw_text": "If a creature you control that's enchanted would die, return it to its owner's hand instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return it to its owner's hand instead",
+              "condition": [
+                {
+                  "condition_text": "a creature you control that's enchanted would die"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

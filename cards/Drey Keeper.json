@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7223ef44-0bfb-4108-810d-134174ff26b0",
+  "name": "Drey Keeper",
+  "faces": [
+    {
+      "name": "Drey Keeper",
+      "type_line": "Creature \u2014 Elf Druid",
+      "oracle_text": "When this creature enters, create two 1/1 green Squirrel creature tokens.\n{3}{B}: Squirrels you control get +1/+0 and gain menace until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create two 1/1 green Squirrel creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 green Squirrel creature tokens",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Squirrel"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{B}: Squirrels you control get +1/+0 and gain menace until end of turn.",
+          "cost": "{3}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "squirrels_you_control_get_10_and",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

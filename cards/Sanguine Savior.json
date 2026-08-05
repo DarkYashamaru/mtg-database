@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cc3a6c83-a671-4ce8-b98e-434989fb6778",
+  "name": "Sanguine Savior",
+  "faces": [
+    {
+      "name": "Sanguine Savior",
+      "type_line": "Creature \u2014 Vampire Cleric",
+      "oracle_text": "Flying, lifelink\nDisguise {W/B}{W/B} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)\nWhen this creature is turned face up, another target creature you control gains lifelink until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, another target creature you control gains lifelink until end of turn.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_creature_you_control",
+              "keyword": "lifelink"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disguise {W/B}{W/B} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disguise {W/B}{W/B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

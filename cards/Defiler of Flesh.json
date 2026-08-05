@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3ad002de-8be3-48d2-a0e0-865538144789",
+  "name": "Defiler of Flesh",
+  "faces": [
+    {
+      "name": "Defiler of Flesh",
+      "type_line": "Creature \u2014 Phyrexian Horror",
+      "oracle_text": "Menace\nAs an additional cost to cast black permanent spells, you may pay 2 life. Those spells cost {B} less to cast if you paid life this way. This effect reduces only the amount of black mana you pay.\nWhenever you cast a black permanent spell, target creature you control gets +1/+1 and gains menace until end of turn.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a black permanent spell, target creature you control gets +1/+1 and gains menace until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Black",
+                "Permanent"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control_gets_11_and",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast black permanent spells, you may pay 2 life. Those spells cost {B} less to cast if you paid life this way. This effect reduces only the amount of black mana you pay.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As an additional cost to cast black permanent spells, you may pay 2 life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Those spells cost {B} less to cast if you paid life this way"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This effect reduces only the amount of black mana you pay"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

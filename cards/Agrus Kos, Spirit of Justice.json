@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "11b7ee78-fca6-4b34-93e4-e60492583d50",
+  "name": "Agrus Kos, Spirit of Justice",
+  "faces": [
+    {
+      "name": "Agrus Kos, Spirit of Justice",
+      "type_line": "Legendary Creature \u2014 Spirit Detective",
+      "oracle_text": "Double strike, vigilance\nWhenever Agrus Kos enters or attacks, choose up to one target creature. If it's suspected, exile it. Otherwise, suspect it. (A suspected creature has menace and can't block.)",
+      "static": [
+        {
+          "keyword": "double strike"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Agrus Kos enters or attacks, choose up to one target creature. If it's suspected, exile it. Otherwise, suspect it. (A suspected creature has menace and can't block.)",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose up to one target creature"
+            },
+            {
+              "action": "exile",
+              "target": "it",
+              "condition": [
+                {
+                  "condition_text": "it's suspected"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "suspect it",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

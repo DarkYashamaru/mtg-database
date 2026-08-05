@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7c48c341-1d56-4210-9d86-181ebb206098",
+  "name": "Living Lore",
+  "faces": [
+    {
+      "name": "Living Lore",
+      "type_line": "Creature \u2014 Avatar",
+      "oracle_text": "As this creature enters, exile an instant or sorcery card from your graveyard.\nLiving Lore's power and toughness are each equal to the exiled card's mana value.\nWhenever this creature deals combat damage, you may sacrifice it. If you do, you may cast the exiled card without paying its mana cost.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage, you may sacrifice it. If you do, you may cast the exiled card without paying its mana cost.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature deals combat damage"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast the exiled card without paying its mana cost",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this creature enters, exile an instant or sorcery card from your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this creature enters, exile an instant or sorcery card from your graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "Living Lore's power and toughness are each equal to the exiled card's mana value.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Living Lore's power and toughness are each equal to the exiled card's mana value"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

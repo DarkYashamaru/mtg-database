@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fc762e40-84c1-4762-82f7-a0fc4f6fd522",
+  "name": "Garruk, Savage Herald",
+  "faces": [
+    {
+      "name": "Garruk, Savage Herald",
+      "type_line": "Legendary Planeswalker \u2014 Garruk",
+      "oracle_text": "+1: Reveal the top card of your library. If it's a creature card, put it into your hand. Otherwise, put it on the bottom of your library.\n\u22122: Target creature you control deals damage equal to its power to another target creature.\n\u22127: Until end of turn, creatures you control gain \"You may have this creature assign its combat damage as though it weren't blocked.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Reveal the top card of your library. If it's a creature card, put it into your hand. Otherwise, put it on the bottom of your library.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "it's a creature card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it on the bottom of your library",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Target creature you control deals damage equal to its power to another target creature.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature you control deals damage equal to its power to another target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: Until end of turn, creatures you control gain \"You may have this creature assign its combat damage as though it weren't blocked.\"",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, creatures you control gain \"You may have this creature assign its combat damage as though it weren't blocked.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

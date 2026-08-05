@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "04a0382f-7e4e-4450-ae70-18999379d875",
+  "name": "Nutrient Block",
+  "faces": [
+    {
+      "name": "Nutrient Block",
+      "type_line": "Artifact \u2014 Food",
+      "oracle_text": "Indestructible (Effects that say \"destroy\" don't destroy this artifact.)\n{2}, {T}, Sacrifice this artifact: You gain 3 life.\nWhen this artifact is put into a graveyard from the battlefield, draw a card.",
+      "static": [
+        {
+          "keyword": "indestructible"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this artifact is put into a graveyard from the battlefield, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+          "cost": "{2}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

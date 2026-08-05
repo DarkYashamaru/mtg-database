@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c85fc672-12d8-4ab0-b18d-ccd590ac063c",
+  "name": "Immortal Coil",
+  "faces": [
+    {
+      "name": "Immortal Coil",
+      "type_line": "Artifact",
+      "oracle_text": "{T}, Exile two cards from your graveyard: Draw a card.\nIf damage would be dealt to you, prevent that damage. Exile a card from your graveyard for each 1 damage prevented this way.\nWhen there are no cards in your graveyard, you lose the game.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When there are no cards in your graveyard, you lose the game.",
+          "trigger": {
+            "type": "custom",
+            "text": "When there are no cards in your graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_the_game"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Exile two cards from your graveyard: Draw a card.",
+          "cost": "{T}, Exile two cards from your graveyard",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If damage would be dealt to you, prevent that damage. Exile a card from your graveyard for each 1 damage prevented this way.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent that damage",
+              "condition": [
+                {
+                  "condition_text": "damage would be dealt to you"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Exile a card from your graveyard for each 1 damage prevented this way"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

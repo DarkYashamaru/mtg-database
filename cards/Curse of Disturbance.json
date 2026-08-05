@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6cbd36d9-de47-41b0-9ef4-a72ca01adccd",
+  "name": "Curse of Disturbance",
+  "faces": [
+    {
+      "name": "Curse of Disturbance",
+      "type_line": "Enchantment \u2014 Aura Curse",
+      "oracle_text": "Enchant player\nWhenever enchanted player is attacked, create a 2/2 black Zombie creature token. Each opponent attacking that player does the same.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted player is attacked, create a 2/2 black Zombie creature token. Each opponent attacking that player does the same.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever enchanted player is attacked"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black Zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each opponent attacking that player does the same"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant player",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "player"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

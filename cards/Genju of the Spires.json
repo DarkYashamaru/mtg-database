@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c040882e-48ba-469e-9fc6-02e8b68dd58c",
+  "name": "Genju of the Spires",
+  "faces": [
+    {
+      "name": "Genju of the Spires",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant Mountain\n{2}: Enchanted Mountain becomes a 6/1 red Spirit creature until end of turn. It's still a land.\nWhen enchanted Mountain is put into a graveyard, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted Mountain is put into a graveyard, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When enchanted Mountain is put into a graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: Enchanted Mountain becomes a 6/1 red Spirit creature until end of turn. It's still a land.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted Mountain becomes a 6/1 red Spirit creature until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant Mountain",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "mountain"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

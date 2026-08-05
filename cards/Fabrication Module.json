@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b057c8ff-f169-41cd-a594-026f1a6cb0f9",
+  "name": "Fabrication Module",
+  "faces": [
+    {
+      "name": "Fabrication Module",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever you get one or more {E} (energy counters), put a +1/+1 counter on target creature you control.\n{4}, {T}: You get {E}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you get one or more {E} (energy counters), put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you get one or more {E}"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}, {T}: You get {E}.",
+          "cost": "{4}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You get {E}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

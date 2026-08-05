@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4f452ce7-1166-4810-afed-ea5e156a6f52",
+  "name": "Aurelia's Vindicator",
+  "faces": [
+    {
+      "name": "Aurelia's Vindicator",
+      "type_line": "Creature \u2014 Angel",
+      "oracle_text": "Flying, lifelink, ward {2}\nDisguise {X}{3}{W}\nWhen this creature is turned face up, exile up to X other target creatures from the battlefield and/or creature cards from graveyards.\nWhen this creature leaves the battlefield, return the exiled cards to their owners' hands.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, exile up to X other target creatures from the battlefield and/or creature cards from graveyards.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to X other target creatures from the battlefield and/or creature cards from graveyards"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature leaves the battlefield, return the exiled cards to their owners' hands.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return the exiled cards to their owners' hands"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disguise {X}{3}{W}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disguise {X}{3}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

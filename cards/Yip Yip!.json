@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5453550f-9136-4568-baf8-c3d20e33fbb6",
+  "name": "Yip Yip!",
+  "faces": [
+    {
+      "name": "Yip Yip!",
+      "type_line": "Instant \u2014 Lesson",
+      "oracle_text": "Target creature you control gets +2/+2 until end of turn. If that creature is an Ally, it also gains flying until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature you control gets +2/+2 until end of turn. If that creature is an Ally, it also gains flying until end of turn.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "it_also",
+              "keyword": "flying",
+              "condition": [
+                {
+                  "condition_text": "that creature is an ally"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

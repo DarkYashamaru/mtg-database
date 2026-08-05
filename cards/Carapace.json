@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b893b554-9156-4d79-aca8-6e09c523760b",
+  "name": "Carapace",
+  "faces": [
+    {
+      "name": "Carapace",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +0/+2.\nSacrifice this Aura: Regenerate enchanted creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice this Aura: Regenerate enchanted creature.",
+          "cost": "Sacrifice this Aura",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Regenerate enchanted creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +0/+2.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 0,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

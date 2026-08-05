@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "da268892-b190-4eee-9a2b-b0b9bb763033",
+  "name": "Sarah Jane Smith",
+  "faces": [
+    {
+      "name": "Sarah Jane Smith",
+      "type_line": "Legendary Creature \u2014 Human Detective",
+      "oracle_text": "Whenever you cast a historic spell, investigate. This ability triggers only once each turn. (Artifacts, legendaries, and Sagas are historic. To investigate, create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nDoctor's companion (You can have two commanders if the other is the Doctor.)",
+      "static": [
+        {
+          "keyword": "doctors_companion"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a historic spell, investigate. This ability triggers only once each turn. (Artifacts, legendaries, and Sagas are historic. To investigate, create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Historic"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "investigate"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

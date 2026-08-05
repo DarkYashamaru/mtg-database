@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2d91cf05-fc39-4d76-8c95-62738b57e0a0",
+  "name": "Griffin Protector",
+  "faces": [
+    {
+      "name": "Griffin Protector",
+      "type_line": "Creature \u2014 Griffin",
+      "oracle_text": "Flying\nWhenever another creature you control enters, this creature gets +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, this creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

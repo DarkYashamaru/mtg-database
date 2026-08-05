@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b368b1bd-3273-40a9-8102-27501f4d0e15",
+  "name": "Sentinel Sarah Lyons",
+  "faces": [
+    {
+      "name": "Sentinel Sarah Lyons",
+      "type_line": "Legendary Creature \u2014 Human Knight",
+      "oracle_text": "Haste\nAs long as an artifact entered the battlefield under your control this turn, creatures you control get +2/+2.\nBattalion \u2014 Whenever Sentinel Sarah Lyons and at least two other creatures attack, Sentinel Sarah Lyons deals damage equal to the number of artifacts you control to target player.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Sentinel Sarah Lyons and at least two other creatures attack, Sentinel Sarah Lyons deals damage equal to the number of artifacts you control to target player.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "attacking_creatures_you_control_gte": 3
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Sentinel Sarah Lyons deals damage equal to the number of artifacts you control to target player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as an artifact entered the battlefield under your control this turn, creatures you control get +2/+2.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as an artifact entered the battlefield under your control this turn, creatures you control get +2/+2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

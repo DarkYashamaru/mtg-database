@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f31c423-d45c-4c3e-b7d4-ca125be0f92c",
+  "name": "Aragorn, the Uniter",
+  "faces": [
+    {
+      "name": "Aragorn, the Uniter",
+      "type_line": "Legendary Creature \u2014 Human Noble",
+      "oracle_text": "Whenever you cast a white spell, create a 1/1 white Human Soldier creature token.\nWhenever you cast a blue spell, scry 2.\nWhenever you cast a red spell, Aragorn deals 3 damage to target opponent.\nWhenever you cast a green spell, target creature gets +4/+4 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a white spell, create a 1/1 white Human Soldier creature token.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "White"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Human Soldier creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human",
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a blue spell, scry 2.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Blue"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a red spell, Aragorn deals 3 damage to target opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Red"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Aragorn deals 3 damage to target opponent"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a green spell, target creature gets +4/+4 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Green"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 4,
+              "toughness_delta": 4
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

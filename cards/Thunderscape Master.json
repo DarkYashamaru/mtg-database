@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e1db1798-17d1-4ef3-80d7-3f9115a01f7b",
+  "name": "Thunderscape Master",
+  "faces": [
+    {
+      "name": "Thunderscape Master",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "{B}{B}, {T}: Target player loses 2 life and you gain 2 life.\n{G}{G}, {T}: Creatures you control get +2/+2 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{B}{B}, {T}: Target player loses 2 life and you gain 2 life.",
+          "cost": "{B}{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player loses 2 life and you gain 2 life"
+            }
+          ]
+        },
+        {
+          "raw_text": "{G}{G}, {T}: Creatures you control get +2/+2 until end of turn.",
+          "cost": "{G}{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

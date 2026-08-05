@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f03c834-2cb3-4c54-bee6-c64f3a5fce47",
+  "name": "Nurturing Presence",
+  "faces": [
+    {
+      "name": "Nurturing Presence",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature has \"Whenever a creature you control enters, this creature gets +1/+1 until end of turn.\"\nWhen this Aura enters, create a 1/1 white Spirit creature token with flying.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, create a 1/1 white Spirit creature token with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white Spirit creature token with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Spirit"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has \"Whenever a creature you control enters, this creature gets +1/+1 until end of turn.\"",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "enchanted_creature_has_whenever_a_creature_you_control_enters_self"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

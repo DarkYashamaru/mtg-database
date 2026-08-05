@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c1f4a440-638a-4e3e-8a3e-af4a4a73ec91",
+  "name": "Dark Favor",
+  "faces": [
+    {
+      "name": "Dark Favor",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, you lose 1 life.\nEnchanted creature gets +3/+1.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, you lose 1 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +3/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 3,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

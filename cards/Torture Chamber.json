@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "12436f2f-eaed-4b46-8570-81316ce15962",
+  "name": "Torture Chamber",
+  "faces": [
+    {
+      "name": "Torture Chamber",
+      "type_line": "Artifact",
+      "oracle_text": "At the beginning of your upkeep, put a pain counter on this artifact.\nAt the beginning of your end step, this artifact deals damage to you equal to the number of pain counters on it.\n{1}, {T}, Remove all pain counters from this artifact: It deals damage to target creature equal to the number of pain counters removed this way.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a pain counter on this artifact.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a pain counter on this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, this artifact deals damage to you equal to the number of pain counters on it.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this artifact deals damage to you equal to the number of pain counters on it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Remove all pain counters from this artifact: It deals damage to target creature equal to the number of pain counters removed this way.",
+          "cost": "{1}, {T}, Remove all pain counters from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "It deals damage to target creature equal to the number of pain counters removed this way"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

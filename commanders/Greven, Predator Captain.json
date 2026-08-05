@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b22f4797-c74f-4d95-9528-c16c2bc4c05b",
+  "name": "Greven, Predator Captain",
+  "faces": [
+    {
+      "name": "Greven, Predator Captain",
+      "type_line": "Legendary Creature \u2014 Phyrexian Human Warrior",
+      "oracle_text": "Menace\nGreven gets +X/+0, where X is the amount of life you've lost this turn.\nWhenever Greven attacks, you may sacrifice another creature. If you do, you draw cards equal to that creature's power and you lose life equal to that creature's toughness.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Greven attacks, you may sacrifice another creature. If you do, you draw cards equal to that creature's power and you lose life equal to that creature's toughness.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "you draw cards equal to that creature's power and you lose life equal to that creature's toughness",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Greven gets +X/+0, where X is the amount of life you've lost this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Greven gets +X/+0, where X is the amount of life you've lost this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4601e4c7-74bc-44ce-9274-68ba79f8aae1",
+  "name": "Nerd Rage",
+  "faces": [
+    {
+      "name": "Nerd Rage",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, draw two cards.\nEnchanted creature has \"You have no maximum hand size\" and \"Whenever this creature attacks, if you have ten or more cards in hand, it gets +10/+10 until end of turn.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has \"You have no maximum hand size\" and \"Whenever this creature attacks, if you have ten or more cards in hand, it gets +10/+10 until end of turn.\"",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "enchanted_creature_has_you_have_no_maximum_hand_size_and_whenever_self_attacks_if_you_have_ten_or_more_cards_in_hand_it",
+              "power_delta": 10,
+              "toughness_delta": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

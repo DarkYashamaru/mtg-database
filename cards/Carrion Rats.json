@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1aa6b31b-cd30-4741-abc6-2ef72e445630",
+  "name": "Carrion Rats",
+  "faces": [
+    {
+      "name": "Carrion Rats",
+      "type_line": "Creature \u2014 Rat",
+      "oracle_text": "Whenever this creature attacks or blocks, any player may exile a card from their graveyard. If a player does, this creature assigns no combat damage this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks or blocks, any player may exile a card from their graveyard. If a player does, this creature assigns no combat damage this turn.",
+          "trigger": {
+            "type": "attacks_or_blocks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "any player may exile a card from their graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature assigns no combat damage this turn",
+              "condition": [
+                {
+                  "condition_text": "a player does"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f24319a1-0662-44be-9027-11e7bc020e1d",
+  "name": "Cait, Cage Brawler",
+  "faces": [
+    {
+      "name": "Cait, Cage Brawler",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "During your turn, Cait has indestructible.\nWhenever Cait attacks, you and defending player each draw a card, then discard a card. Put two +1/+1 counters on Cait if you discarded the card with the greatest mana value among those cards or tied for greatest.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Cait attacks, you and defending player each draw a card, then discard a card. Put two +1/+1 counters on Cait if you discarded the card with the greatest mana value among those cards or tied for greatest.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you and defending player each draw a card"
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_if_you_discarded_the_card_with_the_greatest_mana_value_among_those_cards_or_tied_for_greatest",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "During your turn, Cait has indestructible.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "During your turn, Cait has indestructible"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

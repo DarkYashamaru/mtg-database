@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5017c07d-8ad5-4ee2-91d3-974811cdff75",
+  "name": "Fortitude",
+  "faces": [
+    {
+      "name": "Fortitude",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nSacrifice a Forest: Regenerate enchanted creature.\nWhen this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this Aura is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice a Forest: Regenerate enchanted creature.",
+          "cost": "Sacrifice a Forest",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Regenerate enchanted creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

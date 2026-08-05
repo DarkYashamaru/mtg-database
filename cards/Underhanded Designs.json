@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "870185fc-7b05-47d3-95ff-97fbf12796d4",
+  "name": "Underhanded Designs",
+  "faces": [
+    {
+      "name": "Underhanded Designs",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever an artifact you control enters, you may pay {1}. If you do, each opponent loses 1 life and you gain 1 life.\n{1}{B}, Sacrifice this enchantment: Destroy target creature. Activate only if you control two or more artifacts.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an artifact you control enters, you may pay {1}. If you do, each opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Artifact"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}, Sacrifice this enchantment: Destroy target creature. Activate only if you control two or more artifacts.",
+          "cost": "{1}{B}, Sacrifice this enchantment",
+          "condition": [
+            {
+              "condition_text": "you control two or more artifacts"
+            }
+          ],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f2e106c6-7666-42cd-9a02-e51327fb80e8",
+  "name": "Mammoth Harness",
+  "faces": [
+    {
+      "name": "Mammoth Harness",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature loses flying.\nWhenever enchanted creature blocks or becomes blocked by a creature, the other creature gains first strike until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature blocks or becomes blocked by a creature, the other creature gains first strike until end of turn.",
+          "trigger": {
+            "type": "becomes_blocked_by_creature",
+            "subject": "enchanted_creature_blocks_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "the_other_creature",
+              "keyword": "first_strike"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature loses flying.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature loses flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

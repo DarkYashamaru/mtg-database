@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c27c6ba9-8d72-4101-b3a5-1e8d81755568",
+  "name": "Heliod, the Radiant Dawn // Heliod, the Warped Eclipse",
+  "faces": [
+    {
+      "name": "Heliod, the Radiant Dawn",
+      "type_line": "Legendary Enchantment Creature \u2014 God",
+      "oracle_text": "When Heliod enters, return target enchantment card that isn't a God from your graveyard to your hand.\n{3}{U/P}: Transform Heliod. Activate only as a sorcery. ({U/P} can be paid with either {U} or 2 life.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Heliod enters, return target enchantment card that isn't a God from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target enchantment card that isn't a God from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{U/P}: Transform Heliod. Activate only as a sorcery. ({U/P} can be paid with either {U} or 2 life.)",
+          "cost": "{3}{U/P}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Heliod, the Warped Eclipse",
+      "type_line": "Legendary Enchantment Creature \u2014 Phyrexian God",
+      "oracle_text": "You may cast spells as though they had flash.\nSpells you cast cost {1} less to cast for each card your opponents have drawn this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may cast spells as though they had flash.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast spells as though they had flash"
+            }
+          ]
+        },
+        {
+          "raw_text": "Spells you cast cost {1} less to cast for each card your opponents have drawn this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Spells you cast cost {1} less to cast for each card your opponents have drawn this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

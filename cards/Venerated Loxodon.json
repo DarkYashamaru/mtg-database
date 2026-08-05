@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d157a9df-59bc-40ad-b62b-43f973f14be1",
+  "name": "Venerated Loxodon",
+  "faces": [
+    {
+      "name": "Venerated Loxodon",
+      "type_line": "Creature \u2014 Elephant Cleric",
+      "oracle_text": "Convoke (Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {1} or one mana of that creature's color.)\nWhen this creature enters, put a +1/+1 counter on each creature that convoked it.",
+      "static": [
+        {
+          "keyword": "convoke"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on each creature that convoked it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "each_creature_that_convoked_it",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

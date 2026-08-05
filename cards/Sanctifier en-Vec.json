@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "810d3afe-c644-444f-a4d9-88b323f0b581",
+  "name": "Sanctifier en-Vec",
+  "faces": [
+    {
+      "name": "Sanctifier en-Vec",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "Protection from black and from red\nWhen this creature enters, exile all cards that are black or red from all graveyards.\nIf a black or red permanent, spell, or card not on the battlefield would be put into a graveyard, exile it instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, exile all cards that are black or red from all graveyards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile all cards that are black or red from all graveyards"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Protection from black and from red",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Protection from black and from red"
+            }
+          ]
+        },
+        {
+          "raw_text": "If a black or red permanent, spell, or card not on the battlefield would be put into a graveyard, exile it instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "spell, or card not on the battlefield would be put into a graveyard, exile it instead",
+              "condition": [
+                {
+                  "condition_text": "a black or red permanent"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

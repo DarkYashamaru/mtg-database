@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "31af65c3-602b-4ac9-a25f-dccb88f8f751",
+  "name": "Jacob Frye",
+  "faces": [
+    {
+      "name": "Jacob Frye",
+      "type_line": "Legendary Creature \u2014 Human Assassin",
+      "oracle_text": "Partner with Evie Frye (When this creature enters, target player may put Evie into their hand from their library, then shuffle.)\nWhenever one or more Assassins you control deal combat damage to a player, exile up to one target Assassin card or card with freerunning from your graveyard. If you do, copy it. You may cast the copy.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more Assassins you control deal combat damage to a player, exile up to one target Assassin card or card with freerunning from your graveyard. If you do, copy it. You may cast the copy.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Assassin"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target Assassin card or card with freerunning from your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast the copy"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Evie Frye (When this creature enters, target player may put Evie into their hand from their library, then shuffle.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Evie Frye"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0a154fb2-9f23-4c22-baee-728492385d6d",
+  "name": "Devoted Grafkeeper // Departed Soulkeeper",
+  "faces": [
+    {
+      "name": "Departed Soulkeeper",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Flying\nThis creature can block only creatures with flying.\nIf Departed Soulkeeper would be put into a graveyard from anywhere, exile it instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can block only creatures with flying.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "block_only_creatures_with_flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "If Departed Soulkeeper would be put into a graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "departed soulkeeper would be put into a graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Devoted Grafkeeper",
+      "type_line": "Creature \u2014 Human Peasant",
+      "oracle_text": "When this creature enters, mill two cards.\nWhenever you cast a spell from your graveyard, tap target creature you don't control.\nDisturb {1}{W}{U} (You may cast this card from your graveyard transformed for its disturb cost.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, mill two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a spell from your graveyard, tap target creature you don't control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell from your graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap target creature you don't control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disturb {1}{W}{U} (You may cast this card from your graveyard transformed for its disturb cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disturb {1}{W}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

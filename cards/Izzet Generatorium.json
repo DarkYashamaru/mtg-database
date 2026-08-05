@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6a618c4a-e604-4dce-a078-755fd35ac5d9",
+  "name": "Izzet Generatorium",
+  "faces": [
+    {
+      "name": "Izzet Generatorium",
+      "type_line": "Artifact",
+      "oracle_text": "If you would get one or more {E} (energy counters), you get that many plus one {E} instead.\n{T}: Draw a card. Activate only if you've paid or lost four or more {E} this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Draw a card. Activate only if you've paid or lost four or more {E} this turn.",
+          "cost": "{T}",
+          "condition": [
+            {
+              "condition_text": "you've paid or lost four or more {e} this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If you would get one or more {E} (energy counters), you get that many plus one {E} instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get that many plus one {e} instead",
+              "condition": [
+                {
+                  "condition_text": "you would get one or more {e}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85aedc9f-df35-49bc-88c8-23efda9a4b1b",
+  "name": "Frost Augur",
+  "faces": [
+    {
+      "name": "Frost Augur",
+      "type_line": "Snow Creature \u2014 Human Wizard",
+      "oracle_text": "{S}, {T}: Look at the top card of your library. If it's a snow card, you may reveal it and put it into your hand. ({S} can be paid with one mana from a snow source.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{S}, {T}: Look at the top card of your library. If it's a snow card, you may reveal it and put it into your hand. ({S} can be paid with one mana from a snow source.)",
+          "cost": "{S}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it's a snow card"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

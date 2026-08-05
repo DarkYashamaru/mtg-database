@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f17d0fb8-c157-43b8-be26-f5ba4c6aed14",
+  "name": "Haze of Rage",
+  "faces": [
+    {
+      "name": "Haze of Rage",
+      "type_line": "Sorcery",
+      "oracle_text": "Buyback {2} (You may pay an additional {2} as you cast this spell. If you do, put this card into your hand as it resolves.)\nCreatures you control get +1/+0 until end of turn.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
+      "static": [
+        {
+          "keyword": "storm"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Buyback {2} (You may pay an additional {2} as you cast this spell. If you do, put this card into your hand as it resolves.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Buyback {2}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures you control get +1/+0 until end of turn.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8fa7bd8f-f712-4dd1-9ffb-e30dfe744389",
+  "name": "Egon, God of Death // Throne of Death",
+  "faces": [
+    {
+      "name": "Egon, God of Death",
+      "type_line": "Legendary Creature \u2014 God",
+      "oracle_text": "Deathtouch\nAt the beginning of your upkeep, exile two cards from your graveyard. If you can't, sacrifice Egon and draw a card.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, exile two cards from your graveyard. If you can't, sacrifice Egon and draw a card.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile two cards from your graveyard"
+            },
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you can't"
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Throne of Death",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "At the beginning of your upkeep, mill a card.\n{2}{B}, {T}, Exile a creature card from your graveyard: Draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, mill a card.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{B}, {T}, Exile a creature card from your graveyard: Draw a card.",
+          "cost": "{2}{B}, {T}, Exile a creature card from your graveyard",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

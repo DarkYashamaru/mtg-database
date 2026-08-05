@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1ea7f839-e3b8-4aff-b850-c0a98b06ae14",
+  "name": "Writ of Passage",
+  "faces": [
+    {
+      "name": "Writ of Passage",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhenever enchanted creature attacks, if its power is 2 or less, it can't be blocked this turn.\nForecast \u2014 {1}{U}, Reveal this card from your hand: Target creature with power 2 or less can't be blocked this turn. (Activate only during your upkeep and only once each turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature attacks, if its power is 2 or less, it can't be blocked this turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "enchanted_creature"
+          },
+          "condition": [
+            {
+              "condition_text": "its power is 2 or less"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it can't be blocked this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Forecast \u2014 {1}{U}, Reveal this card from your hand: Target creature with power 2 or less can't be blocked this turn. (Activate only during your upkeep and only once each turn.)",
+          "cost": "Forecast \u2014 {1}{U}, Reveal this card from your hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature with power 2 or less can't be blocked this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

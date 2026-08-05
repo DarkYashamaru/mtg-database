@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d8e6294d-51cc-44ff-8bc6-b0a168e4f423",
+  "name": "Faldorn, Dread Wolf Herald",
+  "faces": [
+    {
+      "name": "Faldorn, Dread Wolf Herald",
+      "type_line": "Legendary Creature \u2014 Human Druid",
+      "oracle_text": "Whenever you cast a spell from exile or a land you control enters from exile, create a 2/2 green Wolf creature token.\n{1}, {T}, Discard a card: Exile the top card of your library. You may play it this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell from exile or a land you control enters from exile, create a 2/2 green Wolf creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell from exile or a land you control enters from exile"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 green Wolf creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Wolf"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Discard a card: Exile the top card of your library. You may play it this turn.",
+          "cost": "{1}, {T}, Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play it this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

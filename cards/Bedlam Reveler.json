@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "01a7e0ce-c98f-4cf2-aba3-360aa0a9b9a7",
+  "name": "Bedlam Reveler",
+  "faces": [
+    {
+      "name": "Bedlam Reveler",
+      "type_line": "Creature \u2014 Devil Horror",
+      "oracle_text": "This spell costs {1} less to cast for each instant and sorcery card in your graveyard.\nProwess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhen this creature enters, discard your hand, then draw three cards.",
+      "static": [
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, discard your hand, then draw three cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_hand",
+              "player": "you"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {1} less to cast for each instant and sorcery card in your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {1} less to cast for each instant and sorcery card in your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

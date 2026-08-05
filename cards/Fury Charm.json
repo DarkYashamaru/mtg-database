@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b86b1878-65a9-48df-9727-1e80683d7e86",
+  "name": "Fury Charm",
+  "faces": [
+    {
+      "name": "Fury Charm",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Destroy target artifact.\n\u2022 Target creature gets +1/+1 and gains trample until end of turn.\n\u2022 Remove two time counters from target permanent or suspended card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Destroy target artifact.\n\u2022 Target creature gets +1/+1 and gains trample until end of turn.\n\u2022 Remove two time counters from target permanent or suspended card.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Destroy target artifact.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_artifact"
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Target creature gets +1/+1 and gains trample until end of turn.",
+              "effects": [
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "target_creature_gets_11_and",
+                  "keyword": "trample"
+                }
+              ]
+            },
+            {
+              "raw_text": "Remove two time counters from target permanent or suspended card.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Remove two time counters from target permanent or suspended card"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

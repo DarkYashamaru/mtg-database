@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3280488d-e94b-4d53-b279-c32ed711d4bc",
+  "name": "Council's Deliberation",
+  "faces": [
+    {
+      "name": "Council's Deliberation",
+      "type_line": "Instant",
+      "oracle_text": "Draw a card.\nWhenever you scry, if you control an Island, you may exile this card from your graveyard. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you scry, if you control an Island, you may exile this card from your graveyard. If you do, draw a card.",
+          "trigger": {
+            "type": "scry",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "you control an Island"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile this card from your graveyard"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Draw a card.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

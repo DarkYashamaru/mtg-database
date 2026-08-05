@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6755a7af-5b55-4245-a777-27e69979479b",
+  "name": "Lattice-Blade Mantis",
+  "faces": [
+    {
+      "name": "Lattice-Blade Mantis",
+      "type_line": "Creature \u2014 Phyrexian Insect",
+      "oracle_text": "This creature enters with two oil counters on it.\nWhenever this creature attacks, you may remove an oil counter from it. If you do, untap it and it gets +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may remove an oil counter from it. If you do, untap it and it gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may remove an oil counter from it"
+            },
+            {
+              "action": "untap",
+              "target": "it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with two oil counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with two oil counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d66e89a3-d582-4867-899c-f560b8a5b973",
+  "name": "Soul Scourge",
+  "faces": [
+    {
+      "name": "Soul Scourge",
+      "type_line": "Creature \u2014 Nightmare Horror",
+      "oracle_text": "Flying\nWhen this creature enters, target player loses 3 life.\nWhen this creature leaves the battlefield, that player gains 3 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target player loses 3 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target player loses 3 life"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature leaves the battlefield, that player gains 3 life.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player gains 3 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

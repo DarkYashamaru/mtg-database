@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1597137-5609-4012-93bb-19c49c9cf2c3",
+  "name": "Sandstorm Crasher",
+  "faces": [
+    {
+      "name": "Sandstorm Crasher",
+      "type_line": "Creature \u2014 Minotaur Berserker Wizard",
+      "oracle_text": "Trample\nYou may exert this creature as it attacks. When you do, create a tapped and attacking token that's a copy of target creature you control. Sacrifice the token at the beginning of the next end step. (An exerted creature won't untap during your next untap step.)",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may exert this creature as it attacks. When you do, create a tapped and attacking token that's a copy of target creature you control. Sacrifice the token at the beginning of the next end step. (An exerted creature won't untap during your next untap step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may exert this creature as it attacks"
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a tapped and attacking token that's a copy of target creature you control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "sacrifice",
+              "target": "the_token_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

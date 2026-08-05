@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5e35df8a-2404-4b3b-888a-25d663bd4383",
+  "name": "Goblin Shrine",
+  "faces": [
+    {
+      "name": "Goblin Shrine",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\nAs long as enchanted land is a basic Mountain, Goblin creatures get +1/+0.\nWhen this Aura leaves the battlefield, it deals 1 damage to each Goblin creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura leaves the battlefield, it deals 1 damage to each Goblin creature.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 1 damage to each Goblin creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted land is a basic Mountain, Goblin creatures get +1/+0.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as enchanted land is a basic Mountain, Goblin creatures get +1/+0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

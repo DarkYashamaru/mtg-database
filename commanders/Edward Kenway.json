@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b2fe6d17-d045-45c6-9ca2-21e73d2e38d2",
+  "name": "Edward Kenway",
+  "faces": [
+    {
+      "name": "Edward Kenway",
+      "type_line": "Legendary Creature \u2014 Human Assassin Pirate",
+      "oracle_text": "At the beginning of your end step, create a Treasure token for each tapped Assassin, Pirate, and/or Vehicle you control.\nWhenever a Vehicle you control deals combat damage to a player, look at the top card of that player's library, then exile it face down. You may play that card for as long as it remains exiled.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, create a Treasure token for each tapped Assassin, Pirate, and/or Vehicle you control.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a Treasure token for each tapped Assassin, Pirate, and/or Vehicle you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a Vehicle you control deals combat damage to a player, look at the top card of that player's library, then exile it face down. You may play that card for as long as it remains exiled.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Vehicle"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of that player's library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile it face down"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card for as long as it remains exiled"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

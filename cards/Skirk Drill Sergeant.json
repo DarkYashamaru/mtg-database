@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eb0d97a3-6494-4011-9f60-1b12b165a995",
+  "name": "Skirk Drill Sergeant",
+  "faces": [
+    {
+      "name": "Skirk Drill Sergeant",
+      "type_line": "Creature \u2014 Goblin",
+      "oracle_text": "Whenever this creature or another Goblin dies, you may pay {2}{R}. If you do, reveal the top card of your library. If it's a Goblin permanent card, put it onto the battlefield. Otherwise, put it into your graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Goblin dies, you may pay {2}{R}. If you do, reveal the top card of your library. If it's a Goblin permanent card, put it onto the battlefield. Otherwise, put it into your graveyard.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self_or_another_goblin"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {2}{R}"
+            },
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "it's a goblin permanent card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it into your graveyard",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

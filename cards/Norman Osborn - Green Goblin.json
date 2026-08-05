@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aa5b06a4-90c3-45e7-ab83-cb5c96ded21d",
+  "name": "Norman Osborn // Green Goblin",
+  "faces": [
+    {
+      "name": "Green Goblin",
+      "type_line": "Legendary Creature \u2014 Goblin Human Villain",
+      "oracle_text": "Flying, menace\nSpells you cast from your graveyard cost {2} less to cast.\nGoblin Formula \u2014 Each nonland card in your graveyard has mayhem. The mayhem cost is equal to its mana cost. (You may cast a card from your graveyard for its mayhem cost if you discarded it this turn. Timing rules still apply.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Spells you cast from your graveyard cost {2} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Spells you cast from your graveyard cost {2} less to cast"
+            }
+          ]
+        },
+        {
+          "raw_text": "Goblin Formula \u2014 Each nonland card in your graveyard has mayhem. The mayhem cost is equal to its mana cost. (You may cast a card from your graveyard for its mayhem cost if you discarded it this turn. Timing rules still apply.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Goblin Formula \u2014 Each nonland card in your graveyard has mayhem"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The mayhem cost is equal to its mana cost"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Norman Osborn",
+      "type_line": "Legendary Creature \u2014 Human Scientist Villain",
+      "oracle_text": "Norman Osborn can't be blocked.\nWhenever Norman Osborn deals combat damage to a player, he connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)\n{1}{U}{B}{R}: Transform Norman Osborn. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Norman Osborn deals combat damage to a player, he connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "connive",
+              "target": "he",
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "he",
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{U}{B}{R}: Transform Norman Osborn. Activate only as a sorcery.",
+          "cost": "{1}{U}{B}{R}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Norman Osborn can't be blocked.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Norman Osborn can't be blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

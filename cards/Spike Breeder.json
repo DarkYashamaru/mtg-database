@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b7b738e1-298d-489d-9939-efe1c983f0ae",
+  "name": "Spike Breeder",
+  "faces": [
+    {
+      "name": "Spike Breeder",
+      "type_line": "Creature \u2014 Spike",
+      "oracle_text": "This creature enters with three +1/+1 counters on it.\n{2}, Remove a +1/+1 counter from this creature: Put a +1/+1 counter on target creature.\n{2}, Remove a +1/+1 counter from this creature: Create a 1/1 green Spike creature token.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, Remove a +1/+1 counter from this creature: Put a +1/+1 counter on target creature.",
+          "cost": "{2}, Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, Remove a +1/+1 counter from this creature: Create a 1/1 green Spike creature token.",
+          "cost": "{2}, Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Spike creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Spike"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with three +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

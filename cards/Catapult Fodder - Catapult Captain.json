@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aa2c0d23-8df8-408b-a8c0-c4cd005f078d",
+  "name": "Catapult Fodder // Catapult Captain",
+  "faces": [
+    {
+      "name": "Catapult Captain",
+      "type_line": "Creature \u2014 Zombie",
+      "oracle_text": "{2}{B}, {T}, Sacrifice another creature: Target opponent loses life equal to the sacrificed creature's toughness.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{B}, {T}, Sacrifice another creature: Target opponent loses life equal to the sacrificed creature's toughness.",
+          "cost": "{2}{B}, {T}, Sacrifice another creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target opponent loses life equal to the sacrificed creature's toughness"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Catapult Fodder",
+      "type_line": "Creature \u2014 Zombie",
+      "oracle_text": "At the beginning of combat on your turn, if you control three or more creatures that each have toughness greater than their power, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if you control three or more creatures that each have toughness greater than their power, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you control three or more creatures that each have toughness greater than their power"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

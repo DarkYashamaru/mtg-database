@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c019ed4d-33a3-48be-a38e-93e5d6161b1f",
+  "name": "Force of Rage",
+  "faces": [
+    {
+      "name": "Force of Rage",
+      "type_line": "Instant",
+      "oracle_text": "If it's not your turn, you may exile a red card from your hand rather than pay this spell's mana cost.\nCreate two 3/1 red Elemental creature tokens with trample and haste. Sacrifice those tokens at the beginning of your next upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If it's not your turn, you may exile a red card from your hand rather than pay this spell's mana cost.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile a red card from your hand rather than pay this spell's mana cost",
+              "condition": [
+                {
+                  "condition_text": "it's not your turn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Create two 3/1 red Elemental creature tokens with trample and haste. Sacrifice those tokens at the beginning of your next upkeep.",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "two 3/1 red Elemental creature tokens with trample and haste",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "3/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elemental"
+                ]
+              }
+            },
+            {
+              "action": "sacrifice",
+              "target": "those_tokens_at_the_beginning_of_you_control_next_upkeep"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

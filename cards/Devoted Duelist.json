@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f7620c46-b3d8-4694-ac7c-a43933c86c22",
+  "name": "Devoted Duelist",
+  "faces": [
+    {
+      "name": "Devoted Duelist",
+      "type_line": "Creature \u2014 Goblin Monk",
+      "oracle_text": "Haste\nFlurry \u2014 Whenever you cast your second spell each turn, this creature deals 1 damage to each opponent.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, this creature deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "efe24eed-e1e2-4807-ae61-2e5be529ae3c",
+  "name": "Raze to the Ground",
+  "faces": [
+    {
+      "name": "Raze to the Ground",
+      "type_line": "Sorcery",
+      "oracle_text": "This spell can't be countered.\nDestroy target artifact. If its mana value was 1 or less, draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell can't be countered.",
+          "effects": [
+            {
+              "action": "cant_be_countered",
+              "target": "self_spell"
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy target artifact. If its mana value was 1 or less, draw a card.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_artifact"
+              }
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "its mana value was 1 or less"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b0d66546-c6a3-4052-b86e-98c3c2ab44b3",
+  "name": "Kessig Forgemaster // Flameheart Werewolf",
+  "faces": [
+    {
+      "name": "Flameheart Werewolf",
+      "type_line": "Creature \u2014 Werewolf",
+      "oracle_text": "Whenever this creature blocks or becomes blocked by a creature, this creature deals 2 damage to that creature.\nAt the beginning of each upkeep, if a player cast two or more spells last turn, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature blocks or becomes blocked by a creature, this creature deals 2 damage to that creature.",
+          "trigger": {
+            "type": "becomes_blocked_by_creature",
+            "subject": "self_blocks_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 2 damage to that creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each upkeep, if a player cast two or more spells last turn, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "a player cast two or more spells last turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Kessig Forgemaster",
+      "type_line": "Creature \u2014 Human Shaman Werewolf",
+      "oracle_text": "Whenever this creature blocks or becomes blocked by a creature, this creature deals 1 damage to that creature.\nAt the beginning of each upkeep, if no spells were cast last turn, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature blocks or becomes blocked by a creature, this creature deals 1 damage to that creature.",
+          "trigger": {
+            "type": "becomes_blocked_by_creature",
+            "subject": "self_blocks_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 1 damage to that creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each upkeep, if no spells were cast last turn, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "no spells were cast last turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

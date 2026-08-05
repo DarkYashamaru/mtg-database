@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2ce2a091-95b6-45e5-9097-77fea411162e",
+  "name": "Fire Nation Turret",
+  "faces": [
+    {
+      "name": "Fire Nation Turret",
+      "type_line": "Artifact",
+      "oracle_text": "At the beginning of combat on your turn, up to one target creature gets +2/+0 and gains firebending 2 until end of turn.\n{R}: Put a charge counter on this artifact.\nRemove fifty charge counters from this artifact: It deals 50 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, up to one target creature gets +2/+0 and gains firebending 2 until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "up to one target creature gets +2/+0 and gains firebending 2 until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R}: Put a charge counter on this artifact.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a charge counter on this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "Remove fifty charge counters from this artifact: It deals 50 damage to any target.",
+          "cost": "Remove fifty charge counters from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 50
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

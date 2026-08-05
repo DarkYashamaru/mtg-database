@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "deeb7e22-b207-42de-b9d4-f790403d52a9",
+  "name": "World Breaker",
+  "faces": [
+    {
+      "name": "World Breaker",
+      "type_line": "Creature \u2014 Eldrazi",
+      "oracle_text": "Devoid (This card has no color.)\nWhen you cast this spell, exile target artifact, enchantment, or land.\nReach\n{2}{C}, Sacrifice a land: Return this card from your graveyard to your hand. ({C} represents colorless mana.)",
+      "static": [
+        {
+          "keyword": "devoid"
+        },
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, exile target artifact, enchantment, or land.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target artifact, enchantment, or land"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{C}, Sacrifice a land: Return this card from your graveyard to your hand. ({C} represents colorless mana.)",
+          "cost": "{2}{C}, Sacrifice a land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

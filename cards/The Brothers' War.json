@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "43040c34-acad-4d62-893d-fd606fa9d8fe",
+  "name": "The Brothers' War",
+  "faces": [
+    {
+      "name": "The Brothers' War",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Create two tapped Powerstone tokens.\nII \u2014 Choose two target players. Until your next turn, each creature they control attacks the other chosen player each combat if able.\nIII \u2014 This Saga deals X damage to any target and X damage to any other target, where X is the number of artifacts you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Create two tapped Powerstone tokens.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "tapped Powerstone tokens"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Choose two target players. Until your next turn, each creature they control attacks the other chosen player each combat if able.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose two target players"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until your next turn, each creature they control attacks the other chosen player each combat if able"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 This Saga deals X damage to any target and X damage to any other target, where X is the number of artifacts you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Saga deals X damage to any target and X damage to any other target, where X is the number of artifacts you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

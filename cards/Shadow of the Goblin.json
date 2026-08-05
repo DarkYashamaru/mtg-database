@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f343b6f9-41c3-419b-a57c-a7b08603ef5c",
+  "name": "Shadow of the Goblin",
+  "faces": [
+    {
+      "name": "Shadow of the Goblin",
+      "type_line": "Enchantment",
+      "oracle_text": "Unreliable Visions \u2014 At the beginning of your first main phase, discard a card. If you do, draw a card.\nUndying Vengeance \u2014 Whenever you play a land or cast a spell from anywhere other than your hand, this enchantment deals 1 damage to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your first main phase, discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you play a land or cast a spell from anywhere other than your hand, this enchantment deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you play a land or cast a spell from anywhere other than your hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_enchantment",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

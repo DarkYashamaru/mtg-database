@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "df1a8846-b4da-4e9b-8cf3-ee687e4c606b",
+  "name": "Servant of the Conduit",
+  "faces": [
+    {
+      "name": "Servant of the Conduit",
+      "type_line": "Creature \u2014 Elf Druid",
+      "oracle_text": "When this creature enters, you get {E}{E} (two energy counters).\n{T}, Pay {E}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Pay {E}: Add one mana of any color.",
+          "cost": "{T}, Pay {E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

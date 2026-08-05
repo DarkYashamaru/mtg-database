@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "45682055-d02a-450c-a41d-aa67162ff015",
+  "name": "Kolodin, Triumph Caster",
+  "faces": [
+    {
+      "name": "Kolodin, Triumph Caster",
+      "type_line": "Legendary Creature \u2014 Human Pilot",
+      "oracle_text": "Mounts and Vehicles you control have haste.\nWhenever a Mount you control enters, it becomes saddled until end of turn.\nWhenever a Vehicle you control enters, it becomes an artifact creature until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Mount you control enters, it becomes saddled until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Mount"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it becomes saddled until end of turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a Vehicle you control enters, it becomes an artifact creature until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Vehicle"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it becomes an artifact creature until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Mounts and Vehicles you control have haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Mount",
+                  "And",
+                  "Vehicle"
+                ]
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

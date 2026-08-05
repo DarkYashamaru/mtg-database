@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "26edbbb8-331e-42a6-a550-acc7e9efb32c",
+  "name": "Witch-Maw Nephilim",
+  "faces": [
+    {
+      "name": "Witch-Maw Nephilim",
+      "type_line": "Creature \u2014 Nephilim",
+      "oracle_text": "Whenever you cast a spell, you may put two +1/+1 counters on this creature.\nWhenever this creature attacks, it gains trample until end of turn if its power is 10 or greater.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, you may put two +1/+1 counters on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2,
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, it gains trample until end of turn if its power is 10 or greater.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gains trample until end of turn if its power is 10 or greater"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

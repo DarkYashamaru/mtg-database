@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a0476da9-51b1-4cd3-90c4-ad01d0e4c3d6",
+  "name": "Azorius Herald",
+  "faces": [
+    {
+      "name": "Azorius Herald",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "This creature can't be blocked.\nWhen this creature enters, you gain 4 life.\nWhen this creature enters, sacrifice it unless {U} was spent to cast it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you gain 4 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature enters, sacrifice it unless {U} was spent to cast it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "it_unless_u_was_spent_to_cast_it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

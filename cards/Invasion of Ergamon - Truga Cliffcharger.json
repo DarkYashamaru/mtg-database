@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fe84933e-d98f-4cbc-b272-387a80894e31",
+  "name": "Invasion of Ergamon // Truga Cliffcharger",
+  "faces": [
+    {
+      "name": "Invasion of Ergamon",
+      "type_line": "Battle \u2014 Siege",
+      "oracle_text": "(As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.)\nWhen this Siege enters, create a Treasure token. Then you may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Siege enters, create a Treasure token. Then you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_siege"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may discard a card"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Truga Cliffcharger",
+      "type_line": "Creature \u2014 Rhino",
+      "oracle_text": "Trample\nWhen this creature enters, you may discard a card. If you do, search your library for a land or battle card, reveal it, put it into your hand, then shuffle.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may discard a card. If you do, search your library for a land or battle card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "search your library for a land or battle card, reveal it, put it into your hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

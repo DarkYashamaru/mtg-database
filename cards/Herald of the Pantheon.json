@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9ef24a79-fade-4c38-b63c-22983206b4ad",
+  "name": "Herald of the Pantheon",
+  "faces": [
+    {
+      "name": "Herald of the Pantheon",
+      "type_line": "Creature \u2014 Centaur Shaman",
+      "oracle_text": "Enchantment spells you cast cost {1} less to cast.\nWhenever you cast an enchantment spell, you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an enchantment spell, you gain 1 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Enchantment"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchantment spells you cast cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchantment spells you cast cost {1} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

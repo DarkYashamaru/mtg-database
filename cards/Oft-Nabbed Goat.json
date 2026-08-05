@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "63193ad4-bbd2-4cc3-98e2-9f6b985e8ae7",
+  "name": "Oft-Nabbed Goat",
+  "faces": [
+    {
+      "name": "Oft-Nabbed Goat",
+      "type_line": "Creature \u2014 Goat",
+      "oracle_text": "{1}: Draw a card. Gain control of this creature and put a -1/-1 counter on it. Only your opponents may activate this ability and only as a sorcery.\nWhen this creature dies, if it had one or more -1/-1 counters on it, its owner draws that many cards and each other player loses that much life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, if it had one or more -1/-1 counters on it, its owner draws that many cards and each other player loses that much life.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it had one or more -1/-1 counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "its owner draws that many cards and each other player loses that much life"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}: Draw a card. Gain control of this creature and put a -1/-1 counter on it. Only your opponents may activate this ability and only as a sorcery.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Gain control of this creature and put a -1/-1 counter on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Only your opponents may activate this ability and only as a sorcery"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

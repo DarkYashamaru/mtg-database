@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9c966ba3-3408-4bdd-a4cf-97c9183e1115",
+  "name": "Pulling Teeth",
+  "faces": [
+    {
+      "name": "Pulling Teeth",
+      "type_line": "Sorcery",
+      "oracle_text": "Clash with an opponent. If you win, target player discards two cards. Otherwise, that player discards a card. (Each clashing player reveals the top card of their library, then puts that card on their choice of the top or bottom. A player wins if their card had a greater mana value.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Clash with an opponent. If you win, target player discards two cards. Otherwise, that player discards a card. (Each clashing player reveals the top card of their library, then puts that card on their choice of the top or bottom. A player wins if their card had a greater mana value.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Clash with an opponent"
+            },
+            {
+              "action": "discard_cards",
+              "target": "target_player",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "you win"
+                }
+              ]
+            },
+            {
+              "action": "discard_cards",
+              "target": "that_player",
+              "amount": 1,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

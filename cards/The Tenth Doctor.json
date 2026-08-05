@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "23af0a0a-1d12-47c7-b191-2bd3f84eea93",
+  "name": "The Tenth Doctor",
+  "faces": [
+    {
+      "name": "The Tenth Doctor",
+      "type_line": "Legendary Creature \u2014 Time Lord Doctor",
+      "oracle_text": "Allons-y! \u2014 Whenever you attack, exile cards from the top of your library until you exile a nonland card. Put three time counters on it. If it doesn't have suspend, it gains suspend.\nTimey-Wimey \u2014 {7}: Time travel three times. Activate only as a sorcery. (For each suspended card you own and each permanent you control with a time counter on it, you may add or remove a time counter. Then do it two more times.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, exile cards from the top of your library until you exile a nonland card. Put three time counters on it. If it doesn't have suspend, it gains suspend.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile cards from the top of your library until you exile a nonland card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put three time counters on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it gains suspend",
+              "condition": [
+                {
+                  "condition_text": "it doesn't have suspend"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Timey-Wimey \u2014 {7}: Time travel three times. Activate only as a sorcery. (For each suspended card you own and each permanent you control with a time counter on it, you may add or remove a time counter. Then do it two more times.)",
+          "cost": "Timey-Wimey \u2014 {7}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Time travel three times"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "03259490-a789-4f96-8c5b-b410425bdd02",
+  "name": "Haunted Dead",
+  "faces": [
+    {
+      "name": "Haunted Dead",
+      "type_line": "Creature \u2014 Zombie",
+      "oracle_text": "When this creature enters, create a 1/1 white Spirit creature token with flying.\n{1}{B}, Discard two cards: Return this card from your graveyard to the battlefield tapped.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 1/1 white Spirit creature token with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white Spirit creature token with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Spirit"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}, Discard two cards: Return this card from your graveyard to the battlefield tapped.",
+          "cost": "{1}{B}, Discard two cards",
+          "condition": [],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield",
+              "tapped": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

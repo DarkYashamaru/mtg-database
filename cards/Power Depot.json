@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "oracle_id": "64687880-03f9-4f38-985b-1027c797e33f",
+  "name": "Power Depot",
+  "faces": [
+    {
+      "name": "Power Depot",
+      "type_line": "Artifact Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast artifact spells or activate abilities of artifacts.\nModular 1",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add one mana of any color. Spend this mana only to cast artifact spells or activate abilities of artifacts.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "actions_any": [
+                  {
+                    "action": "cast_spell",
+                    "filter": {
+                      "card_types": [
+                        "Artifact"
+                      ]
+                    }
+                  },
+                  {
+                    "action": "activate_ability",
+                    "filter": {
+                      "source_card_types": [
+                        "Artifact"
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "raw_text": "Modular 1",
+          "effects": [
+            {
+              "keyword": "modular",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

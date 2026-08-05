@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "16f9368a-5da5-4397-a127-c96cdd115b7b",
+  "name": "Blue Marvel, Adam Brashear",
+  "faces": [
+    {
+      "name": "Blue Marvel, Adam Brashear",
+      "type_line": "Legendary Creature \u2014 Human Scientist Hero",
+      "oracle_text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nWard {2} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nWhenever you draw your second card each turn, put a +1/+1 counter on Blue Marvel.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, put a +1/+1 counter on Blue Marvel.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

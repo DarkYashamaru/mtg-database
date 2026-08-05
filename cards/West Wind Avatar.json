@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "92e45a8f-c582-45e1-9b7f-def219023ebf",
+  "name": "West Wind Avatar",
+  "faces": [
+    {
+      "name": "West Wind Avatar",
+      "type_line": "Creature \u2014 Cat Spirit Avatar",
+      "oracle_text": "Trample\nWhenever this creature enters or attacks, you may sacrifice a token or a land. If you do, you gain 3 life.\nDisappear \u2014 At the beginning of your end step, if a permanent left the battlefield under your control this turn, draw a card.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or attacks, you may sacrifice a token or a land. If you do, you gain 3 life.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_token_or_a_land",
+              "optional": true
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if a permanent left the battlefield under your control this turn, draw a card.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a permanent left the battlefield under your control this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

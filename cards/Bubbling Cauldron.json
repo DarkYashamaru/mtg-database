@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ca9dde44-fdee-4bc1-a2ea-ef171737b9e4",
+  "name": "Bubbling Cauldron",
+  "faces": [
+    {
+      "name": "Bubbling Cauldron",
+      "type_line": "Artifact",
+      "oracle_text": "{1}, {T}, Sacrifice a creature: You gain 4 life.\n{1}, {T}, Sacrifice a creature named Festering Newt: Each opponent loses 4 life. You gain life equal to the life lost this way.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Sacrifice a creature: You gain 4 life.",
+          "cost": "{1}, {T}, Sacrifice a creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}, Sacrifice a creature named Festering Newt: Each opponent loses 4 life. You gain life equal to the life lost this way.",
+          "cost": "{1}, {T}, Sacrifice a creature named Festering Newt",
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 4
+            },
+            {
+              "action": "custom_effect",
+              "text": "You gain life equal to the life lost this way"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

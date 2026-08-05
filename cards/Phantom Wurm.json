@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a866fb67-6614-45e6-928e-b4b59d95335f",
+  "name": "Phantom Wurm",
+  "faces": [
+    {
+      "name": "Phantom Wurm",
+      "type_line": "Creature \u2014 Wurm Spirit",
+      "oracle_text": "This creature enters with four +1/+1 counters on it.\nIf damage would be dealt to this creature, prevent that damage. Remove a +1/+1 counter from this creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with four +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "raw_text": "If damage would be dealt to this creature, prevent that damage. Remove a +1/+1 counter from this creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent that damage",
+              "condition": [
+                {
+                  "condition_text": "damage would be dealt to this creature"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Remove a +1/+1 counter from this creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

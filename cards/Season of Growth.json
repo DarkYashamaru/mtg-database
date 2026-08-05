@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f4e300a-ec5c-42f3-a97b-d58e62abe22b",
+  "name": "Season of Growth",
+  "faces": [
+    {
+      "name": "Season of Growth",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature you control enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.)\nWhenever you cast a spell that targets a creature you control, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control enters, scry 1. (Look at the top card of your library. You may put that card on the bottom.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a spell that targets a creature you control, draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_targets": "creature_you_control"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f3d4f5ab-0ff4-48e1-8cf0-163b290804a5",
+  "name": "Unstable Amulet",
+  "faces": [
+    {
+      "name": "Unstable Amulet",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, you get {E}{E} (two energy counters).\nWhenever you cast a spell from anywhere other than your hand, this artifact deals 1 damage to each opponent.\n{T}, Pay {E}{E}: Exile the top card of your library. You may play it until you exile another card with this artifact.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, you get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a spell from anywhere other than your hand, this artifact deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell from anywhere other than your hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_artifact",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Pay {E}{E}: Exile the top card of your library. You may play it until you exile another card with this artifact.",
+          "cost": "{T}, Pay {E}{E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play it until you exile another card with this artifact"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

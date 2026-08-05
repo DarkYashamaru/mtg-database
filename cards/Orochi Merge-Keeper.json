@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "53e39011-3d77-4883-9c8e-4707f6fc5c47",
+  "name": "Orochi Merge-Keeper",
+  "faces": [
+    {
+      "name": "Orochi Merge-Keeper",
+      "type_line": "Creature \u2014 Snake Druid",
+      "oracle_text": "{T}: Add {G}.\nAs long as this creature is modified, it has \"{T}: Add {G}{G}.\" (Equipment, Auras you control, and counters are modifications.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as this creature is modified, it has \"{T}: Add {G}{G}.\" (Equipment, Auras you control, and counters are modifications.)",
+          "cost": "As long as this creature is modified, it has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{g}",
+                "{g}"
+              ],
+              "distribution": "fixed_sequence"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

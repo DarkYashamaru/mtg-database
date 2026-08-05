@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "27e04c41-f42c-4d60-8a71-ec2d7c326f64",
+  "name": "Azorius Cluestone",
+  "faces": [
+    {
+      "name": "Azorius Cluestone",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {W} or {U}.\n{W}{U}, {T}, Sacrifice this artifact: Draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W} or {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}",
+                "{u}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{W}{U}, {T}, Sacrifice this artifact: Draw a card.",
+          "cost": "{W}{U}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

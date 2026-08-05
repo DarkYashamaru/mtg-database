@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "83b43aba-bf9c-4da2-967d-9daa632e97d2",
+  "name": "Helm of the Host",
+  "faces": [
+    {
+      "name": "Helm of the Host",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "At the beginning of combat on your turn, create a token that's a copy of equipped creature, except the token isn't legendary. That token gains haste.\nEquip {5}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, create a token that's a copy of equipped creature, except the token isn't legendary. That token gains haste.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of equipped creature, except the token isn't legendary"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "that_token",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {5}",
+          "cost": "{5}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

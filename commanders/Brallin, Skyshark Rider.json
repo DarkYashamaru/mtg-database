@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "464df46a-079b-47c1-95e7-930160abef2f",
+  "name": "Brallin, Skyshark Rider",
+  "faces": [
+    {
+      "name": "Brallin, Skyshark Rider",
+      "type_line": "Legendary Creature \u2014 Human Shaman",
+      "oracle_text": "Partner with Shabraz, the Skyshark (When this creature enters, target player may put Shabraz into their hand from their library, then shuffle.)\nWhenever you discard a card, put a +1/+1 counter on Brallin and it deals 1 damage to each opponent.\n{R}: Target Shark gains trample until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you discard a card, put a +1/+1 counter on Brallin and it deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "discard_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R}: Target Shark gains trample until end of turn.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_shark",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Shabraz, the Skyshark (When this creature enters, target player may put Shabraz into their hand from their library, then shuffle.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Shabraz, the Skyshark"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cbbe535b-12d6-4e6c-8b26-9220f06a1604",
+  "name": "Beseech the Mirror",
+  "faces": [
+    {
+      "name": "Beseech the Mirror",
+      "type_line": "Sorcery",
+      "oracle_text": "Bargain (You may sacrifice an artifact, enchantment, or token as you cast this spell.)\nSearch your library for a card, exile it face down, then shuffle. If this spell was bargained, you may cast the exiled card without paying its mana cost if that spell's mana value is 4 or less. Put the exiled card into your hand if it wasn't cast this way.",
+      "static": [
+        {
+          "keyword": "bargain"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for a card, exile it face down, then shuffle. If this spell was bargained, you may cast the exiled card without paying its mana cost if that spell's mana value is 4 or less. Put the exiled card into your hand if it wasn't cast this way.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a card, exile it face down"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast the exiled card without paying its mana cost if that spell's mana value is 4 or less",
+              "condition": [
+                {
+                  "condition_text": "this spell was bargained"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put the exiled card into your hand if it wasn't cast this way"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

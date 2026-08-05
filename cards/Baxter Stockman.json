@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e610bfd4-d064-410b-929c-1d9dd82828b1",
+  "name": "Baxter Stockman",
+  "faces": [
+    {
+      "name": "Baxter Stockman",
+      "type_line": "Legendary Creature \u2014 Human Scientist",
+      "oracle_text": "When Baxter Stockman enters, create a 1/1 colorless Robot artifact creature token.\nAt the beginning of combat on your turn, target artifact creature you control gets +3/+0 and gains first strike and vigilance until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Baxter Stockman enters, create a 1/1 colorless Robot artifact creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Robot artifact creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Robot",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, target artifact creature you control gets +3/+0 and gains first strike and vigilance until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_artifact_creature_you_control_gets_30_and",
+              "keyword": "first_strike_and_vigilance"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

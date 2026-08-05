@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d16783a4-9980-451b-9af0-33866980bc8d",
+  "name": "Alphinaud Leveilleur",
+  "faces": [
+    {
+      "name": "Alphinaud Leveilleur",
+      "type_line": "Legendary Creature \u2014 Elf Wizard",
+      "oracle_text": "Partner with Alisaie Leveilleur (When this creature enters, target player may put Alisaie Leveilleur into their hand from their library, then shuffle.)\nVigilance\nEukrasia \u2014 Whenever you cast your second spell each turn, draw a card.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Alisaie Leveilleur (When this creature enters, target player may put Alisaie Leveilleur into their hand from their library, then shuffle.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Alisaie Leveilleur"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

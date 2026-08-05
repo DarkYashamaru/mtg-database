@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "466af6da-52e8-4ac5-b659-7492e3594ff8",
+  "name": "Faramir, Steward of Gondor",
+  "faces": [
+    {
+      "name": "Faramir, Steward of Gondor",
+      "type_line": "Legendary Creature \u2014 Human Noble",
+      "oracle_text": "Whenever a legendary creature you control with mana value 4 or greater enters, you become the monarch.\nAt the beginning of your end step, if you're the monarch, create two 1/1 white Human Soldier creature tokens.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a legendary creature you control with mana value 4 or greater enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "a_legendary_creature_you_control_with_mana_value_4_or_greater"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if you're the monarch, create two 1/1 white Human Soldier creature tokens.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you're the monarch"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 white Human Soldier creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human",
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

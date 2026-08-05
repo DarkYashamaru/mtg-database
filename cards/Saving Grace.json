@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "50ddbea3-7ef4-4f6a-83c9-0c3ea1dfa3c9",
+  "name": "Saving Grace",
+  "faces": [
+    {
+      "name": "Saving Grace",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash\nEnchant creature you control\nWhen this Aura enters, all damage that would be dealt this turn to you and permanents you control is dealt to enchanted creature instead.\nEnchanted creature gets +0/+3.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, all damage that would be dealt this turn to you and permanents you control is dealt to enchanted creature instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "all damage that would be dealt this turn to you and permanents you control is dealt to enchanted creature instead"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +0/+3.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 0,
+              "toughness_delta": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

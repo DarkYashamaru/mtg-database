@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b0d639cb-71d4-454f-9dd6-89cd7a59b702",
+  "name": "Serene Sleuth",
+  "faces": [
+    {
+      "name": "Serene Sleuth",
+      "type_line": "Creature \u2014 Human Detective",
+      "oracle_text": "When this creature enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nAt the beginning of combat on your turn, investigate for each goaded creature you control. Then each creature you control is no longer goaded.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "investigate"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, investigate for each goaded creature you control. Then each creature you control is no longer goaded.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "investigate for each goaded creature you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then each creature you control is no longer goaded"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

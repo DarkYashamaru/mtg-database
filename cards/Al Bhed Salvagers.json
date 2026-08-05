@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "43f81514-e812-4e17-9b1a-704c136d8ffd",
+  "name": "Al Bhed Salvagers",
+  "faces": [
+    {
+      "name": "Al Bhed Salvagers",
+      "type_line": "Creature \u2014 Human Artificer Warrior",
+      "oracle_text": "Whenever this creature or another creature or artifact you control dies, target opponent loses 1 life and you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another creature or artifact you control dies, target opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature",
+                "Artifact"
+              ],
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Or"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "target_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bc2d0702-b140-4b78-8a8f-3a6d19073b59",
+  "name": "Poppet Stitcher // Poppet Factory",
+  "faces": [
+    {
+      "name": "Poppet Factory",
+      "type_line": "Artifact",
+      "oracle_text": "Creature tokens you control lose all abilities and have base power and toughness 3/3.\nAt the beginning of your upkeep, you may transform this artifact.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may transform this artifact.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "this_artifact",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creature tokens you control lose all abilities and have base power and toughness 3/3.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creature tokens you control lose all abilities and have base power and toughness 3/3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Poppet Stitcher",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Whenever you cast an instant or sorcery spell, create a 2/2 black Zombie creature token with decayed. (It can't block. When it attacks, sacrifice it at end of combat.)\nAt the beginning of your upkeep, if you control three or more creature tokens, you may transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, create a 2/2 black Zombie creature token with decayed. (It can't block. When it attacks, sacrifice it at end of combat.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 black Zombie creature token with decayed",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ],
+                "keywords": [
+                  "decayed"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if you control three or more creature tokens, you may transform this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you control three or more creature tokens"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

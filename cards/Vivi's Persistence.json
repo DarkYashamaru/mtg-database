@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fd4a1f4b-674d-41f3-a9a6-c2b65bf5c1ab",
+  "name": "Vivi's Persistence",
+  "faces": [
+    {
+      "name": "Vivi's Persistence",
+      "type_line": "Instant",
+      "oracle_text": "Create a 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, this token deals 1 damage to each opponent.\"\nWhenever your commander enters or attacks, you may pay {2}. If you do, return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever your commander enters or attacks, you may pay {2}. If you do, return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "your_commander"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Create a 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, this token deals 1 damage to each opponent.\"",
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "create_a_01_black_wizard_creature_token_with_whenever_you_cast_a_noncreature_spell_this_token",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

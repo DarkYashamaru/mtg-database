@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "524b00ea-0372-40f9-a6a1-76a8497a1ea6",
+  "name": "Nicol Bolas, the Deceiver",
+  "faces": [
+    {
+      "name": "Nicol Bolas, the Deceiver",
+      "type_line": "Legendary Planeswalker \u2014 Bolas",
+      "oracle_text": "+3: Each opponent loses 3 life unless that player sacrifices a nonland permanent of their choice or discards a card.\n\u22123: Destroy target creature. Draw a card.\n\u221211: Nicol Bolas deals 7 damage to each opponent. You draw seven cards.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+3: Each opponent loses 3 life unless that player sacrifices a nonland permanent of their choice or discards a card.",
+          "cost": "+3",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent loses 3 life unless that player sacrifices a nonland permanent of their choice or discards a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Destroy target creature. Draw a card.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature"
+              }
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "\u221211: Nicol Bolas deals 7 damage to each opponent. You draw seven cards.",
+          "cost": "\u221211",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 7
+            },
+            {
+              "action": "draw_cards",
+              "amount": 7
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

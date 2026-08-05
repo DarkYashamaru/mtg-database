@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e100f9fc-b6fb-42ab-b9b3-796bede6804d",
+  "name": "Kalemne, Disciple of Iroas",
+  "faces": [
+    {
+      "name": "Kalemne, Disciple of Iroas",
+      "type_line": "Legendary Creature \u2014 Giant Soldier",
+      "oracle_text": "Double strike, vigilance\nWhenever you cast a creature spell with mana value 5 or greater, you get an experience counter.\nKalemne gets +1/+1 for each experience counter you have.",
+      "static": [
+        {
+          "keyword": "double strike"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a creature spell with mana value 5 or greater, you get an experience counter.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 5
+            },
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get an experience counter"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kalemne gets +1/+1 for each experience counter you have.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kalemne gets +1/+1 for each experience counter you have"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

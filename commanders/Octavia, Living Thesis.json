@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "65681a2a-8395-4390-845f-9be974994dcb",
+  "name": "Octavia, Living Thesis",
+  "faces": [
+    {
+      "name": "Octavia, Living Thesis",
+      "type_line": "Legendary Creature \u2014 Elemental Octopus",
+      "oracle_text": "This spell costs {8} less to cast if you have eight or more instant and/or sorcery cards in your graveyard.\nWard {8}\nMagecraft \u2014 Whenever you cast or copy an instant or sorcery spell, target creature has base power and toughness 8/8 until end of turn.",
+      "static": [
+        {
+          "keyword": "ward",
+          "amount": 8
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast or copy an instant or sorcery spell, target creature has base power and toughness 8/8 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "or_copy_an_instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target creature has base power and toughness 8/8 until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {8} less to cast if you have eight or more instant and/or sorcery cards in your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {8} less to cast if you have eight or more instant and/or sorcery cards in your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

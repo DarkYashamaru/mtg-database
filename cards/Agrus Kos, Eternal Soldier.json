@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3d19823a-dbb8-4384-81f4-5c6818b7f46d",
+  "name": "Agrus Kos, Eternal Soldier",
+  "faces": [
+    {
+      "name": "Agrus Kos, Eternal Soldier",
+      "type_line": "Legendary Creature \u2014 Spirit Soldier",
+      "oracle_text": "Vigilance\nWhenever Agrus Kos becomes the target of an ability that targets only it, you may pay {1}{R/W}. If you do, copy that ability for each other creature you control that ability could target. Each copy targets a different one of those creatures. ({R/W} can be paid with either {R} or {W}.)",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Agrus Kos becomes the target of an ability that targets only it, you may pay {1}{R/W}. If you do, copy that ability for each other creature you control that ability could target. Each copy targets a different one of those creatures. ({R/W} can be paid with either {R} or {W}.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever Agrus Kos becomes the target of an ability that targets only it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{R/W}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy that ability for each other creature you control that ability could target",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each copy targets a different one of those creatures"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

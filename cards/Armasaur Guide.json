@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1d4e7422-2e26-49ce-beef-08f61583089a",
+  "name": "Armasaur Guide",
+  "faces": [
+    {
+      "name": "Armasaur Guide",
+      "type_line": "Creature \u2014 Dinosaur",
+      "oracle_text": "Vigilance (Attacking doesn't cause this creature to tap.)\nWhenever you attack with three or more creatures, put a +1/+1 counter on target creature you control.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack with three or more creatures, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you attack with three or more creatures"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

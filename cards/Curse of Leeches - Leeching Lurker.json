@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "44eb0caa-ba16-49e4-915c-bd5e1ce770e6",
+  "name": "Curse of Leeches // Leeching Lurker",
+  "faces": [
+    {
+      "name": "Curse of Leeches",
+      "type_line": "Enchantment \u2014 Aura Curse",
+      "oracle_text": "Enchant player\nAs this permanent transforms into Curse of Leeches, attach it to a player.\nAt the beginning of enchanted player's upkeep, they lose 1 life and you gain 1 life.\nDaybound (If a player casts no spells during their own turn, it becomes night next turn.)",
+      "static": [
+        {
+          "keyword": "daybound"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of enchanted player's upkeep, they lose 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "At the beginning of enchanted player's upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "they lose 1 life and you gain 1 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant player",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "player"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As this permanent transforms into Curse of Leeches, attach it to a player.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this permanent transforms into Curse of Leeches, attach it to a player"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Leeching Lurker",
+      "type_line": "Creature \u2014 Leech Horror",
+      "oracle_text": "Lifelink\nNightbound (If a player casts at least two spells during their own turn, it becomes day next turn.)",
+      "static": [
+        {
+          "keyword": "lifelink"
+        },
+        {
+          "keyword": "nightbound"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

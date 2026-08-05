@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6e2a695d-305a-4bbe-b302-11fdc5c2a451",
+  "name": "Rushing River",
+  "faces": [
+    {
+      "name": "Rushing River",
+      "type_line": "Instant",
+      "oracle_text": "Kicker\u2014Sacrifice a land. (You may sacrifice a land in addition to any other costs as you cast this spell.)\nReturn target nonland permanent to its owner's hand. If this spell was kicked, return another target nonland permanent to its owner's hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker\u2014Sacrifice a land. (You may sacrifice a land in addition to any other costs as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker\u2014Sacrifice a land"
+            }
+          ]
+        },
+        {
+          "raw_text": "Return target nonland permanent to its owner's hand. If this spell was kicked, return another target nonland permanent to its owner's hand.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return another target nonland permanent to its owner's hand",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

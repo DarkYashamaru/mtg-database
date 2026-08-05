@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1bf6248c-658c-4540-8bee-81af79d349be",
+  "name": "Nalia de'Arnise",
+  "faces": [
+    {
+      "name": "Nalia de'Arnise",
+      "type_line": "Legendary Creature \u2014 Human Rogue",
+      "oracle_text": "You may look at the top card of your library any time.\nYou may cast Cleric, Rogue, Warrior, and Wizard spells from the top of your library.\nAt the beginning of combat on your turn, if you have a full party, put a +1/+1 counter on each creature you control and those creatures gain deathtouch until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if you have a full party, put a +1/+1 counter on each creature you control and those creatures gain deathtouch until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you have a full party"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "those_creatures",
+              "keyword": "deathtouch"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "You may cast Cleric, Rogue, Warrior, and Wizard spells from the top of your library.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast Cleric, Rogue, Warrior, and Wizard spells from the top of your library"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

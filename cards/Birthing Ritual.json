@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "37a5ab64-12e4-4aad-9a09-46a26fe9953b",
+  "name": "Birthing Ritual",
+  "faces": [
+    {
+      "name": "Birthing Ritual",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your end step, if you control a creature, look at the top seven cards of your library. Then you may sacrifice a creature. If you do, you may put a creature card with mana value X or less from among those cards onto the battlefield, where X is 1 plus the sacrificed creature's mana value. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if you control a creature, look at the top seven cards of your library. Then you may sacrifice a creature. If you do, you may put a creature card with mana value X or less from among those cards onto the battlefield, where X is 1 plus the sacrificed creature's mana value. Put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you control a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 7
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may sacrifice a creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put a creature card with mana value x or less from among those cards onto the battlefield, where x is 1 plus the sacrificed creature's mana value",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

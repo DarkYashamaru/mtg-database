@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0bb359bb-a1db-4535-8245-097ee989f4f5",
+  "name": "Grisly Transformation",
+  "faces": [
+    {
+      "name": "Grisly Transformation",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, draw a card.\nEnchanted creature has intimidate. (It can't be blocked except by artifact creatures and/or creatures that share a color with it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has intimidate. (It can't be blocked except by artifact creatures and/or creatures that share a color with it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has intimidate"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

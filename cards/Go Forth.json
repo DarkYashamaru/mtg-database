@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a4f3df30-383b-47ad-8576-0ee69349faf5",
+  "name": "Go Forth",
+  "faces": [
+    {
+      "name": "Go Forth",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n\u2022 Target creature gets +2/+2 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n\u2022 Target creature gets +2/+2 until end of turn.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+              "effects": [
+                {
+                  "action": "search_library",
+                  "player": "you",
+                  "filter": {
+                    "card_types": [
+                      "Land"
+                    ],
+                    "supertypes": [
+                      "Basic"
+                    ]
+                  },
+                  "reveal": true,
+                  "destination": "hand"
+                },
+                {
+                  "action": "shuffle_library",
+                  "player": "you"
+                }
+              ]
+            },
+            {
+              "raw_text": "Target creature gets +2/+2 until end of turn.",
+              "effects": [
+                {
+                  "action": "modify_stats_until_end_of_turn",
+                  "target": "target_creature",
+                  "power_delta": 2,
+                  "toughness_delta": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

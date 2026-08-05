@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c9b82110-7dfd-4617-9399-9510be449043",
+  "name": "Dark Depths",
+  "faces": [
+    {
+      "name": "Dark Depths",
+      "type_line": "Legendary Snow Land",
+      "oracle_text": "Dark Depths enters with ten ice counters on it.\n{3}: Remove an ice counter from Dark Depths.\nWhen Dark Depths has no ice counters on it, sacrifice it. If you do, create Marit Lage, a legendary 20/20 black Avatar creature token with flying and indestructible.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Dark Depths has no ice counters on it, sacrifice it. If you do, create Marit Lage, a legendary 20/20 black Avatar creature token with flying and indestructible.",
+          "trigger": {
+            "type": "custom",
+            "text": "When Dark Depths has no ice counters on it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "marit lage, a legendary 20/20 black avatar creature token with flying and indestructible",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "20/20",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "avatar"
+                ],
+                "keywords": [
+                  "flying",
+                  "indestructible"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}: Remove an ice counter from Dark Depths.",
+          "cost": "{3}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Remove an ice counter from Dark Depths"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Dark Depths enters with ten ice counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Dark Depths enters with ten ice counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

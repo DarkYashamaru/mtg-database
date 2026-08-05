@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cdfcfd2b-966a-4e03-8ed5-4fa7fab423d0",
+  "name": "Bespoke Battlewagon",
+  "faces": [
+    {
+      "name": "Bespoke Battlewagon",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "{T}: You get {E}{E} (two energy counters).\n{T}, Pay {E}{E}: Tap target creature.\n{T}, Pay {E}{E}{E}: Draw a card.\nPay {E}{E}{E}{E}: This Vehicle becomes an artifact creature until end of turn.\nCrew 4",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: You get {E}{E} (two energy counters).",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Pay {E}{E}: Tap target creature.",
+          "cost": "{T}, Pay {E}{E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Pay {E}{E}{E}: Draw a card.",
+          "cost": "{T}, Pay {E}{E}{E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Pay {E}{E}{E}{E}: This Vehicle becomes an artifact creature until end of turn.",
+          "cost": "Pay {E}{E}{E}{E}",
+          "condition": [],
+          "effects": []
+        },
+        {
+          "raw_text": "Crew 4",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 4,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

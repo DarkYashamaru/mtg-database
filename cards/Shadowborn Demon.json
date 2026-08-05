@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7dacc5aa-ea4d-414e-8324-6a7d24bb7671",
+  "name": "Shadowborn Demon",
+  "faces": [
+    {
+      "name": "Shadowborn Demon",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Flying\nWhen this creature enters, destroy target non-Demon creature.\nAt the beginning of your upkeep, if there are fewer than six creature cards in your graveyard, sacrifice a creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, destroy target non-Demon creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target non-Demon creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if there are fewer than six creature cards in your graveyard, sacrifice a creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "there are fewer than six creature cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

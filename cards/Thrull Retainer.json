@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "81a47019-1343-4a63-893a-0d8ba5e848d5",
+  "name": "Thrull Retainer",
+  "faces": [
+    {
+      "name": "Thrull Retainer",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +1/+1.\nSacrifice this Aura: Regenerate enchanted creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice this Aura: Regenerate enchanted creature.",
+          "cost": "Sacrifice this Aura",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Regenerate enchanted creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

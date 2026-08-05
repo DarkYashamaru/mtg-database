@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "22d7048e-d538-4fd3-9fb3-2e99e74875fe",
+  "name": "Jace's Sanctum",
+  "faces": [
+    {
+      "name": "Jace's Sanctum",
+      "type_line": "Enchantment",
+      "oracle_text": "Instant and sorcery spells you cast cost {1} less to cast.\nWhenever you cast an instant or sorcery spell, scry 1.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, scry 1.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Instant and sorcery spells you cast cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Instant and sorcery spells you cast cost {1} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

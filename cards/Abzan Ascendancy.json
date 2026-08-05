@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3b7d4206-0d88-407b-ace5-d5d28881bf95",
+  "name": "Abzan Ascendancy",
+  "faces": [
+    {
+      "name": "Abzan Ascendancy",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, put a +1/+1 counter on each creature you control.\nWhenever a nontoken creature you control dies, create a 1/1 white Spirit creature token with flying.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, put a +1/+1 counter on each creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a nontoken creature you control dies, create a 1/1 white Spirit creature token with flying.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white Spirit creature token with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Spirit"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

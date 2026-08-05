@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5d2ccaa4-4815-4987-889f-d08c4d1e7a8e",
+  "name": "Merfolk Skydiver",
+  "faces": [
+    {
+      "name": "Merfolk Skydiver",
+      "type_line": "Creature \u2014 Merfolk Mutant",
+      "oracle_text": "Flying\nWhen this creature enters, put a +1/+1 counter on target creature you control.\n{3}{G}{U}: Proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{G}{U}: Proliferate. (Choose any number of permanents and/or players, then give each another counter of each kind already there.)",
+          "cost": "{3}{G}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "proliferate"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

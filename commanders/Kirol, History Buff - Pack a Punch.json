@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "df1c0d06-2109-4297-9271-8a003fc892bc",
+  "name": "Kirol, History Buff // Pack a Punch",
+  "faces": [
+    {
+      "name": "Kirol, History Buff",
+      "type_line": "Legendary Creature \u2014 Vampire Cleric",
+      "oracle_text": "Whenever one or more cards leave your graveyard, Kirol becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more cards leave your graveyard, Kirol becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+          "trigger": {
+            "type": "cards_leave_graveyard",
+            "subject": "your_graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kirol becomes prepared"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Pack a Punch",
+      "type_line": "Sorcery",
+      "oracle_text": "Mill a card. Put two +1/+1 counters on target creature. It gains trample until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Mill a card. Put two +1/+1 counters on target creature. It gains trample until end of turn.",
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 2
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

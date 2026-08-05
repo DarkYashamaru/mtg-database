@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b370db5-dfb9-4ea0-9017-bae3e767b041",
+  "name": "Kjeldoran Outpost",
+  "faces": [
+    {
+      "name": "Kjeldoran Outpost",
+      "type_line": "Land",
+      "oracle_text": "If this land would enter, sacrifice a Plains instead. If you do, put this land onto the battlefield. If you don't, put it into its owner's graveyard.\n{T}: Add {W}.\n{1}{W}, {T}: Create a 1/1 white Soldier creature token.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{W}, {T}: Create a 1/1 white Soldier creature token.",
+          "cost": "{1}{W}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Soldier creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If this land would enter, sacrifice a Plains instead. If you do, put this land onto the battlefield. If you don't, put it into its owner's graveyard.",
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_plains_instead",
+              "condition": [
+                {
+                  "condition_text": "this land would enter"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put this land onto the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it into its owner's graveyard",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

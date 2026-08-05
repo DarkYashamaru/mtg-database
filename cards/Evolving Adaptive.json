@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e350c2d5-0ca2-4b9c-b01f-a3c31cbf8d10",
+  "name": "Evolving Adaptive",
+  "faces": [
+    {
+      "name": "Evolving Adaptive",
+      "type_line": "Creature \u2014 Phyrexian Warrior",
+      "oracle_text": "This creature enters with an oil counter on it.\nThis creature gets +1/+1 for each oil counter on it.\nWhenever another creature you control enters, if that creature has greater power or toughness than this creature, put an oil counter on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, if that creature has greater power or toughness than this creature, put an oil counter on this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "that creature has greater power or toughness than this creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put an oil counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with an oil counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with an oil counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature gets +1/+1 for each oil counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +1/+1 for each oil counter on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

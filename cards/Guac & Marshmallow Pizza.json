@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d6d83a51-9d57-44a7-aae3-a96d43ec5ac8",
+  "name": "Guac & Marshmallow Pizza",
+  "faces": [
+    {
+      "name": "Guac & Marshmallow Pizza",
+      "type_line": "Artifact \u2014 Food",
+      "oracle_text": "Flash\nWhen this artifact enters, target creature gets +2/+2 until end of turn. Untap it.\n{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, target creature gets +2/+2 until end of turn. Untap it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "untap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}, Sacrifice this artifact: You gain 3 life.",
+          "cost": "{2}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "920684d0-aef3-4408-a66b-a0c9394c58f4",
+  "name": "Decree of Silence",
+  "faces": [
+    {
+      "name": "Decree of Silence",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever an opponent casts a spell, counter that spell and put a depletion counter on this enchantment. If there are three or more depletion counters on this enchantment, sacrifice it.\nCycling {4}{U}{U} ({4}{U}{U}, Discard this card: Draw a card.)\nWhen you cycle this card, you may counter target spell.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent casts a spell, counter that spell and put a depletion counter on this enchantment. If there are three or more depletion counters on this enchantment, sacrifice it.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "counter that spell and put a depletion counter on this enchantment"
+            },
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "there are three or more depletion counters on this enchantment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "When you cycle this card, you may counter target spell.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "counter_spell",
+              "target": "target_spell"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {4}{U}{U} ({4}{U}{U}, Discard this card: Draw a card.)",
+          "cost": "Cycling {4}{U}{U} ({4}{U}{U}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

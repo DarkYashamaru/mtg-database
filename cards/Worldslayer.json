@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "31be715f-9ad3-435c-9e52-e108fe96b969",
+  "name": "Worldslayer",
+  "faces": [
+    {
+      "name": "Worldslayer",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature deals combat damage to a player, destroy all permanents other than this Equipment.\nEquip {5} ({5}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals combat damage to a player, destroy all permanents other than this Equipment.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy all permanents other than this Equipment"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {5} ({5}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{5}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

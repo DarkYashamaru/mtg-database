@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e3d6d146-47f4-46f9-9a15-2ea649093668",
+  "name": "Grunn, the Lonely King",
+  "faces": [
+    {
+      "name": "Grunn, the Lonely King",
+      "type_line": "Legendary Creature \u2014 Ape Warrior",
+      "oracle_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)\nIf Grunn was kicked, it enters with five +1/+1 counters on it.\nWhenever Grunn attacks alone, double its power and toughness until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Grunn attacks alone, double its power and toughness until end of turn.",
+          "trigger": {
+            "type": "attacks_alone",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "double its power and toughness until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {3} (You may pay an additional {3} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {3}"
+            }
+          ]
+        },
+        {
+          "raw_text": "If Grunn was kicked, it enters with five +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it enters with five +1/+1 counters on it",
+              "condition": [
+                {
+                  "condition_text": "grunn was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

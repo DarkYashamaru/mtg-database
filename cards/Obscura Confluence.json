@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1f2fb1dd-82e4-45fa-b2a9-7df7b8a4d533",
+  "name": "Obscura Confluence",
+  "faces": [
+    {
+      "name": "Obscura Confluence",
+      "type_line": "Instant",
+      "oracle_text": "Choose three. You may choose the same mode more than once.\n\u2022 Until end of turn, target creature loses all abilities and has base power and toughness 1/1.\n\u2022 Target creature connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)\n\u2022 Target player returns a creature card from their graveyard to their hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose three. You may choose the same mode more than once.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose three"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may choose the same mode more than once"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Until end of turn, target creature loses all abilities and has base power and toughness 1/1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Until end of turn, target creature loses all abilities and has base power and toughness 1/1"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Target creature connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+          "effects": [
+            {
+              "action": "connive",
+              "target": "_target_creature",
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "_target_creature",
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Target player returns a creature card from their graveyard to their hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Target player returns a creature card from their graveyard to their hand"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

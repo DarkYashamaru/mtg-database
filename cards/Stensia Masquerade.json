@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "88f5d146-420b-417c-bcf1-fe0e78312a74",
+  "name": "Stensia Masquerade",
+  "faces": [
+    {
+      "name": "Stensia Masquerade",
+      "type_line": "Enchantment",
+      "oracle_text": "Attacking creatures you control have first strike.\nWhenever a Vampire you control deals combat damage to a player, put a +1/+1 counter on it.\nMadness {2}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Vampire you control deals combat damage to a player, put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Vampire"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Attacking creatures you control have first strike.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Attacking"
+                ]
+              },
+              "keywords": [
+                "first_strike"
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Madness {2}{R} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Madness {2}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4d0a0027-53b3-45a1-8736-f0ac86b19342",
+  "name": "Mischievous Catgeist // Catlike Curiosity",
+  "faces": [
+    {
+      "name": "Catlike Curiosity",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature has \"Whenever this creature deals combat damage to a player, draw a card.\"\nIf Catlike Curiosity would be put into a graveyard from anywhere, exile it instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has \"Whenever this creature deals combat damage to a player, draw a card.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has \"Whenever this creature deals combat damage to a player, draw a card.\""
+            }
+          ]
+        },
+        {
+          "raw_text": "If Catlike Curiosity would be put into a graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "catlike curiosity would be put into a graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mischievous Catgeist",
+      "type_line": "Creature \u2014 Cat Spirit",
+      "oracle_text": "Whenever this creature deals combat damage to a player, draw a card.\nDisturb {2}{U} (You may cast this card from your graveyard transformed for its disturb cost.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disturb {2}{U} (You may cast this card from your graveyard transformed for its disturb cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disturb {2}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

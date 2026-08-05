@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eb014442-5935-4333-8078-ee4896dce653",
+  "name": "Soul of Ravnica",
+  "faces": [
+    {
+      "name": "Soul of Ravnica",
+      "type_line": "Creature \u2014 Avatar",
+      "oracle_text": "Flying\n{5}{U}{U}: Draw a card for each color among permanents you control.\n{5}{U}{U}, Exile this card from your graveyard: Draw a card for each color among permanents you control.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{5}{U}{U}: Draw a card for each color among permanents you control.",
+          "cost": "{5}{U}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "color_among_permanents_you_control"
+            }
+          ]
+        },
+        {
+          "raw_text": "{5}{U}{U}, Exile this card from your graveyard: Draw a card for each color among permanents you control.",
+          "cost": "{5}{U}{U}, Exile this card from your graveyard",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "color_among_permanents_you_control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

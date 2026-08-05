@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c87e3b1d-2d24-4f1c-84e8-1c21a347cdc2",
+  "name": "Looter il-Kor",
+  "faces": [
+    {
+      "name": "Looter il-Kor",
+      "type_line": "Creature \u2014 Kor Rogue",
+      "oracle_text": "Shadow (This creature can block or be blocked by only creatures with shadow.)\nWhenever this creature deals damage to an opponent, draw a card, then discard a card.",
+      "static": [
+        {
+          "keyword": "shadow"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals damage to an opponent, draw a card, then discard a card.",
+          "trigger": {
+            "type": "deals_damage_to_opponent",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

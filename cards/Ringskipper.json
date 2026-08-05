@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8e353b5f-0692-430e-9558-59818275b13b",
+  "name": "Ringskipper",
+  "faces": [
+    {
+      "name": "Ringskipper",
+      "type_line": "Creature \u2014 Faerie Wizard",
+      "oracle_text": "Flying\nWhen this creature dies, clash with an opponent. If you win, return this card to its owner's hand. (Each clashing player reveals the top card of their library, then puts that card on their choice of the top or bottom. A player wins if their card had a greater mana value.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, clash with an opponent. If you win, return this card to its owner's hand. (Each clashing player reveals the top card of their library, then puts that card on their choice of the top or bottom. A player wins if their card had a greater mana value.)",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "clash with an opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return this card to its owner's hand",
+              "condition": [
+                {
+                  "condition_text": "you win"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

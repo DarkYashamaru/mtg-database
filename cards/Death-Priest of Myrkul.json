@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "af231505-bd2e-4499-9fd5-f761dde2ecef",
+  "name": "Death-Priest of Myrkul",
+  "faces": [
+    {
+      "name": "Death-Priest of Myrkul",
+      "type_line": "Creature \u2014 Tiefling Cleric",
+      "oracle_text": "Skeletons, Vampires, and Zombies you control get +1/+1.\nAt the beginning of your end step, if a creature died this turn, you may pay {1}. If you do, create a 1/1 black Skeleton creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if a creature died this turn, you may pay {1}. If you do, create a 1/1 black Skeleton creature token.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a creature died this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 black skeleton creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "skeleton"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Skeletons, Vampires, and Zombies you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Skeletons, Vampires, and Zombies you control get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "98a89d5c-871c-4da6-a502-9fdb7bdfccff",
+  "name": "Hikari, Twilight Guardian",
+  "faces": [
+    {
+      "name": "Hikari, Twilight Guardian",
+      "type_line": "Legendary Creature \u2014 Spirit",
+      "oracle_text": "Flying\nWhenever you cast a Spirit or Arcane spell, you may exile Hikari. If you do, return it to the battlefield under its owner's control at the beginning of the next end step.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, you may exile Hikari. If you do, return it to the battlefield under its owner's control at the beginning of the next end step.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile Hikari"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield under its owner's control at the beginning of the next end step",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

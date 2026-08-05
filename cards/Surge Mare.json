@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8342de86-5b11-486d-8012-f0f9d2ded8c4",
+  "name": "Surge Mare",
+  "faces": [
+    {
+      "name": "Surge Mare",
+      "type_line": "Creature \u2014 Horse Fish",
+      "oracle_text": "This creature can't be blocked by green creatures.\nWhenever this creature deals damage to an opponent, you may draw a card. If you do, discard a card.\n{1}{U}: This creature gets +2/-2 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals damage to an opponent, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "deals_damage_to_opponent",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{U}: This creature gets +2/-2 until end of turn.",
+          "cost": "{1}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": -2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked by green creatures.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature can't be blocked by green creatures"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

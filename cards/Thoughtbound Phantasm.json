@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ca14f1b6-e8c2-4ea5-9375-5ed63f355052",
+  "name": "Thoughtbound Phantasm",
+  "faces": [
+    {
+      "name": "Thoughtbound Phantasm",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Defender\nWhenever you surveil, put a +1/+1 counter on this creature.\nAs long as this creature has three or more +1/+1 counters on it, it can attack as though it didn't have defender.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you surveil, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you surveil"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as this creature has three or more +1/+1 counters on it, it can attack as though it didn't have defender.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "as_long_as_self_has_three_or_more_11_counters_on_it_it_can_attack_as_though_it_didnt"
+              },
+              "keywords": [
+                "defender"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "86d3def3-53fa-4cad-bb25-d3275af1e3f5",
+  "name": "Drake Haven",
+  "faces": [
+    {
+      "name": "Drake Haven",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cycle or discard a card, you may pay {1}. If you do, create a 2/2 blue Drake creature token with flying.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cycle or discard a card, you may pay {1}. If you do, create a 2/2 blue Drake creature token with flying.",
+          "trigger": {
+            "type": "cycle_or_discard_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 blue drake creature token with flying",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "drake"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "57eba48e-87bd-4b54-8635-7348020f2ba4",
+  "name": "Alley Assailant",
+  "faces": [
+    {
+      "name": "Alley Assailant",
+      "type_line": "Creature \u2014 Vampire Rogue",
+      "oracle_text": "This creature enters tapped.\nDisguise {4}{B}{B} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)\nWhen this creature is turned face up, target opponent loses 3 life and you gain 3 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, target opponent loses 3 life and you gain 3 life.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "target_opponent",
+              "amount": 3
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "raw_text": "Disguise {4}{B}{B} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disguise {4}{B}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

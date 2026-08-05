@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bda83ef4-e345-495d-878c-4da171f997ba",
+  "name": "Elvish Warmaster",
+  "faces": [
+    {
+      "name": "Elvish Warmaster",
+      "type_line": "Creature \u2014 Elf Warrior",
+      "oracle_text": "Whenever one or more other Elves you control enter, create a 1/1 green Elf Warrior creature token. This ability triggers only once each turn.\n{5}{G}{G}: Elves you control get +2/+2 and gain deathtouch until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more other Elves you control enter, create a 1/1 green Elf Warrior creature token. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more other Elves you control enter"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Elf Warrior creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elf",
+                  "Warrior"
+                ]
+              }
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{5}{G}{G}: Elves you control get +2/+2 and gain deathtouch until end of turn.",
+          "cost": "{5}{G}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "elves_you_control_get_22_and",
+              "keyword": "deathtouch"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

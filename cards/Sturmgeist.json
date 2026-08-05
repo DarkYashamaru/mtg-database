@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b3045ee5-232b-4e63-8ea8-b5e46b49e71a",
+  "name": "Sturmgeist",
+  "faces": [
+    {
+      "name": "Sturmgeist",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Flying\nSturmgeist's power and toughness are each equal to the number of cards in your hand.\nWhenever this creature deals combat damage to a player, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Sturmgeist's power and toughness are each equal to the number of cards in your hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Sturmgeist's power and toughness are each equal to the number of cards in your hand"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

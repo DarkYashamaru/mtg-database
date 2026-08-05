@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "68f1db12-82fb-4bf1-908d-db38fd67efe5",
+  "name": "Sire of the Storm",
+  "faces": [
+    {
+      "name": "Sire of the Storm",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Flying\nWhenever you cast a Spirit or Arcane spell, you may draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, you may draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

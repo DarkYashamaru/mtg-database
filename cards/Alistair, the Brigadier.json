@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2fe8d739-dee5-4220-8102-6fbae7d4fc19",
+  "name": "Alistair, the Brigadier",
+  "faces": [
+    {
+      "name": "Alistair, the Brigadier",
+      "type_line": "Legendary Creature \u2014 Human Soldier",
+      "oracle_text": "Whenever you cast a historic spell, create a 1/1 white Soldier creature token. (Artifacts, legendaries, and Sagas are historic.)\nWhenever Alistair attacks, you may pay {8}. If you do, creatures you control get +X/+X until end of turn, where X is the number of historic permanents you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a historic spell, create a 1/1 white Soldier creature token. (Artifacts, legendaries, and Sagas are historic.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Historic"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Soldier creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Alistair attacks, you may pay {8}. If you do, creatures you control get +X/+X until end of turn, where X is the number of historic permanents you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{8}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "creatures you control get +x/+x until end of turn, where x is the number of historic permanents you control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

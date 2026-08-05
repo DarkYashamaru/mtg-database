@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b3ab43f2-4f2b-4439-9254-0110ce443fdb",
+  "name": "Ratadrabik of Urborg",
+  "faces": [
+    {
+      "name": "Ratadrabik of Urborg",
+      "type_line": "Legendary Creature \u2014 Zombie Wizard",
+      "oracle_text": "Vigilance, ward {2}\nOther Zombies you control have vigilance.\nWhenever another legendary creature you control dies, create a token that's a copy of that creature, except it's not legendary and it's a 2/2 black Zombie in addition to its other colors and types.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another legendary creature you control dies, create a token that's a copy of that creature, except it's not legendary and it's a 2/2 black Zombie in addition to its other colors and types.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Legendary"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of that creature, except it's not legendary and it's a 2/2 black Zombie in addition to its other colors and types"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Zombies you control have vigilance.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "subtypes": [
+                  "Zomby"
+                ]
+              },
+              "keywords": [
+                "vigilance"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8c56530b-098a-4afd-9022-76bfaa1f6a7c",
+  "name": "Eelectrocute",
+  "faces": [
+    {
+      "name": "Eelectrocute",
+      "type_line": "Instant",
+      "oracle_text": "Eelectrocute deals 2 damage to any target.\nYou may cast this card from your graveyard as long as you've rolled a 6 this turn. If you cast it this way and it would be put into your graveyard, exile it instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Eelectrocute deals 2 damage to any target.",
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "You may cast this card from your graveyard as long as you've rolled a 6 this turn. If you cast it this way and it would be put into your graveyard, exile it instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast this card from your graveyard as long as you've rolled a 6 this turn"
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "you cast it this way and it would be put into your graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

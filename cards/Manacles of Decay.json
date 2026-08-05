@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "69095c25-6ae6-42f5-9c3d-1d8f86f03fae",
+  "name": "Manacles of Decay",
+  "faces": [
+    {
+      "name": "Manacles of Decay",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature can't attack.\n{B}: Enchanted creature gets -1/-1 until end of turn.\n{R}: Enchanted creature can't block this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{B}: Enchanted creature gets -1/-1 until end of turn.",
+          "cost": "{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "enchanted_creature",
+              "power_delta": -1,
+              "toughness_delta": -1
+            }
+          ]
+        },
+        {
+          "raw_text": "{R}: Enchanted creature can't block this turn.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature can't block this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature can't attack.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature can't attack"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

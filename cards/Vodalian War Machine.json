@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f72511b0-9993-4998-b646-65a855cb8170",
+  "name": "Vodalian War Machine",
+  "faces": [
+    {
+      "name": "Vodalian War Machine",
+      "type_line": "Creature \u2014 Wall",
+      "oracle_text": "Defender (This creature can't attack.)\nTap an untapped Merfolk you control: This creature can attack this turn as though it didn't have defender.\nTap an untapped Merfolk you control: This creature gets +2/+1 until end of turn.\nWhen this creature dies, destroy all Merfolk tapped this turn to pay for its abilities.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, destroy all Merfolk tapped this turn to pay for its abilities.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy all Merfolk tapped this turn to pay for its abilities"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Tap an untapped Merfolk you control: This creature can attack this turn as though it didn't have defender.",
+          "cost": "Tap an untapped Merfolk you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "self_can_attack_this_turn_as_though_it_didnt"
+              },
+              "keywords": [
+                "defender"
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Tap an untapped Merfolk you control: This creature gets +2/+1 until end of turn.",
+          "cost": "Tap an untapped Merfolk you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

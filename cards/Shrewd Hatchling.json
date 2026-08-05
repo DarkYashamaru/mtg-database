@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "011371f0-a7f1-47a5-9883-22a14cfe4de9",
+  "name": "Shrewd Hatchling",
+  "faces": [
+    {
+      "name": "Shrewd Hatchling",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "This creature enters with four -1/-1 counters on it.\n{U/R}: Target creature can't block this creature this turn.\nWhenever you cast a blue spell, remove a -1/-1 counter from this creature.\nWhenever you cast a red spell, remove a -1/-1 counter from this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a blue spell, remove a -1/-1 counter from this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Blue"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove a -1/-1 counter from this creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a red spell, remove a -1/-1 counter from this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Red"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove a -1/-1 counter from this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{U/R}: Target creature can't block this creature this turn.",
+          "cost": "{U/R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature can't block this creature this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with four -1/-1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with four -1/-1 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

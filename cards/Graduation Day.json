@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "40e0665d-57b8-4c19-9fb8-b3155d7bbb94",
+  "name": "Graduation Day",
+  "faces": [
+    {
+      "name": "Graduation Day",
+      "type_line": "Enchantment",
+      "oracle_text": "Repartee \u2014 Whenever you cast an instant or sorcery spell that targets a creature, put a +1/+1 counter on target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell that targets a creature, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            },
+            {
+              "condition_text": "that targets a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

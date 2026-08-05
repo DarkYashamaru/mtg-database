@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b7c165a4-53a2-4117-a452-b9a8fe309c09",
+  "name": "Tooth Collector",
+  "faces": [
+    {
+      "name": "Tooth Collector",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "When this creature enters, target creature an opponent controls gets -1/-1 until end of turn.\nDelirium \u2014 At the beginning of each opponent's upkeep, if there are four or more card types among cards in your graveyard, target creature that player controls gets -1/-1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target creature an opponent controls gets -1/-1 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature_an_opponent_controls",
+              "power_delta": -1,
+              "toughness_delta": -1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each opponent's upkeep, if there are four or more card types among cards in your graveyard, target creature that player controls gets -1/-1 until end of turn.",
+          "trigger": {
+            "type": "beginning_of_each_opponents_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "there are four or more card types among cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature_that_player_controls",
+              "power_delta": -1,
+              "toughness_delta": -1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

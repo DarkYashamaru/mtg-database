@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cd444267-712c-450f-a349-e27faf4f4c7c",
+  "name": "Soldevi Golem",
+  "faces": [
+    {
+      "name": "Soldevi Golem",
+      "type_line": "Artifact Creature \u2014 Golem",
+      "oracle_text": "This creature doesn't untap during your untap step.\nAt the beginning of your upkeep, you may untap target tapped creature an opponent controls. If you do, untap this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may untap target tapped creature an opponent controls. If you do, untap this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may untap target tapped creature an opponent controls"
+            },
+            {
+              "action": "untap",
+              "target": "self",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature doesn't untap during your untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "self",
+              "scope": "your_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b38adaac-3714-4348-9fec-cb2e2ad518b1",
+  "name": "Mishra, Artificer Prodigy",
+  "faces": [
+    {
+      "name": "Mishra, Artificer Prodigy",
+      "type_line": "Legendary Creature \u2014 Human Artificer",
+      "oracle_text": "Whenever you cast an artifact spell, you may search your graveyard, hand, and/or library for a card with the same name as that spell and put it onto the battlefield. If you search your library this way, shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an artifact spell, you may search your graveyard, hand, and/or library for a card with the same name as that spell and put it onto the battlefield. If you search your library this way, shuffle.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Artifact"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your graveyard, hand, and/or library for a card with the same name as that spell and put it onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

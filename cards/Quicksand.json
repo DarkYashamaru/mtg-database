@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ef2bb4fa-f292-4d19-aaa4-cfbe445caf45",
+  "name": "Quicksand",
+  "faces": [
+    {
+      "name": "Quicksand",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}, Sacrifice this land: Target attacking creature without flying gets -1/-2 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Sacrifice this land: Target attacking creature without flying gets -1/-2 until end of turn.",
+          "cost": "{T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_attacking_creature_without_flying",
+              "power_delta": -1,
+              "toughness_delta": -2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

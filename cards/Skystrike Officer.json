@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "862798c6-1c38-4bb9-b4a1-3ef1fcf8f7f7",
+  "name": "Skystrike Officer",
+  "faces": [
+    {
+      "name": "Skystrike Officer",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Flying\nWhenever this creature attacks, create a 1/1 colorless Soldier artifact creature token.\nTap three untapped Soldiers you control: Draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, create a 1/1 colorless Soldier artifact creature token.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Soldier artifact creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Soldier",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Tap three untapped Soldiers you control: Draw a card.",
+          "cost": "Tap three untapped Soldiers you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

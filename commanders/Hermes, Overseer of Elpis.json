@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "63e2cba7-ec1a-44bf-b915-d2ae75851430",
+  "name": "Hermes, Overseer of Elpis",
+  "faces": [
+    {
+      "name": "Hermes, Overseer of Elpis",
+      "type_line": "Legendary Creature \u2014 Elder Wizard",
+      "oracle_text": "Whenever you cast a noncreature spell, create a 1/1 blue Bird creature token with flying and vigilance.\nWhenever you attack with one or more Birds, scry 2.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, create a 1/1 blue Bird creature token with flying and vigilance.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 blue Bird creature token with flying and vigilance",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Bird"
+                ],
+                "keywords": [
+                  "flying",
+                  "vigilance"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack with one or more Birds, scry 2.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you attack with one or more Birds"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

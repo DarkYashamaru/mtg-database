@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9e3303aa-2484-4832-86ac-f5ae290d02f1",
+  "name": "Catharsis",
+  "faces": [
+    {
+      "name": "Catharsis",
+      "type_line": "Creature \u2014 Elemental Incarnation",
+      "oracle_text": "When this creature enters, if {W}{W} was spent to cast it, create two 1/1 green and white Kithkin creature tokens.\nWhen this creature enters, if {R}{R} was spent to cast it, creatures you control get +1/+1 and gain haste until end of turn.\nEvoke {R/W}{R/W} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if {W}{W} was spent to cast it, create two 1/1 green and white Kithkin creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "{W}{W} was spent to cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 green and white Kithkin creature tokens",
+                "colors": [
+                  "green",
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Kithkin"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature enters, if {R}{R} was spent to cast it, creatures you control get +1/+1 and gain haste until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "{R}{R} was spent to cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control_get_11_and",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Evoke {R/W}{R/W} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Evoke {R/W}{R/W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

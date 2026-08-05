@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2bdd0bcb-6cfb-48e7-972e-355ff46621a4",
+  "name": "Cryptcaller Chariot",
+  "faces": [
+    {
+      "name": "Cryptcaller Chariot",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Menace\nWhenever you discard one or more cards, create that many tapped 2/2 black Zombie creature tokens.\nCrew 2",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you discard one or more cards, create that many tapped 2/2 black Zombie creature tokens.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you discard one or more cards"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "that",
+              "token": {
+                "raw": "many tapped 2/2 black Zombie creature tokens",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

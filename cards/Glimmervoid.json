@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b92e9854-4527-4133-8615-e282a213e7e3",
+  "name": "Glimmervoid",
+  "faces": [
+    {
+      "name": "Glimmervoid",
+      "type_line": "Land",
+      "oracle_text": "At the beginning of the end step, if you control no artifacts, sacrifice this land.\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of the end step, if you control no artifacts, sacrifice this land.",
+          "trigger": {
+            "type": "beginning_of_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you control no artifacts"
+            }
+          ],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_land"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

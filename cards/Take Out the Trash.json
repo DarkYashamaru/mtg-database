@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e07700e7-218a-45a3-9ee4-de2cc25cdc02",
+  "name": "Take Out the Trash",
+  "faces": [
+    {
+      "name": "Take Out the Trash",
+      "type_line": "Instant",
+      "oracle_text": "Take Out the Trash deals 3 damage to target creature or planeswalker. If you control a Raccoon, you may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Take Out the Trash deals 3 damage to target creature or planeswalker. If you control a Raccoon, you may discard a card. If you do, draw a card.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Take Out the Trash deals 3 damage to target creature or planeswalker"
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true,
+              "condition": [
+                {
+                  "condition_text": "you control a raccoon"
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

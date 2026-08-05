@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5852ed2f-4332-4c30-b145-373deea471d9",
+  "name": "Hallowed Spiritkeeper",
+  "faces": [
+    {
+      "name": "Hallowed Spiritkeeper",
+      "type_line": "Creature \u2014 Avatar",
+      "oracle_text": "Vigilance\nWhen this creature dies, create X 1/1 white Spirit creature tokens with flying, where X is the number of creature cards in your graveyard.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, create X 1/1 white Spirit creature tokens with flying, where X is the number of creature cards in your graveyard.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "count",
+              "count_object": "creature_cards_in_you_control_graveyard",
+              "token": {
+                "raw": "1/1 white Spirit creature tokens with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Spirit"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

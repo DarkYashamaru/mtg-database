@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4d6d3e6d-f958-4c17-b117-960fb8033601",
+  "name": "Assault Formation",
+  "faces": [
+    {
+      "name": "Assault Formation",
+      "type_line": "Enchantment",
+      "oracle_text": "Each creature you control assigns combat damage equal to its toughness rather than its power.\n{G}: Target creature with defender can attack this turn as though it didn't have defender.\n{2}{G}: Creatures you control get +0/+1 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{G}: Target creature with defender can attack this turn as though it didn't have defender.",
+          "cost": "{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "target_creature_with_defender_can_attack_this_turn_as_though_it_didnt"
+              },
+              "keywords": [
+                "defender"
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{G}: Creatures you control get +0/+1 until end of turn.",
+          "cost": "{2}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 0,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Each creature you control assigns combat damage equal to its toughness rather than its power.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each creature you control assigns combat damage equal to its toughness rather than its power"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

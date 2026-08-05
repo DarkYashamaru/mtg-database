@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e9784eb4-96f2-409e-a7b5-eb6478644943",
+  "name": "Cauldron Dance",
+  "faces": [
+    {
+      "name": "Cauldron Dance",
+      "type_line": "Instant",
+      "oracle_text": "Cast this spell only during combat.\nReturn target creature card from your graveyard to the battlefield. That creature gains haste. Return it to your hand at the beginning of the next end step.\nYou may put a creature card from your hand onto the battlefield. That creature gains haste. Its controller sacrifices it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Cast this spell only during combat.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cast this spell only during combat"
+            }
+          ]
+        },
+        {
+          "raw_text": "Return target creature card from your graveyard to the battlefield. That creature gains haste. Return it to your hand at the beginning of the next end step.",
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": {
+                "card_types": [
+                  "Creature"
+                ],
+                "zone": "graveyard"
+              },
+              "destination": "battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "that_creature",
+              "keyword": "haste"
+            },
+            {
+              "action": "delayed_return_to_hand",
+              "object": "it",
+              "trigger": "beginning_of_next_end_step"
+            }
+          ]
+        },
+        {
+          "raw_text": "You may put a creature card from your hand onto the battlefield. That creature gains haste. Its controller sacrifices it at the beginning of the next end step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may put a creature card from your hand onto the battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "that_creature",
+              "keyword": "haste"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Its controller sacrifices it at the beginning of the next end step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

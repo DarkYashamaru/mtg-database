@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "418bc6c8-972b-4f07-aac0-8d003b9c1b17",
+  "name": "Temur Charm",
+  "faces": [
+    {
+      "name": "Temur Charm",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Target creature you control gets +1/+1 until end of turn. It fights target creature you don't control.\n\u2022 Counter target spell unless its controller pays {3}.\n\u2022 Creatures with power 3 or less can't block this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Target creature you control gets +1/+1 until end of turn. It fights target creature you don't control.\n\u2022 Counter target spell unless its controller pays {3}.\n\u2022 Creatures with power 3 or less can't block this turn.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Target creature you control gets +1/+1 until end of turn. It fights target creature you don't control.",
+              "effects": [
+                {
+                  "action": "modify_stats_until_end_of_turn",
+                  "target": {
+                    "selector": "creatures_you_control",
+                    "card_types": [
+                      "Creature"
+                    ],
+                    "subtypes": [
+                      "Target"
+                    ]
+                  },
+                  "power_delta": 1,
+                  "toughness_delta": 1
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "It fights target creature you don't control"
+                }
+              ]
+            },
+            {
+              "raw_text": "Counter target spell unless its controller pays {3}.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Counter target spell unless its controller pays {3}"
+                }
+              ]
+            },
+            {
+              "raw_text": "Creatures with power 3 or less can't block this turn.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Creatures with power 3 or less can't block this turn"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

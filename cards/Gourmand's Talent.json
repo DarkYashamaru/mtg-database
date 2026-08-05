@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e802bf11-d3c7-4aad-8e85-99b39ff50d70",
+  "name": "Gourmand's Talent",
+  "faces": [
+    {
+      "name": "Gourmand's Talent",
+      "type_line": "Enchantment \u2014 Class",
+      "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nDuring your turn, artifacts you control are Foods in addition to their other types and have \"{2}, {T}, Sacrifice this artifact: You gain 3 life.\"\n{2}{G}: Level 2\nWhenever you gain life for the first time each turn, create a 3/3 green Raccoon creature token.\n{3}{G}: Level 3\nWhenever you gain life for the first time each turn, put a +1/+1 counter on each creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life for the first time each turn, create a 3/3 green Raccoon creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you gain life for the first time each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/3 green Raccoon creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Raccoon"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you gain life for the first time each turn, put a +1/+1 counter on each creature you control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you gain life for the first time each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "During your turn, artifacts you control are Foods in addition to their other types and have \"{2}, {T}, Sacrifice this artifact: You gain 3 life.\"",
+          "cost": "During your turn, artifacts you control are Foods in addition to their other types and have \"{2}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{G}: Level 2",
+          "cost": "{2}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{G}: Level 3",
+          "cost": "{3}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

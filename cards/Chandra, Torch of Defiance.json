@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "oracle_id": "12cc800c-c7be-4811-8207-fd01a99cc892",
+  "name": "Chandra, Torch of Defiance",
+  "faces": [
+    {
+      "name": "Chandra, Torch of Defiance",
+      "type_line": "Legendary Planeswalker \u2014 Chandra",
+      "oracle_text": "+1: Exile the top card of your library. You may cast that card. If you don't, Chandra deals 2 damage to each opponent.\n+1: Add {R}{R}.\n\u22123: Chandra deals 4 damage to target creature.\n\u22127: You get an emblem with \"Whenever you cast a spell, this emblem deals 5 damage to any target.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Exile the top card of your library. You may cast that card. If you don't, Chandra deals 2 damage to each opponent.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast that card"
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "+1: Add {R}{R}.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{r}",
+                "{r}"
+              ],
+              "distribution": "fixed_sequence"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Chandra deals 4 damage to target creature.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Chandra deals 4 damage to target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: You get an emblem with \"Whenever you cast a spell, this emblem deals 5 damage to any target.\"",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "you_get_an_emblem_with_whenever_you_cast_a_spell_this_emblem",
+              "target": "any_target",
+              "amount": 5
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

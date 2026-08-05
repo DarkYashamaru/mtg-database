@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "76a416fa-d97b-4c24-af41-b2382f1fd546",
+  "name": "Sontaran General",
+  "faces": [
+    {
+      "name": "Sontaran General",
+      "type_line": "Creature \u2014 Alien Soldier",
+      "oracle_text": "Trample, haste\nBattalion \u2014 Whenever this creature and at least two other creatures attack, for each opponent, goad up to one target creature that player controls. Those creatures can't block this turn. (Until your next turn, they attack each combat if able and attack a player other than you if able.)",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature and at least two other creatures attack, for each opponent, goad up to one target creature that player controls. Those creatures can't block this turn. (Until your next turn, they attack each combat if able and attack a player other than you if able.)",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "attacking_creatures_you_control_gte": 3
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each opponent, goad up to one target creature that player controls"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Those creatures can't block this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

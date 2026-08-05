@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d16976b8-4eda-4415-bc16-c20d958b6f59",
+  "name": "Unscythe, Killer of Kings",
+  "faces": [
+    {
+      "name": "Unscythe, Killer of Kings",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +3/+3 and has first strike.\nWhenever a creature dealt damage by equipped creature this turn dies, you may exile that card. If you do, create a 2/2 black Zombie creature token.\nEquip {2}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature dealt damage by equipped creature this turn dies, you may exile that card. If you do, create a 2/2 black Zombie creature token.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_dealt_damage_by_equipped_creature_this_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile that card"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "zombie"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +3/+3 and has first strike.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +3/+3 and has first strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

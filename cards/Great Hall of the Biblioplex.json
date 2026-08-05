@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a8c70dab-1e27-4a9c-bd2d-910d5720d02d",
+  "name": "Great Hall of the Biblioplex",
+  "faces": [
+    {
+      "name": "Great Hall of the Biblioplex",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}, Pay 1 life: Add one mana of any color. Spend this mana only to cast an instant or sorcery spell.\n{5}: If this land isn't a creature, it becomes a 2/4 Wizard creature with \"Whenever you cast an instant or sorcery spell, this creature gets +1/+0 until end of turn.\" It's still a land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Pay 1 life: Add one mana of any color. Spend this mana only to cast an instant or sorcery spell.",
+          "cost": "{T}, Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "card_types": [
+                    "Instant",
+                    "Sorcery"
+                  ],
+                  "subtypes_all": [
+                    "Or"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{5}: If this land isn't a creature, it becomes a 2/4 Wizard creature with \"Whenever you cast an instant or sorcery spell, this creature gets +1/+0 until end of turn.\" It's still a land.",
+          "cost": "{5}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it becomes a 2/4 wizard creature with \"whenever you cast an instant or sorcery spell, this creature gets +1/+0 until end of turn.\" it's still a land",
+              "condition": [
+                {
+                  "condition_text": "this land isn't a creature"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

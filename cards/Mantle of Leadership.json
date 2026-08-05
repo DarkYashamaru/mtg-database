@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "65c0d59b-3a94-49af-94cd-2ab4820a51f3",
+  "name": "Mantle of Leadership",
+  "faces": [
+    {
+      "name": "Mantle of Leadership",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash (You may cast this spell any time you could cast an instant.)\nEnchant creature\nWhenever a creature enters, enchanted creature gets +2/+2 until end of turn.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature enters, enchanted creature gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "a_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "enchanted_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

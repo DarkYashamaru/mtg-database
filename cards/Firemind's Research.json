@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "edac6c23-cff5-4ee2-9227-756b1dc6ab0c",
+  "name": "Firemind's Research",
+  "faces": [
+    {
+      "name": "Firemind's Research",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cast an instant or sorcery spell, put a charge counter on this enchantment.\n{1}{U}, Remove two charge counters from this enchantment: Draw a card.\n{1}{R}, Remove five charge counters from this enchantment: It deals 5 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, put a charge counter on this enchantment.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a charge counter on this enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{U}, Remove two charge counters from this enchantment: Draw a card.",
+          "cost": "{1}{U}, Remove two charge counters from this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{R}, Remove five charge counters from this enchantment: It deals 5 damage to any target.",
+          "cost": "{1}{R}, Remove five charge counters from this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 5
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

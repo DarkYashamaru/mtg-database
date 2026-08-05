@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a08f79b7-d66f-47da-9670-afd7409c0c5c",
+  "name": "Rydia, Summoner of Mist",
+  "faces": [
+    {
+      "name": "Rydia, Summoner of Mist",
+      "type_line": "Legendary Creature \u2014 Human Shaman",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, you may discard a card. If you do, draw a card.\nSummon \u2014 {X}, {T}: Return target Saga card with mana value X from your graveyard to the battlefield with a finality counter on it. It gains haste until end of turn. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Summon \u2014 {X}, {T}: Return target Saga card with mana value X from your graveyard to the battlefield with a finality counter on it. It gains haste until end of turn. Activate only as a sorcery.",
+          "cost": "Summon \u2014 {X}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target Saga card with mana value X from your graveyard to the battlefield with a finality counter on it"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

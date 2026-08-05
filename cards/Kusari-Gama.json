@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b5585eb5-4df3-4ae2-8c39-a8e7a9706dc2",
+  "name": "Kusari-Gama",
+  "faces": [
+    {
+      "name": "Kusari-Gama",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has \"{2}: This creature gets +1/+0 until end of turn.\"\nWhenever equipped creature deals damage to a blocking creature, this Equipment deals that much damage to each other creature defending player controls.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals damage to a blocking creature, this Equipment deals that much damage to each other creature defending player controls.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever equipped creature deals damage to a blocking creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this Equipment deals that much damage to each other creature defending player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equipped creature has \"{2}: This creature gets +1/+0 until end of turn.\"",
+          "cost": "Equipped creature has \"{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

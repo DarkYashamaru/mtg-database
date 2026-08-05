@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "134a9877-5cfb-4a2a-a0f0-930dce45f58b",
+  "name": "Prophetic Prism",
+  "faces": [
+    {
+      "name": "Prophetic Prism",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, draw a card.\n{1}, {T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}: Add one mana of any color.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

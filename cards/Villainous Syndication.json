@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4777fa96-12a5-42d5-840f-ddd85f4a4b68",
+  "name": "Villainous Syndication",
+  "faces": [
+    {
+      "name": "Villainous Syndication",
+      "type_line": "Enchantment \u2014 Plan",
+      "oracle_text": "Tap an untapped Villain you control: Mill a card. Put a plan counter on this enchantment. Activate only as a sorcery. (To mill a card, put the top card of your library into your graveyard.)\nWhen the fourth plan counter is put on this enchantment, sacrifice it. When you do, return target creature card from your graveyard to the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When the fourth plan counter is put on this enchantment, sacrifice it. When you do, return target creature card from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "custom",
+            "text": "When the fourth plan counter is put on this enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            },
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": {
+                "card_types": [
+                  "Creature"
+                ],
+                "zone": "graveyard"
+              },
+              "destination": "battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Tap an untapped Villain you control: Mill a card. Put a plan counter on this enchantment. Activate only as a sorcery. (To mill a card, put the top card of your library into your graveyard.)",
+          "cost": "Tap an untapped Villain you control",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a plan counter on this enchantment"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

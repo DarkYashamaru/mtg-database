@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52fa7e9b-36d9-409c-8981-6f8dfd8bb031",
+  "name": "Stir the Sands",
+  "faces": [
+    {
+      "name": "Stir the Sands",
+      "type_line": "Sorcery",
+      "oracle_text": "Create three 2/2 black Zombie creature tokens.\nCycling {3}{B} ({3}{B}, Discard this card: Draw a card.)\nWhen you cycle this card, create a 2/2 black Zombie creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, create a 2/2 black Zombie creature token.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black Zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {3}{B} ({3}{B}, Discard this card: Draw a card.)",
+          "cost": "Cycling {3}{B} ({3}{B}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Create three 2/2 black Zombie creature tokens.",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "2/2 black Zombie creature tokens",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

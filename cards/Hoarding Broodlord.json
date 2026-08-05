@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "18e856b5-aab7-4802-8cec-1d44dd95d9f7",
+  "name": "Hoarding Broodlord",
+  "faces": [
+    {
+      "name": "Hoarding Broodlord",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Convoke\nFlying\nWhen this creature enters, search your library for a card, exile it face down, then shuffle. For as long as that card remains exiled, you may play it.\nSpells you cast from exile have convoke.",
+      "static": [
+        {
+          "keyword": "convoke"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, search your library for a card, exile it face down, then shuffle. For as long as that card remains exiled, you may play it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a card, exile it face down"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "For as long as that card remains exiled, you may play it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Spells you cast from exile have convoke.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "spells_you_cast_from_exile"
+              },
+              "keywords": [
+                "convoke"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

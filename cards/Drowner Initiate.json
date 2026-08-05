@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "19a4010f-f5bf-48be-a1d7-eacc3bbeeb59",
+  "name": "Drowner Initiate",
+  "faces": [
+    {
+      "name": "Drowner Initiate",
+      "type_line": "Creature \u2014 Merfolk Wizard",
+      "oracle_text": "Whenever a player casts a blue spell, you may pay {1}. If you do, target player mills two cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts a blue spell, you may pay {1}. If you do, target player mills two cards.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player casts a blue spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "target player mills two cards",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

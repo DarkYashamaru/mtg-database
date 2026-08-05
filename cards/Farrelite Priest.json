@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3ee18e5f-3d12-489e-b337-29208caaed7a",
+  "name": "Farrelite Priest",
+  "faces": [
+    {
+      "name": "Farrelite Priest",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "{1}: Add {W}. If this ability has been activated four or more times this turn, sacrifice this creature at the beginning of the next end step.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}: Add {W}. If this ability has been activated four or more times this turn, sacrifice this creature at the beginning of the next end step.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "sacrifice",
+              "target": "self_at_the_beginning_of_the_next_end_step",
+              "condition": [
+                {
+                  "condition_text": "this ability has been activated four or more times this turn"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

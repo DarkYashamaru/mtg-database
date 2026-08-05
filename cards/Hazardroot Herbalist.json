@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f40cb1af-3db6-4e90-830f-86ff4b60e239",
+  "name": "Hazardroot Herbalist",
+  "faces": [
+    {
+      "name": "Hazardroot Herbalist",
+      "type_line": "Creature \u2014 Rabbit Druid",
+      "oracle_text": "Whenever you attack, target creature you control gets +1/+0 until end of turn. If that creature is a token, it also gains deathtouch until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, target creature you control gets +1/+0 until end of turn. If that creature is a token, it also gains deathtouch until end of turn.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "it_also",
+              "keyword": "deathtouch",
+              "condition": [
+                {
+                  "condition_text": "that creature is a token"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

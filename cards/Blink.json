@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f5fba11b-7669-40a0-97c7-6cb7c13acedd",
+  "name": "Blink",
+  "faces": [
+    {
+      "name": "Blink",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI, III \u2014 Choose target creature. Its owner shuffles it into their library, then investigates. (They create a Clue token.)\nII, IV \u2014 Create a 2/2 black Alien Angel artifact creature token with first strike, vigilance, and \"Whenever an opponent casts a creature spell, this token isn't a creature until end of turn.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, III \u2014 Choose target creature. Its owner shuffles it into their library, then investigates. (They create a Clue token.)",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose target creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "its owner shuffles it into their library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "investigates"
+            }
+          ]
+        },
+        {
+          "raw_text": "II, IV \u2014 Create a 2/2 black Alien Angel artifact creature token with first strike, vigilance, and \"Whenever an opponent casts a creature spell, this token isn't a creature until end of turn.\"",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II",
+              "IV"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 black Alien Angel artifact creature token with first strike, vigilance, and \"Whenever an opponent casts a creature spell, this token isn't a creature until end of turn",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Alien",
+                  "Angel",
+                  "artifact"
+                ],
+                "keywords": [
+                  "first_strike",
+                  "vigilance"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

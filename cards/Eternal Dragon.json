@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "04d8615c-3883-4251-9790-1d8a4a40e142",
+  "name": "Eternal Dragon",
+  "faces": [
+    {
+      "name": "Eternal Dragon",
+      "type_line": "Creature \u2014 Dragon Spirit",
+      "oracle_text": "Flying\n{3}{W}{W}: Return this card from your graveyard to your hand. Activate only during your upkeep.\nPlainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{W}{W}: Return this card from your graveyard to your hand. Activate only during your upkeep.",
+          "cost": "{3}{W}{W}",
+          "condition": [
+            {
+              "condition_text": "during your upkeep"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Plainscycling {2} ({2}, Discard this card: Search your library for a Plains card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Plainscycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a plains card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

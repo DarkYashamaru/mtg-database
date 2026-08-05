@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2c7818f4-a818-4603-9af1-05aee2d56ec8",
+  "name": "Assaultron Dominator",
+  "faces": [
+    {
+      "name": "Assaultron Dominator",
+      "type_line": "Artifact Creature \u2014 Robot",
+      "oracle_text": "When this creature enters, you get {E}{E} (two energy counters).\nWhenever an artifact creature you control attacks, you may pay {E}. If you do, put your choice of a +1/+1, first strike, or trample counter on that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an artifact creature you control attacks, you may pay {E}. If you do, put your choice of a +1/+1, first strike, or trample counter on that creature.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Artifact",
+                "Creature"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{e}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "put your choice of a +1/+1, first strike, or trample counter on that creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

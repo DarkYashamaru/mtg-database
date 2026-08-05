@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "59e8747a-3e3f-48d2-aaee-af94ecee378b",
+  "name": "Shackle Slinger",
+  "faces": [
+    {
+      "name": "Shackle Slinger",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Whenever you cast your second spell each turn, choose target creature an opponent controls. If it's tapped, put a stun counter on it. Otherwise, tap it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, choose target creature an opponent controls. If it's tapped, put a stun counter on it. Otherwise, tap it. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose target creature an opponent controls"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a stun counter on it",
+              "condition": [
+                {
+                  "condition_text": "it's tapped"
+                }
+              ]
+            },
+            {
+              "action": "tap",
+              "target": "it",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

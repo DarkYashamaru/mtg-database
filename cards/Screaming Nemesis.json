@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fcb7c93c-46ab-49b5-a6e0-35d73f3be8f0",
+  "name": "Screaming Nemesis",
+  "faces": [
+    {
+      "name": "Screaming Nemesis",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Haste\nWhenever this creature is dealt damage, it deals that much damage to any other target. If a player is dealt damage this way, they can't gain life for the rest of the game.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature is dealt damage, it deals that much damage to any other target. If a player is dealt damage this way, they can't gain life for the rest of the game.",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals that much damage to any other target"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they can't gain life for the rest of the game",
+              "condition": [
+                {
+                  "condition_text": "a player is dealt damage this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

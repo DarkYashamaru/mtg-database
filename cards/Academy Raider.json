@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "75131d75-0703-44d0-b503-35190be8e66f",
+  "name": "Academy Raider",
+  "faces": [
+    {
+      "name": "Academy Raider",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)\nWhenever this creature deals combat damage to a player, you may discard a card. If you do, draw a card.",
+      "static": [
+        {
+          "keyword": "intimidate"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

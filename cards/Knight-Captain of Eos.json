@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "611f1714-a8bb-4ce4-a810-4d26fe64e358",
+  "name": "Knight-Captain of Eos",
+  "faces": [
+    {
+      "name": "Knight-Captain of Eos",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "When this creature enters, create two 1/1 white Soldier creature tokens.\n{W}, Sacrifice a Soldier: Prevent all combat damage that would be dealt this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create two 1/1 white Soldier creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 white Soldier creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{W}, Sacrifice a Soldier: Prevent all combat damage that would be dealt this turn.",
+          "cost": "{W}, Sacrifice a Soldier",
+          "condition": [],
+          "effects": [
+            {
+              "action": "prevent_damage",
+              "scope": "all_combat_damage_this_turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

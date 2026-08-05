@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b21062e-97b0-4967-96df-30e8309f4fba",
+  "name": "Kogla, the Titan Ape",
+  "faces": [
+    {
+      "name": "Kogla, the Titan Ape",
+      "type_line": "Legendary Creature \u2014 Ape",
+      "oracle_text": "When Kogla enters, it fights up to one target creature you don't control.\nWhenever Kogla attacks, destroy target artifact or enchantment defending player controls.\n{1}{G}: Return target Human you control to its owner's hand. Kogla gains indestructible until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Kogla enters, it fights up to one target creature you don't control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it fights up to one target creature you don't control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Kogla attacks, destroy target artifact or enchantment defending player controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target artifact or enchantment defending player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{G}: Return target Human you control to its owner's hand. Kogla gains indestructible until end of turn.",
+          "cost": "{1}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target Human you control to its owner's hand"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

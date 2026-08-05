@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2c3e6377-d09c-46b6-8a83-ada4a2930b14",
+  "name": "Will of the Jeskai",
+  "faces": [
+    {
+      "name": "Will of the Jeskai",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose one. If you control a commander as you cast this spell, you may choose both instead.\n\u2022 Each player may discard their hand and draw five cards.\n\u2022 Each instant and sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one. If you control a commander as you cast this spell, you may choose both instead.",
+          "effects": [
+            {
+              "action": "mode_selection",
+              "choose_count": 1
+            },
+            {
+              "action": "mode_selection_modifier",
+              "choose_count": 2,
+              "condition": [
+                {
+                  "you_control_commander": true
+                },
+                {
+                  "condition_text": "you control a commander as you cast this spell"
+                }
+              ],
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Each player may discard their hand and draw five cards.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Each player may discard their hand and draw five cards"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Each instant and sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost.",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "_each_instant_and_sorcery_card_in_you_control_graveyard",
+              "keyword": "flashback"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The flashback cost is equal to its mana cost"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a9a84fbb-0972-4a3d-bdae-a3b01219b35d",
+  "name": "Thada Adel, Acquisitor",
+  "faces": [
+    {
+      "name": "Thada Adel, Acquisitor",
+      "type_line": "Legendary Creature \u2014 Merfolk Rogue",
+      "oracle_text": "Islandwalk (This creature can't be blocked as long as defending player controls an Island.)\nWhenever Thada Adel deals combat damage to a player, search that player's library for an artifact card and exile it. Then that player shuffles. Until end of turn, you may play that card.",
+      "static": [
+        {
+          "keyword": "islandwalk"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Thada Adel deals combat damage to a player, search that player's library for an artifact card and exile it. Then that player shuffles. Until end of turn, you may play that card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search that player's library for an artifact card and exile it"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "that_player"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may play that card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

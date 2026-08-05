@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3bcc378c-4470-4757-a0d5-025a32c918ea",
+  "name": "Sin, Spira's Punishment",
+  "faces": [
+    {
+      "name": "Sin, Spira's Punishment",
+      "type_line": "Legendary Creature \u2014 Leviathan Avatar",
+      "oracle_text": "Flying\nWhenever Sin enters or attacks, exile a permanent card from your graveyard at random, then create a tapped token that's a copy of that card. If the exiled card is a land card, repeat this process.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Sin enters or attacks, exile a permanent card from your graveyard at random, then create a tapped token that's a copy of that card. If the exiled card is a land card, repeat this process.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile a permanent card from your graveyard at random"
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a tapped token that's a copy of that card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "repeat this process",
+              "condition": [
+                {
+                  "condition_text": "the exiled card is a land card"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

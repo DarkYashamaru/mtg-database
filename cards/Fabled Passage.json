@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0c85b8f7-0bd0-4680-9ec5-d4b110460a54",
+  "name": "Fabled Passage",
+  "faces": [
+    {
+      "name": "Fabled Passage",
+      "type_line": "Land",
+      "oracle_text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle. Then if you control four or more lands, untap that land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle. Then if you control four or more lands, untap that land.",
+          "cost": "{T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "untap",
+              "target": "that_land",
+              "condition": [
+                {
+                  "condition_text": "you control four or more lands"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

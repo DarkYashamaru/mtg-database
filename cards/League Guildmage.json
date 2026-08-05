@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "08bb1f33-b232-4382-a268-4804d4e72d29",
+  "name": "League Guildmage",
+  "faces": [
+    {
+      "name": "League Guildmage",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "{3}{U}, {T}: Draw a card.\n{X}{R}, {T}: Copy target instant or sorcery spell you control with mana value X. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{U}, {T}: Draw a card.",
+          "cost": "{3}{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{X}{R}, {T}: Copy target instant or sorcery spell you control with mana value X. You may choose new targets for the copy.",
+          "cost": "{X}{R}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Copy target instant or sorcery spell you control with mana value X"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

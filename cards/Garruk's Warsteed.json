@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d4911e00-eed1-4c8c-8779-8a3f9406ead7",
+  "name": "Garruk's Warsteed",
+  "faces": [
+    {
+      "name": "Garruk's Warsteed",
+      "type_line": "Creature \u2014 Rhino",
+      "oracle_text": "Vigilance\nWhen this creature enters, you may search your library and/or graveyard for a card named Garruk, Savage Herald, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library and/or graveyard for a card named Garruk, Savage Herald, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library and/or graveyard for a card named Garruk, Savage Herald, reveal it, and put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

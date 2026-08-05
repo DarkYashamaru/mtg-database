@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "425fea06-76ec-4cd9-bd3b-750504fd7fd2",
+  "name": "Imotekh the Stormlord",
+  "faces": [
+    {
+      "name": "Imotekh the Stormlord",
+      "type_line": "Legendary Artifact Creature \u2014 Necron",
+      "oracle_text": "Phaeron \u2014 Whenever one or more artifact cards leave your graveyard, create two 2/2 black Necron Warrior artifact creature tokens.\nGrand Strategist \u2014 At the beginning of combat on your turn, another target artifact creature you control gets +2/+2 and gains menace until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more artifact cards leave your graveyard, create two 2/2 black Necron Warrior artifact creature tokens.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more artifact cards leave your graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "2/2 black Necron Warrior artifact creature tokens",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Necron",
+                  "Warrior",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, another target artifact creature you control gets +2/+2 and gains menace until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_artifact_creature_you_control_gets_22_and",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

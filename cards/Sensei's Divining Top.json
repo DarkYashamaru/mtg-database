@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "13575cf9-65c1-4861-b21e-eb2155e07766",
+  "name": "Sensei's Divining Top",
+  "faces": [
+    {
+      "name": "Sensei's Divining Top",
+      "type_line": "Artifact",
+      "oracle_text": "{1}: Look at the top three cards of your library, then put them back in any order.\n{T}: Draw a card, then put this artifact on top of its owner's library.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}: Look at the top three cards of your library, then put them back in any order.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "return_looked_at_cards",
+              "destination": "top_of_library",
+              "order": "any"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Draw a card, then put this artifact on top of its owner's library.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "put this artifact on top of its owner's library"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

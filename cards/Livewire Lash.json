@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9d3f1b93-ec3b-47eb-bd93-89890fd33ccb",
+  "name": "Livewire Lash",
+  "faces": [
+    {
+      "name": "Livewire Lash",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +2/+0 and has \"Whenever this creature becomes the target of a spell, this creature deals 2 damage to any target.\"\nEquip {2}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +2/+0 and has \"Whenever this creature becomes the target of a spell, this creature deals 2 damage to any target.\"",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 2,
+              "toughness_delta": 0
+            },
+            {
+              "action": "deal_damage",
+              "source": "has_whenever_self_becomes_the_target_of_a_spell_self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

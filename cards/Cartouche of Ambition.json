@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "33fe5484-7cc7-45c7-a349-b15c0454ab08",
+  "name": "Cartouche of Ambition",
+  "faces": [
+    {
+      "name": "Cartouche of Ambition",
+      "type_line": "Enchantment \u2014 Aura Cartouche",
+      "oracle_text": "Enchant creature you control\nWhen this Aura enters, you may put a -1/-1 counter on target creature.\nEnchanted creature gets +1/+1 and has lifelink.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, you may put a -1/-1 counter on target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a -1/-1 counter on target creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1 and has lifelink.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+1 and has lifelink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

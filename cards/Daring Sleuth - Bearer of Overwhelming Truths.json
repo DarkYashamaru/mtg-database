@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "69ca69c7-403b-4b5d-be08-d9dce8ce410e",
+  "name": "Daring Sleuth // Bearer of Overwhelming Truths",
+  "faces": [
+    {
+      "name": "Bearer of Overwhelming Truths",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhenever this creature deals combat damage to a player, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+      "static": [
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "investigate"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Daring Sleuth",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "When you sacrifice a Clue, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you sacrifice a Clue, transform this creature.",
+          "trigger": {
+            "type": "sacrifice_clue",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

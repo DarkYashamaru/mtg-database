@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3ae4b679-2e3c-4f60-bcf4-b279917cdc54",
+  "name": "Dimir Locket",
+  "faces": [
+    {
+      "name": "Dimir Locket",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {U} or {B}.\n{U/B}{U/B}{U/B}{U/B}, {T}, Sacrifice this artifact: Draw two cards.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U} or {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}",
+                "{b}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U/B}{U/B}{U/B}{U/B}, {T}, Sacrifice this artifact: Draw two cards.",
+          "cost": "{U/B}{U/B}{U/B}{U/B}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d268143f-27f0-4f14-8cd3-481923aaff6d",
+  "name": "Thriving Skyclaw",
+  "faces": [
+    {
+      "name": "Thriving Skyclaw",
+      "type_line": "Creature \u2014 Cat Dragon",
+      "oracle_text": "Flying\nWhen this creature enters, you get {E}{E}{E} (three energy counters).\nWhenever this creature attacks, you may pay {E}{E}{E}. If you do, put a +1/+1 counter on it.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E}{E} (three energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, you may pay {E}{E}{E}. If you do, put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {E}{E}{E}"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

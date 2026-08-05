@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c5ee72d5-3a9e-4fe5-8802-3286ee612055",
+  "name": "Sokenzan, Crucible of Defiance",
+  "faces": [
+    {
+      "name": "Sokenzan, Crucible of Defiance",
+      "type_line": "Legendary Land",
+      "oracle_text": "{T}: Add {R}.\nChannel \u2014 {3}{R}, Discard this card: Create two 1/1 colorless Spirit creature tokens. They gain haste until end of turn. This ability costs {1} less to activate for each legendary creature you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "Channel \u2014 {3}{R}, Discard this card: Create two 1/1 colorless Spirit creature tokens. They gain haste until end of turn. This ability costs {1} less to activate for each legendary creature you control.",
+          "cost": "Channel \u2014 {3}{R}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 colorless Spirit creature tokens",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Spirit"
+                ]
+              }
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "they",
+              "keyword": "haste"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This ability costs {1} less to activate for each legendary creature you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "870deab4-8570-40e9-aeda-ac3726cebb84",
+  "name": "Asylum Visitor",
+  "faces": [
+    {
+      "name": "Asylum Visitor",
+      "type_line": "Creature \u2014 Vampire Wizard",
+      "oracle_text": "At the beginning of each player's upkeep, if that player has no cards in hand, you draw a card and you lose 1 life.\nMadness {1}{B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each player's upkeep, if that player has no cards in hand, you draw a card and you lose 1 life.",
+          "trigger": {
+            "type": "beginning_of_each_players_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "that player has no cards in hand"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Madness {1}{B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Madness {1}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

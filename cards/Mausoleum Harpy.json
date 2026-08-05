@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ba682da8-50f5-478f-99cc-60a57d229a04",
+  "name": "Mausoleum Harpy",
+  "faces": [
+    {
+      "name": "Mausoleum Harpy",
+      "type_line": "Creature \u2014 Harpy",
+      "oracle_text": "Flying\nAscend (If you control ten or more permanents, you get the city's blessing for the rest of the game.)\nWhenever another creature you control dies, if you have the city's blessing, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "ascend"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control dies, if you have the city's blessing, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "you have the city's blessing"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

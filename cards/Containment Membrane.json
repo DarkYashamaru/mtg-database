@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e3bf1a95-4363-4915-8f43-b423714861ec",
+  "name": "Containment Membrane",
+  "faces": [
+    {
+      "name": "Containment Membrane",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Surge {U} (You may cast this spell for its surge cost if you or a teammate has cast another spell this turn.)\nEnchant creature\nEnchanted creature doesn't untap during its controller's untap step.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Surge {U} (You may cast this spell for its surge cost if you or a teammate has cast another spell this turn.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Surge {U}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "enchanted_creature",
+              "scope": "controllers_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

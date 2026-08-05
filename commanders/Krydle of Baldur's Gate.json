@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "77212081-0b49-4d92-9c5a-1f21e6907fce",
+  "name": "Krydle of Baldur's Gate",
+  "faces": [
+    {
+      "name": "Krydle of Baldur's Gate",
+      "type_line": "Legendary Creature \u2014 Human Elf Rogue",
+      "oracle_text": "Whenever Krydle deals combat damage to a player, that player loses 1 life and mills a card, then you gain 1 life and scry 1.\nWhenever you attack, you may pay {2}. If you do, target creature can't be blocked this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Krydle deals combat damage to a player, that player loses 1 life and mills a card, then you gain 1 life and scry 1.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "that_player",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "mills a card"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack, you may pay {2}. If you do, target creature can't be blocked this turn.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_be_blocked",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

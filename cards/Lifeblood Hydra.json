@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b14d05c0-fe10-4079-a90e-0aea1a8fd375",
+  "name": "Lifeblood Hydra",
+  "faces": [
+    {
+      "name": "Lifeblood Hydra",
+      "type_line": "Creature \u2014 Hydra",
+      "oracle_text": "Trample\nThis creature enters with X +1/+1 counters on it.\nWhen this creature dies, you gain life and draw cards equal to its power.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, you gain life and draw cards equal to its power.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain life and draw cards equal to its power"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

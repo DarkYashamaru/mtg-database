@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "409305b3-5373-4376-8096-c04a73184cef",
+  "name": "Rona, Disciple of Gix",
+  "faces": [
+    {
+      "name": "Rona, Disciple of Gix",
+      "type_line": "Legendary Creature \u2014 Human Artificer",
+      "oracle_text": "When Rona enters, you may exile target historic card from your graveyard. (Artifacts, legendaries, and Sagas are historic.)\nYou may cast spells from among cards exiled with Rona.\n{4}, {T}: Exile the top card of your library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Rona enters, you may exile target historic card from your graveyard. (Artifacts, legendaries, and Sagas are historic.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile target historic card from your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}, {T}: Exile the top card of your library.",
+          "cost": "{4}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may cast spells from among cards exiled with Rona.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast spells from among cards exiled with Rona"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

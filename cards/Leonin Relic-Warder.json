@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8e720216-a980-4a34-8aef-62ac3ef15a6e",
+  "name": "Leonin Relic-Warder",
+  "faces": [
+    {
+      "name": "Leonin Relic-Warder",
+      "type_line": "Creature \u2014 Cat Cleric",
+      "oracle_text": "When this creature enters, you may exile target artifact or enchantment.\nWhen this creature leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may exile target artifact or enchantment.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Artifact",
+                  "Enchantment"
+                ]
+              },
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return the exiled card to the battlefield under its owner's control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

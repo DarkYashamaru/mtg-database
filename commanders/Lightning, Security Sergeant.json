@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e1626880-0fa3-441a-9978-b293fc87c418",
+  "name": "Lightning, Security Sergeant",
+  "faces": [
+    {
+      "name": "Lightning, Security Sergeant",
+      "type_line": "Legendary Creature \u2014 Human Soldier",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever Lightning deals combat damage to a player, exile the top card of your library. You may play that card for as long as you control Lightning.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Lightning deals combat damage to a player, exile the top card of your library. You may play that card for as long as you control Lightning.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card for as long as you control Lightning"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

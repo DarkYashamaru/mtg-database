@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2f26f270-26d9-46d3-957f-19f52d51eb03",
+  "name": "The Legend of Roku // Avatar Roku",
+  "faces": [
+    {
+      "name": "Avatar Roku",
+      "type_line": "Legendary Creature \u2014 Avatar",
+      "oracle_text": "Firebending 4 (Whenever this creature attacks, add {R}{R}{R}{R}. This mana lasts until end of combat.)\n{8}: Create a 4/4 red Dragon creature token with flying and firebending 4.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{8}: Create a 4/4 red Dragon creature token with flying and firebending 4.",
+          "cost": "{8}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/4 red Dragon creature token with flying and firebending 4",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Dragon"
+                ],
+                "keywords": [
+                  "flying",
+                  "firebending"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Firebending 4 (Whenever this creature attacks, add {R}{R}{R}{R}. This mana lasts until end of combat.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Firebending 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Legend of Roku",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 Exile the top three cards of your library. Until the end of your next turn, you may play those cards.\nII \u2014 Add one mana of any color.\nIII \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Exile the top three cards of your library. Until the end of your next turn, you may play those cards.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile the top three cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until the end of your next turn, you may play those cards"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Add one mana of any color.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

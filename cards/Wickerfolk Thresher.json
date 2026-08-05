@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fa6d7d68-34e3-4ff6-ae6c-36848974555a",
+  "name": "Wickerfolk Thresher",
+  "faces": [
+    {
+      "name": "Wickerfolk Thresher",
+      "type_line": "Artifact Creature \u2014 Scarecrow",
+      "oracle_text": "Delirium \u2014 Whenever this creature attacks, if there are four or more card types among cards in your graveyard, look at the top card of your library. If it's a land card, you may put it onto the battlefield. If you don't put the card onto the battlefield, put it into your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, if there are four or more card types among cards in your graveyard, look at the top card of your library. If it's a land card, you may put it onto the battlefield. If you don't put the card onto the battlefield, put it into your hand.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "there are four or more card types among cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "you don't put the card onto the battlefield"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

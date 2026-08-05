@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b0fd6889-20b4-439b-aa97-2e90aca1675a",
+  "name": "Pelakka Predation // Pelakka Caverns",
+  "faces": [
+    {
+      "name": "Pelakka Caverns",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {B}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pelakka Predation",
+      "type_line": "Sorcery",
+      "oracle_text": "Target opponent reveals their hand. You choose a card from it with mana value 3 or greater. That player discards that card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target opponent reveals their hand. You choose a card from it with mana value 3 or greater. That player discards that card.",
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a card from it with mana value 3 or greater"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

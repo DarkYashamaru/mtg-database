@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "34f34409-326d-4994-a0ea-1a69aa278f03",
+  "name": "Sheoldred, the Apocalypse",
+  "faces": [
+    {
+      "name": "Sheoldred, the Apocalypse",
+      "type_line": "Legendary Creature \u2014 Phyrexian Praetor",
+      "oracle_text": "Deathtouch\nWhenever you draw a card, you gain 2 life.\nWhenever an opponent draws a card, they lose 2 life.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw a card, you gain 2 life.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an opponent draws a card, they lose 2 life.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "they lose 2 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

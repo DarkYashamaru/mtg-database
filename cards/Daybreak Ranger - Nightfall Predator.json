@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "oracle_id": "280624aa-5f9a-48fd-85ea-815c96c747b3",
+  "name": "Daybreak Ranger // Nightfall Predator",
+  "faces": [
+    {
+      "name": "Daybreak Ranger",
+      "type_line": "Creature \u2014 Human Archer Ranger Werewolf",
+      "oracle_text": "{T}: This creature deals 2 damage to target creature with flying.\nAt the beginning of each upkeep, if no spells were cast last turn, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, if no spells were cast last turn, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "no spells were cast last turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: This creature deals 2 damage to target creature with flying.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals 2 damage to target creature with flying"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Nightfall Predator",
+      "type_line": "Creature \u2014 Werewolf",
+      "oracle_text": "{R}, {T}: This creature fights target creature. (Each deals damage equal to its power to the other.)\nAt the beginning of each upkeep, if a player cast two or more spells last turn, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, if a player cast two or more spells last turn, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "a player cast two or more spells last turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R}, {T}: This creature fights target creature. (Each deals damage equal to its power to the other.)",
+          "cost": "{R}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature fights target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

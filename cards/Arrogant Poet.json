@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0b2e9571-0c28-4a8f-9ba7-0147b40290a7",
+  "name": "Arrogant Poet",
+  "faces": [
+    {
+      "name": "Arrogant Poet",
+      "type_line": "Creature \u2014 Human Warlock",
+      "oracle_text": "Whenever this creature attacks, you may pay 2 life. If you do, it gains flying until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may pay 2 life. If you do, it gains flying until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay 2 life"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "flying",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

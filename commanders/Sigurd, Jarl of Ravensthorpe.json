@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eedd74c4-42d1-41ba-9051-dc518e45ebbb",
+  "name": "Sigurd, Jarl of Ravensthorpe",
+  "faces": [
+    {
+      "name": "Sigurd, Jarl of Ravensthorpe",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "Vigilance, trample, lifelink\nBoast \u2014 {1}: Put a lore counter on target Saga you control or remove one from it. (Activate only if this creature attacked this turn and only once each turn.)\nWhenever you put a lore counter on a Saga you control, put a +1/+1 counter on up to one other target creature.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you put a lore counter on a Saga you control, put a +1/+1 counter on up to one other target creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you put a lore counter on a Saga you control"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "up_to_one_other_target_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Boast \u2014 {1}: Put a lore counter on target Saga you control or remove one from it. (Activate only if this creature attacked this turn and only once each turn.)",
+          "cost": "Boast \u2014 {1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a lore counter on target Saga you control or remove one from it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

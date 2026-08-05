@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0c73f566-3b8a-4d57-b7a9-7437b6f1f66d",
+  "name": "Flamewright",
+  "faces": [
+    {
+      "name": "Flamewright",
+      "type_line": "Creature \u2014 Human Artificer",
+      "oracle_text": "{1}, {T}: Create a 1/1 colorless Construct artifact creature token with defender.\n{T}, Sacrifice a creature with defender: This creature deals 1 damage to any target.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}: Create a 1/1 colorless Construct artifact creature token with defender.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 colorless Construct artifact creature token with defender",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Construct",
+                  "artifact"
+                ],
+                "keywords": [
+                  "defender"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Sacrifice a creature with defender: This creature deals 1 damage to any target.",
+          "cost": "{T}, Sacrifice a creature with defender",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

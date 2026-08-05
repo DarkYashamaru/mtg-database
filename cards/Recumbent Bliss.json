@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aaea9b83-3db5-4cdb-8e45-5c00a102c3ba",
+  "name": "Recumbent Bliss",
+  "faces": [
+    {
+      "name": "Recumbent Bliss",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature can't attack or block.\nAt the beginning of your upkeep, you may gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may gain 1 life.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may gain 1 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature can't attack or block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "enchanted_creature",
+              "restriction": "cant_attack_or_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

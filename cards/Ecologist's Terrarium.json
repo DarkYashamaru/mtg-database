@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "04b33a43-57f1-46e9-b2c2-1dd3f8a4935c",
+  "name": "Ecologist's Terrarium",
+  "faces": [
+    {
+      "name": "Ecologist's Terrarium",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n{2}, {T}, Sacrifice this artifact: Put a +1/+1 counter on target creature. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}, Sacrifice this artifact: Put a +1/+1 counter on target creature. Activate only as a sorcery.",
+          "cost": "{2}, {T}, Sacrifice this artifact",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

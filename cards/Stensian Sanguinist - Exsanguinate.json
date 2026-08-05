@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "25877c41-39a4-4cc3-ac4b-8f3dd06d579b",
+  "name": "Stensian Sanguinist // Exsanguinate",
+  "faces": [
+    {
+      "name": "Exsanguinate",
+      "type_line": "Sorcery",
+      "oracle_text": "Each opponent loses X life. You gain life equal to the life lost this way.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Each opponent loses X life. You gain life equal to the life lost this way.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent loses X life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You gain life equal to the life lost this way"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stensian Sanguinist",
+      "type_line": "Creature \u2014 Vampire Cleric",
+      "oracle_text": "Whenever you attack, target creature gains deathtouch until end of turn. Whenever that creature deals combat damage to a player this combat, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, target creature gains deathtouch until end of turn. Whenever that creature deals combat damage to a player this combat, this creature becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "deathtouch"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Whenever that creature deals combat damage to a player this combat, this creature becomes prepared"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

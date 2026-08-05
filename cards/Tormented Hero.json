@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "47fbb4f0-565b-4682-9971-0735210c76e5",
+  "name": "Tormented Hero",
+  "faces": [
+    {
+      "name": "Tormented Hero",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "This creature enters tapped.\nHeroic \u2014 Whenever you cast a spell that targets this creature, each opponent loses 1 life. You gain life equal to the life lost this way.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that targets this creature, each opponent loses 1 life. You gain life equal to the life lost this way.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "that targets this creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You gain life equal to the life lost this way"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

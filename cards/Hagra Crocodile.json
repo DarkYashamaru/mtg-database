@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8bca3213-d8e1-4915-bd9a-9a291cdec1cd",
+  "name": "Hagra Crocodile",
+  "faces": [
+    {
+      "name": "Hagra Crocodile",
+      "type_line": "Creature \u2014 Crocodile",
+      "oracle_text": "This creature can't block.\nLandfall \u2014 Whenever a land you control enters, this creature gets +2/+2 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, this creature gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

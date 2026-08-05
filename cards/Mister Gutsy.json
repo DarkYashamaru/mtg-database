@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "09763d9a-056f-49db-a72b-1c7325075789",
+  "name": "Mister Gutsy",
+  "faces": [
+    {
+      "name": "Mister Gutsy",
+      "type_line": "Artifact Creature \u2014 Robot Soldier",
+      "oracle_text": "Whenever you cast an Aura or Equipment spell, put a +1/+1 counter on this creature.\nWhen this creature dies, create X Junk tokens, where X is the number of +1/+1 counters on it. (They're artifacts with \"{T}, Sacrifice this token: Exile the top card of your library. You may play that card this turn. Activate only as a sorcery.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an Aura or Equipment spell, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "aura",
+                "equipment"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, create X Junk tokens, where X is the number of +1/+1 counters on it. (They're artifacts with \"{T}, Sacrifice this token: Exile the top card of your library. You may play that card this turn. Activate only as a sorcery.\")",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "count",
+              "count_object": "11_counters_on_it",
+              "token": {
+                "raw": "Junk tokens"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

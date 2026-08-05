@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4e07d30a-d29a-49bc-ab49-41ea4116a18c",
+  "name": "Siege Smash",
+  "faces": [
+    {
+      "name": "Siege Smash",
+      "type_line": "Instant",
+      "oracle_text": "Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.)\nChoose one \u2014\n\u2022 Destroy target artifact.\n\u2022 Target creature gets +3/+2 and gains trample until end of turn.",
+      "static": [
+        {
+          "keyword": "split second"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Destroy target artifact.\n\u2022 Target creature gets +3/+2 and gains trample until end of turn.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Destroy target artifact.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_artifact"
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Target creature gets +3/+2 and gains trample until end of turn.",
+              "effects": [
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "target_creature_gets_32_and",
+                  "keyword": "trample"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

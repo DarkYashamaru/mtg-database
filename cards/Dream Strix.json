@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bfd6a73e-d126-4afe-99db-98cf716a1772",
+  "name": "Dream Strix",
+  "faces": [
+    {
+      "name": "Dream Strix",
+      "type_line": "Creature \u2014 Bird Illusion",
+      "oracle_text": "Flying\nWhen this creature becomes the target of a spell, sacrifice it.\nWhen this creature dies, learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature becomes the target of a spell, sacrifice it.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this creature becomes the target of a spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, learn. (You may reveal a Lesson card you own from outside the game and put it into your hand, or discard a card to draw a card.)",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "learn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

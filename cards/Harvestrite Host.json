@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "56208bdc-2eed-4ccc-8c34-c0eba9db0aa9",
+  "name": "Harvestrite Host",
+  "faces": [
+    {
+      "name": "Harvestrite Host",
+      "type_line": "Creature \u2014 Rabbit Citizen",
+      "oracle_text": "Whenever this creature or another Rabbit you control enters, target creature you control gets +1/+0 until end of turn. Then draw a card if this is the second time this ability has resolved this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Rabbit you control enters, target creature you control gets +1/+0 until end of turn. Then draw a card if this is the second time this ability has resolved this turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Rabbit"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then draw a card if this is the second time this ability has resolved this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

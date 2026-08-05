@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "27599eff-19df-48e2-9a1e-0c087f42a075",
+  "name": "Firemantle Mage",
+  "faces": [
+    {
+      "name": "Firemantle Mage",
+      "type_line": "Creature \u2014 Human Shaman Ally",
+      "oracle_text": "Rally \u2014 Whenever this creature or another Ally you control enters, creatures you control gain menace until end of turn. (A creature with menace can't be blocked except by two or more creatures.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Ally you control enters, creatures you control gain menace until end of turn. (A creature with menace can't be blocked except by two or more creatures.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Ally"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

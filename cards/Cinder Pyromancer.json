@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "47bfee3e-34b4-4b89-aaf8-f74e0c3d3c62",
+  "name": "Cinder Pyromancer",
+  "faces": [
+    {
+      "name": "Cinder Pyromancer",
+      "type_line": "Creature \u2014 Elemental Shaman",
+      "oracle_text": "{T}: This creature deals 1 damage to target player or planeswalker.\nWhenever you cast a red spell, you may untap this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a red spell, you may untap this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Red"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: This creature deals 1 damage to target player or planeswalker.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals 1 damage to target player or planeswalker"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

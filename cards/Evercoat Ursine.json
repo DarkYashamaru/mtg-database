@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "65c32889-3d70-449f-af76-05385c78c5a9",
+  "name": "Evercoat Ursine",
+  "faces": [
+    {
+      "name": "Evercoat Ursine",
+      "type_line": "Creature \u2014 Elemental Bear",
+      "oracle_text": "Trample\nHideaway 3, hideaway 3 (When this creature enters, look at the top three cards of your library, exile one face down, then put the rest on the bottom in a random order. Then do it again.)\nWhenever this creature deals combat damage to a player, if there are cards exiled with it, you may play one of them without paying its mana cost.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, if there are cards exiled with it, you may play one of them without paying its mana cost.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "there are cards exiled with it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may play one of them without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Hideaway 3, hideaway 3 (When this creature enters, look at the top three cards of your library, exile one face down, then put the rest on the bottom in a random order. Then do it again.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Hideaway 3, hideaway 3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

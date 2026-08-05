@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e6ad1be9-f13d-4590-b3db-e2d0fff46f03",
+  "name": "Waterlogged Teachings // Inundated Archive",
+  "faces": [
+    {
+      "name": "Inundated Archive",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {U} or {B}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U} or {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}",
+                "{b}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Waterlogged Teachings",
+      "type_line": "Instant",
+      "oracle_text": "Search your library for an instant card or a card with flash, reveal it, put it into your hand, then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for an instant card or a card with flash, reveal it, put it into your hand, then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for an instant card or a card with flash, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

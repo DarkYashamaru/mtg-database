@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1f3d5ca-cb17-400f-8ed9-3b9a4f151b62",
+  "name": "Steelburr Champion",
+  "faces": [
+    {
+      "name": "Steelburr Champion",
+      "type_line": "Creature \u2014 Mouse Soldier",
+      "oracle_text": "Offspring {1}{W} (You may pay an additional {1}{W} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\nVigilance\nWhenever an opponent casts a noncreature spell, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent casts a noncreature spell, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an opponent casts a noncreature spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Offspring {1}{W} (You may pay an additional {1}{W} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Offspring {1}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

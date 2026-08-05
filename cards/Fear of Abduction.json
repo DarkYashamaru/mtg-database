@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8f5495d7-ac44-47cd-aa39-48a35034b390",
+  "name": "Fear of Abduction",
+  "faces": [
+    {
+      "name": "Fear of Abduction",
+      "type_line": "Enchantment Creature \u2014 Nightmare",
+      "oracle_text": "As an additional cost to cast this spell, exile a creature you control.\nFlying\nWhen this creature enters, exile target creature an opponent controls.\nWhen this creature leaves the battlefield, put each card exiled with it into its owner's hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, exile target creature an opponent controls.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target creature an opponent controls"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature leaves the battlefield, put each card exiled with it into its owner's hand.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put each card exiled with it into its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast this spell, exile a creature you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As an additional cost to cast this spell, exile a creature you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

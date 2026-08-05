@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "46db3dc2-9eb1-4be3-96f9-0013119fcd97",
+  "name": "Ancient Excavation",
+  "faces": [
+    {
+      "name": "Ancient Excavation",
+      "type_line": "Instant",
+      "oracle_text": "Draw cards equal to the number of cards in your hand, then discard a card for each card drawn this way.\nBasic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Basic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Basic landcycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Draw cards equal to the number of cards in your hand, then discard a card for each card drawn this way.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "draw cards equal to the number of cards in your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "discard a card for each card drawn this way"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

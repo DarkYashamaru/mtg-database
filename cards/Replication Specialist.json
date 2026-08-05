@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7ce7decb-1438-4c3d-88d2-26b0b3996b33",
+  "name": "Replication Specialist",
+  "faces": [
+    {
+      "name": "Replication Specialist",
+      "type_line": "Creature \u2014 Moonfolk Artificer",
+      "oracle_text": "Flying\nWhenever a nontoken artifact you control enters, you may pay {1}{U}. If you do, create a token that's a copy of that artifact.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken artifact you control enters, you may pay {1}{U}. If you do, create a token that's a copy of that artifact.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Artifact"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{U}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of that artifact",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

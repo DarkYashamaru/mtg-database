@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8ddbe82b-7fc9-4b2c-85de-dc747adbb3ca",
+  "name": "Icatian Skirmishers",
+  "faces": [
+    {
+      "name": "Icatian Skirmishers",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "First strike; banding (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)\nWhenever this creature attacks, all creatures banded with it gain first strike until end of turn.",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "banding"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, all creatures banded with it gain first strike until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "all_creatures_banded_with_it",
+              "keyword": "first_strike"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

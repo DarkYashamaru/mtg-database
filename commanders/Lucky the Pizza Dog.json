@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3a429a1e-62c0-4f01-b09e-2bbf63e56a98",
+  "name": "Lucky the Pizza Dog",
+  "faces": [
+    {
+      "name": "Lucky the Pizza Dog",
+      "type_line": "Legendary Creature \u2014 Dog",
+      "oracle_text": "Whenever you cast a Cat, Dog, or Hero spell, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nAt the beginning of each end step, if you gained life this turn, put a +1/+1 counter on Lucky.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Cat, Dog, or Hero spell, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a Cat"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Dog, or Hero spell, create a Food token"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each end step, if you gained life this turn, put a +1/+1 counter on Lucky.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you gained life this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

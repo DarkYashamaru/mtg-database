@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "24c193cc-3f83-4414-8cac-8b9f48d5bb6d",
+  "name": "Grappling Hook",
+  "faces": [
+    {
+      "name": "Grappling Hook",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has double strike.\nWhenever equipped creature attacks, you may have target creature block it this turn if able.\nEquip {4}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, you may have target creature block it this turn if able.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have target creature block it this turn if able"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4}",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has double strike.",
+          "effects": [
+            {
+              "action": "grant_keyword",
+              "target": "equipped_creature",
+              "keyword": "double_strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

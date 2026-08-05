@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d6780d29-0dd7-4f04-95b8-4ca6a55308f2",
+  "name": "Throw from the Saddle",
+  "faces": [
+    {
+      "name": "Throw from the Saddle",
+      "type_line": "Sorcery",
+      "oracle_text": "Target creature you control gets +1/+1 until end of turn. Put a +1/+1 counter on it instead if it's a Mount. Then it deals damage equal to its power to target creature you don't control.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature you control gets +1/+1 until end of turn. Put a +1/+1 counter on it instead if it's a Mount. Then it deals damage equal to its power to target creature you don't control.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "it_instead_if_its_a_mount",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then it deals damage equal to its power to target creature you don't control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

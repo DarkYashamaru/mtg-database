@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "94a7dcef-d1c1-4ffa-869e-b911e84ed66c",
+  "name": "Oran-Rief Ooze",
+  "faces": [
+    {
+      "name": "Oran-Rief Ooze",
+      "type_line": "Creature \u2014 Ooze",
+      "oracle_text": "When this creature enters, put a +1/+1 counter on target creature you control.\nWhenever this creature attacks, put a +1/+1 counter on each attacking creature with a +1/+1 counter on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, put a +1/+1 counter on each attacking creature with a +1/+1 counter on it.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "each_attacking_creature_with_a_11_counter_on_it",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

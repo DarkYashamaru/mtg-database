@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f4770345-f15e-4e31-b6ef-4c2608df9644",
+  "name": "Sphere Grid",
+  "faces": [
+    {
+      "name": "Sphere Grid",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature you control deals combat damage to a player, put a +1/+1 counter on that creature.\nUnlock Ability \u2014 Creatures you control with +1/+1 counters on them have reach and trample.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control deals combat damage to a player, put a +1/+1 counter on that creature.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "that_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Unlock Ability \u2014 Creatures you control with +1/+1 counters on them have reach and trample.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "unlock_ability__creatures_you_control_with_11_counters_on_self"
+              },
+              "keywords": [
+                "reach",
+                "trample"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c8fbcef0-2cbf-4a59-8322-374dd9153ebf",
+  "name": "Sleeping Potion",
+  "faces": [
+    {
+      "name": "Sleeping Potion",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\nWhen enchanted creature becomes the target of a spell or ability, sacrifice this Aura.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, tap enchanted creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "enchanted_creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "When enchanted creature becomes the target of a spell or ability, sacrifice this Aura.",
+          "trigger": {
+            "type": "becomes_target_of_spell_or_ability",
+            "subject": "enchanted_creature_b"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_aura"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "enchanted_creature",
+              "scope": "controllers_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

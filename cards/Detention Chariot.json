@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0ea2c5ad-2982-4041-8c9d-a1d31ced11aa",
+  "name": "Detention Chariot",
+  "faces": [
+    {
+      "name": "Detention Chariot",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "When this Vehicle enters, exile target artifact or creature an opponent controls until this Vehicle leaves the battlefield.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)\nCycling {W} ({W}, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, exile target artifact or creature an opponent controls until this Vehicle leaves the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target artifact or creature an opponent controls until this Vehicle leaves the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "Cycling {W} ({W}, Discard this card: Draw a card.)",
+          "cost": "Cycling {W} ({W}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aa1de5ce-ddd4-4c1f-8c52-0311f4419e7b",
+  "name": "Mardu Ascendancy",
+  "faces": [
+    {
+      "name": "Mardu Ascendancy",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a nontoken creature you control attacks, create a 1/1 red Goblin creature token that's tapped and attacking.\nSacrifice this enchantment: Creatures you control get +0/+3 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken creature you control attacks, create a 1/1 red Goblin creature token that's tapped and attacking.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a 1/1 red Goblin creature token that's tapped and attacking"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice this enchantment: Creatures you control get +0/+3 until end of turn.",
+          "cost": "Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 0,
+              "toughness_delta": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

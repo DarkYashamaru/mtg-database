@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ee565d5c-7a3a-481c-91aa-b982cf384220",
+  "name": "Livaan, Cultist of Tiamat",
+  "faces": [
+    {
+      "name": "Livaan, Cultist of Tiamat",
+      "type_line": "Legendary Creature \u2014 Dragon Shaman",
+      "oracle_text": "Whenever you cast a noncreature spell, target creature gets +X/+0 until end of turn, where X is that spell's mana value.\nChoose a Background (You can have a Background as a second commander.)",
+      "static": [
+        {
+          "keyword": "choose_a_background"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, target creature gets +X/+0 until end of turn, where X is that spell's mana value.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target creature gets +X/+0 until end of turn, where X is that spell's mana value"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

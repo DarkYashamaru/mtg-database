@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b6fe779f-b20d-49cc-96dd-54f1ffb312e1",
+  "name": "Sequestered Stash",
+  "faces": [
+    {
+      "name": "Sequestered Stash",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{4}, {T}, Sacrifice this land: Mill five cards. Then you may put an artifact card from your graveyard on top of your library.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}, {T}, Sacrifice this land: Mill five cards. Then you may put an artifact card from your graveyard on top of your library.",
+          "cost": "{4}, {T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 5
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may put an artifact card from your graveyard on top of your library"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8381b04a-666b-4e33-b277-6db39fdfe905",
+  "name": "Veilborn Ghoul",
+  "faces": [
+    {
+      "name": "Veilborn Ghoul",
+      "type_line": "Creature \u2014 Zombie",
+      "oracle_text": "This creature can't block.\nWhenever a Swamp you control enters, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Swamp you control enters, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Swamp"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

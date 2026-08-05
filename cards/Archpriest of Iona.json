@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a8730922-3f47-4c07-bdd5-4a0f557a3d3d",
+  "name": "Archpriest of Iona",
+  "faces": [
+    {
+      "name": "Archpriest of Iona",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "Archpriest of Iona's power is equal to the number of creatures in your party. (Your party consists of up to one each of Cleric, Rogue, Warrior, and Wizard.)\nAt the beginning of combat on your turn, if you have a full party, target creature gets +1/+1 and gains flying until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if you have a full party, target creature gets +1/+1 and gains flying until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you have a full party"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_gets_11_and",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Archpriest of Iona's power is equal to the number of creatures in your party. (Your party consists of up to one each of Cleric, Rogue, Warrior, and Wizard.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Archpriest of Iona's power is equal to the number of creatures in your party"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

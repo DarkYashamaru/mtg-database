@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d9af0da0-5e10-40c5-afb2-3f44c016b927",
+  "name": "Gary Clone",
+  "faces": [
+    {
+      "name": "Gary Clone",
+      "type_line": "Creature \u2014 Human Citizen",
+      "oracle_text": "Squad {2} (As an additional cost to cast this spell, you may pay {2} any number of times. When this creature enters, create that many tokens that are copies of it.)\nWhenever this creature attacks, each creature you control named Gary Clone gets +1/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, each creature you control named Gary Clone gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "each_creature_you_control_named_self"
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Squad {2} (As an additional cost to cast this spell, you may pay {2} any number of times. When this creature enters, create that many tokens that are copies of it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Squad {2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

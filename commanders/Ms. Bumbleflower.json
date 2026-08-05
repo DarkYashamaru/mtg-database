@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "25636214-c6ea-4655-a5e8-98e735da5b05",
+  "name": "Ms. Bumbleflower",
+  "faces": [
+    {
+      "name": "Ms. Bumbleflower",
+      "type_line": "Legendary Creature \u2014 Rabbit Citizen",
+      "oracle_text": "Vigilance\nWhenever you cast a spell, target opponent draws a card. Put a +1/+1 counter on target creature. It gains flying until end of turn. If this is the second time this ability has resolved this turn, you draw two cards.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, target opponent draws a card. Put a +1/+1 counter on target creature. It gains flying until end of turn. If this is the second time this ability has resolved this turn, you draw two cards.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "target": "target_opponent",
+              "amount": 1
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "flying"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "condition": [
+                {
+                  "ability_resolution_count_this_turn": 2
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

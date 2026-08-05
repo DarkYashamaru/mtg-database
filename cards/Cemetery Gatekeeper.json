@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fa450433-85b0-4f95-bd4e-f141ba036bee",
+  "name": "Cemetery Gatekeeper",
+  "faces": [
+    {
+      "name": "Cemetery Gatekeeper",
+      "type_line": "Creature \u2014 Vampire",
+      "oracle_text": "First strike\nWhen this creature enters, exile a card from a graveyard.\nWhenever a player plays a land or casts a spell, if it shares a card type with the exiled card, this creature deals 2 damage to that player.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, exile a card from a graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile a card from a graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a player plays a land or casts a spell, if it shares a card type with the exiled card, this creature deals 2 damage to that player.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player plays a land or casts a spell"
+          },
+          "condition": [
+            {
+              "condition_text": "it shares a card type with the exiled card"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 2 damage to that player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

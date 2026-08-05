@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7018ccd0-96e6-458f-b412-197edcb2bafd",
+  "name": "Gruul Locket",
+  "faces": [
+    {
+      "name": "Gruul Locket",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {R} or {G}.\n{R/G}{R/G}{R/G}{R/G}, {T}, Sacrifice this artifact: Draw two cards.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R} or {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{g}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{R/G}{R/G}{R/G}{R/G}, {T}, Sacrifice this artifact: Draw two cards.",
+          "cost": "{R/G}{R/G}{R/G}{R/G}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

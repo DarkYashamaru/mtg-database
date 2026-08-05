@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "15fb3a7a-a6c3-4bef-9f72-1d04b623063e",
+  "name": "Molten-Tail Masticore",
+  "faces": [
+    {
+      "name": "Molten-Tail Masticore",
+      "type_line": "Artifact Creature \u2014 Masticore",
+      "oracle_text": "At the beginning of your upkeep, sacrifice this creature unless you discard a card.\n{4}, Exile a creature card from your graveyard: This creature deals 4 damage to any target.\n{2}: Regenerate this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice this creature unless you discard a card.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self_unless_you_discard_a_card"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}, Exile a creature card from your graveyard: This creature deals 4 damage to any target.",
+          "cost": "{4}, Exile a creature card from your graveyard",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}: Regenerate this creature.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

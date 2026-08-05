@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd3ce6a2-9efc-4dab-a357-9f2aa0a4c0c6",
+  "name": "Flesh Allergy",
+  "faces": [
+    {
+      "name": "Flesh Allergy",
+      "type_line": "Sorcery",
+      "oracle_text": "As an additional cost to cast this spell, sacrifice a creature.\nDestroy target creature. Its controller loses life equal to the number of creatures that died this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast this spell, sacrifice a creature.",
+          "effects": [
+            {
+              "action": "additional_cost",
+              "cost": {
+                "action": "sacrifice",
+                "target": "a_creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy target creature. Its controller loses life equal to the number of creatures that died this turn.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Its controller loses life equal to the number of creatures that died this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

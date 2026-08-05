@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4d330c40-3d72-4528-a254-d036683958d3",
+  "name": "Voodoo Doll",
+  "faces": [
+    {
+      "name": "Voodoo Doll",
+      "type_line": "Artifact",
+      "oracle_text": "At the beginning of your upkeep, put a pin counter on this artifact.\nAt the beginning of your end step, if this artifact is untapped, destroy this artifact and it deals damage to you equal to the number of pin counters on it.\n{X}{X}, {T}: This artifact deals damage equal to the number of pin counters on it to any target. X is the number of pin counters on this artifact.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a pin counter on this artifact.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a pin counter on this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if this artifact is untapped, destroy this artifact and it deals damage to you equal to the number of pin counters on it.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "this artifact is untapped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy this artifact and it deals damage to you equal to the number of pin counters on it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{X}{X}, {T}: This artifact deals damage equal to the number of pin counters on it to any target. X is the number of pin counters on this artifact.",
+          "cost": "{X}{X}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact deals damage equal to the number of pin counters on it to any target"
+            },
+            {
+              "action": "custom_effect",
+              "text": "X is the number of pin counters on this artifact"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

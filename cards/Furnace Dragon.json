@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "13d92af9-a6e2-4847-b2e9-179fe0cc840e",
+  "name": "Furnace Dragon",
+  "faces": [
+    {
+      "name": "Furnace Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Affinity for artifacts (This spell costs {1} less to cast for each artifact you control.)\nFlying\nWhen this creature enters, if you cast it from your hand, exile all artifacts.",
+      "static": [
+        {
+          "keyword": "affinity",
+          "quality": "artifacts"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if you cast it from your hand, exile all artifacts.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you cast it from your hand"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile all artifacts"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "348c7e22-2179-41b8-a5d2-8dd488e7e66d",
+  "name": "Leonardo, Leader in Blue",
+  "faces": [
+    {
+      "name": "Leonardo, Leader in Blue",
+      "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle",
+      "oracle_text": "Sneak {3}{W}{W} (You may cast this spell for {3}{W}{W} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)\nWhen Leonardo enters, if his sneak cost was paid, creatures you control get +2/+0 until end of turn.\n{1}{W}: Leonardo gains first strike until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Leonardo enters, if his sneak cost was paid, creatures you control get +2/+0 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "his sneak cost was paid"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{W}: Leonardo gains first strike until end of turn.",
+          "cost": "{1}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "first_strike"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Sneak {3}{W}{W} (You may cast this spell for {3}{W}{W} if you also return an unblocked attacker you control to hand during the declare blockers step. He enters tapped and attacking.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Sneak {3}{W}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

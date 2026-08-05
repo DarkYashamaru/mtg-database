@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6c728edd-ab67-44ce-b19d-aa98dfce68bb",
+  "name": "Katilda, Dawnhart Prime",
+  "faces": [
+    {
+      "name": "Katilda, Dawnhart Prime",
+      "type_line": "Legendary Creature \u2014 Human Warlock",
+      "oracle_text": "Protection from Werewolves\nHuman creatures you control have \"{T}: Add one mana of any of this creature's colors.\"\n{4}{G}{W}, {T}: Put a +1/+1 counter on each creature you control.",
+      "static": [
+        {
+          "keyword": "protection",
+          "quality": "werewolves"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Human creatures you control have \"{T}: Add one mana of any of this creature's colors.\"",
+          "cost": "Human creatures you control have \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add one mana of any of this creature's colors.\""
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}{G}{W}, {T}: Put a +1/+1 counter on each creature you control.",
+          "cost": "{4}{G}{W}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

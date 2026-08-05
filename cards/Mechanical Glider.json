@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d53d1805-c4ec-4b42-a226-3cd78cd2be84",
+  "name": "Mechanical Glider",
+  "faces": [
+    {
+      "name": "Mechanical Glider",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, attach it to target creature you control.\nEquipped creature has flying. (It can't be blocked except by creatures with flying or reach.)\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, attach it to target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach it to target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has flying. (It can't be blocked except by creatures with flying or reach.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature has flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

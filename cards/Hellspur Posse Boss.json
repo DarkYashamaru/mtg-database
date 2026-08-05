@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "15260fa6-6062-423a-a248-81292ea46178",
+  "name": "Hellspur Posse Boss",
+  "faces": [
+    {
+      "name": "Hellspur Posse Boss",
+      "type_line": "Creature \u2014 Lizard Rogue",
+      "oracle_text": "Other outlaws you control have haste. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)\nWhen this creature enters, create two 1/1 red Mercenary creature tokens with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create two 1/1 red Mercenary creature tokens with \"{T}: Target creature you control gets +1/+0 until end of turn. Activate only as a sorcery.\"",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "create_two_11_red_mercenary_creature_tokens_with_t_target_creature_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            },
+            {
+              "action": "activation_restriction",
+              "condition": [
+                {
+                  "condition_text": "as a sorcery"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other outlaws you control have haste. (Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.)",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "subtypes": [
+                  "Outlaw"
+                ]
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

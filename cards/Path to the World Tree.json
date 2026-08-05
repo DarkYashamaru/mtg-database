@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a933f443-dd53-4805-8446-72693a27cb56",
+  "name": "Path to the World Tree",
+  "faces": [
+    {
+      "name": "Path to the World Tree",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n{2}{W}{U}{B}{R}{G}, Sacrifice this enchantment: You gain 2 life and draw two cards. Target opponent loses 2 life. This enchantment deals 2 damage to up to one target creature. You create a 2/2 green Bear creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{W}{U}{B}{R}{G}, Sacrifice this enchantment: You gain 2 life and draw two cards. Target opponent loses 2 life. This enchantment deals 2 damage to up to one target creature. You create a 2/2 green Bear creature token.",
+          "cost": "{2}{W}{U}{B}{R}{G}, Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "lose_life",
+              "target": "target_opponent",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "This enchantment deals 2 damage to up to one target creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You create a 2/2 green Bear creature token"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

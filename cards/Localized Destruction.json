@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "810e1371-e028-47e7-b97e-a627a35932e0",
+  "name": "Localized Destruction",
+  "faces": [
+    {
+      "name": "Localized Destruction",
+      "type_line": "Sorcery",
+      "oracle_text": "You get {E} (an energy counter), then you may pay one or more {E}. If you do, each creature you control with power equal to the amount of {E} paid this way gains indestructible until end of turn.\nDestroy all creatures.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You get {E} (an energy counter), then you may pay one or more {E}. If you do, each creature you control with power equal to the amount of {E} paid this way gains indestructible until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get {e}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may pay one or more {e}"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "each_creature_you_control_with_power_equal_to_the_amount_of_e_paid_this_way",
+              "keyword": "indestructible",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy all creatures.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "all_creatures"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "691896d7-9894-4845-be1d-08b053897fdb",
+  "name": "Tablet of Epityr",
+  "faces": [
+    {
+      "name": "Tablet of Epityr",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever an artifact you control is put into a graveyard from the battlefield, you may pay {1}. If you do, you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an artifact you control is put into a graveyard from the battlefield, you may pay {1}. If you do, you gain 1 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an artifact you control is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

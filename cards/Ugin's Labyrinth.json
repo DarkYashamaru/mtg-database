@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d565cd3d-68d4-4039-9e45-7e69e31d0ffb",
+  "name": "Ugin's Labyrinth",
+  "faces": [
+    {
+      "name": "Ugin's Labyrinth",
+      "type_line": "Land",
+      "oracle_text": "Imprint \u2014 When this land enters, you may exile a colorless card with mana value 7 or greater from your hand.\n{T}: Add {C}. If a card is exiled with this land, add {C}{C} instead.\n{T}: Return the exiled card to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land enters, you may exile a colorless card with mana value 7 or greater from your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile a colorless card with mana value 7 or greater from your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}. If a card is exiled with this land, add {C}{C} instead.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "add {c}{c} instead",
+              "condition": [
+                {
+                  "condition_text": "a card is exiled with this land"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Return the exiled card to its owner's hand.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return the exiled card to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

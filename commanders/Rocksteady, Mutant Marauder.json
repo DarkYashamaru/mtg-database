@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "506a972d-d226-44dc-95b7-a6e7a63d76cd",
+  "name": "Rocksteady, Mutant Marauder",
+  "faces": [
+    {
+      "name": "Rocksteady, Mutant Marauder",
+      "type_line": "Legendary Creature \u2014 Rhino Mutant",
+      "oracle_text": "Partner with Bebop, Skull & Crossbones (When this creature enters, target player may put Bebop into their hand from their library, then shuffle.)\nTrample\nWhenever another nontoken creature you control enters, put a +1/+1 counter on target creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken creature you control enters, put a +1/+1 counter on target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Bebop, Skull & Crossbones (When this creature enters, target player may put Bebop into their hand from their library, then shuffle.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Bebop, Skull & Crossbones"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

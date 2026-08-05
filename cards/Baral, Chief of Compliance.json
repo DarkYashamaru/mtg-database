@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "baf80db7-2ca8-4bfc-b5b6-25ed51878dd7",
+  "name": "Baral, Chief of Compliance",
+  "faces": [
+    {
+      "name": "Baral, Chief of Compliance",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Instant and sorcery spells you cast cost {1} less to cast.\nWhenever a spell or ability you control counters a spell, you may draw a card. If you do, discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a spell or ability you control counters a spell, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a spell or ability you control counters a spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Instant and sorcery spells you cast cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Instant and sorcery spells you cast cost {1} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

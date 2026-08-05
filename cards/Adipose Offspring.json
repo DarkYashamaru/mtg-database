@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1e21e57e-3bc9-41a8-9746-57b583a5ad63",
+  "name": "Adipose Offspring",
+  "faces": [
+    {
+      "name": "Adipose Offspring",
+      "type_line": "Creature \u2014 Alien",
+      "oracle_text": "Emerge {5}{W} (You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature's mana value.)\nWhen this creature enters, create a 2/2 white Alien creature token. If this creature's emerge cost was paid, instead create X of those tokens, where X is the sacrificed creature's toughness.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 2/2 white Alien creature token. If this creature's emerge cost was paid, instead create X of those tokens, where X is the sacrificed creature's toughness.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 white Alien creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Alien"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "instead create x of those tokens, where x is the sacrificed creature's toughness",
+              "condition": [
+                {
+                  "condition_text": "this creature's emerge cost was paid"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Emerge {5}{W} (You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature's mana value.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Emerge {5}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8e7681ba-6412-4165-b374-5636feec216d",
+  "name": "Conformer Shuriken",
+  "faces": [
+    {
+      "name": "Conformer Shuriken",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has \"Whenever this creature attacks, tap target creature defending player controls. If that creature has greater power than this creature, put a number of +1/+1 counters on this creature equal to the difference.\"\nEquip {2}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has \"Whenever this creature attacks, tap target creature defending player controls. If that creature has greater power than this creature, put a number of +1/+1 counters on this creature equal to the difference.\"",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature has \"Whenever this creature attacks, tap target creature defending player controls"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a number of +1/+1 counters on this creature equal to the difference",
+              "condition": [
+                {
+                  "condition_text": "that creature has greater power than this creature"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

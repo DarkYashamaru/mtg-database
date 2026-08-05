@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "94366283-3b28-4d6a-96e7-c04e5aead5a6",
+  "name": "Impending Doom",
+  "faces": [
+    {
+      "name": "Impending Doom",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +3/+3 and attacks each combat if able.\nWhen enchanted creature dies, this Aura deals 3 damage to that creature's controller.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, this Aura deals 3 damage to that creature's controller.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this Aura deals 3 damage to that creature's controller"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +3/+3 and attacks each combat if able.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +3/+3 and attacks each combat if able"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

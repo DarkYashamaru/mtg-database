@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8fa0fe02-2452-4386-8e0c-165757b0f0a3",
+  "name": "Witch's Oven",
+  "faces": [
+    {
+      "name": "Witch's Oven",
+      "type_line": "Artifact",
+      "oracle_text": "{T}, Sacrifice a creature: Create a Food token. If the sacrificed creature's toughness was 4 or greater, create two Food tokens instead. (They're artifacts with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice a creature: Create a Food token. If the sacrificed creature's toughness was 4 or greater, create two Food tokens instead. (They're artifacts with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "cost": "{T}, Sacrifice a creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "create two food tokens instead",
+              "condition": [
+                {
+                  "condition_text": "the sacrificed creature's toughness was 4 or greater"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

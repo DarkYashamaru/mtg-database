@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "653e4b68-3184-4352-ac91-127f7e6d7c12",
+  "name": "Port Razer",
+  "faces": [
+    {
+      "name": "Port Razer",
+      "type_line": "Creature \u2014 Orc Pirate",
+      "oracle_text": "Whenever this creature deals combat damage to a player, untap each creature you control. After this phase, there is an additional combat phase.\nThis creature can't attack a player it has already attacked this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, untap each creature you control. After this phase, there is an additional combat phase.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap each creature you control"
+            },
+            {
+              "action": "add_combat_phase_after_this_phase"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't attack a player it has already attacked this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature can't attack a player it has already attacked this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

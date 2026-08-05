@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "767e4aa9-527f-425f-bffb-6d842e1fbb74",
+  "name": "Swarm of Bloodflies",
+  "faces": [
+    {
+      "name": "Swarm of Bloodflies",
+      "type_line": "Creature \u2014 Insect",
+      "oracle_text": "Flying\nThis creature enters with two +1/+1 counters on it.\nWhenever another creature dies, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature dies, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": "another_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with two +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

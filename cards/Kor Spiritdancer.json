@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2bfc7467-1316-43d3-9ca6-ff36cc2de607",
+  "name": "Kor Spiritdancer",
+  "faces": [
+    {
+      "name": "Kor Spiritdancer",
+      "type_line": "Creature \u2014 Kor Wizard",
+      "oracle_text": "This creature gets +2/+2 for each Aura attached to it.\nWhenever you cast an Aura spell, you may draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an Aura spell, you may draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Aura"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature gets +2/+2 for each Aura attached to it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +2/+2 for each Aura attached to it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

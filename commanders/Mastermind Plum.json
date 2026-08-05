@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4605d8b3-b714-4717-8ff3-155fabfc1999",
+  "name": "Mastermind Plum",
+  "faces": [
+    {
+      "name": "Mastermind Plum",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Whenever Mastermind Plum attacks, exile up to one target card from a graveyard. If an artifact card was exiled this way, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nWhenever you cast a spell, if mana from a Treasure was spent to cast it, you draw a card and you lose 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Mastermind Plum attacks, exile up to one target card from a graveyard. If an artifact card was exiled this way, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target card from a graveyard"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "an artifact card was exiled this way"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a spell, if mana from a Treasure was spent to cast it, you draw a card and you lose 1 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "mana from a Treasure was spent to cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

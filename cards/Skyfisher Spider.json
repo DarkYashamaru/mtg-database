@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "67158085-4807-4f0e-8599-c55ec7ec252e",
+  "name": "Skyfisher Spider",
+  "faces": [
+    {
+      "name": "Skyfisher Spider",
+      "type_line": "Creature \u2014 Spider",
+      "oracle_text": "Reach\nWhen this creature enters, you may sacrifice another creature. When you do, destroy target nonland permanent.\nWhen this creature dies, you may gain 1 life for each creature card in your graveyard. If you do, exile this card from your graveyard.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may sacrifice another creature. When you do, destroy target nonland permanent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature",
+              "optional": true
+            },
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, you may gain 1 life for each creature card in your graveyard. If you do, exile this card from your graveyard.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may gain 1 life for each creature card in your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile this card from your graveyard",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

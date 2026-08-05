@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "67a82d5e-a9dc-4e8c-9d23-c6d6aa1e57d1",
+  "name": "Give // Take",
+  "faces": [
+    {
+      "name": "Give",
+      "type_line": "Sorcery",
+      "oracle_text": "Put three +1/+1 counters on target creature.\nFuse (You may cast one or both halves of this card from your hand.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Put three +1/+1 counters on target creature.",
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "Fuse (You may cast one or both halves of this card from your hand.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Fuse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Take",
+      "type_line": "Sorcery",
+      "oracle_text": "Remove all +1/+1 counters from target creature you control. Draw that many cards.\nFuse (You may cast one or both halves of this card from your hand.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Remove all +1/+1 counters from target creature you control. Draw that many cards.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Remove all +1/+1 counters from target creature you control"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        },
+        {
+          "raw_text": "Fuse (You may cast one or both halves of this card from your hand.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Fuse"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

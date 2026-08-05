@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5d1d76e0-049c-4a33-96ec-8e60deed16d5",
+  "name": "Said // Done",
+  "faces": [
+    {
+      "name": "Done",
+      "type_line": "Instant",
+      "oracle_text": "Tap up to two target creatures. Those creatures don't untap during their controller's next untap step.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Tap up to two target creatures. Those creatures don't untap during their controller's next untap step.",
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creatures",
+              "max_targets": 2,
+              "optional_targets": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "Those creatures don't untap during their controller's next untap step"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Said",
+      "type_line": "Sorcery",
+      "oracle_text": "Return target instant or sorcery card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target instant or sorcery card from your graveyard to your hand.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_instant_or_sorcery_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

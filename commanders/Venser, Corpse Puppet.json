@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "17c934a7-3480-4309-a217-ca2550538ae7",
+  "name": "Venser, Corpse Puppet",
+  "faces": [
+    {
+      "name": "Venser, Corpse Puppet",
+      "type_line": "Legendary Creature \u2014 Phyrexian Zombie Wizard",
+      "oracle_text": "Lifelink, toxic 1\nWhenever you proliferate, choose one \u2014\n\u2022 If you don't control a creature named The Hollow Sentinel, create The Hollow Sentinel, a legendary 3/3 colorless Phyrexian Golem artifact creature token.\n\u2022 Target artifact creature you control gains flying and lifelink until end of turn.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        },
+        {
+          "keyword": "toxic",
+          "amount": 1
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you proliferate, choose one \u2014\n\u2022 If you don't control a creature named The Hollow Sentinel, create The Hollow Sentinel, a legendary 3/3 colorless Phyrexian Golem artifact creature token.\n\u2022 Target artifact creature you control gains flying and lifelink until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you proliferate"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "If you don't control a creature named The Hollow Sentinel, create The Hollow Sentinel, a legendary 3/3 colorless Phyrexian Golem artifact creature token.",
+              "effects": [
+                {
+                  "action": "create_token",
+                  "amount": "the",
+                  "token": {
+                    "raw": "hollow sentinel, a legendary 3/3 colorless phyrexian golem artifact creature token",
+                    "power_toughness": "3/3",
+                    "card_types": [
+                      "creature"
+                    ],
+                    "subtypes": [
+                      "colorless",
+                      "phyrexian",
+                      "golem",
+                      "artifact"
+                    ]
+                  },
+                  "condition": [
+                    {
+                      "condition_text": "you don't control a creature named the hollow sentinel"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "raw_text": "Target artifact creature you control gains flying and lifelink until end of turn.",
+              "effects": [
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "target_artifact_creature_you_control",
+                  "keyword": "flying_and_lifelink"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

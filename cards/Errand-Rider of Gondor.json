@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "00749bad-dded-4fec-bf34-ff14cf561c26",
+  "name": "Errand-Rider of Gondor",
+  "faces": [
+    {
+      "name": "Errand-Rider of Gondor",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "When this creature enters, draw a card. Then if you don't control a legendary creature, put a card from your hand on the bottom of your library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, draw a card. Then if you don't control a legendary creature, put a card from your hand on the bottom of your library.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a card from your hand on the bottom of your library",
+              "condition": [
+                {
+                  "condition_text": "you don't control a legendary creature"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

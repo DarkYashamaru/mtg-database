@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8430ae03-2d4c-4031-aa29-4d53815ded78",
+  "name": "Negative Zone Portal",
+  "faces": [
+    {
+      "name": "Negative Zone Portal",
+      "type_line": "Artifact",
+      "oracle_text": "{2}, {T}: Exile target card from an opponent's graveyard. If it's a creature card, draw a card.\nAt the beginning of your upkeep, if there are four or more creature cards exiled with this artifact, flip a coin. If you lose the flip, sacrifice this artifact and return a card exiled with it at random to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if there are four or more creature cards exiled with this artifact, flip a coin. If you lose the flip, sacrifice this artifact and return a card exiled with it at random to its owner's hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "there are four or more creature cards exiled with this artifact"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "flip a coin"
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_artifact_and_return_a_card_exiled_with_it_at_random_to_its_owners_hand",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}: Exile target card from an opponent's graveyard. If it's a creature card, draw a card.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target card from an opponent's graveyard"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it's a creature card"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

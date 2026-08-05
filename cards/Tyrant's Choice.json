@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ee7d2c2f-e32f-4be6-82ac-ff1e32055376",
+  "name": "Tyrant's Choice",
+  "faces": [
+    {
+      "name": "Tyrant's Choice",
+      "type_line": "Sorcery",
+      "oracle_text": "Will of the council \u2014 Starting with you, each player votes for death or torture. If death gets more votes, each opponent sacrifices a creature of their choice. If torture gets more votes or the vote is tied, each opponent loses 4 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Will of the council \u2014 Starting with you, each player votes for death or torture. If death gets more votes, each opponent sacrifices a creature of their choice. If torture gets more votes or the vote is tied, each opponent loses 4 life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Will of the council \u2014 Starting with you, each player votes for death or torture"
+            },
+            {
+              "action": "custom_effect",
+              "text": "each opponent sacrifices a creature of their choice",
+              "condition": [
+                {
+                  "condition_text": "death gets more votes"
+                }
+              ]
+            },
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 4,
+              "condition": [
+                {
+                  "condition_text": "torture gets more votes or the vote is tied"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "07159efc-c69f-4164-a8ca-9da641dbf702",
+  "name": "Overload",
+  "faces": [
+    {
+      "name": "Overload",
+      "type_line": "Instant",
+      "oracle_text": "Kicker {2} (You may pay an additional {2} as you cast this spell.)\nDestroy target artifact if its mana value is 2 or less. If this spell was kicked, destroy that artifact if its mana value is 5 or less instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2} (You may pay an additional {2} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy target artifact if its mana value is 2 or less. If this spell was kicked, destroy that artifact if its mana value is 5 or less instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy target artifact if its mana value is 2 or less"
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy that artifact if its mana value is 5 or less instead",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

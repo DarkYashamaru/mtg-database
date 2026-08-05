@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5f2be3c2-060a-43e1-b63b-9cd3c78ffcb0",
+  "name": "Ilysian Caryatid",
+  "faces": [
+    {
+      "name": "Ilysian Caryatid",
+      "type_line": "Creature \u2014 Plant",
+      "oracle_text": "{T}: Add one mana of any color. If you control a creature with power 4 or greater, add two mana of any one color instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color. If you control a creature with power 4 or greater, add two mana of any one color instead.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "add two mana of any one color instead",
+              "condition": [
+                {
+                  "condition_text": "you control a creature with power 4 or greater"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

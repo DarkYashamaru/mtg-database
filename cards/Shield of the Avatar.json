@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a4433da6-78b7-4669-a0dd-e7ea9672b0bc",
+  "name": "Shield of the Avatar",
+  "faces": [
+    {
+      "name": "Shield of the Avatar",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "If a source would deal damage to equipped creature, prevent X of that damage, where X is the number of creatures you control.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If a source would deal damage to equipped creature, prevent X of that damage, where X is the number of creatures you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent x of that damage, where x is the number of creatures you control",
+              "condition": [
+                {
+                  "condition_text": "a source would deal damage to equipped creature"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

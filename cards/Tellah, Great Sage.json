@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1a080b26-c766-4f7c-9198-4974d2133f75",
+  "name": "Tellah, Great Sage",
+  "faces": [
+    {
+      "name": "Tellah, Great Sage",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Whenever you cast a noncreature spell, create a 1/1 colorless Hero creature token. If four or more mana was spent to cast that spell, draw two cards. If eight or more mana was spent to cast that spell, sacrifice Tellah and it deals that much damage to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, create a 1/1 colorless Hero creature token. If four or more mana was spent to cast that spell, draw two cards. If eight or more mana was spent to cast that spell, sacrifice Tellah and it deals that much damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Hero creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Hero"
+                ]
+              }
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "four or more mana was spent to cast that spell"
+                }
+              ]
+            },
+            {
+              "action": "sacrifice",
+              "target": "self_and_it_deals_that_much_damage_to_each_opponent",
+              "condition": [
+                {
+                  "condition_text": "eight or more mana was spent to cast that spell"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f4f66558-3c99-4488-ad2d-90626a922042",
+  "name": "Foundry Helix",
+  "faces": [
+    {
+      "name": "Foundry Helix",
+      "type_line": "Instant",
+      "oracle_text": "As an additional cost to cast this spell, sacrifice a permanent.\nFoundry Helix deals 4 damage to any target. If the sacrificed permanent was an artifact, you gain 4 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast this spell, sacrifice a permanent.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As an additional cost to cast this spell, sacrifice a permanent"
+            }
+          ]
+        },
+        {
+          "raw_text": "Foundry Helix deals 4 damage to any target. If the sacrificed permanent was an artifact, you gain 4 life.",
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 4
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 4,
+              "condition": [
+                {
+                  "condition_text": "the sacrificed permanent was an artifact"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6f85c26e-3c87-4112-ad1a-8a5708555a93",
+  "name": "Gates of Istfell",
+  "faces": [
+    {
+      "name": "Gates of Istfell",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {W}.\n{2}{W}{U}{U}, {T}, Sacrifice this land: You gain 2 life and draw two cards.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{W}{U}{U}, {T}, Sacrifice this land: You gain 2 life and draw two cards.",
+          "cost": "{2}{W}{U}{U}, {T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

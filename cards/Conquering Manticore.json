@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "140b58b9-7e82-4feb-99d7-5e8b707b845c",
+  "name": "Conquering Manticore",
+  "faces": [
+    {
+      "name": "Conquering Manticore",
+      "type_line": "Creature \u2014 Manticore",
+      "oracle_text": "Flying\nWhen this creature enters, gain control of target creature an opponent controls until end of turn. Untap that creature. It gains haste until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, gain control of target creature an opponent controls until end of turn. Untap that creature. It gains haste until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "gain control of target creature an opponent controls until end of turn"
+            },
+            {
+              "action": "untap",
+              "target": "that_creature"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

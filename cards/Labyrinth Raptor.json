@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a29b2e93-d872-4be8-8b15-57f57282ed45",
+  "name": "Labyrinth Raptor",
+  "faces": [
+    {
+      "name": "Labyrinth Raptor",
+      "type_line": "Creature \u2014 Nightmare Dinosaur",
+      "oracle_text": "Menace\nWhenever a creature you control with menace becomes blocked, defending player sacrifices a creature of their choice that's blocking it.\n{B}{R}: Creatures you control with menace get +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control with menace becomes blocked, defending player sacrifices a creature of their choice that's blocking it.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": {
+              "selector": "a_creature_you_control_with_menace"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "defending player sacrifices a creature of their choice that's blocking it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}{R}: Creatures you control with menace get +1/+0 until end of turn.",
+          "cost": "{B}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures you control with menace get +1/+0 until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

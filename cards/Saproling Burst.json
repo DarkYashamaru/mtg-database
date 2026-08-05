@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7b31ecf8-5266-4376-ace0-8b873706c4ea",
+  "name": "Saproling Burst",
+  "faces": [
+    {
+      "name": "Saproling Burst",
+      "type_line": "Enchantment",
+      "oracle_text": "Fading 7 (This enchantment enters with seven fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from this enchantment: Create a green Saproling creature token. It has \"This token's power and toughness are each equal to the number of fade counters on Saproling Burst.\"\nWhen this enchantment leaves the battlefield, destroy all tokens created with this enchantment. They can't be regenerated.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment leaves the battlefield, destroy all tokens created with this enchantment. They can't be regenerated.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy all tokens created with this enchantment"
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_targets"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove a fade counter from this enchantment: Create a green Saproling creature token. It has \"This token's power and toughness are each equal to the number of fade counters on Saproling Burst.\"",
+          "cost": "Remove a fade counter from this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "green Saproling creature token",
+                "colors": [
+                  "green"
+                ],
+                "card_types": [
+                  "creature"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "It has \"This token's power and toughness are each equal to the number of fade counters on Saproling Burst.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Fading 7 (This enchantment enters with seven fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Fading 7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d758fd82-7ccb-441d-a948-0abaf0311892",
+  "name": "Night Shift of the Living Dead",
+  "faces": [
+    {
+      "name": "Night Shift of the Living Dead",
+      "type_line": "Enchantment",
+      "oracle_text": "After you roll a die, you may pay 1 life. If you do, increase or decrease the result by 1. Do this only once each turn.\nWhenever you roll a 6, create a 2/2 black Zombie Employee creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you roll a 6, create a 2/2 black Zombie Employee creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you roll a 6"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black Zombie Employee creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie",
+                  "Employee"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "After you roll a die, you may pay 1 life. If you do, increase or decrease the result by 1. Do this only once each turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "After you roll a die, you may pay 1 life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "increase or decrease the result by 1",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_uses": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

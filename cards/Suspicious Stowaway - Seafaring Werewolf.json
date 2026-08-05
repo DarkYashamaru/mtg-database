@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "oracle_id": "da412474-1da8-409b-bd7b-87cbfc239fb0",
+  "name": "Suspicious Stowaway // Seafaring Werewolf",
+  "faces": [
+    {
+      "name": "Seafaring Werewolf",
+      "type_line": "Creature \u2014 Werewolf",
+      "oracle_text": "This creature can't be blocked.\nWhenever this creature deals combat damage to a player, draw a card.\nNightbound (If a player casts at least two spells during their own turn, it becomes day next turn.)",
+      "static": [
+        {
+          "keyword": "nightbound"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Suspicious Stowaway",
+      "type_line": "Creature \u2014 Human Rogue Werewolf",
+      "oracle_text": "This creature can't be blocked.\nWhenever this creature deals combat damage to a player, draw a card, then discard a card.\nDaybound (If a player casts no spells during their own turn, it becomes night next turn.)",
+      "static": [
+        {
+          "keyword": "daybound"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, draw a card, then discard a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

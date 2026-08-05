@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "17191fa9-e956-4f46-b541-465790125b6b",
+  "name": "Hystrodon",
+  "faces": [
+    {
+      "name": "Hystrodon",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "Trample\nWhenever this creature deals combat damage to a player, you may draw a card.\nMorph {1}{G}{G} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Morph {1}{G}{G} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morph {1}{G}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

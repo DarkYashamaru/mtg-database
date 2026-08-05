@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a751c07b-fc21-4854-96e7-f71abf4e86c9",
+  "name": "Warleader's Call",
+  "faces": [
+    {
+      "name": "Warleader's Call",
+      "type_line": "Enchantment",
+      "oracle_text": "Creatures you control get +1/+1.\nWhenever a creature you control enters, this enchantment deals 1 damage to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control enters, this enchantment deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_enchantment",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control get +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

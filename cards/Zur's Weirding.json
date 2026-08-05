@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c6eaa147-3566-43a9-999a-d58b877496f5",
+  "name": "Zur's Weirding",
+  "faces": [
+    {
+      "name": "Zur's Weirding",
+      "type_line": "Enchantment",
+      "oracle_text": "Players play with their hands revealed.\nIf a player would draw a card, they reveal it instead. Then any other player may pay 2 life. If a player does, put that card into its owner's graveyard. Otherwise, that player draws a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Players play with their hands revealed.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Players play with their hands revealed"
+            }
+          ]
+        },
+        {
+          "raw_text": "If a player would draw a card, they reveal it instead. Then any other player may pay 2 life. If a player does, put that card into its owner's graveyard. Otherwise, that player draws a card.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "they reveal it instead",
+              "condition": [
+                {
+                  "condition_text": "a player would draw a card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then any other player may pay 2 life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card into its owner's graveyard",
+              "condition": [
+                {
+                  "condition_text": "a player does"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "that player draws a card",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

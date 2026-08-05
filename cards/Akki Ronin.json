@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4b4c76e1-c480-4d10-93d4-483ef2debc4b",
+  "name": "Akki Ronin",
+  "faces": [
+    {
+      "name": "Akki Ronin",
+      "type_line": "Creature \u2014 Goblin Samurai",
+      "oracle_text": "Whenever a Samurai or Warrior you control attacks alone, you may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Samurai or Warrior you control attacks alone, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "attacks_alone",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Samurai",
+                "Or",
+                "Warrior"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

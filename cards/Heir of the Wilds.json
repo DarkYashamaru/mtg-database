@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "35cb88aa-6ed9-4a2d-9bbc-5937e1df4f4a",
+  "name": "Heir of the Wilds",
+  "faces": [
+    {
+      "name": "Heir of the Wilds",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Deathtouch\nFerocious \u2014 Whenever this creature attacks, if you control a creature with power 4 or greater, this creature gets +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, if you control a creature with power 4 or greater, this creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control a creature with power 4 or greater"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

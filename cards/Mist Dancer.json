@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bf76ba01-e06f-4451-a4b4-cf548b43eafc",
+  "name": "Mist Dancer",
+  "faces": [
+    {
+      "name": "Mist Dancer",
+      "type_line": "Creature \u2014 Merfolk Wizard",
+      "oracle_text": "Flying\nOther Merfolk you control get +1/+0 and have flying.\nEncore {5}{U}{U} ({5}{U}{U}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Encore {5}{U}{U} ({5}{U}{U}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+          "cost": "Encore {5}{U}{U} ({5}{U}{U}, Exile this card from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each opponent, create a token copy that attacks that opponent this turn if able"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "they",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "them_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Other Merfolk you control get +1/+0 and have flying.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "other_merfolk_you_control_get_10_and"
+              },
+              "keywords": [
+                "flying"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6f16c3ac-a9b8-47e6-b18b-ae37c74d44a0",
+  "name": "Nether Traitor",
+  "faces": [
+    {
+      "name": "Nether Traitor",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Haste\nShadow (This creature can block or be blocked by only creatures with shadow.)\nWhenever another creature is put into your graveyard from the battlefield, you may pay {B}. If you do, return this card from your graveyard to the battlefield.",
+      "static": [
+        {
+          "keyword": "haste"
+        },
+        {
+          "keyword": "shadow"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature is put into your graveyard from the battlefield, you may pay {B}. If you do, return this card from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever another creature is put into your graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{b}",
+              "optional": true
+            },
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

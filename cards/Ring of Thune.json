@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f72e8ccb-a6fb-4161-bfa1-69c94cc5d49a",
+  "name": "Ring of Thune",
+  "faces": [
+    {
+      "name": "Ring of Thune",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has vigilance. (Attacking doesn't cause it to tap.)\nAt the beginning of your upkeep, put a +1/+1 counter on equipped creature if it's white.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a +1/+1 counter on equipped creature if it's white.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "equipped_creature_if_its_white",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has vigilance. (Attacking doesn't cause it to tap.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature has vigilance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

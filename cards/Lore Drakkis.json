@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3ec271d8-8264-4574-8c4c-e57b35872b1e",
+  "name": "Lore Drakkis",
+  "faces": [
+    {
+      "name": "Lore Drakkis",
+      "type_line": "Creature \u2014 Lizard Beast",
+      "oracle_text": "Mutate {U/R}{U/R} (If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities from under it.)\nWhenever this creature mutates, return target instant or sorcery card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature mutates, return target instant or sorcery card from your graveyard to your hand.",
+          "trigger": {
+            "type": "mutates",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_instant_or_sorcery_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Mutate {U/R}{U/R} (If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities from under it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Mutate {U/R}{U/R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

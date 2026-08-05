@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "699fa8e6-84f5-4010-a8fe-7b2e4f280ef9",
+  "name": "Merry Bards",
+  "faces": [
+    {
+      "name": "Merry Bards",
+      "type_line": "Creature \u2014 Human Bard",
+      "oracle_text": "When this creature enters, you may pay {1}. When you do, create a Young Hero Role token attached to target creature you control. (If you control another Role on it, put that one into the graveyard. Enchanted creature has \"Whenever this creature attacks, if its toughness is 3 or less, put a +1/+1 counter on it.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may pay {1}. When you do, create a Young Hero Role token attached to target creature you control. (If you control another Role on it, put that one into the graveyard. Enchanted creature has \"Whenever this creature attacks, if its toughness is 3 or less, put a +1/+1 counter on it.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a young hero role token attached to target creature you control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

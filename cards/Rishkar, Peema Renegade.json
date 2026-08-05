@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "761021ce-4559-464e-aa03-85c2fe78e267",
+  "name": "Rishkar, Peema Renegade",
+  "faces": [
+    {
+      "name": "Rishkar, Peema Renegade",
+      "type_line": "Legendary Creature \u2014 Elf Druid",
+      "oracle_text": "When Rishkar enters, put a +1/+1 counter on each of up to two target creatures.\nEach creature you control with a counter on it has \"{T}: Add {G}.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Rishkar enters, put a +1/+1 counter on each of up to two target creatures.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "each_of_up_to_two_target_creatures",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Each creature you control with a counter on it has \"{T}: Add {G}.\"",
+          "cost": "Each creature you control with a counter on it has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

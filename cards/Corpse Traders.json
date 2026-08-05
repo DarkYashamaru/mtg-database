@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e94297af-1236-4c9a-860f-2ee6a0d12e5e",
+  "name": "Corpse Traders",
+  "faces": [
+    {
+      "name": "Corpse Traders",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "{2}{B}, Sacrifice a creature: Target opponent reveals their hand. You choose a card from it. That player discards that card. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{B}, Sacrifice a creature: Target opponent reveals their hand. You choose a card from it. That player discards that card. Activate only as a sorcery.",
+          "cost": "{2}{B}, Sacrifice a creature",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a card from it"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

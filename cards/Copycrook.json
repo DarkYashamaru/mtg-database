@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ce184565-71fb-4e23-b45b-8786727d21f7",
+  "name": "Copycrook",
+  "faces": [
+    {
+      "name": "Copycrook",
+      "type_line": "Creature \u2014 Shapeshifter Rogue",
+      "oracle_text": "You may have this creature enter as a copy of any creature on the battlefield, except it has \"Whenever this creature attacks, it connives.\" (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may have this creature enter as a copy of any creature on the battlefield, except it has \"Whenever this creature attacks, it connives.\" (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)",
+          "effects": [
+            {
+              "action": "connive",
+              "target": "have_self_enter_as_a_copy_of_any_creature_on_the_battlefield_except_it_has_whenever_self_attacks_it",
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "have_self_enter_as_a_copy_of_any_creature_on_the_battlefield_except_it_has_whenever_self_attacks_it",
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

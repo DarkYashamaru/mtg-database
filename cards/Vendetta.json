@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "50a16634-ebf7-477f-ad6f-23332599f838",
+  "name": "Vendetta",
+  "faces": [
+    {
+      "name": "Vendetta",
+      "type_line": "Instant",
+      "oracle_text": "Destroy target nonblack creature. It can't be regenerated. You lose life equal to that creature's toughness.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Destroy target nonblack creature. It can't be regenerated. You lose life equal to that creature's toughness.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature",
+                "not_colors": [
+                  "black"
+                ]
+              }
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You lose life equal to that creature's toughness"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

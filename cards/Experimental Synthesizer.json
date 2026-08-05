@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "11db299a-0918-46a3-b39b-16acc3f4e281",
+  "name": "Experimental Synthesizer",
+  "faces": [
+    {
+      "name": "Experimental Synthesizer",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters or leaves the battlefield, exile the top card of your library. Until end of turn, you may play that card.\n{2}{R}, Sacrifice this artifact: Create a 2/2 white Samurai creature token with vigilance. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters or leaves the battlefield, exile the top card of your library. Until end of turn, you may play that card.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "this_artifact_enters_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may play that card"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{R}, Sacrifice this artifact: Create a 2/2 white Samurai creature token with vigilance. Activate only as a sorcery.",
+          "cost": "{2}{R}, Sacrifice this artifact",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 white Samurai creature token with vigilance",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Samurai"
+                ],
+                "keywords": [
+                  "vigilance"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

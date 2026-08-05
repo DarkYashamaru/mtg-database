@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "323437f5-cc6c-4579-b591-499476dffb3c",
+  "name": "Invasion of Pyrulea // Gargantuan Slabhorn",
+  "faces": [
+    {
+      "name": "Gargantuan Slabhorn",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "Trample, ward {2}\nOther transformed permanents you control have trample and ward {2}.",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other transformed permanents you control have trample and ward {2}.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other transformed permanents you control have trample and ward {2}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Invasion of Pyrulea",
+      "type_line": "Battle \u2014 Siege",
+      "oracle_text": "(As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.)\nWhen this Siege enters, scry 3, then reveal the top card of your library. If it's a land or double-faced card, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Siege enters, scry 3, then reveal the top card of your library. If it's a land or double-faced card, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_siege"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 3
+            },
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it's a land or double-faced card"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

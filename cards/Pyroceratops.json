@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b5306bf4-0cba-48dd-8af8-7c7821db7e02",
+  "name": "Pyroceratops",
+  "faces": [
+    {
+      "name": "Pyroceratops",
+      "type_line": "Creature \u2014 Elemental Dinosaur",
+      "oracle_text": "Trample\nWhenever you cast a noncreature spell, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

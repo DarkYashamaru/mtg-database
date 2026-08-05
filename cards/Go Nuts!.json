@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0efe1357-bfbb-42c0-9cc9-6a919d686c66",
+  "name": "Go Nuts!",
+  "faces": [
+    {
+      "name": "Go Nuts!",
+      "type_line": "Sorcery",
+      "oracle_text": "Teamwork 3 (As an additional cost to cast this spell, you may tap any number of creatures you control with total power 3 or more.)\nChoose one. If this spell was cast using teamwork, choose both instead.\n\u2022 Put a +1/+1 counter on target creature.\n\u2022 Target creature you control fights target creature an opponent controls.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Teamwork 3 (As an additional cost to cast this spell, you may tap any number of creatures you control with total power 3 or more.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Teamwork 3"
+            }
+          ]
+        },
+        {
+          "raw_text": "Choose one. If this spell was cast using teamwork, choose both instead.",
+          "effects": [
+            {
+              "action": "mode_selection",
+              "choose_count": 1
+            },
+            {
+              "action": "mode_selection_modifier",
+              "choose_count": 2,
+              "condition": [
+                {
+                  "you_control_commander": true
+                },
+                {
+                  "condition_text": "this spell was cast using teamwork"
+                }
+              ],
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Put a +1/+1 counter on target creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Put a +1/+1 counter on target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Target creature you control fights target creature an opponent controls.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Target creature you control fights target creature an opponent controls"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

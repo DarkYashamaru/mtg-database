@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5773ae05-44bc-423c-846c-f323dd8a5079",
+  "name": "Shriek, Treblemaker",
+  "faces": [
+    {
+      "name": "Shriek, Treblemaker",
+      "type_line": "Legendary Creature \u2014 Mutant Villain",
+      "oracle_text": "At the beginning of your first main phase, you may discard a card. When you do, target creature can't block this turn.\nSonic Blast \u2014 Whenever a creature an opponent controls dies, Shriek deals 1 damage to that player.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your first main phase, you may discard a card. When you do, target creature can't block this turn.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature an opponent controls dies, Shriek deals 1 damage to that player.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_an_opponent_controls"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Shriek deals 1 damage to that player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

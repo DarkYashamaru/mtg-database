@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b5991a13-5fcd-4d2d-9db2-d3d5af7259f5",
+  "name": "Spectral Prison",
+  "faces": [
+    {
+      "name": "Spectral Prison",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature doesn't untap during its controller's untap step.\nWhen enchanted creature becomes the target of a spell, sacrifice this Aura.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature becomes the target of a spell, sacrifice this Aura.",
+          "trigger": {
+            "type": "custom",
+            "text": "When enchanted creature becomes the target of a spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_aura"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "enchanted_creature",
+              "scope": "controllers_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

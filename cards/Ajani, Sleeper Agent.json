@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "oracle_id": "37714eb9-a39d-4534-a2d3-27908c418f8a",
+  "name": "Ajani, Sleeper Agent",
+  "faces": [
+    {
+      "name": "Ajani, Sleeper Agent",
+      "type_line": "Legendary Planeswalker \u2014 Ajani",
+      "oracle_text": "Compleated ({G/W/P} can be paid with {G}, {W}, or 2 life. If life was paid, this planeswalker enters with two fewer loyalty counters.)\n+1: Reveal the top card of your library. If it's a creature or planeswalker card, put it into your hand. Otherwise, you may put it on the bottom of your library.\n\u22123: Distribute three +1/+1 counters among up to three target creatures. They gain vigilance until end of turn.\n\u22126: You get an emblem with \"Whenever you cast a creature or planeswalker spell, target opponent gets two poison counters.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Reveal the top card of your library. If it's a creature or planeswalker card, put it into your hand. Otherwise, you may put it on the bottom of your library.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "it's a creature or planeswalker card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it on the bottom of your library",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Distribute three +1/+1 counters among up to three target creatures. They gain vigilance until end of turn.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Distribute three +1/+1 counters among up to three target creatures"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "they",
+              "keyword": "vigilance"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: You get an emblem with \"Whenever you cast a creature or planeswalker spell, target opponent gets two poison counters.\"",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with \"Whenever you cast a creature or planeswalker spell, target opponent gets two poison counters.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Compleated ({G/W/P} can be paid with {G}, {W}, or 2 life. If life was paid, this planeswalker enters with two fewer loyalty counters.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Compleated"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cf5f4860-e805-46a3-9352-a2c583e33403",
+  "name": "Storm of Saruman",
+  "faces": [
+    {
+      "name": "Storm of Saruman",
+      "type_line": "Enchantment",
+      "oracle_text": "Ward {3}\nWhenever you cast your second spell each turn, copy it, except the copy isn't legendary. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+      "static": [
+        {
+          "keyword": "ward",
+          "amount": 3
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, copy it, except the copy isn't legendary. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy it, except the copy isn't legendary"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

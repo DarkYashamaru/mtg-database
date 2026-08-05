@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "47e77918-13ec-47ce-9256-5a3b5bf8d315",
+  "name": "Bison Whistle",
+  "faces": [
+    {
+      "name": "Bison Whistle",
+      "type_line": "Artifact",
+      "oracle_text": "{1}, {T}: Look at the top card of your library. If it's a Bison card, you may put it onto the battlefield. If it's a creature card, you may reveal it and put it into your hand. Otherwise, you may put it into your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}: Look at the top card of your library. If it's a Bison card, you may put it onto the battlefield. If it's a creature card, you may reveal it and put it into your hand. Otherwise, you may put it into your graveyard.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "it's a bison card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it's a creature card"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it into your graveyard",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

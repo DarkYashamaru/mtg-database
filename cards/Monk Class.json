@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "65b28ec7-1099-4f9d-8d57-2ffd8a5b0e91",
+  "name": "Monk Class",
+  "faces": [
+    {
+      "name": "Monk Class",
+      "type_line": "Enchantment \u2014 Class",
+      "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nThe second spell you cast each turn costs {1} less to cast.\n{W}{U}: Level 2\nWhen this Class becomes level 2, return up to one target nonland permanent to its owner's hand.\n{1}{W}{U}: Level 3\nAt the beginning of your upkeep, exile the top card of your library. For as long as it remains exiled, it has \"You may cast this card from exile as long as you've cast another spell this turn.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Class becomes level 2, return up to one target nonland permanent to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this Class becomes level 2"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to one target nonland permanent to its owner's hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, exile the top card of your library. For as long as it remains exiled, it has \"You may cast this card from exile as long as you've cast another spell this turn.\"",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "For as long as it remains exiled, it has \"You may cast this card from exile as long as you've cast another spell this turn.\""
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{W}{U}: Level 2",
+          "cost": "{W}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{W}{U}: Level 3",
+          "cost": "{1}{W}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "The second spell you cast each turn costs {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "The second spell you cast each turn costs {1} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

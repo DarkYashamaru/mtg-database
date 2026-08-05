@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "19f233b2-8be6-4172-abf9-b132fc3393d9",
+  "name": "Morphling",
+  "faces": [
+    {
+      "name": "Morphling",
+      "type_line": "Creature \u2014 Shapeshifter",
+      "oracle_text": "{U}: Untap this creature.\n{U}: This creature gains flying until end of turn.\n{U}: This creature gains shroud until end of turn. (It can't be the target of spells or abilities.)\n{1}: This creature gets +1/-1 until end of turn.\n{1}: This creature gets -1/+1 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{U}: Untap this creature.",
+          "cost": "{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}: This creature gains flying until end of turn.",
+          "cost": "{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}: This creature gains shroud until end of turn. (It can't be the target of spells or abilities.)",
+          "cost": "{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "shroud"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}: This creature gets +1/-1 until end of turn.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": -1
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}: This creature gets -1/+1 until end of turn.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": -1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

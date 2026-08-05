@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5d19c68d-6eb8-4b34-9f31-c26931e59670",
+  "name": "Weatherseed Totem",
+  "faces": [
+    {
+      "name": "Weatherseed Totem",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {G}.\n{2}{G}{G}{G}: This artifact becomes a 5/3 green Treefolk artifact creature with trample until end of turn.\nWhen this artifact is put into a graveyard from the battlefield, if it was a creature, return this card to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact is put into a graveyard from the battlefield, if it was a creature, return this card to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact is put into a graveyard from the battlefield"
+          },
+          "condition": [
+            {
+              "condition_text": "it was a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return this card to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{G}{G}{G}: This artifact becomes a 5/3 green Treefolk artifact creature with trample until end of turn.",
+          "cost": "{2}{G}{G}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact becomes a 5/3 green Treefolk artifact creature with trample until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

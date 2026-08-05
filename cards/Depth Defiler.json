@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8ca4ca66-30b1-4074-a2e3-545b7682381b",
+  "name": "Depth Defiler",
+  "faces": [
+    {
+      "name": "Depth Defiler",
+      "type_line": "Creature \u2014 Eldrazi",
+      "oracle_text": "Devoid (This card has no color.)\nKicker {C} (You may pay an additional {C} as you cast this spell.)\nWhen you cast this spell, choose one. If it was kicked, choose both instead.\n\u2022 Return target creature to its owner's hand.\n\u2022 Target player draws two cards, then discards a card.",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, choose one. If it was kicked, choose both instead.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mode_selection",
+              "choose_count": 1
+            },
+            {
+              "action": "mode_selection_modifier",
+              "choose_count": 2,
+              "condition": [
+                {
+                  "you_control_commander": true
+                },
+                {
+                  "condition_text": "it was kicked"
+                }
+              ],
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {C} (You may pay an additional {C} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {C}"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Return target creature to its owner's hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Return target creature to its owner's hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Target player draws two cards, then discards a card.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 target player draws two cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "discards a card"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

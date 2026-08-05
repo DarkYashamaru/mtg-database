@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b59cacb-46ff-4400-a7f6-b258c81a9b14",
+  "name": "Giant Albatross",
+  "faces": [
+    {
+      "name": "Giant Albatross",
+      "type_line": "Creature \u2014 Bird",
+      "oracle_text": "Flying\nWhen this creature dies, you may pay {1}{U}. If you do, for each creature that dealt damage to this creature this turn, destroy that creature unless its controller pays 2 life. A creature destroyed this way can't be regenerated.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, you may pay {1}{U}. If you do, for each creature that dealt damage to this creature this turn, destroy that creature unless its controller pays 2 life. A creature destroyed this way can't be regenerated.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{U}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "for each creature that dealt damage to this creature this turn, destroy that creature unless its controller pays 2 life",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "A creature destroyed this way can't be regenerated"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

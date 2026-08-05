@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d79755c4-3c61-4fc8-8eb7-fbdc23951748",
+  "name": "Instrument of the Bards",
+  "faces": [
+    {
+      "name": "Instrument of the Bards",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "At the beginning of your upkeep, you may put a harmony counter on Instrument of the Bards.\n{3}{G}, {T}: Search your library for a creature card with mana value equal to the number of harmony counters on Instrument of the Bards, reveal it, and put it into your hand. If that card is legendary, create a Treasure token. Then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may put a harmony counter on Instrument of the Bards.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a harmony counter on Instrument of the Bards"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{G}, {T}: Search your library for a creature card with mana value equal to the number of harmony counters on Instrument of the Bards, reveal it, and put it into your hand. If that card is legendary, create a Treasure token. Then shuffle.",
+          "cost": "{3}{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Search your library for a creature card with mana value equal to the number of harmony counters on Instrument of the Bards, reveal it, and put it into your hand"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "that card is legendary"
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

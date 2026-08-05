@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bad84deb-3f2c-46fd-9dcb-4e3ba9732769",
+  "name": "Rime Chill",
+  "faces": [
+    {
+      "name": "Rime Chill",
+      "type_line": "Instant",
+      "oracle_text": "Vivid \u2014 This spell costs {1} less to cast for each color among permanents you control.\nTap up to two target creatures. Put a stun counter on each of them. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nDraw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Vivid \u2014 This spell costs {1} less to cast for each color among permanents you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Vivid \u2014 This spell costs {1} less to cast for each color among permanents you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Tap up to two target creatures. Put a stun counter on each of them. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creatures",
+              "max_targets": 2,
+              "optional_targets": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a stun counter on each of them"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

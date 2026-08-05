@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4879c8f0-8832-4290-bc71-9838940f75cd",
+  "name": "Valley Floodcaller",
+  "faces": [
+    {
+      "name": "Valley Floodcaller",
+      "type_line": "Creature \u2014 Otter Wizard",
+      "oracle_text": "Flash\nYou may cast noncreature spells as though they had flash.\nWhenever you cast a noncreature spell, Birds, Frogs, Otters, and Rats you control get +1/+1 until end of turn. Untap them.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, Birds, Frogs, Otters, and Rats you control get +1/+1 until end of turn. Untap them.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Birds, Frogs, Otters, and Rats you control get +1/+1 until end of turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Untap them"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may cast noncreature spells as though they had flash.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast noncreature spells as though they had flash"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

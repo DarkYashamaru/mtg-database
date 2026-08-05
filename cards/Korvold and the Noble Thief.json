@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bcae7f20-b601-4669-b3a7-c32ed0c6b9d3",
+  "name": "Korvold and the Noble Thief",
+  "faces": [
+    {
+      "name": "Korvold and the Noble Thief",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II \u2014 Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")\nIII \u2014 Exile the top three cards of target opponent's library. You may play those cards this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile the top three cards of target opponent's library. You may play those cards this turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile the top three cards of target opponent's library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play those cards this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

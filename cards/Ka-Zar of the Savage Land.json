@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "88eeb519-5782-4732-bd34-81d1ee6dbc8f",
+  "name": "Ka-Zar of the Savage Land",
+  "faces": [
+    {
+      "name": "Ka-Zar of the Savage Land",
+      "type_line": "Legendary Creature \u2014 Human Barbarian Hero",
+      "oracle_text": "You may look at the top card of your library any time.\nYou may play lands from the top of your library.\nWhen Ka-Zar enters, create Zabu, a legendary 2/2 green Cat creature token with \"Landfall \u2014 Whenever a land you control enters, put a +1/+1 counter on Zabu.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, put a +1/+1 counter on Zabu.\"",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "zabu",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "You may play lands from the top of your library.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may play lands from the top of your library"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

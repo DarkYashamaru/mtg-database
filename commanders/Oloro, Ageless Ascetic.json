@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "620ff5f2-7d3f-467f-943d-3b62c2135023",
+  "name": "Oloro, Ageless Ascetic",
+  "faces": [
+    {
+      "name": "Oloro, Ageless Ascetic",
+      "type_line": "Legendary Creature \u2014 Giant Soldier",
+      "oracle_text": "At the beginning of your upkeep, you gain 2 life.\nWhenever you gain life, you may pay {1}. If you do, draw a card and each opponent loses 1 life.\nAt the beginning of your upkeep, if Oloro is in the command zone, you gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you gain 2 life.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you gain life, you may pay {1}. If you do, draw a card and each opponent loses 1 life.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, if Oloro is in the command zone, you gain 2 life.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "Oloro is in the command zone"
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

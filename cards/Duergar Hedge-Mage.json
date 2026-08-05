@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ecb2fd58-b880-4d9e-93cb-c4d2b28233c9",
+  "name": "Duergar Hedge-Mage",
+  "faces": [
+    {
+      "name": "Duergar Hedge-Mage",
+      "type_line": "Creature \u2014 Dwarf Shaman",
+      "oracle_text": "When this creature enters, if you control two or more Mountains, you may destroy target artifact.\nWhen this creature enters, if you control two or more Plains, you may destroy target enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if you control two or more Mountains, you may destroy target artifact.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control two or more Mountains"
+            }
+          ],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_artifact"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature enters, if you control two or more Plains, you may destroy target enchantment.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control two or more Plains"
+            }
+          ],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_enchantment"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

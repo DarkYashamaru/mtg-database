@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b03397e5-56af-47c0-ab9a-746a0c99c568",
+  "name": "Nessian Game Warden",
+  "faces": [
+    {
+      "name": "Nessian Game Warden",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "When this creature enters, look at the top X cards of your library, where X is the number of Forests you control. You may reveal a creature card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at the top X cards of your library, where X is the number of Forests you control. You may reveal a creature card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top X cards of your library, where X is the number of Forests you control"
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "any"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

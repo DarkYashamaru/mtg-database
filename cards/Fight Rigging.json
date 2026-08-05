@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "117d89b2-b4c0-4421-a631-37810c0e0969",
+  "name": "Fight Rigging",
+  "faces": [
+    {
+      "name": "Fight Rigging",
+      "type_line": "Enchantment",
+      "oracle_text": "Hideaway 5 (When this enchantment enters, look at the top five cards of your library, exile one face down, then put the rest on the bottom in a random order.)\nAt the beginning of combat on your turn, put a +1/+1 counter on target creature you control. Then if you control a creature with power 7 or greater, you may play the exiled card without paying its mana cost.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, put a +1/+1 counter on target creature you control. Then if you control a creature with power 7 or greater, you may play the exiled card without paying its mana cost.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may play the exiled card without paying its mana cost",
+              "condition": [
+                {
+                  "condition_text": "you control a creature with power 7 or greater"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Hideaway 5 (When this enchantment enters, look at the top five cards of your library, exile one face down, then put the rest on the bottom in a random order.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Hideaway 5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

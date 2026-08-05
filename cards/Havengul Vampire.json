@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "616b3ee0-4678-4562-a21a-5f2d31b9964c",
+  "name": "Havengul Vampire",
+  "faces": [
+    {
+      "name": "Havengul Vampire",
+      "type_line": "Creature \u2014 Vampire",
+      "oracle_text": "Whenever this creature deals combat damage to a player, put a +1/+1 counter on it.\nWhenever another creature dies, put a +1/+1 counter on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another creature dies, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": "another_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

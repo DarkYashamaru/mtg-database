@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "06e4355b-02d4-4238-a6e6-b03a5773346c",
+  "name": "Pulsemage Advocate",
+  "faces": [
+    {
+      "name": "Pulsemage Advocate",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "{T}: Return three target cards from an opponent's graveyard to their hand. Return target creature card from your graveyard to the battlefield.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Return three target cards from an opponent's graveyard to their hand. Return target creature card from your graveyard to the battlefield.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return three target cards from an opponent's graveyard to their hand"
+            },
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": {
+                "card_types": [
+                  "Creature"
+                ],
+                "zone": "graveyard"
+              },
+              "destination": "battlefield"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

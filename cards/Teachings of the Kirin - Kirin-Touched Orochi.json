@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb7edb5e-3a90-41c7-ae52-dc564086bf22",
+  "name": "Teachings of the Kirin // Kirin-Touched Orochi",
+  "faces": [
+    {
+      "name": "Kirin-Touched Orochi",
+      "type_line": "Enchantment Creature \u2014 Snake Monk",
+      "oracle_text": "Whenever this creature attacks, choose one \u2014\n\u2022 Exile target creature card from a graveyard. When you do, create a 1/1 colorless Spirit creature token.\n\u2022 Exile target noncreature card from a graveyard. When you do, put a +1/+1 counter on target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, choose one \u2014\n\u2022 Exile target creature card from a graveyard. When you do, create a 1/1 colorless Spirit creature token.\n\u2022 Exile target noncreature card from a graveyard. When you do, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Exile target creature card from a graveyard. When you do, create a 1/1 colorless Spirit creature token.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Exile target creature card from a graveyard"
+                },
+                {
+                  "action": "create_token",
+                  "amount": 1,
+                  "token": {
+                    "raw": "1/1 colorless spirit creature token",
+                    "power_toughness": "1/1",
+                    "card_types": [
+                      "creature"
+                    ],
+                    "subtypes": [
+                      "colorless",
+                      "spirit"
+                    ]
+                  },
+                  "condition": [
+                    {
+                      "previous_optional_payment_made": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "raw_text": "Exile target noncreature card from a graveyard. When you do, put a +1/+1 counter on target creature you control.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Exile target noncreature card from a graveyard"
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control",
+                    "card_types": [
+                      "Creature"
+                    ],
+                    "subtypes": [
+                      "Target"
+                    ]
+                  },
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "previous_optional_payment_made": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Teachings of the Kirin",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI \u2014 Mill three cards. Create a 1/1 colorless Spirit creature token.\nII \u2014 Put a +1/+1 counter on target creature you control.\nIII \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Mill three cards. Create a 1/1 colorless Spirit creature token.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Spirit creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Spirit"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

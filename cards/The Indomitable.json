@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "276dc5c8-c8cf-4b9c-ad75-31876e6e040a",
+  "name": "The Indomitable",
+  "faces": [
+    {
+      "name": "The Indomitable",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Trample\nWhenever a creature you control deals combat damage to a player, draw a card.\nCrew 3\nYou may cast this card from your graveyard as long as you control three or more tapped Pirates and/or Vehicles.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 3",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may cast this card from your graveyard as long as you control three or more tapped Pirates and/or Vehicles.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast this card from your graveyard as long as you control three or more tapped Pirates and/or Vehicles"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

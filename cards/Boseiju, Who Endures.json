@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bf1341dd-41a3-49f6-87ec-63170dde4324",
+  "name": "Boseiju, Who Endures",
+  "faces": [
+    {
+      "name": "Boseiju, Who Endures",
+      "type_line": "Legendary Land",
+      "oracle_text": "{T}: Add {G}.\nChannel \u2014 {1}{G}, Discard this card: Destroy target artifact, enchantment, or nonbasic land an opponent controls. That player may search their library for a land card with a basic land type, put it onto the battlefield, then shuffle. This ability costs {1} less to activate for each legendary creature you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "Channel \u2014 {1}{G}, Discard this card: Destroy target artifact, enchantment, or nonbasic land an opponent controls. That player may search their library for a land card with a basic land type, put it onto the battlefield, then shuffle. This ability costs {1} less to activate for each legendary creature you control.",
+          "cost": "Channel \u2014 {1}{G}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy target artifact, enchantment, or nonbasic land an opponent controls"
+            },
+            {
+              "action": "custom_effect",
+              "text": "that player may search their library for a land card with a basic land type, put it onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This ability costs {1} less to activate for each legendary creature you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

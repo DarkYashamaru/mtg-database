@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2420828e-b886-42d3-81ba-8ee81b6e1eb8",
+  "name": "Oteclan Landmark // Oteclan Levitator",
+  "faces": [
+    {
+      "name": "Oteclan Landmark",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, scry 2.\nCraft with artifact {2}{W} ({2}{W}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, scry 2.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Craft with artifact {2}{W} ({2}{W}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+          "cost": "Craft with artifact {2}{W} ({2}{W}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "battlefield",
+              "controller": "its_owner",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Oteclan Levitator",
+      "type_line": "Artifact Creature \u2014 Golem",
+      "oracle_text": "Flying\nWhenever this creature attacks, target attacking creature without flying gains flying until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, target attacking creature without flying gains flying until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_attacking_creature_without_flying",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

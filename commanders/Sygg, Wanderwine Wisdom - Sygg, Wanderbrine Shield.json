@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9cc91ac5-6f2b-4fc0-b810-cdc92eebe6de",
+  "name": "Sygg, Wanderwine Wisdom // Sygg, Wanderbrine Shield",
+  "faces": [
+    {
+      "name": "Sygg, Wanderbrine Shield",
+      "type_line": "Legendary Creature \u2014 Merfolk Rogue",
+      "oracle_text": "Sygg can't be blocked.\nWhenever this creature transforms into Sygg, Wanderbrine Shield, target creature you control gains protection from each color until your next turn.\nAt the beginning of your first main phase, you may pay {U}. If you do, transform Sygg.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature transforms into Sygg, Wanderbrine Shield, target creature you control gains protection from each color until your next turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature transforms into Sygg"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Wanderbrine Shield, target creature you control gains protection from each color until your next turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your first main phase, you may pay {U}. If you do, transform Sygg.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{u}",
+              "optional": true
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Sygg can't be blocked.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Sygg can't be blocked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sygg, Wanderwine Wisdom",
+      "type_line": "Legendary Creature \u2014 Merfolk Wizard",
+      "oracle_text": "Sygg can't be blocked.\nWhenever this creature enters or transforms into Sygg, Wanderwine Wisdom, target creature gains \"Whenever this creature deals combat damage to a player or planeswalker, draw a card\" until end of turn.\nAt the beginning of your first main phase, you may pay {W}. If you do, transform Sygg.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or transforms into Sygg, Wanderwine Wisdom, target creature gains \"Whenever this creature deals combat damage to a player or planeswalker, draw a card\" until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature enters or transforms into Sygg"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Wanderwine Wisdom, target creature gains \"Whenever this creature deals combat damage to a player or planeswalker, draw a card\" until end of turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your first main phase, you may pay {W}. If you do, transform Sygg.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{w}",
+              "optional": true
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Sygg can't be blocked.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Sygg can't be blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

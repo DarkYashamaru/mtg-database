@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "370c37f7-2484-40e8-8fd9-c10cf6f5d5f2",
+  "name": "Manifold Key",
+  "faces": [
+    {
+      "name": "Manifold Key",
+      "type_line": "Artifact",
+      "oracle_text": "{1}, {T}: Untap another target artifact.\n{3}, {T}: Target creature can't be blocked this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}: Untap another target artifact.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Untap another target artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}, {T}: Target creature can't be blocked this turn.",
+          "cost": "{3}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

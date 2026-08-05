@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c6f7efad-381c-45ba-9976-159b7e78f7ed",
+  "name": "Lamplight Phoenix",
+  "faces": [
+    {
+      "name": "Lamplight Phoenix",
+      "type_line": "Creature \u2014 Phoenix",
+      "oracle_text": "Flying\nWhen this creature dies, you may exile it and collect evidence 4. If you do, return this card to the battlefield tapped. (To collect evidence 4, exile cards with total mana value 4 or greater from your graveyard.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, you may exile it and collect evidence 4. If you do, return this card to the battlefield tapped. (To collect evidence 4, exile cards with total mana value 4 or greater from your graveyard.)",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile it and collect evidence 4"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return this card to the battlefield tapped",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

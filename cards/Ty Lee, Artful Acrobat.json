@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3726b9a0-67cb-4f45-ab50-62db50f93568",
+  "name": "Ty Lee, Artful Acrobat",
+  "faces": [
+    {
+      "name": "Ty Lee, Artful Acrobat",
+      "type_line": "Legendary Creature \u2014 Human Performer",
+      "oracle_text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhenever Ty Lee attacks, you may pay {1}. When you do, target creature can't block this turn.",
+      "static": [
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Ty Lee attacks, you may pay {1}. When you do, target creature can't block this turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

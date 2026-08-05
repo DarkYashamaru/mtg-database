@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2c654772-c786-4966-a46e-9556bbf31d7c",
+  "name": "Ark of Hunger",
+  "faces": [
+    {
+      "name": "Ark of Hunger",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever one or more cards leave your graveyard, this artifact deals 1 damage to each opponent and you gain 1 life.\n{T}: Mill a card. You may play that card this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more cards leave your graveyard, this artifact deals 1 damage to each opponent and you gain 1 life.",
+          "trigger": {
+            "type": "cards_leave_graveyard",
+            "subject": "your_graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_artifact",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Mill a card. You may play that card this turn.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

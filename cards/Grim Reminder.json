@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "12684e95-2652-4c3c-b2c7-021b62344d77",
+  "name": "Grim Reminder",
+  "faces": [
+    {
+      "name": "Grim Reminder",
+      "type_line": "Instant",
+      "oracle_text": "Search your library for a nonland card and reveal it. Each opponent who cast a spell this turn with the same name as that card loses 6 life. Then shuffle.\n{B}{B}: Return this card from your graveyard to your hand. Activate only during your upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{B}{B}: Return this card from your graveyard to your hand. Activate only during your upkeep.",
+          "cost": "{B}{B}",
+          "condition": [
+            {
+              "condition_text": "during your upkeep"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for a nonland card and reveal it. Each opponent who cast a spell this turn with the same name as that card loses 6 life. Then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Search your library for a nonland card and reveal it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each opponent who cast a spell this turn with the same name as that card loses 6 life"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

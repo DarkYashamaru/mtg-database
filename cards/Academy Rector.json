@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e3c85068-b4b6-40b9-a16c-5c3b2d059ec4",
+  "name": "Academy Rector",
+  "faces": [
+    {
+      "name": "Academy Rector",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "When this creature dies, you may exile it. If you do, search your library for an enchantment card, put that card onto the battlefield, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, you may exile it. If you do, search your library for an enchantment card, put that card onto the battlefield, then shuffle.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "search your library for an enchantment card, put that card onto the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

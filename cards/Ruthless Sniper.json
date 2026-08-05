@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "02a506bd-203f-421c-b72e-e2ba77e922aa",
+  "name": "Ruthless Sniper",
+  "faces": [
+    {
+      "name": "Ruthless Sniper",
+      "type_line": "Creature \u2014 Human Archer",
+      "oracle_text": "Whenever you cycle or discard a card, you may pay {1}. If you do, put a -1/-1 counter on target creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cycle or discard a card, you may pay {1}. If you do, put a -1/-1 counter on target creature.",
+          "trigger": {
+            "type": "cycle_or_discard_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a -1/-1 counter on target creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

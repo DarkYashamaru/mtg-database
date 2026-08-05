@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "72dfd729-ebba-4bb1-83eb-54c2051fea3b",
+  "name": "Infiltration Lens",
+  "faces": [
+    {
+      "name": "Infiltration Lens",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature becomes blocked by a creature, you may draw two cards.\nEquip {1}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature becomes blocked by a creature, you may draw two cards.",
+          "trigger": {
+            "type": "becomes_blocked_by_creature",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {1}",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

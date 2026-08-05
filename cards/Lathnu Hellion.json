@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6dd71453-63ec-4f4c-87d2-34d207398b9a",
+  "name": "Lathnu Hellion",
+  "faces": [
+    {
+      "name": "Lathnu Hellion",
+      "type_line": "Creature \u2014 Hellion",
+      "oracle_text": "Haste\nWhen this creature enters, you get {E}{E} (two energy counters).\nAt the beginning of your end step, sacrifice this creature unless you pay {E}{E}.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, sacrifice this creature unless you pay {E}{E}.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self_unless_you_pay_ee"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

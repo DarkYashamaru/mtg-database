@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "256d884f-5dea-4906-a53d-cf14d43e6bc8",
+  "name": "Memory Leak",
+  "faces": [
+    {
+      "name": "Memory Leak",
+      "type_line": "Sorcery",
+      "oracle_text": "Target opponent reveals their hand. You choose a nonland card from that player's graveyard or hand and exile it.\nCycling {1} ({1}, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Cycling {1} ({1}, Discard this card: Draw a card.)",
+          "cost": "Cycling {1} ({1}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Target opponent reveals their hand. You choose a nonland card from that player's graveyard or hand and exile it.",
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a nonland card from that player's graveyard or hand and exile it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

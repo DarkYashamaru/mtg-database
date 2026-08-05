@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cdb1f944-a5ac-4683-a4eb-eebb82feea8d",
+  "name": "Voidmage Husher",
+  "faces": [
+    {
+      "name": "Voidmage Husher",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Flash (You may cast this spell any time you could cast an instant.)\nWhen this creature enters, counter target activated ability. (Mana abilities can't be targeted.)\nWhenever you cast a spell, you may return this creature to its owner's hand.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, counter target activated ability. (Mana abilities can't be targeted.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "counter target activated ability"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a spell, you may return this creature to its owner's hand.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

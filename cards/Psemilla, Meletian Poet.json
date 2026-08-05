@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "12712419-a2a9-483d-a65a-2b727ae404ae",
+  "name": "Psemilla, Meletian Poet",
+  "faces": [
+    {
+      "name": "Psemilla, Meletian Poet",
+      "type_line": "Legendary Creature \u2014 Human Bard",
+      "oracle_text": "Whenever you cast your first enchantment spell each turn, create a 2/2 white Nymph enchantment creature token.\nAt the beginning of each combat, if you control five or more enchantments, Psemilla gets +4/+4 and gains lifelink until end of turn. (Damage dealt by this creature also causes you to gain that much life.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your first enchantment spell each turn, create a 2/2 white Nymph enchantment creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast your first enchantment spell each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 white Nymph enchantment creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Nymph",
+                  "enchantment"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each combat, if you control five or more enchantments, Psemilla gets +4/+4 and gains lifelink until end of turn. (Damage dealt by this creature also causes you to gain that much life.)",
+          "trigger": {
+            "type": "beginning_of_each_combat"
+          },
+          "condition": [
+            {
+              "condition_text": "you control five or more enchantments"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self_gets_44_and",
+              "keyword": "lifelink"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

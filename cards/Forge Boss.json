@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c234d2ab-21d5-41a9-9ab8-47a8bd53a686",
+  "name": "Forge Boss",
+  "faces": [
+    {
+      "name": "Forge Boss",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Whenever you sacrifice one or more other creatures, this creature deals 2 damage to each opponent. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you sacrifice one or more other creatures, this creature deals 2 damage to each opponent. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice one or more other creatures"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 2
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

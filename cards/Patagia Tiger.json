@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "256ab710-4210-4142-973f-22ca029d5474",
+  "name": "Patagia Tiger",
+  "faces": [
+    {
+      "name": "Patagia Tiger",
+      "type_line": "Creature \u2014 Cat",
+      "oracle_text": "Flying\nWhen this creature enters, target Human you control gets +2/+2 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target Human you control gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Target",
+                  "Human"
+                ]
+              },
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

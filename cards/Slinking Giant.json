@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6d86dcaa-2295-4f4d-ada7-216f96138d81",
+  "name": "Slinking Giant",
+  "faces": [
+    {
+      "name": "Slinking Giant",
+      "type_line": "Creature \u2014 Giant Rogue",
+      "oracle_text": "Wither (This deals damage to creatures in the form of -1/-1 counters.)\nWhenever this creature blocks or becomes blocked, it gets -3/-0 until end of turn.",
+      "static": [
+        {
+          "keyword": "wither"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature blocks or becomes blocked, it gets -3/-0 until end of turn.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": "self_blocks_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": -3,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

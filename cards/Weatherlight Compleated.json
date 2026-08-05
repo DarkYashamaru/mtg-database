@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "060a7d77-61a8-4964-8fb6-35bd9a999517",
+  "name": "Weatherlight Compleated",
+  "faces": [
+    {
+      "name": "Weatherlight Compleated",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nAs long as Weatherlight Compleated has four or more phyresis counters on it, it's a Phyrexian creature in addition to its other types.\nWhenever a creature you control dies, put a phyresis counter on Weatherlight Compleated. Then draw a card if it has seven or more phyresis counters on it. If it doesn't, scry 1.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control dies, put a phyresis counter on Weatherlight Compleated. Then draw a card if it has seven or more phyresis counters on it. If it doesn't, scry 1.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a phyresis counter on Weatherlight Compleated"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then draw a card if it has seven or more phyresis counters on it"
+            },
+            {
+              "action": "scry",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it doesn't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as Weatherlight Compleated has four or more phyresis counters on it, it's a Phyrexian creature in addition to its other types.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as Weatherlight Compleated has four or more phyresis counters on it, it's a Phyrexian creature in addition to its other types"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

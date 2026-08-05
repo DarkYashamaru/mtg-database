@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4fa826ca-d361-4391-ad0d-989ebcfa4a91",
+  "name": "Kavaron, Memorial World",
+  "faces": [
+    {
+      "name": "Kavaron, Memorial World",
+      "type_line": "Land \u2014 Planet",
+      "oracle_text": "This land enters tapped.\n{T}: Add {R}.\nStation (Tap another creature you control: Put charge counters equal to its power on this Planet. Station only as a sorcery.)\n12+ | {1}{R}, {T}, Sacrifice a land: Create a 2/2 colorless Robot artifact creature token, then creatures you control get +1/+0 and gain haste until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "Station (Tap another creature you control: Put charge counters equal to its power on this Planet. Station only as a sorcery.)",
+          "cost": "Station (Tap another creature you control",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put charge counters equal to its power on this Planet"
+            }
+          ]
+        },
+        {
+          "raw_text": "12+ | {1}{R}, {T}, Sacrifice a land: Create a 2/2 colorless Robot artifact creature token, then creatures you control get +1/+0 and gain haste until end of turn.",
+          "cost": "12+ | {1}{R}, {T}, Sacrifice a land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 colorless robot artifact creature token",
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "robot",
+                  "artifact"
+                ]
+              }
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control_get_10_and",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

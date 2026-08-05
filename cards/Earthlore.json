@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91fbffd1-0886-45fa-bf3e-4c9864458431",
+  "name": "Earthlore",
+  "faces": [
+    {
+      "name": "Earthlore",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land you control\nTap enchanted land: Target blocking creature gets +1/+2 until end of turn. Activate only if enchanted land is untapped.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Tap enchanted land: Target blocking creature gets +1/+2 until end of turn. Activate only if enchanted land is untapped.",
+          "cost": "Tap enchanted land",
+          "condition": [
+            {
+              "condition_text": "enchanted land is untapped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_blocking_creature",
+              "power_delta": 1,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land_you_control"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

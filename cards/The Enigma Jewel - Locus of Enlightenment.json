@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c0d2bdd9-1e68-4d3a-83f8-ec2ba440a494",
+  "name": "The Enigma Jewel // Locus of Enlightenment",
+  "faces": [
+    {
+      "name": "Locus of Enlightenment",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "Locus of Enlightenment has each activated ability of the exiled cards used to craft it. You may activate each of those abilities only once each turn.\nWhenever you activate an ability that isn't a mana ability, copy it. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you activate an ability that isn't a mana ability, copy it. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you activate an ability that isn't a mana ability"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy it"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Locus of Enlightenment has each activated ability of the exiled cards used to craft it. You may activate each of those abilities only once each turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Locus of Enlightenment has each activated ability of the exiled cards used to craft it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may activate each of those abilities only once each turn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Enigma Jewel",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "The Enigma Jewel enters tapped.\n{T}: Add {C}{C}. Spend this mana only to activate abilities.\nCraft with four or more nonlands with activated abilities {8}{U} ({8}{U}, Exile this artifact, Exile the four or more from among other permanents you control and/or cards in your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}{C}. Spend this mana only to activate abilities.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{c}",
+                "{c}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to activate abilities"
+            }
+          ]
+        },
+        {
+          "raw_text": "Craft with four or more nonlands with activated abilities {8}{U} ({8}{U}, Exile this artifact, Exile the four or more from among other permanents you control and/or cards in your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+          "cost": "Craft with four or more nonlands with activated abilities {8}{U} ({8}{U}, Exile this artifact, Exile the four or more from among other permanents you control and/or cards in your graveyard",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "battlefield",
+              "controller": "its_owner",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "The Enigma Jewel enters tapped.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "The Enigma Jewel enters tapped"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

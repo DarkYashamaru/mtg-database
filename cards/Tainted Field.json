@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "439de49b-1091-4688-9ffb-80a025df31c2",
+  "name": "Tainted Field",
+  "faces": [
+    {
+      "name": "Tainted Field",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {W} or {B}. Activate only if you control a Swamp.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {W} or {B}. Activate only if you control a Swamp.",
+          "cost": "{T}",
+          "condition": [
+            {
+              "condition_text": "you control a swamp"
+            }
+          ],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}",
+                "{b}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

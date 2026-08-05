@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eb7a1f21-a66d-415b-8520-710b44890bb6",
+  "name": "Simulacrum Synthesizer",
+  "faces": [
+    {
+      "name": "Simulacrum Synthesizer",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, scry 2.\nWhenever another artifact you control with mana value 3 or greater enters, create a 0/0 colorless Construct artifact creature token with \"This token gets +1/+1 for each artifact you control.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, scry 2.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another artifact you control with mana value 3 or greater enters, create a 0/0 colorless Construct artifact creature token with \"This token gets +1/+1 for each artifact you control.\"",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "another_artifact_you_control_with_mana_value_3_or_greater"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 0/0 colorless Construct artifact creature token with \"This token gets +1/+1 for each artifact you control",
+                "power_toughness": "0/0",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Construct",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

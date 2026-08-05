@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fbd37284-35ff-4409-b6d5-f813c06c4931",
+  "name": "Wakka, Devoted Guardian",
+  "faces": [
+    {
+      "name": "Wakka, Devoted Guardian",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "Reach, trample\nWhenever Wakka deals combat damage to a player, destroy up to one target artifact that player controls and put a +1/+1 counter on Wakka.\nBlitzball Captain \u2014 At the beginning of your end step, if a counter was put on Wakka this turn, put a +1/+1 counter on each other creature you control.",
+      "static": [
+        {
+          "keyword": "reach"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Wakka deals combat damage to a player, destroy up to one target artifact that player controls and put a +1/+1 counter on Wakka.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy up to one target artifact that player controls and put a +1/+1 counter on Wakka"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if a counter was put on Wakka this turn, put a +1/+1 counter on each other creature you control.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a counter was put on Wakka this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Other"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

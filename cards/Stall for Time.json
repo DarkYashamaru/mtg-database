@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "09a400bd-83f1-4fac-a218-64c9f041874f",
+  "name": "Stall for Time",
+  "faces": [
+    {
+      "name": "Stall for Time",
+      "type_line": "Instant",
+      "oracle_text": "Kicker {1}{U} (You may pay an additional {1}{U} as you cast this spell.)\nTap up to two target creatures. If this spell was kicked, put a stun counter on each of those creatures. (If a permanent with a stun counter would become untapped, remove one from it instead.)\nDraw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{U} (You may pay an additional {1}{U} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{U}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Tap up to two target creatures. If this spell was kicked, put a stun counter on each of those creatures. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creatures",
+              "max_targets": 2,
+              "optional_targets": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a stun counter on each of those creatures",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

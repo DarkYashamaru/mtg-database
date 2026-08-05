@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "33747a34-79cc-446f-8718-b499bd497687",
+  "name": "Guardian of New Benalia",
+  "faces": [
+    {
+      "name": "Guardian of New Benalia",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Enlist (As this creature attacks, you may tap a nonattacking creature you control without summoning sickness. When you do, add its power to this creature's until end of turn.)\nWhenever this creature enlists a creature, scry 2.\nDiscard a card: This creature gains indestructible until end of turn. Tap it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enlists a creature, scry 2.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature enlists a creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Discard a card: This creature gains indestructible until end of turn. Tap it.",
+          "cost": "Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            },
+            {
+              "action": "tap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enlist (As this creature attacks, you may tap a nonattacking creature you control without summoning sickness. When you do, add its power to this creature's until end of turn.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enlist"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

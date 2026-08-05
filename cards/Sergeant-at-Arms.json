@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2ea95e03-b95d-4ccf-afc6-1a26ac6cf354",
+  "name": "Sergeant-at-Arms",
+  "faces": [
+    {
+      "name": "Sergeant-at-Arms",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Kicker {2}{W} (You may pay an additional {2}{W} as you cast this spell.)\nWhen this creature enters, if it was kicked, create two 1/1 white Soldier creature tokens.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, create two 1/1 white Soldier creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 white Soldier creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2}{W} (You may pay an additional {2}{W} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

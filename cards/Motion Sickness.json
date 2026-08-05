@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d0bb7a44-f93b-4acb-b69f-81efe0a3ae2d",
+  "name": "Motion Sickness",
+  "faces": [
+    {
+      "name": "Motion Sickness",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.\nWhenever you visit an Attraction, you may attach this Aura to target tapped creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, tap enchanted creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "enchanted_creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you visit an Attraction, you may attach this Aura to target tapped creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you visit an Attraction"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may attach this Aura to target tapped creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "enchanted_creature",
+              "scope": "controllers_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

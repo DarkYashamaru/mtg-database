@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7b238254-51b4-4e68-a8c6-93ab1180012e",
+  "name": "Answered Prayers",
+  "faces": [
+    {
+      "name": "Answered Prayers",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature you control enters, you gain 1 life. If this enchantment isn't a creature, it becomes a 3/3 Angel creature with flying in addition to its other types until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control enters, you gain 1 life. If this enchantment isn't a creature, it becomes a 3/3 Angel creature with flying in addition to its other types until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "it becomes a 3/3 angel creature with flying in addition to its other types until end of turn",
+              "condition": [
+                {
+                  "condition_text": "this enchantment isn't a creature"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

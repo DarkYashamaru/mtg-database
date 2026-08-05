@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cf9129a3-25fe-4787-b41c-0b6968ba5aee",
+  "name": "Expert-Level Safe",
+  "faces": [
+    {
+      "name": "Expert-Level Safe",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, exile the top two cards of your library face down.\n{1}, {T}: You and target opponent each secretly choose 1, 2, or 3. Then those choices are revealed. If they match, sacrifice this artifact and put all cards exiled with it into their owners' hands. Otherwise, exile the top card of your library face down.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, exile the top two cards of your library face down.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile the top two cards of your library face down"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}: You and target opponent each secretly choose 1, 2, or 3. Then those choices are revealed. If they match, sacrifice this artifact and put all cards exiled with it into their owners' hands. Otherwise, exile the top card of your library face down.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You and target opponent each secretly choose 1, 2, or 3"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then those choices are revealed"
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_artifact_and_put_all_cards_exiled_with_it_into_their_owners_hands",
+              "condition": [
+                {
+                  "condition_text": "they match"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile the top card of your library face down",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

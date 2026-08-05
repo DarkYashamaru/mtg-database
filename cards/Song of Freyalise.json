@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9fe1f3ef-2c30-4ccc-9a67-5349e98e2502",
+  "name": "Song of Freyalise",
+  "faces": [
+    {
+      "name": "Song of Freyalise",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II \u2014 Until your next turn, creatures you control gain \"{T}: Add one mana of any color.\"\nIII \u2014 Put a +1/+1 counter on each creature you control. Those creatures gain vigilance, trample, and indestructible until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Until your next turn, creatures you control gain \"{T}: Add one mana of any color.\"",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until your next turn, creatures you control gain \"{T}: Add one mana of any color.\""
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Put a +1/+1 counter on each creature you control. Those creatures gain vigilance, trample, and indestructible until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Those creatures gain vigilance, trample, and indestructible until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

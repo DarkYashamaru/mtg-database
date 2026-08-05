@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "oracle_id": "87266dec-ac03-4f21-b235-67c14c3024db",
+  "name": "Stonebinder's Familiar",
+  "faces": [
+    {
+      "name": "Stonebinder's Familiar",
+      "type_line": "Creature \u2014 Spirit Dog",
+      "oracle_text": "Whenever one or more cards are put into exile during your turn, put a +1/+1 counter on this creature. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more cards are put into exile during your turn, put a +1/+1 counter on this creature. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more cards are put into exile during your turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

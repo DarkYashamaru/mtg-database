@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "696f554d-0485-48a5-9273-3f6fb7d16a5d",
+  "name": "Witherbloom Apprentice",
+  "faces": [
+    {
+      "name": "Witherbloom Apprentice",
+      "type_line": "Creature \u2014 Human Druid",
+      "oracle_text": "Magecraft \u2014 Whenever you cast or copy an instant or sorcery spell, each opponent loses 1 life and you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast or copy an instant or sorcery spell, each opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "or_copy_an_instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

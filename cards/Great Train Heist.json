@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "afe2f7a4-9440-4d93-801f-a18b627efb21",
+  "name": "Great Train Heist",
+  "faces": [
+    {
+      "name": "Great Train Heist",
+      "type_line": "Instant",
+      "oracle_text": "Spree (Choose one or more additional costs.)\n+ {2}{R} \u2014 Untap all creatures you control. If it's your combat phase, there is an additional combat phase after this phase.\n+ {2} \u2014 Creatures you control get +1/+0 and gain first strike until end of turn.\n+ {R} \u2014 Choose target opponent. Whenever a creature you control deals combat damage to that player this turn, create a tapped Treasure token.",
+      "static": [
+        {
+          "keyword": "spree"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "+ {2}{R} \u2014 Untap all creatures you control. If it's your combat phase, there is an additional combat phase after this phase.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "+ {2}{R} \u2014 Untap all creatures you control"
+            },
+            {
+              "action": "add_combat_phase_after_this_phase",
+              "condition": [
+                {
+                  "condition_text": "it's your combat phase"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "+ {2} \u2014 Creatures you control get +1/+0 and gain first strike until end of turn.",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "_2__creatures_you_control_get_10_and",
+              "keyword": "first_strike"
+            }
+          ]
+        },
+        {
+          "raw_text": "+ {R} \u2014 Choose target opponent. Whenever a creature you control deals combat damage to that player this turn, create a tapped Treasure token.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "+ {R} \u2014 Choose target opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Whenever a creature you control deals combat damage to that player this turn, create a tapped Treasure token"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

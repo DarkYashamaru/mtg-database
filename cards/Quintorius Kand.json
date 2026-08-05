@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91babc5f-ebeb-4894-8c35-b0f60249cb80",
+  "name": "Quintorius Kand",
+  "faces": [
+    {
+      "name": "Quintorius Kand",
+      "type_line": "Legendary Planeswalker \u2014 Quintorius",
+      "oracle_text": "Whenever you cast a spell from exile, Quintorius Kand deals 2 damage to each opponent and you gain 2 life.\n+1: Create a 3/2 red and white Spirit creature token.\n\u22123: Discover 4.\n\u22126: Exile any number of target cards from your graveyard. Add {R} for each card exiled this way. You may play those cards this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell from exile, Quintorius Kand deals 2 damage to each opponent and you gain 2 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell from exile"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+1: Create a 3/2 red and white Spirit creature token.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/2 red and white Spirit creature token",
+                "colors": [
+                  "red",
+                  "white"
+                ],
+                "power_toughness": "3/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Spirit"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Discover 4.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Discover 4"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: Exile any number of target cards from your graveyard. Add {R} for each card exiled this way. You may play those cards this turn.",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile any number of target cards from your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Add {R} for each card exiled this way"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play those cards this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

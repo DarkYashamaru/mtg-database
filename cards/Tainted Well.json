@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b35b3ea6-ae9c-4128-a47f-069d88ee49c2",
+  "name": "Tainted Well",
+  "faces": [
+    {
+      "name": "Tainted Well",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\nWhen this Aura enters, draw a card.\nEnchanted land is a Swamp.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted land is a Swamp.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted land is a Swamp"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

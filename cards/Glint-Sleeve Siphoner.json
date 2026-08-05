@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ea34ec71-2f3b-4119-937d-4629cbf7ac5e",
+  "name": "Glint-Sleeve Siphoner",
+  "faces": [
+    {
+      "name": "Glint-Sleeve Siphoner",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "Menace\nWhenever this creature enters or attacks, you get {E} (an energy counter).\nAt the beginning of your upkeep, you may pay {E}{E}. If you do, you draw a card and you lose 1 life.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or attacks, you get {E} (an energy counter).",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get {E}"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, you may pay {E}{E}. If you do, you draw a card and you lose 1 life.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {E}{E}"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

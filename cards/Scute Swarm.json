@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aa854d50-444c-49d9-bfb1-5476b33c1c0b",
+  "name": "Scute Swarm",
+  "faces": [
+    {
+      "name": "Scute Swarm",
+      "type_line": "Creature \u2014 Insect",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, create a 1/1 green Insect creature token. If you control six or more lands, create a token that's a copy of this creature instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, create a 1/1 green Insect creature token. If you control six or more lands, create a token that's a copy of this creature instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Insect creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Insect"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of this creature instead",
+              "condition": [
+                {
+                  "condition_text": "you control six or more lands"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

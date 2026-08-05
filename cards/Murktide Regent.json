@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7f993ac7-c2cd-413c-a106-2c051a77ebf6",
+  "name": "Murktide Regent",
+  "faces": [
+    {
+      "name": "Murktide Regent",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Delve (Each card you exile from your graveyard while casting this spell pays for {1}.)\nFlying\nThis creature enters with a +1/+1 counter on it for each instant and sorcery card exiled with it.\nWhenever an instant or sorcery card leaves your graveyard, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "delve"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an instant or sorcery card leaves your graveyard, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an instant or sorcery card leaves your graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with a +1/+1 counter on it for each instant and sorcery card exiled with it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with a +1/+1 counter on it for each instant and sorcery card exiled with it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

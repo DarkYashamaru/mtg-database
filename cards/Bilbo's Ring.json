@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a7cc0f6b-6b17-4e76-b2a6-6a6ee2519b61",
+  "name": "Bilbo's Ring",
+  "faces": [
+    {
+      "name": "Bilbo's Ring",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "During your turn, equipped creature has hexproof and can't be blocked.\nWhenever equipped creature attacks alone, you draw a card and you lose 1 life.\nEquip Halfling {1} ({1}: Attach to target Halfling you control. Equip only as a sorcery.)\nEquip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks alone, you draw a card and you lose 1 life.",
+          "trigger": {
+            "type": "attacks_alone",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip Halfling {1} ({1}: Attach to target Halfling you control. Equip only as a sorcery.)",
+          "cost": "",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equip Halfling {1}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "During your turn, equipped creature has hexproof and can't be blocked.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "During your turn, equipped creature has hexproof and can't be blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

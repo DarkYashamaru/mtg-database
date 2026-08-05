@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "947a2665-2f4d-4193-8768-118f85334549",
+  "name": "Abundant Growth",
+  "faces": [
+    {
+      "name": "Abundant Growth",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\nWhen this Aura enters, draw a card.\nEnchanted land has \"{T}: Add one mana of any color.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Enchanted land has \"{T}: Add one mana of any color.\"",
+          "cost": "Enchanted land has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3c970f43-17da-4187-a084-efd53b579067",
+  "name": "Ral, Crackling Wit",
+  "faces": [
+    {
+      "name": "Ral, Crackling Wit",
+      "type_line": "Legendary Planeswalker \u2014 Ral",
+      "oracle_text": "Whenever you cast a noncreature spell, put a loyalty counter on Ral.\n+1: Create a 1/1 blue and red Otter creature token with prowess.\n\u22123: Draw three cards, then discard two cards.\n\u221210: Draw three cards. You get an emblem with \"Instant and sorcery spells you cast have storm.\" (Whenever you cast an instant or sorcery spell, copy it for each spell cast before it this turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, put a loyalty counter on Ral.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a loyalty counter on Ral"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+1: Create a 1/1 blue and red Otter creature token with prowess.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 blue and red Otter creature token with prowess",
+                "colors": [
+                  "blue",
+                  "red"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Otter"
+                ],
+                "keywords": [
+                  "prowess"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Draw three cards, then discard two cards.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "\u221210: Draw three cards. You get an emblem with \"Instant and sorcery spells you cast have storm.\" (Whenever you cast an instant or sorcery spell, copy it for each spell cast before it this turn.)",
+          "cost": "\u221210",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            },
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "you_get_an_emblem_with_instant_and_sorcery_spells_you_cast"
+              },
+              "keywords": [
+                "storm"
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ece3e379-c586-48bd-8742-472b5deccc35",
+  "name": "Solar Blast",
+  "faces": [
+    {
+      "name": "Solar Blast",
+      "type_line": "Instant",
+      "oracle_text": "Solar Blast deals 3 damage to any target.\nCycling {1}{R}{R} ({1}{R}{R}, Discard this card: Draw a card.)\nWhen you cycle this card, you may have it deal 1 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, you may have it deal 1 damage to any target.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have it deal 1 damage to any target"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {1}{R}{R} ({1}{R}{R}, Discard this card: Draw a card.)",
+          "cost": "Cycling {1}{R}{R} ({1}{R}{R}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Solar Blast deals 3 damage to any target.",
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

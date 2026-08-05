@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8165acd4-ac62-47f1-97dd-01860aee29ee",
+  "name": "Scorch Rider",
+  "faces": [
+    {
+      "name": "Scorch Rider",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Kicker {1}{R} (You may pay an additional {1}{R} as you cast this spell.)\nWhen this creature enters, if it was kicked, it gains haste until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, it gains haste until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{R} (You may pay an additional {1}{R} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

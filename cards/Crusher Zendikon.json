@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "68a1a67e-9d40-47dd-b282-6c1b15465f62",
+  "name": "Crusher Zendikon",
+  "faces": [
+    {
+      "name": "Crusher Zendikon",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\nEnchanted land is a 4/2 red Beast creature with trample. It's still a land.\nWhen enchanted land dies, return that card to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted land dies, return that card to its owner's hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return that card to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted land is a 4/2 red Beast creature with trample. It's still a land.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted land is a 4/2 red Beast creature with trample"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

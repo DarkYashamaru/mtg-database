@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "84275aab-f718-4896-b61c-63bf49fb483b",
+  "name": "Merchant of Truth",
+  "faces": [
+    {
+      "name": "Merchant of Truth",
+      "type_line": "Creature \u2014 Angel Detective",
+      "oracle_text": "Flying\nWhenever a nontoken creature you control dies, investigate.\nClues you control have exalted. (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn for each instance of exalted among permanents you control.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken creature you control dies, investigate.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "investigate"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Clues you control have exalted. (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn for each instance of exalted among permanents you control.)",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Clue"
+                ]
+              },
+              "keywords": [
+                "exalted"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

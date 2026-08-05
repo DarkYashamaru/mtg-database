@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ef75be00-1a88-47a1-a1ae-fe2c9881a798",
+  "name": "Desecration Demon",
+  "faces": [
+    {
+      "name": "Desecration Demon",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Flying\nAt the beginning of each combat, any opponent may sacrifice a creature of their choice. If a player does, tap this creature and put a +1/+1 counter on it.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each combat, any opponent may sacrifice a creature of their choice. If a player does, tap this creature and put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "beginning_of_each_combat"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "any opponent may sacrifice a creature of their choice"
+            },
+            {
+              "action": "custom_effect",
+              "text": "tap this creature",
+              "condition": [
+                {
+                  "condition_text": "a player does"
+                }
+              ]
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

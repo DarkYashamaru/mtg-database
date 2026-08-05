@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "be811e70-aaaa-41f3-bf9e-5d3f9f719b49",
+  "name": "Castle Locthwain",
+  "faces": [
+    {
+      "name": "Castle Locthwain",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped unless you control a Swamp.\n{T}: Add {B}.\n{1}{B}{B}, {T}: Draw a card, then you lose life equal to the number of cards in your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{B}{B}, {T}: Draw a card, then you lose life equal to the number of cards in your hand.",
+          "cost": "{1}{B}{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "you lose life equal to the number of cards in your hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped unless you control a Swamp.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters tapped unless you control a Swamp"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

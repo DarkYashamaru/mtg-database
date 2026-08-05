@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2031bc31-81cc-407a-8615-29832f586bbc",
+  "name": "Calciform Pools",
+  "faces": [
+    {
+      "name": "Calciform Pools",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{1}, {T}: Put a storage counter on this land.\n{1}, Remove X storage counters from this land: Add X mana in any combination of {W} and/or {U}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Put a storage counter on this land.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a storage counter on this land"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, Remove X storage counters from this land: Add X mana in any combination of {W} and/or {U}.",
+          "cost": "{1}, Remove X storage counters from this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add X mana in any combination of {W} and/or {U}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

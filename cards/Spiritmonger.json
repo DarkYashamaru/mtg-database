@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3913c7f2-86b7-4dd4-84a6-9bd4c1c66781",
+  "name": "Spiritmonger",
+  "faces": [
+    {
+      "name": "Spiritmonger",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "Whenever this creature deals damage to a creature, put a +1/+1 counter on this creature.\n{B}: Regenerate this creature.\n{G}: This creature becomes the color of your choice until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals damage to a creature, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature deals damage to a creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}: Regenerate this creature.",
+          "cost": "{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "raw_text": "{G}: This creature becomes the color of your choice until end of turn.",
+          "cost": "{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature becomes the color of your choice until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

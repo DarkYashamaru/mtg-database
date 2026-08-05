@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "face2dc0-37ba-4efe-b900-b5521567c943",
+  "name": "Starwinder",
+  "faces": [
+    {
+      "name": "Starwinder",
+      "type_line": "Creature \u2014 Leviathan",
+      "oracle_text": "Whenever a creature you control deals combat damage to a player, you may draw that many cards.\nWarp {2}{U}{U} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control deals combat damage to a player, you may draw that many cards.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Warp {2}{U}{U} (You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Warp {2}{U}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

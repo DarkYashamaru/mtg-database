@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7b7e622c-815a-44a0-88ff-62bbe8dd5582",
+  "name": "Renegade Krasis",
+  "faces": [
+    {
+      "name": "Renegade Krasis",
+      "type_line": "Creature \u2014 Beast Mutant",
+      "oracle_text": "Evolve (Whenever a creature you control enters, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.)\nWhenever this creature evolves, put a +1/+1 counter on each other creature you control with a +1/+1 counter on it.",
+      "static": [
+        {
+          "keyword": "evolve"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature evolves, put a +1/+1 counter on each other creature you control with a +1/+1 counter on it.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature evolves"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_other_creature_you_control_with_a_11_counter_on_it"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

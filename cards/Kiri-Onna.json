@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e09661d4-858b-43a8-b6a4-ba76f7a69777",
+  "name": "Kiri-Onna",
+  "faces": [
+    {
+      "name": "Kiri-Onna",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "When this creature enters, return target creature to its owner's hand.\nWhenever you cast a Spirit or Arcane spell, you may return this creature to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, return target creature to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature"
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, you may return this creature to its owner's hand.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

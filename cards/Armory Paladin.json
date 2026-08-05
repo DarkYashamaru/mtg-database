@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "360f7bfd-3b4c-4e87-a251-fd55c8a62320",
+  "name": "Armory Paladin",
+  "faces": [
+    {
+      "name": "Armory Paladin",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Trample\nWhenever you cast an Aura or Equipment spell, exile the top card of your library. You may play that card until the end of your next turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an Aura or Equipment spell, exile the top card of your library. You may play that card until the end of your next turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "aura",
+                "equipment"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card until the end of your next turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

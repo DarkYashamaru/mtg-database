@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9056eba4-612b-4e82-8689-fe098241b007",
+  "name": "Trove Warden",
+  "faces": [
+    {
+      "name": "Trove Warden",
+      "type_line": "Creature \u2014 Cat Beast",
+      "oracle_text": "Vigilance\nLandfall \u2014 Whenever a land you control enters, exile target permanent card with mana value 3 or less from your graveyard.\nWhen this creature dies, put each permanent card exiled with it onto the battlefield under the control of that card's owner.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, exile target permanent card with mana value 3 or less from your graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target permanent card with mana value 3 or less from your graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, put each permanent card exiled with it onto the battlefield under the control of that card's owner.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put each permanent card exiled with it onto the battlefield under the control of that card's owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

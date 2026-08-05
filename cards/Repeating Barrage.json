@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a08c599e-ee75-4d2b-ae9b-0987c233dd17",
+  "name": "Repeating Barrage",
+  "faces": [
+    {
+      "name": "Repeating Barrage",
+      "type_line": "Sorcery",
+      "oracle_text": "Repeating Barrage deals 3 damage to any target.\nRaid \u2014 {3}{R}{R}: Return this card from your graveyard to your hand. Activate only if you attacked this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Raid \u2014 {3}{R}{R}: Return this card from your graveyard to your hand. Activate only if you attacked this turn.",
+          "cost": "Raid \u2014 {3}{R}{R}",
+          "condition": [
+            {
+              "condition_text": "you attacked this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Repeating Barrage deals 3 damage to any target.",
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

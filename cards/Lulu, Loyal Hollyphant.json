@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d99197b9-143a-462f-ace4-f35228ba082e",
+  "name": "Lulu, Loyal Hollyphant",
+  "faces": [
+    {
+      "name": "Lulu, Loyal Hollyphant",
+      "type_line": "Legendary Creature \u2014 Elephant Angel",
+      "oracle_text": "Flying\nAt the beginning of your end step, if a permanent you controlled left the battlefield this turn, put a +1/+1 counter on each tapped creature you control, then untap them.\nChoose a Background (You can have a Background as a second commander.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "choose_a_background"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if a permanent you controlled left the battlefield this turn, put a +1/+1 counter on each tapped creature you control, then untap them.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a permanent you controlled left the battlefield this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Tapped"
+                ]
+              },
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap them"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

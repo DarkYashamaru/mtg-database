@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "02f8ec49-f490-408b-a76e-58e160a5a5a7",
+  "name": "Marsh Flitter",
+  "faces": [
+    {
+      "name": "Marsh Flitter",
+      "type_line": "Creature \u2014 Faerie Rogue",
+      "oracle_text": "Flying\nWhen this creature enters, create two 1/1 black Goblin Rogue creature tokens.\nSacrifice a Goblin: This creature has base power and toughness 3/3 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create two 1/1 black Goblin Rogue creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 black Goblin Rogue creature tokens",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Goblin",
+                  "Rogue"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice a Goblin: This creature has base power and toughness 3/3 until end of turn.",
+          "cost": "Sacrifice a Goblin",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature has base power and toughness 3/3 until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

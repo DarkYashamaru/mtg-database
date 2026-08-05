@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fbdbea75-7f80-4704-b2cf-920d00dc1273",
+  "name": "Painsmith",
+  "faces": [
+    {
+      "name": "Painsmith",
+      "type_line": "Creature \u2014 Human Artificer",
+      "oracle_text": "Whenever you cast an artifact spell, you may have target creature get +2/+0 and gain deathtouch until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an artifact spell, you may have target creature get +2/+0 and gain deathtouch until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Artifact"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "have_target_creature_get_20_and",
+              "keyword": "deathtouch",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eae3e762-dacd-4bd2-923c-3abb5ceb729a",
+  "name": "Aisha of Sparks and Smoke",
+  "faces": [
+    {
+      "name": "Aisha of Sparks and Smoke",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\n{R/W}: Aisha of Sparks and Smoke gains first strike until end of turn.\nWhenever Aisha deals combat damage, you may cast a sorcery spell from your hand with mana value less than or equal to that damage without paying its mana cost.",
+      "static": [
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Aisha deals combat damage, you may cast a sorcery spell from your hand with mana value less than or equal to that damage without paying its mana cost.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever Aisha deals combat damage"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may cast a sorcery spell from your hand with mana value less than or equal to that damage without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R/W}: Aisha of Sparks and Smoke gains first strike until end of turn.",
+          "cost": "{R/W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "first_strike"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

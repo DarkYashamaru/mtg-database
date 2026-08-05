@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "876c9620-216c-45dd-b8a6-b9e0cba63e3d",
+  "name": "Contested Game Ball",
+  "faces": [
+    {
+      "name": "Contested Game Ball",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever you're dealt combat damage, the attacking player gains control of this artifact and untaps it.\n{2}, {T}: Draw a card and put a point counter on this artifact. Then if it has five or more point counters on it, sacrifice it and create a Treasure token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you're dealt combat damage, the attacking player gains control of this artifact and untaps it.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you're dealt combat damage"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "the attacking player gains control of this artifact and untaps it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}: Draw a card and put a point counter on this artifact. Then if it has five or more point counters on it, sacrifice it and create a Treasure token.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Draw a card and put a point counter on this artifact"
+            },
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "it has five or more point counters on it"
+                }
+              ]
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

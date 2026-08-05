@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e9208fc2-616d-4c32-bd66-76a8bf85a6b5",
+  "name": "Hound Tamer // Untamed Pup",
+  "faces": [
+    {
+      "name": "Hound Tamer",
+      "type_line": "Creature \u2014 Human Werewolf",
+      "oracle_text": "Trample\n{3}{G}: Put a +1/+1 counter on target creature.\nDaybound (If a player casts no spells during their own turn, it becomes night next turn.)",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "daybound"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{G}: Put a +1/+1 counter on target creature.",
+          "cost": "{3}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Untamed Pup",
+      "type_line": "Creature \u2014 Werewolf",
+      "oracle_text": "Trample\nOther Wolves and Werewolves you control have trample.\n{3}{G}: Put a +1/+1 counter on target creature.\nNightbound (If a player casts at least two spells during their own turn, it becomes day next turn.)",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "nightbound"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{G}: Put a +1/+1 counter on target creature.",
+          "cost": "{3}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Other Wolves and Werewolves you control have trample.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "subtypes": [
+                  "Wolve",
+                  "And",
+                  "Werewolve"
+                ]
+              },
+              "keywords": [
+                "trample"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

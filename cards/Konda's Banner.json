@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a355908b-4359-4bfe-9bc4-ccf721ab3a13",
+  "name": "Konda's Banner",
+  "faces": [
+    {
+      "name": "Konda's Banner",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Konda's Banner can be attached only to a legendary creature.\nCreatures that share a color with equipped creature get +1/+1.\nCreatures that share a creature type with equipped creature get +1/+1.\nEquip {2}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Konda's Banner can be attached only to a legendary creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Konda's Banner can be attached only to a legendary creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures that share a color with equipped creature get +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": {
+                "selector": "creatures_that_share_a_color",
+                "keywords": [
+                  "equipped_creature"
+                ]
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures that share a creature type with equipped creature get +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": {
+                "selector": "creatures_that_share_a_creature_type",
+                "keywords": [
+                  "equipped_creature"
+                ]
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

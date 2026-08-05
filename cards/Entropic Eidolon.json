@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "be5f788a-8a2e-447c-9e65-f9fc197ddfc9",
+  "name": "Entropic Eidolon",
+  "faces": [
+    {
+      "name": "Entropic Eidolon",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "{B}, Sacrifice this creature: Target player loses 1 life and you gain 1 life.\nWhenever you cast a multicolored spell, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a multicolored spell, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Multicolored"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}, Sacrifice this creature: Target player loses 1 life and you gain 1 life.",
+          "cost": "{B}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player loses 1 life and you gain 1 life"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

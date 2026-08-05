@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ea74940f-01de-4804-92ed-b273fddf6d62",
+  "name": "Teo, Spirited Glider",
+  "faces": [
+    {
+      "name": "Teo, Spirited Glider",
+      "type_line": "Legendary Creature \u2014 Human Pilot Ally",
+      "oracle_text": "Flying\nWhenever one or more creatures you control with flying attack, draw a card, then discard a card. When you discard a nonland card this way, put a +1/+1 counter on target creature you control.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control with flying attack, draw a card, then discard a card. When you discard a nonland card this way, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control_with_flying"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "When you discard a nonland card this way, put a +1/+1 counter on target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

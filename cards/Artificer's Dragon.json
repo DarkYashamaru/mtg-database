@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4284ff9f-4085-4874-abc7-95467cb759a5",
+  "name": "Artificer's Dragon",
+  "faces": [
+    {
+      "name": "Artificer's Dragon",
+      "type_line": "Artifact Creature \u2014 Dragon",
+      "oracle_text": "Flying\n{R}: Artifact creatures you control get +1/+0 until end of turn.\nUnearth {3}{R}{R} ({3}{R}{R}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{R}: Artifact creatures you control get +1/+0 until end of turn.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Artifact creatures you control get +1/+0 until end of turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Unearth {3}{R}{R} ({3}{R}{R}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.)",
+          "cost": "Unearth {3}{R}{R} ({3}{R}{R}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "temporary_reanimation_clause",
+              "target": "it",
+              "expire_at": "beginning_of_next_end_step",
+              "exile_if_would_leave_battlefield": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

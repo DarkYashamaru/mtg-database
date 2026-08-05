@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6158ab85-a929-472c-9618-8e76d2d4b228",
+  "name": "Promise of Bunrei",
+  "faces": [
+    {
+      "name": "Promise of Bunrei",
+      "type_line": "Enchantment",
+      "oracle_text": "When a creature you control dies, sacrifice this enchantment. If you do, create four 1/1 colorless Spirit creature tokens.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When a creature you control dies, sacrifice this enchantment. If you do, create four 1/1 colorless Spirit creature tokens.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment"
+            },
+            {
+              "action": "create_token",
+              "amount": 4,
+              "token": {
+                "raw": "1/1 colorless spirit creature tokens",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "spirit"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

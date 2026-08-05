@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "28f55673-7aa0-497e-8434-aa70df1b5e04",
+  "name": "Annihilate",
+  "faces": [
+    {
+      "name": "Annihilate",
+      "type_line": "Instant",
+      "oracle_text": "Destroy target nonblack creature. It can't be regenerated.\nDraw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Destroy target nonblack creature. It can't be regenerated.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature",
+                "not_colors": [
+                  "black"
+                ]
+              }
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

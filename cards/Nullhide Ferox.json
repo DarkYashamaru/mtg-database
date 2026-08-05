@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b04a337-3152-481e-973f-a11dbd615f93",
+  "name": "Nullhide Ferox",
+  "faces": [
+    {
+      "name": "Nullhide Ferox",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "Hexproof\nYou can't cast noncreature spells.\n{2}: This creature loses all abilities until end of turn. Any player may activate this ability.\nIf a spell or ability an opponent controls causes you to discard this card, put it onto the battlefield instead of putting it into your graveyard.",
+      "static": [
+        {
+          "keyword": "hexproof"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}: This creature loses all abilities until end of turn. Any player may activate this ability.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature loses all abilities until end of turn"
+            },
+            {
+              "action": "activation_permission",
+              "player_scope": "any_player"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You can't cast noncreature spells.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You can't cast noncreature spells"
+            }
+          ]
+        },
+        {
+          "raw_text": "If a spell or ability an opponent controls causes you to discard this card, put it onto the battlefield instead of putting it into your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put it onto the battlefield instead of putting it into your graveyard",
+              "condition": [
+                {
+                  "condition_text": "a spell or ability an opponent controls causes you to discard this card"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

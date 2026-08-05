@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "73d8c33d-916a-4220-96ae-9622aad36210",
+  "name": "Call the Coppercoats",
+  "faces": [
+    {
+      "name": "Call the Coppercoats",
+      "type_line": "Instant",
+      "oracle_text": "Strive \u2014 This spell costs {1}{W} more to cast for each target beyond the first.\nChoose any number of target opponents. Create X 1/1 white Human Soldier creature tokens, where X is the number of creatures those opponents control.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Strive \u2014 This spell costs {1}{W} more to cast for each target beyond the first.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Strive \u2014 This spell costs {1}{W} more to cast for each target beyond the first"
+            }
+          ]
+        },
+        {
+          "raw_text": "Choose any number of target opponents. Create X 1/1 white Human Soldier creature tokens, where X is the number of creatures those opponents control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose any number of target opponents"
+            },
+            {
+              "action": "create_token",
+              "amount": "count",
+              "count_object": "creatures_those_opponents_control",
+              "token": {
+                "raw": "1/1 white Human Soldier creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human",
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

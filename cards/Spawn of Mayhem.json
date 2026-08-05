@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6a290adf-7b75-451e-bb79-9c13e10b38aa",
+  "name": "Spawn of Mayhem",
+  "faces": [
+    {
+      "name": "Spawn of Mayhem",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Spectacle {1}{B}{B} (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.)\nFlying, trample\nAt the beginning of your upkeep, this creature deals 1 damage to each player. Then if you have 10 or less life, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, this creature deals 1 damage to each player. Then if you have 10 or less life, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 1 damage to each player"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you have 10 or less life"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Spectacle {1}{B}{B} (You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Spectacle {1}{B}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

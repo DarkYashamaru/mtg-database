@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0dc4bf39-67d6-44e5-8993-dd18b20cfdee",
+  "name": "Ultima Weapon",
+  "faces": [
+    {
+      "name": "Ultima Weapon",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature attacks, destroy target creature an opponent controls.\nEquipped creature gets +7/+7.\nEquip {7}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, destroy target creature an opponent controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target creature an opponent controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {7}",
+          "cost": "{7}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +7/+7.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 7,
+              "toughness_delta": 7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "680a3e17-5144-4e97-bc59-9f5fc3ad6514",
+  "name": "Pako, Arcane Retriever",
+  "faces": [
+    {
+      "name": "Pako, Arcane Retriever",
+      "type_line": "Legendary Creature \u2014 Elemental Dog",
+      "oracle_text": "Partner with Haldan, Avid Arcanist\nHaste\nWhenever Pako attacks, exile the top card of each player's library and put a fetch counter on each of them. Put a +1/+1 counter on Pako for each noncreature card exiled this way.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Pako attacks, exile the top card of each player's library and put a fetch counter on each of them. Put a +1/+1 counter on Pako for each noncreature card exiled this way.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile the top card of each player's library and put a fetch counter on each of them"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_for_each_noncreature_card_exiled_this_way",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Haldan, Avid Arcanist",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Haldan, Avid Arcanist"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

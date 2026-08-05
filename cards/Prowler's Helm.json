@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "603ef53f-6191-4229-b85f-adad6f4503ce",
+  "name": "Prowler's Helm",
+  "faces": [
+    {
+      "name": "Prowler's Helm",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature can't be blocked except by Walls.\nEquip {2}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature can't be blocked except by Walls.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "equipped_creature",
+              "restriction": "cant_be_blocked_except_by",
+              "except_by": "Wall"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

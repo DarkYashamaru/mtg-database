@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c1d9c41a-0941-4b7e-b8a6-890d30386458",
+  "name": "Hunted Bonebrute",
+  "faces": [
+    {
+      "name": "Hunted Bonebrute",
+      "type_line": "Creature \u2014 Skeleton Beast",
+      "oracle_text": "Menace\nWhen this creature enters, target opponent creates two 1/1 white Dog creature tokens.\nWhen this creature dies, each opponent loses 3 life.\nDisguise {1}{B}",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target opponent creates two 1/1 white Dog creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent creates two 1/1 white Dog creature tokens"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, each opponent loses 3 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disguise {1}{B}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disguise {1}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

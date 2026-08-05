@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7739311a-682b-48a6-8db2-c07f44141751",
+  "name": "The Gitrog, Ravenous Ride",
+  "faces": [
+    {
+      "name": "The Gitrog, Ravenous Ride",
+      "type_line": "Legendary Creature \u2014 Frog Horror Mount",
+      "oracle_text": "Trample, haste\nWhenever The Gitrog deals combat damage to a player, you may sacrifice a creature that saddled it this turn. If you do, draw X cards, then put up to X land cards from your hand onto the battlefield tapped, where X is the sacrificed creature's power.\nSaddle 1",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever The Gitrog deals combat damage to a player, you may sacrifice a creature that saddled it this turn. If you do, draw X cards, then put up to X land cards from your hand onto the battlefield tapped, where X is the sacrificed creature's power.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature_that_saddled_it_this_turn",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": "X",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put up to x land cards from your hand onto the battlefield tapped, where x is the sacrificed creature's power",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Saddle 1",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Saddle 1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

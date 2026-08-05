@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "57b86d5c-3269-44bc-a838-3c5439d820d9",
+  "name": "Mirrorpool",
+  "faces": [
+    {
+      "name": "Mirrorpool",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {C}.\n{2}{C}, {T}, Sacrifice this land: Copy target instant or sorcery spell you control. You may choose new targets for the copy.\n{4}{C}, {T}, Sacrifice this land: Create a token that's a copy of target creature you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{C}, {T}, Sacrifice this land: Copy target instant or sorcery spell you control. You may choose new targets for the copy.",
+          "cost": "{2}{C}, {T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Copy target instant or sorcery spell you control"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}{C}, {T}, Sacrifice this land: Create a token that's a copy of target creature you control.",
+          "cost": "{4}{C}, {T}, Sacrifice this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Create a token that's a copy of target creature you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

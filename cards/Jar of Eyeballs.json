@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3075dadd-240f-4455-9286-9f1d48f53a3f",
+  "name": "Jar of Eyeballs",
+  "faces": [
+    {
+      "name": "Jar of Eyeballs",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a creature you control dies, put two eyeball counters on this artifact.\n{3}, {T}, Remove all eyeball counters from this artifact: Look at the top X cards of your library, where X is the number of eyeball counters removed this way. Put one of them into your hand and the rest on the bottom of your library in any order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control dies, put two eyeball counters on this artifact.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put two eyeball counters on this artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}, {T}, Remove all eyeball counters from this artifact: Look at the top X cards of your library, where X is the number of eyeball counters removed this way. Put one of them into your hand and the rest on the bottom of your library in any order.",
+          "cost": "{3}, {T}, Remove all eyeball counters from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Look at the top X cards of your library, where X is the number of eyeball counters removed this way"
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "destination": "hand",
+              "remainder_destination": "bottom_of_library",
+              "remainder_order": "any"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

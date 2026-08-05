@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ae15a96d-ce88-4cb9-a353-439387ca3d02",
+  "name": "Hero of Leina Tower",
+  "faces": [
+    {
+      "name": "Hero of Leina Tower",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Heroic \u2014 Whenever you cast a spell that targets this creature, you may pay {X}. If you do, put X +1/+1 counters on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that targets this creature, you may pay {X}. If you do, put X +1/+1 counters on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "that targets this creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{x}",
+              "optional": true
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": "X",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

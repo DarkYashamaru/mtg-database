@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "27692079-a517-4d38-b452-7409980b5912",
+  "name": "HYDRA Infiltration",
+  "faces": [
+    {
+      "name": "HYDRA Infiltration",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, target opponent discards two cards.\nWhenever a creature you control attacks alone, target opponent loses 1 life and you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, target opponent discards two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent discards two cards"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control attacks alone, target opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "attacks_alone",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "target_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

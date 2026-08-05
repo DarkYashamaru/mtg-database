@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "10494ce1-7a38-44ae-9881-a83e44daaf7b",
+  "name": "Reaper of the Wilds",
+  "faces": [
+    {
+      "name": "Reaper of the Wilds",
+      "type_line": "Creature \u2014 Gorgon",
+      "oracle_text": "Whenever another creature dies, scry 1.\n{B}: This creature gains deathtouch until end of turn.\n{1}{G}: This creature gains hexproof until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature dies, scry 1.",
+          "trigger": {
+            "type": "dies",
+            "subject": "another_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}: This creature gains deathtouch until end of turn.",
+          "cost": "{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "deathtouch"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{G}: This creature gains hexproof until end of turn.",
+          "cost": "{1}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "hexproof"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

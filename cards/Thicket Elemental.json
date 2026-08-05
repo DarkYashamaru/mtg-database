@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a85390b6-e90b-4d0c-9573-eb67ce01a0aa",
+  "name": "Thicket Elemental",
+  "faces": [
+    {
+      "name": "Thicket Elemental",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "Kicker {1}{G} (You may pay an additional {1}{G} as you cast this spell.)\nWhen this creature enters, if it was kicked, you may reveal cards from the top of your library until you reveal a creature card. If you do, put that card onto the battlefield and shuffle all other cards revealed this way into your library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, you may reveal cards from the top of your library until you reveal a creature card. If you do, put that card onto the battlefield and shuffle all other cards revealed this way into your library.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may reveal cards from the top of your library until you reveal a creature card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card onto the battlefield and shuffle all other cards revealed this way into your library",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{G} (You may pay an additional {1}{G} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

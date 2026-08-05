@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b4d23acf-ff1f-4a6a-9ede-2667a99e9665",
+  "name": "Multiple Choice",
+  "faces": [
+    {
+      "name": "Multiple Choice",
+      "type_line": "Sorcery",
+      "oracle_text": "If X is 1, scry 1, then draw a card.\nIf X is 2, you may choose a player. They return a creature they control to its owner's hand.\nIf X is 3, create a 4/4 blue and red Elemental creature token.\nIf X is 4 or more, do all of the above.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If X is 1, scry 1, then draw a card.",
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "x is 1"
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "If X is 2, you may choose a player. They return a creature they control to its owner's hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may choose a player",
+              "condition": [
+                {
+                  "condition_text": "x is 2"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "They return a creature they control to its owner's hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "If X is 3, create a 4/4 blue and red Elemental creature token.",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "4/4 blue and red elemental creature token",
+                "colors": [
+                  "blue",
+                  "red"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "elemental"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "x is 3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "If X is 4 or more, do all of the above.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "do all of the above",
+              "condition": [
+                {
+                  "condition_text": "x is 4 or more"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

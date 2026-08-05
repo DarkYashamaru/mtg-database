@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "36a6925a-621e-47d6-8cb3-1b2886e1986e",
+  "name": "Mogg Assassin",
+  "faces": [
+    {
+      "name": "Mogg Assassin",
+      "type_line": "Creature \u2014 Goblin Assassin",
+      "oracle_text": "{T}: You choose target creature an opponent controls, and that opponent chooses target creature. Flip a coin. If you win the flip, destroy the creature you chose. If you lose the flip, destroy the creature your opponent chose.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: You choose target creature an opponent controls, and that opponent chooses target creature. Flip a coin. If you win the flip, destroy the creature you chose. If you lose the flip, destroy the creature your opponent chose.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You choose target creature an opponent controls, and that opponent chooses target creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin"
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy the creature you chose",
+              "condition": [
+                {
+                  "condition_text": "you win the flip"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy the creature your opponent chose",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fd9cd2b0-3f43-41a6-b963-c781d0f285e8",
+  "name": "The Bloodsky Massacre",
+  "faces": [
+    {
+      "name": "The Bloodsky Massacre",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Create a 2/3 red Demon Berserker creature token with menace.\nII \u2014 Whenever a Berserker attacks this turn, you draw a card and you lose 1 life.\nIII \u2014 Add {R} for each Berserker you control. Until end of turn, you don't lose this mana as steps and phases end.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Create a 2/3 red Demon Berserker creature token with menace.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/3 red Demon Berserker creature token with menace",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "2/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Demon",
+                  "Berserker"
+                ],
+                "keywords": [
+                  "menace"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Whenever a Berserker attacks this turn, you draw a card and you lose 1 life.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Whenever a Berserker attacks this turn, you draw a card and you lose 1 life"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Add {R} for each Berserker you control. Until end of turn, you don't lose this mana as steps and phases end.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {R} for each Berserker you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you don't lose this mana as steps and phases end"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

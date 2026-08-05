@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f73c7edf-ed2c-41e8-ac83-c83ddd543f14",
+  "name": "Throne of Bone",
+  "faces": [
+    {
+      "name": "Throne of Bone",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a player casts a black spell, you may pay {1}. If you do, you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts a black spell, you may pay {1}. If you do, you gain 1 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player casts a black spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

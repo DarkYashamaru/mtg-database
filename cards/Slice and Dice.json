@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "463fc961-d34e-4f40-b383-5b78a0fcb5c8",
+  "name": "Slice and Dice",
+  "faces": [
+    {
+      "name": "Slice and Dice",
+      "type_line": "Sorcery",
+      "oracle_text": "Slice and Dice deals 4 damage to each creature.\nCycling {2}{R} ({2}{R}, Discard this card: Draw a card.)\nWhen you cycle this card, you may have it deal 1 damage to each creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, you may have it deal 1 damage to each creature.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have it deal 1 damage to each creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {2}{R} ({2}{R}, Discard this card: Draw a card.)",
+          "cost": "Cycling {2}{R} ({2}{R}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Slice and Dice deals 4 damage to each creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Slice and Dice deals 4 damage to each creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

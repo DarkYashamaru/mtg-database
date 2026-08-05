@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "984e763c-5a83-4231-8ec4-1be76846479a",
+  "name": "Karametra, God of Harvests",
+  "faces": [
+    {
+      "name": "Karametra, God of Harvests",
+      "type_line": "Legendary Enchantment Creature \u2014 God",
+      "oracle_text": "Indestructible\nAs long as your devotion to green and white is less than seven, Karametra isn't a creature.\nWhenever you cast a creature spell, you may search your library for a Forest or Plains card, put it onto the battlefield tapped, then shuffle.",
+      "static": [
+        {
+          "keyword": "indestructible"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a creature spell, you may search your library for a Forest or Plains card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a forest or plains card, put it onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as your devotion to green and white is less than seven, Karametra isn't a creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as your devotion to green and white is less than seven, Karametra isn't a creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

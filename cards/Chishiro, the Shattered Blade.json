@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c98a4af3-3e58-4927-9a60-d2664cf0b139",
+  "name": "Chishiro, the Shattered Blade",
+  "faces": [
+    {
+      "name": "Chishiro, the Shattered Blade",
+      "type_line": "Legendary Creature \u2014 Snake Samurai",
+      "oracle_text": "Whenever an Aura or Equipment you control enters, create a 2/2 red Spirit creature token with menace.\nAt the beginning of your end step, put a +1/+1 counter on each modified creature you control. (Equipment, Auras you control, and counters are modifications.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an Aura or Equipment you control enters, create a 2/2 red Spirit creature token with menace.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Aura",
+                "Or",
+                "Equipment"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 red Spirit creature token with menace",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Spirit"
+                ],
+                "keywords": [
+                  "menace"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, put a +1/+1 counter on each modified creature you control. (Equipment, Auras you control, and counters are modifications.)",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Modified"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

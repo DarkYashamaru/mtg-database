@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "239fea8d-c49d-40bc-96e1-b84d328a0e1e",
+  "name": "Transmogrant Altar",
+  "faces": [
+    {
+      "name": "Transmogrant Altar",
+      "type_line": "Artifact",
+      "oracle_text": "{B}, {T}, Sacrifice a creature: Add {C}{C}{C}.\n{2}, {T}, Sacrifice a creature: Create a 3/3 colorless Zombie artifact creature token. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{B}, {T}, Sacrifice a creature: Add {C}{C}{C}.",
+          "cost": "{B}, {T}, Sacrifice a creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {C}{C}{C}"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}, Sacrifice a creature: Create a 3/3 colorless Zombie artifact creature token. Activate only as a sorcery.",
+          "cost": "{2}, {T}, Sacrifice a creature",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/3 colorless Zombie artifact creature token",
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Zombie",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

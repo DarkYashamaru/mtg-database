@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1636c4d2-f699-4af7-8508-dbce2f0b7b52",
+  "name": "Countryside Crusher",
+  "faces": [
+    {
+      "name": "Countryside Crusher",
+      "type_line": "Creature \u2014 Giant Warrior",
+      "oracle_text": "At the beginning of your upkeep, reveal the top card of your library. If it's a land card, put it into your graveyard and repeat this process.\nWhenever a land card is put into your graveyard from anywhere, put a +1/+1 counter on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, reveal the top card of your library. If it's a land card, put it into your graveyard and repeat this process.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it into your graveyard and repeat this process",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a land card is put into your graveyard from anywhere, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a land card is put into your graveyard from anywhere"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

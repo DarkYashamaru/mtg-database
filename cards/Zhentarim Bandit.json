@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "86a7f685-05d0-4167-b5bb-8f6943c23087",
+  "name": "Zhentarim Bandit",
+  "faces": [
+    {
+      "name": "Zhentarim Bandit",
+      "type_line": "Creature \u2014 Halfling Rogue",
+      "oracle_text": "Whenever this creature attacks, you may pay 1 life. If you do, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may pay 1 life. If you do, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay 1 life"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

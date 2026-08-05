@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2da7c49f-cc1e-45d9-9cbf-067e92b0daef",
+  "name": "Vivid Creek",
+  "faces": [
+    {
+      "name": "Vivid Creek",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped with two charge counters on it.\n{T}: Add {U}.\n{T}, Remove a charge counter from this land: Add one mana of any color.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Remove a charge counter from this land: Add one mana of any color.",
+          "cost": "{T}, Remove a charge counter from this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped with two charge counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters tapped with two charge counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

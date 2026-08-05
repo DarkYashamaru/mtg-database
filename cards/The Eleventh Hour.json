@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6b3e1aaf-6909-400a-88f2-9e9fde9a0cf7",
+  "name": "The Eleventh Hour",
+  "faces": [
+    {
+      "name": "The Eleventh Hour",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Search your library for a Doctor card, reveal it, put it into your hand, then shuffle.\nII \u2014 Create a Food token and a 1/1 white Human creature token with \"Doctor spells you cast cost {1} less to cast.\"\nIII \u2014 Create a token that's a copy of target creature, except it's a legendary Alien named Prisoner Zero.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Search your library for a Doctor card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a doctor card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Create a Food token and a 1/1 white Human creature token with \"Doctor spells you cast cost {1} less to cast.\"",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a Food token and a 1/1 white Human creature token with \"Doctor spells you cast cost {1} less to cast",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Create a token that's a copy of target creature, except it's a legendary Alien named Prisoner Zero.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Create a token that's a copy of target creature, except it's a legendary Alien named Prisoner Zero"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

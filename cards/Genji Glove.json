@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8242cd78-6675-43b5-8924-0a88c3aa6f76",
+  "name": "Genji Glove",
+  "faces": [
+    {
+      "name": "Genji Glove",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has double strike.\nWhenever equipped creature attacks, if it's the first combat phase of the turn, untap it. After this phase, there is an additional combat phase.\nEquip {3}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, if it's the first combat phase of the turn, untap it. After this phase, there is an additional combat phase.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [
+            {
+              "condition_text": "it's the first combat phase of the turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "it"
+            },
+            {
+              "action": "add_combat_phase_after_this_phase"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has double strike.",
+          "effects": [
+            {
+              "action": "grant_keyword",
+              "target": "equipped_creature",
+              "keyword": "double_strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

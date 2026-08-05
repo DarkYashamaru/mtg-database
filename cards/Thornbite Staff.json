@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dae4815e-9025-4993-ab46-52a3f1a7219e",
+  "name": "Thornbite Staff",
+  "faces": [
+    {
+      "name": "Thornbite Staff",
+      "type_line": "Kindred Artifact \u2014 Shaman Equipment",
+      "oracle_text": "Equipped creature has \"{2}, {T}: This creature deals 1 damage to any target\" and \"Whenever a creature dies, untap this creature.\"\nWhenever a Shaman creature enters, you may attach this Equipment to it.\nEquip {4}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Shaman creature enters, you may attach this Equipment to it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "a_shaman_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "attach_equipment",
+              "source": "self",
+              "target": "it",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equipped creature has \"{2}, {T}: This creature deals 1 damage to any target\" and \"Whenever a creature dies, untap this creature.\"",
+          "cost": "Equipped creature has \"{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals 1 damage to any target\" and \"Whenever a creature dies, untap this creature.\""
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {4}",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

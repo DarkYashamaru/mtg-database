@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e3be8e19-cec1-43ae-9e22-d7cb374570bb",
+  "name": "Sunscape Master",
+  "faces": [
+    {
+      "name": "Sunscape Master",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "{G}{G}, {T}: Creatures you control get +2/+2 until end of turn.\n{U}{U}, {T}: Return target creature to its owner's hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{G}{G}, {T}: Creatures you control get +2/+2 until end of turn.",
+          "cost": "{G}{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}{U}, {T}: Return target creature to its owner's hand.",
+          "cost": "{U}{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature"
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "82b6a283-9897-4ce1-8de3-e7579cc9b75b",
+  "name": "Ruthless Lawbringer",
+  "faces": [
+    {
+      "name": "Ruthless Lawbringer",
+      "type_line": "Creature \u2014 Vampire Assassin",
+      "oracle_text": "When this creature enters, you may sacrifice another creature. When you do, destroy target nonland permanent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may sacrifice another creature. When you do, destroy target nonland permanent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature",
+              "optional": true
+            },
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "not_card_types": [
+                  "Land"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

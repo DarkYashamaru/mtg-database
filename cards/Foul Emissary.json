@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "034c2b40-6bcc-4bb5-be94-4602496ddcc6",
+  "name": "Foul Emissary",
+  "faces": [
+    {
+      "name": "Foul Emissary",
+      "type_line": "Creature \u2014 Human Horror",
+      "oracle_text": "When this creature enters, look at the top four cards of your library. You may reveal a creature card from among them and put it into your hand. Put the rest on the bottom of your library in any order.\nWhen you sacrifice this creature while casting a spell with emerge, create a 3/2 colorless Eldrazi Horror creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at the top four cards of your library. You may reveal a creature card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "any"
+            }
+          ]
+        },
+        {
+          "raw_text": "When you sacrifice this creature while casting a spell with emerge, create a 3/2 colorless Eldrazi Horror creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you sacrifice this creature while casting a spell with emerge"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/2 colorless Eldrazi Horror creature token",
+                "power_toughness": "3/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Eldrazi",
+                  "Horror"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

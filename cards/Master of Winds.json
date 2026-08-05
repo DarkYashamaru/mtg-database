@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7accdc91-3140-4096-a71f-0cee38d29e96",
+  "name": "Master of Winds",
+  "faces": [
+    {
+      "name": "Master of Winds",
+      "type_line": "Creature \u2014 Sphinx Wizard",
+      "oracle_text": "Flying\nWhen this creature enters, draw two cards, then discard a card.\nWhenever you cast an instant, sorcery, or Wizard spell, you may have this creature's base power and toughness become 4/1 or 1/4 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, draw two cards, then discard a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast an instant, sorcery, or Wizard spell, you may have this creature's base power and toughness become 4/1 or 1/4 until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast an instant"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "sorcery, or Wizard spell, you may have this creature's base power and toughness become 4/1 or 1/4 until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

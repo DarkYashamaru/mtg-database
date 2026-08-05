@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91d4a5fe-fd6d-4b14-a63f-61b4d0ecd9c4",
+  "name": "Inventors' Fair",
+  "faces": [
+    {
+      "name": "Inventors' Fair",
+      "type_line": "Legendary Land",
+      "oracle_text": "At the beginning of your upkeep, if you control three or more artifacts, you gain 1 life.\n{T}: Add {C}.\n{4}, {T}, Sacrifice Inventors' Fair: Search your library for an artifact card, reveal it, put it into your hand, then shuffle. Activate only if you control three or more artifacts.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if you control three or more artifacts, you gain 1 life.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you control three or more artifacts"
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}, {T}, Sacrifice Inventors' Fair: Search your library for an artifact card, reveal it, put it into your hand, then shuffle. Activate only if you control three or more artifacts.",
+          "cost": "{4}, {T}, Sacrifice Inventors' Fair",
+          "condition": [
+            {
+              "condition_text": "you control three or more artifacts"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for an artifact card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

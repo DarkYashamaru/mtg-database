@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0c3d86b6-5dcd-4016-9b4a-d4f66b1e963f",
+  "name": "Yathan Roadwatcher",
+  "faces": [
+    {
+      "name": "Yathan Roadwatcher",
+      "type_line": "Creature \u2014 Human Scout",
+      "oracle_text": "When this creature enters, if you cast it, mill four cards. When you do, return target creature card with mana value 3 or less from your graveyard to the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if you cast it, mill four cards. When you do, return target creature card with mana value 3 or less from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 4
+            },
+            {
+              "action": "custom_effect",
+              "text": "return target creature card with mana value 3 or less from your graveyard to the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

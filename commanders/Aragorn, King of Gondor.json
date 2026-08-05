@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "be97c400-c690-426d-a39e-4082080a3823",
+  "name": "Aragorn, King of Gondor",
+  "faces": [
+    {
+      "name": "Aragorn, King of Gondor",
+      "type_line": "Legendary Creature \u2014 Human Noble",
+      "oracle_text": "Vigilance, lifelink\nWhen Aragorn enters, you become the monarch.\nWhenever Aragorn attacks, up to one target creature can't block this turn. If you're the monarch, creatures can't block this turn.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Aragorn enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Aragorn attacks, up to one target creature can't block this turn. If you're the monarch, creatures can't block this turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "up to one target creature can't block this turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "creatures can't block this turn",
+              "condition": [
+                {
+                  "condition_text": "you're the monarch"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

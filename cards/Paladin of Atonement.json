@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f44dc71d-d08a-45ed-ac7c-f6d1ef811d96",
+  "name": "Paladin of Atonement",
+  "faces": [
+    {
+      "name": "Paladin of Atonement",
+      "type_line": "Creature \u2014 Vampire Knight",
+      "oracle_text": "At the beginning of each upkeep, if you lost life last turn, put a +1/+1 counter on this creature.\nWhen this creature dies, you gain life equal to its toughness.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, if you lost life last turn, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you lost life last turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, you gain life equal to its toughness.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain life equal to its toughness"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

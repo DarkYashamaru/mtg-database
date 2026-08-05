@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "69facbc7-3859-4716-b627-5199571fb3cf",
+  "name": "Chasm Skulker",
+  "faces": [
+    {
+      "name": "Chasm Skulker",
+      "type_line": "Creature \u2014 Squid Horror",
+      "oracle_text": "Whenever you draw a card, put a +1/+1 counter on this creature.\nWhen this creature dies, create X 1/1 blue Squid creature tokens with islandwalk, where X is the number of +1/+1 counters on this creature. (They can't be blocked as long as defending player controls an Island.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw a card, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, create X 1/1 blue Squid creature tokens with islandwalk, where X is the number of +1/+1 counters on this creature. (They can't be blocked as long as defending player controls an Island.)",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "count",
+              "count_object": "11_counters_on_self",
+              "token": {
+                "raw": "1/1 blue Squid creature tokens with islandwalk",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Squid"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

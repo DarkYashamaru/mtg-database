@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "75dc0995-f89e-4a2c-b30b-9b5a07c21183",
+  "name": "Yasova Dragonclaw",
+  "faces": [
+    {
+      "name": "Yasova Dragonclaw",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "Trample\nAt the beginning of combat on your turn, you may pay {1}{U/R}{U/R}. If you do, gain control of target creature an opponent controls with power less than Yasova Dragonclaw's power until end of turn, untap that creature, and it gains haste until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, you may pay {1}{U/R}{U/R}. If you do, gain control of target creature an opponent controls with power less than Yasova Dragonclaw's power until end of turn, untap that creature, and it gains haste until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{U/R}{U/R}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "gain control of target creature an opponent controls with power less than yasova dragonclaw's power until end of turn, untap that creature,",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

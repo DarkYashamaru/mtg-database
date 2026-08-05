@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb9e6860-591f-4758-aaa3-14efa0a775f5",
+  "name": "Gempalm Avenger",
+  "faces": [
+    {
+      "name": "Gempalm Avenger",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Cycling {2}{W} ({2}{W}, Discard this card: Draw a card.)\nWhen you cycle this card, Soldier creatures get +1/+1 and gain first strike until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, Soldier creatures get +1/+1 and gain first strike until end of turn.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "soldier_creatures_get_11_and",
+              "keyword": "first_strike"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {2}{W} ({2}{W}, Discard this card: Draw a card.)",
+          "cost": "Cycling {2}{W} ({2}{W}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

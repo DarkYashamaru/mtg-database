@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d22ff377-d282-4a28-9dce-96f25913dc96",
+  "name": "Grazilaxx, Illithid Scholar",
+  "faces": [
+    {
+      "name": "Grazilaxx, Illithid Scholar",
+      "type_line": "Legendary Creature \u2014 Horror",
+      "oracle_text": "Whenever a creature you control becomes blocked, you may return it to its owner's hand.\nWhenever one or more creatures you control deal combat damage to a player, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control becomes blocked, you may return it to its owner's hand.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more creatures you control deal combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4f31eea0-61b9-467d-8393-0ab9f1b6e882",
+  "name": "Insatiable Frugivore",
+  "faces": [
+    {
+      "name": "Insatiable Frugivore",
+      "type_line": "Creature \u2014 Rat Berserker",
+      "oracle_text": "When this creature enters, create a Food token, then you may exile three cards from your graveyard. If you do, repeat this process.\n{3}{B}, Sacrifice X Foods: Creatures you control get +X/+0 and gain menace until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a Food token, then you may exile three cards from your graveyard. If you do, repeat this process.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "food token"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may exile three cards from your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "repeat this process",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{B}, Sacrifice X Foods: Creatures you control get +X/+0 and gain menace until end of turn.",
+          "cost": "{3}{B}, Sacrifice X Foods",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control_get_x0_and",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

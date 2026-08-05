@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8f48c43e-fa70-4c4f-bb88-be0526303453",
+  "name": "Hideous Taskmaster",
+  "faces": [
+    {
+      "name": "Hideous Taskmaster",
+      "type_line": "Creature \u2014 Eldrazi",
+      "oracle_text": "Devoid (This card has no color.)\nWhen you cast this spell, for each opponent, gain control of up to one target creature that player controls until end of turn. Untap those creatures. They gain trample, haste, and annihilator 1 until end of turn.\nTrample, haste, annihilator 1 (Whenever this creature attacks, defending player sacrifices a permanent of their choice.)",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, for each opponent, gain control of up to one target creature that player controls until end of turn. Untap those creatures. They gain trample, haste, and annihilator 1 until end of turn.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "for_each_opponent",
+              "keyword": "control_of_up_to_one_target_creature_that_player_controls"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Untap those creatures"
+            },
+            {
+              "action": "custom_effect",
+              "text": "They gain trample, haste, and annihilator 1 until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Trample, haste, annihilator 1 (Whenever this creature attacks, defending player sacrifices a permanent of their choice.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Trample, haste, annihilator 1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

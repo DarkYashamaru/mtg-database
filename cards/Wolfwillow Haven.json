@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7579f57d-c76e-4703-a030-34fb7160cb23",
+  "name": "Wolfwillow Haven",
+  "faces": [
+    {
+      "name": "Wolfwillow Haven",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\nWhenever enchanted land is tapped for mana, its controller adds an additional {G}.\n{4}{G}, Sacrifice this Aura: Create a 2/2 green Wolf creature token. Activate only during your turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted land is tapped for mana, its controller adds an additional {G}.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever enchanted land is tapped for mana"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "its controller adds an additional {G}"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}{G}, Sacrifice this Aura: Create a 2/2 green Wolf creature token. Activate only during your turn.",
+          "cost": "{4}{G}, Sacrifice this Aura",
+          "condition": [
+            {
+              "condition_text": "during your turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 green Wolf creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Wolf"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

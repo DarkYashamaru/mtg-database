@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4380df08-7be4-48ca-9783-d644fd2ea27d",
+  "name": "Vohar, Vodalian Desecrator",
+  "faces": [
+    {
+      "name": "Vohar, Vodalian Desecrator",
+      "type_line": "Legendary Creature \u2014 Phyrexian Merfolk Wizard",
+      "oracle_text": "{T}: Draw a card, then discard a card. If you discarded an instant or sorcery card this way, each opponent loses 1 life and you gain 1 life.\n{2}, Sacrifice Vohar: You may cast target instant or sorcery card from your graveyard this turn. If that spell would be put into your graveyard, exile it instead. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Draw a card, then discard a card. If you discarded an instant or sorcery card this way, each opponent loses 1 life and you gain 1 life.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you discarded an instant or sorcery card this way"
+                }
+              ]
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, Sacrifice Vohar: You may cast target instant or sorcery card from your graveyard this turn. If that spell would be put into your graveyard, exile it instead. Activate only as a sorcery.",
+          "cost": "{2}, Sacrifice Vohar",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast target instant or sorcery card from your graveyard this turn"
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "that spell would be put into your graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

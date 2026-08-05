@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eaf194a7-d95f-4738-9052-92ad00443a76",
+  "name": "Raphael, Most Attitude",
+  "faces": [
+    {
+      "name": "Raphael, Most Attitude",
+      "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nAlliance \u2014 Whenever another creature you control enters, you may exile the top card of your library.\nWhenever Raphael attacks, until end of turn, you may play a card exiled with Raphael.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, you may exile the top card of your library.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Raphael attacks, until end of turn, you may play a card exiled with Raphael.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "until end of turn, you may play a card exiled with Raphael"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

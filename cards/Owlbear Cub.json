@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0c92432d-ac76-47d2-af7a-fdffd4b546a2",
+  "name": "Owlbear Cub",
+  "faces": [
+    {
+      "name": "Owlbear Cub",
+      "type_line": "Creature \u2014 Bird Bear",
+      "oracle_text": "Mama's Coming \u2014 Whenever this creature attacks a player who controls eight or more lands, look at the top eight cards of your library. You may put a creature card from among them onto the battlefield tapped and attacking that player. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks a player who controls eight or more lands, look at the top eight cards of your library. You may put a creature card from among them onto the battlefield tapped and attacking that player. Put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature attacks a player who controls eight or more lands"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 8
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put a creature card from among them onto the battlefield tapped and attacking that player"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

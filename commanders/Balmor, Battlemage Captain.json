@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7da19fc5-cb85-4ec7-beea-95210378bbfe",
+  "name": "Balmor, Battlemage Captain",
+  "faces": [
+    {
+      "name": "Balmor, Battlemage Captain",
+      "type_line": "Legendary Creature \u2014 Bird Wizard",
+      "oracle_text": "Flying\nWhenever you cast an instant or sorcery spell, creatures you control get +1/+0 and gain trample until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, creatures you control get +1/+0 and gain trample until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control_get_10_and",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

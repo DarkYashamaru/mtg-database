@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "15c994b9-901a-46d6-804b-24560a14a481",
+  "name": "Seedship Broodtender",
+  "faces": [
+    {
+      "name": "Seedship Broodtender",
+      "type_line": "Creature \u2014 Insect Citizen",
+      "oracle_text": "When this creature enters, mill three cards. (Put the top three cards of your library into your graveyard.)\n{3}{B}{G}, Sacrifice this creature: Return target creature or Spacecraft card from your graveyard to the battlefield. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, mill three cards. (Put the top three cards of your library into your graveyard.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{B}{G}, Sacrifice this creature: Return target creature or Spacecraft card from your graveyard to the battlefield. Activate only as a sorcery.",
+          "cost": "{3}{B}{G}, Sacrifice this creature",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target creature or Spacecraft card from your graveyard to the battlefield"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

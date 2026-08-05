@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "529178e8-425e-4d59-948c-ca7d0663f6ff",
+  "name": "Mikey & Don, Party Planners",
+  "faces": [
+    {
+      "name": "Mikey & Don, Party Planners",
+      "type_line": "Legendary Creature \u2014 Mutant Ninja Turtle",
+      "oracle_text": "Ward {2}\nYou may look at the top card of your library any time.\nYou may play lands and cast Mutant, Ninja, or Turtle spells from the top of your library. If you cast a creature spell this way, that creature enters with an additional +1/+1 counter on it.",
+      "static": [
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "You may play lands and cast Mutant, Ninja, or Turtle spells from the top of your library. If you cast a creature spell this way, that creature enters with an additional +1/+1 counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may play lands and cast Mutant, Ninja, or Turtle spells from the top of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "that creature enters with an additional +1/+1 counter on it",
+              "condition": [
+                {
+                  "condition_text": "you cast a creature spell this way"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

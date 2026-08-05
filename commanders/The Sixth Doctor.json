@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "49cb8d81-d8a0-4ae7-9750-6788a3e9c81b",
+  "name": "The Sixth Doctor",
+  "faces": [
+    {
+      "name": "The Sixth Doctor",
+      "type_line": "Legendary Creature \u2014 Time Lord Doctor",
+      "oracle_text": "Time Lord's Prerogative \u2014 Whenever you cast a historic spell, copy it, except the copy isn't legendary. This ability triggers only once each turn. (Artifacts, legendaries, and Sagas are historic. A copy of a permanent spell becomes a token.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a historic spell, copy it, except the copy isn't legendary. This ability triggers only once each turn. (Artifacts, legendaries, and Sagas are historic. A copy of a permanent spell becomes a token.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Historic"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy it, except the copy isn't legendary"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

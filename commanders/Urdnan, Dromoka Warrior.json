@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "adc1f850-9217-4a90-8e6a-02ed226ef8df",
+  "name": "Urdnan, Dromoka Warrior",
+  "faces": [
+    {
+      "name": "Urdnan, Dromoka Warrior",
+      "type_line": "Legendary Creature \u2014 Human Warrior",
+      "oracle_text": "When Urdnan enters, put a +1/+1 counter on target creature.\nWhenever you attack, target attacking creature with a +1/+1 counter on it gains first strike until end of turn. If that creature has two or more +1/+1 counters on it, it gains double strike until end of turn instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Urdnan enters, put a +1/+1 counter on target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack, target attacking creature with a +1/+1 counter on it gains first strike until end of turn. If that creature has two or more +1/+1 counters on it, it gains double strike until end of turn instead.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_attacking_creature_with_a_11_counter_on_it",
+              "keyword": "first_strike"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it gains double strike until end of turn instead",
+              "condition": [
+                {
+                  "condition_text": "that creature has two or more +1/+1 counters on it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

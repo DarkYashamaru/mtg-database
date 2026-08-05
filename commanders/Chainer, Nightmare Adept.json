@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "14f6fcb0-bed4-4a38-b7df-1e438d81bedb",
+  "name": "Chainer, Nightmare Adept",
+  "faces": [
+    {
+      "name": "Chainer, Nightmare Adept",
+      "type_line": "Legendary Creature \u2014 Human Minion",
+      "oracle_text": "Discard a card: You may cast a creature spell from your graveyard this turn. Activate only once each turn.\nWhenever a nontoken creature you control enters, if you didn't cast it from your hand, it gains haste until your next turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken creature you control enters, if you didn't cast it from your hand, it gains haste until your next turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "you didn't cast it from your hand"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gains haste until your next turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Discard a card: You may cast a creature spell from your graveyard this turn. Activate only once each turn.",
+          "cost": "Discard a card",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast a creature spell from your graveyard this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

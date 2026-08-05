@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "07db0374-3297-49c3-886d-a6bb42f7bb18",
+  "name": "Avatar of Growth",
+  "faces": [
+    {
+      "name": "Avatar of Growth",
+      "type_line": "Creature \u2014 Elemental Avatar",
+      "oracle_text": "This spell costs {1} less to cast for each opponent you have.\nTrample\nWhen this creature enters, each player searches their library for up to two basic land cards, puts them onto the battlefield, then shuffles.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, each player searches their library for up to two basic land cards, puts them onto the battlefield, then shuffles.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player searches their library for up to two basic land cards, puts them onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "that_player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {1} less to cast for each opponent you have.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {1} less to cast for each opponent you have"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

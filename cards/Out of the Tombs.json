@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "473a7998-669d-4181-83fe-f178a2e781f0",
+  "name": "Out of the Tombs",
+  "faces": [
+    {
+      "name": "Out of the Tombs",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, put two eon counters on this enchantment, then mill cards equal to the number of eon counters on it.\nIf you would draw a card while your library has no cards in it, instead return a creature card from your graveyard to the battlefield. If you can't, you lose the game.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put two eon counters on this enchantment, then mill cards equal to the number of eon counters on it.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put two eon counters on this enchantment"
+            },
+            {
+              "action": "custom_effect",
+              "text": "mill cards equal to the number of eon counters on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If you would draw a card while your library has no cards in it, instead return a creature card from your graveyard to the battlefield. If you can't, you lose the game.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "instead return a creature card from your graveyard to the battlefield",
+              "condition": [
+                {
+                  "condition_text": "you would draw a card while your library has no cards in it"
+                }
+              ]
+            },
+            {
+              "action": "lose_the_game",
+              "condition": [
+                {
+                  "condition_text": "you can't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

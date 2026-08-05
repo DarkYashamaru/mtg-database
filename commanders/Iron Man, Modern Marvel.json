@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "507fc71d-0dfc-4bfe-bc71-de88162c39a1",
+  "name": "Iron Man, Modern Marvel",
+  "faces": [
+    {
+      "name": "Iron Man, Modern Marvel",
+      "type_line": "Legendary Artifact Creature \u2014 Human Hero",
+      "oracle_text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nOther artifact creatures you control get +1/+1.\nWhenever Iron Man attacks, if you control another artifact creature, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Iron Man attacks, if you control another artifact creature, draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control another artifact creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other artifact creatures you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other artifact creatures you control get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

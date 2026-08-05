@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8d72ddb3-ef6e-4847-b6d4-5d85b1dd5802",
+  "name": "Starscape Cleric",
+  "faces": [
+    {
+      "name": "Starscape Cleric",
+      "type_line": "Creature \u2014 Bat Cleric",
+      "oracle_text": "Offspring {2}{B} (You may pay an additional {2}{B} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\nFlying\nThis creature can't block.\nWhenever you gain life, each opponent loses 1 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, each opponent loses 1 life.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Offspring {2}{B} (You may pay an additional {2}{B} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Offspring {2}{B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

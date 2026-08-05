@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fa023c32-2cec-416c-90b7-07b7a19c82d4",
+  "name": "Homura, Human Ascendant // Homura's Essence",
+  "faces": [
+    {
+      "name": "Homura's Essence",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "Creatures you control get +2/+2 and have flying and \"{R}: This creature gets +1/+0 until end of turn.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Creatures you control get +2/+2 and have flying and \"{R}: This creature gets +1/+0 until end of turn.\"",
+          "cost": "Creatures you control get +2/+2 and have flying and \"{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Homura, Human Ascendant",
+      "type_line": "Legendary Creature \u2014 Human Monk",
+      "oracle_text": "Homura can't block.\nWhen Homura dies, return it to the battlefield flipped.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Homura dies, return it to the battlefield flipped.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield flipped"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Homura can't block.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Homura can't block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

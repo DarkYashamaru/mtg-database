@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e59d70a2-40ac-45b0-995d-65b9caa290c8",
+  "name": "Crosis's Charm",
+  "faces": [
+    {
+      "name": "Crosis's Charm",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Return target permanent to its owner's hand.\n\u2022 Destroy target nonblack creature. It can't be regenerated.\n\u2022 Destroy target artifact.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Return target permanent to its owner's hand.\n\u2022 Destroy target nonblack creature. It can't be regenerated.\n\u2022 Destroy target artifact.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Return target permanent to its owner's hand.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Return target permanent to its owner's hand"
+                }
+              ]
+            },
+            {
+              "raw_text": "Destroy target nonblack creature. It can't be regenerated.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_creature",
+                    "not_colors": [
+                      "black"
+                    ]
+                  }
+                },
+                {
+                  "action": "cant_be_regenerated",
+                  "target": "previous_target"
+                }
+              ]
+            },
+            {
+              "raw_text": "Destroy target artifact.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_artifact"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

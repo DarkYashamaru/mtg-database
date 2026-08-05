@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "733cfc16-9a16-41e2-b36e-3d7a546c67f0",
+  "name": "Guul Draz Specter",
+  "faces": [
+    {
+      "name": "Guul Draz Specter",
+      "type_line": "Creature \u2014 Specter",
+      "oracle_text": "Flying\nThis creature gets +3/+3 as long as an opponent has no cards in hand.\nWhenever this creature deals combat damage to a player, that player discards a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, that player discards a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "that_player",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature gets +3/+3 as long as an opponent has no cards in hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +3/+3 as long as an opponent has no cards in hand"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

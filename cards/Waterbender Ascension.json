@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aeddfdc2-149b-4703-ba57-8d844b25ef08",
+  "name": "Waterbender Ascension",
+  "faces": [
+    {
+      "name": "Waterbender Ascension",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature you control deals combat damage to a player, put a quest counter on this enchantment. Then if it has four or more quest counters on it, draw a card.\nWaterbend {4}: Target creature can't be blocked this turn. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control deals combat damage to a player, put a quest counter on this enchantment. Then if it has four or more quest counters on it, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a quest counter on this enchantment"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "it has four or more quest counters on it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Waterbend {4}: Target creature can't be blocked this turn. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+          "cost": "Waterbend {4}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

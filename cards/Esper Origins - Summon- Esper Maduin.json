@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "oracle_id": "947b40a2-e272-4ef6-85fb-3d767a21bc7a",
+  "name": "Esper Origins // Summon: Esper Maduin",
+  "faces": [
+    {
+      "name": "Esper Origins",
+      "type_line": "Sorcery",
+      "oracle_text": "Surveil 2. You gain 2 life. If this spell was cast from a graveyard, exile it, then put it onto the battlefield transformed under its owner's control with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)\nFlashback {3}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Surveil 2. You gain 2 life. If this spell was cast from a graveyard, exile it, then put it onto the battlefield transformed under its owner's control with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)",
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "exile",
+              "target": "it",
+              "condition": [
+                {
+                  "condition_text": "this spell was cast from a graveyard"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it onto the battlefield transformed under its owner's control with a finality counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "Flashback {3}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flashback {3}{G}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Summon: Esper Maduin",
+      "type_line": "Enchantment Creature \u2014 Saga Elemental",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Reveal the top card of your library. If it's a permanent card, put it into your hand.\nII \u2014 Add {G}{G}.\nIII \u2014 Other creatures you control get +2/+2 and gain trample until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Reveal the top card of your library. If it's a permanent card, put it into your hand.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "it's a permanent card"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Add {G}{G}.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{g}",
+                "{g}"
+              ],
+              "distribution": "fixed_sequence"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Other creatures you control get +2/+2 and gain trample until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "other_creatures_you_control_get_22_and",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

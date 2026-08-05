@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9bdc79c9-c8b0-4db1-89d9-0ca7920b6576",
+  "name": "Essence Flare",
+  "faces": [
+    {
+      "name": "Essence Flare",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +2/+0.\nAt the beginning of the upkeep of enchanted creature's controller, put a -0/-1 counter on that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of the upkeep of enchanted creature's controller, put a -0/-1 counter on that creature.",
+          "trigger": {
+            "type": "beginning_of_upkeep_of_enchanted_creatures_controller"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a -0/-1 counter on that creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+0.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

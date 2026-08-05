@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "57ce5ebd-cfac-4bb9-b010-04d0c285be27",
+  "name": "Clement, the Worrywort",
+  "faces": [
+    {
+      "name": "Clement, the Worrywort",
+      "type_line": "Legendary Creature \u2014 Frog Druid",
+      "oracle_text": "Vigilance\nWhenever Clement or another creature you control enters, return up to one target creature you control with lesser mana value to its owner's hand.\nFrogs you control have \"{T}: Add {G} or {U}. Spend this mana only to cast a creature spell.\"",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Clement or another creature you control enters, return up to one target creature you control with lesser mana value to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Clement",
+                "Or",
+                "Another"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to one target creature you control with lesser mana value to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Frogs you control have \"{T}: Add {G} or {U}. Spend this mana only to cast a creature spell.\"",
+          "cost": "Frogs you control have \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}",
+                "{u}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "card_types": [
+                    "Creature"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

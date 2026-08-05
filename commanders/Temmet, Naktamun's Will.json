@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3dc43ffe-f6b0-4cdc-86b3-01c0f41df0ae",
+  "name": "Temmet, Naktamun's Will",
+  "faces": [
+    {
+      "name": "Temmet, Naktamun's Will",
+      "type_line": "Legendary Creature \u2014 Zombie Wizard",
+      "oracle_text": "Vigilance, menace\nWhenever you attack, draw a card, then discard a card.\nWhenever you draw a card, Zombies you control get +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, draw a card, then discard a card.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you draw a card, Zombies you control get +1/+1 until end of turn.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Zombies you control get +1/+1 until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

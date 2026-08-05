@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e36a92be-537d-4a63-858a-afaab064fbf7",
+  "name": "Parallax Tide",
+  "faces": [
+    {
+      "name": "Parallax Tide",
+      "type_line": "Enchantment",
+      "oracle_text": "Fading 5 (This enchantment enters with five fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from this enchantment: Exile target land.\nWhen this enchantment leaves the battlefield, each player returns to the battlefield all cards they own exiled with it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment leaves the battlefield, each player returns to the battlefield all cards they own exiled with it.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player returns to the battlefield all cards they own exiled with it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove a fade counter from this enchantment: Exile target land.",
+          "cost": "Remove a fade counter from this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Fading 5 (This enchantment enters with five fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Fading 5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

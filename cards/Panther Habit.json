@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "75ec25b3-ae91-46be-af8b-2649727638f4",
+  "name": "Panther Habit",
+  "faces": [
+    {
+      "name": "Panther Habit",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "If equipped creature would be dealt damage, prevent that damage and put that many +1/+1 counters on it.\nEquip {2}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If equipped creature would be dealt damage, prevent that damage and put that many +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent that damage and put that many +1/+1 counters on it",
+              "condition": [
+                {
+                  "condition_text": "equipped creature would be dealt damage"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

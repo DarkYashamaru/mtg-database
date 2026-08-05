@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c2e2f21a-0338-44d7-96a5-5a277f0ec419",
+  "name": "Moseo, Vein's New Dean",
+  "faces": [
+    {
+      "name": "Moseo, Vein's New Dean",
+      "type_line": "Legendary Creature \u2014 Bird Skeleton Warlock",
+      "oracle_text": "Flying\nWhen Moseo enters, create a 1/1 black and green Pest creature token with \"Whenever this token attacks, you gain 1 life.\"\nInfusion \u2014 At the beginning of your end step, if you gained life this turn, return up to one target creature card with mana value X or less from your graveyard to the battlefield, where X is the amount of life you gained this turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Moseo enters, create a 1/1 black and green Pest creature token with \"Whenever this token attacks, you gain 1 life.\"",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 black and green Pest creature token with \"Whenever this token attacks, you gain 1 life",
+                "colors": [
+                  "black",
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Pest"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if you gained life this turn, return up to one target creature card with mana value X or less from your graveyard to the battlefield, where X is the amount of life you gained this turn.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you gained life this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to one target creature card with mana value X or less from your graveyard to the battlefield, where X is the amount of life you gained this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

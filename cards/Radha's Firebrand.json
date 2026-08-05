@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0d6d5509-41e5-4099-98a0-18ae7531df7d",
+  "name": "Radha's Firebrand",
+  "faces": [
+    {
+      "name": "Radha's Firebrand",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "Whenever this creature attacks, target creature defending player controls with power less than this creature's power can't block this turn.\nDomain \u2014 {5}{R}: This creature gets +2/+2 until end of turn. This ability costs {1} less to activate for each basic land type among lands you control. Activate only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, target creature defending player controls with power less than this creature's power can't block this turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target creature defending player controls with power less than this creature's power can't block this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Domain \u2014 {5}{R}: This creature gets +2/+2 until end of turn. This ability costs {1} less to activate for each basic land type among lands you control. Activate only once each turn.",
+          "cost": "Domain \u2014 {5}{R}",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "This ability costs {1} less to activate for each basic land type among lands you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

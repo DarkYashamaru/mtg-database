@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "88e29d50-1680-495d-be84-b92b4c9e636f",
+  "name": "Diamond City",
+  "faces": [
+    {
+      "name": "Diamond City",
+      "type_line": "Land",
+      "oracle_text": "This land enters with a shield counter on it. (If it would be dealt damage or destroyed, remove a shield counter from it instead.)\n{T}: Add {C}.\n{T}: Move a shield counter from this land onto target creature. Activate only if two or more creatures entered the battlefield under your control this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Move a shield counter from this land onto target creature. Activate only if two or more creatures entered the battlefield under your control this turn.",
+          "cost": "{T}",
+          "condition": [
+            {
+              "condition_text": "two or more creatures entered the battlefield under your control this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Move a shield counter from this land onto target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters with a shield counter on it. (If it would be dealt damage or destroyed, remove a shield counter from it instead.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters with a shield counter on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

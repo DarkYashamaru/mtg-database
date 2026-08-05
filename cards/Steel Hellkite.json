@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6e64f1e0-ddd6-4ee7-8797-086e234b02e8",
+  "name": "Steel Hellkite",
+  "faces": [
+    {
+      "name": "Steel Hellkite",
+      "type_line": "Artifact Creature \u2014 Dragon",
+      "oracle_text": "Flying\n{2}: This creature gets +1/+0 until end of turn.\n{X}: Destroy each nonland permanent with mana value X whose controller was dealt combat damage by this creature this turn. Activate only once each turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}: This creature gets +1/+0 until end of turn.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "{X}: Destroy each nonland permanent with mana value X whose controller was dealt combat damage by this creature this turn. Activate only once each turn.",
+          "cost": "{X}",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy each nonland permanent with mana value X whose controller was dealt combat damage by this creature this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

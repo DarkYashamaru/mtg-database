@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c4efdbab-711d-4269-9b24-b05d36f7e5c7",
+  "name": "Oath of Nissa",
+  "faces": [
+    {
+      "name": "Oath of Nissa",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "When Oath of Nissa enters, look at the top three cards of your library. You may reveal a creature, land, or planeswalker card from among them and put it into your hand. Put the rest on the bottom of your library in any order.\nYou may spend mana as though it were mana of any color to cast planeswalker spells.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Oath of Nissa enters, look at the top three cards of your library. You may reveal a creature, land, or planeswalker card from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature",
+                  "Land",
+                  "Planeswalker"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "any"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may spend mana as though it were mana of any color to cast planeswalker spells.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may spend mana as though it were mana of any color to cast planeswalker spells"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

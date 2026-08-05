@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5446c92f-ff22-4e9b-a2f6-e64c8560c1e0",
+  "name": "Zombie Master",
+  "faces": [
+    {
+      "name": "Zombie Master",
+      "type_line": "Creature \u2014 Zombie",
+      "oracle_text": "Other Zombie creatures have swampwalk. (They can't be blocked as long as defending player controls a Swamp.)\nOther Zombies have \"{B}: Regenerate this permanent.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Other Zombies have \"{B}: Regenerate this permanent.\"",
+          "cost": "Other Zombies have \"{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Regenerate this permanent.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Other Zombie creatures have swampwalk. (They can't be blocked as long as defending player controls a Swamp.)",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "other_self_creatures"
+              },
+              "keywords": [
+                "swampwalk"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

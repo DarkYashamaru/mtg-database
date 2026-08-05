@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85aa53e8-f062-4d02-bc69-1413f7f0dcf1",
+  "name": "Kairi, the Swirling Sky",
+  "faces": [
+    {
+      "name": "Kairi, the Swirling Sky",
+      "type_line": "Legendary Creature \u2014 Dragon Spirit",
+      "oracle_text": "Flying, ward {3}\nWhen Kairi dies, choose one \u2014\n\u2022 Return any number of target nonland permanents with total mana value 6 or less to their owners' hands.\n\u2022 Mill six cards, then return up to two instant and/or sorcery cards from your graveyard to your hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "ward",
+          "amount": 3
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Kairi dies, choose one \u2014\n\u2022 Return any number of target nonland permanents with total mana value 6 or less to their owners' hands.\n\u2022 Mill six cards, then return up to two instant and/or sorcery cards from your graveyard to your hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Return any number of target nonland permanents with total mana value 6 or less to their owners' hands.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Return any number of target nonland permanents with total mana value 6 or less to their owners' hands"
+                }
+              ]
+            },
+            {
+              "raw_text": "Mill six cards, then return up to two instant and/or sorcery cards from your graveyard to your hand.",
+              "effects": [
+                {
+                  "action": "mill_cards",
+                  "player": "you",
+                  "amount": 6
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "return up to two instant and/or sorcery cards from your graveyard to your hand"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

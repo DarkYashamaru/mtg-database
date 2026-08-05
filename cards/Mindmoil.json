@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "oracle_id": "41e4ba67-d038-4d0a-b740-709cb2350192",
+  "name": "Mindmoil",
+  "faces": [
+    {
+      "name": "Mindmoil",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cast a spell, put the cards in your hand on the bottom of your library in any order, then draw that many cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, put the cards in your hand on the bottom of your library in any order, then draw that many cards.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put the cards in your hand on the bottom of your library in any order"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

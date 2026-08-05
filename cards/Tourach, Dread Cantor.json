@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0c952586-e522-4982-bebd-96f1db73053d",
+  "name": "Tourach, Dread Cantor",
+  "faces": [
+    {
+      "name": "Tourach, Dread Cantor",
+      "type_line": "Legendary Creature \u2014 Human Cleric",
+      "oracle_text": "Kicker {B}{B} (You may pay an additional {B}{B} as you cast this spell.)\nProtection from white\nWhenever an opponent discards a card, put a +1/+1 counter on Tourach.\nWhen Tourach enters, if it was kicked, target opponent discards two cards at random.",
+      "static": [
+        {
+          "keyword": "protection",
+          "quality": "white"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent discards a card, put a +1/+1 counter on Tourach.",
+          "trigger": {
+            "type": "discard_card",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When Tourach enters, if it was kicked, target opponent discards two cards at random.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent discards two cards at random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {B}{B} (You may pay an additional {B}{B} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {B}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

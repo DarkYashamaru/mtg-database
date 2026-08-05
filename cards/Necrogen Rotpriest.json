@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7d9a424e-cab1-410f-9c04-ee0025d04169",
+  "name": "Necrogen Rotpriest",
+  "faces": [
+    {
+      "name": "Necrogen Rotpriest",
+      "type_line": "Creature \u2014 Phyrexian Zombie Cleric",
+      "oracle_text": "Toxic 2 (Players dealt combat damage by this creature also get two poison counters.)\nWhenever a creature you control with toxic deals combat damage to a player, that player gets an additional poison counter.\n{1}{B}{G}: Target creature you control with toxic gains deathtouch until end of turn.",
+      "static": [
+        {
+          "keyword": "toxic",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control with toxic deals combat damage to a player, that player gets an additional poison counter.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "a_creature_you_control_with_toxic"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player gets an additional poison counter"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}{G}: Target creature you control with toxic gains deathtouch until end of turn.",
+          "cost": "{1}{B}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control_with_toxic",
+              "keyword": "deathtouch"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

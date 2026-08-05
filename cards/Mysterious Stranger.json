@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4cd2e1c2-5f14-4ac9-9c88-899af6ad9f80",
+  "name": "Mysterious Stranger",
+  "faces": [
+    {
+      "name": "Mysterious Stranger",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "Flash\nWhen this creature enters, for each graveyard with an instant or sorcery card in it, exile target instant or sorcery card from that graveyard. If two or more cards are exiled this way, choose one of them at random and copy it. You may cast the copy without paying its mana cost.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, for each graveyard with an instant or sorcery card in it, exile target instant or sorcery card from that graveyard. If two or more cards are exiled this way, choose one of them at random and copy it. You may cast the copy without paying its mana cost.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each graveyard with an instant or sorcery card in it, exile target instant or sorcery card from that graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "choose one of them at random and copy it",
+              "condition": [
+                {
+                  "condition_text": "two or more cards are exiled this way"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast the copy without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

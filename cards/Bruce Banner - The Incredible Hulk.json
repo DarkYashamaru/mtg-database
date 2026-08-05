@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b6c0ee14-2028-4e8b-9acd-ff78821bca9b",
+  "name": "Bruce Banner // The Incredible Hulk",
+  "faces": [
+    {
+      "name": "Bruce Banner",
+      "type_line": "Legendary Creature \u2014 Human Scientist Hero",
+      "oracle_text": "{X}{X}, {T}: Draw X cards. Activate only as a sorcery.\n{2}{R}{R}{G}{G}: Transform Bruce Banner. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{X}{X}, {T}: Draw X cards. Activate only as a sorcery.",
+          "cost": "{X}{X}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "X"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{R}{R}{G}{G}: Transform Bruce Banner. Activate only as a sorcery.",
+          "cost": "{2}{R}{R}{G}{G}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "The Incredible Hulk",
+      "type_line": "Legendary Creature \u2014 Gamma Berserker Hero",
+      "oracle_text": "Reach, trample\nEnrage \u2014 Whenever The Incredible Hulk is dealt damage, put a +1/+1 counter on him. If he's attacking, untap him and there is an additional combat phase after this phase.",
+      "static": [
+        {
+          "keyword": "reach"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever The Incredible Hulk is dealt damage, put a +1/+1 counter on him. If he's attacking, untap him and there is an additional combat phase after this phase.",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap him",
+              "condition": [
+                {
+                  "condition_text": "he's attacking"
+                }
+              ]
+            },
+            {
+              "action": "add_combat_phase_after_this_phase"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

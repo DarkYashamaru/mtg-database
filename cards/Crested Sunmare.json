@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "054fedbb-062e-491e-9a94-594fda33094f",
+  "name": "Crested Sunmare",
+  "faces": [
+    {
+      "name": "Crested Sunmare",
+      "type_line": "Creature \u2014 Horse",
+      "oracle_text": "Other Horses you control have indestructible.\nAt the beginning of each end step, if you gained life this turn, create a 5/5 white Horse creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each end step, if you gained life this turn, create a 5/5 white Horse creature token.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you gained life this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "5/5 white Horse creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "5/5",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Horse"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Horses you control have indestructible.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "subtypes": [
+                  "Horse"
+                ]
+              },
+              "keywords": [
+                "indestructible"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

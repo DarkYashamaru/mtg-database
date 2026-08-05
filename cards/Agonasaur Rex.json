@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1ad5766b-9ae3-437b-bd91-c4c988a8b095",
+  "name": "Agonasaur Rex",
+  "faces": [
+    {
+      "name": "Agonasaur Rex",
+      "type_line": "Creature \u2014 Dinosaur",
+      "oracle_text": "Trample\nCycling {2}{G} ({2}{G}, Discard this card: Draw a card.)\nWhen you cycle this card, put two +1/+1 counters on up to one target creature or Vehicle. It gains trample and indestructible until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, put two +1/+1 counters on up to one target creature or Vehicle. It gains trample and indestructible until end of turn.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "up_to_one_target_creature_or_vehicle",
+              "amount": 2
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "trample_and_indestructible"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {2}{G} ({2}{G}, Discard this card: Draw a card.)",
+          "cost": "Cycling {2}{G} ({2}{G}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

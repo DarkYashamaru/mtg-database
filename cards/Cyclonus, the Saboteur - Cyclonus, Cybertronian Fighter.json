@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7ead01b9-def3-4f9d-a860-af64e94cb45e",
+  "name": "Cyclonus, the Saboteur // Cyclonus, Cybertronian Fighter",
+  "faces": [
+    {
+      "name": "Cyclonus, Cybertronian Fighter",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Living metal (During your turn, this Vehicle is also a creature.)\nFlying\nWhenever Cyclonus deals combat damage to a player, convert it. If you do, there is an additional beginning phase after this phase. (The beginning phase includes the untap, upkeep, and draw steps.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Cyclonus deals combat damage to a player, convert it. If you do, there is an additional beginning phase after this phase. (The beginning phase includes the untap, upkeep, and draw steps.)",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "convert it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "there is an additional beginning phase after this phase",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Living metal (During your turn, this Vehicle is also a creature.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Living metal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cyclonus, the Saboteur",
+      "type_line": "Legendary Artifact Creature \u2014 Robot",
+      "oracle_text": "More Than Meets the Eye {5}{U}{B} (You may cast this card converted for {5}{U}{B}.)\nFlying\nWhenever Cyclonus deals combat damage to a player, it connives. Then if Cyclonus's power is 5 or greater, convert it. (To have a creature connive, draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Cyclonus deals combat damage to a player, it connives. Then if Cyclonus's power is 5 or greater, convert it. (To have a creature connive, draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "connive",
+              "target": "self",
+              "amount": 1,
+              "sequence": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "discard_cards",
+                  "amount": 1
+                },
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "self",
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "discarded_card_matches": {
+                        "not_card_types": [
+                          "land"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "convert it",
+              "condition": [
+                {
+                  "condition_text": "cyclonus's power is 5 or greater"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "More Than Meets the Eye {5}{U}{B} (You may cast this card converted for {5}{U}{B}.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "More Than Meets the Eye {5}{U}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

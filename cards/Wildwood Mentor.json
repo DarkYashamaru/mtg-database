@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f4e61b03-e6c8-4751-9720-b91fdecd57da",
+  "name": "Wildwood Mentor",
+  "faces": [
+    {
+      "name": "Wildwood Mentor",
+      "type_line": "Creature \u2014 Treefolk",
+      "oracle_text": "Whenever a token you control enters, put a +1/+1 counter on this creature.\nWhenever this creature attacks, another target attacking creature gets +X/+X until end of turn, where X is this creature's power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a token you control enters, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Token"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, another target attacking creature gets +X/+X until end of turn, where X is this creature's power.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "another target attacking creature gets +X/+X until end of turn, where X is this creature's power"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

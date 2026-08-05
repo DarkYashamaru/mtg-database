@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ddd3f530-1ea4-4b1e-9f9b-5d34fa626529",
+  "name": "Proficient Pyrodancer",
+  "faces": [
+    {
+      "name": "Proficient Pyrodancer",
+      "type_line": "Creature \u2014 Human Performer",
+      "oracle_text": "When this creature enters, you may put an art sticker on a nonland permanent you own.\n{2}{R}: Another target creature with an art sticker on it gets +2/+0 and gains menace until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may put an art sticker on a nonland permanent you own.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put an art sticker on a nonland permanent you own"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{R}: Another target creature with an art sticker on it gets +2/+0 and gains menace until end of turn.",
+          "cost": "{2}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_creature_with_an_art_sticker_on_it_gets_20_and",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

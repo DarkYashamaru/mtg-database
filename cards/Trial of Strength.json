@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b272cb56-dcba-479e-9fba-5b31e616a95f",
+  "name": "Trial of Strength",
+  "faces": [
+    {
+      "name": "Trial of Strength",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create a 4/2 green Beast creature token.\nWhen a Cartouche you control enters, return this enchantment to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create a 4/2 green Beast creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "4/2 green Beast creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "4/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Beast"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "When a Cartouche you control enters, return this enchantment to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Cartouche"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return this enchantment to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

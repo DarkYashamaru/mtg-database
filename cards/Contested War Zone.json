@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ed73de2b-d7f4-48d9-9be2-aa9d111b7aa7",
+  "name": "Contested War Zone",
+  "faces": [
+    {
+      "name": "Contested War Zone",
+      "type_line": "Land",
+      "oracle_text": "Whenever a creature deals combat damage to you, that creature's controller gains control of this land.\n{T}: Add {C}.\n{1}, {T}: Attacking creatures get +1/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature deals combat damage to you, that creature's controller gains control of this land.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature deals combat damage to you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that creature's controller gains control of this land"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Attacking creatures get +1/+0 until end of turn.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Attacking creatures get +1/+0 until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

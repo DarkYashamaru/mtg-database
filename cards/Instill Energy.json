@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8695c3c1-fb4b-4429-ae33-ec186f68796b",
+  "name": "Instill Energy",
+  "faces": [
+    {
+      "name": "Instill Energy",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature can attack as though it had haste.\n{0}: Untap enchanted creature. Activate only during your turn and only once each turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{0}: Untap enchanted creature. Activate only during your turn and only once each turn.",
+          "cost": "{0}",
+          "condition": [
+            {
+              "turn_scope": "your_turn"
+            },
+            {
+              "max_uses_per_turn": 1
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Untap enchanted creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature can attack as though it had haste.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature can attack as though it had haste"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

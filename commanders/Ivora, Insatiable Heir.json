@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d847542b-7522-43ec-91b0-f0aba5d7dddd",
+  "name": "Ivora, Insatiable Heir",
+  "faces": [
+    {
+      "name": "Ivora, Insatiable Heir",
+      "type_line": "Legendary Creature \u2014 Vampire Warrior",
+      "oracle_text": "Trample\nWhen Ivora enters and whenever it deals combat damage to a player, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")\nWhenever you discard a card, put a +1/+1 counter on Ivora.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Ivora enters and whenever it deals combat damage to a player, create a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self_enters_and_whenever_it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Blood token"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you discard a card, put a +1/+1 counter on Ivora.",
+          "trigger": {
+            "type": "discard_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

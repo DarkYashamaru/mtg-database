@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7a80212a-aae3-483b-abb6-7271a62dff8a",
+  "name": "Gandalf, White Rider",
+  "faces": [
+    {
+      "name": "Gandalf, White Rider",
+      "type_line": "Legendary Creature \u2014 Avatar Wizard",
+      "oracle_text": "Vigilance\nWhenever you cast a spell, creatures you control get +1/+0 until end of turn. Scry 1.\nWhen Gandalf dies, you may put it into its owner's library fifth from the top.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, creatures you control get +1/+0 until end of turn. Scry 1.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            },
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When Gandalf dies, you may put it into its owner's library fifth from the top.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put it into its owner's library fifth from the top"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

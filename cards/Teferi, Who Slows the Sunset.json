@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "98c389ed-b960-42e2-9c76-a062f77c9a78",
+  "name": "Teferi, Who Slows the Sunset",
+  "faces": [
+    {
+      "name": "Teferi, Who Slows the Sunset",
+      "type_line": "Legendary Planeswalker \u2014 Teferi",
+      "oracle_text": "+1: Choose up to one target artifact, up to one target creature, and up to one target land. Untap the chosen permanents you control. Tap the chosen permanents you don't control. You gain 2 life.\n\u22122: Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.\n\u22127: You get an emblem with \"Untap all permanents you control during each opponent's untap step\" and \"You draw a card during each opponent's draw step.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Choose up to one target artifact, up to one target creature, and up to one target land. Untap the chosen permanents you control. Tap the chosen permanents you don't control. You gain 2 life.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose up to one target artifact, up to one target creature, and up to one target land"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Untap the chosen permanents you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Tap the chosen permanents you don't control"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "destination": "hand",
+              "remainder_destination": "bottom_of_library",
+              "remainder_order": "any"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: You get an emblem with \"Untap all permanents you control during each opponent's untap step\" and \"You draw a card during each opponent's draw step.\"",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with \"Untap all permanents you control during each opponent's untap step\" and \"You draw a card during each opponent's draw step.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ee35ed62-d5a2-4e65-a7eb-fcdcb3665532",
+  "name": "Balefire Liege",
+  "faces": [
+    {
+      "name": "Balefire Liege",
+      "type_line": "Creature \u2014 Spirit Horror",
+      "oracle_text": "Other red creatures you control get +1/+1.\nOther white creatures you control get +1/+1.\nWhenever you cast a red spell, this creature deals 3 damage to target player or planeswalker.\nWhenever you cast a white spell, you gain 3 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a red spell, this creature deals 3 damage to target player or planeswalker.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Red"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 3 damage to target player or planeswalker"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a white spell, you gain 3 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "White"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other red creatures you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other red creatures you control get +1/+1"
+            }
+          ]
+        },
+        {
+          "raw_text": "Other white creatures you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other white creatures you control get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

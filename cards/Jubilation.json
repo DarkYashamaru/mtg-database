@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2cf04076-adc4-4831-a3b8-9120d516f204",
+  "name": "Jubilation",
+  "faces": [
+    {
+      "name": "Jubilation",
+      "type_line": "Creature \u2014 Elemental Incarnation",
+      "oracle_text": "When this creature enters, creatures you control get +2/+2 and gain trample until end of turn.\nEncore {7}{G}{G} ({7}{G}{G}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, creatures you control get +2/+2 and gain trample until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control_get_22_and",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Encore {7}{G}{G} ({7}{G}{G}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+          "cost": "Encore {7}{G}{G} ({7}{G}{G}, Exile this card from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each opponent, create a token copy that attacks that opponent this turn if able"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "they",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "them_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

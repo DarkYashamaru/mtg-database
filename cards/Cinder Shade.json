@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9e120284-0fcc-432c-9471-9106eab71025",
+  "name": "Cinder Shade",
+  "faces": [
+    {
+      "name": "Cinder Shade",
+      "type_line": "Creature \u2014 Shade",
+      "oracle_text": "{B}: This creature gets +1/+1 until end of turn.\n{R}, Sacrifice this creature: It deals damage equal to its power to target creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{B}: This creature gets +1/+1 until end of turn.",
+          "cost": "{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{R}, Sacrifice this creature: It deals damage equal to its power to target creature.",
+          "cost": "{R}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "It deals damage equal to its power to target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

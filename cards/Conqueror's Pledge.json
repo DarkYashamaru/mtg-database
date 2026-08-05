@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dcc59bd6-2c5f-48eb-8008-83ce6eb5a442",
+  "name": "Conqueror's Pledge",
+  "faces": [
+    {
+      "name": "Conqueror's Pledge",
+      "type_line": "Sorcery",
+      "oracle_text": "Kicker {6} (You may pay an additional {6} as you cast this spell.)\nCreate six 1/1 white Kor Soldier creature tokens. If this spell was kicked, create twelve of those tokens instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {6} (You may pay an additional {6} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {6}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Create six 1/1 white Kor Soldier creature tokens. If this spell was kicked, create twelve of those tokens instead.",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 6,
+              "token": {
+                "raw": "1/1 white Kor Soldier creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Kor",
+                  "Soldier"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "create twelve of those tokens instead",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

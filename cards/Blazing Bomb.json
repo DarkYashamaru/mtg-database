@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "088acd15-029b-4091-960a-d5060a364ca9",
+  "name": "Blazing Bomb",
+  "faces": [
+    {
+      "name": "Blazing Bomb",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "Whenever you cast a noncreature spell, if at least four mana was spent to cast it, put a +1/+1 counter on this creature.\nBlow Up \u2014 {T}, Sacrifice this creature: It deals damage equal to its power to target creature. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, if at least four mana was spent to cast it, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            },
+            {
+              "condition_text": "at least four mana was spent to cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Blow Up \u2014 {T}, Sacrifice this creature: It deals damage equal to its power to target creature. Activate only as a sorcery.",
+          "cost": "Blow Up \u2014 {T}, Sacrifice this creature",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "It deals damage equal to its power to target creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

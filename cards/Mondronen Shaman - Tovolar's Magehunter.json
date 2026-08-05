@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f94cb722-7e46-4569-b474-9654ecf7ec14",
+  "name": "Mondronen Shaman // Tovolar's Magehunter",
+  "faces": [
+    {
+      "name": "Mondronen Shaman",
+      "type_line": "Creature \u2014 Human Shaman Werewolf",
+      "oracle_text": "At the beginning of each upkeep, if no spells were cast last turn, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, if no spells were cast last turn, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "no spells were cast last turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Tovolar's Magehunter",
+      "type_line": "Creature \u2014 Werewolf",
+      "oracle_text": "Whenever an opponent casts a spell, this creature deals 2 damage to that player.\nAt the beginning of each upkeep, if a player cast two or more spells last turn, transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent casts a spell, this creature deals 2 damage to that player.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 2 damage to that player"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each upkeep, if a player cast two or more spells last turn, transform this creature.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "a player cast two or more spells last turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

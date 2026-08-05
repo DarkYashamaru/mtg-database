@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4ba4cb4b-f421-4abd-8fcf-a01174447790",
+  "name": "Selfcraft Mechan",
+  "faces": [
+    {
+      "name": "Selfcraft Mechan",
+      "type_line": "Artifact Creature \u2014 Robot Artificer",
+      "oracle_text": "When this creature enters, you may sacrifice an artifact. When you do, put a +1/+1 counter on target creature and draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may sacrifice an artifact. When you do, put a +1/+1 counter on target creature and draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "an_artifact",
+              "optional": true
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

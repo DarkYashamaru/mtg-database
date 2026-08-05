@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "db982577-1c75-4bc9-ab15-1888ea0be16d",
+  "name": "Endemic Plague",
+  "faces": [
+    {
+      "name": "Endemic Plague",
+      "type_line": "Sorcery",
+      "oracle_text": "As an additional cost to cast this spell, sacrifice a creature.\nDestroy all creatures that share a creature type with the sacrificed creature. They can't be regenerated.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast this spell, sacrifice a creature.",
+          "effects": [
+            {
+              "action": "additional_cost",
+              "cost": {
+                "action": "sacrifice",
+                "target": "a_creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy all creatures that share a creature type with the sacrificed creature. They can't be regenerated.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy all creatures that share a creature type with the sacrificed creature"
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_targets"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

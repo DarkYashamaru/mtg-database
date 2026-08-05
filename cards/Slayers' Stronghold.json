@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2de7367b-a5a4-43f4-8f8f-b931ea28150d",
+  "name": "Slayers' Stronghold",
+  "faces": [
+    {
+      "name": "Slayers' Stronghold",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{R}{W}, {T}: Target creature gets +2/+0 and gains vigilance and haste until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{R}{W}, {T}: Target creature gets +2/+0 and gains vigilance and haste until end of turn.",
+          "cost": "{R}{W}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_gets_20_and",
+              "keyword": "vigilance_and_haste"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

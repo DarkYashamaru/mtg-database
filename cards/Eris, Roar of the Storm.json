@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "918991a6-7321-419d-8f3d-150fe32d02d2",
+  "name": "Eris, Roar of the Storm",
+  "faces": [
+    {
+      "name": "Eris, Roar of the Storm",
+      "type_line": "Legendary Creature \u2014 Elemental Warlock",
+      "oracle_text": "This spell costs {2} less to cast for each different mana value among instant and sorcery cards in your graveyard.\nFlying, prowess\nWhenever you cast your second spell each turn, create a 4/4 red Dragon Elemental creature token with flying and prowess.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, create a 4/4 red Dragon Elemental creature token with flying and prowess.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/4 red Dragon Elemental creature token with flying and prowess",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Dragon",
+                  "Elemental"
+                ],
+                "keywords": [
+                  "flying",
+                  "prowess"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {2} less to cast for each different mana value among instant and sorcery cards in your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {2} less to cast for each different mana value among instant and sorcery cards in your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

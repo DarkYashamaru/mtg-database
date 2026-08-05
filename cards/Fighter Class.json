@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8a280ba8-6b7b-46dd-9c2b-6d0027cfff30",
+  "name": "Fighter Class",
+  "faces": [
+    {
+      "name": "Fighter Class",
+      "type_line": "Enchantment \u2014 Class",
+      "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nWhen this Class enters, search your library for an Equipment card, reveal it, put it into your hand, then shuffle.\n{1}{R}{W}: Level 2\nEquip abilities you activate cost {2} less to activate.\n{3}{R}{W}: Level 3\nWhenever a creature you control attacks, up to one target creature blocks it this combat if able.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Class enters, search your library for an Equipment card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_class"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Equipment"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control attacks, up to one target creature blocks it this combat if able.",
+          "trigger": {
+            "type": "attacks",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "force_block_this_combat",
+              "target": "up_to_one_target_creature",
+              "object": "it",
+              "optional_target": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{R}{W}: Level 2",
+          "cost": "{1}{R}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{R}{W}: Level 3",
+          "cost": "{3}{R}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equip abilities you activate cost {2} less to activate.",
+          "effects": [
+            {
+              "action": "equip_cost_reduction",
+              "target": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5a8e7e35-e9ea-4808-8aa7-7580a23b9d9d",
+  "name": "Ultimecia, Temporal Threat",
+  "faces": [
+    {
+      "name": "Ultimecia, Temporal Threat",
+      "type_line": "Legendary Creature \u2014 Human Warlock",
+      "oracle_text": "When Ultimecia enters, tap all creatures your opponents control.\nWhenever a creature you control deals combat damage to a player, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Ultimecia enters, tap all creatures your opponents control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap all creatures your opponents control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature you control deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

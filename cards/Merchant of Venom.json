@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3918eaa7-5a34-4d6a-be93-a95e733d041b",
+  "name": "Merchant of Venom",
+  "faces": [
+    {
+      "name": "Merchant of Venom",
+      "type_line": "Creature \u2014 Cat Warlock",
+      "oracle_text": "Menace\nWhen this creature enters, each player sacrifices a creature of their choice.\nWhenever a player sacrifices a permanent, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, each player sacrifices a creature of their choice.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player sacrifices a creature of their choice"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a player sacrifices a permanent, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player sacrifices a permanent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

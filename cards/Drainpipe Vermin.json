@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b6d39905-e074-4517-b806-d081d1069f74",
+  "name": "Drainpipe Vermin",
+  "faces": [
+    {
+      "name": "Drainpipe Vermin",
+      "type_line": "Creature \u2014 Rat",
+      "oracle_text": "When this creature dies, you may pay {B}. If you do, target player discards a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, you may pay {B}. If you do, target player discards a card.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{b}",
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "target": "target_player",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

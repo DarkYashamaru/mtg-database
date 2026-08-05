@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "941c9acd-2773-456a-88d5-0537735f93c6",
+  "name": "Zurgo and Ojutai",
+  "faces": [
+    {
+      "name": "Zurgo and Ojutai",
+      "type_line": "Legendary Creature \u2014 Orc Dragon",
+      "oracle_text": "Flying, haste\nZurgo and Ojutai has hexproof as long as it entered this turn.\nWhenever one or more Dragons you control deal combat damage to a player or battle, look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order. You may return one of those Dragons to its owner's hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more Dragons you control deal combat damage to a player or battle, look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order. You may return one of those Dragons to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more Dragons you control deal combat damage to a player or battle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "destination": "hand",
+              "remainder_destination": "bottom_of_library",
+              "remainder_order": "any"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may return one of those Dragons to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Zurgo and Ojutai has hexproof as long as it entered this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Zurgo and Ojutai has hexproof as long as it entered this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

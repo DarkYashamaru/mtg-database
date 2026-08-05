@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "24542d66-e67a-4403-91a8-bb4231ea1f50",
+  "name": "Chronatog Totem",
+  "faces": [
+    {
+      "name": "Chronatog Totem",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {U}.\n{1}{U}: This artifact becomes a 1/2 blue Atog artifact creature until end of turn.\n{0}: This creature gets +3/+3 until end of turn. You skip your next turn. Activate only once each turn and only if this permanent is a creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{U}: This artifact becomes a 1/2 blue Atog artifact creature until end of turn.",
+          "cost": "{1}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact becomes a 1/2 blue Atog artifact creature until end of turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "{0}: This creature gets +3/+3 until end of turn. You skip your next turn. Activate only once each turn and only if this permanent is a creature.",
+          "cost": "{0}",
+          "condition": [
+            {
+              "condition_text": "once each turn and only if this permanent is a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 3,
+              "toughness_delta": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "You skip your next turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

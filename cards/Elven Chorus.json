@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4d5df2d9-06bf-4bec-9be0-dabe75a858fb",
+  "name": "Elven Chorus",
+  "faces": [
+    {
+      "name": "Elven Chorus",
+      "type_line": "Enchantment",
+      "oracle_text": "You may look at the top card of your library any time.\nYou may cast creature spells from the top of your library.\nCreatures you control have \"{T}: Add one mana of any color.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Creatures you control have \"{T}: Add one mana of any color.\"",
+          "cost": "Creatures you control have \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "You may cast creature spells from the top of your library.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast creature spells from the top of your library"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

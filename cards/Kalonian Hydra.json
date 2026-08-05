@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7bd36106-04fe-481f-b16e-e076dcbb183b",
+  "name": "Kalonian Hydra",
+  "faces": [
+    {
+      "name": "Kalonian Hydra",
+      "type_line": "Creature \u2014 Hydra",
+      "oracle_text": "Trample\nThis creature enters with four +1/+1 counters on it.\nWhenever this creature attacks, double the number of +1/+1 counters on each creature you control.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, double the number of +1/+1 counters on each creature you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "double the number of +1/+1 counters on each creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with four +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

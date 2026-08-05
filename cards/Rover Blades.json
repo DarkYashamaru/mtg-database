@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0394846e-bc27-4d67-988e-b08a389690de",
+  "name": "Rover Blades",
+  "faces": [
+    {
+      "name": "Rover Blades",
+      "type_line": "Artifact \u2014 Equipment Vehicle",
+      "oracle_text": "Double strike\nEquipped creature has double strike.\nEquip {4}\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn. Creatures can't be attached to other permanents.)",
+      "static": [
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {4}",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Crew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn. Creatures can't be attached to other permanents.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has double strike.",
+          "effects": [
+            {
+              "action": "grant_keyword",
+              "target": "equipped_creature",
+              "keyword": "double_strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

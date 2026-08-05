@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a1fc4269-f3e4-4a59-849d-aa1727eef23a",
+  "name": "From Under the Floorboards",
+  "faces": [
+    {
+      "name": "From Under the Floorboards",
+      "type_line": "Sorcery",
+      "oracle_text": "Madness {X}{B}{B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)\nCreate three tapped 2/2 black Zombie creature tokens and you gain 3 life. If this spell's madness cost was paid, instead create X of those tokens and you gain X life.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Madness {X}{B}{B} (If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Madness {X}{B}{B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Create three tapped 2/2 black Zombie creature tokens and you gain 3 life. If this spell's madness cost was paid, instead create X of those tokens and you gain X life.",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "tapped 2/2 black Zombie creature tokens",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "instead create x of those tokens and you gain x life",
+              "condition": [
+                {
+                  "condition_text": "this spell's madness cost was paid"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

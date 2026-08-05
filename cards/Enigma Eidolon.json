@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4489a526-0e07-4d37-9e83-628f7eb256c6",
+  "name": "Enigma Eidolon",
+  "faces": [
+    {
+      "name": "Enigma Eidolon",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "{U}, Sacrifice this creature: Target player mills three cards.\nWhenever you cast a multicolored spell, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a multicolored spell, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Multicolored"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{U}, Sacrifice this creature: Target player mills three cards.",
+          "cost": "{U}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player mills three cards"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

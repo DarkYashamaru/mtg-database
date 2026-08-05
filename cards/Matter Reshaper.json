@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "38538aff-b6f9-4c30-992e-7fd78da3c44a",
+  "name": "Matter Reshaper",
+  "faces": [
+    {
+      "name": "Matter Reshaper",
+      "type_line": "Creature \u2014 Eldrazi",
+      "oracle_text": "({C} represents colorless mana.)\nWhen this creature dies, reveal the top card of your library. You may put that card onto the battlefield if it's a permanent card with mana value 3 or less. Otherwise, put that card into your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, reveal the top card of your library. You may put that card onto the battlefield if it's a permanent card with mana value 3 or less. Otherwise, put that card into your hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put that card onto the battlefield if it's a permanent card with mana value 3 or less"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card into your hand",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

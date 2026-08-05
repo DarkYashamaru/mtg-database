@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7244d04a-bb9c-4fbe-a346-4a3f45709da7",
+  "name": "Stirring Hopesinger",
+  "faces": [
+    {
+      "name": "Stirring Hopesinger",
+      "type_line": "Creature \u2014 Bird Bard",
+      "oracle_text": "Flying, lifelink\nRepartee \u2014 Whenever you cast an instant or sorcery spell that targets a creature, put a +1/+1 counter on each creature you control.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell that targets a creature, put a +1/+1 counter on each creature you control.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            },
+            {
+              "condition_text": "that targets a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

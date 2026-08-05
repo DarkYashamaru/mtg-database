@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9b7d037f-3269-4e3b-9744-a977acb69c67",
+  "name": "Incinerator of the Guilty",
+  "faces": [
+    {
+      "name": "Incinerator of the Guilty",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying, trample\nWhenever this creature deals combat damage to a player, you may collect evidence X. When you do, this creature deals X damage to each creature and planeswalker that player controls. (To collect evidence X, exile cards with total mana value X or greater from your graveyard.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may collect evidence X. When you do, this creature deals X damage to each creature and planeswalker that player controls. (To collect evidence X, exile cards with total mana value X or greater from your graveyard.)",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may collect evidence X"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals x damage to each creature and planeswalker that player controls",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

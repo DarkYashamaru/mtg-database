@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e5a06062-0513-48af-b92a-420ebbeb1695",
+  "name": "Gilt-Leaf Ambush",
+  "faces": [
+    {
+      "name": "Gilt-Leaf Ambush",
+      "type_line": "Kindred Instant \u2014 Elf",
+      "oracle_text": "Create two 1/1 green Elf Warrior creature tokens. Clash with an opponent. If you win, those creatures gain deathtouch until end of turn. (Each clashing player reveals the top card of their library, then puts that card on their choice of the top or bottom. A player wins if their card had a greater mana value. Any amount of damage a creature with deathtouch deals to a creature is enough to destroy it.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Create two 1/1 green Elf Warrior creature tokens. Clash with an opponent. If you win, those creatures gain deathtouch until end of turn. (Each clashing player reveals the top card of their library, then puts that card on their choice of the top or bottom. A player wins if their card had a greater mana value. Any amount of damage a creature with deathtouch deals to a creature is enough to destroy it.)",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 green Elf Warrior creature tokens",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elf",
+                  "Warrior"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Clash with an opponent"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "those_creatures",
+              "keyword": "deathtouch",
+              "condition": [
+                {
+                  "condition_text": "you win"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "02d6b7f6-1fe0-4a93-8385-69ab160ab732",
+  "name": "Midnight Entourage",
+  "faces": [
+    {
+      "name": "Midnight Entourage",
+      "type_line": "Creature \u2014 Aetherborn Rogue",
+      "oracle_text": "Other Aetherborn you control get +1/+1.\nWhenever this creature or another Aetherborn you control dies, you draw a card and you lose 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Aetherborn you control dies, you draw a card and you lose 1 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Aetherborn"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Aetherborn you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other Aetherborn you control get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

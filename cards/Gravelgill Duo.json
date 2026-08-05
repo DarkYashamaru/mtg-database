@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a9e28134-382b-45e5-8fd0-cc0e7d56fd0c",
+  "name": "Gravelgill Duo",
+  "faces": [
+    {
+      "name": "Gravelgill Duo",
+      "type_line": "Creature \u2014 Merfolk Rogue Warrior",
+      "oracle_text": "Whenever you cast a blue spell, this creature gets +1/+1 until end of turn.\nWhenever you cast a black spell, this creature gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a blue spell, this creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Blue"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a black spell, this creature gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Black"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "fear"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

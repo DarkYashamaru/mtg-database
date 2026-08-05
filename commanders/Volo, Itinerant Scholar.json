@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9b61f5b1-7688-4336-8fe9-66da37a34df9",
+  "name": "Volo, Itinerant Scholar",
+  "faces": [
+    {
+      "name": "Volo, Itinerant Scholar",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "When Volo enters, create Volo's Journal, a legendary colorless Book artifact token with hexproof and \"Whenever you cast a creature spell, note one of its creature types that hasn't been noted for Volo's Journal.\"\n{2}, {T}: Draw a card for each creature type noted for target permanent you control named Volo's Journal.\nChoose a Background",
+      "static": [
+        {
+          "keyword": "choose_a_background"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Volo enters, create Volo's Journal, a legendary colorless Book artifact token with hexproof and \"Whenever you cast a creature spell, note one of its creature types that hasn't been noted for Volo's Journal.\"",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Volo's Journal, a legendary colorless Book artifact token with hexproof and \"Whenever you cast a creature spell, note one of its creature types that hasn't been noted for Volo's Journal"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}: Draw a card for each creature type noted for target permanent you control named Volo's Journal.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "creature_type_noted_for_target_permanent_you_control_named_selfs_journal"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

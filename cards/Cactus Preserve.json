@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8da29533-f389-4bc2-ab9b-b469f893a362",
+  "name": "Cactus Preserve",
+  "faces": [
+    {
+      "name": "Cactus Preserve",
+      "type_line": "Land \u2014 Desert",
+      "oracle_text": "This land enters tapped.\n{T}: Add one mana of any type that a land you control could produce.\n{3}: Until end of turn, this land becomes an X/X green Plant creature with reach, where X is the greatest mana value among your commanders. It's still a land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any type that a land you control could produce.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add one mana of any type that a land you control could produce"
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}: Until end of turn, this land becomes an X/X green Plant creature with reach, where X is the greatest mana value among your commanders. It's still a land.",
+          "cost": "{3}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, this land becomes an X/X green Plant creature with reach, where X is the greatest mana value among your commanders"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b97a11c2-7119-4399-9565-bf69520d3988",
+  "name": "Galadriel, Elven-Queen",
+  "faces": [
+    {
+      "name": "Galadriel, Elven-Queen",
+      "type_line": "Legendary Creature \u2014 Elf Noble",
+      "oracle_text": "Will of the council \u2014 At the beginning of combat on your turn, if another Elf entered the battlefield under your control this turn, starting with you, each player votes for dominion or guidance. If dominion gets more votes, the Ring tempts you, then you put a +1/+1 counter on your Ring-bearer. If guidance gets more votes or the vote is tied, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if another Elf entered the battlefield under your control this turn, starting with you, each player votes for dominion or guidance. If dominion gets more votes, the Ring tempts you, then you put a +1/+1 counter on your Ring-bearer. If guidance gets more votes or the vote is tied, draw a card.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "another Elf entered the battlefield under your control this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "starting with you, each player votes for dominion or guidance"
+            },
+            {
+              "action": "ring_tempts_you",
+              "condition": [
+                {
+                  "condition_text": "dominion gets more votes"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you put a +1/+1 counter on your ring-bearer"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "guidance gets more votes or the vote is tied"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

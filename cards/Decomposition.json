@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "62817ef5-9b8d-4bca-bdd4-ab3bc4e063d0",
+  "name": "Decomposition",
+  "faces": [
+    {
+      "name": "Decomposition",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant black creature\nEnchanted creature has \"Cumulative upkeep\u2014Pay 1 life.\" (At the beginning of its controller's upkeep, that player puts an age counter on it, then sacrifices it unless they pay its upkeep cost for each age counter on it.)\nWhen enchanted creature dies, its controller loses 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, its controller loses 2 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "its controller loses 2 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant black creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "black_creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has \"Cumulative upkeep\u2014Pay 1 life.\" (At the beginning of its controller's upkeep, that player puts an age counter on it, then sacrifices it unless they pay its upkeep cost for each age counter on it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has \"Cumulative upkeep\u2014Pay 1 life.\""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "817f3b8b-4399-4c28-9453-7f57df4a7360",
+  "name": "Endrider Spikespitter",
+  "faces": [
+    {
+      "name": "Endrider Spikespitter",
+      "type_line": "Creature \u2014 Human Mercenary",
+      "oracle_text": "Reach\nStart your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed \u2014 At the beginning of your upkeep, exile the top card of your library. You may play that card this turn.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, exile the top card of your library. You may play that card this turn.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)",
+          "effects": [
+            {
+              "action": "start_your_engines"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

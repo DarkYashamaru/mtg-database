@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "742cb752-dd20-4b1f-8d96-7e9a8f864e75",
+  "name": "Inheritance",
+  "faces": [
+    {
+      "name": "Inheritance",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature dies, you may pay {3}. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature dies, you may pay {3}. If you do, draw a card.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{3}",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

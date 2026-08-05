@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d4e54b48-956f-4467-8485-a5fdb44779fd",
+  "name": "Mr. House, President and CEO",
+  "faces": [
+    {
+      "name": "Mr. House, President and CEO",
+      "type_line": "Legendary Artifact Creature \u2014 Human",
+      "oracle_text": "Whenever you roll a 4 or higher, create a 3/3 colorless Robot artifact creature token. If you rolled 6 or higher, instead create that token and a Treasure token.\n{4}, {T}: Roll a six-sided die plus an additional six-sided die for each mana from Treasures spent to activate this ability.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you roll a 4 or higher, create a 3/3 colorless Robot artifact creature token. If you rolled 6 or higher, instead create that token and a Treasure token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you roll a 4 or higher"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/3 colorless Robot artifact creature token",
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Robot",
+                  "artifact"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "instead create that token and a treasure token",
+              "condition": [
+                {
+                  "condition_text": "you rolled 6 or higher"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}, {T}: Roll a six-sided die plus an additional six-sided die for each mana from Treasures spent to activate this ability.",
+          "cost": "{4}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Roll a six-sided die plus an additional six-sided die for each mana from Treasures spent to activate this ability"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

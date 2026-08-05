@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1946ded1-5f53-409f-b0a6-5433bb0357d2",
+  "name": "The Ozolith",
+  "faces": [
+    {
+      "name": "The Ozolith",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "Whenever a creature you control leaves the battlefield, if it had counters on it, put those counters on The Ozolith.\nAt the beginning of combat on your turn, if The Ozolith has counters on it, you may move all counters from The Ozolith onto target creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control leaves the battlefield, if it had counters on it, put those counters on The Ozolith.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "it had counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put those counters on The Ozolith"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, if The Ozolith has counters on it, you may move all counters from The Ozolith onto target creature.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "The Ozolith has counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may move all counters from The Ozolith onto target creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

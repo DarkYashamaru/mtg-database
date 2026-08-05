@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6846448b-d5a0-4ae0-bb11-ea7fa6ed2558",
+  "name": "Haliya, Ascendant Cadet",
+  "faces": [
+    {
+      "name": "Haliya, Ascendant Cadet",
+      "type_line": "Legendary Creature \u2014 Human Soldier",
+      "oracle_text": "Whenever Haliya enters or attacks, put a +1/+1 counter on target creature you control.\nWhenever one or more creatures you control with +1/+1 counters on them deal combat damage to a player, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Haliya enters or attacks, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more creatures you control with +1/+1 counters on them deal combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control_with_11_counters_on_self"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

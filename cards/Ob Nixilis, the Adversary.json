@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a6abb6af-7ea2-43f3-8718-2a077ad0c947",
+  "name": "Ob Nixilis, the Adversary",
+  "faces": [
+    {
+      "name": "Ob Nixilis, the Adversary",
+      "type_line": "Legendary Planeswalker \u2014 Nixilis",
+      "oracle_text": "Casualty X. The copy isn't legendary and has starting loyalty X. (As you cast this spell, you may sacrifice a creature with power X. When you do, copy this spell. The copy becomes a token.)\n+1: Each opponent loses 2 life unless they discard a card. If you control a Demon or Devil, you gain 2 life.\n\u22122: Create a 1/1 red Devil creature token with \"When this token dies, it deals 1 damage to any target.\"\n\u22127: Target player draws seven cards and loses 7 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Each opponent loses 2 life unless they discard a card. If you control a Demon or Devil, you gain 2 life.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent loses 2 life unless they discard a card"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "you control a demon or devil"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Create a 1/1 red Devil creature token with \"When this token dies, it deals 1 damage to any target.\"",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "create_a_11_red_devil_creature_token_with_when_this_token_dies_it",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: Target player draws seven cards and loses 7 life.",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player draws seven cards and loses 7 life"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Casualty X. The copy isn't legendary and has starting loyalty X. (As you cast this spell, you may sacrifice a creature with power X. When you do, copy this spell. The copy becomes a token.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Casualty X"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The copy isn't legendary and has starting loyalty X"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

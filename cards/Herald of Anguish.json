@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "97b559fe-b09d-4883-9509-c45ace2d8487",
+  "name": "Herald of Anguish",
+  "faces": [
+    {
+      "name": "Herald of Anguish",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)\nFlying\nAt the beginning of your end step, each opponent discards a card.\n{1}{B}, Sacrifice an artifact: Target creature gets -2/-2 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, each opponent discards a card.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}, Sacrifice an artifact: Target creature gets -2/-2 until end of turn.",
+          "cost": "{1}{B}, Sacrifice an artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -2,
+              "toughness_delta": -2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Improvise (Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {1}.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Improvise"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fcf9057a-4975-4a7d-85f5-3fdc80942fcd",
+  "name": "Backdraft Hellkite",
+  "faces": [
+    {
+      "name": "Backdraft Hellkite",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever this creature attacks, each instant and sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, each instant and sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "each_instant_and_sorcery_card_in_you_control_graveyard",
+              "keyword": "flashback"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The flashback cost is equal to its mana cost"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

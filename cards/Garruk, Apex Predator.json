@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ef9a8bdc-3361-440d-89f6-0bf5ff7a09e8",
+  "name": "Garruk, Apex Predator",
+  "faces": [
+    {
+      "name": "Garruk, Apex Predator",
+      "type_line": "Legendary Planeswalker \u2014 Garruk",
+      "oracle_text": "+1: Destroy another target planeswalker.\n+1: Create a 3/3 black Beast creature token with deathtouch.\n\u22123: Destroy target creature. You gain life equal to its toughness.\n\u22128: Target opponent gets an emblem with \"Whenever a creature attacks you, it gets +5/+5 and gains trample until end of turn.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Destroy another target planeswalker.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy another target planeswalker"
+            }
+          ]
+        },
+        {
+          "raw_text": "+1: Create a 3/3 black Beast creature token with deathtouch.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 3/3 black Beast creature token with deathtouch",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Beast"
+                ],
+                "keywords": [
+                  "deathtouch"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Destroy target creature. You gain life equal to its toughness.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "You gain life equal to its toughness"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22128: Target opponent gets an emblem with \"Whenever a creature attacks you, it gets +5/+5 and gains trample until end of turn.\"",
+          "cost": "\u22128",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_opponent_gets_an_emblem_with_whenever_a_creature_attacks_you_it_gets_55_and",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

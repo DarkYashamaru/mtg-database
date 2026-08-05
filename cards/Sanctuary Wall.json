@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "83856c3a-652e-4afc-9dc0-0072324ac36f",
+  "name": "Sanctuary Wall",
+  "faces": [
+    {
+      "name": "Sanctuary Wall",
+      "type_line": "Artifact Creature \u2014 Wall",
+      "oracle_text": "Defender\n{2}{W}, {T}: Tap target creature. You may put a stun counter on it. If you do, put a stun counter on this creature. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{W}, {T}: Tap target creature. You may put a stun counter on it. If you do, put a stun counter on this creature. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+          "cost": "{2}{W}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put a stun counter on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a stun counter on this creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

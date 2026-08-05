@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f9279f8f-3d19-4f5b-b194-cb8c65313b7e",
+  "name": "Transcendence",
+  "faces": [
+    {
+      "name": "Transcendence",
+      "type_line": "Enchantment",
+      "oracle_text": "You don't lose the game for having 0 or less life.\nWhen you have 20 or more life, you lose the game.\nWhenever you lose life, you gain 2 life for each 1 life you lost. (Damage dealt to you causes you to lose life.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you have 20 or more life, you lose the game.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you have 20 or more life"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_the_game"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you lose life, you gain 2 life for each 1 life you lost. (Damage dealt to you causes you to lose life.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you lose life"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you gain 2 life for each 1 life you lost"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You don't lose the game for having 0 or less life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You don't lose the game for having 0 or less life"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

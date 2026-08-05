@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "302407c8-0842-4f8e-a5aa-5c11a69851c4",
+  "name": "Dying Wish",
+  "faces": [
+    {
+      "name": "Dying Wish",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature you control\nWhen enchanted creature dies, target player loses X life and you gain X life, where X is its power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, target player loses X life and you gain X life, where X is its power.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target player loses X life and you gain X life, where X is its power"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_control"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

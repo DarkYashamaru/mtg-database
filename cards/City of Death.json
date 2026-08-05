@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "313c6b29-c488-4b4b-af16-f82717f59a5d",
+  "name": "City of Death",
+  "faces": [
+    {
+      "name": "City of Death",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after VI.)\nI \u2014 Create a Treasure token.\nII, III, IV, V, VI \u2014 Create a token that's a copy of target non-Saga token you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Create a Treasure token.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II, III, IV, V, VI \u2014 Create a token that's a copy of target non-Saga token you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II",
+              "III",
+              "IV",
+              "V",
+              "VI"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Create a token that's a copy of target non-Saga token you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

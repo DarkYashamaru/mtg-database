@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e4f880f5-0639-4acb-a099-e48f5707f0db",
+  "name": "Anointer of Valor",
+  "faces": [
+    {
+      "name": "Anointer of Valor",
+      "type_line": "Creature \u2014 Angel",
+      "oracle_text": "Flying\nWhenever a creature attacks, you may pay {3}. When you do, put a +1/+1 counter on that creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature attacks, you may pay {3}. When you do, put a +1/+1 counter on that creature.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "a_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{3}",
+              "optional": true
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "that_creature",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

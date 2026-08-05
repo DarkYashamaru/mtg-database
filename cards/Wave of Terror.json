@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2346be19-7344-4f11-be2c-a22750cb7e1d",
+  "name": "Wave of Terror",
+  "faces": [
+    {
+      "name": "Wave of Terror",
+      "type_line": "Enchantment",
+      "oracle_text": "Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nAt the beginning of your draw step, destroy each creature with mana value equal to the number of age counters on this enchantment. They can't be regenerated.",
+      "static": [
+        {
+          "keyword": "cumulative_upkeep",
+          "cost": "{1}"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your draw step, destroy each creature with mana value equal to the number of age counters on this enchantment. They can't be regenerated.",
+          "trigger": {
+            "type": "beginning_of_your_draw_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy each creature with mana value equal to the number of age counters on this enchantment"
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_targets"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

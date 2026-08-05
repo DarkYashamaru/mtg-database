@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d4e4614d-8247-4fc5-8883-e37204939aa4",
+  "name": "Origin of Thor",
+  "faces": [
+    {
+      "name": "Origin of Thor",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 You may discard a card. If you do, draw two cards.\nII \u2014 Whenever you cast a spell this turn, put a +1/+1 counter on target creature you control.\nIII \u2014 Target creature you control deals damage equal to its power to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 You may discard a card. If you do, draw two cards.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Whenever you cast a spell this turn, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Whenever you cast a spell this turn, put a +1/+1 counter on target creature you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Target creature you control deals damage equal to its power to each opponent.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature you control deals damage equal to its power to each opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

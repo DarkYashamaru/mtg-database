@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "998daf11-c0ed-4801-b013-d8b3136f16d1",
+  "name": "Acolyte Hybrid",
+  "faces": [
+    {
+      "name": "Acolyte Hybrid",
+      "type_line": "Creature \u2014 Tyranid Human",
+      "oracle_text": "Heavy Rock Cutter \u2014 Whenever this creature attacks, destroy up to one target artifact. If an artifact is destroyed this way, its controller draws a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, destroy up to one target artifact. If an artifact is destroyed this way, its controller draws a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy up to one target artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "its controller draws a card",
+              "condition": [
+                {
+                  "condition_text": "an artifact is destroyed this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

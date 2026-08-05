@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d9ec9a4f-0644-47c5-bc09-1201d5251bde",
+  "name": "Aetherwind Basker",
+  "faces": [
+    {
+      "name": "Aetherwind Basker",
+      "type_line": "Creature \u2014 Lizard",
+      "oracle_text": "Trample\nWhenever this creature enters or attacks, you get {E} (an energy counter) for each creature you control.\nPay {E}: This creature gets +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or attacks, you get {E} (an energy counter) for each creature you control.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get {E} for each creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay {E}: This creature gets +1/+1 until end of turn.",
+          "cost": "Pay {E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

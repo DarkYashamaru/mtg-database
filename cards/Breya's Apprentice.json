@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8fb9ff2d-1e90-4a26-8397-bb981fda2f7b",
+  "name": "Breya's Apprentice",
+  "faces": [
+    {
+      "name": "Breya's Apprentice",
+      "type_line": "Artifact Creature \u2014 Human Artificer",
+      "oracle_text": "When this creature enters, create a 1/1 colorless Thopter artifact creature token with flying.\n{T}, Sacrifice an artifact: Choose one \u2014\n\u2022 Exile the top card of your library. Until the end of your next turn, you may play that card.\n\u2022 Target creature gets +2/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 1/1 colorless Thopter artifact creature token with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 colorless Thopter artifact creature token with flying",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Thopter",
+                  "artifact"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice an artifact: Choose one \u2014\n\u2022 Exile the top card of your library. Until the end of your next turn, you may play that card.\n\u2022 Target creature gets +2/+0 until end of turn.",
+          "cost": "{T}, Sacrifice an artifact",
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Exile the top card of your library. Until the end of your next turn, you may play that card.",
+              "effects": [
+                {
+                  "action": "move_top_card",
+                  "from_zone": "library",
+                  "to_zone": "exile",
+                  "owner": "you",
+                  "count": 1
+                },
+                {
+                  "action": "allow_play",
+                  "object": "that_card",
+                  "until": "end_of_your_next_turn"
+                }
+              ]
+            },
+            {
+              "raw_text": "Target creature gets +2/+0 until end of turn.",
+              "effects": [
+                {
+                  "action": "modify_stats_until_end_of_turn",
+                  "target": "target_creature",
+                  "power_delta": 2,
+                  "toughness_delta": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

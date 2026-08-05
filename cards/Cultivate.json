@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b755881-a72d-4e21-a369-d2924eb4585a",
+  "name": "Cultivate",
+  "faces": [
+    {
+      "name": "Cultivate",
+      "type_line": "Sorcery",
+      "oracle_text": "Search your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for up to two basic land cards, reveal those cards, put one onto the battlefield tapped and the other into your hand, then shuffle.",
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "selected_count": {
+                "min": 0,
+                "max": 2
+              },
+              "distribution": [
+                {
+                  "destination": "battlefield",
+                  "tapped": true,
+                  "count": 1
+                },
+                {
+                  "destination": "hand",
+                  "count": 1
+                }
+              ],
+              "reveal": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

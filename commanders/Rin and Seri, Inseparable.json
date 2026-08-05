@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "oracle_id": "28c46eb7-bdfc-44b9-b7e9-b073260851f0",
+  "name": "Rin and Seri, Inseparable",
+  "faces": [
+    {
+      "name": "Rin and Seri, Inseparable",
+      "type_line": "Legendary Creature \u2014 Dog Cat",
+      "oracle_text": "Whenever you cast a Dog spell, create a 1/1 green Cat creature token.\nWhenever you cast a Cat spell, create a 1/1 white Dog creature token.\n{R}{G}{W}, {T}: Rin and Seri deals damage to any target equal to the number of Dogs you control. You gain life equal to the number of Cats you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Dog spell, create a 1/1 green Cat creature token.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Dog"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Cat creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Cat"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a Cat spell, create a 1/1 white Dog creature token.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Cat"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Dog creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Dog"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R}{G}{W}, {T}: Rin and Seri deals damage to any target equal to the number of Dogs you control. You gain life equal to the number of Cats you control.",
+          "cost": "{R}{G}{W}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Rin and Seri deals damage to any target equal to the number of Dogs you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You gain life equal to the number of Cats you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

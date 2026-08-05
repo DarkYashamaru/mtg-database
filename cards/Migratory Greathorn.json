@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4c6c8155-efa0-4c22-b255-34974a80c496",
+  "name": "Migratory Greathorn",
+  "faces": [
+    {
+      "name": "Migratory Greathorn",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "Mutate {2}{G} (If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities from under it.)\nWhenever this creature mutates, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature mutates, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "mutates",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Mutate {2}{G} (If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities from under it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Mutate {2}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

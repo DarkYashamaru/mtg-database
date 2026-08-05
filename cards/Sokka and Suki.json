@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e84becc0-6e15-4a74-aec0-9746b86ab5cc",
+  "name": "Sokka and Suki",
+  "faces": [
+    {
+      "name": "Sokka and Suki",
+      "type_line": "Legendary Creature \u2014 Human Warrior Ally",
+      "oracle_text": "Whenever Sokka and Suki or another Ally you control enters, attach up to one target Equipment you control to that creature.\nWhenever an Equipment you control enters, create a 1/1 white Ally creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Sokka and Suki or another Ally you control enters, attach up to one target Equipment you control to that creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Ally"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach up to one target Equipment you control to that creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an Equipment you control enters, create a 1/1 white Ally creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Equipment"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Ally creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Ally"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c93bef6e-b676-43df-9f0f-026aaff25604",
+  "name": "Coastline Marauders",
+  "faces": [
+    {
+      "name": "Coastline Marauders",
+      "type_line": "Creature \u2014 Human Pirate",
+      "oracle_text": "Trample\nWhenever this creature attacks, it gets +1/+0 until end of turn for each land defending player controls.\nEncore {4}{R}{R} ({4}{R}{R}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it gets +1/+0 until end of turn for each land defending player controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gets +1/+0 until end of turn for each land defending player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Encore {4}{R}{R} ({4}{R}{R}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.)",
+          "cost": "Encore {4}{R}{R} ({4}{R}{R}, Exile this card from your graveyard",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each opponent, create a token copy that attacks that opponent this turn if able"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "they",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "them_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

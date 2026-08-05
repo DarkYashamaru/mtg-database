@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aacd1aae-1bf0-43e4-99f4-c6d738af812c",
+  "name": "Postmortem Lunge",
+  "faces": [
+    {
+      "name": "Postmortem Lunge",
+      "type_line": "Sorcery",
+      "oracle_text": "({B/P} can be paid with either {B} or 2 life.)\nReturn target creature card with mana value X from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target creature card with mana value X from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target creature card with mana value X from your graveyard to the battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_end_step"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": "it"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

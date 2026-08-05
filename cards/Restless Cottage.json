@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7e16595f-bdeb-422e-b99a-bfc0ed52e9f8",
+  "name": "Restless Cottage",
+  "faces": [
+    {
+      "name": "Restless Cottage",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {B} or {G}.\n{2}{B}{G}: This land becomes a 4/4 black and green Horror creature until end of turn. It's still a land.\nWhenever this land attacks, create a Food token and exile up to one target card from a graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this land attacks, create a Food token and exile up to one target card from a graveyard.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a Food token and exile up to one target card from a graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B} or {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}",
+                "{g}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{B}{G}: This land becomes a 4/4 black and green Horror creature until end of turn. It's still a land.",
+          "cost": "{2}{B}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land becomes a 4/4 black and green Horror creature until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

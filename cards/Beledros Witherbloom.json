@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "90194ff1-db61-463f-b5a3-15cd85311d0e",
+  "name": "Beledros Witherbloom",
+  "faces": [
+    {
+      "name": "Beledros Witherbloom",
+      "type_line": "Legendary Creature \u2014 Elder Dragon",
+      "oracle_text": "Flying\nAt the beginning of each upkeep, create a 1/1 black and green Pest creature token with \"When this token dies, you gain 1 life.\"\nPay 10 life: Untap all lands you control. Activate only once each turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, create a 1/1 black and green Pest creature token with \"When this token dies, you gain 1 life.\"",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 black and green Pest creature token with \"When this token dies, you gain 1 life",
+                "colors": [
+                  "black",
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Pest"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay 10 life: Untap all lands you control. Activate only once each turn.",
+          "cost": "Pay 10 life",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Untap all lands you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

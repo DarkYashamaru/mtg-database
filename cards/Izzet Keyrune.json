@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b8c0285-424f-4a82-bfb6-17752cfa71dd",
+  "name": "Izzet Keyrune",
+  "faces": [
+    {
+      "name": "Izzet Keyrune",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {U} or {R}.\n{U}{R}: Until end of turn, this artifact becomes a 2/1 blue and red Elemental artifact creature.\nWhenever this artifact deals combat damage to a player, you may draw a card. If you do, discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this artifact deals combat damage to a player, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U} or {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}",
+                "{r}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}{R}: Until end of turn, this artifact becomes a 2/1 blue and red Elemental artifact creature.",
+          "cost": "{U}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, this artifact becomes a 2/1 blue and red Elemental artifact creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

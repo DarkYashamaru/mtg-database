@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7d892d61-5a69-4500-9fb2-7cf50728aedd",
+  "name": "Shimmering Wings",
+  "faces": [
+    {
+      "name": "Shimmering Wings",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature (Target a creature as you cast this. This card enters attached to that creature.)\nEnchanted creature has flying. (It can't be blocked except by creatures with flying or reach.)\n{U}: Return this Aura to its owner's hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{U}: Return this Aura to its owner's hand.",
+          "cost": "{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return this Aura to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature (Target a creature as you cast this. This card enters attached to that creature.)",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has flying. (It can't be blocked except by creatures with flying or reach.)",
+          "effects": [
+            {
+              "action": "grant_keyword",
+              "target": "enchanted_creature",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f41ea1b5-2c31-43fa-b142-244add1efd35",
+  "name": "Spirit Bonds",
+  "faces": [
+    {
+      "name": "Spirit Bonds",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a nontoken creature you control enters, you may pay {W}. If you do, create a 1/1 white Spirit creature token with flying.\n{1}{W}, Sacrifice a Spirit: Target non-Spirit creature gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a nontoken creature you control enters, you may pay {W}. If you do, create a 1/1 white Spirit creature token with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{w}",
+              "optional": true
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white spirit creature token with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "spirit"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{W}, Sacrifice a Spirit: Target non-Spirit creature gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+          "cost": "{1}{W}, Sacrifice a Spirit",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_non_self_creature",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

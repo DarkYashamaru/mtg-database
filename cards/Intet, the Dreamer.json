@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9518ffbc-bb3d-4f48-a900-f5bad8302a87",
+  "name": "Intet, the Dreamer",
+  "faces": [
+    {
+      "name": "Intet, the Dreamer",
+      "type_line": "Legendary Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever Intet deals combat damage to a player, you may pay {2}{U}. If you do, exile the top card of your library face down. You may look at that card for as long as it remains exiled. You may play that card without paying its mana cost for as long as Intet remains on the battlefield.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Intet deals combat damage to a player, you may pay {2}{U}. If you do, exile the top card of your library face down. You may look at that card for as long as it remains exiled. You may play that card without paying its mana cost for as long as Intet remains on the battlefield.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {2}{U}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile the top card of your library face down",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may look at that card for as long as it remains exiled"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card without paying its mana cost for as long as Intet remains on the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

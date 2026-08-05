@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4f07a2e6-692b-4d8c-9ecf-4d94b03706a0",
+  "name": "Infernal Kirin",
+  "faces": [
+    {
+      "name": "Infernal Kirin",
+      "type_line": "Legendary Creature \u2014 Kirin Spirit",
+      "oracle_text": "Flying\nWhenever you cast a Spirit or Arcane spell, target player reveals their hand and discards all cards with that spell's mana value.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, target player reveals their hand and discards all cards with that spell's mana value.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target player reveals their hand and discards all cards with that spell's mana value"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

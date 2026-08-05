@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fe3b0393-dc50-4fa6-9b3f-1175a6a825e4",
+  "name": "Peerless Samurai",
+  "faces": [
+    {
+      "name": "Peerless Samurai",
+      "type_line": "Creature \u2014 Human Samurai",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever a Samurai or Warrior you control attacks alone, the next spell you cast this turn costs {1} less to cast.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Samurai or Warrior you control attacks alone, the next spell you cast this turn costs {1} less to cast.",
+          "trigger": {
+            "type": "attacks_alone",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Samurai",
+                "Or",
+                "Warrior"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "the next spell you cast this turn costs {1} less to cast"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

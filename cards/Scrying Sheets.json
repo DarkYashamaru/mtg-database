@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0f98e055-ab61-4314-aae8-9d3c19f66acf",
+  "name": "Scrying Sheets",
+  "faces": [
+    {
+      "name": "Scrying Sheets",
+      "type_line": "Snow Land",
+      "oracle_text": "{T}: Add {C}.\n{1}{S}, {T}: Look at the top card of your library. If that card is snow, you may reveal it and put it into your hand. ({S} can be paid with one mana from a snow source.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{S}, {T}: Look at the top card of your library. If that card is snow, you may reveal it and put it into your hand. ({S} can be paid with one mana from a snow source.)",
+          "cost": "{1}{S}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "that card is snow"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

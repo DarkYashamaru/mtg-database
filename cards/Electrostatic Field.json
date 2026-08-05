@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2fa94a07-c932-4f85-b6e0-a97d2b29eb52",
+  "name": "Electrostatic Field",
+  "faces": [
+    {
+      "name": "Electrostatic Field",
+      "type_line": "Creature \u2014 Wall",
+      "oracle_text": "Defender\nWhenever you cast an instant or sorcery spell, this creature deals 1 damage to each opponent.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

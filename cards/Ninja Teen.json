@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2c5044ff-a303-4276-8e23-7caac30a275b",
+  "name": "Ninja Teen",
+  "faces": [
+    {
+      "name": "Ninja Teen",
+      "type_line": "Enchantment \u2014 Class",
+      "oracle_text": "(Gain the next level as a sorcery to add its ability.)\nWhenever a creature you control leaves the battlefield, each opponent loses 1 life.\n{1}{B}: Level 2\nCreatures you control get +1/+0 and have menace.\n{B}: Level 3\nCreature cards in your graveyard have sneak {3}{B}.\nYou may cast creature spells from your graveyard using their sneak abilities.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control leaves the battlefield, each opponent loses 1 life.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{B}: Level 2",
+          "cost": "{1}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{B}: Level 3",
+          "cost": "{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "class_level",
+              "level": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control get +1/+0 and have menace.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control_get_10_and"
+              },
+              "keywords": [
+                "menace"
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Creature cards in your graveyard have sneak {3}{B}.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creature cards in your graveyard have sneak {3}{B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "You may cast creature spells from your graveyard using their sneak abilities.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast creature spells from your graveyard using their sneak abilities"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c6a67820-5066-462f-a621-1ecab8bf4f97",
+  "name": "Jaya's Phoenix",
+  "faces": [
+    {
+      "name": "Jaya's Phoenix",
+      "type_line": "Creature \u2014 Phoenix",
+      "oracle_text": "Flying, haste\nWhenever this creature deals combat damage to a player or planeswalker, copy the next loyalty ability you activate this turn when you activate it. You may choose new targets for the copy.\nWhenever you cast a planeswalker spell, you may return this card from your graveyard to the battlefield.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player or planeswalker, copy the next loyalty ability you activate this turn when you activate it. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature deals combat damage to a player or planeswalker"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy the next loyalty ability you activate this turn when you activate it"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a planeswalker spell, you may return this card from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Planeswalker"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

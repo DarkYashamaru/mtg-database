@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3e924a35-0e08-4050-b33a-a143d2ab5aea",
+  "name": "Starscream, Power Hungry // Starscream, Seeker Leader",
+  "faces": [
+    {
+      "name": "Starscream, Power Hungry",
+      "type_line": "Legendary Artifact Creature \u2014 Robot",
+      "oracle_text": "More Than Meets the Eye {2}{B} (You may cast this card converted for {2}{B}.)\nFlying\nWhenever you draw a card, if you're the monarch, target opponent loses 2 life.\nWhenever one or more creatures deal combat damage to you, convert Starscream.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw a card, if you're the monarch, target opponent loses 2 life.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "you're the monarch"
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "target_opponent",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more creatures deal combat damage to you, convert Starscream.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more creatures deal combat damage to you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "convert Starscream"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "More Than Meets the Eye {2}{B} (You may cast this card converted for {2}{B}.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "More Than Meets the Eye {2}{B}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Starscream, Seeker Leader",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Living metal (During your turn, this Vehicle is also a creature.)\nFlying, menace, haste\nWhenever Starscream deals combat damage to a player, if there is no monarch, that player becomes the monarch.\nWhenever you become the monarch, convert Starscream.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "menace"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Starscream deals combat damage to a player, if there is no monarch, that player becomes the monarch.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "there is no monarch"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player becomes the monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you become the monarch, convert Starscream.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you become the monarch"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "convert Starscream"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Living metal (During your turn, this Vehicle is also a creature.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Living metal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

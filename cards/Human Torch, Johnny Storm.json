@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b6f2770-e774-4a77-801f-a3fda093c3dd",
+  "name": "Human Torch, Johnny Storm",
+  "faces": [
+    {
+      "name": "Human Torch, Johnny Storm",
+      "type_line": "Legendary Creature \u2014 Human Hero",
+      "oracle_text": "Flying\nWhenever you draw a card, if you control another Hero, Human Torch deals 1 damage to target opponent.\nPower-up \u2014 {6}{R}: Put three +1/+1 counters on Human Torch. (Activate each power-up ability only once. Reduce the cost by his mana cost if he entered this turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw a card, if you control another Hero, Human Torch deals 1 damage to target opponent.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "you control another Hero"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Human Torch deals 1 damage to target opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Power-up \u2014 {6}{R}: Put three +1/+1 counters on Human Torch. (Activate each power-up ability only once. Reduce the cost by his mana cost if he entered this turn.)",
+          "cost": "Power-up \u2014 {6}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

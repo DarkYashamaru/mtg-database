@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0761a0e7-d443-4bab-bb15-307c83d4a6a1",
+  "name": "Lunarch Veteran // Luminous Phantom",
+  "faces": [
+    {
+      "name": "Luminous Phantom",
+      "type_line": "Creature \u2014 Spirit Cleric",
+      "oracle_text": "Flying\nWhenever another creature you control leaves the battlefield, you gain 1 life.\nIf Luminous Phantom would be put into a graveyard from anywhere, exile it instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control leaves the battlefield, you gain 1 life.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If Luminous Phantom would be put into a graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "luminous phantom would be put into a graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lunarch Veteran",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "Whenever another creature you control enters, you gain 1 life.\nDisturb {1}{W} (You may cast this card from your graveyard transformed for its disturb cost.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, you gain 1 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disturb {1}{W} (You may cast this card from your graveyard transformed for its disturb cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disturb {1}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

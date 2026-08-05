@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "affa0b6c-a9fd-49fc-b9ce-9a3486af8320",
+  "name": "Welcome the Dead",
+  "faces": [
+    {
+      "name": "Welcome the Dead",
+      "type_line": "Sorcery",
+      "oracle_text": "Draw two cards, then discard a card and you lose 2 life. Create X tapped 2/2 black Zombie Druid creature tokens, where X is the number of cards that were put into your graveyard from your hand or library this turn.\nFlashback {5}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Draw two cards, then discard a card and you lose 2 life. Create X tapped 2/2 black Zombie Druid creature tokens, where X is the number of cards that were put into your graveyard from your hand or library this turn.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 2
+            },
+            {
+              "action": "create_token",
+              "amount": "count",
+              "count_object": "cards_that_were_put_into_you_control_graveyard_from_you_control_hand_or_library_this_turn",
+              "token": {
+                "raw": "tapped 2/2 black Zombie Druid creature tokens",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie",
+                  "Druid"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Flashback {5}{B} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flashback {5}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3577c47e-76d3-4659-b922-31c4b74be3a0",
+  "name": "Enduring Vitality",
+  "faces": [
+    {
+      "name": "Enduring Vitality",
+      "type_line": "Enchantment Creature \u2014 Elk Glimmer",
+      "oracle_text": "Vigilance\nCreatures you control have \"{T}: Add one mana of any color.\"\nWhen Enduring Vitality dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Enduring Vitality dies, if it was a creature, return it to the battlefield under its owner's control. It's an enchantment. (It's not a creature.)",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was a creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's an enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Creatures you control have \"{T}: Add one mana of any color.\"",
+          "cost": "Creatures you control have \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

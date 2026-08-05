@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4db030f5-d7c4-4aa0-ae2e-12943e2683d7",
+  "name": "Unbound Flourishing",
+  "faces": [
+    {
+      "name": "Unbound Flourishing",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cast a permanent spell with a mana cost that contains {X}, double the value of X.\nWhenever you cast an instant or sorcery spell or activate an ability, if that spell's mana cost or that ability's activation cost contains {X}, copy that spell or ability. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a permanent spell with a mana cost that contains {X}, double the value of X.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a permanent spell with a mana cost that contains {X}"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "double the value of X"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell or activate an ability, if that spell's mana cost or that ability's activation cost contains {X}, copy that spell or ability. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast an instant or sorcery spell or activate an ability"
+          },
+          "condition": [
+            {
+              "condition_text": "that spell's mana cost or that ability's activation cost contains {X}"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy that spell or ability"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

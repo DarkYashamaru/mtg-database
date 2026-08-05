@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f5bed085-bb7a-4250-9599-b2a8a95e6b6f",
+  "name": "Lord Skitter, Sewer King",
+  "faces": [
+    {
+      "name": "Lord Skitter, Sewer King",
+      "type_line": "Legendary Creature \u2014 Rat Noble",
+      "oracle_text": "Whenever another Rat you control enters, exile up to one target card from an opponent's graveyard.\nAt the beginning of combat on your turn, create a 1/1 black Rat creature token with \"This token can't block.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another Rat you control enters, exile up to one target card from an opponent's graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Rat"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target card from an opponent's graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, create a 1/1 black Rat creature token with \"This token can't block.\"",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 black Rat creature token with \"This token can't block",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Rat"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

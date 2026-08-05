@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e2348e0e-eeca-47b5-9417-bf4470ec29bb",
+  "name": "Squall, SeeD Mercenary",
+  "faces": [
+    {
+      "name": "Squall, SeeD Mercenary",
+      "type_line": "Legendary Creature \u2014 Human Knight Mercenary",
+      "oracle_text": "Rough Divide \u2014 Whenever a creature you control attacks alone, it gains double strike until end of turn.\nWhenever Squall deals combat damage to a player, return target permanent card with mana value 3 or less from your graveyard to the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control attacks alone, it gains double strike until end of turn.",
+          "trigger": {
+            "type": "attacks_alone",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "double_strike"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Squall deals combat damage to a player, return target permanent card with mana value 3 or less from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target permanent card with mana value 3 or less from your graveyard to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

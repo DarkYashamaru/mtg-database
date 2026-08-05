@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9d4ec5e5-5520-45c3-8071-53191811117d",
+  "name": "Defiler of Dreams",
+  "faces": [
+    {
+      "name": "Defiler of Dreams",
+      "type_line": "Creature \u2014 Phyrexian Sphinx",
+      "oracle_text": "Flying\nAs an additional cost to cast blue permanent spells, you may pay 2 life. Those spells cost {U} less to cast if you paid life this way. This effect reduces only the amount of blue mana you pay.\nWhenever you cast a blue permanent spell, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a blue permanent spell, draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Blue",
+                "Permanent"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast blue permanent spells, you may pay 2 life. Those spells cost {U} less to cast if you paid life this way. This effect reduces only the amount of blue mana you pay.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As an additional cost to cast blue permanent spells, you may pay 2 life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Those spells cost {U} less to cast if you paid life this way"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This effect reduces only the amount of blue mana you pay"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

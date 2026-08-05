@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7e5a7a1d-dcfb-4ab8-b773-f521cb4d3fa6",
+  "name": "Commodore Guff",
+  "faces": [
+    {
+      "name": "Commodore Guff",
+      "type_line": "Legendary Planeswalker \u2014 Guff",
+      "oracle_text": "At the beginning of your end step, put a loyalty counter on another target planeswalker you control.\n+1: Create a 1/1 red Wizard creature token with \"{T}: Add {R}. Spend this mana only to cast a planeswalker spell.\"\n\u22123: You draw X cards and Commodore Guff deals X damage to each opponent, where X is the number of planeswalkers you control.\nCommodore Guff can be your commander.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, put a loyalty counter on another target planeswalker you control.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a loyalty counter on another target planeswalker you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+1: Create a 1/1 red Wizard creature token with \"{T}: Add {R}. Spend this mana only to cast a planeswalker spell.\"",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 red Wizard creature token with \"{T}: Add {R}",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Wizard"
+                ]
+              }
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "card_types": [
+                    "Planeswalker"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: You draw X cards and Commodore Guff deals X damage to each opponent, where X is the number of planeswalkers you control.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You draw X cards and Commodore Guff deals X damage to each opponent, where X is the number of planeswalkers you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Commodore Guff can be your commander.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Commodore Guff can be your commander"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "16629f59-bae8-4c19-bf50-443eb0ed6856",
+  "name": "Felidar Retreat",
+  "faces": [
+    {
+      "name": "Felidar Retreat",
+      "type_line": "Enchantment",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, choose one \u2014\n\u2022 Create a 2/2 white Cat Beast creature token.\n\u2022 Put a +1/+1 counter on each creature you control. Those creatures gain vigilance until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, choose one \u2014\n\u2022 Create a 2/2 white Cat Beast creature token.\n\u2022 Put a +1/+1 counter on each creature you control. Those creatures gain vigilance until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Create a 2/2 white Cat Beast creature token.",
+              "effects": [
+                {
+                  "action": "create_token",
+                  "amount": 1,
+                  "token": {
+                    "raw": "2/2 white Cat Beast creature token",
+                    "colors": [
+                      "white"
+                    ],
+                    "power_toughness": "2/2",
+                    "card_types": [
+                      "creature"
+                    ],
+                    "subtypes": [
+                      "Cat",
+                      "Beast"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Put a +1/+1 counter on each creature you control. Those creatures gain vigilance until end of turn.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control"
+                  },
+                  "amount": 1
+                },
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "those_creatures",
+                  "keyword": "vigilance"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

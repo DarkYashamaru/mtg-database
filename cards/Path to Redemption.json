@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ac94860b-70b8-4624-9758-4bb024a56f60",
+  "name": "Path to Redemption",
+  "faces": [
+    {
+      "name": "Path to Redemption",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature can't attack or block.\n{5}, Sacrifice this Aura: Exile enchanted creature. Create a 1/1 white Ally creature token. Activate only during your turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{5}, Sacrifice this Aura: Exile enchanted creature. Create a 1/1 white Ally creature token. Activate only during your turn.",
+          "cost": "{5}, Sacrifice this Aura",
+          "condition": [
+            {
+              "condition_text": "during your turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile enchanted creature"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Ally creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Ally"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature can't attack or block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "enchanted_creature",
+              "restriction": "cant_attack_or_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

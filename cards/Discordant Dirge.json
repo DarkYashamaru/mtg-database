@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "edd4741b-3ee6-421a-8bac-d60736755356",
+  "name": "Discordant Dirge",
+  "faces": [
+    {
+      "name": "Discordant Dirge",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, you may put a verse counter on this enchantment.\n{B}, Sacrifice this enchantment: Look at target opponent's hand and choose up to X cards from it, where X is the number of verse counters on this enchantment. That player discards those cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may put a verse counter on this enchantment.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a verse counter on this enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}, Sacrifice this enchantment: Look at target opponent's hand and choose up to X cards from it, where X is the number of verse counters on this enchantment. That player discards those cards.",
+          "cost": "{B}, Sacrifice this enchantment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Look at target opponent's hand and choose up to X cards from it, where X is the number of verse counters on this enchantment"
+            },
+            {
+              "action": "discard_cards",
+              "target": "that_player",
+              "amount": "those"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

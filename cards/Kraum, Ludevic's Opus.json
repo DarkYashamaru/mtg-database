@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5f694f2d-9349-4988-b2b4-788136d4293e",
+  "name": "Kraum, Ludevic's Opus",
+  "faces": [
+    {
+      "name": "Kraum, Ludevic's Opus",
+      "type_line": "Legendary Creature \u2014 Zombie Horror",
+      "oracle_text": "Flying, haste\nWhenever an opponent casts their second spell each turn, draw a card.\nPartner (You can have two commanders if both have partner.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        },
+        {
+          "keyword": "partner"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent casts their second spell each turn, draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "an_opponent"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

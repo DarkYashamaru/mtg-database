@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f83a768c-162d-46f0-8ebd-d9c6b2c69322",
+  "name": "Vein Ripper",
+  "faces": [
+    {
+      "name": "Vein Ripper",
+      "type_line": "Creature \u2014 Vampire Assassin",
+      "oracle_text": "Flying\nWard\u2014Sacrifice a creature.\nWhenever a creature dies, target opponent loses 2 life and you gain 2 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature dies, target opponent loses 2 life and you gain 2 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "target_opponent",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Ward\u2014Sacrifice a creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ward\u2014Sacrifice a creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a88c5540-a242-49bc-a725-39b9fda085c3",
+  "name": "Lamplighter of Selhoff",
+  "faces": [
+    {
+      "name": "Lamplighter of Selhoff",
+      "type_line": "Creature \u2014 Zombie Horror",
+      "oracle_text": "When this creature enters, if you control another Zombie, you may draw a card. If you do, discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if you control another Zombie, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control another Zombie"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

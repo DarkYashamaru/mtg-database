@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a3ed5d7f-c554-4d46-86e5-7bb8df2693f6",
+  "name": "Tournament Grounds",
+  "faces": [
+    {
+      "name": "Tournament Grounds",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {R}, {W}, or {B}. Spend this mana only to cast a Knight or Equipment spell.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {R}, {W}, or {B}. Spend this mana only to cast a Knight or Equipment spell.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {R}, {W}, or {B}"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "subtypes_all": [
+                    "Knight",
+                    "Or",
+                    "Equipment"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

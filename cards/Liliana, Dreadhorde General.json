@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5e958212-6a5b-4288-8d31-f1572619d7dc",
+  "name": "Liliana, Dreadhorde General",
+  "faces": [
+    {
+      "name": "Liliana, Dreadhorde General",
+      "type_line": "Legendary Planeswalker \u2014 Liliana",
+      "oracle_text": "Whenever a creature you control dies, draw a card.\n+1: Create a 2/2 black Zombie creature token.\n\u22124: Each player sacrifices two creatures of their choice.\n\u22129: Each opponent chooses a permanent they control of each permanent type and sacrifices the rest.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control dies, draw a card.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+1: Create a 2/2 black Zombie creature token.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black Zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22124: Each player sacrifices two creatures of their choice.",
+          "cost": "\u22124",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each player sacrifices two creatures of their choice"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22129: Each opponent chooses a permanent they control of each permanent type and sacrifices the rest.",
+          "cost": "\u22129",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent chooses a permanent they control of each permanent type and sacrifices the rest"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "26b53524-9ec5-4ec9-a1e2-73e78959481b",
+  "name": "Dungeon Crawler",
+  "faces": [
+    {
+      "name": "Dungeon Crawler",
+      "type_line": "Creature \u2014 Zombie",
+      "oracle_text": "This creature enters tapped.\nWhenever you complete a dungeon, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you complete a dungeon, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you complete a dungeon"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

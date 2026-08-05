@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7599fe9a-b6a5-491b-a308-aef3bf1e9daf",
+  "name": "Shabraz, the Skyshark",
+  "faces": [
+    {
+      "name": "Shabraz, the Skyshark",
+      "type_line": "Legendary Creature \u2014 Shark Bird",
+      "oracle_text": "Partner with Brallin, Skyshark Rider\nFlying\nWhenever you draw a card, put a +1/+1 counter on Shabraz and you gain 1 life.\n{W/U}: Target Human gains flying until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw a card, put a +1/+1 counter on Shabraz and you gain 1 life.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{W/U}: Target Human gains flying until end of turn.",
+          "cost": "{W/U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_human",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Brallin, Skyshark Rider",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Brallin, Skyshark Rider"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "060076e7-3705-4f8e-8fac-59402835902b",
+  "name": "Mind Raker",
+  "faces": [
+    {
+      "name": "Mind Raker",
+      "type_line": "Creature \u2014 Eldrazi Processor",
+      "oracle_text": "Devoid (This card has no color.)\nWhen this creature enters, you may put a card an opponent owns from exile into that player's graveyard. If you do, each opponent discards a card.",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may put a card an opponent owns from exile into that player's graveyard. If you do, each opponent discards a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a card an opponent owns from exile into that player's graveyard"
+            },
+            {
+              "action": "discard_cards",
+              "target": "each_opponent",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c027f369-e445-46a8-94ad-93396321295a",
+  "name": "Rip, Spawn Hunter",
+  "faces": [
+    {
+      "name": "Rip, Spawn Hunter",
+      "type_line": "Legendary Creature \u2014 Human Survivor",
+      "oracle_text": "Survival \u2014 At the beginning of your second main phase, if Rip is tapped, reveal the top X cards of your library, where X is its power. Put any number of creature and/or Vehicle cards with different powers from among them into your hand. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your second main phase, if Rip is tapped, reveal the top X cards of your library, where X is its power. Put any number of creature and/or Vehicle cards with different powers from among them into your hand. Put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "beginning_of_your_second_main_phase"
+          },
+          "condition": [
+            {
+              "condition_text": "Rip is tapped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "reveal the top X cards of your library, where X is its power"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put any number of creature and/or Vehicle cards with different powers from among them into your hand"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

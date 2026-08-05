@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ebfafabc-5255-4024-be59-7403bdb16ee4",
+  "name": "Anafenza, the Foremost",
+  "faces": [
+    {
+      "name": "Anafenza, the Foremost",
+      "type_line": "Legendary Creature \u2014 Human Soldier",
+      "oracle_text": "Whenever Anafenza attacks, put a +1/+1 counter on another target tapped creature you control.\nIf a nontoken creature an opponent owns would die or a creature card not on the battlefield would be put into an opponent's graveyard, exile that card instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Anafenza attacks, put a +1/+1 counter on another target tapped creature you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target",
+                  "Tapped"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If a nontoken creature an opponent owns would die or a creature card not on the battlefield would be put into an opponent's graveyard, exile that card instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile that card instead",
+              "condition": [
+                {
+                  "condition_text": "a nontoken creature an opponent owns would die or a creature card not on the battlefield would be put into an opponent's graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

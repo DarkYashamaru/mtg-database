@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8074afbf-190b-4a24-b939-cc559bdffe38",
+  "name": "Izoni, Center of the Web",
+  "faces": [
+    {
+      "name": "Izoni, Center of the Web",
+      "type_line": "Legendary Creature \u2014 Elf Detective",
+      "oracle_text": "Menace\nWhenever Izoni enters or attacks, you may collect evidence 4. If you do, create two 2/1 black and green Spider creature tokens with menace and reach.\nSacrifice four tokens: Surveil 2, then draw two cards. You gain 2 life.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Izoni enters or attacks, you may collect evidence 4. If you do, create two 2/1 black and green Spider creature tokens with menace and reach.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may collect evidence 4"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "two 2/1 black and green spider creature tokens with menace and reach",
+                "colors": [
+                  "black",
+                  "green"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "spider"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice four tokens: Surveil 2, then draw two cards. You gain 2 life.",
+          "cost": "Sacrifice four tokens",
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 2
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

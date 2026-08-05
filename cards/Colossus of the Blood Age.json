@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0788fdd2-6fab-460c-b054-a736df670f96",
+  "name": "Colossus of the Blood Age",
+  "faces": [
+    {
+      "name": "Colossus of the Blood Age",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "When this creature enters, it deals 3 damage to each opponent and you gain 3 life.\nWhen this creature dies, discard any number of cards, then draw that many cards plus one.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, it deals 3 damage to each opponent and you gain 3 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 3
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, discard any number of cards, then draw that many cards plus one.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "discard any number of cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "draw that many cards plus one"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

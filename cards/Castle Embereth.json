@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "91fbb25b-8521-483f-88b0-77778d25f7fd",
+  "name": "Castle Embereth",
+  "faces": [
+    {
+      "name": "Castle Embereth",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped unless you control a Mountain.\n{T}: Add {R}.\n{1}{R}{R}, {T}: Creatures you control get +1/+0 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{R}{R}, {T}: Creatures you control get +1/+0 until end of turn.",
+          "cost": "{1}{R}{R}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped unless you control a Mountain.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters tapped unless you control a Mountain"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

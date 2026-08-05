@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "71ac4d8c-5b58-4ea8-996b-f0289717c4bb",
+  "name": "Shilgengar, Sire of Famine",
+  "faces": [
+    {
+      "name": "Shilgengar, Sire of Famine",
+      "type_line": "Legendary Creature \u2014 Elder Demon",
+      "oracle_text": "Flying\nSacrifice another creature: Create a Blood token. If you sacrificed an Angel this way, create a number of Blood tokens equal to its toughness instead.\n{W/B}{W/B}{W/B}, Sacrifice six Blood tokens: Return each creature card from your graveyard to the battlefield with a finality counter on it. Those creatures are Vampires in addition to their other types.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice another creature: Create a Blood token. If you sacrificed an Angel this way, create a number of Blood tokens equal to its toughness instead.",
+          "cost": "Sacrifice another creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Blood token"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a number of blood tokens equal to its toughness instead",
+              "condition": [
+                {
+                  "condition_text": "you sacrificed an angel this way"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "{W/B}{W/B}{W/B}, Sacrifice six Blood tokens: Return each creature card from your graveyard to the battlefield with a finality counter on it. Those creatures are Vampires in addition to their other types.",
+          "cost": "{W/B}{W/B}{W/B}, Sacrifice six Blood tokens",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return each creature card from your graveyard to the battlefield with a finality counter on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Those creatures are Vampires in addition to their other types"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

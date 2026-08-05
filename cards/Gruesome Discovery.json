@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ecdae60b-c594-4e70-909b-83483104a42c",
+  "name": "Gruesome Discovery",
+  "faces": [
+    {
+      "name": "Gruesome Discovery",
+      "type_line": "Sorcery",
+      "oracle_text": "Target player discards two cards.\nMorbid \u2014 If a creature died this turn, instead that player reveals their hand, you choose two cards from it, then that player discards those cards.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target player discards two cards.",
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "target_player",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Morbid \u2014 If a creature died this turn, instead that player reveals their hand, you choose two cards from it, then that player discards those cards.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "morbid \u2014 if a creature died this turn, instead that player reveals their hand, you choose two cards from it"
+            },
+            {
+              "action": "discard_cards",
+              "target": "that_player",
+              "amount": "those"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

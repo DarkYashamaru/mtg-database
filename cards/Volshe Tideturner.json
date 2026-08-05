@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eab16fd1-735c-411f-a23a-0b93131c2eb2",
+  "name": "Volshe Tideturner",
+  "faces": [
+    {
+      "name": "Volshe Tideturner",
+      "type_line": "Creature \u2014 Merfolk Wizard",
+      "oracle_text": "{T}: Add {U}. Spend this mana only to cast an instant or sorcery spell or a kicked spell.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}. Spend this mana only to cast an instant or sorcery spell or a kicked spell.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "mana_spend_restriction",
+              "applies_to": "this_mana",
+              "allowed_use": {
+                "action": "cast_spell",
+                "filter": {
+                  "kind": "spells",
+                  "card_types": [
+                    "Instant",
+                    "Sorcery"
+                  ],
+                  "subtypes_all": [
+                    "Or",
+                    "Spell",
+                    "Or",
+                    "A",
+                    "Kicked"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

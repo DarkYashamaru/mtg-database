@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "36e267c5-ea98-4e26-b2b4-3faa05493eb4",
+  "name": "Curse of Silence",
+  "faces": [
+    {
+      "name": "Curse of Silence",
+      "type_line": "Enchantment \u2014 Aura Curse",
+      "oracle_text": "Enchant player\nAs this Aura enters, choose a card name.\nSpells with the chosen name enchanted player casts cost {2} more to cast.\nWhenever enchanted player casts a spell with the chosen name, you may sacrifice this Aura. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted player casts a spell with the chosen name, you may sacrifice this Aura. If you do, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever enchanted player casts a spell with the chosen name"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_aura",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant player",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "player"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As this Aura enters, choose a card name.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this Aura enters, choose a card name"
+            }
+          ]
+        },
+        {
+          "raw_text": "Spells with the chosen name enchanted player casts cost {2} more to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Spells with the chosen name enchanted player casts cost {2} more to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

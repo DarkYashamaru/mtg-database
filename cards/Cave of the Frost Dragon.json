@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1e4146d2-cfa0-4f5e-9761-3c83519b90c3",
+  "name": "Cave of the Frost Dragon",
+  "faces": [
+    {
+      "name": "Cave of the Frost Dragon",
+      "type_line": "Land",
+      "oracle_text": "If you control two or more other lands, this land enters tapped.\n{T}: Add {W}.\n{4}{W}: This land becomes a 3/4 white Dragon creature with flying until end of turn. It's still a land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}{W}: This land becomes a 3/4 white Dragon creature with flying until end of turn. It's still a land.",
+          "cost": "{4}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land becomes a 3/4 white Dragon creature with flying until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If you control two or more other lands, this land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you control two or more other lands"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

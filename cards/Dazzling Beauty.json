@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "de96ef93-a2e0-409d-9d25-fcb2405039b5",
+  "name": "Dazzling Beauty",
+  "faces": [
+    {
+      "name": "Dazzling Beauty",
+      "type_line": "Instant",
+      "oracle_text": "Cast this spell only during the declare blockers step.\nTarget unblocked attacking creature becomes blocked. (This spell works on creatures that can't be blocked.)\nDraw a card at the beginning of the next turn's upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Cast this spell only during the declare blockers step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cast this spell only during the declare blockers step"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target unblocked attacking creature becomes blocked. (This spell works on creatures that can't be blocked.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target unblocked attacking creature becomes blocked"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card at the beginning of the next turn's upkeep.",
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_turns_upkeep"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

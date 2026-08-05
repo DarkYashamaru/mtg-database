@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7270b5b6-a571-4e6d-91de-03f7cc035b3c",
+  "name": "Eye of Malcator",
+  "faces": [
+    {
+      "name": "Eye of Malcator",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)\nWhenever another artifact you control enters, this artifact becomes a 4/4 Phyrexian Eye artifact creature until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another artifact you control enters, this artifact becomes a 4/4 Phyrexian Eye artifact creature until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Artifact"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this artifact becomes a 4/4 Phyrexian Eye artifact creature until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8ead94c5-8447-4f20-87ec-efdccde689fc",
+  "name": "Arcades Sabboth",
+  "faces": [
+    {
+      "name": "Arcades Sabboth",
+      "type_line": "Legendary Creature \u2014 Elder Dragon",
+      "oracle_text": "Flying\nAt the beginning of your upkeep, sacrifice Arcades Sabboth unless you pay {G}{W}{U}.\nEach untapped creature you control gets +0/+2 as long as it's not attacking.\n{W}: Arcades Sabboth gets +0/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice Arcades Sabboth unless you pay {G}{W}{U}.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self_unless_you_pay_gwu"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{W}: Arcades Sabboth gets +0/+1 until end of turn.",
+          "cost": "{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 0,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Each untapped creature you control gets +0/+2 as long as it's not attacking.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each untapped creature you control gets +0/+2 as long as it's not attacking"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

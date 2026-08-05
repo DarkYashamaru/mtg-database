@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0ae74149-60fc-407a-8782-8865458606b5",
+  "name": "Fear of Burning Alive",
+  "faces": [
+    {
+      "name": "Fear of Burning Alive",
+      "type_line": "Enchantment Creature \u2014 Nightmare",
+      "oracle_text": "When this creature enters, it deals 4 damage to each opponent.\nDelirium \u2014 Whenever a source you control deals noncombat damage to an opponent, if there are four or more card types among cards in your graveyard, this creature deals that amount of damage to target creature that player controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, it deals 4 damage to each opponent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a source you control deals noncombat damage to an opponent, if there are four or more card types among cards in your graveyard, this creature deals that amount of damage to target creature that player controls.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a source you control deals noncombat damage to an opponent"
+          },
+          "condition": [
+            {
+              "condition_text": "there are four or more card types among cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals that amount of damage to target creature that player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

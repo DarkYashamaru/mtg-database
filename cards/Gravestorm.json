@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c815d510-73c9-4a8b-9947-f478a2f5297d",
+  "name": "Gravestorm",
+  "faces": [
+    {
+      "name": "Gravestorm",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, target opponent may exile a card from their graveyard. If that player doesn't, you may draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, target opponent may exile a card from their graveyard. If that player doesn't, you may draw a card.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent may exile a card from their graveyard"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true,
+              "condition": [
+                {
+                  "condition_text": "that player doesn't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

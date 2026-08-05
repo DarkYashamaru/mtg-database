@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0c828f10-4775-492f-9224-1e2814ad2cad",
+  "name": "Gemstone Mine",
+  "faces": [
+    {
+      "name": "Gemstone Mine",
+      "type_line": "Land",
+      "oracle_text": "This land enters with three mining counters on it.\n{T}, Remove a mining counter from this land: Add one mana of any color. If there are no mining counters on this land, sacrifice it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Remove a mining counter from this land: Add one mana of any color. If there are no mining counters on this land, sacrifice it.",
+          "cost": "{T}, Remove a mining counter from this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "there are no mining counters on this land"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters with three mining counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters with three mining counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

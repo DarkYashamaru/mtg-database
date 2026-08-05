@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "oracle_id": "50f144f8-29eb-4af7-9a50-eded3b9c83c2",
+  "name": "Radagast, Wizard of Wilds",
+  "faces": [
+    {
+      "name": "Radagast, Wizard of Wilds",
+      "type_line": "Legendary Creature \u2014 Avatar Wizard",
+      "oracle_text": "Ward {1}\nBeasts and Birds you control have ward {1}.\nWhenever you cast a spell with mana value 5 or greater, choose one \u2014\n\u2022 Create a 3/3 green Beast creature token.\n\u2022 Create a 2/2 blue Bird creature token with flying.",
+      "static": [
+        {
+          "keyword": "ward",
+          "amount": 1
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell with mana value 5 or greater, choose one \u2014\n\u2022 Create a 3/3 green Beast creature token.\n\u2022 Create a 2/2 blue Bird creature token with flying.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 5
+            }
+          ],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Create a 3/3 green Beast creature token.",
+              "effects": [
+                {
+                  "action": "create_token",
+                  "amount": 1,
+                  "token": {
+                    "raw": "3/3 green Beast creature token",
+                    "colors": [
+                      "green"
+                    ],
+                    "power_toughness": "3/3",
+                    "card_types": [
+                      "creature"
+                    ],
+                    "subtypes": [
+                      "Beast"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Create a 2/2 blue Bird creature token with flying.",
+              "effects": [
+                {
+                  "action": "create_token",
+                  "amount": 1,
+                  "token": {
+                    "raw": "a 2/2 blue Bird creature token with flying",
+                    "colors": [
+                      "blue"
+                    ],
+                    "power_toughness": "2/2",
+                    "card_types": [
+                      "creature"
+                    ],
+                    "subtypes": [
+                      "Bird"
+                    ],
+                    "keywords": [
+                      "flying"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Beasts and Birds you control have ward {1}.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Beasts and Birds you control have ward {1}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

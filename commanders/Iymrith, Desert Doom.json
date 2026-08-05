@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d5efba91-8400-41a3-91c6-cb5e81f07976",
+  "name": "Iymrith, Desert Doom",
+  "faces": [
+    {
+      "name": "Iymrith, Desert Doom",
+      "type_line": "Legendary Creature \u2014 Dragon",
+      "oracle_text": "Flying\nIymrith has ward {4} as long as it's untapped.\nWhenever Iymrith deals combat damage to a player, draw a card. Then if you have fewer than three cards in hand, draw cards equal to the difference.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Iymrith deals combat damage to a player, draw a card. Then if you have fewer than three cards in hand, draw cards equal to the difference.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "draw cards equal to the difference",
+              "condition": [
+                {
+                  "condition_text": "you have fewer than three cards in hand"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Iymrith has ward {4} as long as it's untapped.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Iymrith has ward {4} as long as it's untapped"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

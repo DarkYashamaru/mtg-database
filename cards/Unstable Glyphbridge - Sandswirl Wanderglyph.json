@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fcd54631-ea47-49a7-ad5f-9a9a51a815ba",
+  "name": "Unstable Glyphbridge // Sandswirl Wanderglyph",
+  "faces": [
+    {
+      "name": "Sandswirl Wanderglyph",
+      "type_line": "Artifact Creature \u2014 Golem",
+      "oracle_text": "Flying\nWhenever an opponent casts a spell during their turn, they can't attack you or planeswalkers you control this turn.\nEach opponent who attacked you or a planeswalker you control this turn can't cast spells.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent casts a spell during their turn, they can't attack you or planeswalkers you control this turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an opponent casts a spell during their turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "they can't attack you or planeswalkers you control this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Each opponent who attacked you or a planeswalker you control this turn can't cast spells.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent who attacked you or a planeswalker you control this turn can't cast spells"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Unstable Glyphbridge",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, if you cast it, for each player, choose a creature with power 2 or less that player controls. Then destroy all creatures except creatures chosen this way.\nCraft with artifact {3}{W}{W} ({3}{W}{W}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, if you cast it, for each player, choose a creature with power 2 or less that player controls. Then destroy all creatures except creatures chosen this way.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [
+            {
+              "condition_text": "you cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each player, choose a creature with power 2 or less that player controls"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then destroy all creatures except creatures chosen this way"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Craft with artifact {3}{W}{W} ({3}{W}{W}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+          "cost": "Craft with artifact {3}{W}{W} ({3}{W}{W}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "battlefield",
+              "controller": "its_owner",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

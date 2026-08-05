@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6b08f344-1ff5-4d04-a435-d3a1c5e4211b",
+  "name": "Hollowborn Barghest",
+  "faces": [
+    {
+      "name": "Hollowborn Barghest",
+      "type_line": "Creature \u2014 Demon Dog",
+      "oracle_text": "At the beginning of your upkeep, if you have no cards in hand, each opponent loses 2 life.\nAt the beginning of each opponent's upkeep, if that player has no cards in hand, they lose 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if you have no cards in hand, each opponent loses 2 life.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "zone_count": {
+                "zone": "hand",
+                "owner": "you",
+                "count_eq": 0
+              }
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each opponent's upkeep, if that player has no cards in hand, they lose 2 life.",
+          "trigger": {
+            "type": "beginning_of_each_opponents_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "that player has no cards in hand"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "they lose 2 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "452d98ae-0fa2-4cff-9e18-eecd76ddb20b",
+  "name": "Anthropede",
+  "faces": [
+    {
+      "name": "Anthropede",
+      "type_line": "Creature \u2014 Insect",
+      "oracle_text": "Reach\nWhen this creature enters, you may discard a card or pay {2}. When you do, destroy target Room.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may discard a card or pay {2}. When you do, destroy target Room.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may discard a card or pay {2}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy target room",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

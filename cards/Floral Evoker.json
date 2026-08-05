@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4da17e9e-df3e-4c46-a0cf-baafbe67186f",
+  "name": "Floral Evoker",
+  "faces": [
+    {
+      "name": "Floral Evoker",
+      "type_line": "Creature \u2014 Snake Druid",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, put a +1/+1 counter on this creature.\n{G}, Discard a creature card: Return target land card from your graveyard to the battlefield tapped.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{G}, Discard a creature card: Return target land card from your graveyard to the battlefield tapped.",
+          "cost": "{G}, Discard a creature card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target land card from your graveyard to the battlefield tapped"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

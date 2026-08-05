@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "232e16f4-32ae-4f42-a377-6bdebc9a06c7",
+  "name": "Civil Servant",
+  "faces": [
+    {
+      "name": "Civil Servant",
+      "type_line": "Creature \u2014 Cat Citizen",
+      "oracle_text": "Whenever this creature attacks, you may tap another untapped Citizen you control. If you do, this creature gets +1/+0 and gains lifelink until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may tap another untapped Citizen you control. If you do, this creature gets +1/+0 and gains lifelink until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may tap another untapped Citizen you control"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self_gets_10_and",
+              "keyword": "lifelink",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

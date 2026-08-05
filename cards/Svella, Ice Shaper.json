@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7fd8a508-335c-4d5a-9916-23bf26dfff38",
+  "name": "Svella, Ice Shaper",
+  "faces": [
+    {
+      "name": "Svella, Ice Shaper",
+      "type_line": "Legendary Snow Creature \u2014 Troll Warrior",
+      "oracle_text": "{3}, {T}: Create a colorless snow artifact token named Icy Manalith with \"{T}: Add one mana of any color.\"\n{6}{R}{G}, {T}: Look at the top four cards of your library. You may cast a spell from among them without paying its mana cost. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}, {T}: Create a colorless snow artifact token named Icy Manalith with \"{T}: Add one mana of any color.\"",
+          "cost": "{3}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Create a colorless snow artifact token named Icy Manalith with \"{T}: Add one mana of any color.\""
+            }
+          ]
+        },
+        {
+          "raw_text": "{6}{R}{G}, {T}: Look at the top four cards of your library. You may cast a spell from among them without paying its mana cost. Put the rest on the bottom of your library in a random order.",
+          "cost": "{6}{R}{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast a spell from among them without paying its mana cost"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

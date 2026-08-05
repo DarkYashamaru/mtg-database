@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6bf5dcf1-5c93-42f4-adaf-a6f2e5807596",
+  "name": "Black Carriage",
+  "faces": [
+    {
+      "name": "Black Carriage",
+      "type_line": "Creature \u2014 Horse",
+      "oracle_text": "Trample\nThis creature doesn't untap during your untap step.\nSacrifice a creature: Untap this creature. Activate only during your upkeep.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice a creature: Untap this creature. Activate only during your upkeep.",
+          "cost": "Sacrifice a creature",
+          "condition": [
+            {
+              "condition_text": "during your upkeep"
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature doesn't untap during your untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "self",
+              "scope": "your_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

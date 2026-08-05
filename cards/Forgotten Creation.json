@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c26964c7-4259-4281-b450-f0c2ed34b37c",
+  "name": "Forgotten Creation",
+  "faces": [
+    {
+      "name": "Forgotten Creation",
+      "type_line": "Creature \u2014 Zombie Horror",
+      "oracle_text": "Skulk (This creature can't be blocked by creatures with greater power.)\nAt the beginning of your upkeep, you may discard all the cards in your hand. If you do, draw that many cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may discard all the cards in your hand. If you do, draw that many cards.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may discard all the cards in your hand"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Skulk (This creature can't be blocked by creatures with greater power.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Skulk"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

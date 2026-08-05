@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2e3cc9b6-7849-4385-a487-c8f5364174e7",
+  "name": "Cruel Reality",
+  "faces": [
+    {
+      "name": "Cruel Reality",
+      "type_line": "Enchantment \u2014 Aura Curse",
+      "oracle_text": "Enchant player\nAt the beginning of enchanted player's upkeep, that player sacrifices a creature or planeswalker of their choice. If the player can't, they lose 5 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of enchanted player's upkeep, that player sacrifices a creature or planeswalker of their choice. If the player can't, they lose 5 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "At the beginning of enchanted player's upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player sacrifices a creature or planeswalker of their choice"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they lose 5 life",
+              "condition": [
+                {
+                  "condition_text": "the player can't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant player",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "player"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cd0c8db0-67ee-483b-8298-455cce35fef7",
+  "name": "Iron Apprentice",
+  "faces": [
+    {
+      "name": "Iron Apprentice",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "This creature enters with a +1/+1 counter on it.\nWhen this creature dies, if it had counters on it, put those counters on target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, if it had counters on it, put those counters on target creature you control.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it had counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put those counters on target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with a +1/+1 counter on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52ec472e-a745-4e25-b9a7-8e1eb8873594",
+  "name": "Fin Fang Foom",
+  "faces": [
+    {
+      "name": "Fin Fang Foom",
+      "type_line": "Legendary Creature \u2014 Alien Dragon Villain",
+      "oracle_text": "Flying\nWhenever you cast an instant or sorcery spell that targets an artifact or land, copy that spell. You may choose new targets for the copy. Put two +1/+1 counters on Fin Fang Foom.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell that targets an artifact or land, copy that spell. You may choose new targets for the copy. Put two +1/+1 counters on Fin Fang Foom.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            },
+            {
+              "condition_text": "that targets an artifact or land"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy that spell"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

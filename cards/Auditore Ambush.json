@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "72075231-e3b3-46cc-b994-2d95b24cf904",
+  "name": "Auditore Ambush",
+  "faces": [
+    {
+      "name": "Auditore Ambush",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose one or both \u2014\n\u2022 Return target creature to its owner's hand.\n\u2022 Target player searches their library and/or graveyard for a card named Ezio, Blade of Vengeance, reveals it, and puts it into their hand. If they search their library this way, they shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one or both \u2014\n\u2022 Return target creature to its owner's hand.\n\u2022 Target player searches their library and/or graveyard for a card named Ezio, Blade of Vengeance, reveals it, and puts it into their hand. If they search their library this way, they shuffle.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false,
+            "or_both": true
+          },
+          "modes": [
+            {
+              "raw_text": "Return target creature to its owner's hand.",
+              "effects": [
+                {
+                  "action": "move_card",
+                  "target": {
+                    "selector": "target_creature"
+                  },
+                  "destination_zone": "hand",
+                  "owner": "its_owner"
+                }
+              ]
+            },
+            {
+              "raw_text": "Target player searches their library and/or graveyard for a card named Ezio, Blade of Vengeance, reveals it, and puts it into their hand. If they search their library this way, they shuffle.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Target player searches their library and/or graveyard for a card named Ezio, Blade of Vengeance, reveals it, and puts it into their hand"
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "they shuffle",
+                  "condition": [
+                    {
+                      "condition_text": "they search their library this way"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

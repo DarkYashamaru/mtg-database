@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "de1cfa83-2049-48ab-b093-2f120a3ef4f2",
+  "name": "Loyal Guardian",
+  "faces": [
+    {
+      "name": "Loyal Guardian",
+      "type_line": "Creature \u2014 Rhino",
+      "oracle_text": "Trample\nLieutenant \u2014 At the beginning of combat on your turn, if you control your commander, put a +1/+1 counter on each creature you control.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, if you control your commander, put a +1/+1 counter on each creature you control.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you control your commander"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

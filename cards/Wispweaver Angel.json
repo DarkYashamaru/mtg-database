@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f8a88521-80e5-419b-ab4e-f4b3aba8afa0",
+  "name": "Wispweaver Angel",
+  "faces": [
+    {
+      "name": "Wispweaver Angel",
+      "type_line": "Creature \u2014 Angel",
+      "oracle_text": "Flying\nWhen this creature enters, you may exile another target creature you control, then return that card to the battlefield under its owner's control.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may exile another target creature you control, then return that card to the battlefield under its owner's control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile another target creature you control"
+            },
+            {
+              "action": "move_card",
+              "target": "that_card",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

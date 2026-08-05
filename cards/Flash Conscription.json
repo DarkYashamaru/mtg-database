@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a2019c23-09b8-4b0f-8b91-d8137804cb95",
+  "name": "Flash Conscription",
+  "faces": [
+    {
+      "name": "Flash Conscription",
+      "type_line": "Instant",
+      "oracle_text": "Untap target creature and gain control of it until end of turn. That creature gains haste until end of turn. If {W} was spent to cast this spell, the creature gains \"Whenever this creature deals combat damage, you gain that much life\" until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Untap target creature and gain control of it until end of turn. That creature gains haste until end of turn. If {W} was spent to cast this spell, the creature gains \"Whenever this creature deals combat damage, you gain that much life\" until end of turn.",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "untap_target_creature_and",
+              "keyword": "control_of_it"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature",
+              "keyword": "haste"
+            },
+            {
+              "action": "custom_effect",
+              "text": "the creature gains \"whenever this creature deals combat damage, you gain that much life\" until end of turn",
+              "condition": [
+                {
+                  "condition_text": "{w} was spent to cast this spell"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

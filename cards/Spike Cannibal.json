@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c175ab0e-7085-41ec-83e4-38fc85c338fa",
+  "name": "Spike Cannibal",
+  "faces": [
+    {
+      "name": "Spike Cannibal",
+      "type_line": "Creature \u2014 Spike",
+      "oracle_text": "This creature enters with a +1/+1 counter on it.\nWhen this creature enters, move all +1/+1 counters from all creatures onto it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, move all +1/+1 counters from all creatures onto it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "move all +1/+1 counters from all creatures onto it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with a +1/+1 counter on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

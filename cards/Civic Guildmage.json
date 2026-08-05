@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6e93cb9a-44c8-49fb-b6a7-bfdf7bd725fe",
+  "name": "Civic Guildmage",
+  "faces": [
+    {
+      "name": "Civic Guildmage",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "{G}, {T}: Target creature gets +0/+1 until end of turn.\n{U}, {T}: Put target creature you control on top of its owner's library.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{G}, {T}: Target creature gets +0/+1 until end of turn.",
+          "cost": "{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 0,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}, {T}: Put target creature you control on top of its owner's library.",
+          "cost": "{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put target creature you control on top of its owner's library"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

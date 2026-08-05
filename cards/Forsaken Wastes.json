@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b9e61e68-9dc8-4295-95dc-dd66a0907c8c",
+  "name": "Forsaken Wastes",
+  "faces": [
+    {
+      "name": "Forsaken Wastes",
+      "type_line": "World Enchantment",
+      "oracle_text": "Players can't gain life.\nAt the beginning of each player's upkeep, that player loses 1 life.\nWhenever this enchantment becomes the target of a spell, that spell's controller loses 5 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each player's upkeep, that player loses 1 life.",
+          "trigger": {
+            "type": "beginning_of_each_players_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "that_player",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this enchantment becomes the target of a spell, that spell's controller loses 5 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this enchantment becomes the target of a spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that spell's controller loses 5 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Players can't gain life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Players can't gain life"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

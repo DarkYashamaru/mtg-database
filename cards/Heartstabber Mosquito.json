@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f8fca88f-5eab-4854-913c-44261720a4d2",
+  "name": "Heartstabber Mosquito",
+  "faces": [
+    {
+      "name": "Heartstabber Mosquito",
+      "type_line": "Creature \u2014 Insect",
+      "oracle_text": "Kicker {2}{B} (You may pay an additional {2}{B} as you cast this spell.)\nFlying\nWhen this creature enters, if it was kicked, destroy target creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, destroy target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {2}{B} (You may pay an additional {2}{B} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {2}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "86b8a9ef-7cdf-47e9-accb-16fe1eab718f",
+  "name": "Spellbound Dragon",
+  "faces": [
+    {
+      "name": "Spellbound Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever this creature attacks, draw a card, then discard a card. This creature gets +X/+0 until end of turn, where X is the discarded card's mana value.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, draw a card, then discard a card. This creature gets +X/+0 until end of turn, where X is the discarded card's mana value.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +X/+0 until end of turn, where X is the discarded card's mana value"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

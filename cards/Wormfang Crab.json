@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4216f9ce-bdd9-4213-8c3f-e2ef4cd848f9",
+  "name": "Wormfang Crab",
+  "faces": [
+    {
+      "name": "Wormfang Crab",
+      "type_line": "Creature \u2014 Nightmare Crab",
+      "oracle_text": "This creature can't be blocked.\nWhen this creature enters, an opponent chooses a permanent you control other than this creature and exiles it.\nWhen this creature leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, an opponent chooses a permanent you control other than this creature and exiles it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "an opponent chooses a permanent you control other than this creature and exiles it"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return the exiled card to the battlefield under its owner's control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9ab101c2-215b-4736-873a-4a1ef6666b6d",
+  "name": "Nature's Embrace",
+  "faces": [
+    {
+      "name": "Nature's Embrace",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature or land\nAs long as enchanted permanent is a creature, it gets +2/+2.\nAs long as enchanted permanent is a land, it has \"{T}: Add two mana of any one color.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "As long as enchanted permanent is a land, it has \"{T}: Add two mana of any one color.\"",
+          "cost": "As long as enchanted permanent is a land, it has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "same_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature or land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_or_land"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted permanent is a creature, it gets +2/+2.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "as_long_as_enchanted_permanent_is_a_creature_it",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

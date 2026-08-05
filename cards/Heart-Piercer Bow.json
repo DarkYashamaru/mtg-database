@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ebe9dad7-d74d-4fa8-b17a-88ff79209379",
+  "name": "Heart-Piercer Bow",
+  "faces": [
+    {
+      "name": "Heart-Piercer Bow",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature attacks, this Equipment deals 1 damage to target creature defending player controls.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, this Equipment deals 1 damage to target creature defending player controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this Equipment deals 1 damage to target creature defending player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

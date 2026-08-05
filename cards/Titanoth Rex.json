@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8656a32b-eb95-402b-9daf-0b6d876b4b13",
+  "name": "Titanoth Rex",
+  "faces": [
+    {
+      "name": "Titanoth Rex",
+      "type_line": "Creature \u2014 Dinosaur Beast",
+      "oracle_text": "Trample\nCycling {1}{G} ({1}{G}, Discard this card: Draw a card.)\nWhen you cycle this card, put a trample counter on target creature you control.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, put a trample counter on target creature you control.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a trample counter on target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {1}{G} ({1}{G}, Discard this card: Draw a card.)",
+          "cost": "Cycling {1}{G} ({1}{G}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ca16b32c-3f1e-4f8d-821a-064f922c45d8",
+  "name": "Scrying Glass",
+  "faces": [
+    {
+      "name": "Scrying Glass",
+      "type_line": "Artifact",
+      "oracle_text": "{3}, {T}: Choose a number greater than 0 and a color. Target opponent reveals their hand. If that opponent reveals exactly the chosen number of cards of the chosen color, you draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}, {T}: Choose a number greater than 0 and a color. Target opponent reveals their hand. If that opponent reveals exactly the chosen number of cards of the chosen color, you draw a card.",
+          "cost": "{3}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose a number greater than 0 and a color"
+            },
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "that opponent reveals exactly the chosen number of cards of the chosen color"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

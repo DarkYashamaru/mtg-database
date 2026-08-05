@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4000e119-3372-431c-bc3a-0db0639311ce",
+  "name": "Fire Urchin",
+  "faces": [
+    {
+      "name": "Fire Urchin",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "Trample\nWhenever you cast an instant or sorcery spell, this creature gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

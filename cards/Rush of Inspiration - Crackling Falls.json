@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bbd569cc-bc21-46df-b8eb-5b5bcd8fe762",
+  "name": "Rush of Inspiration // Crackling Falls",
+  "faces": [
+    {
+      "name": "Crackling Falls",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {U} or {R}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U} or {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}",
+                "{r}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rush of Inspiration",
+      "type_line": "Instant",
+      "oracle_text": "Draw two cards. Then discard a card at random unless you pay {E}{E} (two energy counters).",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Draw two cards. Then discard a card at random unless you pay {E}{E} (two energy counters).",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then discard a card at random unless you pay {E}{E}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

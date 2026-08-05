@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b4e85b7c-3047-46d1-a6e6-2ec5eac0268a",
+  "name": "Maze's Mantle",
+  "faces": [
+    {
+      "name": "Maze's Mantle",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash\nEnchant creature\nWhen this Aura enters, if enchanted creature has toxic, that creature gains hexproof until end of turn.\nEnchanted creature gets +2/+2.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, if enchanted creature has toxic, that creature gains hexproof until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [
+            {
+              "condition_text": "enchanted creature has toxic"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature",
+              "keyword": "hexproof"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+2.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "697ac261-263b-4879-bf45-6d10d23312ae",
+  "name": "Ao, the Dawn Sky",
+  "faces": [
+    {
+      "name": "Ao, the Dawn Sky",
+      "type_line": "Legendary Creature \u2014 Dragon Spirit",
+      "oracle_text": "Flying, vigilance\nWhen Ao dies, choose one \u2014\n\u2022 Look at the top seven cards of your library. Put any number of nonland permanent cards with total mana value 4 or less from among them onto the battlefield. Put the rest on the bottom of your library in a random order.\n\u2022 Put two +1/+1 counters on each permanent you control that's a creature or Vehicle.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Ao dies, choose one \u2014\n\u2022 Look at the top seven cards of your library. Put any number of nonland permanent cards with total mana value 4 or less from among them onto the battlefield. Put the rest on the bottom of your library in a random order.\n\u2022 Put two +1/+1 counters on each permanent you control that's a creature or Vehicle.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Look at the top seven cards of your library. Put any number of nonland permanent cards with total mana value 4 or less from among them onto the battlefield. Put the rest on the bottom of your library in a random order.",
+              "effects": [
+                {
+                  "action": "look_at_top_cards",
+                  "player": "you",
+                  "zone": "library",
+                  "count": 7
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "Put any number of nonland permanent cards with total mana value 4 or less from among them onto the battlefield"
+                },
+                {
+                  "action": "move_unselected_looked_at_cards",
+                  "destination": "bottom_of_library",
+                  "order": "random"
+                }
+              ]
+            },
+            {
+              "raw_text": "Put two +1/+1 counters on each permanent you control that's a creature or Vehicle.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "each_permanent_you_control_thats_a_creature_or_vehicle"
+                  },
+                  "amount": 2
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

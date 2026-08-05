@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ff3936bb-3281-4260-84de-1f65dbfbe993",
+  "name": "Ayara's Oathsworn",
+  "faces": [
+    {
+      "name": "Ayara's Oathsworn",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Menace\nWhenever this creature deals combat damage to a player, if it has fewer than four +1/+1 counters on it, put a +1/+1 counter on it. Then if it has exactly four +1/+1 counters on it, search your library for a card, put it into your hand, then shuffle.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, if it has fewer than four +1/+1 counters on it, put a +1/+1 counter on it. Then if it has exactly four +1/+1 counters on it, search your library for a card, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it has fewer than four +1/+1 counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "search your library for a card, put it into your hand",
+              "condition": [
+                {
+                  "condition_text": "it has exactly four +1/+1 counters on it"
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "it has exactly four +1/+1 counters on it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

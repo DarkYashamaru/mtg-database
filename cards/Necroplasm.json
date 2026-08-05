@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aa1c40fb-c230-4e7f-99b1-4e2e8c39a168",
+  "name": "Necroplasm",
+  "faces": [
+    {
+      "name": "Necroplasm",
+      "type_line": "Creature \u2014 Ooze",
+      "oracle_text": "At the beginning of your upkeep, put a +1/+1 counter on this creature.\nAt the beginning of your end step, destroy each creature with mana value equal to the number of +1/+1 counters on this creature.\nDredge 2 (If you would draw a card, you may mill two cards instead. If you do, return this card from your graveyard to your hand.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, destroy each creature with mana value equal to the number of +1/+1 counters on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy each creature with mana value equal to the number of +1/+1 counters on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Dredge 2 (If you would draw a card, you may mill two cards instead. If you do, return this card from your graveyard to your hand.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Dredge 2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

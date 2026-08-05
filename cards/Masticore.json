@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "621476a4-44bf-4f55-adb1-880cdd213f38",
+  "name": "Masticore",
+  "faces": [
+    {
+      "name": "Masticore",
+      "type_line": "Artifact Creature \u2014 Masticore",
+      "oracle_text": "At the beginning of your upkeep, sacrifice this creature unless you discard a card.\n{2}: This creature deals 1 damage to target creature.\n{2}: Regenerate this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice this creature unless you discard a card.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self_unless_you_discard_a_card"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: This creature deals 1 damage to target creature.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals 1 damage to target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}: Regenerate this creature.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

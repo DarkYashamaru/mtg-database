@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4ce785b9-aee0-4ac6-ab20-ee20d0551be4",
+  "name": "Yotia Declares War",
+  "faces": [
+    {
+      "name": "Yotia Declares War",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)\nI \u2014 Create a 0/2 colorless Thopter artifact creature token with flying named Ornithopter.\nII \u2014 Tap any number of untapped artifacts you control. When you do, this Saga deals that much damage to target creature or planeswalker.\nIII \u2014 Up to one target artifact you control becomes an artifact creature with base power and toughness 4/4 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Create a 0/2 colorless Thopter artifact creature token with flying named Ornithopter.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 0/2 colorless Thopter artifact creature token with flying named Ornithopter",
+                "power_toughness": "0/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Thopter",
+                  "artifact"
+                ],
+                "keywords": [
+                  "flying_named_Ornithopter"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Tap any number of untapped artifacts you control. When you do, this Saga deals that much damage to target creature or planeswalker.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Tap any number of untapped artifacts you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this saga deals that much damage to target creature or planeswalker",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Up to one target artifact you control becomes an artifact creature with base power and toughness 4/4 until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Up to one target artifact you control becomes an artifact creature with base power and toughness 4/4 until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Read ahead"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

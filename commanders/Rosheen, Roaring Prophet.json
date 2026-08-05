@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3108a4fe-b18a-4d02-9545-b19812454362",
+  "name": "Rosheen, Roaring Prophet",
+  "faces": [
+    {
+      "name": "Rosheen, Roaring Prophet",
+      "type_line": "Legendary Creature \u2014 Giant Shaman",
+      "oracle_text": "When Rosheen enters, mill six cards. You may put a card with {X} in its mana cost from among them into your hand.\n{T}: Reveal any number of cards with {X} in their mana cost in your hand. Add {C}{C} for each card revealed this way. Spend this mana only on costs that contain {X}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Rosheen enters, mill six cards. You may put a card with {X} in its mana cost from among them into your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 6
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put a card with {X} in its mana cost from among them into your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Reveal any number of cards with {X} in their mana cost in your hand. Add {C}{C} for each card revealed this way. Spend this mana only on costs that contain {X}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Reveal any number of cards with {X} in their mana cost in your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Add {C}{C} for each card revealed this way"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only on costs that contain {X}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

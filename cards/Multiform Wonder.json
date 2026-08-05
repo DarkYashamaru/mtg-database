@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9849c743-9492-4a1b-83bf-1be54614b85f",
+  "name": "Multiform Wonder",
+  "faces": [
+    {
+      "name": "Multiform Wonder",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "When this creature enters, you get {E}{E}{E} (three energy counters).\nPay {E}: This creature gains your choice of flying, vigilance, or lifelink until end of turn.\nPay {E}: This creature gets +2/-2 or -2/+2 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E}{E} (three energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay {E}: This creature gains your choice of flying, vigilance, or lifelink until end of turn.",
+          "cost": "Pay {E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gains your choice of flying, vigilance, or lifelink until end of turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Pay {E}: This creature gets +2/-2 or -2/+2 until end of turn.",
+          "cost": "Pay {E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +2/-2 or -2/+2 until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

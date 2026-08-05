@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9d437391-d476-4976-8714-6a1d3185ab52",
+  "name": "Briar Shield",
+  "faces": [
+    {
+      "name": "Briar Shield",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +1/+1.\nSacrifice this Aura: Enchanted creature gets +3/+3 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice this Aura: Enchanted creature gets +3/+3 until end of turn.",
+          "cost": "Sacrifice this Aura",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "enchanted_creature",
+              "power_delta": 3,
+              "toughness_delta": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

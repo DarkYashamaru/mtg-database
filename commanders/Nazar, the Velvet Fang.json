@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "beeed1c5-2f51-4e40-87b9-9a6f810ee4cb",
+  "name": "Nazar, the Velvet Fang",
+  "faces": [
+    {
+      "name": "Nazar, the Velvet Fang",
+      "type_line": "Legendary Creature \u2014 Vampire Warlock",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever you gain life, put a feeding counter on Nazar.\nWhenever Nazar attacks, you may remove three feeding counters from it. If you do, you draw three cards and you lose 3 life.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, put a feeding counter on Nazar.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a feeding counter on Nazar"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Nazar attacks, you may remove three feeding counters from it. If you do, you draw three cards and you lose 3 life.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may remove three feeding counters from it"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 3,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 3,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

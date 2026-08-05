@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5f589a11-1601-4a17-92d6-58e9dd9b00f2",
+  "name": "Fight the _____ Fight",
+  "faces": [
+    {
+      "name": "Fight the _____ Fight",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature you control\nWhen this Aura enters, you may put a name sticker on it. When you do, enchanted creature fights up to one target creature you don't control.\nEnchanted creature gets +0/+2 for each name sticker on this Aura with eight or more letters.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, you may put a name sticker on it. When you do, enchanted creature fights up to one target creature you don't control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a name sticker on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "enchanted creature fights up to one target creature you don't control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +0/+2 for each name sticker on this Aura with eight or more letters.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +0/+2 for each name sticker on this Aura with eight or more letters"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

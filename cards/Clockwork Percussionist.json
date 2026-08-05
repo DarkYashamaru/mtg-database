@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3b74c8ac-9c19-45b0-935f-8630b8da4543",
+  "name": "Clockwork Percussionist",
+  "faces": [
+    {
+      "name": "Clockwork Percussionist",
+      "type_line": "Artifact Creature \u2014 Monkey Toy",
+      "oracle_text": "Haste\nWhen this creature dies, exile the top card of your library. You may play it until the end of your next turn.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, exile the top card of your library. You may play it until the end of your next turn.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play it until the end of your next turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "41681a1f-0777-4b96-8c7e-d6a5d1b1c8fc",
+  "name": "Agonizing Demise",
+  "faces": [
+    {
+      "name": "Agonizing Demise",
+      "type_line": "Instant",
+      "oracle_text": "Kicker {1}{R} (You may pay an additional {1}{R} as you cast this spell.)\nDestroy target nonblack creature. It can't be regenerated. If this spell was kicked, Agonizing Demise deals damage equal to that creature's power to the creature's controller.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{R} (You may pay an additional {1}{R} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{R}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy target nonblack creature. It can't be regenerated. If this spell was kicked, Agonizing Demise deals damage equal to that creature's power to the creature's controller.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature",
+                "not_colors": [
+                  "black"
+                ]
+              }
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            },
+            {
+              "action": "custom_effect",
+              "text": "agonizing demise deals damage equal to that creature's power to the creature's controller",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

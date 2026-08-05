@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "81b50d34-d778-4606-80de-0e0780610d1f",
+  "name": "Thousand Winds",
+  "faces": [
+    {
+      "name": "Thousand Winds",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "Flying\nMorph {5}{U}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)\nWhen this creature is turned face up, return all other tapped creatures to their owners' hands.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, return all other tapped creatures to their owners' hands.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return all other tapped creatures to their owners' hands"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Morph {5}{U}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morph {5}{U}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

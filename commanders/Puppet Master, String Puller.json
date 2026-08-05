@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "376c6257-4a1a-42d4-8931-72068f38727f",
+  "name": "Puppet Master, String Puller",
+  "faces": [
+    {
+      "name": "Puppet Master, String Puller",
+      "type_line": "Legendary Creature \u2014 Human Artificer Villain",
+      "oracle_text": "Whenever you attack, goad target creature an opponent controls. It can't block this turn. (Until your next turn, that creature attacks each combat if able and attacks a player other than you if able.)\nWhenever one or more goaded creatures deal combat damage to one of your opponents, create a Treasure token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, goad target creature an opponent controls. It can't block this turn. (Until your next turn, that creature attacks each combat if able and attacks a player other than you if able.)",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "goad target creature an opponent controls"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It can't block this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more goaded creatures deal combat damage to one of your opponents, create a Treasure token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more goaded creatures deal combat damage to one of your opponents"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

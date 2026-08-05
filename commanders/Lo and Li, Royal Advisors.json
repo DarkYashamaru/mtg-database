@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b5018037-cf4e-46d2-86c3-fb8eec6e44d1",
+  "name": "Lo and Li, Royal Advisors",
+  "faces": [
+    {
+      "name": "Lo and Li, Royal Advisors",
+      "type_line": "Legendary Creature \u2014 Human Advisor",
+      "oracle_text": "Whenever an opponent discards a card or mills one or more cards, put a +1/+1 counter on each Advisor you control.\n{2}{U/B}: Target player mills four cards. (They put the top four cards of their library into their graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent discards a card or mills one or more cards, put a +1/+1 counter on each Advisor you control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an opponent discards a card or mills one or more cards"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Advisor"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{U/B}: Target player mills four cards. (They put the top four cards of their library into their graveyard.)",
+          "cost": "{2}{U/B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player mills four cards"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

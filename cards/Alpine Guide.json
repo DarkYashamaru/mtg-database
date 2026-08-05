@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "55b12241-2495-45e6-b618-3746d5521291",
+  "name": "Alpine Guide",
+  "faces": [
+    {
+      "name": "Alpine Guide",
+      "type_line": "Snow Creature \u2014 Human Scout",
+      "oracle_text": "When this creature enters, you may search your library for a Mountain card, put that card onto the battlefield tapped, then shuffle.\nThis creature attacks each combat if able.\nWhen this creature leaves the battlefield, sacrifice a Mountain.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a Mountain card, put that card onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a mountain card, put that card onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature leaves the battlefield, sacrifice a Mountain.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_mountain"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature attacks each combat if able.",
+          "effects": [
+            {
+              "action": "attack_requirement",
+              "target": "self",
+              "requirement": "each_combat_if_able"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

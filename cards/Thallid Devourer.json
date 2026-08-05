@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b7326fd9-7648-4db3-b506-61a7de8a4094",
+  "name": "Thallid Devourer",
+  "faces": [
+    {
+      "name": "Thallid Devourer",
+      "type_line": "Creature \u2014 Fungus",
+      "oracle_text": "At the beginning of your upkeep, put a spore counter on this creature.\nRemove three spore counters from this creature: Create a 1/1 green Saproling creature token.\nSacrifice a Saproling: This creature gets +1/+2 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a spore counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a spore counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove three spore counters from this creature: Create a 1/1 green Saproling creature token.",
+          "cost": "Remove three spore counters from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green Saproling creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Saproling"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Sacrifice a Saproling: This creature gets +1/+2 until end of turn.",
+          "cost": "Sacrifice a Saproling",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

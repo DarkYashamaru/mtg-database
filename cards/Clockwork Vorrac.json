@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e1a64bba-eaff-4f59-b85d-7df0b13e2e6b",
+  "name": "Clockwork Vorrac",
+  "faces": [
+    {
+      "name": "Clockwork Vorrac",
+      "type_line": "Artifact Creature \u2014 Boar Beast",
+      "oracle_text": "Trample\nThis creature enters with four +1/+1 counters on it.\nWhenever this creature attacks or blocks, remove a +1/+1 counter from it at end of combat.\n{T}: Put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks or blocks, remove a +1/+1 counter from it at end of combat.",
+          "trigger": {
+            "type": "attacks_or_blocks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove a +1/+1 counter from it at end of combat"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Put a +1/+1 counter on this creature.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with four +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

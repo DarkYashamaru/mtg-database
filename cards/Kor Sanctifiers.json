@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "55d8ac5b-622c-42a9-83dc-f2c1c6c2506f",
+  "name": "Kor Sanctifiers",
+  "faces": [
+    {
+      "name": "Kor Sanctifiers",
+      "type_line": "Creature \u2014 Kor Cleric",
+      "oracle_text": "Kicker {W} (You may pay an additional {W} as you cast this spell.)\nWhen this creature enters, if it was kicked, destroy target artifact or enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, destroy target artifact or enchantment.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Artifact",
+                  "Enchantment"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {W} (You may pay an additional {W} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

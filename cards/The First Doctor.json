@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5611b70d-f8d1-4a8f-b9a2-a356264a7c46",
+  "name": "The First Doctor",
+  "faces": [
+    {
+      "name": "The First Doctor",
+      "type_line": "Legendary Creature \u2014 Time Lord Doctor",
+      "oracle_text": "When The First Doctor enters, search your library and/or graveyard for a card named TARDIS, reveal it, and put it into your hand. If you search your library this way, shuffle.\nWhenever you cast a spell with cascade, put a +1/+1 counter on target artifact or creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When The First Doctor enters, search your library and/or graveyard for a card named TARDIS, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library and/or graveyard for a card named TARDIS, reveal it, and put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a spell with cascade, put a +1/+1 counter on target artifact or creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell with cascade"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_artifact_or_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

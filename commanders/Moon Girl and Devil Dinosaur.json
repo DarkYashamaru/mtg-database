@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bfe0818b-ae13-4174-85c8-24b895d28df0",
+  "name": "Moon Girl and Devil Dinosaur",
+  "faces": [
+    {
+      "name": "Moon Girl and Devil Dinosaur",
+      "type_line": "Legendary Creature \u2014 Human Dinosaur Hero",
+      "oracle_text": "Whenever you draw your second card each turn, until end of turn, Moon Girl and Devil Dinosaur's base power and toughness become 6/6 and they gain trample.\nWhenever an artifact you control enters, draw a card. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, until end of turn, Moon Girl and Devil Dinosaur's base power and toughness become 6/6 and they gain trample.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword",
+              "target": "until_end_of_turn_selfs_base_power_and_toughness_become_66_and_they",
+              "keyword": "trample"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an artifact you control enters, draw a card. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Artifact"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

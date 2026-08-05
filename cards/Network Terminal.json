@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a0eb1d5b-2c54-44fa-b7ad-bdd4b1147929",
+  "name": "Network Terminal",
+  "faces": [
+    {
+      "name": "Network Terminal",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add one mana of any color.\n{1}, {T}, Tap another untapped artifact you control: Draw a card, then discard a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}, Tap another untapped artifact you control: Draw a card, then discard a card.",
+          "cost": "{1}, {T}, Tap another untapped artifact you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

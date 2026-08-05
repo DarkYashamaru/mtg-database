@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bdbec6d5-0f10-4114-b709-4402a44debdf",
+  "name": "Sokka, Bold Boomeranger",
+  "faces": [
+    {
+      "name": "Sokka, Bold Boomeranger",
+      "type_line": "Legendary Creature \u2014 Human Warrior Ally",
+      "oracle_text": "When Sokka enters, discard up to two cards, then draw that many cards.\nWhenever you cast an artifact or Lesson spell, put a +1/+1 counter on Sokka.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Sokka enters, discard up to two cards, then draw that many cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "discard up to two cards"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast an artifact or Lesson spell, put a +1/+1 counter on Sokka.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "artifact",
+                "lesson"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

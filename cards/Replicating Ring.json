@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1ff00f5b-4bf9-4724-8bb5-6b9a9eb0ec7f",
+  "name": "Replicating Ring",
+  "faces": [
+    {
+      "name": "Replicating Ring",
+      "type_line": "Snow Artifact",
+      "oracle_text": "{T}: Add one mana of any color.\nAt the beginning of your upkeep, put a night counter on this artifact. Then if it has eight or more night counters on it, remove all of them and create eight colorless snow artifact tokens named Replicated Ring with \"{T}: Add one mana of any color.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a night counter on this artifact. Then if it has eight or more night counters on it, remove all of them and create eight colorless snow artifact tokens named Replicated Ring with \"{T}: Add one mana of any color.\"",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a night counter on this artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove all of them and create eight colorless snow artifact tokens named replicated ring with \"{t}: add one mana of any color",
+              "condition": [
+                {
+                  "condition_text": "it has eight or more night counters on it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

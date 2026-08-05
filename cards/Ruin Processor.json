@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1cf82e44-99dd-48d3-a272-8df9835ebc0d",
+  "name": "Ruin Processor",
+  "faces": [
+    {
+      "name": "Ruin Processor",
+      "type_line": "Creature \u2014 Eldrazi Processor",
+      "oracle_text": "When you cast this spell, you may put a card an opponent owns from exile into that player's graveyard. If you do, you gain 5 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, you may put a card an opponent owns from exile into that player's graveyard. If you do, you gain 5 life.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a card an opponent owns from exile into that player's graveyard"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 5,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

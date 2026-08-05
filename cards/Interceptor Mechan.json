@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ded2b1b7-8c12-4f6f-a3be-a8f7b62b0819",
+  "name": "Interceptor Mechan",
+  "faces": [
+    {
+      "name": "Interceptor Mechan",
+      "type_line": "Artifact Creature \u2014 Robot",
+      "oracle_text": "Flying\nWhen this creature enters, return target artifact or creature card from your graveyard to your hand.\nVoid \u2014 At the beginning of your end step, if a nonland permanent left the battlefield this turn or a spell was warped this turn, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, return target artifact or creature card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target artifact or creature card from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if a nonland permanent left the battlefield this turn or a spell was warped this turn, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a nonland permanent left the battlefield this turn or a spell was warped this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

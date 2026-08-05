@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2ef797ef-c05f-4309-85c7-1bd151dac3fa",
+  "name": "Far Wanderings",
+  "faces": [
+    {
+      "name": "Far Wanderings",
+      "type_line": "Sorcery",
+      "oracle_text": "Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.\nThreshold \u2014 If there are seven or more cards in your graveyard, instead search your library for up to three basic land cards, put them onto the battlefield tapped, then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Threshold \u2014 If there are seven or more cards in your graveyard, instead search your library for up to three basic land cards, put them onto the battlefield tapped, then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "threshold \u2014 if there are seven or more cards in your graveyard, instead search your library for up to three basic land cards, put them onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

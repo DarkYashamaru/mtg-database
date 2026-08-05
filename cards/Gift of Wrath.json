@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9ba31dd0-d78e-4639-a550-bd72cac5898a",
+  "name": "Gift of Wrath",
+  "faces": [
+    {
+      "name": "Gift of Wrath",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant artifact or creature\nAs long as enchanted permanent is a creature, it gets +2/+2 and has menace. (It can't be blocked except by two or more creatures.)\nWhen this Aura leaves the battlefield, create a 2/2 red Spirit creature token with menace.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura leaves the battlefield, create a 2/2 red Spirit creature token with menace.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 red Spirit creature token with menace",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Spirit"
+                ],
+                "keywords": [
+                  "menace"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant artifact or creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "artifact_or_creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as enchanted permanent is a creature, it gets +2/+2 and has menace. (It can't be blocked except by two or more creatures.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as enchanted permanent is a creature, it gets +2/+2 and has menace"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

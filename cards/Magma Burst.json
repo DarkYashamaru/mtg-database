@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f5af6d60-decd-4e04-8841-da2d3000a405",
+  "name": "Magma Burst",
+  "faces": [
+    {
+      "name": "Magma Burst",
+      "type_line": "Instant",
+      "oracle_text": "Kicker\u2014Sacrifice two lands. (You may sacrifice two lands in addition to any other costs as you cast this spell.)\nMagma Burst deals 3 damage to any target. If this spell was kicked, it deals 3 damage to another target.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker\u2014Sacrifice two lands. (You may sacrifice two lands in addition to any other costs as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker\u2014Sacrifice two lands"
+            }
+          ]
+        },
+        {
+          "raw_text": "Magma Burst deals 3 damage to any target. If this spell was kicked, it deals 3 damage to another target.",
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "it deals 3 damage to another target",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

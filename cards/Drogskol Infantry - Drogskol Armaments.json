@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "389bcb9f-4e66-4704-9968-a1c1574ec2c8",
+  "name": "Drogskol Infantry // Drogskol Armaments",
+  "faces": [
+    {
+      "name": "Drogskol Armaments",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +2/+2.\nIf Drogskol Armaments would be put into a graveyard from anywhere, exile it instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+2.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "If Drogskol Armaments would be put into a graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "drogskol armaments would be put into a graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Drogskol Infantry",
+      "type_line": "Creature \u2014 Spirit Soldier",
+      "oracle_text": "Disturb {3}{W} (You may cast this card from your graveyard transformed for its disturb cost.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disturb {3}{W} (You may cast this card from your graveyard transformed for its disturb cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disturb {3}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

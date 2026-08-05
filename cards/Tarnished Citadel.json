@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "66ae2562-68e9-4c77-ba0a-57f8ff37f656",
+  "name": "Tarnished Citadel",
+  "faces": [
+    {
+      "name": "Tarnished Citadel",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add one mana of any color. This land deals 3 damage to you.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add one mana of any color. This land deals 3 damage to you.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This land deals 3 damage to you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

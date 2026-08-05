@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9ae13026-960a-4d31-b775-d47209a1e313",
+  "name": "Ardyn, the Usurper",
+  "faces": [
+    {
+      "name": "Ardyn, the Usurper",
+      "type_line": "Legendary Creature \u2014 Elder Human Noble",
+      "oracle_text": "Demons you control have menace, lifelink, and haste.\nStarscourge \u2014 At the beginning of combat on your turn, exile up to one target creature card from a graveyard. If you exiled a card this way, create a token that's a copy of that card, except it's a 5/5 black Demon.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, exile up to one target creature card from a graveyard. If you exiled a card this way, create a token that's a copy of that card, except it's a 5/5 black Demon.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target creature card from a graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of that card, except it's a 5/5 black demon",
+              "condition": [
+                {
+                  "condition_text": "you exiled a card this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Demons you control have menace, lifelink, and haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Demon"
+                ]
+              },
+              "keywords": [
+                "menace",
+                "lifelink",
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d5b80d04-1650-4b5d-9f9b-091ecd17b6e8",
+  "name": "Tapping at the Window",
+  "faces": [
+    {
+      "name": "Tapping at the Window",
+      "type_line": "Sorcery",
+      "oracle_text": "Look at the top three cards of your library. You may reveal a creature card from among them and put it into your hand. Put the rest into your graveyard.\nFlashback {2}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Look at the top three cards of your library. You may reveal a creature card from among them and put it into your hand. Put the rest into your graveyard.",
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "Flashback {2}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flashback {2}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

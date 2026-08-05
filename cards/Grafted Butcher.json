@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6c4a0e3d-c63c-4acf-8386-b51f1ec37463",
+  "name": "Grafted Butcher",
+  "faces": [
+    {
+      "name": "Grafted Butcher",
+      "type_line": "Creature \u2014 Phyrexian Samurai",
+      "oracle_text": "When this creature enters, Phyrexians you control gain menace until end of turn.\nOther Phyrexians you control get +1/+1.\n{3}{B}, Sacrifice an artifact or creature: Return this card from your graveyard to the battlefield. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, Phyrexians you control gain menace until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "phyrexians_you_control",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{B}, Sacrifice an artifact or creature: Return this card from your graveyard to the battlefield. Activate only as a sorcery.",
+          "cost": "{3}{B}, Sacrifice an artifact or creature",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Other Phyrexians you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other Phyrexians you control get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

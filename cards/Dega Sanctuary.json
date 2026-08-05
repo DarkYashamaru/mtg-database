@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "75c626fb-9dfc-4a94-b59f-f0e45c7b2f56",
+  "name": "Dega Sanctuary",
+  "faces": [
+    {
+      "name": "Dega Sanctuary",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, if you control a black or red permanent, you gain 2 life. If you control a black permanent and a red permanent, you gain 4 life instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if you control a black or red permanent, you gain 2 life. If you control a black permanent and a red permanent, you gain 4 life instead.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you control a black or red permanent"
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "you gain 4 life instead",
+              "condition": [
+                {
+                  "condition_text": "you control a black permanent and a red permanent"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

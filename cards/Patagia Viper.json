@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b9985370-d908-431c-ad33-ec532fe07d1f",
+  "name": "Patagia Viper",
+  "faces": [
+    {
+      "name": "Patagia Viper",
+      "type_line": "Creature \u2014 Snake",
+      "oracle_text": "Flying\nWhen this creature enters, create two 1/1 green and blue Snake creature tokens.\nWhen this creature enters, sacrifice it unless {U} was spent to cast it.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create two 1/1 green and blue Snake creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 green and blue Snake creature tokens",
+                "colors": [
+                  "green",
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Snake"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature enters, sacrifice it unless {U} was spent to cast it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "it_unless_u_was_spent_to_cast_it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

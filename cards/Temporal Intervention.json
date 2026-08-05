@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5e8a2416-e311-41ac-a3cd-be1c2441d542",
+  "name": "Temporal Intervention",
+  "faces": [
+    {
+      "name": "Temporal Intervention",
+      "type_line": "Sorcery",
+      "oracle_text": "Void \u2014 This spell costs {2} less to cast if a nonland permanent left the battlefield this turn or a spell was warped this turn.\nTarget opponent reveals their hand. You choose a nonland card from it. That player discards that card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Void \u2014 This spell costs {2} less to cast if a nonland permanent left the battlefield this turn or a spell was warped this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Void \u2014 This spell costs {2} less to cast if a nonland permanent left the battlefield this turn or a spell was warped this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target opponent reveals their hand. You choose a nonland card from it. That player discards that card.",
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a nonland card from it"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

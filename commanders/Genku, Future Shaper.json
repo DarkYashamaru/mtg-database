@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ca16b735-26c7-4d0b-959b-b031f6cb376e",
+  "name": "Genku, Future Shaper",
+  "faces": [
+    {
+      "name": "Genku, Future Shaper",
+      "type_line": "Legendary Creature \u2014 Moonfolk Wizard",
+      "oracle_text": "Whenever another nontoken permanent you control leaves the battlefield, choose one that hasn't been chosen this turn. Create a creature token with those characteristics.\n\u2022 2/2 white Fox with vigilance.\n\u2022 1/2 blue Moonfolk with flying.\n\u2022 1/1 black Rat with lifelink.\n{3}{W}{U}: Put a +1/+1 counter on each creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken permanent you control leaves the battlefield, choose one that hasn't been chosen this turn. Create a creature token with those characteristics.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Nontoken",
+                "Permanent"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose one that hasn't been chosen this turn"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a creature token with those characteristics",
+                "card_types": [
+                  "creature"
+                ],
+                "keywords": [
+                  "those_characteristics"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{W}{U}: Put a +1/+1 counter on each creature you control.",
+          "cost": "{3}{W}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "\u2022 2/2 white Fox with vigilance.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 2/2 white Fox with vigilance"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 1/2 blue Moonfolk with flying.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 1/2 blue Moonfolk with flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 1/1 black Rat with lifelink.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 1/1 black Rat with lifelink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

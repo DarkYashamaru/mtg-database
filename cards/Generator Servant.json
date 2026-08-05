@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "68ac061a-e4a3-46df-9169-62f6a8481584",
+  "name": "Generator Servant",
+  "faces": [
+    {
+      "name": "Generator Servant",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "{T}, Sacrifice this creature: Add {C}{C}. If that mana is spent on a creature spell, it gains haste until end of turn. (That creature can attack and {T} as soon as it comes under your control.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Sacrifice this creature: Add {C}{C}. If that mana is spent on a creature spell, it gains haste until end of turn. (That creature can attack and {T} as soon as it comes under your control.)",
+          "cost": "{T}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{c}",
+                "{c}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste",
+              "condition": [
+                {
+                  "condition_text": "that mana is spent on a creature spell"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7417bc73-a75a-4c3a-88d2-17b43e225c2c",
+  "name": "Celestial Mantle",
+  "faces": [
+    {
+      "name": "Celestial Mantle",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +3/+3.\nWhenever enchanted creature deals combat damage to a player, double its controller's life total.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature deals combat damage to a player, double its controller's life total.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "double its controller's life total"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +3/+3.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 3,
+              "toughness_delta": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

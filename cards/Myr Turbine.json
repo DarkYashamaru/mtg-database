@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b9043dcd-234f-4144-80db-1cb903c009ea",
+  "name": "Myr Turbine",
+  "faces": [
+    {
+      "name": "Myr Turbine",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Create a 1/1 colorless Myr artifact creature token.\n{T}, Tap five untapped Myr you control: Search your library for a Myr creature card, put it onto the battlefield, then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Create a 1/1 colorless Myr artifact creature token.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Myr artifact creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Myr",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Tap five untapped Myr you control: Search your library for a Myr creature card, put it onto the battlefield, then shuffle.",
+          "cost": "{T}, Tap five untapped Myr you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a myr creature card, put it onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

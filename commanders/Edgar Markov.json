@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "oracle_id": "41e2790d-49f5-4e98-b8d9-04179f47f13a",
+  "name": "Edgar Markov",
+  "faces": [
+    {
+      "name": "Edgar Markov",
+      "type_line": "Legendary Creature \u2014 Vampire Knight",
+      "oracle_text": "Eminence \u2014 Whenever you cast another Vampire spell, if Edgar is in the command zone or on the battlefield, create a 1/1 black Vampire creature token.\nFirst strike, haste\nWhenever Edgar attacks, put a +1/+1 counter on each Vampire you control.",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast another Vampire spell, if Edgar is in the command zone or on the battlefield, create a 1/1 black Vampire creature token.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "exclude_source_card": true
+            },
+            {
+              "spell_subtypes_all": [
+                "Vampire"
+              ]
+            },
+            {
+              "subject": "self",
+              "zones_any": [
+                "command_zone",
+                "battlefield"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 black Vampire creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Vampire"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Edgar attacks, put a +1/+1 counter on each Vampire you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Vampire"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

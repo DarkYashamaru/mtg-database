@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "acff6e5c-7f25-4ae1-8672-8672450ad844",
+  "name": "Brightfield Glider",
+  "faces": [
+    {
+      "name": "Brightfield Glider",
+      "type_line": "Creature \u2014 Possum Mount",
+      "oracle_text": "Vigilance\nWhenever this creature attacks while saddled, it gets +1/+2 and gains flying until end of turn.\nSaddle 3 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks while saddled, it gets +1/+2 and gains flying until end of turn.",
+          "trigger": {
+            "type": "attacks_while_saddled",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "it_gets_12_and",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Saddle 3 (Tap any number of other creatures you control with total power 3 or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.)",
+          "cost": "Saddle 3 (Tap any number of other creatures you control with total power 3 or more",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Mount becomes saddled until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

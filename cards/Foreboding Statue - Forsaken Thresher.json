@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d8c0f103-4658-4f4f-8429-c06bdd017846",
+  "name": "Foreboding Statue // Forsaken Thresher",
+  "faces": [
+    {
+      "name": "Foreboding Statue",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "{T}: Add one mana of any color. Put an omen counter on this creature.\nAt the beginning of your end step, if there are three or more omen counters on this creature, untap it, then transform it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if there are three or more omen counters on this creature, untap it, then transform it.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "there are three or more omen counters on this creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "it"
+            },
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color. Put an omen counter on this creature.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put an omen counter on this creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Forsaken Thresher",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "At the beginning of your first main phase, add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your first main phase, add one mana of any color.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

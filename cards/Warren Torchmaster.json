@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "20c3c8ab-e996-462e-a1f6-87421fc3ee55",
+  "name": "Warren Torchmaster",
+  "faces": [
+    {
+      "name": "Warren Torchmaster",
+      "type_line": "Creature \u2014 Goblin Warrior",
+      "oracle_text": "At the beginning of combat on your turn, you may blight 1. When you do, target creature gains haste until end of turn. (To blight 1, put a -1/-1 counter on a creature you control.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, you may blight 1. When you do, target creature gains haste until end of turn. (To blight 1, put a -1/-1 counter on a creature you control.)",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may blight 1"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "haste",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

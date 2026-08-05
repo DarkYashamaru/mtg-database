@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93cf50cf-0ecc-4d3e-abea-778c1ebacec4",
+  "name": "Massacre Wurm",
+  "faces": [
+    {
+      "name": "Massacre Wurm",
+      "type_line": "Creature \u2014 Phyrexian Wurm",
+      "oracle_text": "When this creature enters, creatures your opponents control get -2/-2 until end of turn.\nWhenever a creature an opponent controls dies, that player loses 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, creatures your opponents control get -2/-2 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "creatures your opponents control get -2/-2 until end of turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature an opponent controls dies, that player loses 2 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_an_opponent_controls"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player loses 2 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

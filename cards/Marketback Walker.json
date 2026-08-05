@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0405e0a9-6d02-4691-bdb8-59c72b824dab",
+  "name": "Marketback Walker",
+  "faces": [
+    {
+      "name": "Marketback Walker",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "This creature enters with X +1/+1 counters on it.\n{4}: Put a +1/+1 counter on this creature.\nWhen this creature dies, draw a card for each +1/+1 counter on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, draw a card for each +1/+1 counter on it.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "11_counter_on_it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}: Put a +1/+1 counter on this creature.",
+          "cost": "{4}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

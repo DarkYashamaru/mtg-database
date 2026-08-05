@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2951671b-ac01-4e65-857f-0b7b7c7478ce",
+  "name": "Reaver Titan",
+  "faces": [
+    {
+      "name": "Reaver Titan",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Void Shields \u2014 Protection from mana value 3 or less\nGatling Blaster \u2014 Whenever this Vehicle attacks, it deals 5 damage to each opponent.\nCrew 4 (Tap any number of creatures you control with total power 4 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle attacks, it deals 5 damage to each opponent.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 5
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 4 (Tap any number of creatures you control with total power 4 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 4,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Void Shields \u2014 Protection from mana value 3 or less",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Void Shields \u2014 Protection from mana value 3 or less"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4fad3816-41af-4fa4-85b4-ba37614ec848",
+  "name": "Hollow Scavenger // Bakery Raid",
+  "faces": [
+    {
+      "name": "Bakery Raid",
+      "type_line": "Sorcery \u2014 Adventure",
+      "oracle_text": "Create a Food token. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Create a Food token. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hollow Scavenger",
+      "type_line": "Creature \u2014 Wolf",
+      "oracle_text": "{1}, Sacrifice a Food: This creature gets +2/+2 until end of turn. Activate only once each turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice a Food: This creature gets +2/+2 until end of turn. Activate only once each turn.",
+          "cost": "{1}, Sacrifice a Food",
+          "condition": [
+            {
+              "condition_text": "once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

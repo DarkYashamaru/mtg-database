@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f707dfb5-dfa9-471b-ac29-5435c30069cc",
+  "name": "Hero's Heirloom",
+  "faces": [
+    {
+      "name": "Hero's Heirloom",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +2/+1.\nAs long as equipped creature is legendary, it has trample and haste.\nEquip {2}",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +2/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 2,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as equipped creature is legendary, it has trample and haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": "equipped_creature",
+              "keywords": [
+                "trample",
+                "haste"
+              ],
+              "condition": [
+                {
+                  "subject": "equipped_creature",
+                  "is_legendary": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

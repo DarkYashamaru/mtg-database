@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "07142ee9-dc2c-4b33-ad20-2f5285225e86",
+  "name": "Nexus of Becoming",
+  "faces": [
+    {
+      "name": "Nexus of Becoming",
+      "type_line": "Artifact",
+      "oracle_text": "At the beginning of combat on your turn, draw a card. Then you may exile an artifact or creature card from your hand. If you do, create a token that's a copy of the exiled card, except it's a 3/3 Golem artifact creature in addition to its other types.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, draw a card. Then you may exile an artifact or creature card from your hand. If you do, create a token that's a copy of the exiled card, except it's a 3/3 Golem artifact creature in addition to its other types.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may exile an artifact or creature card from your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of the exiled card, except it's a 3/3 golem artifact creature in addition to its other types",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

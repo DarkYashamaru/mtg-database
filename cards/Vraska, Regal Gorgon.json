@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7616e834-4852-40c8-9de6-d89f96119f12",
+  "name": "Vraska, Regal Gorgon",
+  "faces": [
+    {
+      "name": "Vraska, Regal Gorgon",
+      "type_line": "Legendary Planeswalker \u2014 Vraska",
+      "oracle_text": "+2: Put a +1/+1 counter on up to one target creature. That creature gains menace until end of turn.\n\u22123: Destroy target creature.\n\u221210: For each creature card in your graveyard, put a +1/+1 counter on each creature you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+2: Put a +1/+1 counter on up to one target creature. That creature gains menace until end of turn.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "up_to_one_target_creature",
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature",
+              "keyword": "menace"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Destroy target creature.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u221210: For each creature card in your graveyard, put a +1/+1 counter on each creature you control.",
+          "cost": "\u221210",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "For each creature card in your graveyard, put a +1/+1 counter on each creature you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

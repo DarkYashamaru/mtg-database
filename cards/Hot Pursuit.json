@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "00bf9859-d5bf-455a-a4be-965ea4250c7e",
+  "name": "Hot Pursuit",
+  "faces": [
+    {
+      "name": "Hot Pursuit",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, suspect target creature an opponent controls. As long as this enchantment remains on the battlefield, that creature is also goaded.\nAt the beginning of combat on your turn, if two or more players have lost the game, gain control of all goaded and/or suspected creatures until end of turn. Untap them. They gain haste until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, suspect target creature an opponent controls. As long as this enchantment remains on the battlefield, that creature is also goaded.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "suspect target creature an opponent controls"
+            },
+            {
+              "action": "custom_effect",
+              "text": "As long as this enchantment remains on the battlefield, that creature is also goaded"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, if two or more players have lost the game, gain control of all goaded and/or suspected creatures until end of turn. Untap them. They gain haste until end of turn.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "two or more players have lost the game"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "gain control of all goaded and/or suspected creatures until end of turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Untap them"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "they",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

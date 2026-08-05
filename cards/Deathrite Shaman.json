@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "22f1a4a4-c423-4d1c-8775-0ed604a9fa51",
+  "name": "Deathrite Shaman",
+  "faces": [
+    {
+      "name": "Deathrite Shaman",
+      "type_line": "Creature \u2014 Elf Shaman",
+      "oracle_text": "{T}: Exile target land card from a graveyard. Add one mana of any color.\n{B}, {T}: Exile target instant or sorcery card from a graveyard. Each opponent loses 2 life.\n{G}, {T}: Exile target creature card from a graveyard. You gain 2 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Exile target land card from a graveyard. Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target land card from a graveyard"
+            },
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{B}, {T}: Exile target instant or sorcery card from a graveyard. Each opponent loses 2 life.",
+          "cost": "{B}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target instant or sorcery card from a graveyard"
+            },
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "{G}, {T}: Exile target creature card from a graveyard. You gain 2 life.",
+          "cost": "{G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target creature card from a graveyard"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

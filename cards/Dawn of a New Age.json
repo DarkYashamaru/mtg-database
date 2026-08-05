@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "37df5ade-6a21-4b0c-89f8-e2e917589a8d",
+  "name": "Dawn of a New Age",
+  "faces": [
+    {
+      "name": "Dawn of a New Age",
+      "type_line": "Enchantment",
+      "oracle_text": "This enchantment enters with a hope counter on it for each creature you control.\nAt the beginning of your end step, remove a hope counter from this enchantment. If you do, draw a card. Then if this enchantment has no hope counters on it, sacrifice it and you gain 4 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, remove a hope counter from this enchantment. If you do, draw a card. Then if this enchantment has no hope counters on it, sacrifice it and you gain 4 life.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove a hope counter from this enchantment"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "this enchantment has no hope counters on it"
+                }
+              ]
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This enchantment enters with a hope counter on it for each creature you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This enchantment enters with a hope counter on it for each creature you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

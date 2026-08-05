@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "decfde5e-ea53-4b15-8f69-51da7ef39d15",
+  "name": "Skateboard",
+  "faces": [
+    {
+      "name": "Skateboard",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, tap target permanent.\nEquipped creature gets +1/+0 and has haste.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, tap target permanent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap target permanent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +1/+0 and has haste.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +1/+0 and has haste"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

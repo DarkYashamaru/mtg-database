@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d5fd3060-358c-4a5b-aee9-1afcf6c506ba",
+  "name": "Raiders' Wake",
+  "faces": [
+    {
+      "name": "Raiders' Wake",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever an opponent discards a card, that player loses 2 life.\nRaid \u2014 At the beginning of your end step, if you attacked this turn, target opponent discards a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent discards a card, that player loses 2 life.",
+          "trigger": {
+            "type": "discard_card",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player loses 2 life"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if you attacked this turn, target opponent discards a card.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you attacked this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent discards a card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

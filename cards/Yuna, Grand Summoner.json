@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ba72d4a9-6f36-4796-bd71-2342fa9b4a30",
+  "name": "Yuna, Grand Summoner",
+  "faces": [
+    {
+      "name": "Yuna, Grand Summoner",
+      "type_line": "Legendary Creature \u2014 Human Cleric",
+      "oracle_text": "Grand Summon \u2014 {T}: Add one mana of any color. When you next cast a creature spell this turn, that creature enters with two additional +1/+1 counters on it.\nWhenever another permanent you control is put into a graveyard from the battlefield, if it had one or more counters on it, you may put that number of +1/+1 counters on target creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another permanent you control is put into a graveyard from the battlefield, if it had one or more counters on it, you may put that number of +1/+1 counters on target creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever another permanent you control is put into a graveyard from the battlefield"
+          },
+          "condition": [
+            {
+              "condition_text": "it had one or more counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put that number of +1/+1 counters on target creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Grand Summon \u2014 {T}: Add one mana of any color. When you next cast a creature spell this turn, that creature enters with two additional +1/+1 counters on it.",
+          "cost": "Grand Summon \u2014 {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "When you next cast a creature spell this turn, that creature enters with two additional +1/+1 counters on it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

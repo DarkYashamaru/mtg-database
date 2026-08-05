@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a1841bcc-738e-4f4b-a88f-571a93c59ad7",
+  "name": "Zephyr Scribe",
+  "faces": [
+    {
+      "name": "Zephyr Scribe",
+      "type_line": "Creature \u2014 Human Monk",
+      "oracle_text": "{U}, {T}: Draw a card, then discard a card.\nWhenever you cast a noncreature spell, untap this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, untap this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{U}, {T}: Draw a card, then discard a card.",
+          "cost": "{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "39b67a4d-6a87-41f0-a86f-b66671ccc20d",
+  "name": "The Reaper, King No More",
+  "faces": [
+    {
+      "name": "The Reaper, King No More",
+      "type_line": "Legendary Artifact Creature \u2014 Scarecrow",
+      "oracle_text": "When The Reaper enters, put a -1/-1 counter on each of up to two target creatures.\nWhenever a creature an opponent controls with a -1/-1 counter on it dies, you may put that card onto the battlefield under your control. Do this only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When The Reaper enters, put a -1/-1 counter on each of up to two target creatures.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a -1/-1 counter on each of up to two target creatures"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature an opponent controls with a -1/-1 counter on it dies, you may put that card onto the battlefield under your control. Do this only once each turn.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_an_opponent_controls_with_a__1_1_counter_on_it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put that card onto the battlefield under your control"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_uses": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

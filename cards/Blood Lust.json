@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "55a253f9-f44d-4898-af83-fea68b7b279d",
+  "name": "Blood Lust",
+  "faces": [
+    {
+      "name": "Blood Lust",
+      "type_line": "Instant",
+      "oracle_text": "If target creature has toughness 5 or greater, it gets +4/-4 until end of turn. Otherwise, it gets +4/-X until end of turn, where X is its toughness minus 1.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If target creature has toughness 5 or greater, it gets +4/-4 until end of turn. Otherwise, it gets +4/-X until end of turn, where X is its toughness minus 1.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 4,
+              "toughness_delta": -4,
+              "condition": [
+                {
+                  "condition_text": "target creature has toughness 5 or greater"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "it gets +4/-x until end of turn, where x is its toughness minus 1",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

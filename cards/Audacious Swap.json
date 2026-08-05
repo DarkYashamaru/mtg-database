@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "40b0b93d-4075-42d6-bcd8-b2f9910cc7d2",
+  "name": "Audacious Swap",
+  "faces": [
+    {
+      "name": "Audacious Swap",
+      "type_line": "Instant",
+      "oracle_text": "Casualty 2 (As you cast this spell, you may sacrifice a creature with power 2 or greater. When you do, copy this spell and you may choose a new target for the copy.)\nThe owner of target nonenchantment permanent shuffles it into their library, then exiles the top card of their library. If it's a land card, they put it onto the battlefield. Otherwise, they may cast it without paying its mana cost.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Casualty 2 (As you cast this spell, you may sacrifice a creature with power 2 or greater. When you do, copy this spell and you may choose a new target for the copy.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Casualty 2"
+            }
+          ]
+        },
+        {
+          "raw_text": "The owner of target nonenchantment permanent shuffles it into their library, then exiles the top card of their library. If it's a land card, they put it onto the battlefield. Otherwise, they may cast it without paying its mana cost.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "the owner of target nonenchantment permanent shuffles it into their library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exiles the top card of their library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they put it onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "they may cast it without paying its mana cost",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

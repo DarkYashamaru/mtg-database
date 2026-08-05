@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ba5982a9-e8c1-4e7c-9a73-c4caad0f7336",
+  "name": "Earthrumbler",
+  "faces": [
+    {
+      "name": "Earthrumbler",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Vigilance, trample\nExile an artifact or creature card from your graveyard: This Vehicle becomes an artifact creature until end of turn.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Exile an artifact or creature card from your graveyard: This Vehicle becomes an artifact creature until end of turn.",
+          "cost": "Exile an artifact or creature card from your graveyard",
+          "condition": [],
+          "effects": []
+        },
+        {
+          "raw_text": "Crew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

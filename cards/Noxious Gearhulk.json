@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a77b5be2-f361-4135-ba25-670a74d268ac",
+  "name": "Noxious Gearhulk",
+  "faces": [
+    {
+      "name": "Noxious Gearhulk",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "Menace\nWhen this creature enters, you may destroy another target creature. If a creature is destroyed this way, you gain life equal to its toughness.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may destroy another target creature. If a creature is destroyed this way, you gain life equal to its toughness.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may destroy another target creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you gain life equal to its toughness",
+              "condition": [
+                {
+                  "condition_text": "a creature is destroyed this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

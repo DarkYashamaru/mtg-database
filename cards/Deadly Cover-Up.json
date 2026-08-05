@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "04e2afbe-0c08-42bc-93e6-662066a958bf",
+  "name": "Deadly Cover-Up",
+  "faces": [
+    {
+      "name": "Deadly Cover-Up",
+      "type_line": "Sorcery",
+      "oracle_text": "As an additional cost to cast this spell, you may collect evidence 6.\nDestroy all creatures. If evidence was collected, exile a card from an opponent's graveyard. Then search its owner's graveyard, hand, and library for any number of cards with that name and exile them. That player shuffles, then draws a card for each card exiled from their hand this way.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast this spell, you may collect evidence 6.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As an additional cost to cast this spell, you may collect evidence 6"
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy all creatures. If evidence was collected, exile a card from an opponent's graveyard. Then search its owner's graveyard, hand, and library for any number of cards with that name and exile them. That player shuffles, then draws a card for each card exiled from their hand this way.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "all_creatures"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile a card from an opponent's graveyard",
+              "condition": [
+                {
+                  "condition_text": "evidence was collected"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then search its owner's graveyard, hand, and library for any number of cards with that name and exile them"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "that_player"
+            },
+            {
+              "action": "custom_effect",
+              "text": "draws a card for each card exiled from their hand this way"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

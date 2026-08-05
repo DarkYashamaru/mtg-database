@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0b65050d-a9cd-4b6c-9114-af89bfa6682f",
+  "name": "Simic Cluestone",
+  "faces": [
+    {
+      "name": "Simic Cluestone",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {G} or {U}.\n{G}{U}, {T}, Sacrifice this artifact: Draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G} or {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}",
+                "{u}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{G}{U}, {T}, Sacrifice this artifact: Draw a card.",
+          "cost": "{G}{U}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

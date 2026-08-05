@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b46351cf-73c7-493c-b8a7-5d7bedc8b205",
+  "name": "Ambulatory Edifice",
+  "faces": [
+    {
+      "name": "Ambulatory Edifice",
+      "type_line": "Artifact Creature \u2014 Phyrexian Construct",
+      "oracle_text": "When this creature enters, you may pay 2 life. When you do, target creature gets -1/-1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may pay 2 life. When you do, target creature gets -1/-1 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay 2 life"
+            },
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -1,
+              "toughness_delta": -1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0239b661-80be-4b52-b3b7-fca229192b58",
+  "name": "Excavating Anurid",
+  "faces": [
+    {
+      "name": "Excavating Anurid",
+      "type_line": "Creature \u2014 Frog Beast",
+      "oracle_text": "When this creature enters, you may sacrifice a land. If you do, draw a card.\nThreshold \u2014 As long as there are seven or more cards in your graveyard, this creature gets +1/+1 and has vigilance.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may sacrifice a land. If you do, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_land",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Threshold \u2014 As long as there are seven or more cards in your graveyard, this creature gets +1/+1 and has vigilance.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as there are seven or more cards in your graveyard, this creature gets +1/+1 and has vigilance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

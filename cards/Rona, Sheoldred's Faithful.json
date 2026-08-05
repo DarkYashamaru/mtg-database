@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52e92296-7af9-4e68-8045-40b6d6b73910",
+  "name": "Rona, Sheoldred's Faithful",
+  "faces": [
+    {
+      "name": "Rona, Sheoldred's Faithful",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Whenever you cast an instant or sorcery spell, each opponent loses 1 life.\nYou may cast this card from your graveyard by discarding two cards in addition to paying its other costs.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, each opponent loses 1 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may cast this card from your graveyard by discarding two cards in addition to paying its other costs.",
+          "effects": [
+            {
+              "action": "cast_from_graveyard",
+              "object": "self",
+              "additional_cost": {
+                "action": "discard_cards",
+                "amount": 2
+              },
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

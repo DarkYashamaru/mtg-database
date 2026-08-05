@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dcbf8d72-3367-43e1-9a71-e674e0ed52d9",
+  "name": "Taj-Nar Swordsmith",
+  "faces": [
+    {
+      "name": "Taj-Nar Swordsmith",
+      "type_line": "Creature \u2014 Cat Soldier",
+      "oracle_text": "When this creature enters, you may pay {X}. If you do, search your library for an Equipment card with mana value X or less, put that card onto the battlefield, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may pay {X}. If you do, search your library for an Equipment card with mana value X or less, put that card onto the battlefield, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{x}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "search your library for an equipment card with mana value x or less, put that card onto the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

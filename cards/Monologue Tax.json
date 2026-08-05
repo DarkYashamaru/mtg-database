@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ace8e88e-ca6a-4bdf-8c6d-1b914fc00259",
+  "name": "Monologue Tax",
+  "faces": [
+    {
+      "name": "Monologue Tax",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever an opponent casts their second spell each turn, you create a Treasure token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent casts their second spell each turn, you create a Treasure token.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "an_opponent"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

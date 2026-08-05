@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8f167e2f-7b89-4ae2-8332-7c978f71522e",
+  "name": "Ventifact Bottle",
+  "faces": [
+    {
+      "name": "Ventifact Bottle",
+      "type_line": "Artifact",
+      "oracle_text": "{X}{1}, {T}: Put X charge counters on this artifact. Activate only as a sorcery.\nAt the beginning of your first main phase, if this artifact has a charge counter on it, tap it and remove all charge counters from it. Add {C} for each charge counter removed this way.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your first main phase, if this artifact has a charge counter on it, tap it and remove all charge counters from it. Add {C} for each charge counter removed this way.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [
+            {
+              "condition_text": "this artifact has a charge counter on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap it and remove all charge counters from it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Add {C} for each charge counter removed this way"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{X}{1}, {T}: Put X charge counters on this artifact. Activate only as a sorcery.",
+          "cost": "{X}{1}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put X charge counters on this artifact"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

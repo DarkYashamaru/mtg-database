@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b8a0b967-3b5b-46f5-830b-5c8f1037784a",
+  "name": "Yuma, Proud Protector",
+  "faces": [
+    {
+      "name": "Yuma, Proud Protector",
+      "type_line": "Legendary Creature \u2014 Human Ranger",
+      "oracle_text": "This spell costs {1} less to cast for each land card in your graveyard.\nWhenever Yuma enters or attacks, you may sacrifice a land. If you do, draw a card.\nWhenever a Desert card is put into your graveyard from anywhere, create a 4/2 green Plant Warrior creature token with reach.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Yuma enters or attacks, you may sacrifice a land. If you do, draw a card.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_land",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a Desert card is put into your graveyard from anywhere, create a 4/2 green Plant Warrior creature token with reach.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a Desert card is put into your graveyard from anywhere"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/2 green Plant Warrior creature token with reach",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "4/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Plant",
+                  "Warrior"
+                ],
+                "keywords": [
+                  "reach"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {1} less to cast for each land card in your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {1} less to cast for each land card in your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

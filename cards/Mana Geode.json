@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0844f4e6-2b98-4d09-a5c5-92f0a3b6a517",
+  "name": "Mana Geode",
+  "faces": [
+    {
+      "name": "Mana Geode",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, scry 1.\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, scry 1.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fef452ee-9018-4175-bb79-476544e48433",
+  "name": "Rasputin Dreamweaver",
+  "faces": [
+    {
+      "name": "Rasputin Dreamweaver",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Rasputin enters with seven dream counters on it.\nRemove a dream counter from Rasputin: Add {C}.\nRemove a dream counter from Rasputin: Prevent the next 1 damage that would be dealt to Rasputin this turn.\nAt the beginning of your upkeep, if Rasputin started the turn untapped, put a dream counter on it.\nRasputin can't have more than seven dream counters on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if Rasputin started the turn untapped, put a dream counter on it.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "Rasputin started the turn untapped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a dream counter on it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove a dream counter from Rasputin: Add {C}.",
+          "cost": "Remove a dream counter from Rasputin",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "Remove a dream counter from Rasputin: Prevent the next 1 damage that would be dealt to Rasputin this turn.",
+          "cost": "Remove a dream counter from Rasputin",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Prevent the next 1 damage that would be dealt to Rasputin this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Rasputin enters with seven dream counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Rasputin enters with seven dream counters on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "Rasputin can't have more than seven dream counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Rasputin can't have more than seven dream counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

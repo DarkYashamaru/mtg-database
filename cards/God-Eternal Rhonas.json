@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fc4f2cdb-966c-4576-8b37-b3d138f5710e",
+  "name": "God-Eternal Rhonas",
+  "faces": [
+    {
+      "name": "God-Eternal Rhonas",
+      "type_line": "Legendary Creature \u2014 Zombie God",
+      "oracle_text": "Deathtouch\nWhen God-Eternal Rhonas enters, double the power of each other creature you control until end of turn. Those creatures gain vigilance until end of turn.\nWhen God-Eternal Rhonas dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When God-Eternal Rhonas enters, double the power of each other creature you control until end of turn. Those creatures gain vigilance until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "double the power of each other creature you control until end of turn"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "those_creatures",
+              "keyword": "vigilance"
+            }
+          ]
+        },
+        {
+          "raw_text": "When God-Eternal Rhonas dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.",
+          "trigger": {
+            "type": "custom",
+            "text": "When God-Eternal Rhonas dies or is put into exile from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put it into its owner's library third from the top"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

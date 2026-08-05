@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4567a42a-aa1c-4ca2-b5e2-b09acac3f276",
+  "name": "Braids's Frightful Return",
+  "faces": [
+    {
+      "name": "Braids's Frightful Return",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)\nI \u2014 You may sacrifice a creature. If you do, each opponent discards a card.\nII \u2014 Return target creature card from your graveyard to your hand.\nIII \u2014 Target opponent may sacrifice a nonland, nontoken permanent of their choice. If they don't, they lose 2 life and you draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 You may sacrifice a creature. If you do, each opponent discards a card.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature",
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "target": "each_opponent",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Return target creature card from your graveyard to your hand.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature_card_in_your_graveyard"
+              },
+              "destination_zone": "hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Target opponent may sacrifice a nonland, nontoken permanent of their choice. If they don't, they lose 2 life and you draw a card.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target opponent may sacrifice a nonland, nontoken permanent of their choice"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they lose 2 life",
+              "condition": [
+                {
+                  "condition_text": "they don't"
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Read ahead"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

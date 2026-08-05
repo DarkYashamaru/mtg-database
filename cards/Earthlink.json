@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c6e4a5c6-3c9b-49d5-8288-1be46be657dc",
+  "name": "Earthlink",
+  "faces": [
+    {
+      "name": "Earthlink",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, sacrifice this enchantment unless you pay {2}.\nWhenever a creature dies, that creature's controller sacrifices a land of their choice.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice this enchantment unless you pay {2}.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment_unless_you_pay_2"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature dies, that creature's controller sacrifices a land of their choice.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that creature's controller sacrifices a land of their choice"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

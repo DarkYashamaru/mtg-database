@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a39d541e-86c1-4595-a2e9-f107def5bbc6",
+  "name": "Funeral Room // Awakening Hall",
+  "faces": [
+    {
+      "name": "Awakening Hall",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "When you unlock this door, return all creature cards from your graveyard to the battlefield.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you unlock this door, return all creature cards from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "unlock_door",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return all creature cards from your graveyard to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Funeral Room",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

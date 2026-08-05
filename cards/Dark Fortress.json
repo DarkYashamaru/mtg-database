@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "40760bfa-a423-487c-ba29-043b2d00c736",
+  "name": "Dark Fortress",
+  "faces": [
+    {
+      "name": "Dark Fortress",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {B} or {R}. Activate only if this land entered this turn or if you control a basic land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {B} or {R}. Activate only if this land entered this turn or if you control a basic land.",
+          "cost": "{T}",
+          "condition": [
+            {
+              "condition_text": "this land entered this turn or if you control a basic land"
+            }
+          ],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}",
+                "{r}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

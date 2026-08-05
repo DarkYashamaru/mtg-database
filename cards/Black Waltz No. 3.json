@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9c84c681-40c1-4ff3-86e6-48b4ab7491e5",
+  "name": "Black Waltz No. 3",
+  "faces": [
+    {
+      "name": "Black Waltz No. 3",
+      "type_line": "Legendary Creature \u2014 Wizard",
+      "oracle_text": "Flying, deathtouch\nWhenever you cast a noncreature spell, Black Waltz No. 3 deals 2 damage to each opponent.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, Black Waltz No. 3 deals 2 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Black Waltz No"
+            },
+            {
+              "action": "deal_damage",
+              "source": "3",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

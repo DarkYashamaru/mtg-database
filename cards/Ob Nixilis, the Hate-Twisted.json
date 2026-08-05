@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "88cd12e5-ca89-4176-96fd-320fe2ccd087",
+  "name": "Ob Nixilis, the Hate-Twisted",
+  "faces": [
+    {
+      "name": "Ob Nixilis, the Hate-Twisted",
+      "type_line": "Legendary Planeswalker \u2014 Nixilis",
+      "oracle_text": "Whenever an opponent draws a card, Ob Nixilis deals 1 damage to that player.\n\u22122: Destroy target creature. Its controller draws two cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent draws a card, Ob Nixilis deals 1 damage to that player.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ob Nixilis deals 1 damage to that player"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "\u22122: Destroy target creature. Its controller draws two cards.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Its controller draws two cards"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

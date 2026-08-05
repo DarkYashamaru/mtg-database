@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8d1a367a-542e-4b94-b466-c922c5fb717b",
+  "name": "Blanchwood Prowler",
+  "faces": [
+    {
+      "name": "Blanchwood Prowler",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "When this creature enters, mill three cards. You may put a land card from among the cards milled this way into your hand. If you don't, put a +1/+1 counter on this creature. (To mill a card, put the top card of your library into your graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, mill three cards. You may put a land card from among the cards milled this way into your hand. If you don't, put a +1/+1 counter on this creature. (To mill a card, put the top card of your library into your graveyard.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put a land card from among the cards milled this way into your hand"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

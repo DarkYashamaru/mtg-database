@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "542423cb-fbfb-4a2f-9f6d-87b273a95e96",
+  "name": "Ajani, Valiant Protector",
+  "faces": [
+    {
+      "name": "Ajani, Valiant Protector",
+      "type_line": "Legendary Planeswalker \u2014 Ajani",
+      "oracle_text": "+2: Put two +1/+1 counters on up to one target creature.\n+1: Reveal cards from the top of your library until you reveal a creature card. Put that card into your hand and the rest on the bottom of your library in a random order.\n\u221211: Put X +1/+1 counters on target creature, where X is your life total. That creature gains trample until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+2: Put two +1/+1 counters on up to one target creature.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "up_to_one_target_creature",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "+1: Reveal cards from the top of your library until you reveal a creature card. Put that card into your hand and the rest on the bottom of your library in a random order.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Reveal cards from the top of your library until you reveal a creature card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put that card into your hand and the rest on the bottom of your library in a random order"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u221211: Put X +1/+1 counters on target creature, where X is your life total. That creature gains trample until end of turn.",
+          "cost": "\u221211",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature_where_x_is_you_control_life_total",
+              "amount": "X"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "77b24f10-93af-44b9-af78-3a2f5ab32251",
+  "name": "Shakedown Heavy",
+  "faces": [
+    {
+      "name": "Shakedown Heavy",
+      "type_line": "Creature \u2014 Ogre Warrior",
+      "oracle_text": "Menace\nWhenever this creature attacks, defending player may have you draw a card. If they do, untap this creature and remove it from combat.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, defending player may have you draw a card. If they do, untap this creature and remove it from combat.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "defending player may have you draw a card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap this creature and remove it from combat",
+              "condition": [
+                {
+                  "condition_text": "they do"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

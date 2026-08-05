@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f6cf359a-91cb-4b3c-8837-be53e4ed9c93",
+  "name": "Teval, Arbiter of Virtue",
+  "faces": [
+    {
+      "name": "Teval, Arbiter of Virtue",
+      "type_line": "Legendary Creature \u2014 Spirit Dragon",
+      "oracle_text": "Flying, lifelink\nSpells you cast have delve. (Each card you exile from your graveyard while casting those spells pays for {1}.)\nWhenever you cast a spell, you lose life equal to its mana value.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, you lose life equal to its mana value.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you lose life equal to its mana value"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Spells you cast have delve. (Each card you exile from your graveyard while casting those spells pays for {1}.)",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "spells_you_cast"
+              },
+              "keywords": [
+                "delve"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

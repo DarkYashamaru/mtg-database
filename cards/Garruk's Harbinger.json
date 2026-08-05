@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2dbe384b-71c4-43f9-be35-ba2894021b85",
+  "name": "Garruk's Harbinger",
+  "faces": [
+    {
+      "name": "Garruk's Harbinger",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "Hexproof from black\nWhenever this creature deals combat damage to a player or planeswalker, look at that many cards from the top of your library. You may reveal a creature card or Garruk planeswalker card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player or planeswalker, look at that many cards from the top of your library. You may reveal a creature card or Garruk planeswalker card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature deals combat damage to a player or planeswalker"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at that many cards from the top of your library"
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature",
+                  "Planeswalker"
+                ],
+                "subtypes_any": [
+                  "Card",
+                  "Garruk"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Hexproof from black",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Hexproof from black"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

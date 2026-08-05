@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3ceb23f5-abb1-4569-a1e4-1eed9a9babcf",
+  "name": "Call the Spirit Dragons",
+  "faces": [
+    {
+      "name": "Call the Spirit Dragons",
+      "type_line": "Enchantment",
+      "oracle_text": "Dragons you control have indestructible.\nAt the beginning of your upkeep, for each color, put a +1/+1 counter on a Dragon you control of that color. If you put +1/+1 counters on five Dragons this way, you win the game.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, for each color, put a +1/+1 counter on a Dragon you control of that color. If you put +1/+1 counters on five Dragons this way, you win the game.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each color, put a +1/+1 counter on a Dragon you control of that color"
+            },
+            {
+              "action": "win_the_game",
+              "condition": [
+                {
+                  "condition_text": "you put +1/+1 counters on five dragons this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Dragons you control have indestructible.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Dragon"
+                ]
+              },
+              "keywords": [
+                "indestructible"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

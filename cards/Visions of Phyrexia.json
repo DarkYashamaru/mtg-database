@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "634b46a6-ec8b-41f0-8eb6-1e9144035847",
+  "name": "Visions of Phyrexia",
+  "faces": [
+    {
+      "name": "Visions of Phyrexia",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, exile the top card of your library. You may play that card this turn.\nAt the beginning of your end step, if you didn't play a card from exile this turn, create a tapped Powerstone token. (It's an artifact with \"{T}: Add {C}. This mana can't be spent to cast a nonartifact spell.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, exile the top card of your library. You may play that card this turn.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if you didn't play a card from exile this turn, create a tapped Powerstone token. (It's an artifact with \"{T}: Add {C}. This mana can't be spent to cast a nonartifact spell.\")",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "you didn't play a card from exile this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "tapped Powerstone token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bfd5b48a-698e-4ade-afb0-954ba288f9a7",
+  "name": "Future Flight",
+  "faces": [
+    {
+      "name": "Future Flight",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, draw two cards.\nEnchanted creature gets +2/+0 and has flying. (It can't be blocked except by creatures with flying or reach.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, draw two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+0 and has flying. (It can't be blocked except by creatures with flying or reach.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +2/+0 and has flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

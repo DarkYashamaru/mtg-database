@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f693cf76-0919-4b89-92de-e619be006abb",
+  "name": "Loyal Gyrfalcon",
+  "faces": [
+    {
+      "name": "Loyal Gyrfalcon",
+      "type_line": "Creature \u2014 Bird",
+      "oracle_text": "Defender, flying\nWhenever you cast a white spell, this creature loses defender until end of turn.",
+      "static": [
+        {
+          "keyword": "defender"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a white spell, this creature loses defender until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "White"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature loses defender until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

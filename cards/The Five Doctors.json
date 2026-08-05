@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dbdd93d2-f2c6-43f9-93e6-2185c7df83bc",
+  "name": "The Five Doctors",
+  "faces": [
+    {
+      "name": "The Five Doctors",
+      "type_line": "Sorcery",
+      "oracle_text": "Kicker {5} (You may pay an additional {5} as you cast this spell.)\nSearch your library and/or graveyard for up to five Doctor cards, reveal them, and put them into your hand. If you search your library this way, shuffle. If this spell was kicked, put those cards onto the battlefield instead of putting them into your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {5} (You may pay an additional {5} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {5}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Search your library and/or graveyard for up to five Doctor cards, reveal them, and put them into your hand. If you search your library this way, shuffle. If this spell was kicked, put those cards onto the battlefield instead of putting them into your hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Search your library and/or graveyard for up to five Doctor cards, reveal them, and put them into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put those cards onto the battlefield instead of putting them into your hand",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9b14c20f-c4ee-42ea-99cd-099b4eb25883",
+  "name": "Sinister Concierge",
+  "faces": [
+    {
+      "name": "Sinister Concierge",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "When this creature dies, you may exile it and put three time counters on it. If you do, exile up to one target creature and put three time counters on it. Each card exiled this way that doesn't have suspend gains suspend. (For each card with suspend, its owner removes a time counter from it at the beginning of their upkeep. When the last is removed, they may cast it without paying its mana cost. Those creature spells have haste.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, you may exile it and put three time counters on it. If you do, exile up to one target creature and put three time counters on it. Each card exiled this way that doesn't have suspend gains suspend. (For each card with suspend, its owner removes a time counter from it at the beginning of their upkeep. When the last is removed, they may cast it without paying its mana cost. Those creature spells have haste.)",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile it and put three time counters on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target creature and put three time counters on it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each card exiled this way that doesn't have suspend gains suspend"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "577725ae-290f-4081-8352-3317521a096f",
+  "name": "Vanille, Cheerful l'Cie",
+  "faces": [
+    {
+      "name": "Vanille, Cheerful l'Cie",
+      "type_line": "Legendary Creature \u2014 Human Cleric",
+      "oracle_text": "When Vanille enters, mill two cards, then return a permanent card from your graveyard to your hand.\nAt the beginning of your first main phase, if you both own and control Vanille and a creature named Fang, Fearless l'Cie, you may pay {3}{B}{G}. If you do, exile them, then meld them into Ragnarok, Divine Deliverance.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Vanille enters, mill two cards, then return a permanent card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "return a permanent card from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your first main phase, if you both own and control Vanille and a creature named Fang, Fearless l'Cie, you may pay {3}{B}{G}. If you do, exile them, then meld them into Ragnarok, Divine Deliverance.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [
+            {
+              "condition_text": "you both own and control Vanille and a creature named Fang"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Fearless l'Cie, you may pay {3}{B}{G}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile them",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "meld them into ragnarok, divine deliverance",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

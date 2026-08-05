@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "56a55f45-2cc6-407d-b212-5619c98456d9",
+  "name": "Norn's Wellspring",
+  "faces": [
+    {
+      "name": "Norn's Wellspring",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a creature you control dies, scry 1 and put an oil counter on this artifact.\n{1}, {T}, Remove two oil counters from this artifact: Draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control dies, scry 1 and put an oil counter on this artifact.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "scry 1 and put an oil counter on this artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Remove two oil counters from this artifact: Draw a card.",
+          "cost": "{1}, {T}, Remove two oil counters from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

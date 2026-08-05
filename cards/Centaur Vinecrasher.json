@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "90629e9c-83c0-4eca-b4ed-d0494ded6704",
+  "name": "Centaur Vinecrasher",
+  "faces": [
+    {
+      "name": "Centaur Vinecrasher",
+      "type_line": "Creature \u2014 Plant Centaur",
+      "oracle_text": "Trample\nThis creature enters with a number of +1/+1 counters on it equal to the number of land cards in all graveyards.\nWhenever a land card is put into a graveyard from anywhere, you may pay {G}{G}. If you do, return this card from your graveyard to your hand.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land card is put into a graveyard from anywhere, you may pay {G}{G}. If you do, return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a land card is put into a graveyard from anywhere"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {G}{G}"
+            },
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with a number of +1/+1 counters on it equal to the number of land cards in all graveyards.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with a number of +1/+1 counters on it equal to the number of land cards in all graveyards"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

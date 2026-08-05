@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b5208c2c-b839-42f6-8717-ee4bbaf1385b",
+  "name": "Embermouth Sentinel",
+  "faces": [
+    {
+      "name": "Embermouth Sentinel",
+      "type_line": "Artifact Creature \u2014 Chimera",
+      "oracle_text": "When this creature enters, you may search your library for a basic land card, reveal it, then shuffle and put that card on top. If you control a Dragon, put that card onto the battlefield tapped instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a basic land card, reveal it, then shuffle and put that card on top. If you control a Dragon, put that card onto the battlefield tapped instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a basic land card, reveal it"
+            },
+            {
+              "action": "shuffle_and_move_revealed_card",
+              "object": "that_card",
+              "destination_zone": "top_of_library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card onto the battlefield tapped instead",
+              "condition": [
+                {
+                  "condition_text": "you control a dragon"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

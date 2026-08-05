@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b85e7ab2-6f57-4b65-8c16-034b342996f0",
+  "name": "Ambitious Farmhand // Seasoned Cathar",
+  "faces": [
+    {
+      "name": "Ambitious Farmhand",
+      "type_line": "Creature \u2014 Human Peasant",
+      "oracle_text": "When this creature enters, you may search your library for a basic Plains card, reveal it, put it into your hand, then shuffle.\nCoven \u2014 {1}{W}{W}: Transform this creature. Activate only if you control three or more creatures with different powers.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a basic Plains card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a basic plains card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Coven \u2014 {1}{W}{W}: Transform this creature. Activate only if you control three or more creatures with different powers.",
+          "cost": "Coven \u2014 {1}{W}{W}",
+          "condition": [
+            {
+              "condition_text": "you control three or more creatures with different powers"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Seasoned Cathar",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Lifelink",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

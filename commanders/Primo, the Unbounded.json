@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "65fb0e20-61f8-4c61-bc08-7f6f718ee9ee",
+  "name": "Primo, the Unbounded",
+  "faces": [
+    {
+      "name": "Primo, the Unbounded",
+      "type_line": "Legendary Creature \u2014 Fractal Wolf",
+      "oracle_text": "Trample\nPrimo enters with twice X +1/+1 counters on it.\nWhenever one or more creatures you control with base power 0 deal combat damage to a player, create a 0/0 green and blue Fractal creature token. Put a number of +1/+1 counters on it equal to the damage dealt.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control with base power 0 deal combat damage to a player, create a 0/0 green and blue Fractal creature token. Put a number of +1/+1 counters on it equal to the damage dealt.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control_with_base_power_0"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "0/0 green and blue Fractal creature token",
+                "colors": [
+                  "green",
+                  "blue"
+                ],
+                "power_toughness": "0/0",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Fractal"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a number of +1/+1 counters on it equal to the damage dealt"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Primo enters with twice X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Primo enters with twice X +1/+1 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

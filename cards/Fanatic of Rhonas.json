@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7973820b-fdaf-46ec-9e3e-d4c0e77b5067",
+  "name": "Fanatic of Rhonas",
+  "faces": [
+    {
+      "name": "Fanatic of Rhonas",
+      "type_line": "Creature \u2014 Snake Druid",
+      "oracle_text": "{T}: Add {G}.\nFerocious \u2014 {T}: Add {G}{G}{G}{G}. Activate only if you control a creature with power 4 or greater.\nEternalize {2}{G}{G} ({2}{G}{G}, Exile this card from your graveyard: Create a token that's a copy of it, except it's a 4/4 black Zombie Snake Druid with no mana cost. Eternalize only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "Ferocious \u2014 {T}: Add {G}{G}{G}{G}. Activate only if you control a creature with power 4 or greater.",
+          "cost": "Ferocious \u2014 {T}",
+          "condition": [
+            {
+              "condition_text": "you control a creature with power 4 or greater"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {G}{G}{G}{G}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Eternalize {2}{G}{G} ({2}{G}{G}, Exile this card from your graveyard: Create a token that's a copy of it, except it's a 4/4 black Zombie Snake Druid with no mana cost. Eternalize only as a sorcery.)",
+          "cost": "Eternalize {2}{G}{G} ({2}{G}{G}, Exile this card from your graveyard",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Create a token that's a copy of it, except it's a 4/4 black Zombie Snake Druid with no mana cost"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Eternalize only as a sorcery"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

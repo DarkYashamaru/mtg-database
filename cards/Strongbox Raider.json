@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ba5a2689-3578-4b1a-99d6-6b6d2356330e",
+  "name": "Strongbox Raider",
+  "faces": [
+    {
+      "name": "Strongbox Raider",
+      "type_line": "Creature \u2014 Orc Pirate",
+      "oracle_text": "Raid \u2014 When this creature enters, if you attacked this turn, exile the top two cards of your library. Choose one of them. Until the end of your next turn, you may play that card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if you attacked this turn, exile the top two cards of your library. Choose one of them. Until the end of your next turn, you may play that card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you attacked this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile the top two cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Choose one of them"
+            },
+            {
+              "action": "allow_play",
+              "object": "that_card",
+              "until": "end_of_your_next_turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f895ec2e-7481-4280-a5c0-38b58c440faf",
+  "name": "Frostwielder",
+  "faces": [
+    {
+      "name": "Frostwielder",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "If a creature dealt damage by this creature this turn would die, exile it instead.\n{T}: This creature deals 1 damage to any target.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: This creature deals 1 damage to any target.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If a creature dealt damage by this creature this turn would die, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "a creature dealt damage by this creature this turn would die"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

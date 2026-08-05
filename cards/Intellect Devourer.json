@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a06fa827-900b-46d4-8f48-b4e15964951a",
+  "name": "Intellect Devourer",
+  "faces": [
+    {
+      "name": "Intellect Devourer",
+      "type_line": "Creature \u2014 Horror",
+      "oracle_text": "Devour Intellect \u2014 When this creature enters, each opponent exiles a card from their hand until this creature leaves the battlefield.\nBody Thief \u2014 You may play lands and cast spells from among cards exiled with this creature. If you cast a spell this way, you may spend mana as though it were mana of any color to cast it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, each opponent exiles a card from their hand until this creature leaves the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent exiles a card from their hand until this creature leaves the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Body Thief \u2014 You may play lands and cast spells from among cards exiled with this creature. If you cast a spell this way, you may spend mana as though it were mana of any color to cast it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Body Thief \u2014 You may play lands and cast spells from among cards exiled with this creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may spend mana as though it were mana of any color to cast it",
+              "condition": [
+                {
+                  "condition_text": "you cast a spell this way"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

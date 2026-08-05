@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6ec98a34-5c04-423c-98e5-8cf3047135c1",
+  "name": "Stalking Leonin",
+  "faces": [
+    {
+      "name": "Stalking Leonin",
+      "type_line": "Creature \u2014 Cat Archer",
+      "oracle_text": "When this creature enters, secretly choose an opponent.\nReveal the player you chose: Exile target creature that's attacking you if it's controlled by the chosen player. Activate only once.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, secretly choose an opponent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "secretly choose an opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Reveal the player you chose: Exile target creature that's attacking you if it's controlled by the chosen player. Activate only once.",
+          "cost": "Reveal the player you chose",
+          "condition": [
+            {
+              "condition_text": "once"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target creature that's attacking you if it's controlled by the chosen player"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

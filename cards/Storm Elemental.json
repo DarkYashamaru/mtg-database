@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f1fee486-660e-4356-896e-671e8b675ad8",
+  "name": "Storm Elemental",
+  "faces": [
+    {
+      "name": "Storm Elemental",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "Flying\n{U}, Exile the top card of your library: Tap target creature with flying.\n{U}, Exile the top card of your library: If the exiled card is a snow land, this creature gets +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{U}, Exile the top card of your library: Tap target creature with flying.",
+          "cost": "{U}, Exile the top card of your library",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Tap target creature with flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}, Exile the top card of your library: If the exiled card is a snow land, this creature gets +1/+1 until end of turn.",
+          "cost": "{U}, Exile the top card of your library",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1,
+              "condition": [
+                {
+                  "condition_text": "the exiled card is a snow land"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

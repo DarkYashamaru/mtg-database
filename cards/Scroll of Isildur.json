@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aa9a45a5-0250-465b-962e-f2d45dea26f9",
+  "name": "Scroll of Isildur",
+  "faces": [
+    {
+      "name": "Scroll of Isildur",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Gain control of up to one target artifact for as long as you control this Saga. The Ring tempts you.\nII \u2014 Tap up to two target creatures. Put a stun counter on each of them.\nIII \u2014 Draw a card for each tapped creature target opponent controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Gain control of up to one target artifact for as long as you control this Saga. The Ring tempts you.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gain control of up to one target artifact for as long as you control this Saga"
+            },
+            {
+              "action": "ring_tempts_you"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Tap up to two target creatures. Put a stun counter on each of them.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creatures",
+              "max_targets": 2,
+              "optional_targets": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a stun counter on each of them"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Draw a card for each tapped creature target opponent controls.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "tapped_creature_target_opponent_controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

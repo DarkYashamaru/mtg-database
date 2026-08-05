@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "158db438-52ba-4c30-b7bf-d1c4f76da917",
+  "name": "Sphinx's Tutelage",
+  "faces": [
+    {
+      "name": "Sphinx's Tutelage",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you draw a card, target opponent mills two cards. If two nonland cards that share a color were milled this way, repeat this process.\n{5}{U}: Draw a card, then discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw a card, target opponent mills two cards. If two nonland cards that share a color were milled this way, repeat this process.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent mills two cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "repeat this process",
+              "condition": [
+                {
+                  "condition_text": "two nonland cards that share a color were milled this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{5}{U}: Draw a card, then discard a card.",
+          "cost": "{5}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

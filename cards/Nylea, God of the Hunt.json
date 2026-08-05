@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "43674fdf-496f-42dc-8a0a-5c42a7c7d910",
+  "name": "Nylea, God of the Hunt",
+  "faces": [
+    {
+      "name": "Nylea, God of the Hunt",
+      "type_line": "Legendary Enchantment Creature \u2014 God",
+      "oracle_text": "Indestructible\nAs long as your devotion to green is less than five, Nylea isn't a creature. (Each {G} in the mana costs of permanents you control counts toward your devotion to green.)\nOther creatures you control have trample.\n{3}{G}: Target creature gets +2/+2 until end of turn.",
+      "static": [
+        {
+          "keyword": "indestructible"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{G}: Target creature gets +2/+2 until end of turn.",
+          "cost": "{3}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As long as your devotion to green is less than five, Nylea isn't a creature. (Each {G} in the mana costs of permanents you control counts toward your devotion to green.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as your devotion to green is less than five, Nylea isn't a creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Other creatures you control have trample.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true
+              },
+              "keywords": [
+                "trample"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

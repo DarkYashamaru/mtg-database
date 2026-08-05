@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c0280d66-699f-4139-828b-a0f79ae2d20d",
+  "name": "Spider-Man 2099, Miguel O'Hara",
+  "faces": [
+    {
+      "name": "Spider-Man 2099, Miguel O'Hara",
+      "type_line": "Legendary Creature \u2014 Spider Human Hero",
+      "oracle_text": "When Spider-Man 2099 enters, return up to one target creature to its owner's hand.\nWhenever one or more creatures you control deal combat damage to a player, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Spider-Man 2099 enters, return up to one target creature to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to one target creature to its owner's hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever one or more creatures you control deal combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

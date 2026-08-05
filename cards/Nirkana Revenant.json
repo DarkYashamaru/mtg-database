@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6dff1def-5b94-40c8-a942-dea8743ab47c",
+  "name": "Nirkana Revenant",
+  "faces": [
+    {
+      "name": "Nirkana Revenant",
+      "type_line": "Creature \u2014 Vampire Shade",
+      "oracle_text": "Whenever you tap a Swamp for mana, add an additional {B}.\n{B}: This creature gets +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you tap a Swamp for mana, add an additional {B}.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you tap a Swamp for mana"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "add an additional {B}"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}: This creature gets +1/+1 until end of turn.",
+          "cost": "{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

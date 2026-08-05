@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c7530ecd-e22f-41e7-a76b-de32809901c8",
+  "name": "Gadwick, the Wizened",
+  "faces": [
+    {
+      "name": "Gadwick, the Wizened",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "When Gadwick enters, draw X cards.\nWhenever you cast a blue spell, tap target nonland permanent an opponent controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Gadwick enters, draw X cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "X"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a blue spell, tap target nonland permanent an opponent controls.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Blue"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap target nonland permanent an opponent controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

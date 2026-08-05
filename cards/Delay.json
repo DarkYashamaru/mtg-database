@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "983caa3f-7089-4e66-825d-4086a5adb9bb",
+  "name": "Delay",
+  "faces": [
+    {
+      "name": "Delay",
+      "type_line": "Instant",
+      "oracle_text": "Counter target spell. If the spell is countered this way, exile it with three time counters on it instead of putting it into its owner's graveyard. If it doesn't have suspend, it gains suspend. (At the beginning of its owner's upkeep, they remove a time counter. When the last is removed, they may play it without paying its mana cost. If it's a creature, it has haste.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Counter target spell. If the spell is countered this way, exile it with three time counters on it instead of putting it into its owner's graveyard. If it doesn't have suspend, it gains suspend. (At the beginning of its owner's upkeep, they remove a time counter. When the last is removed, they may play it without paying its mana cost. If it's a creature, it has haste.)",
+          "effects": [
+            {
+              "action": "counter_spell",
+              "target": "target_spell"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile it with three time counters on it instead of putting it into its owner's graveyard",
+              "condition": [
+                {
+                  "condition_text": "the spell is countered this way"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "it gains suspend",
+              "condition": [
+                {
+                  "condition_text": "it doesn't have suspend"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

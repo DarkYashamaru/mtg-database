@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6469c7fd-6c0f-4233-8c38-4742ddcf3c3f",
+  "name": "Soulcipher Board // Cipherbound Spirit",
+  "faces": [
+    {
+      "name": "Cipherbound Spirit",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Flying\nThis creature can block only creatures with flying.\n{3}{U}: Draw two cards, then discard a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{U}: Draw two cards, then discard a card.",
+          "cost": "{3}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can block only creatures with flying.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "block_only_creatures_with_flying"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Soulcipher Board",
+      "type_line": "Artifact",
+      "oracle_text": "This artifact enters with three omen counters on it.\n{1}{U}, {T}: Look at the top two cards of your library. Put one of them into your graveyard.\nWhenever a creature card is put into your graveyard from anywhere, remove an omen counter from this artifact. Then if it has no omen counters on it, transform it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature card is put into your graveyard from anywhere, remove an omen counter from this artifact. Then if it has no omen counters on it, transform it.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature card is put into your graveyard from anywhere"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove an omen counter from this artifact"
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "it has no omen counters on it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{U}, {T}: Look at the top two cards of your library. Put one of them into your graveyard.",
+          "cost": "{1}{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put one of them into your graveyard"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This artifact enters with three omen counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact enters with three omen counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

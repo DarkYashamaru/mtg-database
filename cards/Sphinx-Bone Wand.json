@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4b9e529c-4fbd-4944-828d-7fbc8f26c991",
+  "name": "Sphinx-Bone Wand",
+  "faces": [
+    {
+      "name": "Sphinx-Bone Wand",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever you cast an instant or sorcery spell, you may put a charge counter on this artifact. If you do, this artifact deals damage equal to the number of charge counters on it to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, you may put a charge counter on this artifact. If you do, this artifact deals damage equal to the number of charge counters on it to any target.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a charge counter on this artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this artifact deals damage equal to the number of charge counters on it to any target",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "824abca7-b5e2-4ddb-ac7d-b7d04758a3c9",
+  "name": "Gimli's Reckless Might",
+  "faces": [
+    {
+      "name": "Gimli's Reckless Might",
+      "type_line": "Enchantment",
+      "oracle_text": "Creatures you control have haste.\nFormidable \u2014 Whenever you attack, if creatures you control have total power 8 or greater, target attacking creature you control fights up to one target creature you don't control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, if creatures you control have total power 8 or greater, target attacking creature you control fights up to one target creature you don't control.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "creatures you control have total power 8 or greater"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target attacking creature you control fights up to one target creature you don't control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control have haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c5830515-9316-4b08-a990-3026ee15ffea",
+  "name": "Riddle Gate Gargoyle",
+  "faces": [
+    {
+      "name": "Riddle Gate Gargoyle",
+      "type_line": "Artifact Creature \u2014 Gargoyle",
+      "oracle_text": "Flying\nWhen this creature enters, you get {E}{E}{E} (three energy counters).\nWhenever you attack, you may pay {E}{E}. When you do, target creature you control gains lifelink until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E}{E} (three energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack, you may pay {E}{E}. When you do, target creature you control gains lifelink until end of turn.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {E}{E}"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control",
+              "keyword": "lifelink",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

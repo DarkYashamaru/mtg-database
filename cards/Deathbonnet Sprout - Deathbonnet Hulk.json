@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c92d6f26-5856-42dc-9ee5-21292d78a1fb",
+  "name": "Deathbonnet Sprout // Deathbonnet Hulk",
+  "faces": [
+    {
+      "name": "Deathbonnet Hulk",
+      "type_line": "Creature \u2014 Fungus Horror",
+      "oracle_text": "At the beginning of your upkeep, you may exile a card from a graveyard. If a creature card was exiled this way, put a +1/+1 counter on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may exile a card from a graveyard. If a creature card was exiled this way, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile a card from a graveyard"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "a creature card was exiled this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Deathbonnet Sprout",
+      "type_line": "Creature \u2014 Fungus",
+      "oracle_text": "At the beginning of your upkeep, mill a card. Then if there are three or more creature cards in your graveyard, transform this creature. (To mill a card, put the top card of your library into your graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, mill a card. Then if there are three or more creature cards in your graveyard, transform this creature. (To mill a card, put the top card of your library into your graveyard.)",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "there are three or more creature cards in your graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

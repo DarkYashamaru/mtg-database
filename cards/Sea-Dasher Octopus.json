@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0b718d21-6873-4613-ad15-660d30527fcd",
+  "name": "Sea-Dasher Octopus",
+  "faces": [
+    {
+      "name": "Sea-Dasher Octopus",
+      "type_line": "Creature \u2014 Octopus",
+      "oracle_text": "Mutate {1}{U} (If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities from under it.)\nFlash\nWhenever this creature deals combat damage to a player, draw a card.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Mutate {1}{U} (If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities from under it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Mutate {1}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

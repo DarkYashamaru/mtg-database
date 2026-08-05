@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7e7ec3d6-a84f-4cc3-93f4-4d181d41e126",
+  "name": "Final Showdown",
+  "faces": [
+    {
+      "name": "Final Showdown",
+      "type_line": "Instant",
+      "oracle_text": "Spree (Choose one or more additional costs.)\n+ {1} \u2014 All creatures lose all abilities until end of turn.\n+ {1} \u2014 Choose a creature you control. It gains indestructible until end of turn.\n+ {3}{W}{W} \u2014 Destroy all creatures.",
+      "static": [
+        {
+          "keyword": "spree"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "+ {1} \u2014 All creatures lose all abilities until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "+ {1} \u2014 All creatures lose all abilities until end of turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "+ {1} \u2014 Choose a creature you control. It gains indestructible until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "+ {1} \u2014 Choose a creature you control"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "indestructible"
+            }
+          ]
+        },
+        {
+          "raw_text": "+ {3}{W}{W} \u2014 Destroy all creatures.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "+ {3}{W}{W} \u2014 Destroy all creatures"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fae36da0-bf9c-484f-b2fe-dd8ab2effc5c",
+  "name": "Virtue of Persistence // Locthwain Scorn",
+  "faces": [
+    {
+      "name": "Locthwain Scorn",
+      "type_line": "Sorcery \u2014 Adventure",
+      "oracle_text": "Target creature gets -3/-3 until end of turn. You gain 2 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature gets -3/-3 until end of turn. You gain 2 life.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -3,
+              "toughness_delta": -3
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Virtue of Persistence",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, put target creature card from a graveyard onto the battlefield under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put target creature card from a graveyard onto the battlefield under your control.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put target creature card from a graveyard onto the battlefield under your control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

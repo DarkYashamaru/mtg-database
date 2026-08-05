@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "372a01f7-6e58-4424-9405-0ee4acbb9346",
+  "name": "Smoldering Werewolf // Erupting Dreadwolf",
+  "faces": [
+    {
+      "name": "Erupting Dreadwolf",
+      "type_line": "Creature \u2014 Eldrazi Werewolf",
+      "oracle_text": "Whenever this creature attacks, it deals 2 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it deals 2 damage to any target.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Smoldering Werewolf",
+      "type_line": "Creature \u2014 Werewolf Horror",
+      "oracle_text": "When this creature enters, it deals 1 damage to each of up to two target creatures.\n{4}{R}{R}: Transform this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, it deals 1 damage to each of up to two target creatures.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 1 damage to each of up to two target creatures"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}{R}{R}: Transform this creature.",
+          "cost": "{4}{R}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

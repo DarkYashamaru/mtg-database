@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2469c0b7-a045-4733-bf53-28f3fdbe3797",
+  "name": "Cosmic Crucible",
+  "faces": [
+    {
+      "name": "Cosmic Crucible",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your first main phase, add four mana in any combination of colors.\nWhenever you cast a noncreature spell, you may copy it. You may choose new targets for the copy. Do this only once each turn. (A copy of a permanent spell becomes a token.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your first main phase, add four mana in any combination of colors.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "add four mana in any combination of colors"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a noncreature spell, you may copy it. You may choose new targets for the copy. Do this only once each turn. (A copy of a permanent spell becomes a token.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may copy it"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_uses": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

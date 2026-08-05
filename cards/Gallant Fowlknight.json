@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4e0ba9d5-4bd6-49a0-ae00-70818738d0ba",
+  "name": "Gallant Fowlknight",
+  "faces": [
+    {
+      "name": "Gallant Fowlknight",
+      "type_line": "Creature \u2014 Kithkin Knight",
+      "oracle_text": "When this creature enters, creatures you control get +1/+0 until end of turn. Kithkin creatures you control also gain first strike until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, creatures you control get +1/+0 until end of turn. Kithkin creatures you control also gain first strike until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "kithkin_creatures_you_control_also",
+              "keyword": "first_strike"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

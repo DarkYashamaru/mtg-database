@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a0c956dc-d7de-4f11-b76f-7537fbee1731",
+  "name": "Oko, Lorwyn Liege // Oko, Shadowmoor Scion",
+  "faces": [
+    {
+      "name": "Oko, Lorwyn Liege",
+      "type_line": "Legendary Planeswalker \u2014 Oko",
+      "oracle_text": "At the beginning of your first main phase, you may pay {G}. If you do, transform Oko.\n+2: Up to one target creature gains all creature types. (This effect doesn't end.)\n+1: Target creature gets -2/-0 until your next turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your first main phase, you may pay {G}. If you do, transform Oko.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{g}",
+              "optional": true
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+2: Up to one target creature gains all creature types. (This effect doesn't end.)",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Up to one target creature gains all creature types"
+            }
+          ]
+        },
+        {
+          "raw_text": "+1: Target creature gets -2/-0 until your next turn.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature gets -2/-0 until your next turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Oko, Shadowmoor Scion",
+      "type_line": "Legendary Planeswalker \u2014 Oko",
+      "oracle_text": "At the beginning of your first main phase, you may pay {U}. If you do, transform Oko.\n\u22121: Mill three cards. You may put a permanent card from among them into your hand.\n\u22123: Create two 3/3 green Elk creature tokens.\n\u22126: Choose a creature type. You get an emblem with \"Creatures you control of the chosen type get +3/+3 and have vigilance and hexproof.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your first main phase, you may pay {U}. If you do, transform Oko.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{u}",
+              "optional": true
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "\u22121: Mill three cards. You may put a permanent card from among them into your hand.",
+          "cost": "\u22121",
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put a permanent card from among them into your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Create two 3/3 green Elk creature tokens.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "3/3 green Elk creature tokens",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elk"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: Choose a creature type. You get an emblem with \"Creatures you control of the chosen type get +3/+3 and have vigilance and hexproof.\"",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose a creature type"
+            },
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "you_get_an_emblem_with_creatures_you_control_of_the_chosen_type_get_33_and"
+              },
+              "keywords": [
+                "vigilance",
+                "hexproof"
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

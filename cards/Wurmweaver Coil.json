@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "83419229-c266-4022-8297-d1b05ec5ee20",
+  "name": "Wurmweaver Coil",
+  "faces": [
+    {
+      "name": "Wurmweaver Coil",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant green creature\nEnchanted creature gets +6/+6.\n{G}{G}{G}, Sacrifice this Aura: Create a 6/6 green Wurm creature token.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{G}{G}{G}, Sacrifice this Aura: Create a 6/6 green Wurm creature token.",
+          "cost": "{G}{G}{G}, Sacrifice this Aura",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "6/6 green Wurm creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "6/6",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Wurm"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant green creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "green_creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +6/+6.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 6,
+              "toughness_delta": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

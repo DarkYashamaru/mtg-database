@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0e676904-17c3-40f2-9b5b-eb29cacc336f",
+  "name": "Boxing Ring",
+  "faces": [
+    {
+      "name": "Boxing Ring",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a creature you control enters, it fights up to one target creature you don't control with the same mana value.\n{T}: Create a Treasure token. Activate only if you control a creature that fought this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control enters, it fights up to one target creature you don't control with the same mana value.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it fights up to one target creature you don't control with the same mana value"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Create a Treasure token. Activate only if you control a creature that fought this turn.",
+          "cost": "{T}",
+          "condition": [
+            {
+              "condition_text": "you control a creature that fought this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

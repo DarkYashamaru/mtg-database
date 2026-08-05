@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8d087fe0-d554-4d7c-ba22-32db2cf71887",
+  "name": "Primal Prayers",
+  "faces": [
+    {
+      "name": "Primal Prayers",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, you get {E}{E} (two energy counters).\nYou may cast creature spells with mana value 3 or less by paying {E} rather than paying their mana costs. If you cast a spell this way, you may cast it as though it had flash.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, you get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may cast creature spells with mana value 3 or less by paying {E} rather than paying their mana costs. If you cast a spell this way, you may cast it as though it had flash.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast creature spells with mana value 3 or less by paying {E} rather than paying their mana costs"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast it as though it had flash",
+              "condition": [
+                {
+                  "condition_text": "you cast a spell this way"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

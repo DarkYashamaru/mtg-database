@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "49f0da4a-e046-4220-b90e-e105a5f2ef00",
+  "name": "Incinerating Blast",
+  "faces": [
+    {
+      "name": "Incinerating Blast",
+      "type_line": "Sorcery",
+      "oracle_text": "Incinerating Blast deals 6 damage to target creature.\nYou may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Incinerating Blast deals 6 damage to target creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Incinerating Blast deals 6 damage to target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "You may discard a card. If you do, draw a card.",
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

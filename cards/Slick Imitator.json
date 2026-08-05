@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5482ddb1-7f7d-492a-aa3d-67c037062cc3",
+  "name": "Slick Imitator",
+  "faces": [
+    {
+      "name": "Slick Imitator",
+      "type_line": "Creature \u2014 Ooze",
+      "oracle_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)\nMax speed \u2014 {1}, Sacrifice this creature: Copy target spell you control. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Max speed \u2014 {1}, Sacrifice this creature: Copy target spell you control. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+          "cost": "Max speed \u2014 {1}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Copy target spell you control"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Start your engines! (If you have no speed, it starts at 1. It increases once on each of your turns when an opponent loses life. Max speed is 4.)",
+          "effects": [
+            {
+              "action": "start_your_engines"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

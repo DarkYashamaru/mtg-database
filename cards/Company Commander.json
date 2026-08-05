@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "53643dd7-183b-4062-b7a3-e7723d23bdb0",
+  "name": "Company Commander",
+  "faces": [
+    {
+      "name": "Company Commander",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Command Section \u2014 When this creature enters, create a number of 1/1 white Soldier creature tokens equal to the number of opponents you have.\nBring it Down! \u2014 Whenever this creature attacks, creatures you control gain deathtouch until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a number of 1/1 white Soldier creature tokens equal to the number of opponents you have.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a number of 1/1 white Soldier creature tokens equal to the number of opponents you have"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, creatures you control gain deathtouch until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "deathtouch"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

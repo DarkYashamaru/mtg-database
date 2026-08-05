@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6caafe5a-884d-49e8-a62a-7bf609f0ce53",
+  "name": "Kozilek's Return",
+  "faces": [
+    {
+      "name": "Kozilek's Return",
+      "type_line": "Instant",
+      "oracle_text": "Devoid (This card has no color.)\nKozilek's Return deals 2 damage to each creature.\nWhenever you cast an Eldrazi creature spell with mana value 7 or greater, you may exile this card from your graveyard. If you do, this card deals 5 damage to each creature.",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an Eldrazi creature spell with mana value 7 or greater, you may exile this card from your graveyard. If you do, this card deals 5 damage to each creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 7
+            },
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            },
+            {
+              "spell_subtypes_all": [
+                "Eldrazi"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile this card from your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this card deals 5 damage to each creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kozilek's Return deals 2 damage to each creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kozilek's Return deals 2 damage to each creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

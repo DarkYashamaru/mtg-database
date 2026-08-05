@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1ecb3349-ccb8-4b54-bd81-8d649d6f96f0",
+  "name": "Dreamstalker Manticore",
+  "faces": [
+    {
+      "name": "Dreamstalker Manticore",
+      "type_line": "Enchantment Creature \u2014 Manticore",
+      "oracle_text": "Whenever you cast your first spell during each opponent's turn, this creature deals 1 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your first spell during each opponent's turn, this creature deals 1 damage to any target.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "turn_scope": "each_opponents_turn"
+            },
+            {
+              "spell_cast_count_this_turn": 1
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

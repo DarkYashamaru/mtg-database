@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bf89bd6d-aa6c-4fd8-9278-151529ab0e62",
+  "name": "Hourglass of the Lost",
+  "faces": [
+    {
+      "name": "Hourglass of the Lost",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {W}. Put a time counter on this artifact.\n{T}, Remove X time counters from this artifact and exile it: Return each nonland permanent card with mana value X from your graveyard to the battlefield. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W}. Put a time counter on this artifact.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a time counter on this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Remove X time counters from this artifact and exile it: Return each nonland permanent card with mana value X from your graveyard to the battlefield. Activate only as a sorcery.",
+          "cost": "{T}, Remove X time counters from this artifact and exile it",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return each nonland permanent card with mana value X from your graveyard to the battlefield"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

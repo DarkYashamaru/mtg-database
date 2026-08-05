@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "16182e01-22ff-4786-985d-919b47c4aa4d",
+  "name": "Matzalantli, the Great Door // The Core",
+  "faces": [
+    {
+      "name": "Matzalantli, the Great Door",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "{T}: Draw a card, then discard a card.\n{4}, {T}: Transform Matzalantli. Activate only if there are four or more permanent types among cards in your graveyard. (Artifact, battle, creature, enchantment, land, and planeswalker are permanent types.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Draw a card, then discard a card.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}, {T}: Transform Matzalantli. Activate only if there are four or more permanent types among cards in your graveyard. (Artifact, battle, creature, enchantment, land, and planeswalker are permanent types.)",
+          "cost": "{4}, {T}",
+          "condition": [
+            {
+              "condition_text": "there are four or more permanent types among cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "The Core",
+      "type_line": "Legendary Land",
+      "oracle_text": "(Transforms from Matzalantli.)\nFathomless descent \u2014 {T}: Add X mana of any one color, where X is the number of permanent cards in your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Fathomless descent \u2014 {T}: Add X mana of any one color, where X is the number of permanent cards in your graveyard.",
+          "cost": "Fathomless descent \u2014 {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add X mana of any one color, where X is the number of permanent cards in your graveyard"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1a2a74b8-0689-4959-9348-02cc832194cf",
+  "name": "Narset, Jeskai Waymaster",
+  "faces": [
+    {
+      "name": "Narset, Jeskai Waymaster",
+      "type_line": "Legendary Creature \u2014 Human Monk",
+      "oracle_text": "At the beginning of your end step, you may discard your hand. If you do, draw cards equal to the number of spells you've cast this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, you may discard your hand. If you do, draw cards equal to the number of spells you've cast this turn.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_hand",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "draw cards equal to the number of spells you've cast this turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

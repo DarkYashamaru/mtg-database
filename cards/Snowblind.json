@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f8bfa3d-7490-4259-a403-d13585ed2f66",
+  "name": "Snowblind",
+  "faces": [
+    {
+      "name": "Snowblind",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets -X/-Y. If that creature is attacking, X is the number of snow lands defending player controls. Otherwise, X is the number of snow lands its controller controls. Y is equal to X or to enchanted creature's toughness minus 1, whichever is smaller.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets -X/-Y. If that creature is attacking, X is the number of snow lands defending player controls. Otherwise, X is the number of snow lands its controller controls. Y is equal to X or to enchanted creature's toughness minus 1, whichever is smaller.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets -X/-Y"
+            },
+            {
+              "action": "custom_effect",
+              "text": "x is the number of snow lands defending player controls",
+              "condition": [
+                {
+                  "condition_text": "that creature is attacking"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "x is the number of snow lands its controller controls",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Y is equal to X or to enchanted creature's toughness minus 1, whichever is smaller"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9028f726-50c7-49f3-8386-e584415dcba2",
+  "name": "Raiyuu, Storm's Edge",
+  "faces": [
+    {
+      "name": "Raiyuu, Storm's Edge",
+      "type_line": "Legendary Creature \u2014 Human Samurai",
+      "oracle_text": "First strike\nWhenever a Samurai or Warrior you control attacks alone, untap it. If it's the first combat phase of the turn, there is an additional combat phase after this phase.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Samurai or Warrior you control attacks alone, untap it. If it's the first combat phase of the turn, there is an additional combat phase after this phase.",
+          "trigger": {
+            "type": "attacks_alone",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Samurai",
+                "Or",
+                "Warrior"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "it"
+            },
+            {
+              "action": "add_combat_phase_after_this_phase",
+              "condition": [
+                {
+                  "condition_text": "it's the first combat phase of the turn"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

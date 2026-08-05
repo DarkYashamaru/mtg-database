@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d5f31713-d380-42ba-8052-4b8d9beb3958",
+  "name": "Roaring Furnace // Steaming Sauna",
+  "faces": [
+    {
+      "name": "Roaring Furnace",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "When you unlock this door, this Room deals damage equal to the number of cards in your hand to target creature an opponent controls.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you unlock this door, this Room deals damage equal to the number of cards in your hand to target creature an opponent controls.",
+          "trigger": {
+            "type": "unlock_door",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this Room deals damage equal to the number of cards in your hand to target creature an opponent controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Steaming Sauna",
+      "type_line": "Enchantment \u2014 Room",
+      "oracle_text": "You have no maximum hand size.\nAt the beginning of your end step, draw a card.\n(You may cast either half. That door unlocks on the battlefield. As a sorcery, you may pay the mana cost of a locked door to unlock it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, draw a card.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You have no maximum hand size.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You have no maximum hand size"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

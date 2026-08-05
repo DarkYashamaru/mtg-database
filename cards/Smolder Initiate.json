@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0300d8a1-ff4e-4e05-a097-4822f80c47e1",
+  "name": "Smolder Initiate",
+  "faces": [
+    {
+      "name": "Smolder Initiate",
+      "type_line": "Creature \u2014 Elemental Shaman",
+      "oracle_text": "Whenever a player casts a black spell, you may pay {1}. If you do, target player loses 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts a black spell, you may pay {1}. If you do, target player loses 1 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player casts a black spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "target player loses 1 life",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7194bca-0cf4-4a86-8b84-d2f9219a08b3",
+  "name": "Flow State",
+  "faces": [
+    {
+      "name": "Flow State",
+      "type_line": "Sorcery",
+      "oracle_text": "Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order. If there is an instant card and a sorcery card in your graveyard, instead put two of them into your hand and the rest on the bottom of your library in any order.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order. If there is an instant card and a sorcery card in your graveyard, instead put two of them into your hand and the rest on the bottom of your library in any order.",
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "destination": "hand",
+              "remainder_destination": "bottom_of_library",
+              "remainder_order": "any"
+            },
+            {
+              "action": "custom_effect",
+              "text": "instead put two of them into your hand and the rest on the bottom of your library in any order",
+              "condition": [
+                {
+                  "condition_text": "there is an instant card and a sorcery card in your graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

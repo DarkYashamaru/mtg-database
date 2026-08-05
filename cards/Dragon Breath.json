@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3535daf2-7dce-4fda-92ce-ad2a1ee95197",
+  "name": "Dragon Breath",
+  "faces": [
+    {
+      "name": "Dragon Breath",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature has haste.\n{R}: Enchanted creature gets +1/+0 until end of turn.\nWhen a creature with mana value 6 or greater enters, you may return this card from your graveyard to the battlefield attached to that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When a creature with mana value 6 or greater enters, you may return this card from your graveyard to the battlefield attached to that creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "a_creature_with_mana_value_6_or_greater"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return this card from your graveyard to the battlefield attached to that creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R}: Enchanted creature gets +1/+0 until end of turn.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "enchanted_creature",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has haste.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has haste"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

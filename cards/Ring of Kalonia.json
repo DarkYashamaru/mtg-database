@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d4344e5e-148b-4df9-88e4-ca91afcc32e0",
+  "name": "Ring of Kalonia",
+  "faces": [
+    {
+      "name": "Ring of Kalonia",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has trample. (It can deal excess combat damage to the player or planeswalker it's attacking.)\nAt the beginning of your upkeep, put a +1/+1 counter on equipped creature if it's green.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a +1/+1 counter on equipped creature if it's green.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "equipped_creature_if_its_green",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has trample. (It can deal excess combat damage to the player or planeswalker it's attacking.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature has trample"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

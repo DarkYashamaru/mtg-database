@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "48b561dd-f23d-409a-87c8-e49902b2477b",
+  "name": "Traveler's Amulet",
+  "faces": [
+    {
+      "name": "Traveler's Amulet",
+      "type_line": "Artifact",
+      "oracle_text": "{1}, Sacrifice this artifact: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice this artifact: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "cost": "{1}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

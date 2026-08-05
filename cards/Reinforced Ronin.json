@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5e891927-b6cb-40ae-8270-0e72820fd7f5",
+  "name": "Reinforced Ronin",
+  "faces": [
+    {
+      "name": "Reinforced Ronin",
+      "type_line": "Artifact Creature \u2014 Human Samurai",
+      "oracle_text": "Haste\nAt the beginning of your end step, return this creature to its owner's hand.\nChannel \u2014 {1}{R}, Discard this card: Draw a card.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, return this creature to its owner's hand.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Channel \u2014 {1}{R}, Discard this card: Draw a card.",
+          "cost": "Channel \u2014 {1}{R}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

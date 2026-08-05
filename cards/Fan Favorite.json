@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9991c9f2-cb6e-4cfe-a3b7-650212454195",
+  "name": "Fan Favorite",
+  "faces": [
+    {
+      "name": "Fan Favorite",
+      "type_line": "Creature \u2014 Human Rogue",
+      "oracle_text": "Assist (Another player can pay up to {3} of this spell's cost.)\n{2}: This creature gets +1/+1 until end of turn. Any player may activate this ability.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}: This creature gets +1/+1 until end of turn. Any player may activate this ability.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "activation_permission",
+              "player_scope": "any_player"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Assist (Another player can pay up to {3} of this spell's cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Assist"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

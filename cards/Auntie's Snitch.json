@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d2964a68-36d9-4b05-8f34-540969b410bf",
+  "name": "Auntie's Snitch",
+  "faces": [
+    {
+      "name": "Auntie's Snitch",
+      "type_line": "Creature \u2014 Goblin Rogue",
+      "oracle_text": "This creature can't block.\nProwl {1}{B} (You may cast this for its prowl cost if you dealt combat damage to a player this turn with a Goblin or Rogue.)\nWhenever a Goblin or Rogue you control deals combat damage to a player, if this card is in your graveyard, you may return this card to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Goblin or Rogue you control deals combat damage to a player, if this card is in your graveyard, you may return this card to your hand.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Goblin",
+                "Or",
+                "Rogue"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "this card is in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return this card to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        },
+        {
+          "raw_text": "Prowl {1}{B} (You may cast this for its prowl cost if you dealt combat damage to a player this turn with a Goblin or Rogue.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Prowl {1}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

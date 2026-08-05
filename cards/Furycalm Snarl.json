@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "651dea9c-2375-4e44-8e65-ba8e40f0c0ef",
+  "name": "Furycalm Snarl",
+  "faces": [
+    {
+      "name": "Furycalm Snarl",
+      "type_line": "Land",
+      "oracle_text": "As this land enters, you may reveal a Mountain or Plains card from your hand. If you don't, this land enters tapped.\n{T}: Add {R} or {W}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R} or {W}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}",
+                "{w}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this land enters, you may reveal a Mountain or Plains card from your hand. If you don't, this land enters tapped.",
+          "effects": [
+            {
+              "action": "as_enters_optional_reveal",
+              "target": "self",
+              "from_zone": "hand",
+              "filter": {
+                "subtypes_any": [
+                  "Mountain",
+                  "Plains"
+                ]
+              }
+            },
+            {
+              "action": "enters_tapped",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

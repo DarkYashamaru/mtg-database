@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5526dcae-90e8-4102-808d-56c89027898c",
+  "name": "Plumes of Peace",
+  "faces": [
+    {
+      "name": "Plumes of Peace",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature doesn't untap during its controller's untap step.\nForecast \u2014 {W}{U}, Reveal this card from your hand: Tap target creature. (Activate only during your upkeep and only once each turn.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Forecast \u2014 {W}{U}, Reveal this card from your hand: Tap target creature. (Activate only during your upkeep and only once each turn.)",
+          "cost": "Forecast \u2014 {W}{U}, Reveal this card from your hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "enchanted_creature",
+              "scope": "controllers_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

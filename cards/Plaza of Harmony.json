@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5ff1d6d8-8cea-4a25-90d9-b575f4c99bc8",
+  "name": "Plaza of Harmony",
+  "faces": [
+    {
+      "name": "Plaza of Harmony",
+      "type_line": "Land",
+      "oracle_text": "When this land enters, if you control two or more Gates, you gain 3 life.\n{T}: Add {C}.\n{T}: Add one mana of any type that a Gate you control could produce.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land enters, if you control two or more Gates, you gain 3 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_land"
+          },
+          "condition": [
+            {
+              "condition_text": "you control two or more Gates"
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add one mana of any type that a Gate you control could produce.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add one mana of any type that a Gate you control could produce"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

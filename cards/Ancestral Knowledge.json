@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2786f210-ec64-46ea-9a7f-b03759fb1dae",
+  "name": "Ancestral Knowledge",
+  "faces": [
+    {
+      "name": "Ancestral Knowledge",
+      "type_line": "Enchantment",
+      "oracle_text": "Cumulative upkeep {1} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nWhen this enchantment enters, look at the top ten cards of your library, then exile any number of them and put the rest back on top of your library in any order.\nWhen this enchantment leaves the battlefield, shuffle your library.",
+      "static": [
+        {
+          "keyword": "cumulative_upkeep",
+          "cost": "{1}"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, look at the top ten cards of your library, then exile any number of them and put the rest back on top of your library in any order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 10
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile any number of them"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put the rest back on top of your library in any order"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this enchantment leaves the battlefield, shuffle your library.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "shuffle your library"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

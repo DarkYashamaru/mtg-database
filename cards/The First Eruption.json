@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "df7a3868-4f03-452c-8307-1493977d42ef",
+  "name": "The First Eruption",
+  "faces": [
+    {
+      "name": "The First Eruption",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 This Saga deals 1 damage to each creature without flying.\nII \u2014 Add {R}{R}.\nIII \u2014 Sacrifice a Mountain. If you do, this Saga deals 3 damage to each creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 This Saga deals 1 damage to each creature without flying.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Saga deals 1 damage to each creature without flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Add {R}{R}.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{r}",
+                "{r}"
+              ],
+              "distribution": "fixed_sequence"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Sacrifice a Mountain. If you do, this Saga deals 3 damage to each creature.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_mountain"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this saga deals 3 damage to each creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

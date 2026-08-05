@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "89e17ccf-cde7-428d-bd64-47e2f79b40d7",
+  "name": "Siona, Captain of the Pyleas",
+  "faces": [
+    {
+      "name": "Siona, Captain of the Pyleas",
+      "type_line": "Legendary Creature \u2014 Human Soldier",
+      "oracle_text": "When Siona enters, look at the top seven cards of your library. You may reveal an Aura card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.\nWhenever an Aura you control becomes attached to a creature you control, create a 1/1 white Human Soldier creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Siona enters, look at the top seven cards of your library. You may reveal an Aura card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 7
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "subtypes_any": [
+                  "Aura"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an Aura you control becomes attached to a creature you control, create a 1/1 white Human Soldier creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an Aura you control becomes attached to a creature you control"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Human Soldier creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human",
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

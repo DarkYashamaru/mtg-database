@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9babcd0a-531f-417d-905e-b916a87112bb",
+  "name": "Cemetery Tampering",
+  "faces": [
+    {
+      "name": "Cemetery Tampering",
+      "type_line": "Enchantment",
+      "oracle_text": "Hideaway 5 (When this enchantment enters, look at the top five cards of your library, exile one face down, then put the rest on the bottom in a random order.)\nAt the beginning of your upkeep, you may mill three cards. Then if there are twenty or more cards in your graveyard, you may play the exiled card without paying its mana cost.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may mill three cards. Then if there are twenty or more cards in your graveyard, you may play the exiled card without paying its mana cost.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3,
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may play the exiled card without paying its mana cost",
+              "condition": [
+                {
+                  "condition_text": "there are twenty or more cards in your graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Hideaway 5 (When this enchantment enters, look at the top five cards of your library, exile one face down, then put the rest on the bottom in a random order.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Hideaway 5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

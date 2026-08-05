@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "40bb7b6b-a75d-4b59-ba45-a5801dcd59a1",
+  "name": "Phoenix Chick",
+  "faces": [
+    {
+      "name": "Phoenix Chick",
+      "type_line": "Creature \u2014 Phoenix",
+      "oracle_text": "Flying, haste\nThis creature can't block.\nWhenever you attack with three or more creatures, you may pay {R}{R}. If you do, return this card from your graveyard to the battlefield tapped and attacking with a +1/+1 counter on it.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack with three or more creatures, you may pay {R}{R}. If you do, return this card from your graveyard to the battlefield tapped and attacking with a +1/+1 counter on it.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you attack with three or more creatures"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {R}{R}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return this card from your graveyard to the battlefield tapped and attacking with a +1/+1 counter on it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

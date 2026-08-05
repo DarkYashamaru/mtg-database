@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ca9f538d-4191-448a-870d-f645b7c37c1b",
+  "name": "Forgotten Lore",
+  "faces": [
+    {
+      "name": "Forgotten Lore",
+      "type_line": "Sorcery",
+      "oracle_text": "Target opponent chooses a card in your graveyard. You may pay {G}. If you do, repeat this process except that opponent can't choose a card already chosen for Forgotten Lore. Then put the last chosen card into your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target opponent chooses a card in your graveyard. You may pay {G}. If you do, repeat this process except that opponent can't choose a card already chosen for Forgotten Lore. Then put the last chosen card into your hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target opponent chooses a card in your graveyard"
+            },
+            {
+              "action": "pay_mana",
+              "cost": "{g}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "repeat this process except that opponent can't choose a card already chosen for forgotten lore",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then put the last chosen card into your hand"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

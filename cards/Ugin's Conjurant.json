@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "787055e6-5d65-458e-a56e-66ef0574d2ca",
+  "name": "Ugin's Conjurant",
+  "faces": [
+    {
+      "name": "Ugin's Conjurant",
+      "type_line": "Creature \u2014 Spirit Monk",
+      "oracle_text": "This creature enters with X +1/+1 counters on it.\nIf damage would be dealt to this creature while it has a +1/+1 counter on it, prevent that damage and remove that many +1/+1 counters from this creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        },
+        {
+          "raw_text": "If damage would be dealt to this creature while it has a +1/+1 counter on it, prevent that damage and remove that many +1/+1 counters from this creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent that damage and remove that many +1/+1 counters from this creature",
+              "condition": [
+                {
+                  "condition_text": "damage would be dealt to this creature while it has a +1/+1 counter on it"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

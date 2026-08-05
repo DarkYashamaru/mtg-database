@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fd5fc69e-1bba-4f39-88c1-5966fa941f32",
+  "name": "Falkenrath Exterminator",
+  "faces": [
+    {
+      "name": "Falkenrath Exterminator",
+      "type_line": "Creature \u2014 Vampire Archer",
+      "oracle_text": "Whenever this creature deals combat damage to a player, put a +1/+1 counter on it.\n{2}{R}: This creature deals damage to target creature equal to the number of +1/+1 counters on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{R}: This creature deals damage to target creature equal to the number of +1/+1 counters on this creature.",
+          "cost": "{2}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals damage to target creature equal to the number of +1/+1 counters on this creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

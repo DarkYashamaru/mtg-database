@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f6889f57-2965-4a82-8556-fd91c6227058",
+  "name": "Beastmaster's Magemark",
+  "faces": [
+    {
+      "name": "Beastmaster's Magemark",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nCreatures you control that are enchanted get +1/+1.\nWhenever a creature you control that's enchanted becomes blocked, it gets +1/+1 until end of turn for each creature blocking it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control that's enchanted becomes blocked, it gets +1/+1 until end of turn for each creature blocking it.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": {
+              "selector": "a_creature_you_control_thats_enchanted"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gets +1/+1 until end of turn for each creature blocking it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures you control that are enchanted get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures you control that are enchanted get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

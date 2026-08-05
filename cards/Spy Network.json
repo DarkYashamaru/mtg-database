@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "81a5893a-764c-41ea-ba81-346b3c7558a4",
+  "name": "Spy Network",
+  "faces": [
+    {
+      "name": "Spy Network",
+      "type_line": "Instant",
+      "oracle_text": "Look at target player's hand, the top card of that player's library, and any face-down creatures they control. Look at the top four cards of your library, then put them back in any order.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Look at target player's hand, the top card of that player's library, and any face-down creatures they control. Look at the top four cards of your library, then put them back in any order.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Look at target player's hand, the top card of that player's library, and any face-down creatures they control"
+            },
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "return_looked_at_cards",
+              "destination": "top_of_library",
+              "order": "any"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

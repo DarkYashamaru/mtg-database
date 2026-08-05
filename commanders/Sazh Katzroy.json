@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0e5b40dc-debf-48a1-8398-5ea00b5a5166",
+  "name": "Sazh Katzroy",
+  "faces": [
+    {
+      "name": "Sazh Katzroy",
+      "type_line": "Legendary Creature \u2014 Human Pilot",
+      "oracle_text": "When Sazh Katzroy enters, you may search your library for a Bird or basic land card, reveal it, put it into your hand, then shuffle.\nWhenever Sazh Katzroy attacks, put a +1/+1 counter on target creature, then double the number of +1/+1 counters on that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Sazh Katzroy enters, you may search your library for a Bird or basic land card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a bird or basic land card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Sazh Katzroy attacks, put a +1/+1 counter on target creature, then double the number of +1/+1 counters on that creature.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "double the number of +1/+1 counters on that creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

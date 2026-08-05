@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c7a50ece-4fe4-4e54-9319-b92a4144445d",
+  "name": "Vampiric Embrace",
+  "faces": [
+    {
+      "name": "Vampiric Embrace",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +2/+2 and has flying.\nWhenever a creature dealt damage by enchanted creature this turn dies, put a +1/+1 counter on that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature dealt damage by enchanted creature this turn dies, put a +1/+1 counter on that creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_dealt_damage_by_enchanted_creature_this_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "that_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+2 and has flying.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +2/+2 and has flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

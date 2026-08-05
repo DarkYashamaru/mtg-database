@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c95309e9-5c2f-4518-b2fd-825d3d0a4ae0",
+  "name": "Sundering Eruption // Volcanic Fissure",
+  "faces": [
+    {
+      "name": "Sundering Eruption",
+      "type_line": "Sorcery",
+      "oracle_text": "Destroy target land. Its controller may search their library for a basic land card, put it onto the battlefield tapped, then shuffle. Creatures without flying can't block this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Destroy target land. Its controller may search their library for a basic land card, put it onto the battlefield tapped, then shuffle. Creatures without flying can't block this turn.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_land"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "its controller may search their library for a basic land card, put it onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Creatures without flying can't block this turn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Volcanic Fissure",
+      "type_line": "Land",
+      "oracle_text": "As this land enters, you may pay 3 life. If you don't, it enters tapped.\n{T}: Add {R}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this land enters, you may pay 3 life. If you don't, it enters tapped.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this land enters, you may pay 3 life"
+            },
+            {
+              "action": "enters_tapped",
+              "target": "it",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

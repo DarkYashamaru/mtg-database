@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e8578152-ee97-4471-bf32-77abe5ab80f1",
+  "name": "Private Research",
+  "faces": [
+    {
+      "name": "Private Research",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nAt the beginning of your upkeep, you may put a page counter on this Aura.\nWhen enchanted creature dies, draw a card for each page counter on this Aura.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may put a page counter on this Aura.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a page counter on this Aura"
+            }
+          ]
+        },
+        {
+          "raw_text": "When enchanted creature dies, draw a card for each page counter on this Aura.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "page_counter_on_this_aura"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

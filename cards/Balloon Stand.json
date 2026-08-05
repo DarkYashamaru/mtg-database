@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "abb6f51b-2a14-44ac-8c19-e135c9deb1ea",
+  "name": "Balloon Stand",
+  "faces": [
+    {
+      "name": "Balloon Stand",
+      "type_line": "Artifact \u2014 Attraction",
+      "oracle_text": "Visit \u2014 Choose one.\n\u2022 Create a 1/1 red Balloon creature token with flying.\n\u2022 Sacrifice a Balloon. If you do, target creature gains flying until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Visit \u2014 Choose one.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Visit \u2014 Choose one"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Create a 1/1 red Balloon creature token with flying.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Create a 1/1 red Balloon creature token with flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Sacrifice a Balloon. If you do, target creature gains flying until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Sacrifice a Balloon"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "flying",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

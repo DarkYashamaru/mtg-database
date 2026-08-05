@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6f705338-b00b-4a6d-924f-443e7c5670b7",
+  "name": "Death Mutation",
+  "faces": [
+    {
+      "name": "Death Mutation",
+      "type_line": "Sorcery",
+      "oracle_text": "Destroy target nonblack creature. It can't be regenerated. Create X 1/1 green Saproling creature tokens, where X is that creature's mana value.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Destroy target nonblack creature. It can't be regenerated. Create X 1/1 green Saproling creature tokens, where X is that creature's mana value.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature",
+                "not_colors": [
+                  "black"
+                ]
+              }
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "X 1/1 green Saproling creature tokens, where X is that creature's mana value",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Saproling"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

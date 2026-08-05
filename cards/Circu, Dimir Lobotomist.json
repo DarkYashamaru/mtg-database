@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c87d547b-00a4-4fdd-ade4-f3f032e5ea3b",
+  "name": "Circu, Dimir Lobotomist",
+  "faces": [
+    {
+      "name": "Circu, Dimir Lobotomist",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Whenever you cast a blue spell, exile the top card of target player's library.\nWhenever you cast a black spell, exile the top card of target player's library.\nYour opponents can't cast spells with the same name as a card exiled with Circu.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a blue spell, exile the top card of target player's library.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Blue"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile the top card of target player's library"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a black spell, exile the top card of target player's library.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Black"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile the top card of target player's library"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Your opponents can't cast spells with the same name as a card exiled with Circu.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Your opponents can't cast spells with the same name as a card exiled with Circu"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

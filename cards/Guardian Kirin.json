@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e9dbfda3-e162-49f0-b9bf-f8213e27c17d",
+  "name": "Guardian Kirin",
+  "faces": [
+    {
+      "name": "Guardian Kirin",
+      "type_line": "Creature \u2014 Kirin",
+      "oracle_text": "Flying\nWhenever another creature you control dies, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control dies, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

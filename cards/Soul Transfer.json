@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1e46c709-5278-44f3-9f0e-f71bd9558339",
+  "name": "Soul Transfer",
+  "faces": [
+    {
+      "name": "Soul Transfer",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose one. If you control an artifact and an enchantment as you cast this spell, you may choose both instead.\n\u2022 Exile target creature or planeswalker.\n\u2022 Return target creature or planeswalker card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one. If you control an artifact and an enchantment as you cast this spell, you may choose both instead.",
+          "effects": [
+            {
+              "action": "mode_selection",
+              "choose_count": 1
+            },
+            {
+              "action": "mode_selection_modifier",
+              "choose_count": 2,
+              "condition": [
+                {
+                  "you_control_commander": true
+                },
+                {
+                  "condition_text": "you control an artifact and an enchantment as you cast this spell"
+                }
+              ],
+              "optional": true
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Exile target creature or planeswalker.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Exile target creature or planeswalker"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Return target creature or planeswalker card from your graveyard to your hand.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Return target creature or planeswalker card from your graveyard to your hand"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "oracle_id": "769ae101-73cc-4ac5-8f46-8af8e7de6581",
+  "name": "Cabal Interrogator",
+  "faces": [
+    {
+      "name": "Cabal Interrogator",
+      "type_line": "Creature \u2014 Zombie Wizard",
+      "oracle_text": "{X}{B}, {T}: Target player reveals X cards from their hand and you choose one of them. That player discards that card. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{X}{B}, {T}: Target player reveals X cards from their hand and you choose one of them. That player discards that card. Activate only as a sorcery.",
+          "cost": "{X}{B}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player reveals X cards from their hand and you choose one of them"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

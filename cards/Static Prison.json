@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b1bc8e58-ea4f-46a9-b833-d780cf6758b3",
+  "name": "Static Prison",
+  "faces": [
+    {
+      "name": "Static Prison",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, exile target nonland permanent an opponent controls until this enchantment leaves the battlefield. You get {E}{E} (two energy counters).\nAt the beginning of your first main phase, sacrifice this enchantment unless you pay {E}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, exile target nonland permanent an opponent controls until this enchantment leaves the battlefield. You get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target nonland permanent an opponent controls until this enchantment leaves the battlefield"
+            },
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your first main phase, sacrifice this enchantment unless you pay {E}.",
+          "trigger": {
+            "type": "beginning_of_your_first_main_phase"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment_unless_you_pay_e"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

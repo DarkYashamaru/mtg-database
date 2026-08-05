@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "86ed6073-c35c-4d29-9911-5fe191dd875f",
+  "name": "The Biblioplex",
+  "faces": [
+    {
+      "name": "The Biblioplex",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{2}, {T}: Look at the top card of your library. If it's an instant or sorcery card, you may reveal it and put it into your hand. If you don't put the card into your hand, you may put it into your graveyard. Activate only if you have exactly zero or seven cards in hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}, {T}: Look at the top card of your library. If it's an instant or sorcery card, you may reveal it and put it into your hand. If you don't put the card into your hand, you may put it into your graveyard. Activate only if you have exactly zero or seven cards in hand.",
+          "cost": "{2}, {T}",
+          "condition": [
+            {
+              "condition_text": "you have exactly zero or seven cards in hand"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it's an instant or sorcery card"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it into your graveyard",
+              "condition": [
+                {
+                  "condition_text": "you don't put the card into your hand"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

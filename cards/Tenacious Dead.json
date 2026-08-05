@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9ae376d5-c68f-4a4b-851c-ebfd385b86dd",
+  "name": "Tenacious Dead",
+  "faces": [
+    {
+      "name": "Tenacious Dead",
+      "type_line": "Creature \u2014 Skeleton Warrior",
+      "oracle_text": "When this creature dies, you may pay {1}{B}. If you do, return it to the battlefield tapped under its owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, you may pay {1}{B}. If you do, return it to the battlefield tapped under its owner's control.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{B}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield tapped under its owner's control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

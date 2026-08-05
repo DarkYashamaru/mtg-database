@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "826a0db6-195a-4697-9bd6-f544b279e3cf",
+  "name": "Betor, Kin to All",
+  "faces": [
+    {
+      "name": "Betor, Kin to All",
+      "type_line": "Legendary Creature \u2014 Spirit Dragon",
+      "oracle_text": "Flying\nAt the beginning of your end step, if creatures you control have total toughness 10 or greater, draw a card. Then if creatures you control have total toughness 20 or greater, untap each creature you control. Then if creatures you control have total toughness 40 or greater, each opponent loses half their life, rounded up.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if creatures you control have total toughness 10 or greater, draw a card. Then if creatures you control have total toughness 20 or greater, untap each creature you control. Then if creatures you control have total toughness 40 or greater, each opponent loses half their life, rounded up.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "creatures you control have total toughness 10 or greater"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap each creature you control",
+              "condition": [
+                {
+                  "condition_text": "creatures you control have total toughness 20 or greater"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "each opponent loses half their life, rounded up",
+              "condition": [
+                {
+                  "condition_text": "creatures you control have total toughness 40 or greater"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

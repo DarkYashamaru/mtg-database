@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "oracle_id": "59c2af34-a2e5-4c67-af2d-a782e41a8e1e",
+  "name": "Blaster, Combat DJ // Blaster, Morale Booster",
+  "faces": [
+    {
+      "name": "Blaster, Combat DJ",
+      "type_line": "Legendary Artifact Creature \u2014 Robot",
+      "oracle_text": "More Than Meets the Eye {1}{R}{G} (You may cast this card converted for {1}{R}{G}.)\nOther nontoken artifact creatures and Vehicles you control have modular 1. (They enter with an additional +1/+1 counter on them. When they die, you may put their +1/+1 counters on target artifact creature.)\nWhenever you put one or more +1/+1 counters on Blaster, convert it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you put one or more +1/+1 counters on Blaster, convert it.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you put one or more +1/+1 counters on Blaster"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "convert it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "More Than Meets the Eye {1}{R}{G} (You may cast this card converted for {1}{R}{G}.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "More Than Meets the Eye {1}{R}{G}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Other nontoken artifact creatures and Vehicles you control have modular 1. (They enter with an additional +1/+1 counter on them. When they die, you may put their +1/+1 counters on target artifact creature.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other nontoken artifact creatures and Vehicles you control have modular 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blaster, Morale Booster",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "Modular 3\n{X}, {T}: Move X +1/+1 counters from Blaster onto another target artifact. That artifact gains haste until end of turn. If Blaster has no +1/+1 counters on it, convert it. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{X}, {T}: Move X +1/+1 counters from Blaster onto another target artifact. That artifact gains haste until end of turn. If Blaster has no +1/+1 counters on it, convert it. Activate only as a sorcery.",
+          "cost": "{X}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Move X +1/+1 counters from Blaster onto another target artifact"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_artifact",
+              "keyword": "haste"
+            },
+            {
+              "action": "custom_effect",
+              "text": "convert it",
+              "condition": [
+                {
+                  "condition_text": "blaster has no +1/+1 counters on it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Modular 3",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Modular 3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

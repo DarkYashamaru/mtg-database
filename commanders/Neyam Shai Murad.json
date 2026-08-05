@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9466cfc1-a8fe-44a0-abd2-5d2dfe7110e0",
+  "name": "Neyam Shai Murad",
+  "faces": [
+    {
+      "name": "Neyam Shai Murad",
+      "type_line": "Legendary Creature \u2014 Human Rogue",
+      "oracle_text": "Rogue Trader \u2014 Whenever Neyam Shai Murad deals combat damage to a player, you may have that player return target permanent card from their graveyard to their hand. If you do, that player chooses a permanent card in your graveyard, then you put it onto the battlefield under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Neyam Shai Murad deals combat damage to a player, you may have that player return target permanent card from their graveyard to their hand. If you do, that player chooses a permanent card in your graveyard, then you put it onto the battlefield under your control.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have that player return target permanent card from their graveyard to their hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "that player chooses a permanent card in your graveyard",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you put it onto the battlefield under your control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

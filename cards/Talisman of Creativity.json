@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "14d2979d-5728-42d7-a027-0eb1f754655d",
+  "name": "Talisman of Creativity",
+  "faces": [
+    {
+      "name": "Talisman of Creativity",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {U} or {R}. This artifact deals 1 damage to you.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {U} or {R}. This artifact deals 1 damage to you.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}",
+                "{r}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This artifact deals 1 damage to you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

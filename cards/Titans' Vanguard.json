@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3da6d24b-ecbd-4a41-a37e-84a19b243414",
+  "name": "Titans' Vanguard",
+  "faces": [
+    {
+      "name": "Titans' Vanguard",
+      "type_line": "Creature \u2014 Eldrazi",
+      "oracle_text": "Devoid (This card has no color.)\nWhen you cast this spell and whenever this creature attacks, put a +1/+1 counter on each colorless creature you control.\nTrample",
+      "static": [
+        {
+          "keyword": "devoid"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell and whenever this creature attacks, put a +1/+1 counter on each colorless creature you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "you_cast_self_spell_and_whenever_self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Colorles"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

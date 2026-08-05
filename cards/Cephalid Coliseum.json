@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c733873e-77db-471f-8061-139db24f7e7c",
+  "name": "Cephalid Coliseum",
+  "faces": [
+    {
+      "name": "Cephalid Coliseum",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {U}. This land deals 1 damage to you.\nThreshold \u2014 {U}, {T}, Sacrifice this land: Target player draws three cards, then discards three cards. Activate only if there are seven or more cards in your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}. This land deals 1 damage to you.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Threshold \u2014 {U}, {T}, Sacrifice this land: Target player draws three cards, then discards three cards. Activate only if there are seven or more cards in your graveyard.",
+          "cost": "Threshold \u2014 {U}, {T}, Sacrifice this land",
+          "condition": [
+            {
+              "condition_text": "there are seven or more cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target player draws three cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "discards three cards"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7f2579ef-0422-4cb1-a0f8-6ad0d942515b",
+  "name": "Banquet Guests",
+  "faces": [
+    {
+      "name": "Banquet Guests",
+      "type_line": "Creature \u2014 Halfling Citizen",
+      "oracle_text": "Affinity for Foods (This spell costs {1} less to cast for each Food you control.)\nTrample\nThis creature enters with twice X +1/+1 counters on it.\n{2}, Sacrifice a Food: This creature gains indestructible until end of turn.",
+      "static": [
+        {
+          "keyword": "affinity",
+          "quality": "foods"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, Sacrifice a Food: This creature gains indestructible until end of turn.",
+          "cost": "{2}, Sacrifice a Food",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with twice X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with twice X +1/+1 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "39d8406a-90c3-460c-b4e8-0f590573db51",
+  "name": "Mechanized Production",
+  "faces": [
+    {
+      "name": "Mechanized Production",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant artifact you control\nAt the beginning of your upkeep, create a token that's a copy of enchanted artifact. Then if you control eight or more artifacts with the same name as one another, you win the game.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, create a token that's a copy of enchanted artifact. Then if you control eight or more artifacts with the same name as one another, you win the game.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of enchanted artifact"
+            },
+            {
+              "action": "win_the_game",
+              "condition": [
+                {
+                  "condition_text": "you control eight or more artifacts with the same name as one another"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant artifact you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "artifact_you_control"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

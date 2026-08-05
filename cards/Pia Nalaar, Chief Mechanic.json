@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "31cb87bf-1020-4fd5-95f7-8ecb197d823b",
+  "name": "Pia Nalaar, Chief Mechanic",
+  "faces": [
+    {
+      "name": "Pia Nalaar, Chief Mechanic",
+      "type_line": "Legendary Creature \u2014 Human Artificer",
+      "oracle_text": "Whenever one or more artifact creatures you control deal combat damage to a player, you get {E}{E} (two energy counters).\nAt the beginning of your end step, you may pay one or more {E}. If you do, create an X/X colorless Vehicle artifact token named Nalaar Aetherjet with flying and crew 2, where X is the amount of {E} paid this way.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more artifact creatures you control deal combat damage to a player, you get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Artifact",
+                "Creature"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, you may pay one or more {E}. If you do, create an X/X colorless Vehicle artifact token named Nalaar Aetherjet with flying and crew 2, where X is the amount of {E} paid this way.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay one or more {E}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "create an x/x colorless vehicle artifact token named nalaar aetherjet with flying and crew 2, where x is the amount of {e} paid this way",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

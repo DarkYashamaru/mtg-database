@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "oracle_id": "33e88072-3840-4090-8d0b-7fb38279e150",
+  "name": "Megatron, Tyrant // Megatron, Destructive Force",
+  "faces": [
+    {
+      "name": "Megatron, Destructive Force",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Living metal (During your turn, this Vehicle is also a creature.)\nWhenever Megatron attacks, you may sacrifice another artifact. When you do, Megatron deals damage equal to the sacrificed artifact's mana value to target creature. If excess damage would be dealt to that creature this way, instead that damage is dealt to that creature's controller and you convert Megatron.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Megatron attacks, you may sacrifice another artifact. When you do, Megatron deals damage equal to the sacrificed artifact's mana value to target creature. If excess damage would be dealt to that creature this way, instead that damage is dealt to that creature's controller and you convert Megatron.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_artifact",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "megatron deals damage equal to the sacrificed artifact's mana value to target creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "instead that damage is dealt to that creature's controller and you convert megatron",
+              "condition": [
+                {
+                  "condition_text": "excess damage would be dealt to that creature this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Living metal (During your turn, this Vehicle is also a creature.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Living metal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Megatron, Tyrant",
+      "type_line": "Legendary Artifact Creature \u2014 Robot",
+      "oracle_text": "More Than Meets the Eye {1}{R}{W}{B} (You may cast this card converted for {1}{R}{W}{B}.)\nYour opponents can't cast spells during combat.\nAt the beginning of each of your postcombat main phases, you may convert Megatron. If you do, add {C} for each 1 life your opponents have lost this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each of your postcombat main phases, you may convert Megatron. If you do, add {C} for each 1 life your opponents have lost this turn.",
+          "trigger": {
+            "type": "beginning_of_each_of_your_postcombat_main_phases"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may convert Megatron"
+            },
+            {
+              "action": "custom_effect",
+              "text": "add {c} for each 1 life your opponents have lost this turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "More Than Meets the Eye {1}{R}{W}{B} (You may cast this card converted for {1}{R}{W}{B}.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "More Than Meets the Eye {1}{R}{W}{B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Your opponents can't cast spells during combat.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Your opponents can't cast spells during combat"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

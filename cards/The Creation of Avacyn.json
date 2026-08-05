@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7f32344f-06d8-4862-bfeb-f90a3e1d7fc2",
+  "name": "The Creation of Avacyn",
+  "faces": [
+    {
+      "name": "The Creation of Avacyn",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Search your library for a card, exile it face down, then shuffle.\nII \u2014 Turn the exiled card face up. If it's a creature card, you lose life equal to its mana value.\nIII \u2014 You may put the exiled card onto the battlefield if it's a creature card. If you don't put it onto the battlefield, put it into its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Search your library for a card, exile it face down, then shuffle.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a card, exile it face down"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Turn the exiled card face up. If it's a creature card, you lose life equal to its mana value.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Turn the exiled card face up"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you lose life equal to its mana value",
+              "condition": [
+                {
+                  "condition_text": "it's a creature card"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 You may put the exiled card onto the battlefield if it's a creature card. If you don't put it onto the battlefield, put it into its owner's hand.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may put the exiled card onto the battlefield if it's a creature card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it into its owner's hand",
+              "condition": [
+                {
+                  "condition_text": "you don't put it onto the battlefield"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

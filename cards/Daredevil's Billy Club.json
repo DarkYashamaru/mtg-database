@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "654db13d-c7e4-4ee0-a87a-3635467f2f19",
+  "name": "Daredevil's Billy Club",
+  "faces": [
+    {
+      "name": "Daredevil's Billy Club",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, it deals 2 damage to any target and 1 damage to you.\nEquipped creature gets +1/+0 and has menace. (It can't be blocked except by two or more creatures.)\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, it deals 2 damage to any target and 1 damage to you.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 2 damage to any target and 1 damage to you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +1/+0 and has menace. (It can't be blocked except by two or more creatures.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +1/+0 and has menace"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

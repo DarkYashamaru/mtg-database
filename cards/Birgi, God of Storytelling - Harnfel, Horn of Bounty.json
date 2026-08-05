@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fb81e4d3-1d8c-4779-be62-87cf49277e51",
+  "name": "Birgi, God of Storytelling // Harnfel, Horn of Bounty",
+  "faces": [
+    {
+      "name": "Birgi, God of Storytelling",
+      "type_line": "Legendary Creature \u2014 God",
+      "oracle_text": "Whenever you cast a spell, add {R}. Until end of turn, you don't lose this mana as steps and phases end.\nCreatures you control can boast twice during each of your turns rather than once.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, add {R}. Until end of turn, you don't lose this mana as steps and phases end.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you don't lose this mana as steps and phases end"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control can boast twice during each of your turns rather than once.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures you control can boast twice during each of your turns rather than once"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Harnfel, Horn of Bounty",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "Discard a card: Exile the top two cards of your library. You may play those cards this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Discard a card: Exile the top two cards of your library. You may play those cards this turn.",
+          "cost": "Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile the top two cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play those cards this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

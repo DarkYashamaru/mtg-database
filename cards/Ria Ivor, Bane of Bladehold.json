@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "785f55bb-d47c-470c-94d4-95f69055e35f",
+  "name": "Ria Ivor, Bane of Bladehold",
+  "faces": [
+    {
+      "name": "Ria Ivor, Bane of Bladehold",
+      "type_line": "Legendary Creature \u2014 Phyrexian Knight",
+      "oracle_text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)\nAt the beginning of combat on your turn, the next time target creature would deal combat damage to one or more players this combat, prevent that damage. If damage is prevented this way, create that many 1/1 colorless Phyrexian Mite artifact creature tokens with toxic 1 and \"This token can't block.\"",
+      "static": [
+        {
+          "keyword": "battle_cry"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, the next time target creature would deal combat damage to one or more players this combat, prevent that damage. If damage is prevented this way, create that many 1/1 colorless Phyrexian Mite artifact creature tokens with toxic 1 and \"This token can't block.\"",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "the next time target creature would deal combat damage to one or more players this combat, prevent that damage"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "that many 1/1 colorless phyrexian mite artifact creature tokens with toxic 1 and \"this token can't block",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "phyrexian",
+                  "mite",
+                  "artifact"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "damage is prevented this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

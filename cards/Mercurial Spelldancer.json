@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b90f8ed-84b2-4306-9dfa-b5654ea0e4cd",
+  "name": "Mercurial Spelldancer",
+  "faces": [
+    {
+      "name": "Mercurial Spelldancer",
+      "type_line": "Creature \u2014 Phyrexian Rogue",
+      "oracle_text": "This creature can't be blocked.\nWhenever you cast a noncreature spell, put an oil counter on this creature.\nWhenever this creature deals combat damage to a player, you may remove two oil counters from it. If you do, when you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, put an oil counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put an oil counter on this creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may remove two oil counters from it. If you do, when you next cast an instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may remove two oil counters from it"
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "cast_spell",
+                "subject": "you"
+              },
+              "condition": [
+                {
+                  "spell_types_any": [
+                    "instant",
+                    "sorcery"
+                  ]
+                },
+                {
+                  "timing": "next_time_this_turn"
+                },
+                {
+                  "previous_optional_payment_made": true
+                }
+              ],
+              "effects": [
+                {
+                  "action": "copy_spell",
+                  "object": "triggering_spell"
+                }
+              ]
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

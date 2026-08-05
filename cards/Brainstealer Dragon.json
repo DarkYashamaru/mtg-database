@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "13cb958f-1e66-4219-901a-ff58275c8475",
+  "name": "Brainstealer Dragon",
+  "faces": [
+    {
+      "name": "Brainstealer Dragon",
+      "type_line": "Creature \u2014 Dragon Horror",
+      "oracle_text": "Flying\nAt the beginning of your end step, exile the top card of each opponent's library. You may play those cards for as long as they remain exiled. If you cast a spell this way, you may spend mana as though it were mana of any color to cast it.\nWhenever a nonland permanent an opponent owns enters the battlefield under your control, they lose life equal to its mana value.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, exile the top card of each opponent's library. You may play those cards for as long as they remain exiled. If you cast a spell this way, you may spend mana as though it were mana of any color to cast it.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile the top card of each opponent's library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play those cards for as long as they remain exiled"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may spend mana as though it were mana of any color to cast it",
+              "condition": [
+                {
+                  "condition_text": "you cast a spell this way"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a nonland permanent an opponent owns enters the battlefield under your control, they lose life equal to its mana value.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a nonland permanent an opponent owns enters the battlefield under your control"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "they lose life equal to its mana value"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

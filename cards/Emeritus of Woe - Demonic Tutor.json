@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93056597-b964-421f-be2f-e92abef1c2a4",
+  "name": "Emeritus of Woe // Demonic Tutor",
+  "faces": [
+    {
+      "name": "Demonic Tutor",
+      "type_line": "Sorcery",
+      "oracle_text": "Search your library for a card, put that card into your hand, then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for a card, put that card into your hand, then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a card, put that card into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Emeritus of Woe",
+      "type_line": "Creature \u2014 Vampire Warlock",
+      "oracle_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\nAt the beginning of your end step, if two or more creatures died this turn, this creature becomes prepared.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if two or more creatures died this turn, this creature becomes prepared.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "event_this_turn": "creature_died",
+              "count_gte": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature becomes prepared"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters prepared"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

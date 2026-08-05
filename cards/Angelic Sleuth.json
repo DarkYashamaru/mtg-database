@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2579e9e0-b00f-4a1b-8fce-15d06bb7fe5a",
+  "name": "Angelic Sleuth",
+  "faces": [
+    {
+      "name": "Angelic Sleuth",
+      "type_line": "Creature \u2014 Angel Advisor",
+      "oracle_text": "Flying\nWhenever another permanent you control leaves the battlefield, if it had counters on it, investigate. (Create a Clue artifact token with \"{2}, Sacrifice this token: Draw a card.\")",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another permanent you control leaves the battlefield, if it had counters on it, investigate. (Create a Clue artifact token with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Permanent"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "it had counters on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "investigate"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

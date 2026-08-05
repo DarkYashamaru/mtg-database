@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c63b3511-d597-4c6e-9094-eabdeaa8a394",
+  "name": "Jadzi, Steward of Fate // Oracle's Gift",
+  "faces": [
+    {
+      "name": "Jadzi, Steward of Fate",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Jadzi enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\nWhen Jadzi enters, draw two cards, then discard two cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Jadzi enters, draw two cards, then discard two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Jadzi enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Jadzi enters prepared"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oracle's Gift",
+      "type_line": "Sorcery",
+      "oracle_text": "Create X 0/0 green and blue Fractal creature tokens, then put X +1/+1 counters on each Fractal you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Create X 0/0 green and blue Fractal creature tokens, then put X +1/+1 counters on each Fractal you control.",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "X",
+              "token": {
+                "raw": "0/0 green and blue fractal creature tokens",
+                "colors": [
+                  "green",
+                  "blue"
+                ],
+                "power_toughness": "0/0",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "fractal"
+                ]
+              }
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Fractal"
+                ]
+              },
+              "amount": "X"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6d2cf8b4-1468-4e00-94ca-65ef0c564b09",
+  "name": "Skyclave Pick-Axe",
+  "faces": [
+    {
+      "name": "Skyclave Pick-Axe",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, attach it to target creature you control.\nLandfall \u2014 Whenever a land you control enters, equipped creature gets +2/+2 until end of turn.\nEquip {2}{G} ({2}{G}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, attach it to target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "attach it to target creature you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a land you control enters, equipped creature gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "equipped_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2}{G} ({2}{G}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equip {2}{G}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

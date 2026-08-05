@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d94ff0b8-5499-4eeb-80f0-20c7fbf07499",
+  "name": "Voja, Jaws of the Conclave",
+  "faces": [
+    {
+      "name": "Voja, Jaws of the Conclave",
+      "type_line": "Legendary Creature \u2014 Wolf",
+      "oracle_text": "Vigilance, trample, ward {3}\nWhenever Voja attacks, put X +1/+1 counters on each creature you control, where X is the number of Elves you control. Draw a card for each Wolf you control.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "ward",
+          "amount": 3
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Voja attacks, put X +1/+1 counters on each creature you control, where X is the number of Elves you control. Draw a card for each Wolf you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_creature_you_control_where_x_is_the_number_of_elves_you_control"
+              },
+              "amount": "X"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "wolf_you_control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

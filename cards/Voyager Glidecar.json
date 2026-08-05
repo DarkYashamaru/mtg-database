@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8f40d73b-9106-448e-8649-5d62939f0d38",
+  "name": "Voyager Glidecar",
+  "faces": [
+    {
+      "name": "Voyager Glidecar",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "When this Vehicle enters, scry 1.\nTap three other untapped creatures you control: Until end of turn, this Vehicle becomes an artifact creature and gains flying. Put a +1/+1 counter on it.\nCrew 1",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, scry 1.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Tap three other untapped creatures you control: Until end of turn, this Vehicle becomes an artifact creature and gains flying. Put a +1/+1 counter on it.",
+          "cost": "Tap three other untapped creatures you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword",
+              "target": "until_end_of_turn_this_vehicle_becomes_an_artifact_creature_and",
+              "keyword": "flying"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Crew 1",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ddf34a38-29d5-4bf3-9b08-e7c9579a4200",
+  "name": "Warehouse Thief",
+  "faces": [
+    {
+      "name": "Warehouse Thief",
+      "type_line": "Creature \u2014 Tiefling Rogue",
+      "oracle_text": "{2}, {T}, Sacrifice an artifact or creature: Exile the top card of your library. Until the end of your next turn, you may play that card.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}, Sacrifice an artifact or creature: Exile the top card of your library. Until the end of your next turn, you may play that card.",
+          "cost": "{2}, {T}, Sacrifice an artifact or creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "allow_play",
+              "object": "that_card",
+              "until": "end_of_your_next_turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

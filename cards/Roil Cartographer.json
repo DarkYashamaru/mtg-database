@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3cd7ef87-4cb4-42ff-842f-e9a465dab165",
+  "name": "Roil Cartographer",
+  "faces": [
+    {
+      "name": "Roil Cartographer",
+      "type_line": "Creature \u2014 Merfolk Rogue",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, you get {E} (an energy counter).\n{T}, Pay six {E}: Draw three cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, you get {E} (an energy counter).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get {E}"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Pay six {E}: Draw three cards.",
+          "cost": "{T}, Pay six {E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

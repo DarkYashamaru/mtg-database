@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fef94125-aa8d-4147-a609-1e990961bde2",
+  "name": "Brainbite",
+  "faces": [
+    {
+      "name": "Brainbite",
+      "type_line": "Sorcery",
+      "oracle_text": "Target opponent reveals their hand. You choose a card from it. That player discards that card.\nDraw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target opponent reveals their hand. You choose a card from it. That player discards that card.",
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_opponent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a card from it"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

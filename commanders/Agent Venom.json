@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "14c356aa-178d-4c14-a88e-fbe92ee6d89f",
+  "name": "Agent Venom",
+  "faces": [
+    {
+      "name": "Agent Venom",
+      "type_line": "Legendary Creature \u2014 Symbiote Soldier Hero",
+      "oracle_text": "Flash\nMenace\nWhenever another nontoken creature you control dies, you draw a card and lose 1 life.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken creature you control dies, you draw a card and lose 1 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Nontoken"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you draw a card and lose 1 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "83860749-1603-46e9-9065-e98001244193",
+  "name": "Treebeard, Gracious Host",
+  "faces": [
+    {
+      "name": "Treebeard, Gracious Host",
+      "type_line": "Legendary Creature \u2014 Treefolk",
+      "oracle_text": "Trample, ward {2}\nWhen Treebeard enters, create two Food tokens.\nWhenever you gain life, put that many +1/+1 counters on target Halfling or Treefolk.",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Treebeard enters, create two Food tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "Food tokens"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you gain life, put that many +1/+1 counters on target Halfling or Treefolk.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put that many +1/+1 counters on target Halfling or Treefolk"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

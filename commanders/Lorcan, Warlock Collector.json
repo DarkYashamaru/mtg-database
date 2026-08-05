@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6c87c261-00a8-46f2-92c8-42009a0a2faf",
+  "name": "Lorcan, Warlock Collector",
+  "faces": [
+    {
+      "name": "Lorcan, Warlock Collector",
+      "type_line": "Legendary Creature \u2014 Devil",
+      "oracle_text": "Flying\nWhenever a creature card is put into an opponent's graveyard from anywhere, you may pay life equal to its mana value. If you do, put it onto the battlefield under your control. It's a Warlock in addition to its other types.\nIf a Warlock you control would die, exile it instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature card is put into an opponent's graveyard from anywhere, you may pay life equal to its mana value. If you do, put it onto the battlefield under your control. It's a Warlock in addition to its other types.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature card is put into an opponent's graveyard from anywhere"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay life equal to its mana value"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it onto the battlefield under your control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's a Warlock in addition to its other types"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If a Warlock you control would die, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "a warlock you control would die"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

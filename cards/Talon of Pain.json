@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0e4d2fbc-1b34-4501-9022-8ea800cb2d24",
+  "name": "Talon of Pain",
+  "faces": [
+    {
+      "name": "Talon of Pain",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a source you control other than this artifact deals damage to an opponent, put a charge counter on this artifact.\n{X}, {T}, Remove X charge counters from this artifact: It deals X damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a source you control other than this artifact deals damage to an opponent, put a charge counter on this artifact.",
+          "trigger": {
+            "type": "deals_damage_to_opponent",
+            "subject": {
+              "selector": "a_source_you_control_other_than_this_artifact"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a charge counter on this artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{X}, {T}, Remove X charge counters from this artifact: It deals X damage to any target.",
+          "cost": "{X}, {T}, Remove X charge counters from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "It deals X damage to any target"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

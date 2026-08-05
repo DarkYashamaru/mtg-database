@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1c6f95fd-f8d0-4d22-aa21-29e5c70b2f85",
+  "name": "Nemesis Trap",
+  "faces": [
+    {
+      "name": "Nemesis Trap",
+      "type_line": "Instant \u2014 Trap",
+      "oracle_text": "If a white creature is attacking, you may pay {B}{B} rather than pay this spell's mana cost.\nExile target attacking creature. Create a token that's a copy of that creature. Exile it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If a white creature is attacking, you may pay {B}{B} rather than pay this spell's mana cost.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {b}{b} rather than pay this spell's mana cost",
+              "condition": [
+                {
+                  "condition_text": "a white creature is attacking"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Exile target attacking creature. Create a token that's a copy of that creature. Exile it at the beginning of the next end step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target attacking creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Create a token that's a copy of that creature"
+            },
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_end_step"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "exile",
+                  "target": "it"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

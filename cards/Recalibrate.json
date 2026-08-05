@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e6331b3a-81a8-48e8-8a28-237d381f9062",
+  "name": "Recalibrate",
+  "faces": [
+    {
+      "name": "Recalibrate",
+      "type_line": "Instant",
+      "oracle_text": "Return target creature to its owner's hand. If you've discarded a card this turn, draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target creature to its owner's hand. If you've discarded a card this turn, draw a card.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature"
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you've discarded a card this turn"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

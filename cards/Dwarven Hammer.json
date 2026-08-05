@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a6365f98-f652-492b-81de-5f8cd6fe0a1c",
+  "name": "Dwarven Hammer",
+  "faces": [
+    {
+      "name": "Dwarven Hammer",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, you may pay {2}. If you do, create a 2/1 red Dwarf Berserker creature token, then attach this Equipment to it.\nEquipped creature gets +3/+0 and has trample.\nEquip {3}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, you may pay {2}. If you do, create a 2/1 red Dwarf Berserker creature token, then attach this Equipment to it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{2}",
+              "optional": true
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/1 red dwarf berserker creature token",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "dwarf",
+                  "berserker"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "attach_equipment",
+              "source": "self",
+              "target": "it",
+              "optional": true,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +3/+0 and has trample.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +3/+0 and has trample"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

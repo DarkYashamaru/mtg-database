@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ee9b606a-a1fe-43c8-84d0-9bf7b012cc75",
+  "name": "Leatherhead, Swamp Stalker",
+  "faces": [
+    {
+      "name": "Leatherhead, Swamp Stalker",
+      "type_line": "Legendary Creature \u2014 Crocodile Mutant Rogue",
+      "oracle_text": "Trample\nLeatherhead enters with a hexproof counter on her.\nWhenever Leatherhead deals combat damage to a player, you may remove a counter from her. When you do, destroy target artifact or enchantment that player controls.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Leatherhead deals combat damage to a player, you may remove a counter from her. When you do, destroy target artifact or enchantment that player controls.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may remove a counter from her"
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy target artifact or enchantment that player controls",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Leatherhead enters with a hexproof counter on her.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Leatherhead enters with a hexproof counter on her"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

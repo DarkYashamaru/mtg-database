@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c3c802ba-dfbb-4f63-ae9a-e29c2e30013d",
+  "name": "Jeskai Ascendancy",
+  "faces": [
+    {
+      "name": "Jeskai Ascendancy",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cast a noncreature spell, creatures you control get +1/+1 until end of turn. Untap those creatures.\nWhenever you cast a noncreature spell, you may draw a card. If you do, discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, creatures you control get +1/+1 until end of turn. Untap those creatures.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Untap those creatures"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a noncreature spell, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

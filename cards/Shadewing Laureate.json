@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "53a17d4f-cdbc-4669-a30e-5d5a334cc3c0",
+  "name": "Shadewing Laureate",
+  "faces": [
+    {
+      "name": "Shadewing Laureate",
+      "type_line": "Creature \u2014 Human Warlock",
+      "oracle_text": "Flying\nWhenever another creature you control with flying dies, put a +1/+1 counter on target creature you control.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control with flying dies, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "another_creature_you_control_with_flying"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

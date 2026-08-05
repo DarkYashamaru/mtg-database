@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "775617cd-7264-4365-94c4-ffae4eb9ec8b",
+  "name": "Aetherflux Conduit",
+  "faces": [
+    {
+      "name": "Aetherflux Conduit",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever you cast a spell, you get an amount of {E} (energy counters) equal to the amount of mana spent to cast that spell.\n{T}, Pay fifty {E}: Draw seven cards. You may cast any number of spells from your hand without paying their mana costs.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, you get an amount of {E} (energy counters) equal to the amount of mana spent to cast that spell.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get an amount of {E} equal to the amount of mana spent to cast that spell"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Pay fifty {E}: Draw seven cards. You may cast any number of spells from your hand without paying their mana costs.",
+          "cost": "{T}, Pay fifty {E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 7
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast any number of spells from your hand without paying their mana costs"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

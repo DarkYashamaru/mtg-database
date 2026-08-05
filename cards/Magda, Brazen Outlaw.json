@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3d268e48-3004-4384-bf52-e63243fb5e02",
+  "name": "Magda, Brazen Outlaw",
+  "faces": [
+    {
+      "name": "Magda, Brazen Outlaw",
+      "type_line": "Legendary Creature \u2014 Dwarf Berserker",
+      "oracle_text": "Other Dwarves you control get +1/+0.\nWhenever a Dwarf you control becomes tapped, create a Treasure token.\nSacrifice five Treasures: Search your library for an artifact or Dragon card, put that card onto the battlefield, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Dwarf you control becomes tapped, create a Treasure token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a Dwarf you control becomes tapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice five Treasures: Search your library for an artifact or Dragon card, put that card onto the battlefield, then shuffle.",
+          "cost": "Sacrifice five Treasures",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for an artifact or dragon card, put that card onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Other Dwarves you control get +1/+0.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other Dwarves you control get +1/+0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

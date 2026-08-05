@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b953d19f-6ba7-4aee-b353-c60dc9572610",
+  "name": "Green Mana Battery",
+  "faces": [
+    {
+      "name": "Green Mana Battery",
+      "type_line": "Artifact",
+      "oracle_text": "{2}, {T}: Put a charge counter on this artifact.\n{T}, Remove any number of charge counters from this artifact: Add {G}, then add an additional {G} for each charge counter removed this way.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}: Put a charge counter on this artifact.",
+          "cost": "{2}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a charge counter on this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Remove any number of charge counters from this artifact: Add {G}, then add an additional {G} for each charge counter removed this way.",
+          "cost": "{T}, Remove any number of charge counters from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "add an additional {g} for each charge counter removed this way"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

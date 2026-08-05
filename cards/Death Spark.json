@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4b23a89c-89ba-41ad-b894-ec02221689eb",
+  "name": "Death Spark",
+  "faces": [
+    {
+      "name": "Death Spark",
+      "type_line": "Instant",
+      "oracle_text": "Death Spark deals 1 damage to any target.\nAt the beginning of your upkeep, if this card is in your graveyard with a creature card directly above it, you may pay {1}. If you do, return this card to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if this card is in your graveyard with a creature card directly above it, you may pay {1}. If you do, return this card to your hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "this card is in your graveyard with a creature card directly above it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "return this card to your hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Death Spark deals 1 damage to any target.",
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

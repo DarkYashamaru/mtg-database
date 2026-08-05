@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "efe4194a-b3c5-4308-abfe-553e035f5e64",
+  "name": "Dread Fugue",
+  "faces": [
+    {
+      "name": "Dread Fugue",
+      "type_line": "Sorcery",
+      "oracle_text": "Cleave {2}{B} (You may cast this spell for its cleave cost. If you do, remove the words in square brackets.)\nTarget player reveals their hand. You choose a nonland card from it [with mana value 2 or less]. That player discards that card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Cleave {2}{B} (You may cast this spell for its cleave cost. If you do, remove the words in square brackets.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cleave {2}{B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target player reveals their hand. You choose a nonland card from it [with mana value 2 or less]. That player discards that card.",
+          "effects": [
+            {
+              "action": "reveal_hand",
+              "target": "target_player"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You choose a nonland card from it [with mana value 2 or less]"
+            },
+            {
+              "action": "discard_revealed_card",
+              "target": "that_player"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

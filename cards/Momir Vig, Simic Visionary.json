@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6202d1cf-5359-4783-846d-7f35460e42b4",
+  "name": "Momir Vig, Simic Visionary",
+  "faces": [
+    {
+      "name": "Momir Vig, Simic Visionary",
+      "type_line": "Legendary Creature \u2014 Elf Wizard",
+      "oracle_text": "Whenever you cast a green creature spell, you may search your library for a creature card, reveal it, then shuffle and put that card on top.\nWhenever you cast a blue creature spell, reveal the top card of your library. If it's a creature card, put that card into your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a green creature spell, you may search your library for a creature card, reveal it, then shuffle and put that card on top.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            },
+            {
+              "spell_subtypes_all": [
+                "Green"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a creature card, reveal it"
+            },
+            {
+              "action": "shuffle_and_move_revealed_card",
+              "object": "that_card",
+              "destination_zone": "top_of_library"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a blue creature spell, reveal the top card of your library. If it's a creature card, put that card into your hand.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            },
+            {
+              "spell_subtypes_all": [
+                "Blue"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card into your hand",
+              "condition": [
+                {
+                  "condition_text": "it's a creature card"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

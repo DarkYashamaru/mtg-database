@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1251691e-3c4c-4e45-9f59-f156852f2268",
+  "name": "Lossarnach Captain",
+  "faces": [
+    {
+      "name": "Lossarnach Captain",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "First strike\nWhenever this creature or another Human you control enters, tap target creature an opponent controls.\nAt the beginning of your upkeep, create a 1/1 white Human Soldier creature token.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Human you control enters, tap target creature an opponent controls.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Human"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creature_an_opponent_controls"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, create a 1/1 white Human Soldier creature token.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Human Soldier creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human",
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

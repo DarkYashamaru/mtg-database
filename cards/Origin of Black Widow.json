@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3bc0479f-0f45-4b36-9963-f8eb5973cf47",
+  "name": "Origin of Black Widow",
+  "faces": [
+    {
+      "name": "Origin of Black Widow",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Each opponent sacrifices a creature of their choice.\nII \u2014 Creatures you control gain deathtouch until end of turn.\nIII \u2014 Each opponent loses 1 life for each creature card in their graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Each opponent sacrifices a creature of their choice.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent sacrifices a creature of their choice"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Creatures you control gain deathtouch until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "deathtouch"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Each opponent loses 1 life for each creature card in their graveyard.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent loses 1 life for each creature card in their graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

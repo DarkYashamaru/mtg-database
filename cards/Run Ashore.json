@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9b3bcd57-bf3f-4d72-810a-fdb5c8ea1551",
+  "name": "Run Ashore",
+  "faces": [
+    {
+      "name": "Run Ashore",
+      "type_line": "Instant",
+      "oracle_text": "Choose one or both \u2014\n\u2022 The owner of target nonland permanent puts it on their choice of the top or bottom of their library.\n\u2022 Return target nonland permanent to its owner's hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one or both \u2014\n\u2022 The owner of target nonland permanent puts it on their choice of the top or bottom of their library.\n\u2022 Return target nonland permanent to its owner's hand.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false,
+            "or_both": true
+          },
+          "modes": [
+            {
+              "raw_text": "The owner of target nonland permanent puts it on their choice of the top or bottom of their library.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "The owner of target nonland permanent puts it on their choice of the top or bottom of their library"
+                }
+              ]
+            },
+            {
+              "raw_text": "Return target nonland permanent to its owner's hand.",
+              "effects": [
+                {
+                  "action": "move_card",
+                  "target": {
+                    "selector": "target_permanent",
+                    "not_card_types": [
+                      "Land"
+                    ]
+                  },
+                  "destination_zone": "hand",
+                  "owner": "its_owner"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

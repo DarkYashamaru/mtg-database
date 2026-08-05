@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "987c1144-69f6-4441-b0a4-d23f931df81f",
+  "name": "Southern Air Temple",
+  "faces": [
+    {
+      "name": "Southern Air Temple",
+      "type_line": "Legendary Enchantment \u2014 Shrine",
+      "oracle_text": "When Southern Air Temple enters, put X +1/+1 counters on each creature you control, where X is the number of Shrines you control.\nWhenever another Shrine you control enters, put a +1/+1 counter on each creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Southern Air Temple enters, put X +1/+1 counters on each creature you control, where X is the number of Shrines you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_creature_you_control_where_x_is_the_number_of_shrines_you_control"
+              },
+              "amount": "X"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another Shrine you control enters, put a +1/+1 counter on each creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Shrine"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

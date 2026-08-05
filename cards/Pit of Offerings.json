@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "044d2788-6daa-4849-a813-1f577eef9295",
+  "name": "Pit of Offerings",
+  "faces": [
+    {
+      "name": "Pit of Offerings",
+      "type_line": "Land \u2014 Cave",
+      "oracle_text": "This land enters tapped.\nWhen this land enters, exile up to three target cards from graveyards.\n{T}: Add {C}.\n{T}: Add one mana of any of the exiled cards' colors.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land enters, exile up to three target cards from graveyards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to three target cards from graveyards"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add one mana of any of the exiled cards' colors.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add one mana of any of the exiled cards' colors"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

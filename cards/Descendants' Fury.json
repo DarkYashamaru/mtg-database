@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "97079964-7a2e-42c5-ad4a-9015c18a1e97",
+  "name": "Descendants' Fury",
+  "faces": [
+    {
+      "name": "Descendants' Fury",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever one or more creatures you control deal combat damage to a player, you may sacrifice one of them. If you do, reveal cards from the top of your library until you reveal a creature card that shares a creature type with the sacrificed creature. Put that card onto the battlefield and the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control deal combat damage to a player, you may sacrifice one of them. If you do, reveal cards from the top of your library until you reveal a creature card that shares a creature type with the sacrificed creature. Put that card onto the battlefield and the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "one_of_self",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "reveal cards from the top of your library until you reveal a creature card that shares a creature type with the sacrificed creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put that card onto the battlefield and the rest on the bottom of your library in a random order"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

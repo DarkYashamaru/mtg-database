@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e4d2dcbb-9910-482e-9e46-dfed2097509b",
+  "name": "Caves of Chaos Adventurer",
+  "faces": [
+    {
+      "name": "Caves of Chaos Adventurer",
+      "type_line": "Creature \u2014 Human Barbarian",
+      "oracle_text": "Trample\nWhen this creature enters, you take the initiative.\nWhenever this creature attacks, exile the top card of your library. If you've completed a dungeon, you may play that card this turn without paying its mana cost. Otherwise, you may play that card this turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you take the initiative.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "take_the_initiative"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, exile the top card of your library. If you've completed a dungeon, you may play that card this turn without paying its mana cost. Otherwise, you may play that card this turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may play that card this turn without paying its mana cost",
+              "condition": [
+                {
+                  "condition_text": "you've completed a dungeon"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may play that card this turn",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

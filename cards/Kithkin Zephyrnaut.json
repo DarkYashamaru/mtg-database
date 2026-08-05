@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f69e9629-a7f7-4241-bf0c-c8def7d19d66",
+  "name": "Kithkin Zephyrnaut",
+  "faces": [
+    {
+      "name": "Kithkin Zephyrnaut",
+      "type_line": "Creature \u2014 Kithkin Soldier",
+      "oracle_text": "Kinship \u2014 At the beginning of your upkeep, you may look at the top card of your library. If it shares a creature type with this creature, you may reveal it. If you do, this creature gets +2/+2 and gains flying and vigilance until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may look at the top card of your library. If it shares a creature type with this creature, you may reveal it. If you do, this creature gets +2/+2 and gains flying and vigilance until end of turn.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it shares a creature type with this creature"
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self_gets_22_and",
+              "keyword": "flying_and_vigilance",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

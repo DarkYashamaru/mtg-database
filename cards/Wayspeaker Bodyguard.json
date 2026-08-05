@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b93eaf66-91b3-44da-851c-79810901be0c",
+  "name": "Wayspeaker Bodyguard",
+  "faces": [
+    {
+      "name": "Wayspeaker Bodyguard",
+      "type_line": "Creature \u2014 Orc Monk",
+      "oracle_text": "When this creature enters, return target nonland permanent card with mana value 2 or less from your graveyard to your hand.\nFlurry \u2014 Whenever you cast your second spell each turn, tap target creature an opponent controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, return target nonland permanent card with mana value 2 or less from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target nonland permanent card with mana value 2 or less from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast your second spell each turn, tap target creature an opponent controls.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "target_creature_an_opponent_controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

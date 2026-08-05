@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1e080c7d-102c-4d28-bcb9-62b36d400d13",
+  "name": "Rundvelt Hordemaster",
+  "faces": [
+    {
+      "name": "Rundvelt Hordemaster",
+      "type_line": "Creature \u2014 Goblin Warrior",
+      "oracle_text": "Other Goblins you control get +1/+1.\nWhenever this creature or another Goblin you control dies, exile the top card of your library. If it's a Goblin creature card, you may cast that card until the end of your next turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another Goblin you control dies, exile the top card of your library. If it's a Goblin creature card, you may cast that card until the end of your next turn.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Goblin"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast that card until the end of your next turn",
+              "condition": [
+                {
+                  "condition_text": "it's a goblin creature card"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Goblins you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other Goblins you control get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

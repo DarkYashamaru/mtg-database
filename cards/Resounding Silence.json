@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6eefa487-1542-4d24-80bd-4893d9d908c8",
+  "name": "Resounding Silence",
+  "faces": [
+    {
+      "name": "Resounding Silence",
+      "type_line": "Instant",
+      "oracle_text": "Exile target attacking creature.\nCycling {5}{G}{W}{U} ({5}{G}{W}{U}, Discard this card: Draw a card.)\nWhen you cycle this card, exile up to two target attacking creatures.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, exile up to two target attacking creatures.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to two target attacking creatures"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {5}{G}{W}{U} ({5}{G}{W}{U}, Discard this card: Draw a card.)",
+          "cost": "Cycling {5}{G}{W}{U} ({5}{G}{W}{U}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Exile target attacking creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target attacking creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

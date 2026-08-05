@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4e1c9e10-1cae-4ee5-866e-b7b5bb47bbce",
+  "name": "Rhino, Terrible Trampler",
+  "faces": [
+    {
+      "name": "Rhino, Terrible Trampler",
+      "type_line": "Legendary Creature \u2014 Human Villain",
+      "oracle_text": "Trample\nWhen Rhino enters, destroy target artifact or land. Distribute three +1/+1 counters among up to three other target creatures. They gain trample until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Rhino enters, destroy target artifact or land. Distribute three +1/+1 counters among up to three other target creatures. They gain trample until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy target artifact or land"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Distribute three +1/+1 counters among up to three other target creatures"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "they",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

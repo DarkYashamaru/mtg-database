@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f1409c9e-f0d9-49e1-b02e-d0f04a658331",
+  "name": "Emrakul's Messenger",
+  "faces": [
+    {
+      "name": "Emrakul's Messenger",
+      "type_line": "Creature \u2014 Eldrazi Faerie Rogue",
+      "oracle_text": "Devoid (This card has no color.)\nFlying\nWhenever you draw your second card each turn, create a 0/1 colorless Eldrazi Spawn creature token with \"Sacrifice this token: Add {C}.\"",
+      "static": [
+        {
+          "keyword": "devoid"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, create a 0/1 colorless Eldrazi Spawn creature token with \"Sacrifice this token: Add {C}.\"",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 0/1 colorless Eldrazi Spawn creature token with \"Sacrifice this token: Add {C}",
+                "power_toughness": "0/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Eldrazi",
+                  "Spawn"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "42c7e933-f169-444b-917d-b4dca918d989",
+  "name": "Puppet Master",
+  "faces": [
+    {
+      "name": "Puppet Master",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen enchanted creature dies, return that card to its owner's hand. If that card is returned to its owner's hand this way, you may pay {U}{U}{U}. If you do, return this card to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature dies, return that card to its owner's hand. If that card is returned to its owner's hand this way, you may pay {U}{U}{U}. If you do, return this card to its owner's hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return that card to its owner's hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may pay {u}{u}{u}",
+              "condition": [
+                {
+                  "condition_text": "that card is returned to its owner's hand this way"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "return this card to its owner's hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

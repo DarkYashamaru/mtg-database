@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2c75b870-263b-41ab-9ece-6e3845bc3d8d",
+  "name": "Koth, Fire of Resistance",
+  "faces": [
+    {
+      "name": "Koth, Fire of Resistance",
+      "type_line": "Legendary Planeswalker \u2014 Koth",
+      "oracle_text": "+2: Search your library for a basic Mountain card, reveal it, put it into your hand, then shuffle.\n\u22123: Koth deals damage to target creature equal to the number of Mountains you control.\n\u22127: You get an emblem with \"Whenever a Mountain you control enters, this emblem deals 4 damage to any target.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+2: Search your library for a basic Mountain card, reveal it, put it into your hand, then shuffle.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a basic mountain card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Koth deals damage to target creature equal to the number of Mountains you control.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Koth deals damage to target creature equal to the number of Mountains you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: You get an emblem with \"Whenever a Mountain you control enters, this emblem deals 4 damage to any target.\"",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": {
+                "selector": "you_get_an_emblem_with_whenever_a_mountain_you_control_enters_this_emblem"
+              },
+              "target": "any_target",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

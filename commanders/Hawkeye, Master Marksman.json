@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6b59bb1f-f2d4-4d47-bd57-23927d588381",
+  "name": "Hawkeye, Master Marksman",
+  "faces": [
+    {
+      "name": "Hawkeye, Master Marksman",
+      "type_line": "Legendary Creature \u2014 Human Archer Hero",
+      "oracle_text": "First strike, reach\nTrick Arrows \u2014 Whenever Hawkeye becomes tapped, you may pay {1} up to three times. When you do, choose up to that many.\n\u2022 Net \u2014 Target creature can't block this turn.\n\u2022 Explosive \u2014 Hawkeye deals 2 damage to target player.\n\u2022 Boomerang \u2014 Discard a card, then draw a card.",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Hawkeye becomes tapped, you may pay {1} up to three times. When you do, choose up to that many.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever Hawkeye becomes tapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1} up to three times"
+            },
+            {
+              "action": "custom_effect",
+              "text": "choose up to that many",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "\u2022 Net \u2014 Target creature can't block this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Net \u2014 Target creature can't block this turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Explosive \u2014 Hawkeye deals 2 damage to target player.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Explosive \u2014 Hawkeye deals 2 damage to target player"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Boomerang \u2014 Discard a card, then draw a card.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 boomerang \u2014 discard a card"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

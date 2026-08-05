@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "58a55d14-b03b-4648-b168-ad35ff088b19",
+  "name": "Siren's Ruse",
+  "faces": [
+    {
+      "name": "Siren's Ruse",
+      "type_line": "Instant",
+      "oracle_text": "Exile target creature you control, then return that card to the battlefield under its owner's control. If a Pirate was exiled this way, draw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Exile target creature you control, then return that card to the battlefield under its owner's control. If a Pirate was exiled this way, draw a card.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target creature you control"
+            },
+            {
+              "action": "move_card",
+              "target": "that_card",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "a pirate was exiled this way"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

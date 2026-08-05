@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "61f55e39-4028-4c91-910e-16b88c73beb5",
+  "name": "Archon of Coronation",
+  "faces": [
+    {
+      "name": "Archon of Coronation",
+      "type_line": "Creature \u2014 Archon",
+      "oracle_text": "Flying\nWhen this creature enters, you become the monarch.\nAs long as you're the monarch, damage doesn't cause you to lose life. (When a creature deals combat damage to you, its controller still becomes the monarch.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as you're the monarch, damage doesn't cause you to lose life. (When a creature deals combat damage to you, its controller still becomes the monarch.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As long as you're the monarch, damage doesn't cause you to lose life"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

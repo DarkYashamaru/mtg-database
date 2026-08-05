@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "58838588-13d5-4948-babf-d09cc59d76a1",
+  "name": "Crystal Seer",
+  "faces": [
+    {
+      "name": "Crystal Seer",
+      "type_line": "Creature \u2014 Vedalken Wizard",
+      "oracle_text": "When this creature enters, look at the top four cards of your library, then put them back in any order.\n{4}{U}: Return this creature to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at the top four cards of your library, then put them back in any order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "return_looked_at_cards",
+              "destination": "top_of_library",
+              "order": "any"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{4}{U}: Return this creature to its owner's hand.",
+          "cost": "{4}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

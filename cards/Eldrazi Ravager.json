@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "25a73cfc-a40d-47ea-a7b1-61c7b62a9e6c",
+  "name": "Eldrazi Ravager",
+  "faces": [
+    {
+      "name": "Eldrazi Ravager",
+      "type_line": "Creature \u2014 Eldrazi",
+      "oracle_text": "Annihilator 1 (Whenever this creature attacks, defending player sacrifices a permanent of their choice.)\nSacrifice two Eldrazi: Return this card from your graveyard to your hand.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice two Eldrazi: Return this card from your graveyard to your hand.",
+          "cost": "Sacrifice two Eldrazi",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Cycling {2} ({2}, Discard this card: Draw a card.)",
+          "cost": "Cycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Annihilator 1 (Whenever this creature attacks, defending player sacrifices a permanent of their choice.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Annihilator 1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

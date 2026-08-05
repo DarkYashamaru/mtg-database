@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ca4fdf89-a74e-4086-8109-b0f9dd91710e",
+  "name": "Footfall Crater",
+  "faces": [
+    {
+      "name": "Footfall Crater",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\nEnchanted land has \"{T}: Target creature gains trample and haste until end of turn.\"\nCycling {1} ({1}, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Enchanted land has \"{T}: Target creature gains trample and haste until end of turn.\"",
+          "cost": "Enchanted land has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "trample_and_haste"
+            }
+          ]
+        },
+        {
+          "raw_text": "Cycling {1} ({1}, Discard this card: Draw a card.)",
+          "cost": "Cycling {1} ({1}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0023888e-7bec-43e0-8dee-d1a4eb94b372",
+  "name": "Palinchron",
+  "faces": [
+    {
+      "name": "Palinchron",
+      "type_line": "Creature \u2014 Illusion",
+      "oracle_text": "Flying\nWhen this creature enters, untap up to seven lands.\n{2}{U}{U}: Return this creature to its owner's hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, untap up to seven lands.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap up to seven lands"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{U}{U}: Return this creature to its owner's hand.",
+          "cost": "{2}{U}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

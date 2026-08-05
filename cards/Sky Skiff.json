@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f2c43b85-8c42-4b23-84c2-bec8d6230039",
+  "name": "Sky Skiff",
+  "faces": [
+    {
+      "name": "Sky Skiff",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

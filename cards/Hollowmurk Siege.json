@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "31061e34-042e-40c3-99ab-752795ab4324",
+  "name": "Hollowmurk Siege",
+  "faces": [
+    {
+      "name": "Hollowmurk Siege",
+      "type_line": "Enchantment",
+      "oracle_text": "As this enchantment enters, choose Sultai or Abzan.\n\u2022 Sultai \u2014 Whenever a counter is put on a creature you control, draw a card. This ability triggers only once each turn.\n\u2022 Abzan \u2014 Whenever you attack, put a +1/+1 counter on target attacking creature. It gains menace until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this enchantment enters, choose Sultai or Abzan.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this enchantment enters, choose Sultai or Abzan"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Sultai \u2014 Whenever a counter is put on a creature you control, draw a card. This ability triggers only once each turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Sultai \u2014 Whenever a counter is put on a creature you control, draw a card"
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2022 Abzan \u2014 Whenever you attack, put a +1/+1 counter on target attacking creature. It gains menace until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Abzan \u2014 Whenever you attack, put a +1/+1 counter on target attacking creature"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

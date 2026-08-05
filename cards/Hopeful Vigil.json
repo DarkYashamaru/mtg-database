@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "33fff722-5cc5-4d0e-b788-166b3edb1223",
+  "name": "Hopeful Vigil",
+  "faces": [
+    {
+      "name": "Hopeful Vigil",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create a 2/2 white Knight creature token with vigilance.\nWhen this enchantment is put into a graveyard from the battlefield, scry 2.\n{2}{W}: Sacrifice this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create a 2/2 white Knight creature token with vigilance.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 white Knight creature token with vigilance",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Knight"
+                ],
+                "keywords": [
+                  "vigilance"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "When this enchantment is put into a graveyard from the battlefield, scry 2.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this enchantment is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{W}: Sacrifice this enchantment.",
+          "cost": "{2}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

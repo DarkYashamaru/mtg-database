@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0045cf16-86dd-4417-ae36-88ca63b30c26",
+  "name": "Strength of Night",
+  "faces": [
+    {
+      "name": "Strength of Night",
+      "type_line": "Instant",
+      "oracle_text": "Kicker {B} (You may pay an additional {B} as you cast this spell.)\nCreatures you control get +1/+1 until end of turn. If this spell was kicked, Zombie creatures you control get an additional +2/+2 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {B} (You may pay an additional {B} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {B}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures you control get +1/+1 until end of turn. If this spell was kicked, Zombie creatures you control get an additional +2/+2 until end of turn.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "zombie creatures you control get an additional +2/+2 until end of turn",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

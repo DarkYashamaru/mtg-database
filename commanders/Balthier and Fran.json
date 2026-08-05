@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "570cb560-c246-4652-b230-ab34f966c78a",
+  "name": "Balthier and Fran",
+  "faces": [
+    {
+      "name": "Balthier and Fran",
+      "type_line": "Legendary Creature \u2014 Human Rabbit",
+      "oracle_text": "Reach\nVehicles you control get +1/+1 and have vigilance and reach.\nWhenever a Vehicle crewed by Balthier and Fran this turn attacks, if it's the first combat phase of the turn, you may pay {1}{R}{G}. If you do, after this phase, there is an additional combat phase.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Vehicle crewed by Balthier and Fran this turn attacks, if it's the first combat phase of the turn, you may pay {1}{R}{G}. If you do, after this phase, there is an additional combat phase.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "a_vehicle_crewed_by_self_this_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "it's the first combat phase of the turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{R}{G}"
+            },
+            {
+              "action": "add_combat_phase_after_this_phase",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Vehicles you control get +1/+1 and have vigilance and reach.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "vehicles_you_control_get_11_and"
+              },
+              "keywords": [
+                "vigilance",
+                "reach"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

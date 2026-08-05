@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3406db41-6b95-48fc-b58e-4476220fd34d",
+  "name": "Sidisi, Undead Vizier",
+  "faces": [
+    {
+      "name": "Sidisi, Undead Vizier",
+      "type_line": "Legendary Creature \u2014 Zombie Snake",
+      "oracle_text": "Deathtouch\nExploit (When this creature enters, you may sacrifice a creature.)\nWhen Sidisi exploits a creature, you may search your library for a card, put it into your hand, then shuffle.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        },
+        {
+          "keyword": "exploit"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Sidisi exploits a creature, you may search your library for a card, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "exploits_creature",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a card, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

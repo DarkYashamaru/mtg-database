@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85ccae95-92c4-41ff-96fd-dcb515dc568e",
+  "name": "Path of the Animist",
+  "faces": [
+    {
+      "name": "Path of the Animist",
+      "type_line": "Sorcery",
+      "oracle_text": "Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.\nWill of the Planeswalkers \u2014 Starting with you, each player votes for planeswalk or chaos. If planeswalk gets more votes, planeswalk. If chaos gets more votes or the vote is tied, chaos ensues.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for up to two basic land cards, put them onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Will of the Planeswalkers \u2014 Starting with you, each player votes for planeswalk or chaos. If planeswalk gets more votes, planeswalk. If chaos gets more votes or the vote is tied, chaos ensues.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Will of the Planeswalkers \u2014 Starting with you, each player votes for planeswalk or chaos"
+            },
+            {
+              "action": "custom_effect",
+              "text": "planeswalk",
+              "condition": [
+                {
+                  "condition_text": "planeswalk gets more votes"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "chaos ensues",
+              "condition": [
+                {
+                  "condition_text": "chaos gets more votes or the vote is tied"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

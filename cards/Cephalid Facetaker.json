@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cfb41a2b-4d8b-47e3-a074-95a1bd502227",
+  "name": "Cephalid Facetaker",
+  "faces": [
+    {
+      "name": "Cephalid Facetaker",
+      "type_line": "Creature \u2014 Octopus Rogue",
+      "oracle_text": "This creature can't be blocked.\nAt the beginning of combat on your turn, you may have this creature become a copy of another target creature until end of turn, except it's 1/4 and has \"This creature can't be blocked.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, you may have this creature become a copy of another target creature until end of turn, except it's 1/4 and has \"This creature can't be blocked.\"",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have this creature become a copy of another target creature until end of turn, except it's 1/4 and has \"This creature can't be blocked.\""
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

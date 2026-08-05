@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4ac53b34-20d2-4a53-bade-4f998fb6ae67",
+  "name": "Thopter Engineer",
+  "faces": [
+    {
+      "name": "Thopter Engineer",
+      "type_line": "Creature \u2014 Human Artificer",
+      "oracle_text": "When this creature enters, create a 1/1 colorless Thopter artifact creature token with flying.\nArtifact creatures you control have haste. (They can attack and {T} as soon as they come under your control.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 1/1 colorless Thopter artifact creature token with flying.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 colorless Thopter artifact creature token with flying",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Thopter",
+                  "artifact"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Artifact creatures you control have haste. (They can attack and {T} as soon as they come under your control.)",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "permanents_you_control",
+                "card_types": [
+                  "Artifact",
+                  "Creature"
+                ]
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

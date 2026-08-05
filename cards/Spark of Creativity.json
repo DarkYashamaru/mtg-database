@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "22504fd0-0353-4ef0-baf4-4b7be28d1a66",
+  "name": "Spark of Creativity",
+  "faces": [
+    {
+      "name": "Spark of Creativity",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose target creature. Exile the top card of your library. You may have Spark of Creativity deal damage to that creature equal to the exiled card's mana value. If you don't, you may play that card until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose target creature. Exile the top card of your library. You may have Spark of Creativity deal damage to that creature equal to the exiled card's mana value. If you don't, you may play that card until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose target creature"
+            },
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may have Spark of Creativity deal damage to that creature equal to the exiled card's mana value"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may play that card until end of turn",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

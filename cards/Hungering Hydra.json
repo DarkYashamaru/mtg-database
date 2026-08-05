@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1dde190-8124-4590-9507-801ea4c8cde3",
+  "name": "Hungering Hydra",
+  "faces": [
+    {
+      "name": "Hungering Hydra",
+      "type_line": "Creature \u2014 Hydra",
+      "oracle_text": "This creature enters with X +1/+1 counters on it.\nThis creature can't be blocked by more than one creature.\nWhenever this creature is dealt damage, put that many +1/+1 counters on it. (It must survive the damage to get the counters.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature is dealt damage, put that many +1/+1 counters on it. (It must survive the damage to get the counters.)",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put that many +1/+1 counters on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature can't be blocked by more than one creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature can't be blocked by more than one creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

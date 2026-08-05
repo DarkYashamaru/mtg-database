@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8e819d68-3a6e-449a-8392-e072724b80f1",
+  "name": "Goblin Boom Keg",
+  "faces": [
+    {
+      "name": "Goblin Boom Keg",
+      "type_line": "Artifact",
+      "oracle_text": "At the beginning of your upkeep, sacrifice this artifact.\nWhen this artifact is put into a graveyard from the battlefield, it deals 3 damage to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice this artifact.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "this_artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this artifact is put into a graveyard from the battlefield, it deals 3 damage to any target.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

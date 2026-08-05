@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a6e2d8bd-8fe7-4de0-af25-7ad3e9dcb81b",
+  "name": "Harried Dronesmith",
+  "faces": [
+    {
+      "name": "Harried Dronesmith",
+      "type_line": "Creature \u2014 Human Artificer",
+      "oracle_text": "At the beginning of combat on your turn, create a 1/1 colorless Thopter artifact creature token with flying. It gains haste until end of turn. Sacrifice it at the beginning of your next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, create a 1/1 colorless Thopter artifact creature token with flying. It gains haste until end of turn. Sacrifice it at the beginning of your next end step.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 colorless Thopter artifact creature token with flying",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Thopter",
+                  "artifact"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "it_at_the_beginning_of_you_control_next_end_step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

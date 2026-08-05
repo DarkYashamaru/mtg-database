@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fd36cc16-d3d9-4c9d-9d28-bbe7e5459d75",
+  "name": "Wrexial, the Risen Deep",
+  "faces": [
+    {
+      "name": "Wrexial, the Risen Deep",
+      "type_line": "Legendary Creature \u2014 Kraken",
+      "oracle_text": "Islandwalk, swampwalk (This creature can't be blocked as long as defending player controls an Island or a Swamp.)\nWhenever Wrexial deals combat damage to a player, you may cast target instant or sorcery card from that player's graveyard without paying its mana cost. If that spell would be put into a graveyard, exile it instead.",
+      "static": [
+        {
+          "keyword": "islandwalk"
+        },
+        {
+          "keyword": "swampwalk"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Wrexial deals combat damage to a player, you may cast target instant or sorcery card from that player's graveyard without paying its mana cost. If that spell would be put into a graveyard, exile it instead.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may cast target instant or sorcery card from that player's graveyard without paying its mana cost"
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "that spell would be put into a graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

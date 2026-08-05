@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c3e67b8f-1c91-4a2f-b924-35bbaff4bab9",
+  "name": "Lazotep Chancellor",
+  "faces": [
+    {
+      "name": "Lazotep Chancellor",
+      "type_line": "Creature \u2014 Zombie Wizard",
+      "oracle_text": "Whenever you discard a card, you may pay {1}. If you do, amass Zombies 2. (Put two +1/+1 counters on an Army you control. It's also a Zombie. If you don't control an Army, create a 0/0 black Zombie Army creature token first.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you discard a card, you may pay {1}. If you do, amass Zombies 2. (Put two +1/+1 counters on an Army you control. It's also a Zombie. If you don't control an Army, create a 0/0 black Zombie Army creature token first.)",
+          "trigger": {
+            "type": "discard_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "amass zombies 2",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

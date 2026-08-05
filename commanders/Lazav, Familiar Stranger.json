@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ca60623a-1a98-4153-a0ee-2f34981de5cb",
+  "name": "Lazav, Familiar Stranger",
+  "faces": [
+    {
+      "name": "Lazav, Familiar Stranger",
+      "type_line": "Legendary Creature \u2014 Shapeshifter",
+      "oracle_text": "Whenever you commit a crime, put a +1/+1 counter on Lazav. Then you may exile a card from a graveyard. If a creature card was exiled this way, you may have Lazav become a copy of that card until end of turn. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you commit a crime, put a +1/+1 counter on Lazav. Then you may exile a card from a graveyard. If a creature card was exiled this way, you may have Lazav become a copy of that card until end of turn. This ability triggers only once each turn. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime.)",
+          "trigger": {
+            "type": "commit_crime",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may exile a card from a graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may have lazav become a copy of that card until end of turn",
+              "condition": [
+                {
+                  "condition_text": "a creature card was exiled this way"
+                }
+              ]
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

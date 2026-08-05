@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "24661b81-6bee-4ad8-b3ab-53cb65005c51",
+  "name": "Goblin Rabblemaster",
+  "faces": [
+    {
+      "name": "Goblin Rabblemaster",
+      "type_line": "Creature \u2014 Goblin Warrior",
+      "oracle_text": "Other Goblin creatures you control attack each combat if able.\nAt the beginning of combat on your turn, create a 1/1 red Goblin creature token with haste.\nWhenever this creature attacks, it gets +1/+0 until end of turn for each other attacking Goblin.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, create a 1/1 red Goblin creature token with haste.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 red Goblin creature token with haste",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Goblin"
+                ],
+                "keywords": [
+                  "haste"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, it gets +1/+0 until end of turn for each other attacking Goblin.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gets +1/+0 until end of turn for each other attacking Goblin"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other Goblin creatures you control attack each combat if able.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other Goblin creatures you control attack each combat if able"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

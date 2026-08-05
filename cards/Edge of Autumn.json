@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "42d86827-6459-42fc-86b6-6eb055604c36",
+  "name": "Edge of Autumn",
+  "faces": [
+    {
+      "name": "Edge of Autumn",
+      "type_line": "Sorcery",
+      "oracle_text": "If you control four or fewer lands, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\nCycling\u2014Sacrifice a land. (Sacrifice a land, Discard this card: Draw a card.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Cycling\u2014Sacrifice a land. (Sacrifice a land, Discard this card: Draw a card.)",
+          "cost": "Cycling\u2014Sacrifice a land. (Sacrifice a land, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If you control four or fewer lands, search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "destination": "battlefield",
+              "tapped": true,
+              "condition": [
+                {
+                  "condition_text": "you control four or fewer lands"
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

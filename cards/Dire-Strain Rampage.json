@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "55281479-9d30-4f3e-afd0-66b0df5de68c",
+  "name": "Dire-Strain Rampage",
+  "faces": [
+    {
+      "name": "Dire-Strain Rampage",
+      "type_line": "Sorcery",
+      "oracle_text": "Destroy target artifact, enchantment, or land. If a land was destroyed this way, its controller may search their library for up to two basic land cards, put them onto the battlefield tapped, then shuffle. Otherwise, its controller may search their library for a basic land card, put it onto the battlefield tapped, then shuffle.\nFlashback {3}{R}{G}",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Destroy target artifact, enchantment, or land. If a land was destroyed this way, its controller may search their library for up to two basic land cards, put them onto the battlefield tapped, then shuffle. Otherwise, its controller may search their library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy target artifact, enchantment, or land"
+            },
+            {
+              "action": "custom_effect",
+              "text": "its controller may search their library for up to two basic land cards, put them onto the battlefield tapped",
+              "condition": [
+                {
+                  "condition_text": "a land was destroyed this way"
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "its controller may search their library for a basic land card, put it onto the battlefield tapped",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Flashback {3}{R}{G}",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flashback {3}{R}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "74c0164c-130f-4572-9066-626c77f6e2ff",
+  "name": "Barrowgoyf",
+  "faces": [
+    {
+      "name": "Barrowgoyf",
+      "type_line": "Creature \u2014 Lhurgoyf",
+      "oracle_text": "Deathtouch, lifelink\nBarrowgoyf's power is equal to the number of card types among cards in all graveyards and its toughness is equal to that number plus 1.\nWhenever this creature deals combat damage to a player, you may mill that many cards. If you do, you may put a creature card from among them into your hand.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may mill that many cards. If you do, you may put a creature card from among them into your hand.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may mill that many cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put a creature card from among them into your hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Barrowgoyf's power is equal to the number of card types among cards in all graveyards and its toughness is equal to that number plus 1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Barrowgoyf's power is equal to the number of card types among cards in all graveyards and its toughness is equal to that number plus 1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

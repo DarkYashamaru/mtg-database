@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7c3bd74-959c-4b07-b13d-30fe0f0ede2a",
+  "name": "Hostile Realm",
+  "faces": [
+    {
+      "name": "Hostile Realm",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\nEnchanted land has \"{T}: Target creature can't block this turn.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Enchanted land has \"{T}: Target creature can't block this turn.\"",
+          "cost": "Enchanted land has \"{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

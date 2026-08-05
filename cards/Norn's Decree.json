@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "92c43ee1-0f7d-4993-8d3a-689cc87d7480",
+  "name": "Norn's Decree",
+  "faces": [
+    {
+      "name": "Norn's Decree",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever one or more creatures an opponent controls deal combat damage to you, that opponent gets a poison counter.\nWhenever a player attacks, if one or more players being attacked are poisoned, the attacking player draws a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures an opponent controls deal combat damage to you, that opponent gets a poison counter.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more creatures an opponent controls deal combat damage to you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that opponent gets a poison counter"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a player attacks, if one or more players being attacked are poisoned, the attacking player draws a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "a_player"
+          },
+          "condition": [
+            {
+              "condition_text": "one or more players being attacked are poisoned"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "the attacking player draws a card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

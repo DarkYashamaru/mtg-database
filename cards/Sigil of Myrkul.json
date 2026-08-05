@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ae7e14cf-a275-4260-8d78-324429a042b7",
+  "name": "Sigil of Myrkul",
+  "faces": [
+    {
+      "name": "Sigil of Myrkul",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of combat on your turn, mill a card. When you do, if there are four or more creature cards in your graveyard, put a +1/+1 counter on target creature you control and it gains deathtouch until end of turn. (To mill a card, put the top card of your library into your graveyard.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, mill a card. When you do, if there are four or more creature cards in your graveyard, put a +1/+1 counter on target creature you control and it gains deathtouch until end of turn. (To mill a card, put the top card of your library into your graveyard.)",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "there are four or more creature cards in your graveyard"
+                },
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "deathtouch"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

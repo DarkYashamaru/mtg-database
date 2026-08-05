@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "27a3aa64-1de7-4b0c-af23-52886e7d258a",
+  "name": "Prismatic Undercurrents",
+  "faces": [
+    {
+      "name": "Prismatic Undercurrents",
+      "type_line": "Enchantment",
+      "oracle_text": "Vivid \u2014 When this enchantment enters, search your library for up to X basic land cards, where X is the number of colors among permanents you control. Reveal those cards, put them into your hand, then shuffle.\nYou may play an additional land on each of your turns.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, search your library for up to X basic land cards, where X is the number of colors among permanents you control. Reveal those cards, put them into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for up to X basic land cards, where X is the number of colors among permanents you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "reveal those cards, put them into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may play an additional land on each of your turns.",
+          "effects": [
+            {
+              "action": "additional_land_play",
+              "amount": 1,
+              "scope": "each_of_your_turns",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

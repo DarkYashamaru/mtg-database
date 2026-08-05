@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ebf6ef9f-97b2-48cf-855e-d68dc7b11de4",
+  "name": "Waker of the Wilds",
+  "faces": [
+    {
+      "name": "Waker of the Wilds",
+      "type_line": "Creature \u2014 Merfolk Shaman",
+      "oracle_text": "{X}{G}{G}: Put X +1/+1 counters on target land you control. That land becomes a 0/0 Elemental creature with haste. It's still a land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{X}{G}{G}: Put X +1/+1 counters on target land you control. That land becomes a 0/0 Elemental creature with haste. It's still a land.",
+          "cost": "{X}{G}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Land"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": "X"
+            },
+            {
+              "action": "custom_effect",
+              "text": "That land becomes a 0/0 Elemental creature with haste"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

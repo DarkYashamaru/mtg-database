@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1820af5c-9cc2-4b77-b4ca-86084442f087",
+  "name": "Sun Droplet",
+  "faces": [
+    {
+      "name": "Sun Droplet",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever you're dealt damage, put that many charge counters on this artifact.\nAt the beginning of each upkeep, you may remove a charge counter from this artifact. If you do, you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you're dealt damage, put that many charge counters on this artifact.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you're dealt damage"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put that many charge counters on this artifact"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each upkeep, you may remove a charge counter from this artifact. If you do, you gain 1 life.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may remove a charge counter from this artifact"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

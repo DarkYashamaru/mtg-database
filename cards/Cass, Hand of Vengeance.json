@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f9b6b1db-37c6-43d4-b762-6c9770da5964",
+  "name": "Cass, Hand of Vengeance",
+  "faces": [
+    {
+      "name": "Cass, Hand of Vengeance",
+      "type_line": "Legendary Creature \u2014 Human Ranger",
+      "oracle_text": "Vigilance\nWhenever Cass or another creature you control dies, if it was enchanted or equipped, return any number of Aura cards that were attached to it from your graveyard to the battlefield attached to target creature, then attach any number of Equipment that were attached to it to that creature.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Cass or another creature you control dies, if it was enchanted or equipped, return any number of Aura cards that were attached to it from your graveyard to the battlefield attached to target creature, then attach any number of Equipment that were attached to it to that creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Cas",
+                "Or",
+                "Another"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "it was enchanted or equipped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return any number of aura cards that were attached to it from your graveyard to the battlefield attached to target creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "attach any number of equipment that were attached to it to that creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

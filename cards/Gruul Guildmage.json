@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "75645b1f-0e12-4a05-b47f-0d2e2616c3ca",
+  "name": "Gruul Guildmage",
+  "faces": [
+    {
+      "name": "Gruul Guildmage",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "({R/G} can be paid with either {R} or {G}.)\n{3}{R}, Sacrifice a land: This creature deals 2 damage to target player or planeswalker.\n{3}{G}: Target creature gets +2/+2 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}{R}, Sacrifice a land: This creature deals 2 damage to target player or planeswalker.",
+          "cost": "{3}{R}, Sacrifice a land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals 2 damage to target player or planeswalker"
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}{G}: Target creature gets +2/+2 until end of turn.",
+          "cost": "{3}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

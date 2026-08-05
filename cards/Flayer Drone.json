@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9e275428-3562-4ed6-8a49-3bb202a5130a",
+  "name": "Flayer Drone",
+  "faces": [
+    {
+      "name": "Flayer Drone",
+      "type_line": "Creature \u2014 Eldrazi Drone",
+      "oracle_text": "Devoid (This card has no color.)\nFirst strike\nWhenever another colorless creature you control enters, target opponent loses 1 life.",
+      "static": [
+        {
+          "keyword": "devoid"
+        },
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another colorless creature you control enters, target opponent loses 1 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Colorles"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "target_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

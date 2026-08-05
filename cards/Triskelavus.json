@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e958f7bf-3011-4175-b467-ca225a9b7ad2",
+  "name": "Triskelavus",
+  "faces": [
+    {
+      "name": "Triskelavus",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "Flying\nThis creature enters with three +1/+1 counters on it.\n{1}, Remove a +1/+1 counter from this creature: Create a 1/1 colorless Triskelavite artifact creature token with flying. It has \"Sacrifice this token: This token deals 1 damage to any target.\"",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, Remove a +1/+1 counter from this creature: Create a 1/1 colorless Triskelavite artifact creature token with flying. It has \"Sacrifice this token: This token deals 1 damage to any target.\"",
+          "cost": "{1}, Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 colorless Triskelavite artifact creature token with flying",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Triskelavite",
+                  "artifact"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            },
+            {
+              "action": "deal_damage",
+              "source": "it_has_sacrifice_this_token_this_token",
+              "target": "any_target",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with three +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

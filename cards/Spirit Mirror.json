@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "42e041c0-ffbc-4bf8-a5aa-f0d14aad7112",
+  "name": "Spirit Mirror",
+  "faces": [
+    {
+      "name": "Spirit Mirror",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, if there are no Reflection tokens on the battlefield, create a 2/2 white Reflection creature token.\n{0}: Destroy target Reflection.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if there are no Reflection tokens on the battlefield, create a 2/2 white Reflection creature token.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "there are no Reflection tokens on the battlefield"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 white Reflection creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Reflection"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{0}: Destroy target Reflection.",
+          "cost": "{0}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy target Reflection"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

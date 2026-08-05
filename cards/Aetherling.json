@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b980bf11-9e12-4ee9-83c1-45706d9ae344",
+  "name": "Aetherling",
+  "faces": [
+    {
+      "name": "Aetherling",
+      "type_line": "Creature \u2014 Shapeshifter",
+      "oracle_text": "{U}: Exile this creature. Return it to the battlefield under its owner's control at the beginning of the next end step.\n{U}: This creature can't be blocked this turn.\n{1}: This creature gets +1/-1 until end of turn.\n{1}: This creature gets -1/+1 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{U}: Exile this creature. Return it to the battlefield under its owner's control at the beginning of the next end step.",
+          "cost": "{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile this creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Return it to the battlefield under its owner's control at the beginning of the next end step"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}: This creature can't be blocked this turn.",
+          "cost": "{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}: This creature gets +1/-1 until end of turn.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": -1
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}: This creature gets -1/+1 until end of turn.",
+          "cost": "{1}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": -1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

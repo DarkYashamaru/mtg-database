@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "23985249-c54e-4bfa-b69a-512422a46a77",
+  "name": "String of Disappearances",
+  "faces": [
+    {
+      "name": "String of Disappearances",
+      "type_line": "Instant",
+      "oracle_text": "Return target creature to its owner's hand. Then that creature's controller may pay {U}{U}. If the player does, they may copy this spell and may choose a new target for that copy.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Return target creature to its owner's hand. Then that creature's controller may pay {U}{U}. If the player does, they may copy this spell and may choose a new target for that copy.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature"
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then that creature's controller may pay {U}{U}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they may copy this spell and may choose a new target for that copy",
+              "condition": [
+                {
+                  "condition_text": "the player does"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

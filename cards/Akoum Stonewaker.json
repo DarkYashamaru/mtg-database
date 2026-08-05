@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "36d1a46e-44ac-4a65-a93c-8d6ab5c31cbf",
+  "name": "Akoum Stonewaker",
+  "faces": [
+    {
+      "name": "Akoum Stonewaker",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, you may pay {2}{R}. If you do, create a 3/1 red Elemental creature token with trample and haste. Exile that token at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, you may pay {2}{R}. If you do, create a 3/1 red Elemental creature token with trample and haste. Exile that token at the beginning of the next end step.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {2}{R}"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 3/1 red elemental creature token with trample and haste",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "3/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "elemental"
+                ],
+                "keywords": [
+                  "trample",
+                  "haste"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Exile that token at the beginning of the next end step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

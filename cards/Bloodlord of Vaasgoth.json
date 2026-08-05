@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d8560ee9-8cbb-440b-a132-e102a1eb3e89",
+  "name": "Bloodlord of Vaasgoth",
+  "faces": [
+    {
+      "name": "Bloodlord of Vaasgoth",
+      "type_line": "Creature \u2014 Vampire Warrior",
+      "oracle_text": "Bloodthirst 3 (If an opponent was dealt damage this turn, this creature enters with three +1/+1 counters on it.)\nFlying\nWhenever you cast a Vampire creature spell, it gains bloodthirst 3.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Vampire creature spell, it gains bloodthirst 3.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            },
+            {
+              "spell_subtypes_all": [
+                "Vampire"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gains bloodthirst 3"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Bloodthirst 3 (If an opponent was dealt damage this turn, this creature enters with three +1/+1 counters on it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Bloodthirst 3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93b6a170-a816-4556-aa27-a729231715e7",
+  "name": "Flailing Drake",
+  "faces": [
+    {
+      "name": "Flailing Drake",
+      "type_line": "Creature \u2014 Drake",
+      "oracle_text": "Flying\nWhenever this creature blocks or becomes blocked by a creature, that creature gets +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature blocks or becomes blocked by a creature, that creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "becomes_blocked_by_creature",
+            "subject": "self_blocks_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "that_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

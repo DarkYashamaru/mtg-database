@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "09be0f69-9c7f-491f-964d-bfbbc2d4251f",
+  "name": "Abbot of Keral Keep",
+  "faces": [
+    {
+      "name": "Abbot of Keral Keep",
+      "type_line": "Creature \u2014 Human Monk",
+      "oracle_text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\nWhen this creature enters, exile the top card of your library. Until end of turn, you may play that card.",
+      "static": [
+        {
+          "keyword": "prowess"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, exile the top card of your library. Until end of turn, you may play that card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may play that card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

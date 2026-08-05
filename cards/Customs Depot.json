@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "de64eab5-9d7a-4408-8358-47d30a14ce40",
+  "name": "Customs Depot",
+  "faces": [
+    {
+      "name": "Customs Depot",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cast a creature spell, you may pay {1}. If you do, draw a card, then discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a creature spell, you may pay {1}. If you do, draw a card, then discard a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

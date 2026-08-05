@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4c1c1537-e519-4e2f-9bc2-d34b289d4487",
+  "name": "Kozilek, the Great Distortion",
+  "faces": [
+    {
+      "name": "Kozilek, the Great Distortion",
+      "type_line": "Legendary Creature \u2014 Eldrazi",
+      "oracle_text": "When you cast this spell, if you have fewer than seven cards in hand, draw cards equal to the difference.\nMenace\nDiscard a card with mana value X: Counter target spell with mana value X.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, if you have fewer than seven cards in hand, draw cards equal to the difference.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "you have fewer than seven cards in hand"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "draw cards equal to the difference"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Discard a card with mana value X: Counter target spell with mana value X.",
+          "cost": "Discard a card with mana value X",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Counter target spell with mana value X"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

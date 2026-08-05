@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "39eb4062-68a0-4f64-a9cc-79be87fd8173",
+  "name": "Sluggishness",
+  "faces": [
+    {
+      "name": "Sluggishness",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature can't block.\nWhen this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this Aura is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature can't block.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature can't block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

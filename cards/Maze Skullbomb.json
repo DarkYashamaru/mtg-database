@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3cb91e96-285d-4191-97cd-ee7ce5d86eb2",
+  "name": "Maze Skullbomb",
+  "faces": [
+    {
+      "name": "Maze Skullbomb",
+      "type_line": "Artifact",
+      "oracle_text": "{1}, Sacrifice this artifact: Draw a card.\n{2}{G}, Sacrifice this artifact: Target creature you control gets +3/+3 and gains trample until end of turn. Draw a card. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, Sacrifice this artifact: Draw a card.",
+          "cost": "{1}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}{G}, Sacrifice this artifact: Target creature you control gets +3/+3 and gains trample until end of turn. Draw a card. Activate only as a sorcery.",
+          "cost": "{2}{G}, Sacrifice this artifact",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control_gets_33_and",
+              "keyword": "trample"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

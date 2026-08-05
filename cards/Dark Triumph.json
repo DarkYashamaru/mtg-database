@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "885630a8-c43b-4804-acd6-14a7c7321d73",
+  "name": "Dark Triumph",
+  "faces": [
+    {
+      "name": "Dark Triumph",
+      "type_line": "Instant",
+      "oracle_text": "If you control a Swamp, you may sacrifice a creature rather than pay this spell's mana cost.\nCreatures you control get +2/+0 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If you control a Swamp, you may sacrifice a creature rather than pay this spell's mana cost.",
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature_rather_than_pay_self_spells_mana_cost",
+              "optional": true,
+              "condition": [
+                {
+                  "condition_text": "you control a swamp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures you control get +2/+0 until end of turn.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

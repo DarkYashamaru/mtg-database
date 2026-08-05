@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "19e60344-57a8-41e0-8eca-87dbedf5a81a",
+  "name": "Captain America's Motorcycle",
+  "faces": [
+    {
+      "name": "Captain America's Motorcycle",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flash\nWhen this Vehicle enters, target creature or Vehicle gets +2/+0 until end of turn.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, target creature or Vehicle gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature_or_vehicle",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

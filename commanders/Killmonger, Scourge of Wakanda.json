@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1c3ba54a-a8ef-4838-b3aa-cb6df827a619",
+  "name": "Killmonger, Scourge of Wakanda",
+  "faces": [
+    {
+      "name": "Killmonger, Scourge of Wakanda",
+      "type_line": "Legendary Creature \u2014 Human Mercenary Villain",
+      "oracle_text": "When Killmonger enters, you may sacrifice another creature. When you do, destroy target nonland permanent an opponent controls.\nAs long as there are two or more creature cards in your graveyard, Killmonger gets +2/+1.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Killmonger enters, you may sacrifice another creature. When you do, destroy target nonland permanent an opponent controls.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "another_creature",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy target nonland permanent an opponent controls",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as there are two or more creature cards in your graveyard, Killmonger gets +2/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "as_long_as_there_are_two_or_more_creature_cards_in_you_control_graveyard_self",
+              "power_delta": 2,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

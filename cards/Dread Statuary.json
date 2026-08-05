@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a9789ce4-69cf-435c-b99a-78a21609830c",
+  "name": "Dread Statuary",
+  "faces": [
+    {
+      "name": "Dread Statuary",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{4}: This land becomes a 4/2 Golem artifact creature until end of turn. It's still a land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}: This land becomes a 4/2 Golem artifact creature until end of turn. It's still a land.",
+          "cost": "{4}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land becomes a 4/2 Golem artifact creature until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

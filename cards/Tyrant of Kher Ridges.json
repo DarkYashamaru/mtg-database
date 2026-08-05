@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7c06af6-8d96-4bfa-8baf-9e80f741e8cb",
+  "name": "Tyrant of Kher Ridges",
+  "faces": [
+    {
+      "name": "Tyrant of Kher Ridges",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhen this creature enters, it deals 4 damage to any target.\n{R}: This creature gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, it deals 4 damage to any target.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R}: This creature gets +1/+0 until end of turn.",
+          "cost": "{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

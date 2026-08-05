@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7493d78c-26c4-402e-bec5-6449773d0344",
+  "name": "Smoldering Egg // Ashmouth Dragon",
+  "faces": [
+    {
+      "name": "Ashmouth Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever you cast an instant or sorcery spell, this creature deals 2 damage to any target.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature deals 2 damage to any target.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Smoldering Egg",
+      "type_line": "Creature \u2014 Dragon Egg",
+      "oracle_text": "Defender\nWhenever you cast an instant or sorcery spell, put a number of ember counters on this creature equal to the amount of mana spent to cast that spell. Then if this creature has seven or more ember counters on it, remove them and transform this creature.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, put a number of ember counters on this creature equal to the amount of mana spent to cast that spell. Then if this creature has seven or more ember counters on it, remove them and transform this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a number of ember counters on this creature equal to the amount of mana spent to cast that spell"
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove them",
+              "condition": [
+                {
+                  "condition_text": "this creature has seven or more ember counters on it"
+                }
+              ]
+            },
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

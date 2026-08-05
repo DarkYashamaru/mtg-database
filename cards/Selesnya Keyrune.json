@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d4ecee6d-b23f-48e7-b7e5-347027225709",
+  "name": "Selesnya Keyrune",
+  "faces": [
+    {
+      "name": "Selesnya Keyrune",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {G} or {W}.\n{G}{W}: This artifact becomes a 3/3 green and white Wolf artifact creature until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G} or {W}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}",
+                "{w}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{G}{W}: This artifact becomes a 3/3 green and white Wolf artifact creature until end of turn.",
+          "cost": "{G}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact becomes a 3/3 green and white Wolf artifact creature until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

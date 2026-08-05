@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "210d1077-6e60-4f06-a8a4-10b842979ac5",
+  "name": "Halo Forager",
+  "faces": [
+    {
+      "name": "Halo Forager",
+      "type_line": "Creature \u2014 Faerie Rogue",
+      "oracle_text": "Flying\nWhen this creature enters, you may pay {X}. When you do, you may cast target instant or sorcery card with mana value X from a graveyard without paying its mana cost. If that spell would be put into a graveyard, exile it instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may pay {X}. When you do, you may cast target instant or sorcery card with mana value X from a graveyard without paying its mana cost. If that spell would be put into a graveyard, exile it instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{x}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast target instant or sorcery card with mana value x from a graveyard without paying its mana cost",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "that spell would be put into a graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

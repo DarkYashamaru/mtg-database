@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "228cb63f-0b93-4be5-94e5-4eaae9112eeb",
+  "name": "Dark Intimations",
+  "faces": [
+    {
+      "name": "Dark Intimations",
+      "type_line": "Sorcery",
+      "oracle_text": "Each opponent sacrifices a creature or planeswalker of their choice, then discards a card. You return a creature or planeswalker card from your graveyard to your hand, then draw a card.\nWhen you cast a Bolas planeswalker spell, exile this card from your graveyard. That planeswalker enters with an additional loyalty counter on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast a Bolas planeswalker spell, exile this card from your graveyard. That planeswalker enters with an additional loyalty counter on it.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Planeswalker"
+              ]
+            },
+            {
+              "spell_subtypes_all": [
+                "Bola"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile this card from your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "That planeswalker enters with an additional loyalty counter on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Each opponent sacrifices a creature or planeswalker of their choice, then discards a card. You return a creature or planeswalker card from your graveyard to your hand, then draw a card.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent sacrifices a creature or planeswalker of their choice"
+            },
+            {
+              "action": "custom_effect",
+              "text": "discards a card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you return a creature or planeswalker card from your graveyard to your hand"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

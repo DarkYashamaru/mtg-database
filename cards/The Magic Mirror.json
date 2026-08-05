@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9acf2701-2ba1-46fa-ad4a-b130a58181d3",
+  "name": "The Magic Mirror",
+  "faces": [
+    {
+      "name": "The Magic Mirror",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "This spell costs {1} less to cast for each instant and sorcery card in your graveyard.\nYou have no maximum hand size.\nAt the beginning of your upkeep, put a knowledge counter on The Magic Mirror, then draw a card for each knowledge counter on The Magic Mirror.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a knowledge counter on The Magic Mirror, then draw a card for each knowledge counter on The Magic Mirror.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a knowledge counter on the magic mirror"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "knowledge_counter_on_self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {1} less to cast for each instant and sorcery card in your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {1} less to cast for each instant and sorcery card in your graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "You have no maximum hand size.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You have no maximum hand size"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

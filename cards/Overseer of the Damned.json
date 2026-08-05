@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c1f085ce-5b52-45b3-aef0-f77f36b3da36",
+  "name": "Overseer of the Damned",
+  "faces": [
+    {
+      "name": "Overseer of the Damned",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Flying\nWhen this creature enters, you may destroy target creature.\nWhenever a nontoken creature an opponent controls dies, create a tapped 2/2 black Zombie creature token.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may destroy target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a nontoken creature an opponent controls dies, create a tapped 2/2 black Zombie creature token.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_nontoken_creature_an_opponent_controls"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "tapped 2/2 black Zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

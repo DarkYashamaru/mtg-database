@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "48ab8ba0-0e85-4656-a798-ceb961fb02ce",
+  "name": "Galvanic Giant // Storm Reading",
+  "faces": [
+    {
+      "name": "Galvanic Giant",
+      "type_line": "Creature \u2014 Giant Wizard",
+      "oracle_text": "Whenever you cast a spell with mana value 5 or greater, tap target creature an opponent controls and put a stun counter on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell with mana value 5 or greater, tap target creature an opponent controls and put a stun counter on it.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 5
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap target creature an opponent controls and put a stun counter on it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Storm Reading",
+      "type_line": "Instant \u2014 Adventure",
+      "oracle_text": "Draw four cards, then discard two cards. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Draw four cards, then discard two cards. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 4
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

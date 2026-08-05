@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "10fe402e-8d6f-4058-9f42-86f229055359",
+  "name": "Friendly Neighborhood",
+  "faces": [
+    {
+      "name": "Friendly Neighborhood",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\nWhen this Aura enters, create three 1/1 green and white Human Citizen creature tokens.\nEnchanted land has \"{1}, {T}: Target creature gets +1/+1 until end of turn for each creature you control. Activate only as a sorcery.\"",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, create three 1/1 green and white Human Citizen creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 3,
+              "token": {
+                "raw": "1/1 green and white Human Citizen creature tokens",
+                "colors": [
+                  "green",
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Human",
+                  "Citizen"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Enchanted land has \"{1}, {T}: Target creature gets +1/+1 until end of turn for each creature you control. Activate only as a sorcery.\"",
+          "cost": "Enchanted land has \"{1}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target creature gets +1/+1 until end of turn for each creature you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

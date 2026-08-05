@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7069d241-4e66-40bf-afd1-551a4a5457f0",
+  "name": "Hidden Lair",
+  "faces": [
+    {
+      "name": "Hidden Lair",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {U} or {B}. Activate only if this land entered this turn or if you control a basic land.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {U} or {B}. Activate only if this land entered this turn or if you control a basic land.",
+          "cost": "{T}",
+          "condition": [
+            {
+              "condition_text": "this land entered this turn or if you control a basic land"
+            }
+          ],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}",
+                "{b}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd940cab-d23a-44bf-ab96-8aa1dcd3f0ff",
+  "name": "Scion of Darkness",
+  "faces": [
+    {
+      "name": "Scion of Darkness",
+      "type_line": "Creature \u2014 Avatar",
+      "oracle_text": "Trample\nWhenever this creature deals combat damage to a player, you may put target creature card from that player's graveyard onto the battlefield under your control.\nCycling {3} ({3}, Discard this card: Draw a card.)",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may put target creature card from that player's graveyard onto the battlefield under your control.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put target creature card from that player's graveyard onto the battlefield under your control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {3} ({3}, Discard this card: Draw a card.)",
+          "cost": "Cycling {3} ({3}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

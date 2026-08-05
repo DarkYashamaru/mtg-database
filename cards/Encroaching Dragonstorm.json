@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1e95c273-7fec-4f8d-8be9-e21ad4b93717",
+  "name": "Encroaching Dragonstorm",
+  "faces": [
+    {
+      "name": "Encroaching Dragonstorm",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.\nWhen a Dragon you control enters, return this enchantment to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for up to two basic land cards, put them onto the battlefield tapped"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "When a Dragon you control enters, return this enchantment to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Dragon"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return this enchantment to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

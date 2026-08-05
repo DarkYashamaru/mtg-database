@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e43e06fb-52b7-4f38-8fac-f31973b043f7",
+  "name": "Phantom Nishoba",
+  "faces": [
+    {
+      "name": "Phantom Nishoba",
+      "type_line": "Creature \u2014 Cat Beast Spirit",
+      "oracle_text": "Trample\nThis creature enters with seven +1/+1 counters on it.\nWhenever this creature deals damage, you gain that much life.\nIf damage would be dealt to this creature, prevent that damage. Remove a +1/+1 counter from this creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals damage, you gain that much life.",
+          "trigger": {
+            "type": "deals_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": "that_much"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with seven +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 7
+            }
+          ]
+        },
+        {
+          "raw_text": "If damage would be dealt to this creature, prevent that damage. Remove a +1/+1 counter from this creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent that damage",
+              "condition": [
+                {
+                  "condition_text": "damage would be dealt to this creature"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Remove a +1/+1 counter from this creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fc2e441c-bc0b-439f-af71-daba3b033381",
+  "name": "Seed Spark",
+  "faces": [
+    {
+      "name": "Seed Spark",
+      "type_line": "Instant",
+      "oracle_text": "Destroy target artifact or enchantment. If {G} was spent to cast this spell, create two 1/1 green Saproling creature tokens.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Destroy target artifact or enchantment. If {G} was spent to cast this spell, create two 1/1 green Saproling creature tokens.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Artifact",
+                  "Enchantment"
+                ]
+              }
+            },
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 green saproling creature tokens",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "saproling"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "{g} was spent to cast this spell"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

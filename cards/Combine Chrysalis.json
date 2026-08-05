@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a1cee8d7-f619-47b4-ba8c-faf3106d4e41",
+  "name": "Combine Chrysalis",
+  "faces": [
+    {
+      "name": "Combine Chrysalis",
+      "type_line": "Artifact",
+      "oracle_text": "Creature tokens you control have flying.\n{2}{G}{U}, {T}, Sacrifice a token: Create a 4/4 green Beast creature token. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{G}{U}, {T}, Sacrifice a token: Create a 4/4 green Beast creature token. Activate only as a sorcery.",
+          "cost": "{2}{G}{U}, {T}, Sacrifice a token",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "4/4 green Beast creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Beast"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Creature tokens you control have flying.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Token"
+                ]
+              },
+              "keywords": [
+                "flying"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

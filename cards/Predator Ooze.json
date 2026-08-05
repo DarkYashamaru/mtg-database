@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a51ec70d-1356-4403-a858-b99445bac54a",
+  "name": "Predator Ooze",
+  "faces": [
+    {
+      "name": "Predator Ooze",
+      "type_line": "Creature \u2014 Ooze",
+      "oracle_text": "Indestructible (Damage and effects that say \"destroy\" don't destroy this creature.)\nWhenever this creature attacks, put a +1/+1 counter on it.\nWhenever a creature dealt damage by this creature this turn dies, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "indestructible"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature dealt damage by this creature this turn dies, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_dealt_damage_by_self_this_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c5a6d752-9975-4059-8552-55c6ffb3ab68",
+  "name": "Rook Turret",
+  "faces": [
+    {
+      "name": "Rook Turret",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "Flying\nWhenever another artifact you control enters, you may draw a card. If you do, discard a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another artifact you control enters, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Artifact"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

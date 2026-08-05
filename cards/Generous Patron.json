@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fb084141-cb80-479e-b5d4-114c1f31eb6c",
+  "name": "Generous Patron",
+  "faces": [
+    {
+      "name": "Generous Patron",
+      "type_line": "Creature \u2014 Elf Advisor",
+      "oracle_text": "When this creature enters, support 2. (Put a +1/+1 counter on each of up to two other target creatures.)\nWhenever you put one or more counters on a creature you don't control, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, support 2. (Put a +1/+1 counter on each of up to two other target creatures.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "support 2"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you put one or more counters on a creature you don't control, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you put one or more counters on a creature you don't control"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

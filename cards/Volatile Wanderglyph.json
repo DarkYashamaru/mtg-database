@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ebc3ca0f-35eb-4606-90ab-eb64556f81fe",
+  "name": "Volatile Wanderglyph",
+  "faces": [
+    {
+      "name": "Volatile Wanderglyph",
+      "type_line": "Artifact Creature \u2014 Golem",
+      "oracle_text": "Whenever this creature becomes tapped, you may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes tapped, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes tapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

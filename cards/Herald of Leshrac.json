@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ed9e39ad-996c-4a68-8d11-e1c7d35f556c",
+  "name": "Herald of Leshrac",
+  "faces": [
+    {
+      "name": "Herald of Leshrac",
+      "type_line": "Creature \u2014 Avatar",
+      "oracle_text": "Flying\nCumulative upkeep\u2014Gain control of a land you don't control. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nThis creature gets +1/+1 for each land you control but don't own.\nWhen this creature leaves the battlefield, each player gains control of each land they own that you control.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature leaves the battlefield, each player gains control of each land they own that you control.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player gains control of each land they own that you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Cumulative upkeep\u2014Gain control of a land you don't control. (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cumulative upkeep\u2014Gain control of a land you don't control"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature gets +1/+1 for each land you control but don't own.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +1/+1 for each land you control but don't own"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1d60c80d-9a95-4051-bbf7-02ca51ee1be2",
+  "name": "Scrawling Crawler",
+  "faces": [
+    {
+      "name": "Scrawling Crawler",
+      "type_line": "Artifact Creature \u2014 Phyrexian Construct",
+      "oracle_text": "At the beginning of your upkeep, each player draws a card.\nWhenever an opponent draws a card, that player loses 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, each player draws a card.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player draws a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an opponent draws a card, that player loses 1 life.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "that_player",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

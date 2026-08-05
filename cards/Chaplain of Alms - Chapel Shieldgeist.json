@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c21d1ca3-3d19-4b4d-bbfa-07b5b7bcea4b",
+  "name": "Chaplain of Alms // Chapel Shieldgeist",
+  "faces": [
+    {
+      "name": "Chapel Shieldgeist",
+      "type_line": "Creature \u2014 Spirit Cleric",
+      "oracle_text": "Flying, first strike\nEach creature you control has ward {1}. (Whenever it becomes the target of a spell or ability an opponent controls, counter it unless that player pays {1}.)\nIf Chapel Shieldgeist would be put into a graveyard from anywhere, exile it instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Each creature you control has ward {1}. (Whenever it becomes the target of a spell or ability an opponent controls, counter it unless that player pays {1}.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each creature you control has ward {1}"
+            }
+          ]
+        },
+        {
+          "raw_text": "If Chapel Shieldgeist would be put into a graveyard from anywhere, exile it instead.",
+          "effects": [
+            {
+              "action": "replacement_effect",
+              "text": "exile it instead",
+              "condition": [
+                {
+                  "condition_text": "chapel shieldgeist would be put into a graveyard from anywhere"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chaplain of Alms",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "First strike\nWard {1} (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {1}.)\nDisturb {3}{W} (You may cast this card from your graveyard transformed for its disturb cost.)",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "ward",
+          "amount": 1
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disturb {3}{W} (You may cast this card from your graveyard transformed for its disturb cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disturb {3}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

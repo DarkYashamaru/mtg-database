@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ce148a0c-6c63-49d5-a156-99efae4e367a",
+  "name": "Vastwood Fortification // Vastwood Thicket",
+  "faces": [
+    {
+      "name": "Vastwood Fortification",
+      "type_line": "Instant",
+      "oracle_text": "Put a +1/+1 counter on target creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Put a +1/+1 counter on target creature.",
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vastwood Thicket",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {G}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

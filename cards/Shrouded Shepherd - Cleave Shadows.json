@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "de52b262-418e-418c-b2aa-8d5a776e3a75",
+  "name": "Shrouded Shepherd // Cleave Shadows",
+  "faces": [
+    {
+      "name": "Cleave Shadows",
+      "type_line": "Sorcery \u2014 Adventure",
+      "oracle_text": "Creatures your opponents control get -1/-1 until end of turn. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures your opponents control get -1/-1 until end of turn. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures your opponents control get -1/-1 until end of turn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shrouded Shepherd",
+      "type_line": "Creature \u2014 Spirit Warrior",
+      "oracle_text": "When this creature enters, target creature you control gets +2/+2 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target creature you control gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

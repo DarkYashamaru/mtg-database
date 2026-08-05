@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b1461f2a-2f12-49ae-8821-d934dddcb567",
+  "name": "Notorious Throng",
+  "faces": [
+    {
+      "name": "Notorious Throng",
+      "type_line": "Kindred Sorcery \u2014 Rogue",
+      "oracle_text": "Prowl {5}{U} (You may cast this for its prowl cost if you dealt combat damage to a player this turn with a Rogue.)\nCreate X 1/1 black Faerie Rogue creature tokens with flying, where X is the damage dealt to your opponents this turn. If this spell's prowl cost was paid, take an extra turn after this one.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Prowl {5}{U} (You may cast this for its prowl cost if you dealt combat damage to a player this turn with a Rogue.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Prowl {5}{U}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Create X 1/1 black Faerie Rogue creature tokens with flying, where X is the damage dealt to your opponents this turn. If this spell's prowl cost was paid, take an extra turn after this one.",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "X 1/1 black Faerie Rogue creature tokens with flying, where X is the damage dealt to your opponents this turn",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Faerie",
+                  "Rogue"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "take an extra turn after this one",
+              "condition": [
+                {
+                  "condition_text": "this spell's prowl cost was paid"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

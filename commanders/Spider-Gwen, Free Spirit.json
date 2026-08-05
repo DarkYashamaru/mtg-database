@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2648559d-1d96-47d2-a769-cfa2cbca2be5",
+  "name": "Spider-Gwen, Free Spirit",
+  "faces": [
+    {
+      "name": "Spider-Gwen, Free Spirit",
+      "type_line": "Legendary Creature \u2014 Spider Human Hero",
+      "oracle_text": "Reach\nWhenever Spider-Gwen becomes tapped, you may discard a card. If you do, draw a card.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Spider-Gwen becomes tapped, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever Spider-Gwen becomes tapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

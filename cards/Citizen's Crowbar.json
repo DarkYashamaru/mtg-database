@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "oracle_id": "64c7e03d-ba38-4979-8889-9bf0e7b8c66e",
+  "name": "Citizen's Crowbar",
+  "faces": [
+    {
+      "name": "Citizen's Crowbar",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, create a 1/1 green and white Citizen creature token, then attach this Equipment to it.\nEquipped creature gets +1/+1 and has \"{W}, {T}, Sacrifice Citizen's Crowbar: Destroy target artifact or enchantment.\"\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, create a 1/1 green and white Citizen creature token, then attach this Equipment to it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green and white citizen creature token",
+                "colors": [
+                  "green",
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "citizen"
+                ]
+              }
+            },
+            {
+              "action": "attach_equipment",
+              "source": "self",
+              "target": "it",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equipped creature gets +1/+1 and has \"{W}, {T}, Sacrifice Citizen's Crowbar: Destroy target artifact or enchantment.\"",
+          "cost": "Equipped creature gets +1/+1 and has \"{W}, {T}, Sacrifice Citizen's Crowbar",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_permanent",
+                "card_types_any": [
+                  "Artifact",
+                  "Enchantment"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

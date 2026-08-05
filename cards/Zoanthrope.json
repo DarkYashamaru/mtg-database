@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7d79fbe-b02c-41c7-8b0a-6477feb1da7a",
+  "name": "Zoanthrope",
+  "faces": [
+    {
+      "name": "Zoanthrope",
+      "type_line": "Creature \u2014 Tyranid",
+      "oracle_text": "Ravenous (This creature enters with X +1/+1 counters on it. If X is 5 or more, draw a card when it enters.)\nFlying, ward {2}\nWarp Blast \u2014 When this creature enters, it deals X damage to any target.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, it deals X damage to any target.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals X damage to any target"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Ravenous (This creature enters with X +1/+1 counters on it. If X is 5 or more, draw a card when it enters.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ravenous"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

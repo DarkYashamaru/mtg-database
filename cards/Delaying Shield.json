@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e03b553a-3d0d-453e-ad3e-f7d4b9fb2624",
+  "name": "Delaying Shield",
+  "faces": [
+    {
+      "name": "Delaying Shield",
+      "type_line": "Enchantment",
+      "oracle_text": "If damage would be dealt to you, put that many delay counters on this enchantment instead.\nAt the beginning of your upkeep, remove all delay counters from this enchantment. For each delay counter removed this way, you lose 1 life unless you pay {1}{W}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, remove all delay counters from this enchantment. For each delay counter removed this way, you lose 1 life unless you pay {1}{W}.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove all delay counters from this enchantment"
+            },
+            {
+              "action": "custom_effect",
+              "text": "For each delay counter removed this way, you lose 1 life unless you pay {1}{W}"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If damage would be dealt to you, put that many delay counters on this enchantment instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put that many delay counters on this enchantment instead",
+              "condition": [
+                {
+                  "condition_text": "damage would be dealt to you"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "69143645-97b6-4c7c-9fa2-844fb3b99822",
+  "name": "Trenzalore Clocktower",
+  "faces": [
+    {
+      "name": "Trenzalore Clocktower",
+      "type_line": "Legendary Land",
+      "oracle_text": "{T}: Add {U}. Put a time counter on Trenzalore Clocktower.\n{1}{U}, {T}, Remove twelve time counters from Trenzalore Clocktower and exile it: Shuffle your graveyard and hand into your library, then draw seven cards. Activate only if you control a Time Lord.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}. Put a time counter on Trenzalore Clocktower.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a time counter on Trenzalore Clocktower"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}{U}, {T}, Remove twelve time counters from Trenzalore Clocktower and exile it: Shuffle your graveyard and hand into your library, then draw seven cards. Activate only if you control a Time Lord.",
+          "cost": "{1}{U}, {T}, Remove twelve time counters from Trenzalore Clocktower and exile it",
+          "condition": [
+            {
+              "condition_text": "you control a time lord"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "shuffle your graveyard and hand into your library"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 7
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

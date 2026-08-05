@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "20c9fb06-3941-456f-ba02-4fbde9deb1e2",
+  "name": "Selfless Samurai",
+  "faces": [
+    {
+      "name": "Selfless Samurai",
+      "type_line": "Creature \u2014 Fox Samurai",
+      "oracle_text": "Whenever a Samurai or Warrior you control attacks alone, it gains lifelink until end of turn.\nSacrifice this creature: Another target creature you control gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Samurai or Warrior you control attacks alone, it gains lifelink until end of turn.",
+          "trigger": {
+            "type": "attacks_alone",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Samurai",
+                "Or",
+                "Warrior"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "lifelink"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice this creature: Another target creature you control gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+          "cost": "Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_creature_you_control",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f4629329-a79b-4460-a1bc-9ae0f59adf5a",
+  "name": "Joshua, Phoenix's Dominant // Phoenix, Warden of Fire",
+  "faces": [
+    {
+      "name": "Joshua, Phoenix's Dominant",
+      "type_line": "Legendary Creature \u2014 Human Noble Wizard",
+      "oracle_text": "When Joshua enters, discard up to two cards, then draw that many cards.\n{3}{R}{W}, {T}: Exile Joshua, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Joshua enters, discard up to two cards, then draw that many cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "discard up to two cards"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{R}{W}, {T}: Exile Joshua, then return it to the battlefield transformed under its owner's control. Activate only as a sorcery.",
+          "cost": "{3}{R}{W}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile joshua"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield transformed under its owner's control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Phoenix, Warden of Fire",
+      "type_line": "Legendary Enchantment Creature \u2014 Saga Phoenix",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI, II \u2014 Rising Flames \u2014 Phoenix deals 2 damage to each opponent.\nIII \u2014 Flames of Rebirth \u2014 Return any number of target creature cards with total mana value 6 or less from your graveyard to the battlefield. Exile Phoenix, then return it to the battlefield (front face up).\nFlying, lifelink",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Rising Flames \u2014 Phoenix deals 2 damage to each opponent.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "rising_flames__self",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Flames of Rebirth \u2014 Return any number of target creature cards with total mana value 6 or less from your graveyard to the battlefield. Exile Phoenix, then return it to the battlefield (front face up).",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flames of Rebirth \u2014 Return any number of target creature cards with total mana value 6 or less from your graveyard to the battlefield"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile phoenix"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return it to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

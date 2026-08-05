@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "277aafa6-4270-4d24-a888-cf9e8e635d4b",
+  "name": "Watcher for Tomorrow",
+  "faces": [
+    {
+      "name": "Watcher for Tomorrow",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Hideaway 4 (When this creature enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom in a random order.)\nThis creature enters tapped.\nWhen this creature leaves the battlefield, put the exiled card into its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature leaves the battlefield, put the exiled card into its owner's hand.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put the exiled card into its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Hideaway 4 (When this creature enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom in a random order.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Hideaway 4"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

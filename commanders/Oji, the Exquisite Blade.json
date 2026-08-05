@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7c4c556c-b5e3-493a-a7b0-38c55b7809ac",
+  "name": "Oji, the Exquisite Blade",
+  "faces": [
+    {
+      "name": "Oji, the Exquisite Blade",
+      "type_line": "Legendary Creature \u2014 Human Monk",
+      "oracle_text": "When Oji enters, you gain 2 life and scry 2.\nWhenever you cast your second spell each turn, exile up to one target creature you control, then return it to the battlefield under its owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Oji enters, you gain 2 life and scry 2.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast your second spell each turn, exile up to one target creature you control, then return it to the battlefield under its owner's control.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target creature you control"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

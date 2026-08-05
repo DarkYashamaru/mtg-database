@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d82783d9-9bfe-4fcd-a7d2-6e2477f99edc",
+  "name": "Sleeper's Robe",
+  "faces": [
+    {
+      "name": "Sleeper's Robe",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature has fear. (It can't be blocked except by artifact creatures and/or black creatures.)\nWhenever enchanted creature deals combat damage to an opponent, you may draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature deals combat damage to an opponent, you may draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever enchanted creature deals combat damage to an opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has fear. (It can't be blocked except by artifact creatures and/or black creatures.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature has fear"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

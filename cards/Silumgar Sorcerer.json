@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "be5c87d3-492c-4b73-9d79-067bd3c3e738",
+  "name": "Silumgar Sorcerer",
+  "faces": [
+    {
+      "name": "Silumgar Sorcerer",
+      "type_line": "Creature \u2014 Human Wizard Sorcerer",
+      "oracle_text": "Flash (You may cast this spell any time you could cast an instant.)\nFlying\nExploit (When this creature enters, you may sacrifice a creature.)\nWhen this creature exploits a creature, counter target creature spell.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "exploit"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature exploits a creature, counter target creature spell.",
+          "trigger": {
+            "type": "exploits_creature",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "counter_spell",
+              "target": "target_creature_spell"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

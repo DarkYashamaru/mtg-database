@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ccaadf8d-22c0-4139-b734-03ac2fcb4494",
+  "name": "Veteran Ice Climber",
+  "faces": [
+    {
+      "name": "Veteran Ice Climber",
+      "type_line": "Creature \u2014 Human Scout",
+      "oracle_text": "Vigilance\nThis creature can't be blocked.\nWhenever this creature attacks, up to one target player mills cards equal to this creature's power. (They put that many cards from the top of their library into their graveyard.)",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, up to one target player mills cards equal to this creature's power. (They put that many cards from the top of their library into their graveyard.)",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "up to one target player mills cards equal to this creature's power"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

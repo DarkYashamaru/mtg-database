@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1f8d387e-e4bb-4e76-a173-f46f7b107b95",
+  "name": "Olivia, Mobilized for War",
+  "faces": [
+    {
+      "name": "Olivia, Mobilized for War",
+      "type_line": "Legendary Creature \u2014 Vampire Knight",
+      "oracle_text": "Flying\nWhenever another creature you control enters, you may discard a card. If you do, put a +1/+1 counter on that creature, it gains haste until end of turn, and it becomes a Vampire in addition to its other types.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, you may discard a card. If you do, put a +1/+1 counter on that creature, it gains haste until end of turn, and it becomes a Vampire in addition to its other types.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "that_creature_it_gains_haste_until_end_of_turn_and_it_becomes_a_vampire_in_addition_to_its_other_types",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

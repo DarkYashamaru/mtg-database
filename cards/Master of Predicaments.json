@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "503447d9-2489-46d7-b5aa-a14bbb22dcc8",
+  "name": "Master of Predicaments",
+  "faces": [
+    {
+      "name": "Master of Predicaments",
+      "type_line": "Creature \u2014 Sphinx",
+      "oracle_text": "Flying\nWhenever this creature deals combat damage to a player, choose a card in your hand. That player guesses whether the card's mana value is greater than 4. If the player guessed wrong, you may cast the card without paying its mana cost.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, choose a card in your hand. That player guesses whether the card's mana value is greater than 4. If the player guessed wrong, you may cast the card without paying its mana cost.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose a card in your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "That player guesses whether the card's mana value is greater than 4"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast the card without paying its mana cost",
+              "condition": [
+                {
+                  "condition_text": "the player guessed wrong"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

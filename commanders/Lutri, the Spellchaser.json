@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "158a6225-a246-4fd6-aa57-0df8067b4383",
+  "name": "Lutri, the Spellchaser",
+  "faces": [
+    {
+      "name": "Lutri, the Spellchaser",
+      "type_line": "Legendary Creature \u2014 Elemental Otter",
+      "oracle_text": "Companion \u2014 Each nonland card in your starting deck has a different name. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)\nFlash\nWhen Lutri enters, if you cast it, copy target instant or sorcery spell you control. You may choose new targets for the copy.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Lutri enters, if you cast it, copy target instant or sorcery spell you control. You may choose new targets for the copy.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy target instant or sorcery spell you control"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Companion \u2014 Each nonland card in your starting deck has a different name. (If this card is your chosen companion, you may put it into your hand from outside the game for {3} as a sorcery.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Companion \u2014 Each nonland card in your starting deck has a different name"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

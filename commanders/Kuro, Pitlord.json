@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c80a7d22-076a-4fd7-bcf4-4769143647f0",
+  "name": "Kuro, Pitlord",
+  "faces": [
+    {
+      "name": "Kuro, Pitlord",
+      "type_line": "Legendary Creature \u2014 Demon Spirit",
+      "oracle_text": "At the beginning of your upkeep, sacrifice Kuro unless you pay {B}{B}{B}{B}.\nPay 1 life: Target creature gets -1/-1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice Kuro unless you pay {B}{B}{B}{B}.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self_unless_you_pay_bbbb"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay 1 life: Target creature gets -1/-1 until end of turn.",
+          "cost": "Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -1,
+              "toughness_delta": -1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

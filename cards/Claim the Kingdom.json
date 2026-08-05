@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3cd15225-e9b6-4998-b545-76536c72e948",
+  "name": "Claim the Kingdom",
+  "faces": [
+    {
+      "name": "Claim the Kingdom",
+      "type_line": "Enchantment \u2014 Plan",
+      "oracle_text": "Landfall \u2014 Whenever a land you control enters, put a +1/+1 counter on target creature you control and a plan counter on this enchantment.\nWhen the fourth plan counter is put on this enchantment, sacrifice it. When you do, put an indestructible counter on target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, put a +1/+1 counter on target creature you control and a plan counter on this enchantment.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "target_creature_you_control_and_a_plan_counter_on_this_enchantment"
+              },
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When the fourth plan counter is put on this enchantment, sacrifice it. When you do, put an indestructible counter on target creature you control.",
+          "trigger": {
+            "type": "custom",
+            "text": "When the fourth plan counter is put on this enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put an indestructible counter on target creature you control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

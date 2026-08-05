@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9e7ade56-ab68-42ab-8a6f-bc38957f1563",
+  "name": "Terrarion",
+  "faces": [
+    {
+      "name": "Terrarion",
+      "type_line": "Artifact",
+      "oracle_text": "This artifact enters tapped.\n{2}, {T}, Sacrifice this artifact: Add two mana in any combination of colors.\nWhen this artifact is put into a graveyard from the battlefield, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact is put into a graveyard from the battlefield, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}, Sacrifice this artifact: Add two mana in any combination of colors.",
+          "cost": "{2}, {T}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add two mana in any combination of colors"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This artifact enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

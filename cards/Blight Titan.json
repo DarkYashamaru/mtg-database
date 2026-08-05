@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f2c75577-c9be-48f3-8398-3020c79bd34e",
+  "name": "Blight Titan",
+  "faces": [
+    {
+      "name": "Blight Titan",
+      "type_line": "Creature \u2014 Phyrexian Giant",
+      "oracle_text": "Deathtouch\nWhenever this creature enters or attacks, mill two cards, then incubate X, where X is the number of creature cards in your graveyard. (Create an Incubator token with X +1/+1 counters on it and \"{2}: Transform this token.\" It transforms into a 0/0 Phyrexian artifact creature.)",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature enters or attacks, mill two cards, then incubate X, where X is the number of creature cards in your graveyard. (Create an Incubator token with X +1/+1 counters on it and \"{2}: Transform this token.\" It transforms into a 0/0 Phyrexian artifact creature.)",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "incubate x, where x is the number of creature cards in your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

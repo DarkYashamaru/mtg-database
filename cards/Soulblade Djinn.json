@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a598e6ce-21ee-49c1-989e-ee864208262f",
+  "name": "Soulblade Djinn",
+  "faces": [
+    {
+      "name": "Soulblade Djinn",
+      "type_line": "Creature \u2014 Djinn",
+      "oracle_text": "Flying\nWhenever you cast a noncreature spell, creatures you control get +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, creatures you control get +1/+1 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "25dce517-ac0a-4577-89ed-04296c7c4069",
+  "name": "Sedgemoor Witch",
+  "faces": [
+    {
+      "name": "Sedgemoor Witch",
+      "type_line": "Creature \u2014 Human Warlock",
+      "oracle_text": "Menace\nWard\u2014Pay 3 life. (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays 3 life.)\nMagecraft \u2014 Whenever you cast or copy an instant or sorcery spell, create a 1/1 black and green Pest creature token with \"When this token dies, you gain 1 life.\"",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast or copy an instant or sorcery spell, create a 1/1 black and green Pest creature token with \"When this token dies, you gain 1 life.\"",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "or_copy_an_instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 black and green Pest creature token with \"When this token dies, you gain 1 life",
+                "colors": [
+                  "black",
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Pest"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Ward\u2014Pay 3 life. (Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays 3 life.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Ward\u2014Pay 3 life"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

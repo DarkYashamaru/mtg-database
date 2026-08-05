@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "68f84643-c0f9-4d31-ba2e-38b65ab45d04",
+  "name": "Tiger-Seal",
+  "faces": [
+    {
+      "name": "Tiger-Seal",
+      "type_line": "Creature \u2014 Cat Seal",
+      "oracle_text": "Vigilance\nAt the beginning of your upkeep, tap this creature.\nWhenever you draw your second card each turn, untap this creature.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, tap this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "tap this creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you draw your second card each turn, untap this creature.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

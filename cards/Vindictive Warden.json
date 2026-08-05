@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "43b339ec-4d7d-41ac-a5ab-96c6a6de00e2",
+  "name": "Vindictive Warden",
+  "faces": [
+    {
+      "name": "Vindictive Warden",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nFirebending 1 (Whenever this creature attacks, add {R}. This mana lasts until end of combat.)\n{3}: This creature deals 1 damage to each opponent.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{3}: This creature deals 1 damage to each opponent.",
+          "cost": "{3}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Firebending 1 (Whenever this creature attacks, add {R}. This mana lasts until end of combat.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Firebending 1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

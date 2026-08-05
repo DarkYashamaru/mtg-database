@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "03c141ca-11e4-4927-a6bd-980ee1203c73",
+  "name": "Appa, Steadfast Guardian",
+  "faces": [
+    {
+      "name": "Appa, Steadfast Guardian",
+      "type_line": "Legendary Creature \u2014 Bison Ally",
+      "oracle_text": "Flash\nFlying\nWhen Appa enters, airbend any number of other target nonland permanents you control. (Exile them. While each one is exiled, its owner may cast it for {2} rather than its mana cost.)\nWhenever you cast a spell from exile, create a 1/1 white Ally creature token.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Appa enters, airbend any number of other target nonland permanents you control. (Exile them. While each one is exiled, its owner may cast it for {2} rather than its mana cost.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "airbend any number of other target nonland permanents you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a spell from exile, create a 1/1 white Ally creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell from exile"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Ally creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Ally"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

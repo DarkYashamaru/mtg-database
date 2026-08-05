@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "caff40b1-28d1-4ef6-90d1-51a1dc06cbcd",
+  "name": "Specter of Mortality",
+  "faces": [
+    {
+      "name": "Specter of Mortality",
+      "type_line": "Creature \u2014 Specter",
+      "oracle_text": "Flying\nWhen this creature enters, you may exile one or more creature cards from your graveyard. When you do, each other creature gets -X/-X until end of turn, where X is the number of cards exiled this way.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may exile one or more creature cards from your graveyard. When you do, each other creature gets -X/-X until end of turn, where X is the number of cards exiled this way.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile one or more creature cards from your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "each other creature gets -x/-x until end of turn, where x is the number of cards exiled this way",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

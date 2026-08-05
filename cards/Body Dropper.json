@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c0c465ea-4242-4737-9c3e-69222bdb8f1b",
+  "name": "Body Dropper",
+  "faces": [
+    {
+      "name": "Body Dropper",
+      "type_line": "Creature \u2014 Devil Warrior",
+      "oracle_text": "Whenever you sacrifice another creature, put a +1/+1 counter on this creature.\n{B}{R}, Sacrifice another creature: This creature gains menace until end of turn. (It can't be blocked except by two or more creatures.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you sacrifice another creature, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice another creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{B}{R}, Sacrifice another creature: This creature gains menace until end of turn. (It can't be blocked except by two or more creatures.)",
+          "cost": "{B}{R}, Sacrifice another creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "menace"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

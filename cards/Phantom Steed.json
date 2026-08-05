@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "22c643b1-62dd-477c-8944-97b3becdfdbe",
+  "name": "Phantom Steed",
+  "faces": [
+    {
+      "name": "Phantom Steed",
+      "type_line": "Creature \u2014 Horse Illusion",
+      "oracle_text": "Flash\nWhen this creature enters, exile another target creature you control until this creature leaves the battlefield.\nWhenever this creature attacks, create a tapped and attacking token that's a copy of the exiled card, except it's an Illusion in addition to its other types. Sacrifice that token at end of combat.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, exile another target creature you control until this creature leaves the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile another target creature you control until this creature leaves the battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, create a tapped and attacking token that's a copy of the exiled card, except it's an Illusion in addition to its other types. Sacrifice that token at end of combat.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a tapped and attacking token that's a copy of the exiled card, except it's an Illusion in addition to its other types"
+            },
+            {
+              "action": "sacrifice",
+              "target": "that_token_at_end_of_combat"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

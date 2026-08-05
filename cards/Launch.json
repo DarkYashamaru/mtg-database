@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9e3b373f-05f5-44df-9568-bd1f8039aa54",
+  "name": "Launch",
+  "faces": [
+    {
+      "name": "Launch",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature has flying.\nWhen this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura is put into a graveyard from the battlefield, return it to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this Aura is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature has flying.",
+          "effects": [
+            {
+              "action": "grant_keyword",
+              "target": "enchanted_creature",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

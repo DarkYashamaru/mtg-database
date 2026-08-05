@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a292ca5b-2472-4b02-a26b-d1b5b717a34b",
+  "name": "Fieldmist Borderpost",
+  "faces": [
+    {
+      "name": "Fieldmist Borderpost",
+      "type_line": "Artifact",
+      "oracle_text": "You may pay {1} and return a basic land you control to its owner's hand rather than pay this spell's mana cost.\nThis artifact enters tapped.\n{T}: Add {W} or {U}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W} or {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}",
+                "{u}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may pay {1} and return a basic land you control to its owner's hand rather than pay this spell's mana cost.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may pay {1} and return a basic land you control to its owner's hand rather than pay this spell's mana cost"
+            }
+          ]
+        },
+        {
+          "raw_text": "This artifact enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

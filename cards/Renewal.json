@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8df46910-ee13-416e-8282-dfe85a90e6d5",
+  "name": "Renewal",
+  "faces": [
+    {
+      "name": "Renewal",
+      "type_line": "Sorcery",
+      "oracle_text": "As an additional cost to cast this spell, sacrifice a land.\nSearch your library for a basic land card, put that card onto the battlefield, then shuffle.\nDraw a card at the beginning of the next turn's upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast this spell, sacrifice a land.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As an additional cost to cast this spell, sacrifice a land"
+            }
+          ]
+        },
+        {
+          "raw_text": "Search your library for a basic land card, put that card onto the battlefield, then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a basic land card, put that card onto the battlefield"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card at the beginning of the next turn's upkeep.",
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_turns_upkeep"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

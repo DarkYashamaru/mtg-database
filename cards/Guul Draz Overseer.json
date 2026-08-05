@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9eff1ce5-41e4-4ae6-9480-2b549c8546bd",
+  "name": "Guul Draz Overseer",
+  "faces": [
+    {
+      "name": "Guul Draz Overseer",
+      "type_line": "Creature \u2014 Vampire",
+      "oracle_text": "Flying\nLandfall \u2014 Whenever a land you control enters, other creatures you control get +1/+0 until end of turn. If that land is a Swamp, those creatures get +2/+0 until end of turn instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, other creatures you control get +1/+0 until end of turn. If that land is a Swamp, those creatures get +2/+0 until end of turn instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "other creatures you control get +1/+0 until end of turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "those creatures get +2/+0 until end of turn instead",
+              "condition": [
+                {
+                  "condition_text": "that land is a swamp"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

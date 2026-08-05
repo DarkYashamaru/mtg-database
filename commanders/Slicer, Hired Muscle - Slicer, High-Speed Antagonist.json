@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fa716557-8e75-4617-8310-ab23a9ca1af1",
+  "name": "Slicer, Hired Muscle // Slicer, High-Speed Antagonist",
+  "faces": [
+    {
+      "name": "Slicer, High-Speed Antagonist",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Living metal (During your turn, this Vehicle is also a creature.)\nFirst strike, haste\nWhenever Slicer deals combat damage to a player, convert it at end of combat.",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Slicer deals combat damage to a player, convert it at end of combat.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "convert it at end of combat"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Living metal (During your turn, this Vehicle is also a creature.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Living metal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Slicer, Hired Muscle",
+      "type_line": "Legendary Artifact Creature \u2014 Robot",
+      "oracle_text": "More Than Meets the Eye {2}{R} (You may cast this card converted for {2}{R}.)\nDouble strike, haste\nAt the beginning of each opponent's upkeep, you may have that player gain control of Slicer until end of turn. If you do, untap Slicer, goad it, and it can't be sacrificed this turn. If you don't, convert it.",
+      "static": [
+        {
+          "keyword": "double strike"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each opponent's upkeep, you may have that player gain control of Slicer until end of turn. If you do, untap Slicer, goad it, and it can't be sacrificed this turn. If you don't, convert it.",
+          "trigger": {
+            "type": "beginning_of_each_opponents_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "have_that_player",
+              "keyword": "control_of_slicer",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap slicer, goad it, and it can't be sacrificed this turn",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "convert it",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "More Than Meets the Eye {2}{R} (You may cast this card converted for {2}{R}.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "More Than Meets the Eye {2}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "54af9e23-459e-470d-9b0e-e91a0fa45c98",
+  "name": "Wandering Champion",
+  "faces": [
+    {
+      "name": "Wandering Champion",
+      "type_line": "Creature \u2014 Human Monk",
+      "oracle_text": "Whenever this creature deals combat damage to a player, if you control a blue or red permanent, you may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, if you control a blue or red permanent, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control a blue or red permanent"
+            }
+          ],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

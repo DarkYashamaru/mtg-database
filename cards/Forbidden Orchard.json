@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cfd60d1f-9832-4408-b84e-0fd3018b015b",
+  "name": "Forbidden Orchard",
+  "faces": [
+    {
+      "name": "Forbidden Orchard",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add one mana of any color.\nWhenever you tap this land for mana, target opponent creates a 1/1 colorless Spirit creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you tap this land for mana, target opponent creates a 1/1 colorless Spirit creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you tap this land for mana"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent creates a 1/1 colorless Spirit creature token"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

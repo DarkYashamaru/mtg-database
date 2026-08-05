@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ec97bb0e-0dc8-4b9b-8762-2f1649cc9044",
+  "name": "Syrix, Carrier of the Flame",
+  "faces": [
+    {
+      "name": "Syrix, Carrier of the Flame",
+      "type_line": "Legendary Creature \u2014 Phoenix",
+      "oracle_text": "Flying, haste\nAt the beginning of each end step, if a creature card left your graveyard this turn, target Phoenix you control deals damage equal to its power to any target.\nWhenever another Phoenix you control dies, you may cast this card from your graveyard.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each end step, if a creature card left your graveyard this turn, target Phoenix you control deals damage equal to its power to any target.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a creature card left your graveyard this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target Phoenix you control deals damage equal to its power to any target"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another Phoenix you control dies, you may cast this card from your graveyard.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Phoenix"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may cast this card from your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

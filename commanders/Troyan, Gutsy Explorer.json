@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1135ebc3-9537-4341-956b-6e22d8be5f20",
+  "name": "Troyan, Gutsy Explorer",
+  "faces": [
+    {
+      "name": "Troyan, Gutsy Explorer",
+      "type_line": "Legendary Creature \u2014 Vedalken Scout",
+      "oracle_text": "{T}: Add {G}{U}. Spend this mana only to cast spells with mana value 5 or greater or spells with {X} in their mana costs.\n{U}, {T}: Draw a card, then discard a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}{U}. Spend this mana only to cast spells with mana value 5 or greater or spells with {X} in their mana costs.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{g}",
+                "{u}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to cast spells with mana value 5 or greater or spells with {X} in their mana costs"
+            }
+          ]
+        },
+        {
+          "raw_text": "{U}, {T}: Draw a card, then discard a card.",
+          "cost": "{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

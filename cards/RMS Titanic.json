@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6754753d-790e-4a95-a150-76741c4a02d4",
+  "name": "RMS Titanic",
+  "faces": [
+    {
+      "name": "RMS Titanic",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Flying, trample\nWhen RMS Titanic deals combat damage to a player, sacrifice it and create that many Treasure tokens.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When RMS Titanic deals combat damage to a player, sacrifice it and create that many Treasure tokens.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            },
+            {
+              "action": "create_token",
+              "amount": "that",
+              "token": {
+                "raw": "many Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

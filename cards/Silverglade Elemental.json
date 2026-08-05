@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a6d5d164-a06a-4383-b9d2-a7a33400631d",
+  "name": "Silverglade Elemental",
+  "faces": [
+    {
+      "name": "Silverglade Elemental",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "When this creature enters, you may search your library for a Forest card, put that card onto the battlefield, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a Forest card, put that card onto the battlefield, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "subtypes_any": [
+                  "Forest"
+                ]
+              },
+              "destination": "battlefield",
+              "optional": true
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

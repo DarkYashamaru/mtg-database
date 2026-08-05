@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a0892be5-3272-431e-bbed-fc6520b259a7",
+  "name": "Slurrk, All-Ingesting",
+  "faces": [
+    {
+      "name": "Slurrk, All-Ingesting",
+      "type_line": "Legendary Creature \u2014 Ooze",
+      "oracle_text": "Slurrk enters with five +1/+1 counters on it.\nWhenever Slurrk or another creature you control dies, if it had a +1/+1 counter on it, put a +1/+1 counter on each creature you control that has a +1/+1 counter on it.\nPartner (You can have two commanders if both have partner.)",
+      "static": [
+        {
+          "keyword": "partner"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Slurrk or another creature you control dies, if it had a +1/+1 counter on it, put a +1/+1 counter on each creature you control that has a +1/+1 counter on it.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Slurrk",
+                "Or",
+                "Another"
+              ]
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "it had a +1/+1 counter on it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_creature_you_control_that_has_a_11_counter_on_it"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Slurrk enters with five +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Slurrk enters with five +1/+1 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

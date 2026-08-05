@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "177113f8-1188-4e5e-8ad7-34a7bb8ca7f1",
+  "name": "Origin of Metalbending",
+  "faces": [
+    {
+      "name": "Origin of Metalbending",
+      "type_line": "Instant \u2014 Lesson",
+      "oracle_text": "Choose one \u2014\n\u2022 Destroy target artifact or enchantment.\n\u2022 Put a +1/+1 counter on target creature you control. It gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Destroy target artifact or enchantment.\n\u2022 Put a +1/+1 counter on target creature you control. It gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Destroy target artifact or enchantment.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_permanent",
+                    "card_types_any": [
+                      "Artifact",
+                      "Enchantment"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Put a +1/+1 counter on target creature you control. It gains indestructible until end of turn. (Damage and effects that say \"destroy\" don't destroy it.)",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control",
+                    "card_types": [
+                      "Creature"
+                    ],
+                    "subtypes": [
+                      "Target"
+                    ]
+                  },
+                  "amount": 1
+                },
+                {
+                  "action": "grant_keyword_until_end_of_turn",
+                  "target": "previous_target",
+                  "keyword": "indestructible"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

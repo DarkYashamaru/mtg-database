@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6a6b19db-cdeb-4922-8642-5d872f90e7a1",
+  "name": "Spectacular Skywhale",
+  "faces": [
+    {
+      "name": "Spectacular Skywhale",
+      "type_line": "Creature \u2014 Elemental Whale",
+      "oracle_text": "Flying\nOpus \u2014 Whenever you cast an instant or sorcery spell, this creature gets +3/+0 until end of turn. If five or more mana was spent to cast that spell, put three +1/+1 counters on this creature instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature gets +3/+0 until end of turn. If five or more mana was spent to cast that spell, put three +1/+1 counters on this creature instead.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 3,
+              "toughness_delta": 0
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_instead",
+              "amount": 3,
+              "condition": [
+                {
+                  "condition_text": "five or more mana was spent to cast that spell"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

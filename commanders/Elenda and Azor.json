@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4b9f463f-3786-4374-bf77-739ae162b3ba",
+  "name": "Elenda and Azor",
+  "faces": [
+    {
+      "name": "Elenda and Azor",
+      "type_line": "Legendary Creature \u2014 Vampire Knight Sphinx",
+      "oracle_text": "Flying, ward {2}\nWhenever Elenda and Azor attacks, you may pay {X}{W}{U}{B}. If you do, draw X cards.\nAt the beginning of each end step, you may pay 4 life. If you do, create a number of 1/1 black Vampire Knight creature tokens with lifelink equal to the number of cards you've drawn this turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Elenda and Azor attacks, you may pay {X}{W}{U}{B}. If you do, draw X cards.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {X}{W}{U}{B}"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "X",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each end step, you may pay 4 life. If you do, create a number of 1/1 black Vampire Knight creature tokens with lifelink equal to the number of cards you've drawn this turn.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay 4 life"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a number of 1/1 black vampire knight creature tokens with lifelink equal to the number of cards you've drawn this turn",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "vampire",
+                  "knight"
+                ]
+              },
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

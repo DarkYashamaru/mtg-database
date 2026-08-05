@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1521f26b-9972-4e95-9e14-3ccbb078a1c8",
+  "name": "Serra's Boon",
+  "faces": [
+    {
+      "name": "Serra's Boon",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +1/+2 as long as it's white. Otherwise, it gets -2/-1.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+2 as long as it's white. Otherwise, it gets -2/-1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+2 as long as it's white"
+            },
+            {
+              "action": "modify_stats",
+              "target": "self",
+              "power_delta": -2,
+              "toughness_delta": -1,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

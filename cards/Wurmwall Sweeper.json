@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "320ed2ec-ef06-41fb-ac8a-72579f11544c",
+  "name": "Wurmwall Sweeper",
+  "faces": [
+    {
+      "name": "Wurmwall Sweeper",
+      "type_line": "Artifact \u2014 Spacecraft",
+      "oracle_text": "When this Spacecraft enters, surveil 2.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 4+.)\n4+ | Flying",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Spacecraft enters, surveil 2.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_spacecraft"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "surveil",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 4+.)",
+          "cost": "Station (Tap another creature you control",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put charge counters equal to its power on this Spacecraft"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's an artifact creature at 4+"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "4+ | Flying",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "4+ | Flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "02abe85a-c603-4963-aba4-524cc80847ea",
+  "name": "Order of the Golden Cricket",
+  "faces": [
+    {
+      "name": "Order of the Golden Cricket",
+      "type_line": "Creature \u2014 Kithkin Knight",
+      "oracle_text": "Whenever this creature attacks, you may pay {W}. If you do, it gains flying until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may pay {W}. If you do, it gains flying until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{w}",
+              "optional": true
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "flying",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

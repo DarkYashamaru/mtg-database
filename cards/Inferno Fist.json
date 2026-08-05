@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0ccc75a0-1bc2-461f-ab6f-0f182328a863",
+  "name": "Inferno Fist",
+  "faces": [
+    {
+      "name": "Inferno Fist",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature you control\nEnchanted creature gets +2/+0.\n{R}, Sacrifice this Aura: This Aura deals 2 damage to any target.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{R}, Sacrifice this Aura: This Aura deals 2 damage to any target.",
+          "cost": "{R}, Sacrifice this Aura",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_aura",
+              "target": "any_target",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+0.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

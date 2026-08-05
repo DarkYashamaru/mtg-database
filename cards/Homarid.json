@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5d02b0d9-cc53-4967-84bb-8b7f5c489b5c",
+  "name": "Homarid",
+  "faces": [
+    {
+      "name": "Homarid",
+      "type_line": "Creature \u2014 Homarid",
+      "oracle_text": "This creature enters with a tide counter on it.\nAt the beginning of your upkeep, put a tide counter on this creature.\nAs long as there is exactly one tide counter on this creature, it gets -1/-1.\nAs long as there are exactly three tide counters on this creature, it gets +1/+1.\nWhenever there are four or more tide counters on this creature, remove all tide counters from it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a tide counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a tide counter on this creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever there are four or more tide counters on this creature, remove all tide counters from it.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever there are four or more tide counters on this creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove all tide counters from it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with a tide counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with a tide counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as there is exactly one tide counter on this creature, it gets -1/-1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "as_long_as_there_is_exactly_one_tide_counter_on_self_it",
+              "power_delta": -1,
+              "toughness_delta": -1
+            }
+          ]
+        },
+        {
+          "raw_text": "As long as there are exactly three tide counters on this creature, it gets +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "as_long_as_there_are_exactly_three_tide_counters_on_self_it",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

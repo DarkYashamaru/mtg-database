@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "93af8f9d-6877-4cb8-a744-c89186db22e1",
+  "name": "Vayne's Treachery",
+  "faces": [
+    {
+      "name": "Vayne's Treachery",
+      "type_line": "Instant",
+      "oracle_text": "Kicker\u2014Sacrifice an artifact or creature. (You may sacrifice an artifact or creature in addition to any other costs as you cast this spell.)\nTarget creature gets -2/-2 until end of turn. If this spell was kicked, that creature gets -6/-6 until end of turn instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker\u2014Sacrifice an artifact or creature. (You may sacrifice an artifact or creature in addition to any other costs as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker\u2014Sacrifice an artifact or creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target creature gets -2/-2 until end of turn. If this spell was kicked, that creature gets -6/-6 until end of turn instead.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -2,
+              "toughness_delta": -2
+            },
+            {
+              "action": "custom_effect",
+              "text": "that creature gets -6/-6 until end of turn instead",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

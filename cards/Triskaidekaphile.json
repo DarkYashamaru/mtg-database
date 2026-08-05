@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ef238ba8-acf0-4e62-9abd-5291886a32e8",
+  "name": "Triskaidekaphile",
+  "faces": [
+    {
+      "name": "Triskaidekaphile",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "You have no maximum hand size.\nAt the beginning of your upkeep, if you have exactly thirteen cards in your hand, you win the game.\n{3}{U}: Draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if you have exactly thirteen cards in your hand, you win the game.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you have exactly thirteen cards in your hand"
+            }
+          ],
+          "effects": [
+            {
+              "action": "win_the_game"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{U}: Draw a card.",
+          "cost": "{3}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You have no maximum hand size.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You have no maximum hand size"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

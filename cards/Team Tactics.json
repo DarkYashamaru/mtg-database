@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "98b99d7c-d006-471a-8583-0468743c1597",
+  "name": "Team Tactics",
+  "faces": [
+    {
+      "name": "Team Tactics",
+      "type_line": "Instant",
+      "oracle_text": "Teamwork 1 (As an additional cost to cast this spell, you may tap any number of creatures you control with total power 1 or more.)\nTarget creature gains double strike until end of turn. If this spell was cast using teamwork, that creature also gains trample until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Teamwork 1 (As an additional cost to cast this spell, you may tap any number of creatures you control with total power 1 or more.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Teamwork 1"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target creature gains double strike until end of turn. If this spell was cast using teamwork, that creature also gains trample until end of turn.",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "double_strike"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature_also",
+              "keyword": "trample",
+              "condition": [
+                {
+                  "condition_text": "this spell was cast using teamwork"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

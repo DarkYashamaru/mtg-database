@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9b87b4cd-4fb9-4bb3-b4c0-de1fcc6f44a2",
+  "name": "Love Song of Night and Day",
+  "faces": [
+    {
+      "name": "Love Song of Night and Day",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)\nI \u2014 You and target opponent each draw two cards.\nII \u2014 Create a 1/1 white Bird creature token with flying.\nIII \u2014 Put a +1/+1 counter on each of up to two target creatures.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 You and target opponent each draw two cards.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You and target opponent each draw two cards"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Create a 1/1 white Bird creature token with flying.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white Bird creature token with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Bird"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Put a +1/+1 counter on each of up to two target creatures.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "each_of_up_to_two_target_creatures",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Read ahead (Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Read ahead"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

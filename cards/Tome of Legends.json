@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cada2a1c-5db2-4702-9a57-cbe7da1bf208",
+  "name": "Tome of Legends",
+  "faces": [
+    {
+      "name": "Tome of Legends",
+      "type_line": "Artifact \u2014 Book",
+      "oracle_text": "This artifact enters with a page counter on it.\nWhenever your commander enters or attacks, put a page counter on this artifact.\n{1}, {T}, Remove a page counter from this artifact: Draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever your commander enters or attacks, put a page counter on this artifact.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "your_commander"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a page counter on this artifact"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Remove a page counter from this artifact: Draw a card.",
+          "cost": "{1}, {T}, Remove a page counter from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This artifact enters with a page counter on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact enters with a page counter on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

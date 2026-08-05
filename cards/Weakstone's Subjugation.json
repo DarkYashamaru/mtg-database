@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4c3745ff-6e1e-4660-abe6-1a30611ec00c",
+  "name": "Weakstone's Subjugation",
+  "faces": [
+    {
+      "name": "Weakstone's Subjugation",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant artifact or creature\nWhen this Aura enters, you may pay {3}. If you do, tap enchanted permanent.\nEnchanted permanent doesn't untap during its controller's untap step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, you may pay {3}. If you do, tap enchanted permanent.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{3}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "tap enchanted permanent",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant artifact or creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "artifact_or_creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted permanent doesn't untap during its controller's untap step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted permanent doesn't untap during its controller's untap step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

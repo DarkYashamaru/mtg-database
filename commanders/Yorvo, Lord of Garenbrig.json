@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "00a15abc-bdac-4977-90a0-f08d41941d01",
+  "name": "Yorvo, Lord of Garenbrig",
+  "faces": [
+    {
+      "name": "Yorvo, Lord of Garenbrig",
+      "type_line": "Legendary Creature \u2014 Giant Noble",
+      "oracle_text": "Yorvo enters with four +1/+1 counters on it.\nWhenever another green creature you control enters, put a +1/+1 counter on Yorvo. Then if that creature's power is greater than Yorvo's power, put another +1/+1 counter on Yorvo.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another green creature you control enters, put a +1/+1 counter on Yorvo. Then if that creature's power is greater than Yorvo's power, put another +1/+1 counter on Yorvo.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Green"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": "another",
+              "condition": [
+                {
+                  "condition_text": "that creature's power is greater than yorvo's power"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Yorvo enters with four +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Yorvo enters with four +1/+1 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

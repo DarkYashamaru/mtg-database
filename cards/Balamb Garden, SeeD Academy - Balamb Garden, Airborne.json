@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b84fec5-617c-4088-8250-2ba1f1f9479a",
+  "name": "Balamb Garden, SeeD Academy // Balamb Garden, Airborne",
+  "faces": [
+    {
+      "name": "Balamb Garden, Airborne",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nWhenever Balamb Garden attacks, draw a card.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Balamb Garden attacks, draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Balamb Garden, SeeD Academy",
+      "type_line": "Land \u2014 Town",
+      "oracle_text": "This land enters tapped.\n{T}: Add {G} or {U}.\n{5}{G}{U}, {T}: Transform this land. This ability costs {1} less to activate for each other Town you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G} or {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}",
+                "{u}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{5}{G}{U}, {T}: Transform this land. This ability costs {1} less to activate for each other Town you control.",
+          "cost": "{5}{G}{U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "this_land"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This ability costs {1} less to activate for each other Town you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "00fdcc19-88ed-46c3-91f0-095806228105",
+  "name": "Waste Not",
+  "faces": [
+    {
+      "name": "Waste Not",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever an opponent discards a creature card, create a 2/2 black Zombie creature token.\nWhenever an opponent discards a land card, add {B}{B}.\nWhenever an opponent discards a noncreature, nonland card, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent discards a creature card, create a 2/2 black Zombie creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an opponent discards a creature card"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black Zombie creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an opponent discards a land card, add {B}{B}.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an opponent discards a land card"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{b}",
+                "{b}"
+              ],
+              "distribution": "fixed_sequence"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an opponent discards a noncreature, nonland card, draw a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an opponent discards a noncreature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "nonland card, draw a card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

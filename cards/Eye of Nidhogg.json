@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c288f184-0beb-4cc9-9b0a-5f3c4b9e70d7",
+  "name": "Eye of Nidhogg",
+  "faces": [
+    {
+      "name": "Eye of Nidhogg",
+      "type_line": "Legendary Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature is a black Dragon with base power and toughness 4/2, has flying and deathtouch, and is goaded. (It attacks each combat if able and attacks a player other than you if able.)\nWhen Eye of Nidhogg is put into a graveyard from the battlefield, return it to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Eye of Nidhogg is put into a graveyard from the battlefield, return it to its owner's hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When Eye of Nidhogg is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature is a black Dragon with base power and toughness 4/2, has flying and deathtouch, and is goaded. (It attacks each combat if able and attacks a player other than you if able.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature is a black Dragon with base power and toughness 4/2, has flying and deathtouch, and is goaded"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

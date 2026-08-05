@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e5345c28-7046-4ff3-a5d6-eeb7a0fb230b",
+  "name": "Flickerform",
+  "faces": [
+    {
+      "name": "Flickerform",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\n{2}{W}{W}: Exile enchanted creature and all Auras attached to it. At the beginning of the next end step, return that card to the battlefield under its owner's control. If you do, return the other cards exiled this way to the battlefield under their owners' control attached to that creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{W}{W}: Exile enchanted creature and all Auras attached to it. At the beginning of the next end step, return that card to the battlefield under its owner's control. If you do, return the other cards exiled this way to the battlefield under their owners' control attached to that creature.",
+          "cost": "{2}{W}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile enchanted creature and all Auras attached to it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "At the beginning of the next end step, return that card to the battlefield under its owner's control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return the other cards exiled this way to the battlefield under their owners' control attached to that creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

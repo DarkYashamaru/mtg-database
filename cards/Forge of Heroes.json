@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "77807103-bcd5-479f-bedd-f5d97aa6d3d2",
+  "name": "Forge of Heroes",
+  "faces": [
+    {
+      "name": "Forge of Heroes",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Choose target commander that entered this turn. Put a +1/+1 counter on it if it's a creature and a loyalty counter on it if it's a planeswalker.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Choose target commander that entered this turn. Put a +1/+1 counter on it if it's a creature and a loyalty counter on it if it's a planeswalker.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose target commander that entered this turn"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "it_if_its_a_creature_and_a_loyalty_counter_on_it_if_its_a_planeswalker",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

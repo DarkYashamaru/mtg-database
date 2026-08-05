@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2232c38e-49eb-4823-a325-2342a952db72",
+  "name": "Lava Zombie",
+  "faces": [
+    {
+      "name": "Lava Zombie",
+      "type_line": "Creature \u2014 Zombie",
+      "oracle_text": "When this creature enters, return a black or red creature you control to its owner's hand.\n{2}: This creature gets +1/+0 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, return a black or red creature you control to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return a black or red creature you control to its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: This creature gets +1/+0 until end of turn.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

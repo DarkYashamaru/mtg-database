@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e858d26f-db45-4c56-b40a-bbaeedbf5549",
+  "name": "Borrowed Grace",
+  "faces": [
+    {
+      "name": "Borrowed Grace",
+      "type_line": "Instant",
+      "oracle_text": "Escalate {1}{W} (Pay this cost for each mode chosen beyond the first.)\nChoose one or both \u2014\n\u2022 Creatures you control get +2/+0 until end of turn.\n\u2022 Creatures you control get +0/+2 until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Escalate {1}{W} (Pay this cost for each mode chosen beyond the first.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Escalate {1}{W}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Choose one or both \u2014\n\u2022 Creatures you control get +2/+0 until end of turn.\n\u2022 Creatures you control get +0/+2 until end of turn.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false,
+            "or_both": true
+          },
+          "modes": [
+            {
+              "raw_text": "Creatures you control get +2/+0 until end of turn.",
+              "effects": [
+                {
+                  "action": "modify_stats_until_end_of_turn",
+                  "target": {
+                    "selector": "creatures_you_control"
+                  },
+                  "power_delta": 2,
+                  "toughness_delta": 0
+                }
+              ]
+            },
+            {
+              "raw_text": "Creatures you control get +0/+2 until end of turn.",
+              "effects": [
+                {
+                  "action": "modify_stats_until_end_of_turn",
+                  "target": {
+                    "selector": "creatures_you_control"
+                  },
+                  "power_delta": 0,
+                  "toughness_delta": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

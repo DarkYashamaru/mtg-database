@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f99f44b4-a88f-403b-bbc8-bf1a45557124",
+  "name": "Elder Mastery",
+  "faces": [
+    {
+      "name": "Elder Mastery",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +3/+3 and has flying.\nWhenever enchanted creature deals damage to a player, that player discards two cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature deals damage to a player, that player discards two cards.",
+          "trigger": {
+            "type": "deals_damage_to_player",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "target": "that_player",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +3/+3 and has flying.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +3/+3 and has flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

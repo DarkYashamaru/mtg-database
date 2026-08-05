@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6a4ace6b-ef3a-4d11-89d7-958f98dcc445",
+  "name": "Dash Hopes",
+  "faces": [
+    {
+      "name": "Dash Hopes",
+      "type_line": "Instant",
+      "oracle_text": "When you cast this spell, any player may pay 5 life. If a player does, counter Dash Hopes.\nCounter target spell.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, any player may pay 5 life. If a player does, counter Dash Hopes.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "any player may pay 5 life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "counter dash hopes",
+              "condition": [
+                {
+                  "condition_text": "a player does"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Counter target spell.",
+          "effects": [
+            {
+              "action": "counter_spell",
+              "target": "target_spell"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

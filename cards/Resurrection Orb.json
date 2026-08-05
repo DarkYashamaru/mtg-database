@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b410f294-cbb6-4016-981f-808fd9b7bbae",
+  "name": "Resurrection Orb",
+  "faces": [
+    {
+      "name": "Resurrection Orb",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has lifelink.\nWhenever equipped creature dies, return that card to the battlefield under its owner's control at the beginning of the next end step.\nEquip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature dies, return that card to the battlefield under its owner's control at the beginning of the next end step.",
+          "trigger": {
+            "type": "dies",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return that card to the battlefield under its owner's control at the beginning of the next end step"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has lifelink.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature has lifelink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5cf92fd4-7c0b-4d8e-92f1-53dc2e0476fc",
+  "name": "Centaur Garden",
+  "faces": [
+    {
+      "name": "Centaur Garden",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {G}. This land deals 1 damage to you.\nThreshold \u2014 {G}, {T}, Sacrifice this land: Target creature gets +3/+3 until end of turn. Activate only if there are seven or more cards in your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}. This land deals 1 damage to you.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Threshold \u2014 {G}, {T}, Sacrifice this land: Target creature gets +3/+3 until end of turn. Activate only if there are seven or more cards in your graveyard.",
+          "cost": "Threshold \u2014 {G}, {T}, Sacrifice this land",
+          "condition": [
+            {
+              "condition_text": "there are seven or more cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 3,
+              "toughness_delta": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8711b732-8dab-41d4-a85b-b10edcd25e97",
+  "name": "Strongarm Monk",
+  "faces": [
+    {
+      "name": "Strongarm Monk",
+      "type_line": "Creature \u2014 Human Monk",
+      "oracle_text": "Whenever you cast a noncreature spell, creatures you control get +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, creatures you control get +1/+1 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

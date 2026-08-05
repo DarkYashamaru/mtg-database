@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "49f2cbc3-bd03-48e6-b1c4-d7f315b8579d",
+  "name": "Taigam, Master Opportunist",
+  "faces": [
+    {
+      "name": "Taigam, Master Opportunist",
+      "type_line": "Legendary Creature \u2014 Human Monk",
+      "oracle_text": "Flurry \u2014 Whenever you cast your second spell each turn, copy it, then exile the spell you cast with four time counters on it. If it doesn't have suspend, it gains suspend. (At the beginning of its owner's upkeep, they remove a time counter. When the last is removed, they may play it without paying its mana cost. If it's a creature, it has haste.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, copy it, then exile the spell you cast with four time counters on it. If it doesn't have suspend, it gains suspend. (At the beginning of its owner's upkeep, they remove a time counter. When the last is removed, they may play it without paying its mana cost. If it's a creature, it has haste.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile the spell you cast with four time counters on it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it gains suspend",
+              "condition": [
+                {
+                  "condition_text": "it doesn't have suspend"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "edfc0a46-414e-467d-9f27-e42d08ec127a",
+  "name": "Tidal Barracuda",
+  "faces": [
+    {
+      "name": "Tidal Barracuda",
+      "type_line": "Creature \u2014 Fish",
+      "oracle_text": "Any player may cast spells as though they had flash.\nYour opponents can't cast spells during your turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Any player may cast spells as though they had flash.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Any player may cast spells as though they had flash"
+            }
+          ]
+        },
+        {
+          "raw_text": "Your opponents can't cast spells during your turn.",
+          "effects": [
+            {
+              "action": "casting_restriction",
+              "target": "your_opponents",
+              "restriction": "cant_cast_spells",
+              "condition": [
+                {
+                  "turn_scope": "your_turn"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

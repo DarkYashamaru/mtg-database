@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "485f710d-5bc2-4c8f-b7e9-eed6caa261a6",
+  "name": "Feast or Famine",
+  "faces": [
+    {
+      "name": "Feast or Famine",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Create a 2/2 black Zombie creature token.\n\u2022 Destroy target nonartifact, nonblack creature. It can't be regenerated.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Create a 2/2 black Zombie creature token.\n\u2022 Destroy target nonartifact, nonblack creature. It can't be regenerated.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Create a 2/2 black Zombie creature token.",
+              "effects": [
+                {
+                  "action": "create_token",
+                  "amount": 1,
+                  "token": {
+                    "raw": "2/2 black Zombie creature token",
+                    "colors": [
+                      "black"
+                    ],
+                    "power_toughness": "2/2",
+                    "card_types": [
+                      "creature"
+                    ],
+                    "subtypes": [
+                      "Zombie"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Destroy target nonartifact, nonblack creature. It can't be regenerated.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Destroy target nonartifact, nonblack creature"
+                },
+                {
+                  "action": "cant_be_regenerated",
+                  "target": "previous_target"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

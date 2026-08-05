@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2facb1b3-4522-4610-a0ab-29ac53ca7fcd",
+  "name": "Greenwarden of Murasa",
+  "faces": [
+    {
+      "name": "Greenwarden of Murasa",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "When this creature enters, you may return target card from your graveyard to your hand.\nWhen this creature dies, you may exile it. If you do, return target card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may return target card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return target card from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, you may exile it. If you do, return target card from your graveyard to your hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return target card from your graveyard to your hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "29423a9a-31a6-4605-8b49-a75895038a3a",
+  "name": "Wick's Patrol",
+  "faces": [
+    {
+      "name": "Wick's Patrol",
+      "type_line": "Creature \u2014 Rat Warlock",
+      "oracle_text": "When this creature enters, mill three cards. When you do, target creature an opponent controls gets -X/-X until end of turn, where X is the greatest mana value among cards in your graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, mill three cards. When you do, target creature an opponent controls gets -X/-X until end of turn, where X is the greatest mana value among cards in your graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "target creature an opponent controls gets -x/-x until end of turn, where x is the greatest mana value among cards in your graveyard",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

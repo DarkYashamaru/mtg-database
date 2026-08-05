@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a12a66b5-ea4a-4a58-b0f0-13152598b7e6",
+  "name": "Reptilian Recruiter",
+  "faces": [
+    {
+      "name": "Reptilian Recruiter",
+      "type_line": "Creature \u2014 Lizard Warrior",
+      "oracle_text": "Trample\nWhen this creature enters, choose target creature. If that creature's power is 2 or less or if you control another Lizard, gain control of that creature until end of turn, untap it, and it gains haste until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, choose target creature. If that creature's power is 2 or less or if you control another Lizard, gain control of that creature until end of turn, untap it, and it gains haste until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose target creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "gain control of that creature until end of turn, untap it,",
+              "condition": [
+                {
+                  "condition_text": "that creature's power is 2 or less or if you control another lizard"
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f278970-201d-4a93-b038-cc7218f2ac57",
+  "name": "Pondering Mage",
+  "faces": [
+    {
+      "name": "Pondering Mage",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "When this creature enters, look at the top three cards of your library, then put them back in any order. You may shuffle. Draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at the top three cards of your library, then put them back in any order. You may shuffle. Draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "return_looked_at_cards",
+              "destination": "top_of_library",
+              "order": "any"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

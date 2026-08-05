@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "324824cb-f938-401c-b9b5-d8908b431ef0",
+  "name": "Snuff Out",
+  "faces": [
+    {
+      "name": "Snuff Out",
+      "type_line": "Instant",
+      "oracle_text": "If you control a Swamp, you may pay 4 life rather than pay this spell's mana cost.\nDestroy target nonblack creature. It can't be regenerated.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If you control a Swamp, you may pay 4 life rather than pay this spell's mana cost.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay 4 life rather than pay this spell's mana cost",
+              "condition": [
+                {
+                  "condition_text": "you control a swamp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy target nonblack creature. It can't be regenerated.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature",
+                "not_colors": [
+                  "black"
+                ]
+              }
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

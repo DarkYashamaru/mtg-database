@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "85364398-923c-4ee9-8519-576fce1c26f7",
+  "name": "Skittering Surveyor",
+  "faces": [
+    {
+      "name": "Skittering Surveyor",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "When this creature enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

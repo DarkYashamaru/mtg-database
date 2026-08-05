@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9f6d6e90-7462-46e5-bf2f-725b4badc394",
+  "name": "Gathering Stone",
+  "faces": [
+    {
+      "name": "Gathering Stone",
+      "type_line": "Artifact",
+      "oracle_text": "As this artifact enters, choose a creature type.\nSpells you cast of the chosen type cost {1} less to cast.\nWhen this artifact enters and at the beginning of your upkeep, look at the top card of your library. If it's a card of the chosen type, you may reveal it and put it into your hand. If you don't put the card into your hand, you may put it into your graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters and at the beginning of your upkeep, look at the top card of your library. If it's a card of the chosen type, you may reveal it and put it into your hand. If you don't put the card into your hand, you may put it into your graveyard.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact enters and at the beginning of your upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it's a card of the chosen type"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it into your graveyard",
+              "condition": [
+                {
+                  "condition_text": "you don't put the card into your hand"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this artifact enters, choose a creature type.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this artifact enters, choose a creature type"
+            }
+          ]
+        },
+        {
+          "raw_text": "Spells you cast of the chosen type cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Spells you cast of the chosen type cost {1} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

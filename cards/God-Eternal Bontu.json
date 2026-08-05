@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "183891b0-b5ec-47f4-8d09-b9d3cfc4e7f1",
+  "name": "God-Eternal Bontu",
+  "faces": [
+    {
+      "name": "God-Eternal Bontu",
+      "type_line": "Legendary Creature \u2014 Zombie God",
+      "oracle_text": "Menace\nWhen God-Eternal Bontu enters, sacrifice any number of other permanents, then draw that many cards.\nWhen God-Eternal Bontu dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When God-Eternal Bontu enters, sacrifice any number of other permanents, then draw that many cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "any_number_of_other_permanents"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        },
+        {
+          "raw_text": "When God-Eternal Bontu dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.",
+          "trigger": {
+            "type": "custom",
+            "text": "When God-Eternal Bontu dies or is put into exile from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put it into its owner's library third from the top"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

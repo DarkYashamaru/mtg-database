@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "aee2cd1b-9bf9-4b91-83a4-2f1dbc82dcf4",
+  "name": "Malevolent Witchkite",
+  "faces": [
+    {
+      "name": "Malevolent Witchkite",
+      "type_line": "Creature \u2014 Dragon Warlock",
+      "oracle_text": "Flying\nWhen this creature enters, sacrifice any number of artifacts, enchantments, and/or tokens, then draw that many cards.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, sacrifice any number of artifacts, enchantments, and/or tokens, then draw that many cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "any_number_of_artifacts_enchantments_andor_tokens"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

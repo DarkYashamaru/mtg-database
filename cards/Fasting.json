@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0d787c6b-ab82-42c5-b840-8f3a09af30ac",
+  "name": "Fasting",
+  "faces": [
+    {
+      "name": "Fasting",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, put a hunger counter on this enchantment. Then destroy this enchantment if it has five or more hunger counters on it.\nIf you would begin your draw step, you may skip that step instead. If you do, you gain 2 life.\nWhen you draw a card, destroy this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a hunger counter on this enchantment. Then destroy this enchantment if it has five or more hunger counters on it.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a hunger counter on this enchantment"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then destroy this enchantment if it has five or more hunger counters on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "When you draw a card, destroy this enchantment.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy this enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If you would begin your draw step, you may skip that step instead. If you do, you gain 2 life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may skip that step instead",
+              "condition": [
+                {
+                  "condition_text": "you would begin your draw step"
+                }
+              ]
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

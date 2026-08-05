@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "oracle_id": "acfc3e07-757f-4ccf-a65e-bee07ce87f40",
+  "name": "Halvar, God of Battle // Sword of the Realms",
+  "faces": [
+    {
+      "name": "Halvar, God of Battle",
+      "type_line": "Legendary Creature \u2014 God",
+      "oracle_text": "Creatures you control that are enchanted or equipped have double strike.\nAt the beginning of each combat, you may attach target Aura or Equipment attached to a creature you control to target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each combat, you may attach target Aura or Equipment attached to a creature you control to target creature you control.",
+          "trigger": {
+            "type": "beginning_of_each_combat"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may attach target Aura or Equipment attached to a creature you control to target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control that are enchanted or equipped have double strike.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control_that_are_enchanted_or_equipped"
+              },
+              "keywords": [
+                "double_strike"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sword of the Realms",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +2/+0 and has vigilance.\nWhenever equipped creature dies, return it to its owner's hand.\nEquip {1}{W}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature dies, return it to its owner's hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {1}{W}",
+          "cost": "",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equip {1}{W}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +2/+0 and has vigilance.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +2/+0 and has vigilance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

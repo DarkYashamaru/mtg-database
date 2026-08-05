@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52680471-a407-418b-9e74-c32308322772",
+  "name": "Gallifrey Stands",
+  "faces": [
+    {
+      "name": "Gallifrey Stands",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "When Gallifrey Stands enters, return all Doctor cards from your graveyard to your hand.\nAt the beginning of your upkeep, you may put a Doctor creature card from your hand onto the battlefield. Then if you control thirteen or more Doctors, you win the game.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Gallifrey Stands enters, return all Doctor cards from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return all Doctor cards from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, you may put a Doctor creature card from your hand onto the battlefield. Then if you control thirteen or more Doctors, you win the game.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a Doctor creature card from your hand onto the battlefield"
+            },
+            {
+              "action": "win_the_game",
+              "condition": [
+                {
+                  "condition_text": "you control thirteen or more doctors"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

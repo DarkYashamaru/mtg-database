@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f2ab9ff-10b8-494a-be7a-2fce172f62a3",
+  "name": "Nakia, Wakandan Operative",
+  "faces": [
+    {
+      "name": "Nakia, Wakandan Operative",
+      "type_line": "Legendary Creature \u2014 Human Warrior Hero",
+      "oracle_text": "Reach\nWhenever your commander enters, you become the monarch.\n{2}, {T}: Put two +1/+1 counters on target creature or Vehicle. Activate only as a sorcery.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever your commander enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "your_commander"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}, {T}: Put two +1/+1 counters on target creature or Vehicle. Activate only as a sorcery.",
+          "cost": "{2}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature_or_vehicle",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

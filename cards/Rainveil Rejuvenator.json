@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6ccf72ee-a86a-4b13-9e76-e308d0d28523",
+  "name": "Rainveil Rejuvenator",
+  "faces": [
+    {
+      "name": "Rainveil Rejuvenator",
+      "type_line": "Creature \u2014 Elephant Druid",
+      "oracle_text": "When this creature enters, you may mill three cards. (You may put the top three cards of your library into your graveyard.)\n{T}: Add an amount of {G} equal to this creature's power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may mill three cards. (You may put the top three cards of your library into your graveyard.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add an amount of {G} equal to this creature's power.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add an amount of {G} equal to this creature's power"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

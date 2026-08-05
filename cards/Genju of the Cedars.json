@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ada3c285-3449-4037-8b44-42e128456a65",
+  "name": "Genju of the Cedars",
+  "faces": [
+    {
+      "name": "Genju of the Cedars",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant Forest\n{2}: Enchanted Forest becomes a 4/4 green Spirit creature until end of turn. It's still a land.\nWhen enchanted Forest is put into a graveyard, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted Forest is put into a graveyard, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When enchanted Forest is put into a graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: Enchanted Forest becomes a 4/4 green Spirit creature until end of turn. It's still a land.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted Forest becomes a 4/4 green Spirit creature until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant Forest",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "forest"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

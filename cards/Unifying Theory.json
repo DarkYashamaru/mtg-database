@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "77c923ac-98f1-437c-a711-8c265756e53b",
+  "name": "Unifying Theory",
+  "faces": [
+    {
+      "name": "Unifying Theory",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a player casts a spell, that player may pay {2}. If the player does, they draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts a spell, that player may pay {2}. If the player does, they draw a card.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "any_player"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player may pay {2}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they draw a card",
+              "condition": [
+                {
+                  "condition_text": "the player does"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

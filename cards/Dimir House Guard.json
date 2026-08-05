@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "35c027cd-f754-4e41-9242-8a9d0481171c",
+  "name": "Dimir House Guard",
+  "faces": [
+    {
+      "name": "Dimir House Guard",
+      "type_line": "Creature \u2014 Skeleton",
+      "oracle_text": "Fear (This creature can't be blocked except by artifact creatures and/or black creatures.)\nSacrifice a creature: Regenerate this creature.\nTransmute {1}{B}{B} ({1}{B}{B}, Discard this card: Search your library for a card with the same mana value as this card, reveal it, put it into your hand, then shuffle. Transmute only as a sorcery.)",
+      "static": [
+        {
+          "keyword": "fear"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice a creature: Regenerate this creature.",
+          "cost": "Sacrifice a creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "raw_text": "Transmute {1}{B}{B} ({1}{B}{B}, Discard this card: Search your library for a card with the same mana value as this card, reveal it, put it into your hand, then shuffle. Transmute only as a sorcery.)",
+          "cost": "Transmute {1}{B}{B} ({1}{B}{B}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a card with the same mana value as this card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Transmute only as a sorcery"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

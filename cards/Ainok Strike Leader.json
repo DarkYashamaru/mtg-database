@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8c1fda45-09f1-4b58-a487-e11c868e1357",
+  "name": "Ainok Strike Leader",
+  "faces": [
+    {
+      "name": "Ainok Strike Leader",
+      "type_line": "Creature \u2014 Dog Warrior",
+      "oracle_text": "Whenever you attack with this creature and/or your commander, for each opponent, create a 1/1 red Goblin creature token that's tapped and attacking that player.\nSacrifice this creature: Creature tokens you control gain indestructible until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack with this creature and/or your commander, for each opponent, create a 1/1 red Goblin creature token that's tapped and attacking that player.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you attack with this creature and/or your commander"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each opponent, create a 1/1 red Goblin creature token that's tapped and attacking that player"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice this creature: Creature tokens you control gain indestructible until end of turn.",
+          "cost": "Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creature_tokens_you_control",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fcbada94-54fe-4330-8303-c46162420228",
+  "name": "Ich-Tekik, Salvage Splicer",
+  "faces": [
+    {
+      "name": "Ich-Tekik, Salvage Splicer",
+      "type_line": "Legendary Creature \u2014 Phyrexian Human Artificer",
+      "oracle_text": "When Ich-Tekik enters, create a 3/3 colorless Phyrexian Golem artifact creature token.\nWhenever an artifact is put into a graveyard from the battlefield, put a +1/+1 counter on Ich-Tekik and a +1/+1 counter on each Golem you control.\nPartner (You can have two commanders if both have partner.)",
+      "static": [
+        {
+          "keyword": "partner"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Ich-Tekik enters, create a 3/3 colorless Phyrexian Golem artifact creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/3 colorless Phyrexian Golem artifact creature token",
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Phyrexian",
+                  "Golem",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an artifact is put into a graveyard from the battlefield, put a +1/+1 counter on Ich-Tekik and a +1/+1 counter on each Golem you control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an artifact is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "self_and_a_11_counter_on_each_golem_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

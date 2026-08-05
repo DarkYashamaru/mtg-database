@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5ffed544-1656-4753-ac8f-ad8fb4442c7f",
+  "name": "Snowfall",
+  "faces": [
+    {
+      "name": "Snowfall",
+      "type_line": "Enchantment",
+      "oracle_text": "Cumulative upkeep {U} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nWhenever an Island is tapped for mana, its controller may add an additional {U}. If that Island is snow, its controller may add an additional {U}{U} instead. Spend this mana only to pay cumulative upkeep costs.",
+      "static": [
+        {
+          "keyword": "cumulative_upkeep",
+          "cost": "{u}"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an Island is tapped for mana, its controller may add an additional {U}. If that Island is snow, its controller may add an additional {U}{U} instead. Spend this mana only to pay cumulative upkeep costs.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an Island is tapped for mana"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "its controller may add an additional {U}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "its controller may add an additional {u}{u} instead",
+              "condition": [
+                {
+                  "condition_text": "that island is snow"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to pay cumulative upkeep costs"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

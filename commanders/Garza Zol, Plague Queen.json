@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b48e926-fc0e-403c-a47b-1f1d96e2eaf7",
+  "name": "Garza Zol, Plague Queen",
+  "faces": [
+    {
+      "name": "Garza Zol, Plague Queen",
+      "type_line": "Legendary Creature \u2014 Vampire Noble",
+      "oracle_text": "Flying, haste\nWhenever a creature dealt damage by Garza Zol this turn dies, put a +1/+1 counter on Garza Zol.\nWhenever Garza Zol deals combat damage to a player, you may draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature dealt damage by Garza Zol this turn dies, put a +1/+1 counter on Garza Zol.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_dealt_damage_by_self_this_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Garza Zol deals combat damage to a player, you may draw a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

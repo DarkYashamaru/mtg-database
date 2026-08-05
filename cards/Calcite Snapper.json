@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "36593200-e53c-46e4-a04e-8deec8273c65",
+  "name": "Calcite Snapper",
+  "faces": [
+    {
+      "name": "Calcite Snapper",
+      "type_line": "Creature \u2014 Turtle",
+      "oracle_text": "Shroud (This creature can't be the target of spells or abilities.)\nLandfall \u2014 Whenever a land you control enters, you may switch this creature's power and toughness until end of turn.",
+      "static": [
+        {
+          "keyword": "shroud"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, you may switch this creature's power and toughness until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may switch this creature's power and toughness until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

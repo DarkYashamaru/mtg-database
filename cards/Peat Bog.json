@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a176924c-78fc-4151-b2b5-1547b1114a40",
+  "name": "Peat Bog",
+  "faces": [
+    {
+      "name": "Peat Bog",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped with two depletion counters on it.\n{T}, Remove a depletion counter from this land: Add {B}{B}. If there are no depletion counters on this land, sacrifice it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Remove a depletion counter from this land: Add {B}{B}. If there are no depletion counters on this land, sacrifice it.",
+          "cost": "{T}, Remove a depletion counter from this land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{b}",
+                "{b}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "there are no depletion counters on this land"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped with two depletion counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This land enters tapped with two depletion counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

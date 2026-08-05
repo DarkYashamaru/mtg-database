@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "36a3c910-95b8-45a2-9f84-5681336d868c",
+  "name": "Frontline Medic",
+  "faces": [
+    {
+      "name": "Frontline Medic",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "Battalion \u2014 Whenever this creature and at least two other creatures attack, creatures you control gain indestructible until end of turn.\nSacrifice this creature: Counter target spell with {X} in its mana cost unless its controller pays {3}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature and at least two other creatures attack, creatures you control gain indestructible until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "attacking_creatures_you_control_gte": 3
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice this creature: Counter target spell with {X} in its mana cost unless its controller pays {3}.",
+          "cost": "Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Counter target spell with {X} in its mana cost unless its controller pays {3}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

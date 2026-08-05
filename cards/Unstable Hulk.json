@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8d01c85c-5f83-4514-b81c-4165051d5722",
+  "name": "Unstable Hulk",
+  "faces": [
+    {
+      "name": "Unstable Hulk",
+      "type_line": "Creature \u2014 Goblin Mutant",
+      "oracle_text": "Morph {3}{R}{R} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)\nWhen this creature is turned face up, it gets +6/+6 and gains trample until end of turn. You skip your next turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, it gets +6/+6 and gains trample until end of turn. You skip your next turn.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "it_gets_66_and",
+              "keyword": "trample"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You skip your next turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Morph {3}{R}{R} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morph {3}{R}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

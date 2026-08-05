@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1fb4c1c1-b10c-463f-a97d-eca9f978e371",
+  "name": "Resplendent Marshal",
+  "faces": [
+    {
+      "name": "Resplendent Marshal",
+      "type_line": "Creature \u2014 Angel Warrior",
+      "oracle_text": "Flying\nWhen this creature enters or dies, you may exile another creature card from your graveyard. When you do, put a +1/+1 counter on each creature you control other than this creature that shares a creature type with the exiled card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters or dies, you may exile another creature card from your graveyard. When you do, put a +1/+1 counter on each creature you control other than this creature that shares a creature type with the exiled card.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self_enters_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile another creature card from your graveyard"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_creature_you_control_other_than_self_that_shares_a_creature_type_with_the_exiled_card"
+              },
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

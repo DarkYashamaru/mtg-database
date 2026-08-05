@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ce76d17e-d536-46f0-98e2-3e1b1b4f61a4",
+  "name": "Stimulus Package",
+  "faces": [
+    {
+      "name": "Stimulus Package",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, create two Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")\nSacrifice a Treasure: Create a 1/1 green and white Citizen creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, create two Treasure tokens. (They're artifacts with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice a Treasure: Create a 1/1 green and white Citizen creature token.",
+          "cost": "Sacrifice a Treasure",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green and white Citizen creature token",
+                "colors": [
+                  "green",
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Citizen"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

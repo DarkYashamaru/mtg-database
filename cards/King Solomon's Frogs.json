@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "36396a14-9d0b-4670-bf8a-5c346fdda197",
+  "name": "King Solomon's Frogs",
+  "faces": [
+    {
+      "name": "King Solomon's Frogs",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "Flash\nWhen King Solomon's Frogs enters, if you cast it, for each opponent, exile up to one target permanent that player controls with mana value 3 or greater. For each permanent exiled this way, its controller draws a card.\n{3}, {T}, Exile King Solomon's Frogs: You become the monarch.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When King Solomon's Frogs enters, if you cast it, for each opponent, exile up to one target permanent that player controls with mana value 3 or greater. For each permanent exiled this way, its controller draws a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "for each opponent, exile up to one target permanent that player controls with mana value 3 or greater"
+            },
+            {
+              "action": "custom_effect",
+              "text": "For each permanent exiled this way, its controller draws a card"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}, {T}, Exile King Solomon's Frogs: You become the monarch.",
+          "cost": "{3}, {T}, Exile King Solomon's Frogs",
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

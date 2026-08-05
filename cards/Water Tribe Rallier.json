@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "64acb083-a0a3-46ec-9c93-b2ac36878703",
+  "name": "Water Tribe Rallier",
+  "faces": [
+    {
+      "name": "Water Tribe Rallier",
+      "type_line": "Creature \u2014 Human Soldier Ally",
+      "oracle_text": "Waterbend {5}: Look at the top four cards of your library. You may reveal a creature card with power 3 or less from among them and put it into your hand. Put the rest on the bottom of your library in a random order. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Waterbend {5}: Look at the top four cards of your library. You may reveal a creature card with power 3 or less from among them and put it into your hand. Put the rest on the bottom of your library in a random order. (While paying a waterbend cost, you can tap your artifacts and creatures to help. Each one pays for {1}.)",
+          "cost": "Waterbend {5}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes_any": [
+                  "3",
+                  "Card",
+                  "Les",
+                  "Power",
+                  "With"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

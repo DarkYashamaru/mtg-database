@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "78d710ea-fbf5-4855-b874-b53478bf4a87",
+  "name": "Thran Spider",
+  "faces": [
+    {
+      "name": "Thran Spider",
+      "type_line": "Artifact Creature \u2014 Spider",
+      "oracle_text": "Reach\nWhen this creature enters, you and target opponent each create a tapped Powerstone token.\n{7}: Look at the top four cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you and target opponent each create a tapped Powerstone token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you and target opponent each create a tapped Powerstone token"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{7}: Look at the top four cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "cost": "{7}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Artifact"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

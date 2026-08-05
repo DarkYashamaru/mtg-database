@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "88bb91b5-2ccd-4ce9-8cd4-e54d63c12abf",
+  "name": "Coruscation Mage",
+  "faces": [
+    {
+      "name": "Coruscation Mage",
+      "type_line": "Creature \u2014 Otter Wizard",
+      "oracle_text": "Offspring {2} (You may pay an additional {2} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\nWhenever you cast a noncreature spell, this creature deals 1 damage to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, this creature deals 1 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Offspring {2} (You may pay an additional {2} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Offspring {2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

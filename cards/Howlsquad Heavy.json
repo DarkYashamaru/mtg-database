@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cd45a29f-73bc-435c-9d50-09a4ecaa77be",
+  "name": "Howlsquad Heavy",
+  "faces": [
+    {
+      "name": "Howlsquad Heavy",
+      "type_line": "Creature \u2014 Goblin Mercenary",
+      "oracle_text": "Start your engines!\nOther Goblins you control have haste.\nAt the beginning of combat on your turn, create a 1/1 red Goblin creature token. That token attacks this combat if able.\nMax speed \u2014 {T}: Add {R} for each Goblin you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, create a 1/1 red Goblin creature token. That token attacks this combat if able.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 red Goblin creature token",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Goblin"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "That token attacks this combat if able"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Max speed \u2014 {T}: Add {R} for each Goblin you control.",
+          "cost": "Max speed \u2014 {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {R} for each Goblin you control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Start your engines!",
+          "effects": [
+            {
+              "action": "start_your_engines"
+            }
+          ]
+        },
+        {
+          "raw_text": "Other Goblins you control have haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true,
+                "subtypes": [
+                  "Goblin"
+                ]
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

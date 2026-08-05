@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fcb6c6d4-ea8d-49cf-b6df-377084bdb757",
+  "name": "Immersturm Predator",
+  "faces": [
+    {
+      "name": "Immersturm Predator",
+      "type_line": "Creature \u2014 Vampire Dragon",
+      "oracle_text": "Flying\nWhenever this creature becomes tapped, exile up to one target card from a graveyard and put a +1/+1 counter on this creature.\nSacrifice another creature: This creature gains indestructible until end of turn. Tap it.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature becomes tapped, exile up to one target card from a graveyard and put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature becomes tapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target card from a graveyard and put a +1/+1 counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice another creature: This creature gains indestructible until end of turn. Tap it.",
+          "cost": "Sacrifice another creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            },
+            {
+              "action": "tap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

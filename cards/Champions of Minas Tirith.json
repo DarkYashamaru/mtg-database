@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "464a930a-79d5-4436-864d-3ce9f29475ae",
+  "name": "Champions of Minas Tirith",
+  "faces": [
+    {
+      "name": "Champions of Minas Tirith",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "When this creature enters, you become the monarch.\nAt the beginning of combat on each opponent's turn, if you're the monarch, that opponent may pay {X}, where X is the number of cards in their hand. If they don't, they can't attack you this combat.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you become the monarch.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on each opponent's turn, if you're the monarch, that opponent may pay {X}, where X is the number of cards in their hand. If they don't, they can't attack you this combat.",
+          "trigger": {
+            "type": "custom",
+            "text": "At the beginning of combat on each opponent's turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you're the monarch"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that opponent may pay {X}, where X is the number of cards in their hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they can't attack you this combat",
+              "condition": [
+                {
+                  "condition_text": "they don't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "09d01406-b529-4c3b-900e-d8c889a4c400",
+  "name": "Phage the Untouchable",
+  "faces": [
+    {
+      "name": "Phage the Untouchable",
+      "type_line": "Legendary Creature \u2014 Avatar Minion",
+      "oracle_text": "When Phage enters, if you didn't cast it from your hand, you lose the game.\nWhenever Phage deals combat damage to a creature, destroy that creature. It can't be regenerated.\nWhenever Phage deals combat damage to a player, that player loses the game.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Phage enters, if you didn't cast it from your hand, you lose the game.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you didn't cast it from your hand"
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_the_game"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Phage deals combat damage to a creature, destroy that creature. It can't be regenerated.",
+          "trigger": {
+            "type": "deals_combat_damage_to_creature",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": "that_creature"
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_target"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Phage deals combat damage to a player, that player loses the game.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player loses the game"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

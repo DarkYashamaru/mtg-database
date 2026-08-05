@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fa9a6083-75ab-41ae-b607-39d21d9a3d3a",
+  "name": "Kaervek, the Punisher",
+  "faces": [
+    {
+      "name": "Kaervek, the Punisher",
+      "type_line": "Legendary Creature \u2014 Human Warlock",
+      "oracle_text": "Whenever you commit a crime, exile up to one target black card from your graveyard and copy it. You may cast the copy. If you do, you lose 2 life. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime. Copies of permanent spells become tokens.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you commit a crime, exile up to one target black card from your graveyard and copy it. You may cast the copy. If you do, you lose 2 life. (Targeting opponents, anything they control, and/or cards in their graveyards is a crime. Copies of permanent spells become tokens.)",
+          "trigger": {
+            "type": "commit_crime",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target black card from your graveyard and copy it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast the copy"
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

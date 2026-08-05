@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a5cfd1e4-cd14-454a-9734-b5f6952d6a50",
+  "name": "Leering Emblem",
+  "faces": [
+    {
+      "name": "Leering Emblem",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Whenever you cast a spell, equipped creature gets +2/+2 until end of turn.\nEquip {2}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell, equipped creature gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "equipped_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2}",
+          "cost": "{2}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

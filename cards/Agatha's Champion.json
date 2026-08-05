@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "debdfab7-454f-4fec-9ee8-aa5b570ea7fb",
+  "name": "Agatha's Champion",
+  "faces": [
+    {
+      "name": "Agatha's Champion",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Bargain (You may sacrifice an artifact, enchantment, or token as you cast this spell.)\nTrample\nWhen this creature enters, if it was bargained, it fights up to one target creature you don't control. (Each deals damage equal to its power to the other.)",
+      "static": [
+        {
+          "keyword": "bargain"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was bargained, it fights up to one target creature you don't control. (Each deals damage equal to its power to the other.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was bargained"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it fights up to one target creature you don't control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cf4be71e-0a9a-47a3-b0ec-43e04c3c07a0",
+  "name": "Tide Shaper",
+  "faces": [
+    {
+      "name": "Tide Shaper",
+      "type_line": "Creature \u2014 Merfolk Wizard",
+      "oracle_text": "Kicker {1} (You may pay an additional {1} as you cast this spell.)\nWhen this creature enters, if it was kicked, target land becomes an Island for as long as this creature remains on the battlefield.\nThis creature gets +1/+1 as long as an opponent controls an Island.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it was kicked, target land becomes an Island for as long as this creature remains on the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it was kicked"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target land becomes an Island for as long as this creature remains on the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1} (You may pay an additional {1} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature gets +1/+1 as long as an opponent controls an Island.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +1/+1 as long as an opponent controls an Island"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

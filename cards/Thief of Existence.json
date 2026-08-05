@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7abbd5af-a04b-476d-aee5-2b2f5114b019",
+  "name": "Thief of Existence",
+  "faces": [
+    {
+      "name": "Thief of Existence",
+      "type_line": "Creature \u2014 Eldrazi",
+      "oracle_text": "Devoid (This card has no color.)\nWhen you cast this spell, exile up to one target noncreature, nonland permanent an opponent controls with mana value 4 or less. If you do, Thief of Existence gains \"When this creature leaves the battlefield, target opponent draws a card.\"",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, exile up to one target noncreature, nonland permanent an opponent controls with mana value 4 or less. If you do, Thief of Existence gains \"When this creature leaves the battlefield, target opponent draws a card.\"",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target noncreature, nonland permanent an opponent controls with mana value 4 or less"
+            },
+            {
+              "action": "custom_effect",
+              "text": "thief of existence gains \"when this creature leaves the battlefield, target opponent draws a card",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

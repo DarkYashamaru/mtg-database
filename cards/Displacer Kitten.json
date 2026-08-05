@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "09ef446c-a13d-49d9-a94c-cd5f5a2d440b",
+  "name": "Displacer Kitten",
+  "faces": [
+    {
+      "name": "Displacer Kitten",
+      "type_line": "Creature \u2014 Cat Beast",
+      "oracle_text": "Avoidance \u2014 Whenever you cast a noncreature spell, exile up to one target nonland permanent you control, then return that card to the battlefield under its owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, exile up to one target nonland permanent you control, then return that card to the battlefield under its owner's control.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target nonland permanent you control"
+            },
+            {
+              "action": "move_card",
+              "target": "that_card",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

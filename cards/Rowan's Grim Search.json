@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f60234e4-9b53-47a5-a21a-82c80b5af072",
+  "name": "Rowan's Grim Search",
+  "faces": [
+    {
+      "name": "Rowan's Grim Search",
+      "type_line": "Instant",
+      "oracle_text": "Bargain (You may sacrifice an artifact, enchantment, or token as you cast this spell.)\nIf this spell was bargained, look at the top four cards of your library, then put up to two of them back on top of your library in any order and the rest into your graveyard.\nYou draw two cards and you lose 2 life.",
+      "static": [
+        {
+          "keyword": "bargain"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If this spell was bargained, look at the top four cards of your library, then put up to two of them back on top of your library in any order and the rest into your graveyard.",
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4,
+              "condition": [
+                {
+                  "condition_text": "this spell was bargained"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put up to two of them back on top of your library in any order and the rest into your graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "You draw two cards and you lose 2 life.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

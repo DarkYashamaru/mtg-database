@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9c298c7b-9c63-4a66-a0fc-977491b623c7",
+  "name": "Gisa's Favorite Shovel",
+  "faces": [
+    {
+      "name": "Gisa's Favorite Shovel",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +2/+0 and has menace.\nWhenever equipped creature attacks, defending player sacrifices a creature of their choice. If they do, you create a Walker token.\nEquip {4}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature attacks, defending player sacrifices a creature of their choice. If they do, you create a Walker token.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "defending player sacrifices a creature of their choice"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you create a walker token",
+              "condition": [
+                {
+                  "condition_text": "they do"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {4}",
+          "cost": "{4}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +2/+0 and has menace.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature gets +2/+0 and has menace"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

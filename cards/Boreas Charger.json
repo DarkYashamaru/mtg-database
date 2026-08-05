@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f6dae324-cc79-4093-8cce-667015c1de6d",
+  "name": "Boreas Charger",
+  "faces": [
+    {
+      "name": "Boreas Charger",
+      "type_line": "Creature \u2014 Pegasus",
+      "oracle_text": "Flying\nWhen this creature leaves the battlefield, choose an opponent who controls more lands than you. Search your library for a number of Plains cards equal to the difference, reveal those cards, put one of them onto the battlefield tapped and the rest into your hand, then shuffle.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature leaves the battlefield, choose an opponent who controls more lands than you. Search your library for a number of Plains cards equal to the difference, reveal those cards, put one of them onto the battlefield tapped and the rest into your hand, then shuffle.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose an opponent who controls more lands than you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "search your library for a number of plains cards equal to the difference, reveal those cards, put one of them onto the battlefield tapped and the rest into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

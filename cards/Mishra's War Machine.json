@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "18b1f96f-de35-4f0a-8b0e-81576471fd15",
+  "name": "Mishra's War Machine",
+  "faces": [
+    {
+      "name": "Mishra's War Machine",
+      "type_line": "Artifact Creature \u2014 Juggernaut",
+      "oracle_text": "Banding (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)\nAt the beginning of your upkeep, this creature deals 3 damage to you unless you discard a card. If it deals damage to you this way, tap it.",
+      "static": [
+        {
+          "keyword": "banding"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, this creature deals 3 damage to you unless you discard a card. If it deals damage to you this way, tap it.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 3 damage to you unless you discard a card"
+            },
+            {
+              "action": "tap",
+              "target": "it",
+              "condition": [
+                {
+                  "condition_text": "it deals damage to you this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

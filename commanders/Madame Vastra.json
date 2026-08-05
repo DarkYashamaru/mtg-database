@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4789357c-3ab7-4327-b5ee-b1110ddb876f",
+  "name": "Madame Vastra",
+  "faces": [
+    {
+      "name": "Madame Vastra",
+      "type_line": "Legendary Creature \u2014 Lizard Detective",
+      "oracle_text": "Partner with Jenny Flint (When this creature enters, target player may put Jenny Flint into their hand from their library, then shuffle.)\nMadame Vastra must be blocked if able.\nWhenever a creature dealt damage by Madame Vastra this turn dies, create a Clue token and a Food token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature dealt damage by Madame Vastra this turn dies, create a Clue token and a Food token.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_dealt_damage_by_self_this_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Clue token and a Food token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Partner with Jenny Flint (When this creature enters, target player may put Jenny Flint into their hand from their library, then shuffle.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Partner with Jenny Flint"
+            }
+          ]
+        },
+        {
+          "raw_text": "Madame Vastra must be blocked if able.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Madame Vastra must be blocked if able"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

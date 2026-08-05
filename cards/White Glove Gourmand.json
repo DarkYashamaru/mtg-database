@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3771c0d7-cea3-4c03-933d-f236f32ef2db",
+  "name": "White Glove Gourmand",
+  "faces": [
+    {
+      "name": "White Glove Gourmand",
+      "type_line": "Creature \u2014 Human Noble",
+      "oracle_text": "When this creature enters, create two 1/1 white Human Soldier creature tokens.\nAt the beginning of your end step, if another Human died under your control this turn, create a Food token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create two 1/1 white Human Soldier creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 white Human Soldier creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human",
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if another Human died under your control this turn, create a Food token.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "another Human died under your control this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

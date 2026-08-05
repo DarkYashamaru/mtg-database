@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "48a62778-7c11-486f-a0e1-020c283a7ef9",
+  "name": "Nazg\u00fbl",
+  "faces": [
+    {
+      "name": "Nazg\u00fbl",
+      "type_line": "Creature \u2014 Wraith Knight",
+      "oracle_text": "Deathtouch\nWhen this creature enters, the Ring tempts you.\nWhenever the Ring tempts you, put a +1/+1 counter on each Wraith you control.\nA deck can have up to nine cards named Nazg\u00fbl.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, the Ring tempts you.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "ring_tempts_you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever the Ring tempts you, put a +1/+1 counter on each Wraith you control.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever the Ring tempts you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Wraith"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "A deck can have up to nine cards named Nazg\u00fbl.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "A deck can have up to nine cards named Nazg\u00fbl"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

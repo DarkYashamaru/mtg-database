@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5d451958-25f3-4e70-8be2-c832f60f39e9",
+  "name": "Serpent's Soul-Jar",
+  "faces": [
+    {
+      "name": "Serpent's Soul-Jar",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever an Elf you control dies, exile it.\n{T}, Pay 2 life: Until end of turn, you may cast a creature spell from among cards exiled with this artifact.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an Elf you control dies, exile it.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Elf"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Pay 2 life: Until end of turn, you may cast a creature spell from among cards exiled with this artifact.",
+          "cost": "{T}, Pay 2 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may cast a creature spell from among cards exiled with this artifact"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

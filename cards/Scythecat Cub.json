@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "929117cd-caa6-402b-9d7b-1f684d75695c",
+  "name": "Scythecat Cub",
+  "faces": [
+    {
+      "name": "Scythecat Cub",
+      "type_line": "Creature \u2014 Cat",
+      "oracle_text": "Trample\nLandfall \u2014 Whenever a land you control enters, put a +1/+1 counter on target creature you control. If this is the second time this ability has resolved this turn, double the number of +1/+1 counters on that creature instead.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, put a +1/+1 counter on target creature you control. If this is the second time this ability has resolved this turn, double the number of +1/+1 counters on that creature instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "double the number of +1/+1 counters on that creature instead",
+              "condition": [
+                {
+                  "ability_resolution_count_this_turn": 2
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

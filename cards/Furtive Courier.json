@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "92d24b75-419b-4068-89c1-db9945f74972",
+  "name": "Furtive Courier",
+  "faces": [
+    {
+      "name": "Furtive Courier",
+      "type_line": "Creature \u2014 Merfolk Advisor",
+      "oracle_text": "This creature can't be blocked as long as you've sacrificed an artifact this turn.\nWhenever this creature attacks, draw a card, then discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, draw a card, then discard a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't be blocked as long as you've sacrificed an artifact this turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature can't be blocked as long as you've sacrificed an artifact this turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

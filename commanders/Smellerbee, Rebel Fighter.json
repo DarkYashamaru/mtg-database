@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "127bc05b-2945-434c-bc6a-283a267cc72a",
+  "name": "Smellerbee, Rebel Fighter",
+  "faces": [
+    {
+      "name": "Smellerbee, Rebel Fighter",
+      "type_line": "Legendary Creature \u2014 Human Rebel Ally",
+      "oracle_text": "First strike\nOther creatures you control have haste.\nWhenever Smellerbee attacks, you may discard your hand. If you do, draw cards equal to the number of attacking creatures.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Smellerbee attacks, you may discard your hand. If you do, draw cards equal to the number of attacking creatures.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_hand",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "draw cards equal to the number of attacking creatures",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other creatures you control have haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "exclude_self": true
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b4d19e3a-c2f8-4503-bcfa-1b46bde972e5",
+  "name": "Afterburner Expert",
+  "faces": [
+    {
+      "name": "Afterburner Expert",
+      "type_line": "Creature \u2014 Goblin Artificer",
+      "oracle_text": "Exhaust \u2014 {2}{G}{G}: Put two +1/+1 counters on this creature. (Activate each exhaust ability only once.)\nWhenever you activate an exhaust ability, return this card from your graveyard to the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you activate an exhaust ability, return this card from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you activate an exhaust ability"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": "self",
+              "destination": "battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Exhaust \u2014 {2}{G}{G}: Put two +1/+1 counters on this creature. (Activate each exhaust ability only once.)",
+          "cost": "Exhaust \u2014 {2}{G}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0370afa0-07d3-4787-8a5b-10272cb3a486",
+  "name": "Oketra's Monument",
+  "faces": [
+    {
+      "name": "Oketra's Monument",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "White creature spells you cast cost {1} less to cast.\nWhenever you cast a creature spell, create a 1/1 white Warrior creature token with vigilance.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a creature spell, create a 1/1 white Warrior creature token with vigilance.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white Warrior creature token with vigilance",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Warrior"
+                ],
+                "keywords": [
+                  "vigilance"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "White creature spells you cast cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "White creature spells you cast cost {1} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

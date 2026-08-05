@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "879ba7c4-4557-4166-adb0-b52454816e5a",
+  "name": "Enslave",
+  "faces": [
+    {
+      "name": "Enslave",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nYou control enchanted creature.\nAt the beginning of your upkeep, enchanted creature deals 1 damage to its owner.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, enchanted creature deals 1 damage to its owner.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "enchanted creature deals 1 damage to its owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "You control enchanted creature.",
+          "effects": [
+            {
+              "action": "gain_control",
+              "target": "enchanted_creature",
+              "duration": "static"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

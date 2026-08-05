@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3e6f51ae-7239-4fcc-919f-aa2437e8ef15",
+  "name": "Veteran Motorist",
+  "faces": [
+    {
+      "name": "Veteran Motorist",
+      "type_line": "Creature \u2014 Dwarf Pilot",
+      "oracle_text": "When this creature enters, scry 2.\nWhenever this creature crews a Vehicle, that Vehicle gets +1/+1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, scry 2.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "scry",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature crews a Vehicle, that Vehicle gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature crews a Vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "that_vehicle",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

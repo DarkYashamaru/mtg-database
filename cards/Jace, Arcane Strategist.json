@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4126bab7-6a2a-43b2-ba65-77299f9bb8cf",
+  "name": "Jace, Arcane Strategist",
+  "faces": [
+    {
+      "name": "Jace, Arcane Strategist",
+      "type_line": "Legendary Planeswalker \u2014 Jace",
+      "oracle_text": "Whenever you draw your second card each turn, put a +1/+1 counter on target creature you control.\n+1: Draw a card.\n\u22127: Creatures you control can't be blocked this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, put a +1/+1 counter on target creature you control.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+1: Draw a card.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: Creatures you control can't be blocked this turn.",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creatures you control can't be blocked this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

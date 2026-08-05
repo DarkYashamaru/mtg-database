@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f61f4307-4eec-476a-97e5-d4d3da2b54c3",
+  "name": "Virtue of Loyalty // Ardenvale Fealty",
+  "faces": [
+    {
+      "name": "Ardenvale Fealty",
+      "type_line": "Instant \u2014 Adventure",
+      "oracle_text": "Create a 2/2 white Knight creature token with vigilance. (Then exile this card. You may cast the enchantment later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Create a 2/2 white Knight creature token with vigilance. (Then exile this card. You may cast the enchantment later from exile.)",
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 2/2 white Knight creature token with vigilance",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Knight"
+                ],
+                "keywords": [
+                  "vigilance"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Virtue of Loyalty",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your end step, put a +1/+1 counter on each creature you control. Untap those creatures.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, put a +1/+1 counter on each creature you control. Untap those creatures.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Untap those creatures"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

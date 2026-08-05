@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0c0845c3-f4b5-444e-8f42-da0c7dbf2841",
+  "name": "Henrika Domnathi // Henrika, Infernal Seer",
+  "faces": [
+    {
+      "name": "Henrika Domnathi",
+      "type_line": "Legendary Creature \u2014 Vampire",
+      "oracle_text": "Flying\nAt the beginning of combat on your turn, choose one that hasn't been chosen \u2014\n\u2022 Each player sacrifices a creature of their choice.\n\u2022 You draw a card and you lose 1 life.\n\u2022 Transform Henrika.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, choose one that hasn't been chosen \u2014\n\u2022 Each player sacrifices a creature of their choice.\n\u2022 You draw a card and you lose 1 life.\n\u2022 Transform Henrika.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose one that hasn't been chosen \u2014\n\u2022 Each player sacrifices a creature of their choice"
+            },
+            {
+              "action": "custom_effect",
+              "text": "\u2022 You draw a card and you lose 1 life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "\u2022 Transform Henrika"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Henrika, Infernal Seer",
+      "type_line": "Legendary Creature \u2014 Vampire",
+      "oracle_text": "Flying, deathtouch, lifelink\n{1}{B}{B}: Each creature you control with flying, deathtouch, and/or lifelink gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "deathtouch"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{B}{B}: Each creature you control with flying, deathtouch, and/or lifelink gets +1/+0 until end of turn.",
+          "cost": "{1}{B}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "each_creature_you_control_with_flying_deathtouch_andor_lifelink"
+              },
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "363edb16-009f-4cc2-99e3-2b15db84e7af",
+  "name": "Incubation // Incongruity",
+  "faces": [
+    {
+      "name": "Incongruity",
+      "type_line": "Instant",
+      "oracle_text": "Exile target creature. That creature's controller creates a 3/3 green Frog Lizard creature token.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Exile target creature. That creature's controller creates a 3/3 green Frog Lizard creature token.",
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_creature"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "That creature's controller creates a 3/3 green Frog Lizard creature token"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Incubation",
+      "type_line": "Sorcery",
+      "oracle_text": "Look at the top five cards of your library. You may reveal a creature card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Look at the top five cards of your library. You may reveal a creature card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 5
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

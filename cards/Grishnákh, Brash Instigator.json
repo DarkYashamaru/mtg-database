@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1f139012-fa71-4f5f-8c57-6847bff95678",
+  "name": "Grishn\u00e1kh, Brash Instigator",
+  "faces": [
+    {
+      "name": "Grishn\u00e1kh, Brash Instigator",
+      "type_line": "Legendary Creature \u2014 Goblin Soldier",
+      "oracle_text": "When Grishn\u00e1kh enters, amass Orcs 2. When you do, until end of turn, gain control of target nonlegendary creature an opponent controls with power less than or equal to the amassed Army's power. Untap that creature. It gains haste until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Grishn\u00e1kh enters, amass Orcs 2. When you do, until end of turn, gain control of target nonlegendary creature an opponent controls with power less than or equal to the amassed Army's power. Untap that creature. It gains haste until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "amass Orcs 2"
+            },
+            {
+              "action": "custom_effect",
+              "text": "until end of turn, gain control of target nonlegendary creature an opponent controls with power less than or equal to the amassed army's power",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "untap",
+              "target": "that_creature"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

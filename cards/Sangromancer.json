@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "920445ab-0ac2-4de7-bc1c-f5e58eb4424c",
+  "name": "Sangromancer",
+  "faces": [
+    {
+      "name": "Sangromancer",
+      "type_line": "Creature \u2014 Vampire Shaman",
+      "oracle_text": "Flying\nWhenever a creature an opponent controls dies, you may gain 3 life.\nWhenever an opponent discards a card, you may gain 3 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature an opponent controls dies, you may gain 3 life.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_an_opponent_controls"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may gain 3 life"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an opponent discards a card, you may gain 3 life.",
+          "trigger": {
+            "type": "discard_card",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may gain 3 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

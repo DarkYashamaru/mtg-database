@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5a54d6a3-b1d0-42fe-9531-604b34d197f1",
+  "name": "Thalakos Lowlands",
+  "faces": [
+    {
+      "name": "Thalakos Lowlands",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{T}: Add {W} or {U}. This land doesn't untap during your next untap step.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}: Add {W} or {U}. This land doesn't untap during your next untap step.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}",
+                "{u}"
+              ],
+              "distribution": "choose_one"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This land doesn't untap during your next untap step"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

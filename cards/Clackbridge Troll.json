@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9c2f25af-0b16-488d-9249-026a84bdb27f",
+  "name": "Clackbridge Troll",
+  "faces": [
+    {
+      "name": "Clackbridge Troll",
+      "type_line": "Creature \u2014 Troll",
+      "oracle_text": "Trample, haste\nWhen this creature enters, target opponent creates three 0/1 white Goat creature tokens.\nAt the beginning of combat on your turn, any opponent may sacrifice a creature of their choice. If a player does, tap this creature, you gain 3 life, and you draw a card.",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, target opponent creates three 0/1 white Goat creature tokens.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent creates three 0/1 white Goat creature tokens"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, any opponent may sacrifice a creature of their choice. If a player does, tap this creature, you gain 3 life, and you draw a card.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "any opponent may sacrifice a creature of their choice"
+            },
+            {
+              "action": "custom_effect",
+              "text": "tap this creature, you gain 3 life,",
+              "condition": [
+                {
+                  "condition_text": "a player does"
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

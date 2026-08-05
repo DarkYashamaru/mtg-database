@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8f761657-7127-4552-a200-532e063e2419",
+  "name": "Ribskiff",
+  "faces": [
+    {
+      "name": "Ribskiff",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Toxic 2 (Players dealt combat damage by this creature also get two poison counters.)\nWhen this Vehicle enters, draw a card.\nCrew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "toxic",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 3 (Tap any number of creatures you control with total power 3 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

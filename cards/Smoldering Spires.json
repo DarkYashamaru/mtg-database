@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cfa3288d-e521-4a13-bcb3-7950a94e1746",
+  "name": "Smoldering Spires",
+  "faces": [
+    {
+      "name": "Smoldering Spires",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\nWhen this land enters, target creature can't block this turn.\n{T}: Add {R}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this land enters, target creature can't block this turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{r}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

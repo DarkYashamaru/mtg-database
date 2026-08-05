@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2f5f46ed-b8aa-4864-bd20-17281d4632bf",
+  "name": "Abigale, Poet Laureate // Heroic Stanza",
+  "faces": [
+    {
+      "name": "Abigale, Poet Laureate",
+      "type_line": "Legendary Creature \u2014 Bird Bard",
+      "oracle_text": "Flying\nWhenever you cast a creature spell, Abigale becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a creature spell, Abigale becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Abigale becomes prepared"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Heroic Stanza",
+      "type_line": "Sorcery",
+      "oracle_text": "Put a +1/+1 counter on target creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Put a +1/+1 counter on target creature.",
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

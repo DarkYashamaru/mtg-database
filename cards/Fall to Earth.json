@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "223db021-979f-4312-8cb5-169ae4bf17bc",
+  "name": "Fall to Earth",
+  "faces": [
+    {
+      "name": "Fall to Earth",
+      "type_line": "Instant",
+      "oracle_text": "Exile target creature. Each player gains 3 life.\nBasic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Basic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Basic landcycling {2} ({2}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Exile target creature. Each player gains 3 life.",
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_creature"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each player gains 3 life"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

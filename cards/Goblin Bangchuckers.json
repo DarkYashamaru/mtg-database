@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f2561cc9-3840-4bd7-ad8b-a85d35e47f71",
+  "name": "Goblin Bangchuckers",
+  "faces": [
+    {
+      "name": "Goblin Bangchuckers",
+      "type_line": "Creature \u2014 Goblin Warrior",
+      "oracle_text": "{T}: Flip a coin. If you win the flip, this creature deals 2 damage to any target. If you lose the flip, this creature deals 2 damage to itself.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Flip a coin. If you win the flip, this creature deals 2 damage to any target. If you lose the flip, this creature deals 2 damage to itself.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin"
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "you win the flip"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 2 damage to itself",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

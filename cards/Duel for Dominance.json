@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5064a55a-9692-4a67-9e82-16250b9140d1",
+  "name": "Duel for Dominance",
+  "faces": [
+    {
+      "name": "Duel for Dominance",
+      "type_line": "Instant",
+      "oracle_text": "Coven \u2014 Choose target creature you control and target creature you don't control. If you control three or more creatures with different powers, put a +1/+1 counter on the chosen creature you control. Then the chosen creatures fight each other. (Each deals damage equal to its power to the other.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Coven \u2014 Choose target creature you control and target creature you don't control. If you control three or more creatures with different powers, put a +1/+1 counter on the chosen creature you control. Then the chosen creatures fight each other. (Each deals damage equal to its power to the other.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Coven \u2014 Choose target creature you control and target creature you don't control"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "The",
+                  "Chosen"
+                ]
+              },
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "you control three or more creatures with different powers"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then the chosen creatures fight each other"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

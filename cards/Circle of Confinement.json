@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1cd7a93-4b83-4755-90bc-17cb64bfb131",
+  "name": "Circle of Confinement",
+  "faces": [
+    {
+      "name": "Circle of Confinement",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, exile target creature an opponent controls with mana value 3 or less until this enchantment leaves the battlefield.\nWhenever an opponent casts a Vampire spell with the same name as a card exiled with this enchantment, you gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, exile target creature an opponent controls with mana value 3 or less until this enchantment leaves the battlefield.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target creature an opponent controls with mana value 3 or less until this enchantment leaves the battlefield"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an opponent casts a Vampire spell with the same name as a card exiled with this enchantment, you gain 2 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an opponent casts a Vampire spell with the same name as a card exiled with this enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

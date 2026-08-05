@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a3570093-3c16-42e7-a83d-2ff611a891b5",
+  "name": "Roar of Endless Song",
+  "faces": [
+    {
+      "name": "Roar of Endless Song",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II \u2014 Create a 5/5 green Elephant creature token.\nIII \u2014 Double the power and toughness of each creature you control until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Create a 5/5 green Elephant creature token.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "5/5 green Elephant creature token",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "5/5",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elephant"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Double the power and toughness of each creature you control until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Double the power and toughness of each creature you control until end of turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

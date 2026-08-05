@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c4161335-1150-4f0d-bd2b-9211efb3bea6",
+  "name": "Lim-D\u00fbl's Paladin",
+  "faces": [
+    {
+      "name": "Lim-D\u00fbl's Paladin",
+      "type_line": "Creature \u2014 Human Knight",
+      "oracle_text": "Trample\nAt the beginning of your upkeep, you may discard a card. If you don't, sacrifice this creature and draw a card.\nWhenever this creature becomes blocked, it gets +6/+3 until end of turn.\nWhenever this creature attacks and isn't blocked, it assigns no combat damage this turn and defending player loses 4 life.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may discard a card. If you don't, sacrifice this creature and draw a card.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature becomes blocked, it gets +6/+3 until end of turn.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 6,
+              "toughness_delta": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks and isn't blocked, it assigns no combat damage this turn and defending player loses 4 life.",
+          "trigger": {
+            "type": "attacks_and_isnt_blocked",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it assigns no combat damage this turn and defending player loses 4 life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

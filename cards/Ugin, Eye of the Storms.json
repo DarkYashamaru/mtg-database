@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5c58353a-fd60-4528-bf0d-669626cda0b2",
+  "name": "Ugin, Eye of the Storms",
+  "faces": [
+    {
+      "name": "Ugin, Eye of the Storms",
+      "type_line": "Legendary Planeswalker \u2014 Ugin",
+      "oracle_text": "When you cast this spell, exile up to one target permanent that's one or more colors.\nWhenever you cast a colorless spell, exile up to one target permanent that's one or more colors.\n+2: You gain 3 life and draw a card.\n0: Add {C}{C}{C}.\n\u221211: Search your library for any number of colorless nonland cards, exile them, then shuffle. Until end of turn, you may cast those cards without paying their mana costs.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, exile up to one target permanent that's one or more colors.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target permanent that's one or more colors"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a colorless spell, exile up to one target permanent that's one or more colors.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Colorles"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target permanent that's one or more colors"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+2: You gain 3 life and draw a card.",
+          "cost": "+2",
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "0: Add {C}{C}{C}.",
+          "cost": "0",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {C}{C}{C}"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u221211: Search your library for any number of colorless nonland cards, exile them, then shuffle. Until end of turn, you may cast those cards without paying their mana costs.",
+          "cost": "\u221211",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for any number of colorless nonland cards, exile them"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may cast those cards without paying their mana costs"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

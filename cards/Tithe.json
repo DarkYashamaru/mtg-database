@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "318304f5-0929-4cd3-97e6-08ac1ac48aa6",
+  "name": "Tithe",
+  "faces": [
+    {
+      "name": "Tithe",
+      "type_line": "Instant",
+      "oracle_text": "Search your library for a Plains card. If target opponent controls more lands than you, you may search your library for an additional Plains card. Reveal those cards, put them into your hand, then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Search your library for a Plains card. If target opponent controls more lands than you, you may search your library for an additional Plains card. Reveal those cards, put them into your hand, then shuffle.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Search your library for a Plains card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for an additional plains card",
+              "condition": [
+                {
+                  "condition_text": "target opponent controls more lands than you"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "reveal those cards, put them into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

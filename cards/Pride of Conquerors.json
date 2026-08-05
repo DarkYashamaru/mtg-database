@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e45a1c99-a020-49ab-8971-35c6bcd096c8",
+  "name": "Pride of Conquerors",
+  "faces": [
+    {
+      "name": "Pride of Conquerors",
+      "type_line": "Instant",
+      "oracle_text": "Ascend (If you control ten or more permanents, you get the city's blessing for the rest of the game.)\nCreatures you control get +1/+1 until end of turn. If you have the city's blessing, those creatures get +2/+2 until end of turn instead.",
+      "static": [
+        {
+          "keyword": "ascend"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control get +1/+1 until end of turn. If you have the city's blessing, those creatures get +2/+2 until end of turn instead.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "those creatures get +2/+2 until end of turn instead",
+              "condition": [
+                {
+                  "condition_text": "you have the city's blessing"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

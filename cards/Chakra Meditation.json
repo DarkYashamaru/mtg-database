@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "12c57ebe-35a7-4cb3-936b-99c148a3cfed",
+  "name": "Chakra Meditation",
+  "faces": [
+    {
+      "name": "Chakra Meditation",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, return up to one target instant or sorcery card from your graveyard to your hand.\nWhenever you cast an instant or sorcery spell, draw a card. Then discard a card unless there are three or more Lesson cards in your graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, return up to one target instant or sorcery card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to one target instant or sorcery card from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, draw a card. Then discard a card unless there are three or more Lesson cards in your graveyard.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then discard a card unless there are three or more Lesson cards in your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

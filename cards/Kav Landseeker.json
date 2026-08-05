@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "528fe479-dab9-4cf8-bda0-1d226a644366",
+  "name": "Kav Landseeker",
+  "faces": [
+    {
+      "name": "Kav Landseeker",
+      "type_line": "Creature \u2014 Kavu Soldier",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen this creature enters, create a Lander token. At the beginning of the end step on your next turn, sacrifice that token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a Lander token. At the beginning of the end step on your next turn, sacrifice that token. (It's an artifact with \"{2}, {T}, Sacrifice this token: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Lander token"
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "At the beginning of the end step on your next turn, sacrifice that token"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

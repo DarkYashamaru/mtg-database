@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e1e82283-01ec-447f-b0d4-5bd4619ab3d8",
+  "name": "Hyperion's Atomic Vision",
+  "faces": [
+    {
+      "name": "Hyperion's Atomic Vision",
+      "type_line": "Instant",
+      "oracle_text": "As an additional cost to cast this spell, you may behold a Hero. (You may choose a Hero you control or reveal a Hero card from your hand.)\nDestroy target tapped creature. If a Hero was beheld, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast this spell, you may behold a Hero. (You may choose a Hero you control or reveal a Hero card from your hand.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As an additional cost to cast this spell, you may behold a Hero"
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy target tapped creature. If a Hero was beheld, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature",
+                "state": "tapped"
+              }
+            },
+            {
+              "action": "scry",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "a hero was beheld"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

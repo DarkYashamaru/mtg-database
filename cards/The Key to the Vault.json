@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7a75d565-b0a7-46bf-94a0-c9255c8abd6d",
+  "name": "The Key to the Vault",
+  "faces": [
+    {
+      "name": "The Key to the Vault",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature deals combat damage to a player, look at that many cards from the top of your library. You may exile a nonland card from among them. Put the rest on the bottom of your library in a random order. You may cast the exiled card without paying its mana cost.\nEquip {2}{U}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals combat damage to a player, look at that many cards from the top of your library. You may exile a nonland card from among them. Put the rest on the bottom of your library in a random order. You may cast the exiled card without paying its mana cost.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at that many cards from the top of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may exile a nonland card from among them"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast the exiled card without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {2}{U}",
+          "cost": "",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equip {2}{U}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

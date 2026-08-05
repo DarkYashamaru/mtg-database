@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "419c2ae1-fec7-4c27-a7a0-99f777abb4de",
+  "name": "Soul Manipulation",
+  "faces": [
+    {
+      "name": "Soul Manipulation",
+      "type_line": "Instant",
+      "oracle_text": "Choose one or both \u2014\n\u2022 Counter target creature spell.\n\u2022 Return target creature card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one or both \u2014\n\u2022 Counter target creature spell.\n\u2022 Return target creature card from your graveyard to your hand.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false,
+            "or_both": true
+          },
+          "modes": [
+            {
+              "raw_text": "Counter target creature spell.",
+              "effects": [
+                {
+                  "action": "counter_spell",
+                  "target": "target_creature_spell"
+                }
+              ]
+            },
+            {
+              "raw_text": "Return target creature card from your graveyard to your hand.",
+              "effects": [
+                {
+                  "action": "move_card",
+                  "target": {
+                    "selector": "target_creature_card_in_your_graveyard"
+                  },
+                  "destination_zone": "hand"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

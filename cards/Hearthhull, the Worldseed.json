@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8d6f82d9-5c5b-4c41-8857-c0936f2d894c",
+  "name": "Hearthhull, the Worldseed",
+  "faces": [
+    {
+      "name": "Hearthhull, the Worldseed",
+      "type_line": "Legendary Artifact \u2014 Spacecraft",
+      "oracle_text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.)\n2+ | {1}, {T}, Sacrifice a land: Draw two cards. You may play an additional land this turn.\n8+ | Flying, vigilance, haste\nWhenever you sacrifice a land, each opponent loses 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you sacrifice a land, each opponent loses 2 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you sacrifice a land"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.)",
+          "cost": "Station (Tap another creature you control",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put charge counters equal to its power on this Spacecraft"
+            },
+            {
+              "action": "custom_effect",
+              "text": "It's an artifact creature at 8+"
+            }
+          ]
+        },
+        {
+          "raw_text": "2+ | {1}, {T}, Sacrifice a land: Draw two cards. You may play an additional land this turn.",
+          "cost": "2+ | {1}, {T}, Sacrifice a land",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play an additional land this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "8+ | Flying, vigilance, haste",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "8+ | Flying, vigilance, haste"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

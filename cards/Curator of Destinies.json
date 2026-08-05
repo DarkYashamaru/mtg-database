@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9938d178-0ce6-45c0-b317-fd5c54231579",
+  "name": "Curator of Destinies",
+  "faces": [
+    {
+      "name": "Curator of Destinies",
+      "type_line": "Creature \u2014 Sphinx",
+      "oracle_text": "This spell can't be countered.\nFlying\nWhen this creature enters, look at the top five cards of your library and separate them into a face-down pile and a face-up pile. An opponent chooses one of those piles. Put that pile into your hand and the other into your graveyard.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, look at the top five cards of your library and separate them into a face-down pile and a face-up pile. An opponent chooses one of those piles. Put that pile into your hand and the other into your graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top five cards of your library and separate them into a face-down pile and a face-up pile"
+            },
+            {
+              "action": "custom_effect",
+              "text": "An opponent chooses one of those piles"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put that pile into your hand and the other into your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell can't be countered.",
+          "effects": [
+            {
+              "action": "cant_be_countered",
+              "target": "self_spell"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

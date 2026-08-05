@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5c40a8d4-6969-4d71-aba5-5c7e4109b7d5",
+  "name": "Quintorius, History Chaser",
+  "faces": [
+    {
+      "name": "Quintorius, History Chaser",
+      "type_line": "Legendary Planeswalker \u2014 Quintorius",
+      "oracle_text": "Whenever one or more cards leave your graveyard, create a 3/2 red and white Spirit creature token.\n+1: You may discard a card. If you do, draw two cards, then mill a card.\n\u22124: Spirits you control gain double strike and vigilance until end of turn.\nQuintorius, History Chaser can be your commander.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more cards leave your graveyard, create a 3/2 red and white Spirit creature token.",
+          "trigger": {
+            "type": "cards_leave_graveyard",
+            "subject": "your_graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "3/2 red and white Spirit creature token",
+                "colors": [
+                  "red",
+                  "white"
+                ],
+                "power_toughness": "3/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Spirit"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+1: You may discard a card. If you do, draw two cards, then mill a card.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22124: Spirits you control gain double strike and vigilance until end of turn.",
+          "cost": "\u22124",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "spirits_you_control",
+              "keyword": "double_strike_and_vigilance"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Quintorius, History Chaser can be your commander.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Quintorius, History Chaser can be your commander"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e4719557-d94e-490f-8a56-c1867a01d2ef",
+  "name": "Cecil, Dark Knight // Cecil, Redeemed Paladin",
+  "faces": [
+    {
+      "name": "Cecil, Dark Knight",
+      "type_line": "Legendary Creature \u2014 Human Knight",
+      "oracle_text": "Deathtouch\nDarkness \u2014 Whenever Cecil deals damage, you lose that much life. Then if your life total is less than or equal to half your starting life total, untap Cecil and transform it.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Cecil deals damage, you lose that much life. Then if your life total is less than or equal to half your starting life total, untap Cecil and transform it.",
+          "trigger": {
+            "type": "deals_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you lose that much life"
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap cecil",
+              "condition": [
+                {
+                  "condition_text": "your life total is less than or equal to half your starting life total"
+                }
+              ]
+            },
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Cecil, Redeemed Paladin",
+      "type_line": "Legendary Creature \u2014 Human Knight",
+      "oracle_text": "Lifelink\nProtect \u2014 Whenever Cecil attacks, other attacking creatures gain indestructible until end of turn.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Cecil attacks, other attacking creatures gain indestructible until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "other_attacking_creatures",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

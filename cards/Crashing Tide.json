@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4c3f87d7-a632-4b8c-9052-b4055ea88771",
+  "name": "Crashing Tide",
+  "faces": [
+    {
+      "name": "Crashing Tide",
+      "type_line": "Sorcery",
+      "oracle_text": "This spell has flash as long as you control a Merfolk.\nReturn target creature to its owner's hand.\nDraw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell has flash as long as you control a Merfolk.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell has flash as long as you control a Merfolk"
+            }
+          ]
+        },
+        {
+          "raw_text": "Return target creature to its owner's hand.",
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature"
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

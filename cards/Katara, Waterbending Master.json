@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2e3af413-6706-4023-871a-e5e49da5beab",
+  "name": "Katara, Waterbending Master",
+  "faces": [
+    {
+      "name": "Katara, Waterbending Master",
+      "type_line": "Legendary Creature \u2014 Human Warrior Ally",
+      "oracle_text": "Whenever you cast a spell during an opponent's turn, you get an experience counter.\nWhenever Katara attacks, you may draw a card for each experience counter you have. If you do, discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell during an opponent's turn, you get an experience counter.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell during an opponent's turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get an experience counter"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Katara attacks, you may draw a card for each experience counter you have. If you do, discard a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "experience_counter_you_have",
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

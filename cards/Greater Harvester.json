@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1e8f17ab-4616-44de-adfd-010882cfcd42",
+  "name": "Greater Harvester",
+  "faces": [
+    {
+      "name": "Greater Harvester",
+      "type_line": "Creature \u2014 Horror",
+      "oracle_text": "At the beginning of your upkeep, sacrifice a permanent.\nWhenever this creature deals combat damage to a player, that player sacrifices two permanents of their choice.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice a permanent.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_permanent"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, that player sacrifices two permanents of their choice.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player sacrifices two permanents of their choice"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

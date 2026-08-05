@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5b7ccdd2-40aa-4619-a147-0792dc02b2e5",
+  "name": "Martha Jones",
+  "faces": [
+    {
+      "name": "Martha Jones",
+      "type_line": "Legendary Creature \u2014 Human Cleric",
+      "oracle_text": "Woman Who Walked the Earth \u2014 When Martha Jones enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nWhenever you sacrifice a Clue, Martha Jones and up to one other target creature can't be blocked this turn.\nDoctor's companion (You can have two commanders if the other is the Doctor.)",
+      "static": [
+        {
+          "keyword": "doctors_companion"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Martha Jones enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "investigate"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you sacrifice a Clue, Martha Jones and up to one other target creature can't be blocked this turn.",
+          "trigger": {
+            "type": "sacrifice_clue",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Martha Jones and up to one other target creature can't be blocked this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

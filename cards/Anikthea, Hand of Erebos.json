@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "991fd651-0cba-41ee-855a-d01a1a7c8f60",
+  "name": "Anikthea, Hand of Erebos",
+  "faces": [
+    {
+      "name": "Anikthea, Hand of Erebos",
+      "type_line": "Legendary Enchantment Creature \u2014 Demigod",
+      "oracle_text": "Menace\nOther enchantment creatures you control have menace.\nWhenever Anikthea enters or attacks, exile up to one target non-Aura enchantment card from your graveyard. Create a token that's a copy of that card, except it's a 3/3 black Zombie creature in addition to its other types.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Anikthea enters or attacks, exile up to one target non-Aura enchantment card from your graveyard. Create a token that's a copy of that card, except it's a 3/3 black Zombie creature in addition to its other types.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile up to one target non-Aura enchantment card from your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Create a token that's a copy of that card, except it's a 3/3 black Zombie creature in addition to its other types"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other enchantment creatures you control have menace.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "permanents_you_control",
+                "exclude_self": true,
+                "card_types": [
+                  "Enchantment",
+                  "Creature"
+                ]
+              },
+              "keywords": [
+                "menace"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

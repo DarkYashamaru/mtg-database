@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "739bbf44-9169-4749-abea-21c20823915f",
+  "name": "Cadric, Soul Kindler",
+  "faces": [
+    {
+      "name": "Cadric, Soul Kindler",
+      "type_line": "Legendary Creature \u2014 Dwarf Wizard",
+      "oracle_text": "The \"legend rule\" doesn't apply to tokens you control.\nWhenever another nontoken legendary permanent you control enters, you may pay {1}. If you do, create a token that's a copy of it. That token gains haste. Sacrifice it at the beginning of the next end step.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken legendary permanent you control enters, you may pay {1}. If you do, create a token that's a copy of it. That token gains haste. Sacrifice it at the beginning of the next end step.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Nontoken",
+                "Legendary",
+                "Permanent"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword",
+              "target": "that_token",
+              "keyword": "haste"
+            },
+            {
+              "action": "sacrifice",
+              "target": "it_at_the_beginning_of_the_next_end_step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "The \"legend rule\" doesn't apply to tokens you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "The \"legend rule\" doesn't apply to tokens you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

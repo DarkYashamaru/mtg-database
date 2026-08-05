@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "499dceab-1890-49c8-b35d-b059a1dc950f",
+  "name": "Stuffy Doll",
+  "faces": [
+    {
+      "name": "Stuffy Doll",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "Indestructible\nAs this creature enters, choose a player.\nWhenever this creature is dealt damage, it deals that much damage to the chosen player.\n{T}: This creature deals 1 damage to itself.",
+      "static": [
+        {
+          "keyword": "indestructible"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature is dealt damage, it deals that much damage to the chosen player.",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals that much damage to the chosen player"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: This creature deals 1 damage to itself.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature deals 1 damage to itself"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this creature enters, choose a player.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this creature enters, choose a player"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

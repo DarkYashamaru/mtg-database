@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7777fab1-df3f-467f-b9e2-46dd2bd2166e",
+  "name": "Forsaken Monument",
+  "faces": [
+    {
+      "name": "Forsaken Monument",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "Colorless creatures you control get +2/+2.\nWhenever you tap a permanent for {C}, add an additional {C}.\nWhenever you cast a colorless spell, you gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you tap a permanent for {C}, add an additional {C}.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you tap a permanent for {C}"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "add an additional {C}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a colorless spell, you gain 2 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Colorles"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Colorless creatures you control get +2/+2.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Colorless creatures you control get +2/+2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

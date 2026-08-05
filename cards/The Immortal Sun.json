@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52232aad-e4ca-4551-8c8d-c69a3b6b49c7",
+  "name": "The Immortal Sun",
+  "faces": [
+    {
+      "name": "The Immortal Sun",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "Players can't activate planeswalkers' loyalty abilities.\nAt the beginning of your draw step, draw an additional card.\nSpells you cast cost {1} less to cast.\nCreatures you control get +1/+1.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your draw step, draw an additional card.",
+          "trigger": {
+            "type": "beginning_of_your_draw_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "draw an additional card"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Players can't activate planeswalkers' loyalty abilities.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Players can't activate planeswalkers' loyalty abilities"
+            }
+          ]
+        },
+        {
+          "raw_text": "Spells you cast cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Spells you cast cost {1} less to cast"
+            }
+          ]
+        },
+        {
+          "raw_text": "Creatures you control get +1/+1.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

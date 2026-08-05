@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b61a87e3-dc98-4db9-abed-b47b677d81ab",
+  "name": "Cream of the Crop",
+  "faces": [
+    {
+      "name": "Cream of the Crop",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature you control enters, you may look at the top X cards of your library, where X is that creature's power. If you do, put one of those cards on top of your library and the rest on the bottom of your library in any order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control enters, you may look at the top X cards of your library, where X is that creature's power. If you do, put one of those cards on top of your library and the rest on the bottom of your library in any order.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top X cards of your library, where X is that creature's power"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put one of those cards on top of your library and the rest on the bottom of your library in any order",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

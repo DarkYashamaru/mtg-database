@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1b065a17-14a4-433f-a6c8-2c8212f505c7",
+  "name": "Oran-Rief Hydra",
+  "faces": [
+    {
+      "name": "Oran-Rief Hydra",
+      "type_line": "Creature \u2014 Hydra",
+      "oracle_text": "Trample\nLandfall \u2014 Whenever a land you control enters, put a +1/+1 counter on this creature. If that land is a Forest, put two +1/+1 counters on this creature instead.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a land you control enters, put a +1/+1 counter on this creature. If that land is a Forest, put two +1/+1 counters on this creature instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_instead",
+              "amount": 2,
+              "condition": [
+                {
+                  "condition_text": "that land is a forest"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

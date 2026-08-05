@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1a6aa5f-2ad6-4bc7-82f0-4262f66af730",
+  "name": "Apprentice Necromancer",
+  "faces": [
+    {
+      "name": "Apprentice Necromancer",
+      "type_line": "Creature \u2014 Zombie Wizard",
+      "oracle_text": "{B}, {T}, Sacrifice this creature: Return target creature card from your graveyard to the battlefield. That creature gains haste. At the beginning of the next end step, sacrifice it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{B}, {T}, Sacrifice this creature: Return target creature card from your graveyard to the battlefield. That creature gains haste. At the beginning of the next end step, sacrifice it.",
+          "cost": "{B}, {T}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": {
+                "card_types": [
+                  "Creature"
+                ],
+                "zone": "graveyard"
+              },
+              "destination": "battlefield"
+            },
+            {
+              "action": "grant_keyword",
+              "target": "that_creature",
+              "keyword": "haste"
+            },
+            {
+              "action": "custom_effect",
+              "text": "At the beginning of the next end step, sacrifice it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

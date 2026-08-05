@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a1bd1e83-40ac-449f-838c-ef308f275a5d",
+  "name": "Kitnap",
+  "faces": [
+    {
+      "name": "Kitnap",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Gift a card (You may promise an opponent a gift as you cast this spell. If you do, when it enters, they draw a card.)\nEnchant creature\nWhen this Aura enters, tap enchanted creature. If the gift wasn't promised, put three stun counters on it.\nYou control enchanted creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, tap enchanted creature. If the gift wasn't promised, put three stun counters on it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "enchanted_creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put three stun counters on it",
+              "condition": [
+                {
+                  "condition_text": "the gift wasn't promised"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Gift a card (You may promise an opponent a gift as you cast this spell. If you do, when it enters, they draw a card.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Gift a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "You control enchanted creature.",
+          "effects": [
+            {
+              "action": "gain_control",
+              "target": "enchanted_creature",
+              "duration": "static"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

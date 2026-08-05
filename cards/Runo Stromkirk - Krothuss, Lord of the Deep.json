@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "oracle_id": "70d7d1a7-9d39-44ec-a4ea-a70ffa453d23",
+  "name": "Runo Stromkirk // Krothuss, Lord of the Deep",
+  "faces": [
+    {
+      "name": "Krothuss, Lord of the Deep",
+      "type_line": "Legendary Creature \u2014 Kraken Horror",
+      "oracle_text": "Flying\nWhenever Krothuss attacks, create a tapped and attacking token that's a copy of another target attacking creature. If that creature is a Kraken, Leviathan, Octopus, or Serpent, create two of those tokens instead.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Krothuss attacks, create a tapped and attacking token that's a copy of another target attacking creature. If that creature is a Kraken, Leviathan, Octopus, or Serpent, create two of those tokens instead.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a tapped and attacking token that's a copy of another target attacking creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "leviathan, octopus, or serpent, create two of those tokens instead",
+              "condition": [
+                {
+                  "condition_text": "that creature is a kraken"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Runo Stromkirk",
+      "type_line": "Legendary Creature \u2014 Vampire Cleric",
+      "oracle_text": "Flying\nWhen Runo enters, put up to one target creature card from your graveyard on top of your library.\nAt the beginning of your upkeep, look at the top card of your library. You may reveal that card. If a creature card with mana value 6 or greater is revealed this way, transform Runo.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Runo enters, put up to one target creature card from your graveyard on top of your library.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put up to one target creature card from your graveyard on top of your library"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your upkeep, look at the top card of your library. You may reveal that card. If a creature card with mana value 6 or greater is revealed this way, transform Runo.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may reveal that card"
+            },
+            {
+              "action": "transform",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "a creature card with mana value 6 or greater is revealed this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

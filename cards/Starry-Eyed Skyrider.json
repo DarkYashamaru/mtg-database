@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "04e615e6-4088-4170-904c-f2d4bcebed59",
+  "name": "Starry-Eyed Skyrider",
+  "faces": [
+    {
+      "name": "Starry-Eyed Skyrider",
+      "type_line": "Creature \u2014 Human Scout",
+      "oracle_text": "Flying\nWhenever this creature attacks, another target creature you control gains flying until end of turn.\nAttacking tokens you control have flying.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, another target creature you control gains flying until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_creature_you_control",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Attacking tokens you control have flying.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Attacking",
+                  "Token"
+                ]
+              },
+              "keywords": [
+                "flying"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

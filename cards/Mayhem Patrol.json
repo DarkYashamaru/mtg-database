@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f77a9160-1d37-476d-8908-29ddcc982328",
+  "name": "Mayhem Patrol",
+  "faces": [
+    {
+      "name": "Mayhem Patrol",
+      "type_line": "Creature \u2014 Devil Warrior",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever this creature attacks, target creature gets +1/+0 until end of turn.\nBlitz {1}{R} (If you cast this spell for its blitz cost, it gains haste and \"When this creature dies, draw a card.\" Sacrifice it at the beginning of the next end step.)",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, target creature gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Blitz {1}{R} (If you cast this spell for its blitz cost, it gains haste and \"When this creature dies, draw a card.\" Sacrifice it at the beginning of the next end step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Blitz {1}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

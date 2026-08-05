@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b6e3af71-0d68-4bf0-b886-c29dae15e9ae",
+  "name": "Kitt Kanto, Mayhem Diva",
+  "faces": [
+    {
+      "name": "Kitt Kanto, Mayhem Diva",
+      "type_line": "Legendary Creature \u2014 Cat Bard Druid",
+      "oracle_text": "When Kitt Kanto enters, create a 1/1 green and white Citizen creature token.\nAt the beginning of combat on each player's turn, you may tap two untapped creatures you control. When you do, target creature that player controls gets +2/+2 and gains trample until end of turn. Goad that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Kitt Kanto enters, create a 1/1 green and white Citizen creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green and white Citizen creature token",
+                "colors": [
+                  "green",
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Citizen"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on each player's turn, you may tap two untapped creatures you control. When you do, target creature that player controls gets +2/+2 and gains trample until end of turn. Goad that creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "At the beginning of combat on each player's turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may tap two untapped creatures you control"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_that_player_controls_gets_22_and",
+              "keyword": "trample",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Goad that creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

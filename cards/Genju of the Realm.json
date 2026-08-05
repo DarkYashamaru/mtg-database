@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1da3a0c0-43f0-4feb-b20a-414b023e710c",
+  "name": "Genju of the Realm",
+  "faces": [
+    {
+      "name": "Genju of the Realm",
+      "type_line": "Legendary Enchantment \u2014 Aura",
+      "oracle_text": "Enchant land\n{2}: Enchanted land becomes a legendary 8/12 Spirit creature with trample until end of turn. It's still a land.\nWhen enchanted land is put into a graveyard, you may return Genju of the Realm from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted land is put into a graveyard, you may return Genju of the Realm from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "When enchanted land is put into a graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return Genju of the Realm from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: Enchanted land becomes a legendary 8/12 Spirit creature with trample until end of turn. It's still a land.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted land becomes a legendary 8/12 Spirit creature with trample until end of turn"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant land",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "land"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

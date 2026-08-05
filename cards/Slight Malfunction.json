@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d1f36c19-ef39-4204-b126-8ea051bde0d2",
+  "name": "Slight Malfunction",
+  "faces": [
+    {
+      "name": "Slight Malfunction",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose one \u2014\n\u2022 Destroy target artifact.\n\u2022 Roll a six-sided die. When you do, Slight Malfunction deals 1 damage to each of up to X target creatures, where X is the result.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Destroy target artifact.\n\u2022 Roll a six-sided die. When you do, Slight Malfunction deals 1 damage to each of up to X target creatures, where X is the result.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Destroy target artifact.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_artifact"
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Roll a six-sided die. When you do, Slight Malfunction deals 1 damage to each of up to X target creatures, where X is the result.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Roll a six-sided die"
+                },
+                {
+                  "action": "custom_effect",
+                  "text": "slight malfunction deals 1 damage to each of up to x target creatures, where x is the result",
+                  "condition": [
+                    {
+                      "previous_optional_payment_made": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

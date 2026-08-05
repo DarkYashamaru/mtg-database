@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8ec03b88-8d3a-4a32-8b7c-7da59b0c03d0",
+  "name": "Colossus Hammer",
+  "faces": [
+    {
+      "name": "Colossus Hammer",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature gets +10/+10 and loses flying.\nEquip {8} ({8}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Equip {8} ({8}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{8}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature gets +10/+10 and loses flying.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "equipped_creature",
+              "power_delta": 10,
+              "toughness_delta": 10,
+              "lose_keywords": [
+                "flying"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

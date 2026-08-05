@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "64ffe529-ba53-48ec-8af1-b046fbd1f0cc",
+  "name": "Metalwork Colossus",
+  "faces": [
+    {
+      "name": "Metalwork Colossus",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "This spell costs {X} less to cast, where X is the total mana value of noncreature artifacts you control.\nSacrifice two artifacts: Return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice two artifacts: Return this card from your graveyard to your hand.",
+          "cost": "Sacrifice two artifacts",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {X} less to cast, where X is the total mana value of noncreature artifacts you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {X} less to cast, where X is the total mana value of noncreature artifacts you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

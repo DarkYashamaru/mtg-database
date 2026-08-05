@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e335485a-80fc-40d4-8be6-7eabf2bab571",
+  "name": "Basilica Stalker",
+  "faces": [
+    {
+      "name": "Basilica Stalker",
+      "type_line": "Creature \u2014 Vampire Detective",
+      "oracle_text": "Flying\nWhenever this creature deals combat damage to a player, you gain 1 life and surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\nDisguise {4}{B} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you gain 1 life and surveil 1. (Look at the top card of your library. You may put it into your graveyard.)",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "surveil",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disguise {4}{B} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disguise {4}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

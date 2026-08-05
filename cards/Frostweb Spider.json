@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "42176320-ee7f-44c9-916e-5ee4a6108be3",
+  "name": "Frostweb Spider",
+  "faces": [
+    {
+      "name": "Frostweb Spider",
+      "type_line": "Snow Creature \u2014 Spider",
+      "oracle_text": "Reach (This creature can block creatures with flying.)\nWhenever this creature blocks a creature with flying, put a +1/+1 counter on this creature at end of combat.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature blocks a creature with flying, put a +1/+1 counter on this creature at end of combat.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever this creature blocks a creature with flying"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_at_end_of_combat",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

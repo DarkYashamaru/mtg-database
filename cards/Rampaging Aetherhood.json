@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9b1f0780-072a-4fe6-91d8-e546a8aaea20",
+  "name": "Rampaging Aetherhood",
+  "faces": [
+    {
+      "name": "Rampaging Aetherhood",
+      "type_line": "Creature \u2014 Snake Hydra",
+      "oracle_text": "Trample, ward {2}\nAt the beginning of your upkeep, you get an amount of {E} (energy counters) equal to this creature's power. Then you may pay one or more {E}. If you do, put that many +1/+1 counters on this creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you get an amount of {E} (energy counters) equal to this creature's power. Then you may pay one or more {E}. If you do, put that many +1/+1 counters on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get an amount of {E} equal to this creature's power"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Then you may pay one or more {E}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that many +1/+1 counters on this creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

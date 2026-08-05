@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d06a8026-1657-4404-8dff-64e44f1a14f8",
+  "name": "Abstergo Entertainment",
+  "faces": [
+    {
+      "name": "Abstergo Entertainment",
+      "type_line": "Legendary Land",
+      "oracle_text": "{T}: Add {C}.\n{1}, {T}: Add one mana of any color.\n{3}, {T}, Exile Abstergo Entertainment: Return up to one target historic card from your graveyard to your hand, then exile all graveyards. (Artifacts, legendaries, and Sagas are historic.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Add one mana of any color.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}, {T}, Exile Abstergo Entertainment: Return up to one target historic card from your graveyard to your hand, then exile all graveyards. (Artifacts, legendaries, and Sagas are historic.)",
+          "cost": "{3}, {T}, Exile Abstergo Entertainment",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to one target historic card from your graveyard to your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile all graveyards"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

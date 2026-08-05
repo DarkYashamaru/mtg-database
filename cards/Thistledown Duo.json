@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f6777aee-c39b-49d8-9049-5d2b1e888dd0",
+  "name": "Thistledown Duo",
+  "faces": [
+    {
+      "name": "Thistledown Duo",
+      "type_line": "Creature \u2014 Kithkin Soldier Wizard",
+      "oracle_text": "Whenever you cast a white spell, this creature gets +1/+1 until end of turn.\nWhenever you cast a blue spell, this creature gains flying until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a white spell, this creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "White"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a blue spell, this creature gains flying until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Blue"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "90fe98df-4f87-49ff-b562-0ed51d1d3a1c",
+  "name": "Thermal Flux",
+  "faces": [
+    {
+      "name": "Thermal Flux",
+      "type_line": "Instant",
+      "oracle_text": "Choose one \u2014\n\u2022 Target nonsnow permanent becomes snow until end of turn.\n\u2022 Target snow permanent isn't snow until end of turn.\nDraw a card at the beginning of the next turn's upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Target nonsnow permanent becomes snow until end of turn.\n\u2022 Target snow permanent isn't snow until end of turn.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Target nonsnow permanent becomes snow until end of turn.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Target nonsnow permanent becomes snow until end of turn"
+                }
+              ]
+            },
+            {
+              "raw_text": "Target snow permanent isn't snow until end of turn.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Target snow permanent isn't snow until end of turn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card at the beginning of the next turn's upkeep.",
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_turns_upkeep"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cbd483b5-5554-43ed-a729-535d01b0d5d3",
+  "name": "Jace Reawakened",
+  "faces": [
+    {
+      "name": "Jace Reawakened",
+      "type_line": "Legendary Planeswalker \u2014 Jace",
+      "oracle_text": "You can't cast Jace Reawakened during your first, second, or third turns of the game.\n+1: Draw a card, then discard a card.\n+1: You may exile a nonland card with mana value 3 or less from your hand. If you do, it becomes plotted.\n\u22126: Until end of turn, whenever you cast a spell, copy it. You may choose new targets for the copy.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Draw a card, then discard a card.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "+1: You may exile a nonland card with mana value 3 or less from your hand. If you do, it becomes plotted.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may exile a nonland card with mana value 3 or less from your hand"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it becomes plotted",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: Until end of turn, whenever you cast a spell, copy it. You may choose new targets for the copy.",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, whenever you cast a spell, copy it"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You can't cast Jace Reawakened during your first, second, or third turns of the game.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You can't cast Jace Reawakened during your first, second, or third turns of the game"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

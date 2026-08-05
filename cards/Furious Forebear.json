@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4fb1d33f-a87d-46cf-a73e-882c3dbcb26f",
+  "name": "Furious Forebear",
+  "faces": [
+    {
+      "name": "Furious Forebear",
+      "type_line": "Creature \u2014 Spirit Warrior",
+      "oracle_text": "Whenever a creature you control dies while this card is in your graveyard, you may pay {1}{W}. If you do, return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control dies while this card is in your graveyard, you may pay {1}{W}. If you do, return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature you control dies while this card is in your graveyard"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {1}{W}"
+            },
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

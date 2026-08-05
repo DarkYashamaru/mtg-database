@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "96e1d890-4ebb-4c79-8df9-24e3adaf4d9b",
+  "name": "Ambuscade Shaman",
+  "faces": [
+    {
+      "name": "Ambuscade Shaman",
+      "type_line": "Creature \u2014 Orc Shaman",
+      "oracle_text": "Whenever this creature or another creature you control enters, that creature gets +2/+2 until end of turn.\nDash {3}{B} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another creature you control enters, that creature gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "that_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Dash {3}{B} (You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Dash {3}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

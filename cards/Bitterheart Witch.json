@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "67466d56-9f28-4bbe-ae54-6fd834581e77",
+  "name": "Bitterheart Witch",
+  "faces": [
+    {
+      "name": "Bitterheart Witch",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "Deathtouch\nWhen this creature dies, you may search your library for a Curse card, put it onto the battlefield attached to target player, then shuffle.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, you may search your library for a Curse card, put it onto the battlefield attached to target player, then shuffle.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a curse card, put it onto the battlefield attached to target player"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

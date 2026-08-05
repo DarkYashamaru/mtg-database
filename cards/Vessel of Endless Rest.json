@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8031285b-2add-42da-aa97-03c3f2fff226",
+  "name": "Vessel of Endless Rest",
+  "faces": [
+    {
+      "name": "Vessel of Endless Rest",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, put target card from a graveyard on the bottom of its owner's library.\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, put target card from a graveyard on the bottom of its owner's library.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put target card from a graveyard on the bottom of its owner's library"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "29a90fda-541e-4923-b3ed-e2b35d02c74b",
+  "name": "Sylvan Ranger",
+  "faces": [
+    {
+      "name": "Sylvan Ranger",
+      "type_line": "Creature \u2014 Elf Scout Ranger",
+      "oracle_text": "When this creature enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

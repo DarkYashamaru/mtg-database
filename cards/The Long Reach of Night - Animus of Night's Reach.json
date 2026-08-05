@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8b1e453a-35a6-4dff-bd37-498f34d0470e",
+  "name": "The Long Reach of Night // Animus of Night's Reach",
+  "faces": [
+    {
+      "name": "Animus of Night's Reach",
+      "type_line": "Enchantment Creature \u2014 Spirit",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever this creature attacks, it gets +X/+0 until end of turn, where X is the number of creature cards in defending player's graveyard.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it gets +X/+0 until end of turn, where X is the number of creature cards in defending player's graveyard.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gets +X/+0 until end of turn, where X is the number of creature cards in defending player's graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "The Long Reach of Night",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter.)\nI, II \u2014 Each opponent sacrifices a creature of their choice unless they discard a card.\nIII \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Each opponent sacrifices a creature of their choice unless they discard a card.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent sacrifices a creature of their choice unless they discard a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Exile this Saga, then return it to the battlefield transformed under your control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "self"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "you",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

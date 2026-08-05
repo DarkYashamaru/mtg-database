@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a9d8ab76-70a4-475e-b87e-4737c090553a",
+  "name": "Sprite Dragon",
+  "faces": [
+    {
+      "name": "Sprite Dragon",
+      "type_line": "Creature \u2014 Faerie Dragon",
+      "oracle_text": "Flying, haste\nWhenever you cast a noncreature spell, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_excluded": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

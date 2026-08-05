@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7398c8b2-373a-41c7-ac6c-7329f5944462",
+  "name": "Origin of the Hulk",
+  "faces": [
+    {
+      "name": "Origin of the Hulk",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Create a 1/1 green and white Citizen creature token.\nII \u2014 Put two +1/+1 counters on target creature you control.\nIII \u2014 Target creature you control gets +3/+3 and gains trample until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Create a 1/1 green and white Citizen creature token.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 green and white Citizen creature token",
+                "colors": [
+                  "green",
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Citizen"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Put two +1/+1 counters on target creature you control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Target creature you control gets +3/+3 and gains trample until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control_gets_33_and",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

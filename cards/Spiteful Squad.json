@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "41ee78ce-a5ef-4f88-b479-2eb6651123f7",
+  "name": "Spiteful Squad",
+  "faces": [
+    {
+      "name": "Spiteful Squad",
+      "type_line": "Creature \u2014 Human Warlock",
+      "oracle_text": "Deathtouch\nThis creature enters with two +1/+1 counters on it.\nWhen this creature dies, put its counters on target creature you control.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature dies, put its counters on target creature you control.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put its counters on target creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with two +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

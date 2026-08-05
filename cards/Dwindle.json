@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "48a8fce6-b493-4b1d-8ac8-2a4f4b4781b5",
+  "name": "Dwindle",
+  "faces": [
+    {
+      "name": "Dwindle",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets -6/-0.\nWhen enchanted creature blocks, destroy it. (The attacking creature remains blocked.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When enchanted creature blocks, destroy it. (The attacking creature remains blocked.)",
+          "trigger": {
+            "type": "blocks",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets -6/-0.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": -6,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "oracle_id": "67d66678-a8e6-4f80-bade-1f1daf4b0610",
+  "name": "Ashiok, Wicked Manipulator",
+  "faces": [
+    {
+      "name": "Ashiok, Wicked Manipulator",
+      "type_line": "Legendary Planeswalker \u2014 Ashiok",
+      "oracle_text": "If you would pay life while your library has at least that many cards in it, exile that many cards from the top of your library instead.\n+1: Look at the top two cards of your library. Exile one of them and put the other into your hand.\n\u22122: Create two 1/1 black Nightmare creature tokens with \"At the beginning of combat on your turn, if a card was put into exile this turn, put a +1/+1 counter on this token.\"\n\u22127: Target player exiles the top X cards of their library, where X is the total mana value of cards you own in exile.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Look at the top two cards of your library. Exile one of them and put the other into your hand.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Exile one of them and put the other into your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Create two 1/1 black Nightmare creature tokens with \"At the beginning of combat on your turn, if a card was put into exile this turn, put a +1/+1 counter on this token.\"",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 black Nightmare creature tokens with \"At the beginning of combat on your turn, if a card was put into exile this turn, put a +1/+1 counter on this token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Nightmare"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: Target player exiles the top X cards of their library, where X is the total mana value of cards you own in exile.",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player exiles the top X cards of their library, where X is the total mana value of cards you own in exile"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If you would pay life while your library has at least that many cards in it, exile that many cards from the top of your library instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile that many cards from the top of your library instead",
+              "condition": [
+                {
+                  "condition_text": "you would pay life while your library has at least that many cards in it"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

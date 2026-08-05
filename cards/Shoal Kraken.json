@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "be700da5-123e-461e-8192-88f9d86925b9",
+  "name": "Shoal Kraken",
+  "faces": [
+    {
+      "name": "Shoal Kraken",
+      "type_line": "Creature \u2014 Kraken",
+      "oracle_text": "Constellation \u2014 Whenever an enchantment you control enters, you may draw a card. If you do, discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an enchantment you control enters, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Enchantment"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

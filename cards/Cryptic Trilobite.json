@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "28c0fd21-a88a-4a40-853f-2c1810517bc3",
+  "name": "Cryptic Trilobite",
+  "faces": [
+    {
+      "name": "Cryptic Trilobite",
+      "type_line": "Creature \u2014 Trilobite",
+      "oracle_text": "This creature enters with X +1/+1 counters on it.\nRemove a +1/+1 counter from this creature: Add {C}{C}. Spend this mana only to activate abilities.\n{1}, {T}: Put a +1/+1 counter on this creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Remove a +1/+1 counter from this creature: Add {C}{C}. Spend this mana only to activate abilities.",
+          "cost": "Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 2,
+              "colors_any_of": [
+                "{c}",
+                "{c}"
+              ],
+              "distribution": "fixed_sequence"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to activate abilities"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Put a +1/+1 counter on this creature.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": "X"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

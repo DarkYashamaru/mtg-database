@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c42e3df9-b9e1-4b36-bc9d-05351f87d707",
+  "name": "Kami of the Waning Moon",
+  "faces": [
+    {
+      "name": "Kami of the Waning Moon",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "Flying\nWhenever you cast a Spirit or Arcane spell, target creature gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a Spirit or Arcane spell, target creature gains fear until end of turn. (It can't be blocked except by artifact creatures and/or black creatures.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "spirit",
+                "arcane"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "fear"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e7fc5ad6-f2f0-4b06-a61b-05022db9d93b",
+  "name": "Arcades, the Strategist",
+  "faces": [
+    {
+      "name": "Arcades, the Strategist",
+      "type_line": "Legendary Creature \u2014 Elder Dragon",
+      "oracle_text": "Flying, vigilance\nWhenever a creature you control with defender enters, draw a card.\nEach creature you control with defender assigns combat damage equal to its toughness rather than its power and can attack as though it didn't have defender.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control with defender enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "a_creature_you_control_with_defender"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Each creature you control with defender assigns combat damage equal to its toughness rather than its power and can attack as though it didn't have defender.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "each_creature_you_control_with_defender_assigns_combat_damage_equal_to_its_toughness_rather_than_its_power_and_can_attack_as_though_it_didnt"
+              },
+              "keywords": [
+                "defender"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

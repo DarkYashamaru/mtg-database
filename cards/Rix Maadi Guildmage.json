@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb88ada9-d3bf-4f0a-817a-c41f0ea9cc78",
+  "name": "Rix Maadi Guildmage",
+  "faces": [
+    {
+      "name": "Rix Maadi Guildmage",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "{B}{R}: Target blocking creature gets -1/-1 until end of turn.\n{B}{R}: Target player who lost life this turn loses 1 life.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{B}{R}: Target blocking creature gets -1/-1 until end of turn.",
+          "cost": "{B}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_blocking_creature",
+              "power_delta": -1,
+              "toughness_delta": -1
+            }
+          ]
+        },
+        {
+          "raw_text": "{B}{R}: Target player who lost life this turn loses 1 life.",
+          "cost": "{B}{R}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player who lost life this turn loses 1 life"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

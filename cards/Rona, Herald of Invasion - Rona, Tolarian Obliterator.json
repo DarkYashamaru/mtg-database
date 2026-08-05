@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cf5bd3a4-3899-4c25-ad1f-f1778c1d9c60",
+  "name": "Rona, Herald of Invasion // Rona, Tolarian Obliterator",
+  "faces": [
+    {
+      "name": "Rona, Herald of Invasion",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Whenever you cast a legendary spell, untap Rona.\n{T}: Draw a card, then discard a card.\n{5}{B/P}: Transform Rona. Activate only as a sorcery. ({B/P} can be paid with either {B} or 2 life.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a legendary spell, untap Rona.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Legendary"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap Rona"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Draw a card, then discard a card.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{5}{B/P}: Transform Rona. Activate only as a sorcery. ({B/P} can be paid with either {B} or 2 life.)",
+          "cost": "{5}{B/P}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Rona, Tolarian Obliterator",
+      "type_line": "Legendary Creature \u2014 Phyrexian Wizard",
+      "oracle_text": "Trample\nWhenever a source deals damage to Rona, that source's controller exiles a card from their hand at random. If it's a land card, you may put it onto the battlefield under your control. Otherwise, you may cast it without paying its mana cost.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a source deals damage to Rona, that source's controller exiles a card from their hand at random. If it's a land card, you may put it onto the battlefield under your control. Otherwise, you may cast it without paying its mana cost.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a source deals damage to Rona"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that source's controller exiles a card from their hand at random"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it onto the battlefield under your control",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast it without paying its mana cost",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2e94bfb2-9f7d-43af-8995-6cd5ffb15b21",
+  "name": "Lord of the Nazg\u00fbl",
+  "faces": [
+    {
+      "name": "Lord of the Nazg\u00fbl",
+      "type_line": "Legendary Creature \u2014 Wraith Noble",
+      "oracle_text": "Flying\nWraiths you control have protection from Ring-bearers.\nWhenever you cast an instant or sorcery spell, create a 3/3 black Wraith creature token with menace. Then if you control nine or more Wraiths, Wraiths you control have base power and toughness 9/9 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, create a 3/3 black Wraith creature token with menace. Then if you control nine or more Wraiths, Wraiths you control have base power and toughness 9/9 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 3/3 black Wraith creature token with menace",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Wraith"
+                ],
+                "keywords": [
+                  "menace"
+                ]
+              }
+            },
+            {
+              "action": "custom_effect",
+              "text": "wraiths you control have base power and toughness 9/9 until end of turn",
+              "condition": [
+                {
+                  "condition_text": "you control nine or more wraiths"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Wraiths you control have protection from Ring-bearers.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Wraiths you control have protection from Ring-bearers"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

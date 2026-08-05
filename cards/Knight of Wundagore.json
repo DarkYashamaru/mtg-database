@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "39145960-a212-46b4-addb-4b187f6bf6fd",
+  "name": "Knight of Wundagore",
+  "faces": [
+    {
+      "name": "Knight of Wundagore",
+      "type_line": "Creature \u2014 Cat Knight Villain",
+      "oracle_text": "Trample\nWhenever you put a +1/+1 counter on another creature, put a +1/+1 counter on this creature. This ability triggers only once each turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you put a +1/+1 counter on another creature, put a +1/+1 counter on this creature. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you put a +1/+1 counter on another creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

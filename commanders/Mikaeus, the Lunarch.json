@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "82f3faa8-39fa-450b-843f-d60a4c36d8f7",
+  "name": "Mikaeus, the Lunarch",
+  "faces": [
+    {
+      "name": "Mikaeus, the Lunarch",
+      "type_line": "Legendary Creature \u2014 Human Cleric",
+      "oracle_text": "Mikaeus enters with X +1/+1 counters on it.\n{T}: Put a +1/+1 counter on Mikaeus.\n{T}, Remove a +1/+1 counter from Mikaeus: Put a +1/+1 counter on each other creature you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Put a +1/+1 counter on Mikaeus.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Remove a +1/+1 counter from Mikaeus: Put a +1/+1 counter on each other creature you control.",
+          "cost": "{T}, Remove a +1/+1 counter from Mikaeus",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Other"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Mikaeus enters with X +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Mikaeus enters with X +1/+1 counters on it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

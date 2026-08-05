@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "31ead5a5-aa01-4601-8d3e-267b65fce3bb",
+  "name": "Armor of Thorns",
+  "faces": [
+    {
+      "name": "Armor of Thorns",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "You may cast this spell as though it had flash. If you cast it any time a sorcery couldn't have been cast, the controller of the permanent it becomes sacrifices it at the beginning of the next cleanup step.\nEnchant nonblack creature\nEnchanted creature gets +2/+2.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may cast this spell as though it had flash. If you cast it any time a sorcery couldn't have been cast, the controller of the permanent it becomes sacrifices it at the beginning of the next cleanup step.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast this spell as though it had flash"
+            },
+            {
+              "action": "custom_effect",
+              "text": "the controller of the permanent it becomes sacrifices it at the beginning of the next cleanup step",
+              "condition": [
+                {
+                  "condition_text": "you cast it any time a sorcery couldn't have been cast"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchant nonblack creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "nonblack_creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+2.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "enchanted_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

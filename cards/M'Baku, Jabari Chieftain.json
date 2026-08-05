@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9e4656ba-c375-4ef8-ba1d-5a7b0833242f",
+  "name": "M'Baku, Jabari Chieftain",
+  "faces": [
+    {
+      "name": "M'Baku, Jabari Chieftain",
+      "type_line": "Legendary Creature \u2014 Human Noble Warrior",
+      "oracle_text": "At the beginning of your end step, if there is no monarch, target opponent becomes the monarch.\nWhenever a creature attacks one of your opponents, if that player is the monarch, that creature gets +1/+1 and gains trample until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, if there is no monarch, target opponent becomes the monarch.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "there is no monarch"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target opponent becomes the monarch"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a creature attacks one of your opponents, if that player is the monarch, that creature gets +1/+1 and gains trample until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature attacks one of your opponents"
+          },
+          "condition": [
+            {
+              "condition_text": "that player is the monarch"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature_gets_11_and",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

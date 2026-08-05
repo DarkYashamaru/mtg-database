@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3f8f72d8-5c3a-4f31-8741-3c1a55d9b739",
+  "name": "Oath of Eorl",
+  "faces": [
+    {
+      "name": "Oath of Eorl",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Create two 1/1 white Human Soldier creature tokens.\nII \u2014 Create two 2/2 red Human Knight creature tokens with trample and haste.\nIII \u2014 Put an indestructible counter on up to one target Human. You become the monarch.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Create two 1/1 white Human Soldier creature tokens.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 white Human Soldier creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human",
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Create two 2/2 red Human Knight creature tokens with trample and haste.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "two 2/2 red Human Knight creature tokens with trample and haste",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Human",
+                  "Knight"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Put an indestructible counter on up to one target Human. You become the monarch.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put an indestructible counter on up to one target Human"
+            },
+            {
+              "action": "become_the_monarch"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

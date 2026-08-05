@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "613a8774-165e-4cf6-ad43-124f9ffc9980",
+  "name": "Nautiloid Ship",
+  "faces": [
+    {
+      "name": "Nautiloid Ship",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Flying\nWhen this Vehicle enters, exile target player's graveyard.\nWhenever this Vehicle deals combat damage to a player, you may put a creature card exiled with this Vehicle onto the battlefield under your control.\nCrew 3",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Vehicle enters, exile target player's graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target player's graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this Vehicle deals combat damage to a player, you may put a creature card exiled with this Vehicle onto the battlefield under your control.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a creature card exiled with this Vehicle onto the battlefield under your control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 3",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 3,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

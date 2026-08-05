@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "111889d4-bcca-4b1f-ad48-3077e2f5136f",
+  "name": "Fiery Inscription",
+  "faces": [
+    {
+      "name": "Fiery Inscription",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, the Ring tempts you.\nWhenever you cast an instant or sorcery spell, this enchantment deals 2 damage to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, the Ring tempts you.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "ring_tempts_you"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this enchantment deals 2 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "this_enchantment",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

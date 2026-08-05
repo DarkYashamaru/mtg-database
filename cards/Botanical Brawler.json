@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d8d5d0a4-9a56-404c-b459-a37dc5ae6bc1",
+  "name": "Botanical Brawler",
+  "faces": [
+    {
+      "name": "Botanical Brawler",
+      "type_line": "Creature \u2014 Elemental Warrior",
+      "oracle_text": "Trample\nThis creature enters with two +1/+1 counters on it.\nWhenever one or more +1/+1 counters are put on another permanent you control, if it's the first time +1/+1 counters have been put on that permanent this turn, put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more +1/+1 counters are put on another permanent you control, if it's the first time +1/+1 counters have been put on that permanent this turn, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more +1/+1 counters are put on another permanent you control"
+          },
+          "condition": [
+            {
+              "condition_text": "it's the first time +1/+1 counters have been put on that permanent this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with two +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

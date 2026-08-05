@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b400536c-ea8b-4237-90da-1d3ac139881d",
+  "name": "Shrapnel Slinger",
+  "faces": [
+    {
+      "name": "Shrapnel Slinger",
+      "type_line": "Artifact Creature \u2014 Phyrexian Beast",
+      "oracle_text": "When this creature enters, you may sacrifice a creature. When you do, destroy target artifact an opponent controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may sacrifice a creature. When you do, destroy target artifact an opponent controls.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "destroy target artifact an opponent controls",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

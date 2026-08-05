@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d38646dc-d1ea-473c-aaf1-df8ba327459f",
+  "name": "Trailtracker Scout",
+  "faces": [
+    {
+      "name": "Trailtracker Scout",
+      "type_line": "Creature \u2014 Raccoon Scout",
+      "oracle_text": "{T}: Add one mana of any color.\nWhenever you expend 8, return up to one target permanent card from your graveyard to your hand. (You expend 8 as you spend your eighth total mana to cast spells during a turn.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you expend 8, return up to one target permanent card from your graveyard to your hand. (You expend 8 as you spend your eighth total mana to cast spells during a turn.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you expend 8"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return up to one target permanent card from your graveyard to your hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "18932bb9-e054-4ad6-80c8-d2f177312da0",
+  "name": "Ravenous Demon // Archdemon of Greed",
+  "faces": [
+    {
+      "name": "Archdemon of Greed",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Flying, trample\nAt the beginning of your upkeep, sacrifice a Human. If you can't, tap this creature and it deals 9 damage to you.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, sacrifice a Human. If you can't, tap this creature and it deals 9 damage to you.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_human"
+            },
+            {
+              "action": "custom_effect",
+              "text": "tap this creature and it deals 9 damage to you",
+              "condition": [
+                {
+                  "condition_text": "you can't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Ravenous Demon",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Sacrifice a Human: Transform this creature. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice a Human: Transform this creature. Activate only as a sorcery.",
+          "cost": "Sacrifice a Human",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

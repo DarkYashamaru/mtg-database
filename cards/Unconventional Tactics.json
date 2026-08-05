@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "95ee46ec-4b60-4fea-a09b-d15c083916b3",
+  "name": "Unconventional Tactics",
+  "faces": [
+    {
+      "name": "Unconventional Tactics",
+      "type_line": "Sorcery",
+      "oracle_text": "Target creature gets +3/+3 and gains flying until end of turn.\nWhenever a Zombie you control enters, you may pay {W}. If you do, return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a Zombie you control enters, you may pay {W}. If you do, return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Zombie"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{w}",
+              "optional": true
+            },
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature gets +3/+3 and gains flying until end of turn.",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_gets_33_and",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

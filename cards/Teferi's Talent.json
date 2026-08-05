@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "efc23669-1bbb-487f-94b3-cc07f3cd35f6",
+  "name": "Teferi's Talent",
+  "faces": [
+    {
+      "name": "Teferi's Talent",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant planeswalker\nEnchanted planeswalker has \"[\u221212]: You get an emblem with 'You may activate loyalty abilities of planeswalkers you control on any player's turn any time you could cast an instant.'\"\nWhenever you draw a card, put a loyalty counter on enchanted planeswalker.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw a card, put a loyalty counter on enchanted planeswalker.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a loyalty counter on enchanted planeswalker"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Enchanted planeswalker has \"[\u221212]: You get an emblem with 'You may activate loyalty abilities of planeswalkers you control on any player's turn any time you could cast an instant.'\"",
+          "cost": "Enchanted planeswalker has \"[\u221212]",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with 'You may activate loyalty abilities of planeswalkers you control on any player's turn any time you could cast an instant.'\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant planeswalker",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "planeswalker"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

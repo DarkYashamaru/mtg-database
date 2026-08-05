@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2ce12817-a7b5-475a-87d0-718d77349a6d",
+  "name": "Ogre Savant",
+  "faces": [
+    {
+      "name": "Ogre Savant",
+      "type_line": "Creature \u2014 Ogre Wizard",
+      "oracle_text": "When this creature enters, if {U} was spent to cast it, return target creature to its owner's hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if {U} was spent to cast it, return target creature to its owner's hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "{U} was spent to cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": {
+                "selector": "target_creature"
+              },
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

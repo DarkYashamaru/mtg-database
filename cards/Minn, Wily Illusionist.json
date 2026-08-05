@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d4212d44-d6a0-4c5b-9c54-bc90f36828dd",
+  "name": "Minn, Wily Illusionist",
+  "faces": [
+    {
+      "name": "Minn, Wily Illusionist",
+      "type_line": "Legendary Creature \u2014 Gnome Wizard",
+      "oracle_text": "Whenever you draw your second card each turn, create a 1/1 blue Illusion creature token with \"This token gets +1/+0 for each other Illusion you control.\"\nWhenever an Illusion you control dies, you may put a permanent card with mana value less than or equal to that creature's power from your hand onto the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, create a 1/1 blue Illusion creature token with \"This token gets +1/+0 for each other Illusion you control.\"",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 blue Illusion creature token with \"This token gets +1/+0 for each other Illusion you control",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Illusion"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an Illusion you control dies, you may put a permanent card with mana value less than or equal to that creature's power from your hand onto the battlefield.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "subtypes": [
+                "Illusion"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a permanent card with mana value less than or equal to that creature's power from your hand onto the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

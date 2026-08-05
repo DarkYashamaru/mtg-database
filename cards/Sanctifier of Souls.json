@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "806fc324-a17a-4e65-a9b6-d739c471c7f8",
+  "name": "Sanctifier of Souls",
+  "faces": [
+    {
+      "name": "Sanctifier of Souls",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "Whenever another creature you control enters, this creature gets +1/+1 until end of turn.\n{2}{W}, Exile a creature card from your graveyard: Create a 1/1 white Spirit creature token with flying.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, this creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{W}, Exile a creature card from your graveyard: Create a 1/1 white Spirit creature token with flying.",
+          "cost": "{2}{W}, Exile a creature card from your graveyard",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white Spirit creature token with flying",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Spirit"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

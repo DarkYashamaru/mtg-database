@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "92045f6c-9ec2-4bf0-826c-e21ef253011c",
+  "name": "Aethergeode Miner",
+  "faces": [
+    {
+      "name": "Aethergeode Miner",
+      "type_line": "Creature \u2014 Dwarf Scout",
+      "oracle_text": "Whenever this creature attacks, you get {E}{E} (two energy counters).\nPay {E}{E}: Exile this creature, then return it to the battlefield under its owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay {E}{E}: Exile this creature, then return it to the battlefield under its owner's control.",
+          "cost": "Pay {E}{E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile this creature"
+            },
+            {
+              "action": "move_card",
+              "target": "it",
+              "destination_zone": "battlefield",
+              "controller": "its_owner"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

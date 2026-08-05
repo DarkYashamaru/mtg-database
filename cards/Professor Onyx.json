@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9df2e909-ed13-456a-9636-7398732009a9",
+  "name": "Professor Onyx",
+  "faces": [
+    {
+      "name": "Professor Onyx",
+      "type_line": "Legendary Planeswalker \u2014 Liliana",
+      "oracle_text": "Magecraft \u2014 Whenever you cast or copy an instant or sorcery spell, each opponent loses 2 life and you gain 2 life.\n+1: You lose 1 life. Look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.\n\u22123: Each opponent sacrifices a creature with the greatest power among creatures that player controls.\n\u22128: Each opponent may discard a card. If they don't, they lose 3 life. Repeat this process six more times.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast or copy an instant or sorcery spell, each opponent loses 2 life and you gain 2 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "or_copy_an_instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "+1: You lose 1 life. Look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 1
+            },
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put one of them into your hand and the rest into your graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Each opponent sacrifices a creature with the greatest power among creatures that player controls.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent sacrifices a creature with the greatest power among creatures that player controls"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22128: Each opponent may discard a card. If they don't, they lose 3 life. Repeat this process six more times.",
+          "cost": "\u22128",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent may discard a card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "they lose 3 life",
+              "condition": [
+                {
+                  "condition_text": "they don't"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Repeat this process six more times"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

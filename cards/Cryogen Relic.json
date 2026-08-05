@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "106e9c0d-67a2-4db7-97d9-03e1ea1b40b5",
+  "name": "Cryogen Relic",
+  "faces": [
+    {
+      "name": "Cryogen Relic",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters or leaves the battlefield, draw a card.\n{1}{U}, Sacrifice this artifact: Put a stun counter on up to one target tapped creature. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters or leaves the battlefield, draw a card.",
+          "trigger": {
+            "type": "leave_battlefield",
+            "subject": "this_artifact_enters_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{U}, Sacrifice this artifact: Put a stun counter on up to one target tapped creature. (If a permanent with a stun counter would become untapped, remove one from it instead.)",
+          "cost": "{1}{U}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a stun counter on up to one target tapped creature"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

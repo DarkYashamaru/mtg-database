@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6ca1d5ca-cc97-4783-9c0a-f47097f35ba8",
+  "name": "Kardur's Vicious Return",
+  "faces": [
+    {
+      "name": "Kardur's Vicious Return",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 You may sacrifice a creature. When you do, this Saga deals 3 damage to any target.\nII \u2014 Each player discards a card.\nIII \u2014 Return target creature card from your graveyard to the battlefield. Put a +1/+1 counter on it. It gains haste until your next turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 You may sacrifice a creature. When you do, this Saga deals 3 damage to any target.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_creature",
+              "optional": true
+            },
+            {
+              "action": "deal_damage",
+              "source": "this_saga",
+              "target": "any_target",
+              "amount": 3,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Each player discards a card.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each player discards a card"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Return target creature card from your graveyard to the battlefield. Put a +1/+1 counter on it. It gains haste until your next turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "return_from_graveyard_to_battlefield",
+              "player": "you",
+              "target": {
+                "card_types": [
+                  "Creature"
+                ],
+                "zone": "graveyard"
+              },
+              "destination": "battlefield"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "It gains haste until your next turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9442a18b-9093-4a10-ab61-6962f5af3bb6",
+  "name": "Attended Healer",
+  "faces": [
+    {
+      "name": "Attended Healer",
+      "type_line": "Creature \u2014 Kor Cleric",
+      "oracle_text": "Whenever you gain life for the first time each turn, create a 1/1 white Cat creature token.\n{2}{W}: Another target Cleric gains lifelink until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life for the first time each turn, create a 1/1 white Cat creature token.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you gain life for the first time each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Cat creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Cat"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{W}: Another target Cleric gains lifelink until end of turn.",
+          "cost": "{2}{W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_cleric",
+              "keyword": "lifelink"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

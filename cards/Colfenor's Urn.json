@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "920c4df3-9517-44cd-8304-28b1ef69d60e",
+  "name": "Colfenor's Urn",
+  "faces": [
+    {
+      "name": "Colfenor's Urn",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a creature with toughness 4 or greater is put into your graveyard from the battlefield, you may exile it.\nAt the beginning of the end step, if three or more cards have been exiled with this artifact, sacrifice it. If you do, return those cards to the battlefield under their owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature with toughness 4 or greater is put into your graveyard from the battlefield, you may exile it.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a creature with toughness 4 or greater is put into your graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "it"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of the end step, if three or more cards have been exiled with this artifact, sacrifice it. If you do, return those cards to the battlefield under their owner's control.",
+          "trigger": {
+            "type": "beginning_of_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "three or more cards have been exiled with this artifact"
+            }
+          ],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return those cards to the battlefield under their owner's control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

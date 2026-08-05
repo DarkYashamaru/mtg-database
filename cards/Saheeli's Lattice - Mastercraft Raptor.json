@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ef8df503-6160-4e40-a689-49e97fd56cd0",
+  "name": "Saheeli's Lattice // Mastercraft Raptor",
+  "faces": [
+    {
+      "name": "Mastercraft Raptor",
+      "type_line": "Artifact Creature \u2014 Dinosaur",
+      "oracle_text": "Mastercraft Raptor's power is equal to the total power of the exiled cards used to craft it.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Mastercraft Raptor's power is equal to the total power of the exiled cards used to craft it.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Mastercraft Raptor's power is equal to the total power of the exiled cards used to craft it"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Saheeli's Lattice",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, you may discard a card. If you do, draw two cards.\nCraft with one or more Dinosaurs {4}{R} ({4}{R}, Exile this artifact, Exile one or more Dinosaurs you control and/or Dinosaur cards from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, you may discard a card. If you do, draw two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Craft with one or more Dinosaurs {4}{R} ({4}{R}, Exile this artifact, Exile one or more Dinosaurs you control and/or Dinosaur cards from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+          "cost": "Craft with one or more Dinosaurs {4}{R} ({4}{R}, Exile this artifact, Exile one or more Dinosaurs you control and/or Dinosaur cards from your graveyard",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "battlefield",
+              "controller": "its_owner",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

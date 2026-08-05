@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f732873e-0b34-4ccc-8b4c-9f02463ba57b",
+  "name": "Exemplar of Strength",
+  "faces": [
+    {
+      "name": "Exemplar of Strength",
+      "type_line": "Creature \u2014 Human Warrior",
+      "oracle_text": "When this creature enters, put three -1/-1 counters on target creature you control.\nWhenever this creature attacks, remove a -1/-1 counter from it. If you do, you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put three -1/-1 counters on target creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put three -1/-1 counters on target creature you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, remove a -1/-1 counter from it. If you do, you gain 1 life.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove a -1/-1 counter from it"
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

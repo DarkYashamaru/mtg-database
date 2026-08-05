@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2a2f2d6c-3937-4e4b-9e4a-3480e0c787d0",
+  "name": "Ebony Fly",
+  "faces": [
+    {
+      "name": "Ebony Fly",
+      "type_line": "Artifact",
+      "oracle_text": "This artifact enters tapped.\n{T}: Add {C}.\n{4}: Roll a d6. Until end of turn, you may have this artifact become an X/X Insect artifact creature with flying, where X is the result.\nWhenever this artifact attacks, another target attacking creature gains flying until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this artifact attacks, another target attacking creature gains flying until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "another_target_attacking_creature",
+              "keyword": "flying"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}: Roll a d6. Until end of turn, you may have this artifact become an X/X Insect artifact creature with flying, where X is the result.",
+          "cost": "{4}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Roll a d6"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may have this artifact become an X/X Insect artifact creature with flying, where X is the result"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This artifact enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

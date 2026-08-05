@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d64feb23-8259-4445-9b40-efc8b4466679",
+  "name": "Timely Interference",
+  "faces": [
+    {
+      "name": "Timely Interference",
+      "type_line": "Instant",
+      "oracle_text": "Kicker {1}{R} (You may pay an additional {1}{R} as you cast this spell.)\nTarget creature gets -1/-0 until end of turn. If this spell was kicked, that creature blocks this turn if able.\nDraw a card.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Kicker {1}{R} (You may pay an additional {1}{R} as you cast this spell.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Kicker {1}{R}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Target creature gets -1/-0 until end of turn. If this spell was kicked, that creature blocks this turn if able.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -1,
+              "toughness_delta": 0
+            },
+            {
+              "action": "custom_effect",
+              "text": "that creature blocks this turn if able",
+              "condition": [
+                {
+                  "condition_text": "this spell was kicked"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

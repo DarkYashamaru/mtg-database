@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a20bb8b3-b724-4fec-b179-ca9e6adc4718",
+  "name": "Baton of Courage",
+  "faces": [
+    {
+      "name": "Baton of Courage",
+      "type_line": "Artifact",
+      "oracle_text": "Flash\nSunburst (This artifact enters with a charge counter on it for each color of mana spent to cast it.)\nRemove a charge counter from this artifact: Target creature gets +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Remove a charge counter from this artifact: Target creature gets +1/+1 until end of turn.",
+          "cost": "Remove a charge counter from this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Sunburst (This artifact enters with a charge counter on it for each color of mana spent to cast it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Sunburst"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

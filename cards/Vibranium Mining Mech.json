@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1bea6d02-186e-46d8-b788-d4cc37dbb480",
+  "name": "Vibranium Mining Mech",
+  "faces": [
+    {
+      "name": "Vibranium Mining Mech",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Trample\nWhenever this Vehicle enters or attacks, create a tapped Vibranium token. (It's an artifact with indestructible and \"{T}: Add {C}. This mana can't be spent to cast a nonartifact spell.\")\n{2}: This Vehicle gets +1/+0 until end of turn.\nCrew 2",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this Vehicle enters or attacks, create a tapped Vibranium token. (It's an artifact with indestructible and \"{T}: Add {C}. This mana can't be spent to cast a nonartifact spell.\")",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "this_vehicle"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "tapped Vibranium token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}: This Vehicle gets +1/+0 until end of turn.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "this_vehicle",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "Crew 2",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

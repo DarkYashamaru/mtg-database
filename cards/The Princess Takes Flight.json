@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "70d52457-1867-482c-ba7a-1f7dacc4514f",
+  "name": "The Princess Takes Flight",
+  "faces": [
+    {
+      "name": "The Princess Takes Flight",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Exile up to one target creature.\nII \u2014 Target creature you control gets +2/+2 and gains flying until end of turn.\nIII \u2014 Return the exiled card to the battlefield under its owner's control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Exile up to one target creature.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile up to one target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Target creature you control gets +2/+2 and gains flying until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature_you_control_gets_22_and",
+              "keyword": "flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Return the exiled card to the battlefield under its owner's control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return the exiled card to the battlefield under its owner's control"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

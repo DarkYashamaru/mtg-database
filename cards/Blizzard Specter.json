@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b6f4148d-8511-46b3-93ec-2f5eb1e4ffad",
+  "name": "Blizzard Specter",
+  "faces": [
+    {
+      "name": "Blizzard Specter",
+      "type_line": "Snow Creature \u2014 Specter",
+      "oracle_text": "Flying\nWhenever this creature deals combat damage to a player, choose one \u2014\n\u2022 That player returns a permanent they control to its owner's hand.\n\u2022 That player discards a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, choose one \u2014\n\u2022 That player returns a permanent they control to its owner's hand.\n\u2022 That player discards a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "That player returns a permanent they control to its owner's hand.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "That player returns a permanent they control to its owner's hand"
+                }
+              ]
+            },
+            {
+              "raw_text": "That player discards a card.",
+              "effects": [
+                {
+                  "action": "discard_cards",
+                  "target": "that_player",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

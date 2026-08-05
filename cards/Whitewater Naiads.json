@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6c73e533-9ed1-4df0-af12-c0174c0b52b9",
+  "name": "Whitewater Naiads",
+  "faces": [
+    {
+      "name": "Whitewater Naiads",
+      "type_line": "Enchantment Creature \u2014 Nymph",
+      "oracle_text": "Constellation \u2014 Whenever this creature or another enchantment you control enters, target creature can't be blocked this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another enchantment you control enters, target creature can't be blocked this turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Enchantment"
+              ],
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "44b12ccc-81cb-4ec1-891e-4bf706e53aa4",
+  "name": "Primal Surge",
+  "faces": [
+    {
+      "name": "Primal Surge",
+      "type_line": "Sorcery",
+      "oracle_text": "Exile the top card of your library. If it's a permanent card, you may put it onto the battlefield. If you do, repeat this process.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Exile the top card of your library. If it's a permanent card, you may put it onto the battlefield. If you do, repeat this process.",
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put it onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "it's a permanent card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "repeat this process",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

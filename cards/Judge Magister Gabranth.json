@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1a846ad6-15c9-4bf9-9127-612018a557b9",
+  "name": "Judge Magister Gabranth",
+  "faces": [
+    {
+      "name": "Judge Magister Gabranth",
+      "type_line": "Legendary Creature \u2014 Human Advisor Knight",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever another creature or artifact you control dies, put a +1/+1 counter on Judge Magister Gabranth.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature or artifact you control dies, put a +1/+1 counter on Judge Magister Gabranth.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "card_types": [
+                "Creature",
+                "Artifact"
+              ],
+              "subtypes": [
+                "Or"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

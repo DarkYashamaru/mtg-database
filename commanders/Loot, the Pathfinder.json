@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "68c7e459-0932-4644-a3c0-9a1eae1db7a3",
+  "name": "Loot, the Pathfinder",
+  "faces": [
+    {
+      "name": "Loot, the Pathfinder",
+      "type_line": "Legendary Creature \u2014 Beast Noble",
+      "oracle_text": "Double strike, vigilance, haste\nExhaust \u2014 {G}, {T}: Add three mana of any one color. (Activate each exhaust ability only once.)\nExhaust \u2014 {U}, {T}: Draw three cards.\nExhaust \u2014 {R}, {T}: Loot deals 3 damage to any target.",
+      "static": [
+        {
+          "keyword": "double strike"
+        },
+        {
+          "keyword": "vigilance"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Exhaust \u2014 {G}, {T}: Add three mana of any one color. (Activate each exhaust ability only once.)",
+          "cost": "Exhaust \u2014 {G}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add three mana of any one color"
+            }
+          ]
+        },
+        {
+          "raw_text": "Exhaust \u2014 {U}, {T}: Draw three cards.",
+          "cost": "Exhaust \u2014 {U}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "Exhaust \u2014 {R}, {T}: Loot deals 3 damage to any target.",
+          "cost": "Exhaust \u2014 {R}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

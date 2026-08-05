@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "386a6fa7-db5b-4e82-bd25-fd86d910ed0c",
+  "name": "Baral and Kari Zev",
+  "faces": [
+    {
+      "name": "Baral and Kari Zev",
+      "type_line": "Legendary Creature \u2014 Human",
+      "oracle_text": "First strike, menace\nWhenever you cast your first instant or sorcery spell each turn, you may cast a spell with lesser mana value that shares a card type with it from your hand without paying its mana cost. If you don't, create First Mate Ragavan, a legendary 2/1 red Monkey Pirate creature token. It gains haste until end of turn.",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your first instant or sorcery spell each turn, you may cast a spell with lesser mana value that shares a card type with it from your hand without paying its mana cost. If you don't, create First Mate Ragavan, a legendary 2/1 red Monkey Pirate creature token. It gains haste until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast your first instant or sorcery spell each turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may cast a spell with lesser mana value that shares a card type with it from your hand without paying its mana cost"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "mate ragavan, a legendary 2/1 red monkey pirate creature token",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "monkey",
+                  "pirate"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

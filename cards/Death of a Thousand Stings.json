@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "25895c28-23c1-439e-858b-5cb31fdc31de",
+  "name": "Death of a Thousand Stings",
+  "faces": [
+    {
+      "name": "Death of a Thousand Stings",
+      "type_line": "Instant \u2014 Arcane",
+      "oracle_text": "Target player loses 1 life and you gain 1 life.\nAt the beginning of your upkeep, if you have more cards in hand than each opponent, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if you have more cards in hand than each opponent, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you have more cards in hand than each opponent"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target player loses 1 life and you gain 1 life.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player loses 1 life and you gain 1 life"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

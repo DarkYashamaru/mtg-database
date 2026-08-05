@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1cdac498-3c94-48d6-b94c-1d98697370ea",
+  "name": "Trailblazer's Torch",
+  "faces": [
+    {
+      "name": "Trailblazer's Torch",
+      "type_line": "Artifact \u2014 Equipment",
+      "oracle_text": "When this Equipment enters, you take the initiative.\nWhenever equipped creature becomes blocked, it deals 2 damage to each creature blocking it.\nEquip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Equipment enters, you take the initiative.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_equipment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "take_the_initiative"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever equipped creature becomes blocked, it deals 2 damage to each creature blocking it.",
+          "trigger": {
+            "type": "becomes_blocked",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 2 damage to each creature blocking it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

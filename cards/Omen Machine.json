@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dbf05c40-7274-4aaa-94d7-1f28cbe15e09",
+  "name": "Omen Machine",
+  "faces": [
+    {
+      "name": "Omen Machine",
+      "type_line": "Artifact",
+      "oracle_text": "Players can't draw cards.\nAt the beginning of each player's draw step, that player exiles the top card of their library. If it's a land card, the player puts it onto the battlefield. Otherwise, the player casts it without paying its mana cost if able.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each player's draw step, that player exiles the top card of their library. If it's a land card, the player puts it onto the battlefield. Otherwise, the player casts it without paying its mana cost if able.",
+          "trigger": {
+            "type": "beginning_of_each_players_draw_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player exiles the top card of their library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "the player puts it onto the battlefield",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "the player casts it without paying its mana cost if able",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Players can't draw cards.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Players can't draw cards"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

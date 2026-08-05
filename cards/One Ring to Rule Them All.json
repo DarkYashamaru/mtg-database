@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c75add5e-4e9d-4c68-a8ad-b878b1dbc0a4",
+  "name": "One Ring to Rule Them All",
+  "faces": [
+    {
+      "name": "One Ring to Rule Them All",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 The Ring tempts you, then each player mills cards equal to your Ring-bearer's power.\nII \u2014 Destroy all nonlegendary creatures.\nIII \u2014 Each opponent loses 1 life for each creature card in that player's graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 The Ring tempts you, then each player mills cards equal to your Ring-bearer's power.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "ring_tempts_you"
+            },
+            {
+              "action": "custom_effect",
+              "text": "each player mills cards equal to your ring-bearer's power"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Destroy all nonlegendary creatures.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy all nonlegendary creatures"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Each opponent loses 1 life for each creature card in that player's graveyard.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent loses 1 life for each creature card in that player's graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

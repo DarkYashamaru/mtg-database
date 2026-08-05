@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "501109bb-3406-41d8-9433-a100e494f938",
+  "name": "Soltari Trooper",
+  "faces": [
+    {
+      "name": "Soltari Trooper",
+      "type_line": "Creature \u2014 Soltari Soldier",
+      "oracle_text": "Shadow (This creature can block or be blocked by only creatures with shadow.)\nWhenever this creature attacks, it gets +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "shadow"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

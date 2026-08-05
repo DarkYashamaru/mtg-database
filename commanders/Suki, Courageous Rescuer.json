@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "70ea1a9d-ec52-4c11-8c4d-0d957e5491ad",
+  "name": "Suki, Courageous Rescuer",
+  "faces": [
+    {
+      "name": "Suki, Courageous Rescuer",
+      "type_line": "Legendary Creature \u2014 Human Warrior Ally",
+      "oracle_text": "Other creatures you control get +1/+0.\nWhenever another permanent you control leaves the battlefield during your turn, create a 1/1 white Ally creature token. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another permanent you control leaves the battlefield during your turn, create a 1/1 white Ally creature token. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever another permanent you control leaves the battlefield during your turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Ally creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Ally"
+                ]
+              }
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Other creatures you control get +1/+0.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Other creatures you control get +1/+0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3c7ea603-c985-4107-806b-a467b5fcca36",
+  "name": "Scholar of New Horizons",
+  "faces": [
+    {
+      "name": "Scholar of New Horizons",
+      "type_line": "Creature \u2014 Human Scout",
+      "oracle_text": "This creature enters with a +1/+1 counter on it.\n{T}, Remove a counter from a permanent you control: Search your library for a Plains card and reveal it. If an opponent controls more lands than you, you may put that card onto the battlefield tapped. If you don't put the card onto the battlefield, put it into your hand. Then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}, Remove a counter from a permanent you control: Search your library for a Plains card and reveal it. If an opponent controls more lands than you, you may put that card onto the battlefield tapped. If you don't put the card onto the battlefield, put it into your hand. Then shuffle.",
+          "cost": "{T}, Remove a counter from a permanent you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Search your library for a Plains card and reveal it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may put that card onto the battlefield tapped",
+              "condition": [
+                {
+                  "condition_text": "an opponent controls more lands than you"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "you don't put the card onto the battlefield"
+                }
+              ]
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with a +1/+1 counter on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

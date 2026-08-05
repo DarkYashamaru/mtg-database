@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "oracle_id": "56508ae7-6013-4149-8935-96b8d5091baa",
+  "name": "Boggart Harbinger",
+  "faces": [
+    {
+      "name": "Boggart Harbinger",
+      "type_line": "Creature \u2014 Goblin Shaman",
+      "oracle_text": "When this creature enters, you may search your library for a Goblin card, reveal it, then shuffle and put that card on top.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a Goblin card, reveal it, then shuffle and put that card on top.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a goblin card, reveal it"
+            },
+            {
+              "action": "shuffle_and_move_revealed_card",
+              "object": "that_card",
+              "destination_zone": "top_of_library"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

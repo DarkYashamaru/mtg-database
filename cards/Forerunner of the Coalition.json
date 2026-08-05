@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d6458cf6-eb1f-448b-8205-1b5d887ff2bf",
+  "name": "Forerunner of the Coalition",
+  "faces": [
+    {
+      "name": "Forerunner of the Coalition",
+      "type_line": "Creature \u2014 Human Pirate",
+      "oracle_text": "When this creature enters, you may search your library for a Pirate card, reveal it, then shuffle and put that card on top.\nWhenever another Pirate you control enters, each opponent loses 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library for a Pirate card, reveal it, then shuffle and put that card on top.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library for a pirate card, reveal it"
+            },
+            {
+              "action": "shuffle_and_move_revealed_card",
+              "object": "that_card",
+              "destination_zone": "top_of_library"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another Pirate you control enters, each opponent loses 1 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Pirate"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

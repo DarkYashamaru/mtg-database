@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bda496f9-5362-46f2-ad4f-cd96410c3c61",
+  "name": "Volition Reins",
+  "faces": [
+    {
+      "name": "Volition Reins",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant permanent\nWhen this Aura enters, if enchanted permanent is tapped, untap it.\nYou control enchanted permanent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, if enchanted permanent is tapped, untap it.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [
+            {
+              "condition_text": "enchanted permanent is tapped"
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant permanent",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "permanent"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "You control enchanted permanent.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You control enchanted permanent"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

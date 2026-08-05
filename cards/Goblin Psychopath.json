@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9369f131-3356-4926-9a9f-88a636305bd0",
+  "name": "Goblin Psychopath",
+  "faces": [
+    {
+      "name": "Goblin Psychopath",
+      "type_line": "Creature \u2014 Goblin Mutant",
+      "oracle_text": "Whenever this creature attacks or blocks, flip a coin. If you lose the flip, the next time it would deal combat damage this turn, it deals that damage to you instead.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks or blocks, flip a coin. If you lose the flip, the next time it would deal combat damage this turn, it deals that damage to you instead.",
+          "trigger": {
+            "type": "attacks_or_blocks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "flip a coin"
+            },
+            {
+              "action": "custom_effect",
+              "text": "the next time it would deal combat damage this turn, it deals that damage to you instead",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

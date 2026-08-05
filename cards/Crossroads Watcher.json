@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ab5f8b8c-e3f7-4265-bbc6-814bbfd4693a",
+  "name": "Crossroads Watcher",
+  "faces": [
+    {
+      "name": "Crossroads Watcher",
+      "type_line": "Creature \u2014 Kithkin Ranger",
+      "oracle_text": "Trample\nWhenever another creature you control enters, this creature gets +1/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, this creature gets +1/+0 until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

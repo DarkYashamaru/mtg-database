@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "45873747-f2a4-4d83-9492-bfc97df7b605",
+  "name": "Ravenous Robots",
+  "faces": [
+    {
+      "name": "Ravenous Robots",
+      "type_line": "Artifact Creature \u2014 Robot",
+      "oracle_text": "Whenever you cast an artifact spell, create a 1/1 colorless Robot artifact creature token.\n{R}, {T}: Creature tokens you control gain haste until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an artifact spell, create a 1/1 colorless Robot artifact creature token.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Artifact"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 colorless Robot artifact creature token",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Robot",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R}, {T}: Creature tokens you control gain haste until end of turn.",
+          "cost": "{R}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creature_tokens_you_control",
+              "keyword": "haste"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

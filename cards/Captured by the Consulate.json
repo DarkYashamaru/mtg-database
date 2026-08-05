@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "da164485-c985-42fa-819e-42f0d33237c5",
+  "name": "Captured by the Consulate",
+  "faces": [
+    {
+      "name": "Captured by the Consulate",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature you don't control\nEnchanted creature can't attack.\nWhenever an opponent casts a spell, if it has a single target, change the target to enchanted creature if able.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent casts a spell, if it has a single target, change the target to enchanted creature if able.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "an_opponent"
+          },
+          "condition": [
+            {
+              "condition_text": "it has a single target"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "change the target to enchanted creature if able"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature you don't control",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature_you_don't_control"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature can't attack.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature can't attack"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

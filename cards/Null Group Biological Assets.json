@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "49598fd5-2aad-4974-b499-38b60fc371b6",
+  "name": "Null Group Biological Assets",
+  "faces": [
+    {
+      "name": "Null Group Biological Assets",
+      "type_line": "Creature \u2014 Mutant Mercenary",
+      "oracle_text": "During your turn, this creature has first strike.\nWhenever this creature attacks, you may discard a card. If you do, draw a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, you may discard a card. If you do, draw a card.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "During your turn, this creature has first strike.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "During your turn, this creature has first strike"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

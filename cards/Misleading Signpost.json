@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "eaffdf95-8e20-408d-99fa-3adc9e19523d",
+  "name": "Misleading Signpost",
+  "faces": [
+    {
+      "name": "Misleading Signpost",
+      "type_line": "Artifact",
+      "oracle_text": "Flash\nWhen this artifact enters during the declare attackers step, you may reselect which player or permanent target attacking creature is attacking. (It can't attack its controller or their permanents.)\n{T}: Add {U}.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters during the declare attackers step, you may reselect which player or permanent target attacking creature is attacking. (It can't attack its controller or their permanents.)",
+          "trigger": {
+            "type": "custom",
+            "text": "When this artifact enters during the declare attackers step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may reselect which player or permanent target attacking creature is attacking"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{u}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

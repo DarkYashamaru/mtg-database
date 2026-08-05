@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f9f4c574-ddbe-4ebc-bfda-29cf3e4b7c44",
+  "name": "Defender of the Order",
+  "faces": [
+    {
+      "name": "Defender of the Order",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "Morph {W}{W} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)\nWhen this creature is turned face up, creatures you control get +0/+2 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, creatures you control get +0/+2 until end of turn.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 0,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Morph {W}{W} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morph {W}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

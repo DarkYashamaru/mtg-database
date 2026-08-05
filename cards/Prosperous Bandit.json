@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2a14670b-2ab6-4e1d-9b33-610a87bdb7ce",
+  "name": "Prosperous Bandit",
+  "faces": [
+    {
+      "name": "Prosperous Bandit",
+      "type_line": "Creature \u2014 Raccoon Rogue",
+      "oracle_text": "Offspring {1} (You may pay an additional {1} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)\nFirst strike\nWhenever this creature deals combat damage to a player, create that many tapped Treasure tokens.",
+      "static": [
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, create that many tapped Treasure tokens.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "that",
+              "token": {
+                "raw": "many tapped Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Offspring {1} (You may pay an additional {1} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Offspring {1}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

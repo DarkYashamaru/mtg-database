@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2a56fe0b-f8a9-499c-bce1-cec6cb3b66f0",
+  "name": "Lullmage's Familiar",
+  "faces": [
+    {
+      "name": "Lullmage's Familiar",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "{T}: Add {G} or {U}.\nWhenever you cast a kicked spell, you gain 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a kicked spell, you gain 2 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Kicked"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G} or {U}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}",
+                "{u}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d870a93a-8399-4004-9b45-2b49b001f165",
+  "name": "Luck Bobblehead",
+  "faces": [
+    {
+      "name": "Luck Bobblehead",
+      "type_line": "Artifact \u2014 Bobblehead",
+      "oracle_text": "{T}: Add one mana of any color.\n{1}, {T}: Roll X six-sided dice, where X is the number of Bobbleheads you control. Create a tapped Treasure token for each even result. If you rolled 6 exactly seven times, you win the game.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, {T}: Roll X six-sided dice, where X is the number of Bobbleheads you control. Create a tapped Treasure token for each even result. If you rolled 6 exactly seven times, you win the game.",
+          "cost": "{1}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Roll X six-sided dice, where X is the number of Bobbleheads you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Create a tapped Treasure token for each even result"
+            },
+            {
+              "action": "win_the_game",
+              "condition": [
+                {
+                  "condition_text": "you rolled 6 exactly seven times"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

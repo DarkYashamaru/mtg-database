@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d6158860-ada8-4e39-8156-23dee2f68f79",
+  "name": "Ugin's Mastery",
+  "faces": [
+    {
+      "name": "Ugin's Mastery",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cast a colorless creature spell, manifest the top card of your library. (Put it onto the battlefield face down as a 2/2 creature. Turn it face up any time for its mana cost if it's a creature card.)\nWhenever you attack with creatures with total power 6 or greater, you may turn a face-down creature you control face up.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a colorless creature spell, manifest the top card of your library. (Put it onto the battlefield face down as a 2/2 creature. Turn it face up any time for its mana cost if it's a creature card.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            },
+            {
+              "spell_subtypes_all": [
+                "Colorles"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "manifest the top card of your library"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack with creatures with total power 6 or greater, you may turn a face-down creature you control face up.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you attack with creatures with total power 6 or greater"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may turn a face-down creature you control face up"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

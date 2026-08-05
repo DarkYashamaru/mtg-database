@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5f079a75-899e-467d-b443-3b87ce2fb548",
+  "name": "Boros Reckoner",
+  "faces": [
+    {
+      "name": "Boros Reckoner",
+      "type_line": "Creature \u2014 Minotaur Wizard",
+      "oracle_text": "Whenever this creature is dealt damage, it deals that much damage to any target.\n{R/W}: This creature gains first strike until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature is dealt damage, it deals that much damage to any target.",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals that much damage to any target"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R/W}: This creature gains first strike until end of turn.",
+          "cost": "{R/W}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "first_strike"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

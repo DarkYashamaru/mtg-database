@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "efe3204d-2013-47a1-ad68-adfbb2d0be8f",
+  "name": "Vivien's Arkbow",
+  "faces": [
+    {
+      "name": "Vivien's Arkbow",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "{X}, {T}, Discard a card: Look at the top X cards of your library. You may put a creature card with mana value X or less from among them onto the battlefield. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{X}, {T}, Discard a card: Look at the top X cards of your library. You may put a creature card with mana value X or less from among them onto the battlefield. Put the rest on the bottom of your library in a random order.",
+          "cost": "{X}, {T}, Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": "X"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may put a creature card with mana value X or less from among them onto the battlefield"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

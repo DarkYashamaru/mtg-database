@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9ed6aa5b-4369-42f7-9853-aae1ac9b17e2",
+  "name": "Hundred-Battle Veteran",
+  "faces": [
+    {
+      "name": "Hundred-Battle Veteran",
+      "type_line": "Creature \u2014 Zombie Warrior",
+      "oracle_text": "As long as there are three or more different kinds of counters among creatures you control, this creature gets +2/+4.\nYou may cast this card from your graveyard. If you do, it enters with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As long as there are three or more different kinds of counters among creatures you control, this creature gets +2/+4.",
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": {
+                "selector": "as_long_as_there_are_three_or_more_different_kinds_of_counters_among_creatures_you_control_self"
+              },
+              "power_delta": 2,
+              "toughness_delta": 4
+            }
+          ]
+        },
+        {
+          "raw_text": "You may cast this card from your graveyard. If you do, it enters with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast this card from your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it enters with a finality counter on it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

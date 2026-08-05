@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "82d643ef-8380-4fdc-a88d-ed205324dbd9",
+  "name": "Ethereal Elk",
+  "faces": [
+    {
+      "name": "Ethereal Elk",
+      "type_line": "Creature \u2014 Elk Spirit",
+      "oracle_text": "Trample\nWhen this creature enters, you may search your library and/or graveyard for a card named Vivien, Nature's Avenger, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may search your library and/or graveyard for a card named Vivien, Nature's Avenger, reveal it, and put it into your hand. If you search your library this way, shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may search your library and/or graveyard for a card named Vivien, Nature's Avenger, reveal it, and put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you",
+              "condition": [
+                {
+                  "condition_text": "you search your library this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

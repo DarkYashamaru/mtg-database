@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e0edb2fc-2533-407c-85e5-4337f4233f05",
+  "name": "Kaya, Geist Hunter",
+  "faces": [
+    {
+      "name": "Kaya, Geist Hunter",
+      "type_line": "Legendary Planeswalker \u2014 Kaya",
+      "oracle_text": "+1: Creatures you control gain deathtouch until end of turn. Put a +1/+1 counter on up to one target creature token you control.\n\u22122: Until end of turn, if one or more tokens would be created under your control, twice that many of those tokens are created instead.\n\u22126: Exile all cards from all graveyards, then create a 1/1 white Spirit creature token with flying for each card exiled this way.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Creatures you control gain deathtouch until end of turn. Put a +1/+1 counter on up to one target creature token you control.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "deathtouch"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Up",
+                  "To",
+                  "One",
+                  "Target",
+                  "Token"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Until end of turn, if one or more tokens would be created under your control, twice that many of those tokens are created instead.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, if one or more tokens would be created under your control, twice that many of those tokens are created instead"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: Exile all cards from all graveyards, then create a 1/1 white Spirit creature token with flying for each card exiled this way.",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile all cards from all graveyards"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 white spirit creature token with flying for each card exiled this way",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "spirit"
+                ],
+                "keywords": [
+                  "flying_for_each_card_exiled_this_way"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

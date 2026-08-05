@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "880fcf86-e6a9-482c-b91d-750f293127b2",
+  "name": "Miirym, Sentinel Wyrm",
+  "faces": [
+    {
+      "name": "Miirym, Sentinel Wyrm",
+      "type_line": "Legendary Creature \u2014 Dragon Spirit",
+      "oracle_text": "Flying, ward {2}\nWhenever another nontoken Dragon you control enters, create a token that's a copy of it, except the token isn't legendary.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "ward",
+          "amount": 2
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken Dragon you control enters, create a token that's a copy of it, except the token isn't legendary.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Nontoken",
+                "Dragon"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of it, except the token isn't legendary"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

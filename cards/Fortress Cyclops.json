@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7790bd6c-75e2-4abd-87ab-e1c15f1d53ab",
+  "name": "Fortress Cyclops",
+  "faces": [
+    {
+      "name": "Fortress Cyclops",
+      "type_line": "Creature \u2014 Cyclops Soldier",
+      "oracle_text": "Whenever this creature attacks, it gets +3/+0 until end of turn.\nWhenever this creature blocks, it gets +0/+3 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it gets +3/+0 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 3,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature blocks, it gets +0/+3 until end of turn.",
+          "trigger": {
+            "type": "blocks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "previous_target",
+              "power_delta": 0,
+              "toughness_delta": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

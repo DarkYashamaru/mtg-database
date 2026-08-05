@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4ca66b33-28c2-4d0d-8a44-9d891ab13e18",
+  "name": "Professor Hojo",
+  "faces": [
+    {
+      "name": "Professor Hojo",
+      "type_line": "Legendary Creature \u2014 Human Scientist",
+      "oracle_text": "The first activated ability you activate during your turn that targets a creature you control costs {2} less to activate.\nWhenever one or more creatures you control become the target of an activated ability, draw a card. This ability triggers only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control become the target of an activated ability, draw a card. This ability triggers only once each turn.",
+          "trigger": {
+            "type": "becomes_target_of_activated_ability",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_triggers": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "The first activated ability you activate during your turn that targets a creature you control costs {2} less to activate.",
+          "effects": [
+            {
+              "action": "activated_ability_cost_reduction",
+              "amount": 2,
+              "scope": "first_during_your_turn",
+              "condition": [
+                {
+                  "ability_targets_creature_you_control": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f3c5978a-70fa-431f-933b-b954bd0db0ea",
+  "name": "Mox Diamond",
+  "faces": [
+    {
+      "name": "Mox Diamond",
+      "type_line": "Artifact",
+      "oracle_text": "If this artifact would enter, you may discard a land card instead. If you do, put this artifact onto the battlefield. If you don't, put it into its owner's graveyard.\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If this artifact would enter, you may discard a land card instead. If you do, put this artifact onto the battlefield. If you don't, put it into its owner's graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may discard a land card instead",
+              "condition": [
+                {
+                  "condition_text": "this artifact would enter"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put this artifact onto the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it into its owner's graveyard",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

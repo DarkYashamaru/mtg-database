@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "0501af1f-c67c-4cb1-aced-4be426c83316",
+  "name": "Ebon Praetor",
+  "faces": [
+    {
+      "name": "Ebon Praetor",
+      "type_line": "Creature \u2014 Avatar Praetor",
+      "oracle_text": "First strike, trample\nAt the beginning of your upkeep, put a -2/-2 counter on this creature.\nSacrifice a creature: Remove a -2/-2 counter from this creature. If the sacrificed creature was a Thrull, put a +1/+0 counter on this creature. Activate only during your upkeep and only once each turn.",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, put a -2/-2 counter on this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a -2/-2 counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice a creature: Remove a -2/-2 counter from this creature. If the sacrificed creature was a Thrull, put a +1/+0 counter on this creature. Activate only during your upkeep and only once each turn.",
+          "cost": "Sacrifice a creature",
+          "condition": [
+            {
+              "condition_text": "during your upkeep and only once each turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Remove a -2/-2 counter from this creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a +1/+0 counter on this creature",
+              "condition": [
+                {
+                  "condition_text": "the sacrificed creature was a thrull"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4ba5b3f6-503b-43e6-b66e-4f8c55cffed7",
+  "name": "Avenger of Zendikar",
+  "faces": [
+    {
+      "name": "Avenger of Zendikar",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "When this creature enters, create a 0/1 green Plant creature token for each land you control.\nLandfall \u2014 Whenever a land you control enters, you may put a +1/+1 counter on each Plant creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 0/1 green Plant creature token for each land you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "create a 0/1 green Plant creature token for each land you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a land you control enters, you may put a +1/+1 counter on each Plant creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "permanents_you_control",
+              "card_types": [
+                "Land"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Plant"
+                ]
+              },
+              "amount": 1,
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

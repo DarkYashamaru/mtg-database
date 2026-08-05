@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bb217f12-532f-4833-a27a-99e290aa47d0",
+  "name": "Island Fish Jasconius",
+  "faces": [
+    {
+      "name": "Island Fish Jasconius",
+      "type_line": "Creature \u2014 Fish",
+      "oracle_text": "This creature doesn't untap during your untap step.\nAt the beginning of your upkeep, you may pay {U}{U}{U}. If you do, untap this creature.\nThis creature can't attack unless defending player controls an Island.\nWhen you control no Islands, sacrifice this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may pay {U}{U}{U}. If you do, untap this creature.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {U}{U}{U}"
+            },
+            {
+              "action": "untap",
+              "target": "self",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "When you control no Islands, sacrifice this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "When you control no Islands"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature doesn't untap during your untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "self",
+              "scope": "your_untap_step"
+            }
+          ]
+        },
+        {
+          "raw_text": "This creature can't attack unless defending player controls an Island.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature can't attack unless defending player controls an Island"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

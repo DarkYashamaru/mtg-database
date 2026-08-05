@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c9708a12-96b5-43c1-ac2d-d6dc6b03beb7",
+  "name": "Dragon Shadow",
+  "faces": [
+    {
+      "name": "Dragon Shadow",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +1/+0 and has fear. (It can't be blocked except by artifact creatures and/or black creatures.)\nWhen a creature with mana value 6 or greater enters, you may return this card from your graveyard to the battlefield attached to that creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When a creature with mana value 6 or greater enters, you may return this card from your graveyard to the battlefield attached to that creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "a_creature_with_mana_value_6_or_greater"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return this card from your graveyard to the battlefield attached to that creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+0 and has fear. (It can't be blocked except by artifact creatures and/or black creatures.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+0 and has fear"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

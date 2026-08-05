@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ddb44519-1345-4990-a8a5-30e91d274a35",
+  "name": "Tattoo Ward",
+  "faces": [
+    {
+      "name": "Tattoo Ward",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nEnchanted creature gets +1/+1 and has protection from enchantments. This effect doesn't remove this Aura.\nSacrifice this Aura: Destroy target enchantment.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice this Aura: Destroy target enchantment.",
+          "cost": "Sacrifice this Aura",
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_enchantment"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +1/+1 and has protection from enchantments. This effect doesn't remove this Aura.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +1/+1 and has protection from enchantments"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This effect doesn't remove this Aura"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

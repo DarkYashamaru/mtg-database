@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7292272d-6511-466b-aadd-c4fe7ed8df09",
+  "name": "Bloodvial Purveyor",
+  "faces": [
+    {
+      "name": "Bloodvial Purveyor",
+      "type_line": "Creature \u2014 Vampire",
+      "oracle_text": "Flying, trample\nWhenever an opponent casts a spell, that player creates a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")\nWhenever this creature attacks, it gets +1/+0 until end of turn for each Blood token defending player controls.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent casts a spell, that player creates a Blood token. (It's an artifact with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player creates a Blood token"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, it gets +1/+0 until end of turn for each Blood token defending player controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gets +1/+0 until end of turn for each Blood token defending player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

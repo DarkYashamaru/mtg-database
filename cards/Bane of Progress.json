@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "51f9a6cc-8eb2-44ed-a2d9-913ac514ad67",
+  "name": "Bane of Progress",
+  "faces": [
+    {
+      "name": "Bane of Progress",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "When this creature enters, destroy all artifacts and enchantments. Put a +1/+1 counter on this creature for each permanent destroyed this way.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, destroy all artifacts and enchantments. Put a +1/+1 counter on this creature for each permanent destroyed this way.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy all artifacts and enchantments"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_for_each_permanent_destroyed_this_way",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

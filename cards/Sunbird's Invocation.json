@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "10d482fd-e034-4187-b148-51fe15885360",
+  "name": "Sunbird's Invocation",
+  "faces": [
+    {
+      "name": "Sunbird's Invocation",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cast a spell from your hand, reveal the top X cards of your library, where X is that spell's mana value. You may cast a spell with mana value X or less from among cards revealed this way without paying its mana cost. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell from your hand, reveal the top X cards of your library, where X is that spell's mana value. You may cast a spell with mana value X or less from among cards revealed this way without paying its mana cost. Put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a spell from your hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "reveal the top X cards of your library, where X is that spell's mana value"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast a spell with mana value X or less from among cards revealed this way without paying its mana cost"
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

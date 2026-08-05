@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c63a17b8-d183-48c7-bb04-edbfffba1e03",
+  "name": "Greenbelt Rampager",
+  "faces": [
+    {
+      "name": "Greenbelt Rampager",
+      "type_line": "Creature \u2014 Elephant",
+      "oracle_text": "When this creature enters, pay {E}{E} (two energy counters). If you can't, return this creature to its owner's hand and you get {E}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, pay {E}{E} (two energy counters). If you can't, return this creature to its owner's hand and you get {E}.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "pay {E}{E}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return this creature to its owner's hand and you get {e}",
+              "condition": [
+                {
+                  "condition_text": "you can't"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

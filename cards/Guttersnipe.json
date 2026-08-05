@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c6bdaf76-6a03-4695-9c4b-f040e73435af",
+  "name": "Guttersnipe",
+  "faces": [
+    {
+      "name": "Guttersnipe",
+      "type_line": "Creature \u2014 Goblin Shaman",
+      "oracle_text": "Whenever you cast an instant or sorcery spell, this creature deals 2 damage to each opponent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature deals 2 damage to each opponent.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

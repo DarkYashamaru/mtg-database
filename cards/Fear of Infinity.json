@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "018327d1-a3ba-4912-9c88-f0f0c54a1750",
+  "name": "Fear of Infinity",
+  "faces": [
+    {
+      "name": "Fear of Infinity",
+      "type_line": "Enchantment Creature \u2014 Nightmare",
+      "oracle_text": "Flying, lifelink\nThis creature can't block.\nEerie \u2014 Whenever an enchantment you control enters and whenever you fully unlock a Room, you may return this card from your graveyard to your hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an enchantment you control enters and whenever you fully unlock a Room, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an enchantment you control enters and whenever you fully unlock a Room"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature can't block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "self",
+              "restriction": "cant_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

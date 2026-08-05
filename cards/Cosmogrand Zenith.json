@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e2cd65f6-7cbc-497c-bdc9-698ff17da31e",
+  "name": "Cosmogrand Zenith",
+  "faces": [
+    {
+      "name": "Cosmogrand Zenith",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Whenever you cast your second spell each turn, choose one \u2014\n\u2022 Create two 1/1 white Human Soldier creature tokens.\n\u2022 Put a +1/+1 counter on each creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast your second spell each turn, choose one \u2014\n\u2022 Create two 1/1 white Human Soldier creature tokens.\n\u2022 Put a +1/+1 counter on each creature you control.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_cast_count_each_turn": 2
+            }
+          ],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Create two 1/1 white Human Soldier creature tokens.",
+              "effects": [
+                {
+                  "action": "create_token",
+                  "amount": 2,
+                  "token": {
+                    "raw": "1/1 white Human Soldier creature tokens",
+                    "colors": [
+                      "white"
+                    ],
+                    "power_toughness": "1/1",
+                    "card_types": [
+                      "creature"
+                    ],
+                    "subtypes": [
+                      "Human",
+                      "Soldier"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Put a +1/+1 counter on each creature you control.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": {
+                    "selector": "creatures_you_control"
+                  },
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

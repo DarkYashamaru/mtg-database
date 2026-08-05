@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d6026309-aae9-43e7-938b-69db7af7139c",
+  "name": "Intrepid Paleontologist",
+  "faces": [
+    {
+      "name": "Intrepid Paleontologist",
+      "type_line": "Creature \u2014 Human Druid",
+      "oracle_text": "{T}: Add one mana of any color.\n{2}: Exile target card from a graveyard.\nYou may cast Dinosaur creature spells from among cards you own exiled with this creature. If you cast a spell this way, that creature enters with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{2}: Exile target card from a graveyard.",
+          "cost": "{2}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": {
+                "selector": "target_card_in_graveyard"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "You may cast Dinosaur creature spells from among cards you own exiled with this creature. If you cast a spell this way, that creature enters with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You may cast Dinosaur creature spells from among cards you own exiled with this creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "that creature enters with a finality counter on it",
+              "condition": [
+                {
+                  "condition_text": "you cast a spell this way"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

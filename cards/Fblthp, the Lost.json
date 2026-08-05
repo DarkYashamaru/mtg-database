@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ba5a7ac0-b625-42e9-af05-2680a01a95ed",
+  "name": "Fblthp, the Lost",
+  "faces": [
+    {
+      "name": "Fblthp, the Lost",
+      "type_line": "Legendary Creature \u2014 Homunculus",
+      "oracle_text": "When Fblthp enters, draw a card. If it entered from your library or was cast from your library, draw two cards instead.\nWhen Fblthp becomes the target of a spell, shuffle Fblthp into its owner's library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Fblthp enters, draw a card. If it entered from your library or was cast from your library, draw two cards instead.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "draw two cards instead",
+              "condition": [
+                {
+                  "condition_text": "it entered from your library or was cast from your library"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "When Fblthp becomes the target of a spell, shuffle Fblthp into its owner's library.",
+          "trigger": {
+            "type": "custom",
+            "text": "When Fblthp becomes the target of a spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "shuffle Fblthp into its owner's library"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

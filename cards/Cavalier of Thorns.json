@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "96b909ab-55f1-4cde-a675-2504de3da772",
+  "name": "Cavalier of Thorns",
+  "faces": [
+    {
+      "name": "Cavalier of Thorns",
+      "type_line": "Creature \u2014 Elemental Knight",
+      "oracle_text": "Reach\nWhen this creature enters, reveal the top five cards of your library. Put a land card from among them onto the battlefield and the rest into your graveyard.\nWhen this creature dies, you may exile it. If you do, put another target card from your graveyard on top of your library.",
+      "static": [
+        {
+          "keyword": "reach"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, reveal the top five cards of your library. Put a land card from among them onto the battlefield and the rest into your graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "reveal the top five cards of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put a land card from among them onto the battlefield and the rest into your graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, you may exile it. If you do, put another target card from your graveyard on top of your library.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "exile",
+              "target": "it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put another target card from your graveyard on top of your library",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

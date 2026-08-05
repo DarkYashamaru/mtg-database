@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5546d127-a961-4e33-bbc9-06ee14b0cb04",
+  "name": "Mishra's Self-Replicator",
+  "faces": [
+    {
+      "name": "Mishra's Self-Replicator",
+      "type_line": "Artifact Creature \u2014 Assembly-Worker",
+      "oracle_text": "Whenever you cast a historic spell, you may pay {1}. If you do, create a token that's a copy of this creature. (Artifacts, legendaries, and Sagas are historic.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a historic spell, you may pay {1}. If you do, create a token that's a copy of this creature. (Artifacts, legendaries, and Sagas are historic.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Historic"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of this creature",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

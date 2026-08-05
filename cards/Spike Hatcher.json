@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "726fe7a4-49b3-4b67-9d8c-6b334d0fd915",
+  "name": "Spike Hatcher",
+  "faces": [
+    {
+      "name": "Spike Hatcher",
+      "type_line": "Creature \u2014 Spike",
+      "oracle_text": "This creature enters with six +1/+1 counters on it.\n{2}, Remove a +1/+1 counter from this creature: Put a +1/+1 counter on target creature.\n{1}, Remove a +1/+1 counter from this creature: Regenerate this creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}, Remove a +1/+1 counter from this creature: Put a +1/+1 counter on target creature.",
+          "cost": "{2}, Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, Remove a +1/+1 counter from this creature: Regenerate this creature.",
+          "cost": "{1}, Remove a +1/+1 counter from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "regenerate",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with six +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

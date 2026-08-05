@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "52826984-44cb-48dc-a737-bb02983ffea8",
+  "name": "Glamdring",
+  "faces": [
+    {
+      "name": "Glamdring",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Equipped creature has first strike and gets +1/+0 for each instant and sorcery card in your graveyard.\nWhenever equipped creature deals combat damage to a player, you may cast an instant or sorcery spell from your hand with mana value less than or equal to that damage without paying its mana cost.\nEquip {3}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals combat damage to a player, you may cast an instant or sorcery spell from your hand with mana value less than or equal to that damage without paying its mana cost.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "equipped_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may cast an instant or sorcery spell from your hand with mana value less than or equal to that damage without paying its mana cost"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Equip {3}",
+          "cost": "{3}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Equipped creature has first strike and gets +1/+0 for each instant and sorcery card in your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Equipped creature has first strike and gets +1/+0 for each instant and sorcery card in your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

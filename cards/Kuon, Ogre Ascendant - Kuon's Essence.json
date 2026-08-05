@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f1b1cf99-b44c-4bcc-b0ed-98f69e66c54a",
+  "name": "Kuon, Ogre Ascendant // Kuon's Essence",
+  "faces": [
+    {
+      "name": "Kuon's Essence",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "At the beginning of each player's upkeep, that player sacrifices a creature of their choice.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each player's upkeep, that player sacrifices a creature of their choice.",
+          "trigger": {
+            "type": "beginning_of_each_players_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that player sacrifices a creature of their choice"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Kuon, Ogre Ascendant",
+      "type_line": "Legendary Creature \u2014 Ogre Monk",
+      "oracle_text": "At the beginning of the end step, if three or more creatures died this turn, flip Kuon.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of the end step, if three or more creatures died this turn, flip Kuon.",
+          "trigger": {
+            "type": "beginning_of_end_step"
+          },
+          "condition": [
+            {
+              "event_this_turn": "creature_died",
+              "count_gte": 3
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "flip Kuon"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

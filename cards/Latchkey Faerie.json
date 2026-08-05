@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7bc4a0a0-f06e-4074-95a8-67a5d8fdfef9",
+  "name": "Latchkey Faerie",
+  "faces": [
+    {
+      "name": "Latchkey Faerie",
+      "type_line": "Creature \u2014 Faerie Rogue",
+      "oracle_text": "Flying\nProwl {2}{U} (You may cast this for its prowl cost if you dealt combat damage to a player this turn with a Faerie or Rogue.)\nWhen this creature enters, if its prowl cost was paid, draw a card.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if its prowl cost was paid, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "its prowl cost was paid"
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Prowl {2}{U} (You may cast this for its prowl cost if you dealt combat damage to a player this turn with a Faerie or Rogue.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Prowl {2}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

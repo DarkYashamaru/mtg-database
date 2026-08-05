@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6f7c29ff-955c-496b-9300-2efb9e99ba2d",
+  "name": "Show of Confidence",
+  "faces": [
+    {
+      "name": "Show of Confidence",
+      "type_line": "Instant",
+      "oracle_text": "When you cast this spell, copy it for each other instant and sorcery spell you've cast this turn. You may choose new targets for the copies.\nPut a +1/+1 counter on target creature. It gains vigilance until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cast this spell, copy it for each other instant and sorcery spell you've cast this turn. You may choose new targets for the copies.",
+          "trigger": {
+            "type": "cast_this_spell",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy it for each other instant and sorcery spell you've cast this turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may choose new targets for the copies"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Put a +1/+1 counter on target creature. It gains vigilance until end of turn.",
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_creature",
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "vigilance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

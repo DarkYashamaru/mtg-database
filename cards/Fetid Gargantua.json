@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b8c35a80-2c72-49ff-af5c-e8885c97f6fc",
+  "name": "Fetid Gargantua",
+  "faces": [
+    {
+      "name": "Fetid Gargantua",
+      "type_line": "Creature \u2014 Horror",
+      "oracle_text": "{2}{B}: Adapt 2. (If this creature has no +1/+1 counters on it, put two +1/+1 counters on it.)\nWhenever one or more +1/+1 counters are put on this creature, you may draw two cards. If you do, you lose 2 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more +1/+1 counters are put on this creature, you may draw two cards. If you do, you lose 2 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more +1/+1 counters are put on this creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "optional": true
+            },
+            {
+              "action": "lose_life",
+              "target": "you",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{B}: Adapt 2. (If this creature has no +1/+1 counters on it, put two +1/+1 counters on it.)",
+          "cost": "{2}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Adapt 2"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

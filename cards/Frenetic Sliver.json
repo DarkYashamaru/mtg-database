@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b1af4207-e546-4bde-950b-3234dfffe278",
+  "name": "Frenetic Sliver",
+  "faces": [
+    {
+      "name": "Frenetic Sliver",
+      "type_line": "Creature \u2014 Sliver",
+      "oracle_text": "All Slivers have \"{0}: If this permanent is on the battlefield, flip a coin. If you win the flip, exile this permanent and return it to the battlefield under its owner's control at the beginning of the next end step. If you lose the flip, sacrifice it.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "All Slivers have \"{0}: If this permanent is on the battlefield, flip a coin. If you win the flip, exile this permanent and return it to the battlefield under its owner's control at the beginning of the next end step. If you lose the flip, sacrifice it.\"",
+          "cost": "All Slivers have \"{0}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "flip a coin",
+              "condition": [
+                {
+                  "condition_text": "this permanent is on the battlefield"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile this permanent and return it to the battlefield under its owner's control at the beginning of the next end step",
+              "condition": [
+                {
+                  "condition_text": "you win the flip"
+                }
+              ]
+            },
+            {
+              "action": "sacrifice",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you lose the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

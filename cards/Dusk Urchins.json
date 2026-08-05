@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1c2cc166-dc59-44ce-86d5-ed6013b0bf67",
+  "name": "Dusk Urchins",
+  "faces": [
+    {
+      "name": "Dusk Urchins",
+      "type_line": "Creature \u2014 Ouphe",
+      "oracle_text": "Whenever this creature attacks or blocks, put a -1/-1 counter on it.\nWhen this creature dies, draw a card for each -1/-1 counter on it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks or blocks, put a -1/-1 counter on it.",
+          "trigger": {
+            "type": "attacks_or_blocks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a -1/-1 counter on it"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, draw a card for each -1/-1 counter on it.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": "count",
+              "count_multiplier": 1,
+              "count_object": "_1_1_counter_on_it"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

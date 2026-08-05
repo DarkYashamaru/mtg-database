@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ce08fbfb-5d51-4dfc-80ae-87d5d9c7726f",
+  "name": "Ghired, Conclave Exile",
+  "faces": [
+    {
+      "name": "Ghired, Conclave Exile",
+      "type_line": "Legendary Creature \u2014 Human Shaman",
+      "oracle_text": "When Ghired enters, create a 4/4 green Rhino creature token with trample.\nWhenever Ghired attacks, populate. The token enters tapped and attacking. (To populate, create a token that's a copy of a creature token you control.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Ghired enters, create a 4/4 green Rhino creature token with trample.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 4/4 green Rhino creature token with trample",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "4/4",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Rhino"
+                ],
+                "keywords": [
+                  "trample"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Ghired attacks, populate. The token enters tapped and attacking. (To populate, create a token that's a copy of a creature token you control.)",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "populate"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The token enters tapped and attacking"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

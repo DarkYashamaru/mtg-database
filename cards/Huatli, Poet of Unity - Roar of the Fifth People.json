@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2e6ed3e6-d2b8-4b75-b7e1-0773da4987a1",
+  "name": "Huatli, Poet of Unity // Roar of the Fifth People",
+  "faces": [
+    {
+      "name": "Huatli, Poet of Unity",
+      "type_line": "Legendary Creature \u2014 Human Warrior Bard",
+      "oracle_text": "When Huatli enters, search your library for a basic land card, reveal it, put it into your hand, then shuffle.\n{3}{R/W}{R/W}: Exile Huatli, then return her to the battlefield transformed under her owner's control. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Huatli enters, search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}{R/W}{R/W}: Exile Huatli, then return her to the battlefield transformed under her owner's control. Activate only as a sorcery.",
+          "cost": "{3}{R/W}{R/W}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile huatli"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return her to the battlefield transformed under her owner's control"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Roar of the Fifth People",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after IV.)\nI \u2014 Create two 3/3 green Dinosaur creature tokens.\nII \u2014 This Saga gains \"Creatures you control have '{T}: Add {R}, {G}, or {W}.'\"\nIII \u2014 Search your library for a Dinosaur card, reveal it, put it into your hand, then shuffle.\nIV \u2014 Dinosaurs you control gain double strike and trample until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Create two 3/3 green Dinosaur creature tokens.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "3/3 green Dinosaur creature tokens",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Dinosaur"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 This Saga gains \"Creatures you control have '{T}: Add {R}, {G}, or {W}.'\"",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Saga gains \"Creatures you control have '{T}: Add {R}, {G}, or {W}.'\""
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Search your library for a Dinosaur card, reveal it, put it into your hand, then shuffle.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "search your library for a dinosaur card, reveal it, put it into your hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        },
+        {
+          "raw_text": "IV \u2014 Dinosaurs you control gain double strike and trample until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "IV"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "dinosaurs_you_control",
+              "keyword": "double_strike_and_trample"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

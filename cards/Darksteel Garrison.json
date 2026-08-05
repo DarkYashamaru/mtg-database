@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "48bf020e-45b9-4c27-82e0-80d942656a67",
+  "name": "Darksteel Garrison",
+  "faces": [
+    {
+      "name": "Darksteel Garrison",
+      "type_line": "Artifact \u2014 Fortification",
+      "oracle_text": "Fortified land has indestructible.\nWhenever fortified land becomes tapped, target creature gets +1/+1 until end of turn.\nFortify {3} ({3}: Attach to target land you control. Fortify only as a sorcery. This card enters unattached and stays on the battlefield if the land leaves.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever fortified land becomes tapped, target creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever fortified land becomes tapped"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Fortify {3} ({3}: Attach to target land you control. Fortify only as a sorcery. This card enters unattached and stays on the battlefield if the land leaves.)",
+          "cost": "Fortify {3} ({3}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Attach to target land you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Fortify only as a sorcery"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This card enters unattached and stays on the battlefield if the land leaves"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Fortified land has indestructible.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Fortified land has indestructible"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

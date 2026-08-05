@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5f0be4ce-898e-4849-ab8f-a85fb05c3017",
+  "name": "Territorial Kavu",
+  "faces": [
+    {
+      "name": "Territorial Kavu",
+      "type_line": "Creature \u2014 Kavu",
+      "oracle_text": "Domain \u2014 Territorial Kavu's power and toughness are each equal to the number of basic land types among lands you control.\nWhenever this creature attacks, choose one \u2014\n\u2022 Discard a card. If you do, draw a card.\n\u2022 Exile up to one target card from a graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, choose one \u2014\n\u2022 Discard a card. If you do, draw a card.\n\u2022 Exile up to one target card from a graveyard.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Discard a card. If you do, draw a card.",
+              "effects": [
+                {
+                  "action": "discard_cards",
+                  "player": "you",
+                  "amount": 1
+                },
+                {
+                  "action": "draw_cards",
+                  "amount": 1,
+                  "condition": [
+                    {
+                      "previous_optional_payment_made": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "raw_text": "Exile up to one target card from a graveyard.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Exile up to one target card from a graveyard"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Domain \u2014 Territorial Kavu's power and toughness are each equal to the number of basic land types among lands you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Domain \u2014 Territorial Kavu's power and toughness are each equal to the number of basic land types among lands you control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ab9ff8e9-0ffa-4ccf-a4bf-8505079616f6",
+  "name": "Casey Jones, Back Alley Brute",
+  "faces": [
+    {
+      "name": "Casey Jones, Back Alley Brute",
+      "type_line": "Legendary Creature \u2014 Human Berserker",
+      "oracle_text": "Menace\nWhenever Casey Jones attacks, put a +1/+1 counter on target attacking creature.\nWhenever you put one or more +1/+1 counters on a creature you control, Casey Jones deals that much damage to target opponent.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Casey Jones attacks, put a +1/+1 counter on target attacking creature.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "target_attacking_creature",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you put one or more +1/+1 counters on a creature you control, Casey Jones deals that much damage to target opponent.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you put one or more +1/+1 counters on a creature you control"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Casey Jones deals that much damage to target opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

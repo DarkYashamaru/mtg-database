@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9be9d534-470d-463a-ba2f-9817a6723692",
+  "name": "Avaricious Dragon",
+  "faces": [
+    {
+      "name": "Avaricious Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nAt the beginning of your draw step, draw an additional card.\nAt the beginning of your end step, discard your hand.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your draw step, draw an additional card.",
+          "trigger": {
+            "type": "beginning_of_your_draw_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "draw an additional card"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, discard your hand.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_hand",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

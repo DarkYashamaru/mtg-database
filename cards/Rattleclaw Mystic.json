@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "84c9d8b8-8dd9-41fc-a2b6-af1ffb9090f9",
+  "name": "Rattleclaw Mystic",
+  "faces": [
+    {
+      "name": "Rattleclaw Mystic",
+      "type_line": "Creature \u2014 Human Shaman",
+      "oracle_text": "{T}: Add {G}, {U}, or {R}.\nMorph {2} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)\nWhen this creature is turned face up, add {G}{U}{R}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, add {G}{U}{R}.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "add {G}{U}{R}"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}, {U}, or {R}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {G}, {U}, or {R}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Morph {2} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morph {2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bcded242-6e54-416f-bdc8-093211c50e3f",
+  "name": "Phantom Flock",
+  "faces": [
+    {
+      "name": "Phantom Flock",
+      "type_line": "Creature \u2014 Bird Soldier Spirit",
+      "oracle_text": "Flying\nThis creature enters with three +1/+1 counters on it.\nIf damage would be dealt to this creature, prevent that damage. Remove a +1/+1 counter from this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with three +1/+1 counters on it.",
+          "effects": [
+            {
+              "action": "enters_with_counters",
+              "target": "self",
+              "counter_type": "+1/+1",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "If damage would be dealt to this creature, prevent that damage. Remove a +1/+1 counter from this creature.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "prevent that damage",
+              "condition": [
+                {
+                  "condition_text": "damage would be dealt to this creature"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Remove a +1/+1 counter from this creature"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

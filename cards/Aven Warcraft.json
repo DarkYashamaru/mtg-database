@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c152f829-0452-407b-8020-023bf3d75c74",
+  "name": "Aven Warcraft",
+  "faces": [
+    {
+      "name": "Aven Warcraft",
+      "type_line": "Instant",
+      "oracle_text": "Creatures you control get +0/+2 until end of turn.\nThreshold \u2014 If there are seven or more cards in your graveyard, choose a color. Creatures you control also gain protection from the chosen color until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control get +0/+2 until end of turn.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "power_delta": 0,
+              "toughness_delta": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Threshold \u2014 If there are seven or more cards in your graveyard, choose a color. Creatures you control also gain protection from the chosen color until end of turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Threshold \u2014 If there are seven or more cards in your graveyard, choose a color"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control_also",
+              "keyword": "protection_from_the_chosen_color"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

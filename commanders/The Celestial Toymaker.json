@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "388fe92a-0bc0-4c0a-a7c6-910c5e71e342",
+  "name": "The Celestial Toymaker",
+  "faces": [
+    {
+      "name": "The Celestial Toymaker",
+      "type_line": "Legendary Creature \u2014 Rogue Artificer",
+      "oracle_text": "Whenever The Celestial Toymaker attacks, look at the top three cards of your library. Exile any number of them in a face-down pile and the rest in a face-up pile. Defending player chooses one of those piles. Put that pile into your hand.\nAt the beginning of each end step, each opponent loses 2 life for each spell or ability that caused one or more players to guess or to group cards or permanents into a pile this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever The Celestial Toymaker attacks, look at the top three cards of your library. Exile any number of them in a face-down pile and the rest in a face-up pile. Defending player chooses one of those piles. Put that pile into your hand.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "custom_effect",
+              "text": "Exile any number of them in a face-down pile and the rest in a face-up pile"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Defending player chooses one of those piles"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put that pile into your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each end step, each opponent loses 2 life for each spell or ability that caused one or more players to guess or to group cards or permanents into a pile this turn.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent loses 2 life for each spell or ability that caused one or more players to guess or to group cards or permanents into a pile this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

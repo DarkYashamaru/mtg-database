@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b2d1f87b-a11f-43eb-8b89-b48945320d73",
+  "name": "Life of the Party",
+  "faces": [
+    {
+      "name": "Life of the Party",
+      "type_line": "Creature \u2014 Elemental",
+      "oracle_text": "First strike, trample, haste\nWhenever this creature attacks, it gets +X/+0 until end of turn, where X is the number of creatures you control.\nWhen this creature enters, if it's not a token, each opponent creates a token that's a copy of it. The tokens are goaded for the rest of the game. (They attack each combat if able and attack a player other than you if able.)",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "trample"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it gets +X/+0 until end of turn, where X is the number of creatures you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gets +X/+0 until end of turn, where X is the number of creatures you control"
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature enters, if it's not a token, each opponent creates a token that's a copy of it. The tokens are goaded for the rest of the game. (They attack each combat if able and attack a player other than you if able.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it's not a token"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent creates a token that's a copy of it"
+            },
+            {
+              "action": "custom_effect",
+              "text": "The tokens are goaded for the rest of the game"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

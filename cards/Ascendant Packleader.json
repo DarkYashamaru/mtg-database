@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7e81853c-d0c0-40bc-80fc-13a5964878b2",
+  "name": "Ascendant Packleader",
+  "faces": [
+    {
+      "name": "Ascendant Packleader",
+      "type_line": "Creature \u2014 Wolf",
+      "oracle_text": "This creature enters with a +1/+1 counter on it if you control a permanent with mana value 4 or greater.\nWhenever you cast a spell with mana value 4 or greater, put a +1/+1 counter on this creature.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell with mana value 4 or greater, put a +1/+1 counter on this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 4
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature enters with a +1/+1 counter on it if you control a permanent with mana value 4 or greater.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature enters with a +1/+1 counter on it if you control a permanent with mana value 4 or greater"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5d11cdb2-5a44-4e0e-b357-bb1be59f68fb",
+  "name": "Skyclaw Thrash",
+  "faces": [
+    {
+      "name": "Skyclaw Thrash",
+      "type_line": "Artifact Creature \u2014 Lizard Warrior",
+      "oracle_text": "Whenever this creature attacks, flip a coin. If you win the flip, this creature gets +1/+1 and gains flying until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, flip a coin. If you win the flip, this creature gets +1/+1 and gains flying until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "flip a coin"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self_gets_11_and",
+              "keyword": "flying",
+              "condition": [
+                {
+                  "condition_text": "you win the flip"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

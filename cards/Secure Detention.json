@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ce95e51d-4ef3-44a8-ae47-cf1bf71ebd3f",
+  "name": "Secure Detention",
+  "faces": [
+    {
+      "name": "Secure Detention",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant artifact or creature\nWhen this Aura enters, create a 1/1 white Soldier creature token.\nEnchanted permanent can't attack or block, and its activated abilities can't be activated.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, create a 1/1 white Soldier creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 white Soldier creature token",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Soldier"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant artifact or creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "artifact_or_creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted permanent can't attack or block, and its activated abilities can't be activated.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted permanent can't attack or block, and its activated abilities can't be activated"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

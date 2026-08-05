@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c0ad2b5f-066b-424b-bddf-d3014731e599",
+  "name": "The Celestus",
+  "faces": [
+    {
+      "name": "The Celestus",
+      "type_line": "Legendary Artifact",
+      "oracle_text": "If it's neither day nor night, it becomes day as The Celestus enters.\n{T}: Add one mana of any color.\n{3}, {T}: If it's night, it becomes day. Otherwise, it becomes night. Activate only as a sorcery.\nWhenever day becomes night or night becomes day, you gain 1 life. You may draw a card. If you do, discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever day becomes night or night becomes day, you gain 1 life. You may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever day becomes night or night becomes day"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        },
+        {
+          "raw_text": "{3}, {T}: If it's night, it becomes day. Otherwise, it becomes night. Activate only as a sorcery.",
+          "cost": "{3}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it becomes day",
+              "condition": [
+                {
+                  "condition_text": "it's night"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "it becomes night",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If it's neither day nor night, it becomes day as The Celestus enters.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it becomes day as the celestus enters",
+              "condition": [
+                {
+                  "condition_text": "it's neither day nor night"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

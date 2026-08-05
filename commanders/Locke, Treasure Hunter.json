@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a800bec4-bacc-43f9-a773-dd795959935b",
+  "name": "Locke, Treasure Hunter",
+  "faces": [
+    {
+      "name": "Locke, Treasure Hunter",
+      "type_line": "Legendary Creature \u2014 Human Rogue",
+      "oracle_text": "Locke can't be blocked by creatures with greater power.\nMug \u2014 Whenever Locke attacks, each player mills a card. If a land card was milled this way, create a Treasure token. Until end of turn, you may cast a spell from among those cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Locke attacks, each player mills a card. If a land card was milled this way, create a Treasure token. Until end of turn, you may cast a spell from among those cards.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player mills a card"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              },
+              "condition": [
+                {
+                  "condition_text": "a land card was milled this way"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, you may cast a spell from among those cards"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Locke can't be blocked by creatures with greater power.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Locke can't be blocked by creatures with greater power"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

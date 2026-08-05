@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8859a692-d107-4de2-9110-4681fc2761c7",
+  "name": "Glissa Sunslayer",
+  "faces": [
+    {
+      "name": "Glissa Sunslayer",
+      "type_line": "Legendary Creature \u2014 Phyrexian Zombie Elf",
+      "oracle_text": "First strike, deathtouch\nWhenever Glissa Sunslayer deals combat damage to a player, choose one \u2014\n\u2022 You draw a card and lose 1 life.\n\u2022 Destroy target enchantment.\n\u2022 Remove up to three counters from target permanent.",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Glissa Sunslayer deals combat damage to a player, choose one \u2014\n\u2022 You draw a card and lose 1 life.\n\u2022 Destroy target enchantment.\n\u2022 Remove up to three counters from target permanent.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "You draw a card and lose 1 life.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "You draw a card and lose 1 life"
+                }
+              ]
+            },
+            {
+              "raw_text": "Destroy target enchantment.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_enchantment"
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Remove up to three counters from target permanent.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Remove up to three counters from target permanent"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

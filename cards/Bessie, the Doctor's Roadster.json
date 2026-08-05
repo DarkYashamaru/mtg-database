@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "776aa036-08aa-4fa0-82bd-c09e6e3e2c5e",
+  "name": "Bessie, the Doctor's Roadster",
+  "faces": [
+    {
+      "name": "Bessie, the Doctor's Roadster",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Haste\nWhenever Bessie attacks, another target legendary creature can't be blocked this turn.\nCrew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Bessie attacks, another target legendary creature can't be blocked this turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "another target legendary creature can't be blocked this turn"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 2 (Tap any number of creatures you control with total power 2 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 2,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

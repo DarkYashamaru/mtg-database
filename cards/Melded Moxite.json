@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "86e0e718-82b5-4c99-9837-1b4d8729a27e",
+  "name": "Melded Moxite",
+  "faces": [
+    {
+      "name": "Melded Moxite",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, you may discard a card. If you do, draw two cards.\n{3}, Sacrifice this artifact: Create a tapped 2/2 colorless Robot artifact creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this artifact enters, you may discard a card. If you do, draw two cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_artifact"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "draw_cards",
+              "amount": 2,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{3}, Sacrifice this artifact: Create a tapped 2/2 colorless Robot artifact creature token.",
+          "cost": "{3}, Sacrifice this artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "tapped 2/2 colorless Robot artifact creature token",
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Robot",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

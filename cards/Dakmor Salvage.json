@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cdc4048a-73ec-4ec1-a179-2b36c397bf1a",
+  "name": "Dakmor Salvage",
+  "faces": [
+    {
+      "name": "Dakmor Salvage",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {B}.\nDredge 2 (If you would draw a card, you may mill two cards instead. If you do, return this card from your graveyard to your hand.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "raw_text": "Dredge 2 (If you would draw a card, you may mill two cards instead. If you do, return this card from your graveyard to your hand.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Dredge 2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

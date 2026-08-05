@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3bba3b36-f8d7-4fd6-892a-797226210b6e",
+  "name": "Malcolm, Alluring Scoundrel",
+  "faces": [
+    {
+      "name": "Malcolm, Alluring Scoundrel",
+      "type_line": "Legendary Creature \u2014 Siren Pirate",
+      "oracle_text": "Flash\nFlying\nWhenever Malcolm deals combat damage to a player, put a chorus counter on it. Draw a card, then discard a card. If there are four or more chorus counters on Malcolm, you may cast the discarded card without paying its mana cost.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Malcolm deals combat damage to a player, put a chorus counter on it. Draw a card, then discard a card. If there are four or more chorus counters on Malcolm, you may cast the discarded card without paying its mana cost.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a chorus counter on it"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may cast the discarded card without paying its mana cost",
+              "condition": [
+                {
+                  "condition_text": "there are four or more chorus counters on malcolm"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

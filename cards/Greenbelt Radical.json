@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d0a4efc3-fa68-48f2-a6d0-2fff93e05c77",
+  "name": "Greenbelt Radical",
+  "faces": [
+    {
+      "name": "Greenbelt Radical",
+      "type_line": "Creature \u2014 Centaur Citizen",
+      "oracle_text": "Disguise {5}{G}{G} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)\nWhen this creature is turned face up, put a +1/+1 counter on each creature you control. Creatures you control gain trample until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, put a +1/+1 counter on each creature you control. Creatures you control gain trample until end of turn.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "trample"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disguise {5}{G}{G} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disguise {5}{G}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

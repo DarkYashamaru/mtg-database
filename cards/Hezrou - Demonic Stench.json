@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "65d257c2-b3be-4244-a74c-bc4b5d7cedc3",
+  "name": "Hezrou // Demonic Stench",
+  "faces": [
+    {
+      "name": "Demonic Stench",
+      "type_line": "Instant \u2014 Adventure",
+      "oracle_text": "Each creature that blocked this turn gets -1/-1 until end of turn. (Then exile this card. You may cast the creature later from exile.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Each creature that blocked this turn gets -1/-1 until end of turn. (Then exile this card. You may cast the creature later from exile.)",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "each_creature_that_blocked_this_turn",
+              "power_delta": -1,
+              "toughness_delta": -1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hezrou",
+      "type_line": "Creature \u2014 Frog Demon",
+      "oracle_text": "Whenever one or more creatures you control become blocked, each blocking creature gets -1/-1 until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever one or more creatures you control become blocked, each blocking creature gets -1/-1 until end of turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever one or more creatures you control become blocked"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "each_blocking_creature",
+              "power_delta": -1,
+              "toughness_delta": -1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

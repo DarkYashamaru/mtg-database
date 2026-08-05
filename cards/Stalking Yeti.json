@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e79e67db-3f2e-4002-9e6c-8f06ca9d8af4",
+  "name": "Stalking Yeti",
+  "faces": [
+    {
+      "name": "Stalking Yeti",
+      "type_line": "Snow Creature \u2014 Yeti",
+      "oracle_text": "When this creature enters, if it's on the battlefield, it deals damage equal to its power to target creature an opponent controls and that creature deals damage equal to its power to this creature.\n{2}{S}: Return this creature to its owner's hand. Activate only as a sorcery. ({S} can be paid with one mana from a snow source.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, if it's on the battlefield, it deals damage equal to its power to target creature an opponent controls and that creature deals damage equal to its power to this creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "it's on the battlefield"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals damage equal to its power to target creature an opponent controls and that creature deals damage equal to its power to this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{S}: Return this creature to its owner's hand. Activate only as a sorcery. ({S} can be paid with one mana from a snow source.)",
+          "cost": "{2}{S}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "hand",
+              "owner": "its_owner"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

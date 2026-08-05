@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5277a68e-1ceb-4b40-8e10-3d0564f5d7be",
+  "name": "Jace, Wielder of Mysteries",
+  "faces": [
+    {
+      "name": "Jace, Wielder of Mysteries",
+      "type_line": "Legendary Planeswalker \u2014 Jace",
+      "oracle_text": "If you would draw a card while your library has no cards in it, you win the game instead.\n+1: Target player mills two cards. Draw a card.\n\u22128: Draw seven cards. Then if your library has no cards in it, you win the game.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Target player mills two cards. Draw a card.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player mills two cards"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22128: Draw seven cards. Then if your library has no cards in it, you win the game.",
+          "cost": "\u22128",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 7
+            },
+            {
+              "action": "win_the_game",
+              "condition": [
+                {
+                  "condition_text": "your library has no cards in it"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If you would draw a card while your library has no cards in it, you win the game instead.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you win the game instead",
+              "condition": [
+                {
+                  "condition_text": "you would draw a card while your library has no cards in it"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

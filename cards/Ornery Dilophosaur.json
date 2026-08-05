@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8291bc2e-ef58-4bd4-b261-b587142bbb1c",
+  "name": "Ornery Dilophosaur",
+  "faces": [
+    {
+      "name": "Ornery Dilophosaur",
+      "type_line": "Creature \u2014 Dinosaur",
+      "oracle_text": "Deathtouch (Any amount of damage this deals to a creature is enough to destroy it.)\nWhenever this creature attacks, if you control a creature with power 4 or greater, this creature gets +2/+2 until end of turn.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, if you control a creature with power 4 or greater, this creature gets +2/+2 until end of turn.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control a creature with power 4 or greater"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

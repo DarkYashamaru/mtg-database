@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "oracle_id": "30820f71-9fd4-453c-b377-c2e0b01c07a7",
+  "name": "Waterlogged Hulk // Watertight Gondola",
+  "faces": [
+    {
+      "name": "Waterlogged Hulk",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Mill a card. (Put the top card of your library into your graveyard.)\nCraft with Island {3}{U} ({3}{U}, Exile this artifact, Exile an Island you control or an Island card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Mill a card. (Put the top card of your library into your graveyard.)",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Craft with Island {3}{U} ({3}{U}, Exile this artifact, Exile an Island you control or an Island card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.)",
+          "cost": "Craft with Island {3}{U} ({3}{U}, Exile this artifact, Exile an Island you control or an Island card from your graveyard",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "target": "self",
+              "destination_zone": "battlefield",
+              "controller": "its_owner",
+              "transformed": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Watertight Gondola",
+      "type_line": "Artifact \u2014 Vehicle",
+      "oracle_text": "Vigilance\nDescend 8 \u2014 This Vehicle can't be blocked as long as there are eight or more permanent cards in your graveyard.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Crew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Descend 8 \u2014 This Vehicle can't be blocked as long as there are eight or more permanent cards in your graveyard.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Descend 8 \u2014 This Vehicle can't be blocked as long as there are eight or more permanent cards in your graveyard"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

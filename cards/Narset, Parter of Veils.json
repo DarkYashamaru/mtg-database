@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ab26fbe2-e808-48b9-8d0d-3fbb6c3d554f",
+  "name": "Narset, Parter of Veils",
+  "faces": [
+    {
+      "name": "Narset, Parter of Veils",
+      "type_line": "Legendary Planeswalker \u2014 Narset",
+      "oracle_text": "Each opponent can't draw more than one card each turn.\n\u22122: Look at the top four cards of your library. You may reveal a noncreature, nonland card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "\u22122: Look at the top four cards of your library. You may reveal a noncreature, nonland card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "not_card_types": [
+                  "Creature",
+                  "Land"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Each opponent can't draw more than one card each turn.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Each opponent can't draw more than one card each turn"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

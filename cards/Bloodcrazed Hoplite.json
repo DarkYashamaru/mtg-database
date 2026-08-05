@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b1f441ce-7619-4ab5-ab36-724ed0a76728",
+  "name": "Bloodcrazed Hoplite",
+  "faces": [
+    {
+      "name": "Bloodcrazed Hoplite",
+      "type_line": "Creature \u2014 Human Soldier",
+      "oracle_text": "Heroic \u2014 Whenever you cast a spell that targets this creature, put a +1/+1 counter on it.\nWhenever a +1/+1 counter is put on this creature, remove a +1/+1 counter from target creature an opponent controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a spell that targets this creature, put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "that targets this creature"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a +1/+1 counter is put on this creature, remove a +1/+1 counter from target creature an opponent controls.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a +1/+1 counter is put on this creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "remove a +1/+1 counter from target creature an opponent controls"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

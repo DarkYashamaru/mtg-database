@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f29dc596-2121-4421-8463-15f6c2e8b9b3",
+  "name": "Rogue's Passage",
+  "faces": [
+    {
+      "name": "Rogue's Passage",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}.\n{4}, {T}: Target creature can't be blocked this turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{4}, {T}: Target creature can't be blocked this turn.",
+          "cost": "{4}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "target_creature",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1d84fb81-2de5-4be1-9638-9ae28e3d867a",
+  "name": "Mage-Ring Responder",
+  "faces": [
+    {
+      "name": "Mage-Ring Responder",
+      "type_line": "Artifact Creature \u2014 Golem",
+      "oracle_text": "This creature doesn't untap during your untap step.\n{7}: Untap this creature.\nWhenever this creature attacks, it deals 7 damage to target creature defending player controls.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it deals 7 damage to target creature defending player controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals 7 damage to target creature defending player controls"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{7}: Untap this creature.",
+          "cost": "{7}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This creature doesn't untap during your untap step.",
+          "effects": [
+            {
+              "action": "untap_restriction",
+              "target": "self",
+              "scope": "your_untap_step"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9aaf1149-eccb-434a-a1a7-14b93fa50141",
+  "name": "Tombstone Stairwell",
+  "faces": [
+    {
+      "name": "Tombstone Stairwell",
+      "type_line": "World Enchantment",
+      "oracle_text": "Cumulative upkeep {1}{B} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)\nAt the beginning of each upkeep, if this enchantment is on the battlefield, each player creates a 2/2 black Zombie creature token with haste named Tombspawn for each creature card in their graveyard.\nAt the beginning of each end step and when this enchantment leaves the battlefield, destroy all tokens created with this enchantment. They can't be regenerated.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each upkeep, if this enchantment is on the battlefield, each player creates a 2/2 black Zombie creature token with haste named Tombspawn for each creature card in their graveyard.",
+          "trigger": {
+            "type": "beginning_of_each_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "this enchantment is on the battlefield"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player creates a 2/2 black Zombie creature token with haste named Tombspawn for each creature card in their graveyard"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of each end step and when this enchantment leaves the battlefield, destroy all tokens created with this enchantment. They can't be regenerated.",
+          "trigger": {
+            "type": "beginning_of_each_end_step_and_when_this_enchantment_leaves_the_battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy all tokens created with this enchantment"
+            },
+            {
+              "action": "cant_be_regenerated",
+              "target": "previous_targets"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Cumulative upkeep {1}{B} (At the beginning of your upkeep, put an age counter on this permanent, then sacrifice it unless you pay its upkeep cost for each age counter on it.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Cumulative upkeep {1}{B}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d343c116-b33a-4ed6-ad15-d7270e739b04",
+  "name": "Aspiring Champion",
+  "faces": [
+    {
+      "name": "Aspiring Champion",
+      "type_line": "Creature \u2014 Astartes Warrior",
+      "oracle_text": "Menace\nRuinous Ascension \u2014 When this creature deals combat damage to a player, sacrifice it. If you do, reveal cards from the top of your library until you reveal a creature card. Put that card onto the battlefield, then shuffle the rest into your library. If that creature is a Demon, it deals damage equal to its power to each opponent.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature deals combat damage to a player, sacrifice it. If you do, reveal cards from the top of your library until you reveal a creature card. Put that card onto the battlefield, then shuffle the rest into your library. If that creature is a Demon, it deals damage equal to its power to each opponent.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "self"
+            },
+            {
+              "action": "custom_effect",
+              "text": "reveal cards from the top of your library until you reveal a creature card",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put that card onto the battlefield"
+            },
+            {
+              "action": "custom_effect",
+              "text": "shuffle the rest into your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it deals damage equal to its power to each opponent",
+              "condition": [
+                {
+                  "condition_text": "that creature is a demon"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

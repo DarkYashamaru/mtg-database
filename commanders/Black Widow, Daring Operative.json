@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e8815686-8c47-4067-9dfa-744b2f5c1ba2",
+  "name": "Black Widow, Daring Operative",
+  "faces": [
+    {
+      "name": "Black Widow, Daring Operative",
+      "type_line": "Legendary Creature \u2014 Human Spy Hero",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhen Black Widow enters, mill three cards. (Put the top three cards of your library into your graveyard.)\nWhenever Black Widow deals combat damage to a player, each opponent loses life equal to the number of creature cards in your graveyard.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Black Widow enters, mill three cards. (Put the top three cards of your library into your graveyard.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "mill_cards",
+              "player": "you",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever Black Widow deals combat damage to a player, each opponent loses life equal to the number of creature cards in your graveyard.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each opponent loses life equal to the number of creature cards in your graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

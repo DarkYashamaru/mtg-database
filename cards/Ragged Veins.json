@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c111703f-e37a-4eaf-b6e1-708a448e61aa",
+  "name": "Ragged Veins",
+  "faces": [
+    {
+      "name": "Ragged Veins",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash\nEnchant creature\nWhenever enchanted creature is dealt damage, its controller loses that much life.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever enchanted creature is dealt damage, its controller loses that much life.",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "its controller loses that much life"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

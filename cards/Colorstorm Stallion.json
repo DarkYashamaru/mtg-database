@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "47ee6837-2e2f-4344-ab9f-6b8887874f77",
+  "name": "Colorstorm Stallion",
+  "faces": [
+    {
+      "name": "Colorstorm Stallion",
+      "type_line": "Creature \u2014 Elemental Horse",
+      "oracle_text": "Ward {1}, haste\nOpus \u2014 Whenever you cast an instant or sorcery spell, this creature gets +1/+1 until end of turn. If five or more mana was spent to cast that spell, create a token that's a copy of this creature.",
+      "static": [
+        {
+          "keyword": "ward",
+          "amount": 1
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell, this creature gets +1/+1 until end of turn. If five or more mana was spent to cast that spell, create a token that's a copy of this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "instant",
+                "sorcery"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "create a token that's a copy of this creature",
+              "condition": [
+                {
+                  "condition_text": "five or more mana was spent to cast that spell"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5c43c1d7-1899-45c1-992b-443873890d78",
+  "name": "Dryad Greenseeker",
+  "faces": [
+    {
+      "name": "Dryad Greenseeker",
+      "type_line": "Creature \u2014 Dryad",
+      "oracle_text": "{T}: Look at the top card of your library. If it's a land card, you may reveal it and put it into your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Look at the top card of your library. If it's a land card, you may reveal it and put it into your hand.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Look at the top card of your library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you may reveal it",
+              "condition": [
+                {
+                  "condition_text": "it's a land card"
+                }
+              ]
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

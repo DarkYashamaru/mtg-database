@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "oracle_id": "432b37a5-d32a-4b78-91ab-860aa026b7cc",
+  "name": "Archangel Avacyn // Avacyn, the Purifier",
+  "faces": [
+    {
+      "name": "Archangel Avacyn",
+      "type_line": "Legendary Creature \u2014 Angel",
+      "oracle_text": "Flash\nFlying, vigilance\nWhen Archangel Avacyn enters, creatures you control gain indestructible until end of turn.\nWhen a non-Angel creature you control dies, transform Archangel Avacyn at the beginning of the next upkeep.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Archangel Avacyn enters, creatures you control gain indestructible until end of turn.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "creatures_you_control",
+              "keyword": "indestructible"
+            }
+          ]
+        },
+        {
+          "raw_text": "When a non-Angel creature you control dies, transform Archangel Avacyn at the beginning of the next upkeep.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Non-angel"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "transform",
+              "target": "self_at_the_beginning_of_the_next_upkeep"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Avacyn, the Purifier",
+      "type_line": "Legendary Creature \u2014 Angel",
+      "oracle_text": "Flying\nWhen this creature transforms into Avacyn, the Purifier, it deals 3 damage to each other creature and each opponent.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature transforms into Avacyn, the Purifier, it deals 3 damage to each other creature and each opponent.",
+          "trigger": {
+            "type": "custom",
+            "text": "When this creature transforms into Avacyn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "the Purifier, it deals 3 damage to each other creature and each opponent"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

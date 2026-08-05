@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4bc91d7d-37aa-475c-8fe9-763975d51add",
+  "name": "Goblin Marshal",
+  "faces": [
+    {
+      "name": "Goblin Marshal",
+      "type_line": "Creature \u2014 Goblin Warrior",
+      "oracle_text": "Echo {4}{R}{R} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nWhen this creature enters or dies, create two 1/1 red Goblin creature tokens.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters or dies, create two 1/1 red Goblin creature tokens.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self_enters_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "1/1 red Goblin creature tokens",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Goblin"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Echo {4}{R}{R} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Echo {4}{R}{R}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

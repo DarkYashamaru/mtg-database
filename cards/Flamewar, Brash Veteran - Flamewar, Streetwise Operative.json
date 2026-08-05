@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cf812f1e-f48a-4375-8d2c-f6e3cb82e067",
+  "name": "Flamewar, Brash Veteran // Flamewar, Streetwise Operative",
+  "faces": [
+    {
+      "name": "Flamewar, Brash Veteran",
+      "type_line": "Legendary Artifact Creature \u2014 Robot",
+      "oracle_text": "More Than Meets the Eye {B}{R} (You may cast this card converted for {B}{R}.)\nSacrifice another artifact: Put a +1/+1 counter on Flamewar and convert it. Activate only as a sorcery.\n{1}, Discard your hand: Put all exiled cards you own with intel counters on them into your hand.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Sacrifice another artifact: Put a +1/+1 counter on Flamewar and convert it. Activate only as a sorcery.",
+          "cost": "Sacrifice another artifact",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_and_convert_it",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "{1}, Discard your hand: Put all exiled cards you own with intel counters on them into your hand.",
+          "cost": "{1}, Discard your hand",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put all exiled cards you own with intel counters on them into your hand"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "More Than Meets the Eye {B}{R} (You may cast this card converted for {B}{R}.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "More Than Meets the Eye {B}{R}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flamewar, Streetwise Operative",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Living metal (During your turn, this Vehicle is also a creature.)\nMenace, deathtouch\nWhenever Flamewar deals combat damage to a player, exile that many cards from the top of your library face down. Put an intel counter on each of them. Convert Flamewar.",
+      "static": [
+        {
+          "keyword": "menace"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Flamewar deals combat damage to a player, exile that many cards from the top of your library face down. Put an intel counter on each of them. Convert Flamewar.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile that many cards from the top of your library face down"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put an intel counter on each of them"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Convert Flamewar"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Living metal (During your turn, this Vehicle is also a creature.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Living metal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

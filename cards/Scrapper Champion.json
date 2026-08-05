@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4fa99dc1-c2d2-4b21-8511-e3d86626609d",
+  "name": "Scrapper Champion",
+  "faces": [
+    {
+      "name": "Scrapper Champion",
+      "type_line": "Creature \u2014 Human Artificer",
+      "oracle_text": "Double strike (This creature deals both first-strike and regular combat damage.)\nWhen this creature enters, you get {E}{E} (two energy counters).\nWhenever this creature attacks, you may pay {E}{E}. If you do, put a +1/+1 counter on it.",
+      "static": [
+        {
+          "keyword": "double strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E} (two energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, you may pay {E}{E}. If you do, put a +1/+1 counter on it.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {E}{E}"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

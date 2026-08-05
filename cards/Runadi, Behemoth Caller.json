@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "oracle_id": "95dc1f55-9dad-4a35-ac5e-abc53d442ffb",
+  "name": "Runadi, Behemoth Caller",
+  "faces": [
+    {
+      "name": "Runadi, Behemoth Caller",
+      "type_line": "Legendary Creature \u2014 Cat Shaman",
+      "oracle_text": "Whenever you cast a creature spell with mana value 5 or greater, that creature enters with X additional +1/+1 counters on it, where X is its mana value minus 4.\nCreatures you control with three or more +1/+1 counters on them have haste.\n{T}: Add {G}.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a creature spell with mana value 5 or greater, that creature enters with X additional +1/+1 counters on it, where X is its mana value minus 4.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 5
+            },
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that creature enters with X additional +1/+1 counters on it, where X is its mana value minus 4"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Creatures you control with three or more +1/+1 counters on them have haste.",
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "creatures_you_control_with_three_or_more_11_counters_on_self"
+              },
+              "keywords": [
+                "haste"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2f6e9ab8-6951-4c5f-bcde-0e96e0fe87f2",
+  "name": "Exalted Angel",
+  "faces": [
+    {
+      "name": "Exalted Angel",
+      "type_line": "Creature \u2014 Angel",
+      "oracle_text": "Flying\nWhenever this creature deals damage, you gain that much life.\nMorph {2}{W}{W} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals damage, you gain that much life.",
+          "trigger": {
+            "type": "deals_damage",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": "that_much"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Morph {2}{W}{W} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morph {2}{W}{W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

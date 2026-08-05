@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "467ea3e3-7767-405a-9d1a-8fa5de696376",
+  "name": "Gempalm Incinerator",
+  "faces": [
+    {
+      "name": "Gempalm Incinerator",
+      "type_line": "Creature \u2014 Goblin",
+      "oracle_text": "Cycling {1}{R} ({1}{R}, Discard this card: Draw a card.)\nWhen you cycle this card, you may have it deal X damage to target creature, where X is the number of Goblins on the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When you cycle this card, you may have it deal X damage to target creature, where X is the number of Goblins on the battlefield.",
+          "trigger": {
+            "type": "cycle_this_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may have it deal X damage to target creature, where X is the number of Goblins on the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Cycling {1}{R} ({1}{R}, Discard this card: Draw a card.)",
+          "cost": "Cycling {1}{R} ({1}{R}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

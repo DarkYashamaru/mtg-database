@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd0a7a86-a567-4145-b1d8-e0b72091db84",
+  "name": "Weapons Vendor",
+  "faces": [
+    {
+      "name": "Weapons Vendor",
+      "type_line": "Creature \u2014 Human Artificer",
+      "oracle_text": "When this creature enters, draw a card.\nAt the beginning of combat on your turn, if you control an Equipment, you may pay {1}. When you do, attach target Equipment you control to target creature you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, if you control an Equipment, you may pay {1}. When you do, attach target Equipment you control to target creature you control.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you control an Equipment"
+            }
+          ],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "attach target equipment you control to target creature you control",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

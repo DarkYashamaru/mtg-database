@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ff0d5cbe-99d3-4d3b-9a5b-80223fc18869",
+  "name": "Updraft",
+  "faces": [
+    {
+      "name": "Updraft",
+      "type_line": "Instant",
+      "oracle_text": "Target creature gains flying until end of turn.\nDraw a card at the beginning of the next turn's upkeep.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature gains flying until end of turn.",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "target_creature",
+              "keyword": "flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "Draw a card at the beginning of the next turn's upkeep.",
+          "effects": [
+            {
+              "action": "create_delayed_trigger",
+              "trigger": {
+                "type": "beginning_of_next_turns_upkeep"
+              },
+              "condition": [],
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

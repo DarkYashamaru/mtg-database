@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "23a79523-4be0-4d17-80aa-5ea024cb3463",
+  "name": "Echoes of Eternity",
+  "faces": [
+    {
+      "name": "Echoes of Eternity",
+      "type_line": "Kindred Enchantment \u2014 Eldrazi",
+      "oracle_text": "If a triggered ability of a colorless spell you control or another colorless permanent you control triggers, that ability triggers an additional time.\nWhenever you cast a colorless spell, copy it. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a colorless spell, copy it. You may choose new targets for the copy. (A copy of a permanent spell becomes a token.)",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Colorles"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "copy it"
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "If a triggered ability of a colorless spell you control or another colorless permanent you control triggers, that ability triggers an additional time.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "that ability triggers an additional time",
+              "condition": [
+                {
+                  "condition_text": "a triggered ability of a colorless spell you control or another colorless permanent you control triggers"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

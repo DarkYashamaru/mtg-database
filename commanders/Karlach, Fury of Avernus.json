@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "037355be-71e7-4866-80a6-80352c304970",
+  "name": "Karlach, Fury of Avernus",
+  "faces": [
+    {
+      "name": "Karlach, Fury of Avernus",
+      "type_line": "Legendary Creature \u2014 Tiefling Barbarian",
+      "oracle_text": "Whenever you attack, if it's the first combat phase of the turn, untap all attacking creatures. They gain first strike until end of turn. After this phase, there is an additional combat phase.\nChoose a Background (You can have a Background as a second commander.)",
+      "static": [
+        {
+          "keyword": "choose_a_background"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you attack, if it's the first combat phase of the turn, untap all attacking creatures. They gain first strike until end of turn. After this phase, there is an additional combat phase.",
+          "trigger": {
+            "type": "attack_declared",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "condition_text": "it's the first combat phase of the turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "untap all attacking creatures"
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "they",
+              "keyword": "first_strike"
+            },
+            {
+              "action": "add_combat_phase_after_this_phase"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

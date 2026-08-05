@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d36f64a0-53f7-4c56-9f40-a7927a5c2608",
+  "name": "Daring Saboteur",
+  "faces": [
+    {
+      "name": "Daring Saboteur",
+      "type_line": "Creature \u2014 Human Pirate",
+      "oracle_text": "{2}{U}: This creature can't be blocked this turn.\nWhenever this creature deals combat damage to a player, you may draw a card. If you do, discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{2}{U}: This creature can't be blocked this turn.",
+          "cost": "{2}{U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "combat_restriction_until_end_of_turn",
+              "target": "self",
+              "restriction": "cant_be_blocked"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "214cfbc8-369e-4035-9b65-80d0e0024889",
+  "name": "Cryptic Pursuit",
+  "faces": [
+    {
+      "name": "Cryptic Pursuit",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever you cast an instant or sorcery spell from your hand, manifest the top card of your library. (Put that card onto the battlefield face down as a 2/2 creature. Turn it face up any time for its mana cost if it's a creature card.)\nWhenever a face-down creature you control dies, exile it if it's an instant or sorcery card. You may cast that card until the end of your next turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast an instant or sorcery spell from your hand, manifest the top card of your library. (Put that card onto the battlefield face down as a 2/2 creature. Turn it face up any time for its mana cost if it's a creature card.)",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast an instant or sorcery spell from your hand"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "manifest the top card of your library"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a face-down creature you control dies, exile it if it's an instant or sorcery card. You may cast that card until the end of your next turn.",
+          "trigger": {
+            "type": "dies",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Face-down"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile it if it's an instant or sorcery card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may cast that card until the end of your next turn"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

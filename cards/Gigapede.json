@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9be31785-2975-424f-aada-25ee2a0bf6d8",
+  "name": "Gigapede",
+  "faces": [
+    {
+      "name": "Gigapede",
+      "type_line": "Creature \u2014 Insect",
+      "oracle_text": "Shroud (This creature can't be the target of spells or abilities.)\nAt the beginning of your upkeep, if this card is in your graveyard, you may discard a card. If you do, return this card to your hand.",
+      "static": [
+        {
+          "keyword": "shroud"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if this card is in your graveyard, you may discard a card. If you do, return this card to your hand.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "this card is in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "return this card to your hand",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

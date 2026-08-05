@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "oracle_id": "503094aa-6f8f-42c1-ad5a-9305934e5f0c",
+  "name": "Myrel, Shield of Argive",
+  "faces": [
+    {
+      "name": "Myrel, Shield of Argive",
+      "type_line": "Legendary Creature \u2014 Human Soldier",
+      "oracle_text": "During your turn, your opponents can't cast spells or activate abilities of artifacts, creatures, or enchantments.\nWhenever Myrel attacks, create X 1/1 colorless Soldier artifact creature tokens, where X is the number of Soldiers you control.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Myrel attacks, create X 1/1 colorless Soldier artifact creature tokens, where X is the number of Soldiers you control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "count",
+              "count_object": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Soldier"
+                ]
+              },
+              "token": {
+                "raw": "1/1 colorless Soldier artifact creature tokens",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Soldier",
+                  "artifact"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "During your turn, your opponents can't cast spells or activate abilities of artifacts, creatures, or enchantments.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "During your turn, your opponents can't cast spells or activate abilities of artifacts, creatures, or enchantments"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

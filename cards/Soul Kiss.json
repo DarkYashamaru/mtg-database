@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8ea941aa-ee0c-4830-912a-0c672546aa0c",
+  "name": "Soul Kiss",
+  "faces": [
+    {
+      "name": "Soul Kiss",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\n{B}, Pay 1 life: Enchanted creature gets +2/+2 until end of turn. Activate no more than three times each turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{B}, Pay 1 life: Enchanted creature gets +2/+2 until end of turn. Activate no more than three times each turn.",
+          "cost": "{B}, Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "enchanted_creature",
+              "power_delta": 2,
+              "toughness_delta": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Activate no more than three times each turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

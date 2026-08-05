@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "787e6a7b-64f9-48ba-bccd-68dda3489b0f",
+  "name": "Jocasta, Automaton Avenger",
+  "faces": [
+    {
+      "name": "Jocasta, Automaton Avenger",
+      "type_line": "Legendary Artifact Creature \u2014 Robot Hero",
+      "oracle_text": "Flying\nWhenever your commander deals combat damage to a player, put a +1/+1 counter on Jocasta.\nWhenever you attack with your commander, if this card is in your graveyard, you may return it to the battlefield tapped and attacking.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever your commander deals combat damage to a player, put a +1/+1 counter on Jocasta.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "your_commander"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you attack with your commander, if this card is in your graveyard, you may return it to the battlefield tapped and attacking.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you attack with your commander"
+          },
+          "condition": [
+            {
+              "condition_text": "this card is in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may return it to the battlefield tapped and attacking"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

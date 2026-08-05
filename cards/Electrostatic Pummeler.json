@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "79676f10-9fca-4bca-acc5-6994955142b4",
+  "name": "Electrostatic Pummeler",
+  "faces": [
+    {
+      "name": "Electrostatic Pummeler",
+      "type_line": "Artifact Creature \u2014 Construct",
+      "oracle_text": "When this creature enters, you get {E}{E}{E} (three energy counters).\nPay {E}{E}{E}: This creature gets +X/+X until end of turn, where X is its power.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you get {E}{E}{E} (three energy counters).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "get_energy",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Pay {E}{E}{E}: This creature gets +X/+X until end of turn, where X is its power.",
+          "cost": "Pay {E}{E}{E}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This creature gets +X/+X until end of turn, where X is its power"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

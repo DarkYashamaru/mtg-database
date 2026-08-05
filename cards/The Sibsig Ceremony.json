@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bbdb731d-c533-48ef-b82a-cf1a8ba36208",
+  "name": "The Sibsig Ceremony",
+  "faces": [
+    {
+      "name": "The Sibsig Ceremony",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "Creature spells you cast cost {2} less to cast.\nWhenever a creature you control enters, if you cast it, destroy that creature, then create a 2/2 black Zombie Druid creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature you control enters, if you cast it, destroy that creature, then create a 2/2 black Zombie Druid creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [
+            {
+              "condition_text": "you cast it"
+            }
+          ],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": "that_creature"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "2/2 black zombie druid creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "2/2",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "zombie",
+                  "druid"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Creature spells you cast cost {2} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Creature spells you cast cost {2} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9808c424-0d74-45b8-a092-fd296c6833d2",
+  "name": "Orzhov Keyrune",
+  "faces": [
+    {
+      "name": "Orzhov Keyrune",
+      "type_line": "Artifact",
+      "oracle_text": "{T}: Add {W} or {B}.\n{W}{B}: This artifact becomes a 1/4 white and black Thrull artifact creature with lifelink until end of turn.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W} or {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}",
+                "{b}"
+              ],
+              "distribution": "choose_one"
+            }
+          ]
+        },
+        {
+          "raw_text": "{W}{B}: This artifact becomes a 1/4 white and black Thrull artifact creature with lifelink until end of turn.",
+          "cost": "{W}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This artifact becomes a 1/4 white and black Thrull artifact creature with lifelink until end of turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

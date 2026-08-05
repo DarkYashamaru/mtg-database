@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "89b24b5f-d837-4274-8877-8ff7dc2708ba",
+  "name": "Drana, Liberator of Malakir",
+  "faces": [
+    {
+      "name": "Drana, Liberator of Malakir",
+      "type_line": "Legendary Creature \u2014 Vampire Ally",
+      "oracle_text": "Flying, first strike\nWhenever Drana deals combat damage to a player, put a +1/+1 counter on each attacking creature you control.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "first strike"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Drana deals combat damage to a player, put a +1/+1 counter on each attacking creature you control.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Attacking"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

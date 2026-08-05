@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f8975d81-d373-49b1-be00-9513b92877d9",
+  "name": "Sizzling Soloist",
+  "faces": [
+    {
+      "name": "Sizzling Soloist",
+      "type_line": "Creature \u2014 Human Citizen",
+      "oracle_text": "Alliance \u2014 Whenever another creature you control enters, target creature an opponent controls can't block this turn. If this is the second time this ability has resolved this turn, that creature attacks during its controller's next combat phase if able.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever another creature you control enters, target creature an opponent controls can't block this turn. If this is the second time this ability has resolved this turn, that creature attacks during its controller's next combat phase if able.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "target creature an opponent controls can't block this turn"
+            },
+            {
+              "action": "custom_effect",
+              "text": "that creature attacks during its controller's next combat phase if able",
+              "condition": [
+                {
+                  "ability_resolution_count_this_turn": 2
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

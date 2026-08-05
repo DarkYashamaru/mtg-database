@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "oracle_id": "abcb5321-c295-4abf-8622-7de79679d27a",
+  "name": "Depressurize",
+  "faces": [
+    {
+      "name": "Depressurize",
+      "type_line": "Instant",
+      "oracle_text": "Target creature gets -3/-0 until end of turn. Then if that creature's power is 0 or less, destroy it.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature gets -3/-0 until end of turn. Then if that creature's power is 0 or less, destroy it.",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": -3,
+              "toughness_delta": 0
+            },
+            {
+              "action": "destroy",
+              "target": "it",
+              "condition": [
+                {
+                  "condition_text": "that creature's power is 0 or less"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

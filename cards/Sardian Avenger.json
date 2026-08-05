@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6db90f86-205a-4e0b-944b-74742bc4e59d",
+  "name": "Sardian Avenger",
+  "faces": [
+    {
+      "name": "Sardian Avenger",
+      "type_line": "Creature \u2014 Goblin Warrior",
+      "oracle_text": "First strike, trample\nWhenever this creature attacks, it gets +X/+0 until end of turn, where X is the number of artifacts your opponents control.\nWhenever an artifact an opponent controls is put into a graveyard from the battlefield, this creature deals 1 damage to that player.",
+      "static": [
+        {
+          "keyword": "first strike"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, it gets +X/+0 until end of turn, where X is the number of artifacts your opponents control.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it gets +X/+0 until end of turn, where X is the number of artifacts your opponents control"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an artifact an opponent controls is put into a graveyard from the battlefield, this creature deals 1 damage to that player.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an artifact an opponent controls is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this creature deals 1 damage to that player"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

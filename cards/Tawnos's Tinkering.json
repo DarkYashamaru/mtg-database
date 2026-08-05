@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd101a9b-4c1e-44c8-b9ef-cd79c4d28f36",
+  "name": "Tawnos's Tinkering",
+  "faces": [
+    {
+      "name": "Tawnos's Tinkering",
+      "type_line": "Instant",
+      "oracle_text": "Put two +1/+1 counters on target artifact, creature, or land you control. Untap that permanent. If it isn't a creature, it becomes a 0/0 creature in addition to its other types.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Put two +1/+1 counters on target artifact, creature, or land you control. Untap that permanent. If it isn't a creature, it becomes a 0/0 creature in addition to its other types.",
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "target_artifact_creature_or_land_you_control"
+              },
+              "amount": 2
+            },
+            {
+              "action": "custom_effect",
+              "text": "Untap that permanent"
+            },
+            {
+              "action": "custom_effect",
+              "text": "it becomes a 0/0 creature in addition to its other types",
+              "condition": [
+                {
+                  "condition_text": "it isn't a creature"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

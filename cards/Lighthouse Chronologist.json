@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b19ff0dd-2041-461f-aa62-6dc273e4bbe5",
+  "name": "Lighthouse Chronologist",
+  "faces": [
+    {
+      "name": "Lighthouse Chronologist",
+      "type_line": "Creature \u2014 Human Wizard",
+      "oracle_text": "Level up {U} ({U}: Put a level counter on this. Level up only as a sorcery.)\nLEVEL 4-6\n2/4\nLEVEL 7+\n3/5\nAt the beginning of each end step, if it's not your turn, take an extra turn after this one.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each end step, if it's not your turn, take an extra turn after this one.",
+          "trigger": {
+            "type": "beginning_of_each_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "it's not your turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "take an extra turn after this one"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Level up {U} ({U}: Put a level counter on this. Level up only as a sorcery.)",
+          "cost": "Level up {U} ({U}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a level counter on this"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Level up only as a sorcery"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "LEVEL 4-6",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "LEVEL 4-6"
+            }
+          ]
+        },
+        {
+          "raw_text": "2/4",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "2/4"
+            }
+          ]
+        },
+        {
+          "raw_text": "LEVEL 7+",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "LEVEL 7+"
+            }
+          ]
+        },
+        {
+          "raw_text": "3/5",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "3/5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

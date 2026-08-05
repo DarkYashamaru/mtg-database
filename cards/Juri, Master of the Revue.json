@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3364bad6-6d0a-4141-b410-86e3d9e1916e",
+  "name": "Juri, Master of the Revue",
+  "faces": [
+    {
+      "name": "Juri, Master of the Revue",
+      "type_line": "Legendary Creature \u2014 Human Shaman",
+      "oracle_text": "Whenever you sacrifice a permanent, put a +1/+1 counter on Juri.\nWhen Juri dies, it deals damage equal to its power to any target.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you sacrifice a permanent, put a +1/+1 counter on Juri.",
+          "trigger": {
+            "type": "sacrifice_permanent",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "When Juri dies, it deals damage equal to its power to any target.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "it deals damage equal to its power to any target"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

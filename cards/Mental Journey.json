@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "94e71162-7c9d-46f4-90e8-413a1b08a198",
+  "name": "Mental Journey",
+  "faces": [
+    {
+      "name": "Mental Journey",
+      "type_line": "Instant",
+      "oracle_text": "Draw three cards.\nBasic landcycling {1}{U} ({1}{U}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Basic landcycling {1}{U} ({1}{U}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Basic landcycling {1}{U} ({1}{U}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Draw three cards.",
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

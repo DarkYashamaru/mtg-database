@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "10d24900-cd40-4c98-bb1e-b9e66113f703",
+  "name": "Dog Walker",
+  "faces": [
+    {
+      "name": "Dog Walker",
+      "type_line": "Creature \u2014 Human Citizen",
+      "oracle_text": "Vigilance\nDisguise {R/W}{R/W} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)\nWhen this creature is turned face up, create two tapped 1/1 white Dog creature tokens.",
+      "static": [
+        {
+          "keyword": "vigilance"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature is turned face up, create two tapped 1/1 white Dog creature tokens.",
+          "trigger": {
+            "type": "turned_face_up",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "tapped 1/1 white Dog creature tokens",
+                "colors": [
+                  "white"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Dog"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Disguise {R/W}{R/W} (You may cast this card face down for {3} as a 2/2 creature with ward {2}. Turn it face up any time for its disguise cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Disguise {R/W}{R/W}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

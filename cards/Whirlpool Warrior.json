@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b7a1c54b-bb2f-4423-865a-ad114cd18c76",
+  "name": "Whirlpool Warrior",
+  "faces": [
+    {
+      "name": "Whirlpool Warrior",
+      "type_line": "Creature \u2014 Merfolk Warrior",
+      "oracle_text": "When this creature enters, shuffle the cards from your hand into your library, then draw that many cards.\n{R}, Sacrifice this creature: Each player shuffles the cards from their hand into their library, then draws that many cards.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, shuffle the cards from your hand into your library, then draw that many cards.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "shuffle the cards from your hand into your library"
+            },
+            {
+              "action": "draw_cards",
+              "amount": "trigger_count",
+              "count_source": "triggering_subject"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{R}, Sacrifice this creature: Each player shuffles the cards from their hand into their library, then draws that many cards.",
+          "cost": "{R}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player shuffles the cards from their hand into their library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "draws that many cards"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

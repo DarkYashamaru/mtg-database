@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c8ff464f-0059-4055-a2f2-556fe6db8fbf",
+  "name": "Sunscorch Regent",
+  "faces": [
+    {
+      "name": "Sunscorch Regent",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever an opponent casts a spell, put a +1/+1 counter on this creature and you gain 1 life.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever an opponent casts a spell, put a +1/+1 counter on this creature and you gain 1 life.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "an_opponent"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

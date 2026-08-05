@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "ba5895e1-f12b-43c7-b47c-376588d9d2d2",
+  "name": "Neva, Stalked by Nightmares",
+  "faces": [
+    {
+      "name": "Neva, Stalked by Nightmares",
+      "type_line": "Legendary Creature \u2014 Human Noble",
+      "oracle_text": "Menace\nWhen Neva enters, return target creature or enchantment card from your graveyard to your hand.\nWhenever an enchantment you control is put into a graveyard from the battlefield, put a +1/+1 counter on Neva, then scry 1.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When Neva enters, return target creature or enchantment card from your graveyard to your hand.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return target creature or enchantment card from your graveyard to your hand"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever an enchantment you control is put into a graveyard from the battlefield, put a +1/+1 counter on Neva, then scry 1.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever an enchantment you control is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            },
+            {
+              "action": "scry",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

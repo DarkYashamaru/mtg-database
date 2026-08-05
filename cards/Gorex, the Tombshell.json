@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "04238d49-941e-4298-8ef6-8e8e723f4034",
+  "name": "Gorex, the Tombshell",
+  "faces": [
+    {
+      "name": "Gorex, the Tombshell",
+      "type_line": "Legendary Creature \u2014 Zombie Turtle",
+      "oracle_text": "As an additional cost to cast this spell, you may exile any number of creature cards from your graveyard. This spell costs {2} less to cast for each card exiled this way.\nDeathtouch\nWhenever Gorex attacks or dies, choose a card at random exiled with Gorex and put that card into its owner's hand.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Gorex attacks or dies, choose a card at random exiled with Gorex and put that card into its owner's hand.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self_attacks_or"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "choose a card at random exiled with Gorex and put that card into its owner's hand"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As an additional cost to cast this spell, you may exile any number of creature cards from your graveyard. This spell costs {2} less to cast for each card exiled this way.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As an additional cost to cast this spell, you may exile any number of creature cards from your graveyard"
+            },
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {2} less to cast for each card exiled this way"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

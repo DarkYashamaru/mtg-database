@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2f57a220-9f64-4143-979a-d6aaf63d49b2",
+  "name": "Treetop Snarespinner",
+  "faces": [
+    {
+      "name": "Treetop Snarespinner",
+      "type_line": "Creature \u2014 Spider",
+      "oracle_text": "Reach (This creature can block creatures with flying.)\nDeathtouch (Any amount of damage this deals to a creature is enough to destroy it.)\n{2}{G}: Put a +1/+1 counter on target creature you control. Activate only as a sorcery.",
+      "static": [
+        {
+          "keyword": "reach"
+        },
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{G}: Put a +1/+1 counter on target creature you control. Activate only as a sorcery.",
+          "cost": "{2}{G}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes": [
+                  "Target"
+                ]
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

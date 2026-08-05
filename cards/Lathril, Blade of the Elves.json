@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9b568c34-ba0a-44a7-a0ee-bee3a37b3396",
+  "name": "Lathril, Blade of the Elves",
+  "faces": [
+    {
+      "name": "Lathril, Blade of the Elves",
+      "type_line": "Legendary Creature \u2014 Elf Noble",
+      "oracle_text": "Menace (This creature can't be blocked except by two or more creatures.)\nWhenever Lathril deals combat damage to a player, create that many 1/1 green Elf Warrior creature tokens.\n{T}, Tap ten untapped Elves you control: Each opponent loses 10 life and you gain 10 life.",
+      "static": [
+        {
+          "keyword": "menace"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Lathril deals combat damage to a player, create that many 1/1 green Elf Warrior creature tokens.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": "that",
+              "token": {
+                "raw": "many 1/1 green Elf Warrior creature tokens",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Elf",
+                  "Warrior"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}, Tap ten untapped Elves you control: Each opponent loses 10 life and you gain 10 life.",
+          "cost": "{T}, Tap ten untapped Elves you control",
+          "condition": [],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 10
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 10
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

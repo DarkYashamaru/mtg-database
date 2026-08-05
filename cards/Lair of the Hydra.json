@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "oracle_id": "126e9140-2c05-4c00-8b01-5653456c736a",
+  "name": "Lair of the Hydra",
+  "faces": [
+    {
+      "name": "Lair of the Hydra",
+      "type_line": "Land",
+      "oracle_text": "If you control two or more other lands, this land enters tapped.\n{T}: Add {G}.\n{X}{G}: Until end of turn, this land becomes an X/X green Hydra creature. It's still a land. X can't be 0.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{X}{G}: Until end of turn, this land becomes an X/X green Hydra creature. It's still a land. X can't be 0.",
+          "cost": "{X}{G}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Until end of turn, this land becomes an X/X green Hydra creature"
+            },
+            {
+              "action": "retain_card_type",
+              "target": "previous_target",
+              "card_type": "Land"
+            },
+            {
+              "action": "custom_effect",
+              "text": "X can't be 0"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If you control two or more other lands, this land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self",
+              "condition": [
+                {
+                  "condition_text": "you control two or more other lands"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

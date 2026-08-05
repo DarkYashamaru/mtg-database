@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a9c2bf1b-2d5e-42c5-bc76-8429aaae161c",
+  "name": "Bloodline Shaman",
+  "faces": [
+    {
+      "name": "Bloodline Shaman",
+      "type_line": "Creature \u2014 Elf Wizard Shaman",
+      "oracle_text": "{T}: Choose a creature type. Reveal the top card of your library. If that card is a creature card of the chosen type, put it into your hand. Otherwise, put it into your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Choose a creature type. Reveal the top card of your library. If that card is a creature card of the chosen type, put it into your hand. Otherwise, put it into your graveyard.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose a creature type"
+            },
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "move_card",
+              "object": "it",
+              "destination_zone": "hand",
+              "condition": [
+                {
+                  "condition_text": "that card is a creature card of the chosen type"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it into your graveyard",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

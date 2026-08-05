@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "e6762a65-5c88-4652-ac3d-b9de220634c7",
+  "name": "Pious Interdiction",
+  "faces": [
+    {
+      "name": "Pious Interdiction",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nWhen this Aura enters, you gain 2 life.\nEnchanted creature can't attack or block.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, you gain 2 life.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature can't attack or block.",
+          "effects": [
+            {
+              "action": "combat_restriction",
+              "target": "enchanted_creature",
+              "restriction": "cant_attack_or_block"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

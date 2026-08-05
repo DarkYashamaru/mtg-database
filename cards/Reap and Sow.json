@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "efce3575-66ee-412f-af5b-961fd242bbde",
+  "name": "Reap and Sow",
+  "faces": [
+    {
+      "name": "Reap and Sow",
+      "type_line": "Sorcery",
+      "oracle_text": "Choose one \u2014\n\u2022 Destroy target land.\n\u2022 Search your library for a land card, put that card onto the battlefield, then shuffle.\nEntwine {1}{G} (Choose both if you pay the entwine cost.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Choose one \u2014\n\u2022 Destroy target land.\n\u2022 Search your library for a land card, put that card onto the battlefield, then shuffle.",
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Destroy target land.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_land"
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Search your library for a land card, put that card onto the battlefield, then shuffle.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "search your library for a land card, put that card onto the battlefield"
+                },
+                {
+                  "action": "shuffle_library",
+                  "player": "you"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Entwine {1}{G} (Choose both if you pay the entwine cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Entwine {1}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

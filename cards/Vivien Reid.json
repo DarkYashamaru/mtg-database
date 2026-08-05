@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b5f20a6d-8c3e-452f-9d98-4886f0fa052a",
+  "name": "Vivien Reid",
+  "faces": [
+    {
+      "name": "Vivien Reid",
+      "type_line": "Legendary Planeswalker \u2014 Vivien",
+      "oracle_text": "+1: Look at the top four cards of your library. You may reveal a creature or land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.\n\u22123: Destroy target artifact, enchantment, or creature with flying.\n\u22128: You get an emblem with \"Creatures you control get +2/+2 and have vigilance, trample, and indestructible.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Look at the top four cards of your library. You may reveal a creature or land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 4
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature",
+                  "Land"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Destroy target artifact, enchantment, or creature with flying.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Destroy target artifact, enchantment, or creature with flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22128: You get an emblem with \"Creatures you control get +2/+2 and have vigilance, trample, and indestructible.\"",
+          "cost": "\u22128",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keywords",
+              "target": {
+                "selector": "you_get_an_emblem_with_creatures_you_control_get_22_and"
+              },
+              "keywords": [
+                "vigilance",
+                "trample",
+                "indestructible"
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b33390dd-f2f8-4059-83a9-45c0edccd5e4",
+  "name": "Heirloom Mirror // Inherited Fiend",
+  "faces": [
+    {
+      "name": "Heirloom Mirror",
+      "type_line": "Artifact",
+      "oracle_text": "{1}, {T}, Pay 1 life, Discard a card: Draw a card, mill a card, then put a ritual counter on this artifact. Then if it has three or more ritual counters on it, remove them and transform it. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}, {T}, Pay 1 life, Discard a card: Draw a card, mill a card, then put a ritual counter on this artifact. Then if it has three or more ritual counters on it, remove them and transform it. Activate only as a sorcery.",
+          "cost": "{1}, {T}, Pay 1 life, Discard a card",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "draw a card, mill a card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "put a ritual counter on this artifact"
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove them",
+              "condition": [
+                {
+                  "condition_text": "it has three or more ritual counters on it"
+                }
+              ]
+            },
+            {
+              "action": "transform",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    },
+    {
+      "name": "Inherited Fiend",
+      "type_line": "Creature \u2014 Demon",
+      "oracle_text": "Flying\n{2}{B}: Exile target creature card from a graveyard. Put a +1/+1 counter on this creature.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{2}{B}: Exile target creature card from a graveyard. Put a +1/+1 counter on this creature.",
+          "cost": "{2}{B}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target creature card from a graveyard"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4f2d4538-dc1d-4c09-964b-b0d7c240fb7d",
+  "name": "Archangel of Thune",
+  "faces": [
+    {
+      "name": "Archangel of Thune",
+      "type_line": "Creature \u2014 Angel",
+      "oracle_text": "Flying\nLifelink (Damage dealt by this creature also causes you to gain that much life.)\nWhenever you gain life, put a +1/+1 counter on each creature you control.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, put a +1/+1 counter on each creature you control.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

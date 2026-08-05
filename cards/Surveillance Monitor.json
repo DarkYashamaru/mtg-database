@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9be5a350-c38e-425f-9d6a-8eb111132a89",
+  "name": "Surveillance Monitor",
+  "faces": [
+    {
+      "name": "Surveillance Monitor",
+      "type_line": "Creature \u2014 Vedalken Detective",
+      "oracle_text": "When this creature enters, you may collect evidence 4. (Exile cards with total mana value 4 or greater from your graveyard.)\nWhenever you collect evidence, create a 1/1 colorless Thopter artifact creature token with flying.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may collect evidence 4. (Exile cards with total mana value 4 or greater from your graveyard.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may collect evidence 4"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you collect evidence, create a 1/1 colorless Thopter artifact creature token with flying.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you collect evidence"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 1/1 colorless Thopter artifact creature token with flying",
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "colorless",
+                  "Thopter",
+                  "artifact"
+                ],
+                "keywords": [
+                  "flying"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

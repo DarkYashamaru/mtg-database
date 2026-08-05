@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "29169659-309f-4e1c-86ba-1d36420ed41e",
+  "name": "Akuta, Born of Ash",
+  "faces": [
+    {
+      "name": "Akuta, Born of Ash",
+      "type_line": "Legendary Creature \u2014 Spirit",
+      "oracle_text": "Haste\nAt the beginning of your upkeep, if you have more cards in hand than each opponent, you may sacrifice a Swamp. If you do, return Akuta from your graveyard to the battlefield.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, if you have more cards in hand than each opponent, you may sacrifice a Swamp. If you do, return Akuta from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [
+            {
+              "condition_text": "you have more cards in hand than each opponent"
+            }
+          ],
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_swamp",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "return akuta from your graveyard to the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

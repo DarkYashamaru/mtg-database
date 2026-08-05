@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a893bee3-ea5c-4619-a875-e4af6d4396fe",
+  "name": "Incendiary",
+  "faces": [
+    {
+      "name": "Incendiary",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Enchant creature\nAt the beginning of your upkeep, you may put a fuse counter on this Aura.\nWhen enchanted creature dies, this Aura deals X damage to any target, where X is the number of fuse counters on this Aura.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may put a fuse counter on this Aura.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a fuse counter on this Aura"
+            }
+          ]
+        },
+        {
+          "raw_text": "When enchanted creature dies, this Aura deals X damage to any target, where X is the number of fuse counters on this Aura.",
+          "trigger": {
+            "type": "dies",
+            "subject": "enchanted_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "this Aura deals X damage to any target, where X is the number of fuse counters on this Aura"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

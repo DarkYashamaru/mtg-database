@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d53d5d03-b180-4bdb-8801-260f8a75644d",
+  "name": "Tamiyo Meets the Story Circle",
+  "faces": [
+    {
+      "name": "Tamiyo Meets the Story Circle",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Until your next turn, whenever a creature attacks you or a planeswalker you control, it gets -2/-0 until end of turn.\nII \u2014 Discard any number of cards, then investigate twice for each card discarded this way.\nIII \u2014 Shuffle up to three target cards from your graveyard into your library.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 Until your next turn, whenever a creature attacks you or a planeswalker you control, it gets -2/-0 until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": {
+                "selector": "until_you_control_next_turn_whenever_a_creature_attacks_you_or_a_planeswalker_you_control_it"
+              },
+              "power_delta": -2,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 Discard any number of cards, then investigate twice for each card discarded this way.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "discard any number of cards"
+            },
+            {
+              "action": "custom_effect",
+              "text": "investigate twice for each card discarded this way"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Shuffle up to three target cards from your graveyard into your library.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Shuffle up to three target cards from your graveyard into your library"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

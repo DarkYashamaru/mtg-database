@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "14f55fc9-ec19-4b4a-b3de-d75898c19edf",
+  "name": "Prize Pig",
+  "faces": [
+    {
+      "name": "Prize Pig",
+      "type_line": "Creature \u2014 Boar",
+      "oracle_text": "Whenever you gain life, put that many ribbon counters on this creature. Then if there are three or more ribbon counters on this creature, remove those counters and untap it.\n{T}: Add one mana of any color.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you gain life, put that many ribbon counters on this creature. Then if there are three or more ribbon counters on this creature, remove those counters and untap it.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put that many ribbon counters on this creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "remove those counters",
+              "condition": [
+                {
+                  "condition_text": "there are three or more ribbon counters on this creature"
+                }
+              ]
+            },
+            {
+              "action": "untap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Add one mana of any color.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

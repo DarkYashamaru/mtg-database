@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "oracle_id": "24919141-82d2-42ad-963c-e53511a868b3",
+  "name": "Sigarda, Champion of Light",
+  "faces": [
+    {
+      "name": "Sigarda, Champion of Light",
+      "type_line": "Legendary Creature \u2014 Angel",
+      "oracle_text": "Flying, trample\nHumans you control get +1/+1.\nCoven \u2014 Whenever Sigarda attacks, if you control three or more creatures with different powers, look at the top five cards of your library. You may reveal a Human creature card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Sigarda attacks, if you control three or more creatures with different powers, look at the top five cards of your library. You may reveal a Human creature card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "you control three or more creatures with different powers"
+            }
+          ],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 5
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature"
+                ],
+                "subtypes_any": [
+                  "Human"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Humans you control get +1/+1.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Humans you control get +1/+1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

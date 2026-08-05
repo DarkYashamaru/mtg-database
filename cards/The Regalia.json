@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "27a7610e-acbe-4a2b-9f61-81b383eb20a5",
+  "name": "The Regalia",
+  "faces": [
+    {
+      "name": "The Regalia",
+      "type_line": "Legendary Artifact \u2014 Vehicle",
+      "oracle_text": "Haste\nWhenever The Regalia attacks, reveal cards from the top of your library until you reveal a land card. Put that card onto the battlefield tapped and the rest on the bottom of your library in a random order.\nCrew 1",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever The Regalia attacks, reveal cards from the top of your library until you reveal a land card. Put that card onto the battlefield tapped and the rest on the bottom of your library in a random order.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "reveal cards from the top of your library until you reveal a land card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Put that card onto the battlefield tapped and the rest on the bottom of your library in a random order"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Crew 1",
+          "cost": {
+            "action": "tap_creatures_with_total_power",
+            "amount_gte": 1,
+            "target": {
+              "selector": "creatures_you_control"
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "crew",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

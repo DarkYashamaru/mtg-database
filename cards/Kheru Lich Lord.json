@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7e4cbfd1-2393-4643-bc05-022d06b30210",
+  "name": "Kheru Lich Lord",
+  "faces": [
+    {
+      "name": "Kheru Lich Lord",
+      "type_line": "Creature \u2014 Zombie Wizard",
+      "oracle_text": "At the beginning of your upkeep, you may pay {2}{B}. If you do, return a creature card at random from your graveyard to the battlefield. It gains flying, trample, and haste. Exile that card at the beginning of your next end step. If it would leave the battlefield, exile it instead of putting it anywhere else.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, you may pay {2}{B}. If you do, return a creature card at random from your graveyard to the battlefield. It gains flying, trample, and haste. Exile that card at the beginning of your next end step. If it would leave the battlefield, exile it instead of putting it anywhere else.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {2}{B}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return a creature card at random from your graveyard to the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "It gains flying, trample, and haste"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Exile that card at the beginning of your next end step"
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile it instead of putting it anywhere else",
+              "condition": [
+                {
+                  "condition_text": "it would leave the battlefield"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

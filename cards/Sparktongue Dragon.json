@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "oracle_id": "1817acd5-5ed0-47b8-8e56-4715a488867e",
+  "name": "Sparktongue Dragon",
+  "faces": [
+    {
+      "name": "Sparktongue Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhen this creature enters, you may pay {2}{R}. When you do, it deals 3 damage to any target.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may pay {2}{R}. When you do, it deals 3 damage to any target.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {2}{R}"
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "any_target",
+              "amount": 3,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

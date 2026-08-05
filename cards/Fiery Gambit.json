@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "oracle_id": "78497c54-7179-41b7-9454-7b915fd96cd5",
+  "name": "Fiery Gambit",
+  "faces": [
+    {
+      "name": "Fiery Gambit",
+      "type_line": "Sorcery",
+      "oracle_text": "Flip a coin until you lose a flip or choose to stop flipping. If you lose a flip, Fiery Gambit has no effect. If you win one or more flips, Fiery Gambit deals 3 damage to target creature. If you win two or more flips, Fiery Gambit deals 6 damage to each opponent. If you win three or more flips, draw nine cards and untap all lands you control.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Flip a coin until you lose a flip or choose to stop flipping. If you lose a flip, Fiery Gambit has no effect. If you win one or more flips, Fiery Gambit deals 3 damage to target creature. If you win two or more flips, Fiery Gambit deals 6 damage to each opponent. If you win three or more flips, draw nine cards and untap all lands you control.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Flip a coin until you lose a flip or choose to stop flipping"
+            },
+            {
+              "action": "custom_effect",
+              "text": "fiery gambit has no effect",
+              "condition": [
+                {
+                  "condition_text": "you lose a flip"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "fiery gambit deals 3 damage to target creature",
+              "condition": [
+                {
+                  "condition_text": "you win one or more flips"
+                }
+              ]
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 6,
+              "condition": [
+                {
+                  "condition_text": "you win two or more flips"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "draw nine cards and untap all lands you control",
+              "condition": [
+                {
+                  "condition_text": "you win three or more flips"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

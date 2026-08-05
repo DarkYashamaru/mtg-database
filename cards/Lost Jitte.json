@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a9d72f78-2ab5-4e2e-ab7b-ef875e0a0609",
+  "name": "Lost Jitte",
+  "faces": [
+    {
+      "name": "Lost Jitte",
+      "type_line": "Legendary Artifact \u2014 Equipment",
+      "oracle_text": "Whenever equipped creature deals combat damage, put a charge counter on Lost Jitte.\nRemove a charge counter from Lost Jitte: Choose one \u2014\n\u2022 Untap target land.\n\u2022 Target creature can't block this turn.\n\u2022 Put a +1/+1 counter on equipped creature.\nEquip {1}",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever equipped creature deals combat damage, put a charge counter on Lost Jitte.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever equipped creature deals combat damage"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a charge counter on Lost Jitte"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove a charge counter from Lost Jitte: Choose one \u2014\n\u2022 Untap target land.\n\u2022 Target creature can't block this turn.\n\u2022 Put a +1/+1 counter on equipped creature.",
+          "cost": "Remove a charge counter from Lost Jitte",
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Untap target land.",
+              "effects": [
+                {
+                  "action": "custom_effect",
+                  "text": "Untap target land"
+                }
+              ]
+            },
+            {
+              "raw_text": "Target creature can't block this turn.",
+              "effects": [
+                {
+                  "action": "combat_restriction_until_end_of_turn",
+                  "target": "target_creature",
+                  "restriction": "cant_block"
+                }
+              ]
+            },
+            {
+              "raw_text": "Put a +1/+1 counter on equipped creature.",
+              "effects": [
+                {
+                  "action": "put_counters",
+                  "counter_type": "+1/+1",
+                  "target": "equipped_creature",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "Equip {1}",
+          "cost": "{1}",
+          "condition": [
+            {
+              "timing": "sorcery_speed"
+            }
+          ],
+          "effects": [
+            {
+              "action": "equip",
+              "target": {
+                "selector": "target_creature_you_control"
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

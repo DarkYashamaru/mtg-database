@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "5be6f245-31cf-4294-ace0-ca6ce3463fed",
+  "name": "Raucous Audience",
+  "faces": [
+    {
+      "name": "Raucous Audience",
+      "type_line": "Creature \u2014 Human Citizen",
+      "oracle_text": "{T}: Add {G}. If you control a creature with power 4 or greater, add {G}{G} instead.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {G}. If you control a creature with power 4 or greater, add {G}{G} instead.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{g}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "custom_effect",
+              "text": "add {g}{g} instead",
+              "condition": [
+                {
+                  "condition_text": "you control a creature with power 4 or greater"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

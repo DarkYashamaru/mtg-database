@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d6ded5b0-1309-4f1e-be10-d84ca0a5dd20",
+  "name": "Charforger",
+  "faces": [
+    {
+      "name": "Charforger",
+      "type_line": "Creature \u2014 Phyrexian Beast",
+      "oracle_text": "When this creature enters, create a 1/1 red Phyrexian Goblin creature token.\nWhenever another creature or artifact you control is put into a graveyard from the battlefield, put an oil counter on this creature.\nRemove three oil counters from this creature: Exile the top card of your library. You may play that card this turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, create a 1/1 red Phyrexian Goblin creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 red Phyrexian Goblin creature token",
+                "colors": [
+                  "red"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Phyrexian",
+                  "Goblin"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever another creature or artifact you control is put into a graveyard from the battlefield, put an oil counter on this creature.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever another creature or artifact you control is put into a graveyard from the battlefield"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put an oil counter on this creature"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove three oil counters from this creature: Exile the top card of your library. You may play that card this turn.",
+          "cost": "Remove three oil counters from this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "move_top_card",
+              "from_zone": "library",
+              "to_zone": "exile",
+              "owner": "you",
+              "count": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play that card this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

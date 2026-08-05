@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f18cce8c-8fb6-49a7-8f79-2529c0ee3ecc",
+  "name": "Mog, Moogle Warrior",
+  "faces": [
+    {
+      "name": "Mog, Moogle Warrior",
+      "type_line": "Legendary Creature \u2014 Moogle Warrior",
+      "oracle_text": "Lifelink\nDance \u2014 At the beginning of your end step, each player may discard a card. Each player who discarded a card this way draws a card. If a creature card was discarded this way, you create a 1/2 white Moogle creature token with lifelink. Then if a noncreature card was discarded this way, put a +1/+1 counter on each Moogle you control.",
+      "static": [
+        {
+          "keyword": "lifelink"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your end step, each player may discard a card. Each player who discarded a card this way draws a card. If a creature card was discarded this way, you create a 1/2 white Moogle creature token with lifelink. Then if a noncreature card was discarded this way, put a +1/+1 counter on each Moogle you control.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player may discard a card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Each player who discarded a card this way draws a card"
+            },
+            {
+              "action": "custom_effect",
+              "text": "you create a 1/2 white moogle creature token with lifelink",
+              "condition": [
+                {
+                  "condition_text": "a creature card was discarded this way"
+                }
+              ]
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "creatures_you_control",
+                "subtypes": [
+                  "Moogle"
+                ]
+              },
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "a noncreature card was discarded this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

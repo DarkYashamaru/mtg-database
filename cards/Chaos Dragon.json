@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "a04f46b4-b0b0-4aef-907f-1df1a2e261de",
+  "name": "Chaos Dragon",
+  "faces": [
+    {
+      "name": "Chaos Dragon",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying, haste\nThis creature attacks each combat if able.\nAt the beginning of combat on your turn, each player rolls a d20. If one or more opponents had the highest result, this creature can't attack those players or planeswalkers they control this combat.",
+      "static": [
+        {
+          "keyword": "flying"
+        },
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of combat on your turn, each player rolls a d20. If one or more opponents had the highest result, this creature can't attack those players or planeswalkers they control this combat.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "each player rolls a d20"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature can't attack those players or planeswalkers they control this combat",
+              "condition": [
+                {
+                  "condition_text": "one or more opponents had the highest result"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This creature attacks each combat if able.",
+          "effects": [
+            {
+              "action": "attack_requirement",
+              "target": "self",
+              "requirement": "each_combat_if_able"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

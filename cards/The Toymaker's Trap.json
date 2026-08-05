@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8e93ea21-5e3f-448e-a175-96c8438c328e",
+  "name": "The Toymaker's Trap",
+  "faces": [
+    {
+      "name": "The Toymaker's Trap",
+      "type_line": "Enchantment",
+      "oracle_text": "At the beginning of your upkeep, secretly choose a number between 1 and 5 that hasn't been chosen. If you do, an opponent guesses which number you chose, then you reveal the number you chose. If they guessed wrong, they lose life equal to the number they guessed and you draw a card. If they guessed right, sacrifice this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of your upkeep, secretly choose a number between 1 and 5 that hasn't been chosen. If you do, an opponent guesses which number you chose, then you reveal the number you chose. If they guessed wrong, they lose life equal to the number they guessed and you draw a card. If they guessed right, sacrifice this enchantment.",
+          "trigger": {
+            "type": "beginning_of_your_upkeep"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "secretly choose a number between 1 and 5 that hasn't been chosen"
+            },
+            {
+              "action": "custom_effect",
+              "text": "an opponent guesses which number you chose",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "you reveal the number you chose",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "they lose life equal to the number they guessed",
+              "condition": [
+                {
+                  "condition_text": "they guessed wrong"
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1
+            },
+            {
+              "action": "sacrifice",
+              "target": "this_enchantment",
+              "condition": [
+                {
+                  "condition_text": "they guessed right"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

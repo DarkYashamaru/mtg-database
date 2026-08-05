@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4034bec6-e3c7-4d3f-81df-7c903977a606",
+  "name": "Nomad Stadium",
+  "faces": [
+    {
+      "name": "Nomad Stadium",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {W}. This land deals 1 damage to you.\nThreshold \u2014 {W}, {T}, Sacrifice this land: You gain 4 life. Activate only if there are seven or more cards in your graveyard.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {W}. This land deals 1 damage to you.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{w}"
+              ],
+              "distribution": "fixed"
+            },
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "you",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "Threshold \u2014 {W}, {T}, Sacrifice this land: You gain 4 life. Activate only if there are seven or more cards in your graveyard.",
+          "cost": "Threshold \u2014 {W}, {T}, Sacrifice this land",
+          "condition": [
+            {
+              "condition_text": "there are seven or more cards in your graveyard"
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "6276a985-7630-476d-a94f-6c6adc88f6c4",
+  "name": "Corrupted Crossroads",
+  "faces": [
+    {
+      "name": "Corrupted Crossroads",
+      "type_line": "Land",
+      "oracle_text": "{T}: Add {C}. ({C} represents colorless mana.)\n{T}, Pay 1 life: Add one mana of any color. Spend this mana only to cast a spell with devoid.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {C}. ({C} represents colorless mana.)",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{c}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Pay 1 life: Add one mana of any color. Spend this mana only to cast a spell with devoid.",
+          "cost": "{T}, Pay 1 life",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{W}",
+                "{U}",
+                "{B}",
+                "{R}",
+                "{G}"
+              ],
+              "distribution": "any_color"
+            },
+            {
+              "action": "custom_effect",
+              "text": "Spend this mana only to cast a spell with devoid"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d74f9a18-8dab-4549-be3f-9697ff68d73c",
+  "name": "Sidequest: Hunt the Mark // Yiazmat, Ultimate Mark",
+  "faces": [
+    {
+      "name": "Sidequest: Hunt the Mark",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, destroy up to one target creature.\nAt the beginning of your end step, if a creature died under an opponent's control this turn, create a Treasure token. Then if you control three or more Treasures, transform this enchantment.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, destroy up to one target creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "destroy up to one target creature"
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of your end step, if a creature died under an opponent's control this turn, create a Treasure token. Then if you control three or more Treasures, transform this enchantment.",
+          "trigger": {
+            "type": "beginning_of_your_end_step"
+          },
+          "condition": [
+            {
+              "condition_text": "a creature died under an opponent's control this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Treasure token",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            },
+            {
+              "action": "transform",
+              "target": "this_enchantment",
+              "condition": [
+                {
+                  "condition_text": "you control three or more treasures"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    },
+    {
+      "name": "Yiazmat, Ultimate Mark",
+      "type_line": "Legendary Creature \u2014 Dragon",
+      "oracle_text": "{1}{B}, Sacrifice another creature or artifact: Yiazmat gains indestructible until end of turn. Tap it.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{1}{B}, Sacrifice another creature or artifact: Yiazmat gains indestructible until end of turn. Tap it.",
+          "cost": "{1}{B}, Sacrifice another creature or artifact",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            },
+            {
+              "action": "tap",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

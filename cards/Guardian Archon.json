@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c7748659-0206-448f-8567-83565cb0b51a",
+  "name": "Guardian Archon",
+  "faces": [
+    {
+      "name": "Guardian Archon",
+      "type_line": "Creature \u2014 Archon",
+      "oracle_text": "Flying\nAs this creature enters, secretly choose an opponent.\nReveal the player you chose: You and target permanent you control each gain protection from the chosen player until end of turn. Activate only once.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "Reveal the player you chose: You and target permanent you control each gain protection from the chosen player until end of turn. Activate only once.",
+          "cost": "Reveal the player you chose",
+          "condition": [
+            {
+              "condition_text": "once"
+            }
+          ],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "you_and_target_permanent_you_control_each",
+              "keyword": "protection_from_the_chosen_player"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this creature enters, secretly choose an opponent.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this creature enters, secretly choose an opponent"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

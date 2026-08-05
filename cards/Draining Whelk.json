@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8ce7f05c-6352-49e8-95b3-8ab87106b75e",
+  "name": "Draining Whelk",
+  "faces": [
+    {
+      "name": "Draining Whelk",
+      "type_line": "Creature \u2014 Illusion",
+      "oracle_text": "Flash\nFlying\nWhen this creature enters, counter target spell. Put X +1/+1 counters on this creature, where X is that spell's mana value.",
+      "static": [
+        {
+          "keyword": "flash"
+        },
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, counter target spell. Put X +1/+1 counters on this creature, where X is that spell's mana value.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "counter_spell",
+              "target": "target_spell"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self_where_x_is_that_spells_mana_value",
+              "amount": "X"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "076cf4f1-b3d4-4175-b976-938ad851cc0e",
+  "name": "Coliseum Behemoth",
+  "faces": [
+    {
+      "name": "Coliseum Behemoth",
+      "type_line": "Creature \u2014 Beast",
+      "oracle_text": "Trample\nWhen this creature enters, choose one \u2014\n\u2022 Destroy target artifact or enchantment.\n\u2022 Draw a card.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, choose one \u2014\n\u2022 Destroy target artifact or enchantment.\n\u2022 Draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [],
+          "mode_selection": {
+            "choose_count": 1,
+            "random": false
+          },
+          "modes": [
+            {
+              "raw_text": "Destroy target artifact or enchantment.",
+              "effects": [
+                {
+                  "action": "destroy",
+                  "target": {
+                    "selector": "target_permanent",
+                    "card_types_any": [
+                      "Artifact",
+                      "Enchantment"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "raw_text": "Draw a card.",
+              "effects": [
+                {
+                  "action": "draw_cards",
+                  "amount": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

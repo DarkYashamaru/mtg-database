@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8d49b6a1-4ae2-4443-a6b3-9ef806cb6fc4",
+  "name": "Hurska Sweet-Tooth",
+  "faces": [
+    {
+      "name": "Hurska Sweet-Tooth",
+      "type_line": "Legendary Creature \u2014 Bear",
+      "oracle_text": "Whenever Hurska attacks, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")\nWhenever you gain life, you may pay {G/W}. When you do, target creature gets +X/+X until end of turn, where X is the amount of life you gained.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Hurska attacks, create a Food token. (It's an artifact with \"{2}, {T}, Sacrifice this token: You gain 3 life.\")",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Food token"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you gain life, you may pay {G/W}. When you do, target creature gets +X/+X until end of turn, where X is the amount of life you gained.",
+          "trigger": {
+            "type": "gain_life",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{g/w}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "target creature gets +x/+x until end of turn, where x is the amount of life you gained",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "87c1bd51-6a85-4a14-af7b-a5b02ab69d73",
+  "name": "Sequence Engine",
+  "faces": [
+    {
+      "name": "Sequence Engine",
+      "type_line": "Artifact",
+      "oracle_text": "{X}, {T}: Exile target creature card with mana value X from a graveyard. Create a 0/0 green and blue Fractal creature token. Put X +1/+1 counters on it. Activate only as a sorcery.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{X}, {T}: Exile target creature card with mana value X from a graveyard. Create a 0/0 green and blue Fractal creature token. Put X +1/+1 counters on it. Activate only as a sorcery.",
+          "cost": "{X}, {T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile target creature card with mana value X from a graveyard"
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "0/0 green and blue Fractal creature token",
+                "colors": [
+                  "green",
+                  "blue"
+                ],
+                "power_toughness": "0/0",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "and",
+                  "Fractal"
+                ]
+              }
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": "X"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

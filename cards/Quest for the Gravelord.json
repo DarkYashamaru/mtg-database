@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c5f92560-dc82-4bd2-ae6b-4c3942d458b7",
+  "name": "Quest for the Gravelord",
+  "faces": [
+    {
+      "name": "Quest for the Gravelord",
+      "type_line": "Enchantment",
+      "oracle_text": "Whenever a creature dies, you may put a quest counter on this enchantment.\nRemove three quest counters from this enchantment and sacrifice it: Create a 5/5 black Zombie Giant creature token.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature dies, you may put a quest counter on this enchantment.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may put a quest counter on this enchantment"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Remove three quest counters from this enchantment and sacrifice it: Create a 5/5 black Zombie Giant creature token.",
+          "cost": "Remove three quest counters from this enchantment and sacrifice it",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "5/5 black Zombie Giant creature token",
+                "colors": [
+                  "black"
+                ],
+                "power_toughness": "5/5",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Zombie",
+                  "Giant"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

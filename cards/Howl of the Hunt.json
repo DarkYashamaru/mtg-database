@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "22fe038e-033e-4632-a0d7-116492cded83",
+  "name": "Howl of the Hunt",
+  "faces": [
+    {
+      "name": "Howl of the Hunt",
+      "type_line": "Enchantment \u2014 Aura",
+      "oracle_text": "Flash\nEnchant creature\nWhen this Aura enters, if enchanted creature is a Wolf or Werewolf, untap that creature.\nEnchanted creature gets +2/+2 and has vigilance.",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this Aura enters, if enchanted creature is a Wolf or Werewolf, untap that creature.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_aura"
+          },
+          "condition": [
+            {
+              "condition_text": "enchanted creature is a Wolf or Werewolf"
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "that_creature"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Enchant creature",
+          "effects": [
+            {
+              "action": "enchant_restriction",
+              "target": {
+                "selector": "creature"
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "Enchanted creature gets +2/+2 and has vigilance.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Enchanted creature gets +2/+2 and has vigilance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

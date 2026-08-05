@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "oracle_id": "852621bf-9ab7-4027-89fb-b438e4080684",
+  "name": "Sage of the Falls",
+  "faces": [
+    {
+      "name": "Sage of the Falls",
+      "type_line": "Creature \u2014 Merfolk Wizard",
+      "oracle_text": "Whenever this creature or another non-Human creature you control enters, you may draw a card. If you do, discard a card.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another non-Human creature you control enters, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another",
+                "Non-human"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

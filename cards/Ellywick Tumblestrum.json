@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d0375311-b0ea-4870-bc2c-4894da088dc3",
+  "name": "Ellywick Tumblestrum",
+  "faces": [
+    {
+      "name": "Ellywick Tumblestrum",
+      "type_line": "Legendary Planeswalker \u2014 Ellywick",
+      "oracle_text": "+1: Venture into the dungeon. (Enter the first room or advance to the next room.)\n\u22122: Look at the top six cards of your library. You may reveal a creature card from among them and put it into your hand. If it's legendary, you gain 3 life. Put the rest on the bottom of your library in a random order.\n\u22127: You get an emblem with \"Creatures you control have trample and haste and get +2/+2 for each differently named dungeon you've completed.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Venture into the dungeon. (Enter the first room or advance to the next room.)",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "venture_into_the_dungeon"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Look at the top six cards of your library. You may reveal a creature card from among them and put it into your hand. If it's legendary, you gain 3 life. Put the rest on the bottom of your library in a random order.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 6
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "reveal": true,
+              "filter": {
+                "card_types": [
+                  "Creature"
+                ]
+              },
+              "destination": "hand",
+              "optional": true
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3,
+              "condition": [
+                {
+                  "condition_text": "it's legendary"
+                }
+              ]
+            },
+            {
+              "action": "move_unselected_looked_at_cards",
+              "destination": "bottom_of_library",
+              "order": "random"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: You get an emblem with \"Creatures you control have trample and haste and get +2/+2 for each differently named dungeon you've completed.\"",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with \"Creatures you control have trample and haste and get +2/+2 for each differently named dungeon you've completed.\""
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

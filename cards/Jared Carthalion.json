@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "oracle_id": "f9485c76-122d-4faf-9194-b84ed9c41378",
+  "name": "Jared Carthalion",
+  "faces": [
+    {
+      "name": "Jared Carthalion",
+      "type_line": "Legendary Planeswalker \u2014 Jared",
+      "oracle_text": "+1: Create a 3/3 Kavu creature token with trample that's all colors.\n\u22123: Choose up to two target creatures. For each of them, put a number of +1/+1 counters on it equal to the number of colors it is.\n\u22126: Return target multicolored card from your graveyard to your hand. If that card was all colors, draw a card and create two Treasure tokens.\nJared Carthalion can be your commander.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Create a 3/3 Kavu creature token with trample that's all colors.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "a 3/3 Kavu creature token with trample that's all colors",
+                "power_toughness": "3/3",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Kavu"
+                ],
+                "keywords": [
+                  "trample_that"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Choose up to two target creatures. For each of them, put a number of +1/+1 counters on it equal to the number of colors it is.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Choose up to two target creatures"
+            },
+            {
+              "action": "custom_effect",
+              "text": "For each of them, put a number of +1/+1 counters on it equal to the number of colors it is"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22126: Return target multicolored card from your graveyard to your hand. If that card was all colors, draw a card and create two Treasure tokens.",
+          "cost": "\u22126",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Return target multicolored card from your graveyard to your hand"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "condition_text": "that card was all colors"
+                }
+              ]
+            },
+            {
+              "action": "create_token",
+              "amount": 2,
+              "token": {
+                "raw": "Treasure tokens",
+                "subtypes": [
+                  "Treasure"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Jared Carthalion can be your commander.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Jared Carthalion can be your commander"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

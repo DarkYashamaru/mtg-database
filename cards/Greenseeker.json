@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "oracle_id": "693d8203-4405-4488-9067-cc1cd8041cb4",
+  "name": "Greenseeker",
+  "faces": [
+    {
+      "name": "Greenseeker",
+      "type_line": "Creature \u2014 Elf Spellshaper",
+      "oracle_text": "{G}, {T}, Discard a card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{G}, {T}, Discard a card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
+          "cost": "{G}, {T}, Discard a card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

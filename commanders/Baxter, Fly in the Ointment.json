@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "oracle_id": "94551fbd-a72c-4a1f-be01-7ba1c7c03eed",
+  "name": "Baxter, Fly in the Ointment",
+  "faces": [
+    {
+      "name": "Baxter, Fly in the Ointment",
+      "type_line": "Legendary Creature \u2014 Insect Mutant Scientist",
+      "oracle_text": "Whenever Baxter enters or attacks, each creature you control with a counter on it gains flying until end of turn.\nWhenever you draw a card, put a +1/+1 counter on Baxter.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever Baxter enters or attacks, each creature you control with a counter on it gains flying until end of turn.",
+          "trigger": {
+            "type": "enters_or_attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "each_creature_you_control_with_a_counter_on_it",
+              "keyword": "flying"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you draw a card, put a +1/+1 counter on Baxter.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

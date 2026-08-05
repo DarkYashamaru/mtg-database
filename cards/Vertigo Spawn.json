@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "oracle_id": "c1b8cfe9-e8fc-4321-94ce-86ab1f1ae2d0",
+  "name": "Vertigo Spawn",
+  "faces": [
+    {
+      "name": "Vertigo Spawn",
+      "type_line": "Creature \u2014 Illusion",
+      "oracle_text": "Defender\nWhenever this creature blocks a creature, tap that creature. That creature doesn't untap during its controller's next untap step.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature blocks a creature, tap that creature. That creature doesn't untap during its controller's next untap step.",
+          "trigger": {
+            "type": "blocks_creature",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "tap",
+              "target": "that_creature"
+            },
+            {
+              "action": "custom_effect",
+              "text": "That creature doesn't untap during its controller's next untap step"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

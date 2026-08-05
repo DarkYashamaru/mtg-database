@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "84dffb4b-02d7-48e4-9a95-43f88cd52bf3",
+  "name": "Lobber Crew",
+  "faces": [
+    {
+      "name": "Lobber Crew",
+      "type_line": "Creature \u2014 Goblin Warrior",
+      "oracle_text": "Defender\n{T}: This creature deals 1 damage to each opponent.\nWhenever you cast a multicolored spell, untap this creature.",
+      "static": [
+        {
+          "keyword": "defender"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a multicolored spell, untap this creature.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Multicolored"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "untap",
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: This creature deals 1 damage to each opponent.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

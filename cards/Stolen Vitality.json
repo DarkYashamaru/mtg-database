@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd7454f3-57bc-44f4-bd58-54e883c699fd",
+  "name": "Stolen Vitality",
+  "faces": [
+    {
+      "name": "Stolen Vitality",
+      "type_line": "Instant",
+      "oracle_text": "Target creature gets +3/+1 until end of turn. If it's your turn, that creature gains trample until end of turn. Otherwise, it gains first strike until end of turn. (A creature with trample can deal excess combat damage to the player or planeswalker it's attacking. A creature with first strike deals combat damage before creatures without first strike.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Target creature gets +3/+1 until end of turn. If it's your turn, that creature gains trample until end of turn. Otherwise, it gains first strike until end of turn. (A creature with trample can deal excess combat damage to the player or planeswalker it's attacking. A creature with first strike deals combat damage before creatures without first strike.)",
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "target_creature",
+              "power_delta": 3,
+              "toughness_delta": 1
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "that_creature",
+              "keyword": "trample",
+              "condition": [
+                {
+                  "condition_text": "it's your turn"
+                }
+              ]
+            },
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "previous_target",
+              "keyword": "first_strike",
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "oracle_id": "4fc8a155-4eb8-4b86-8ccc-2569630d3bfa",
+  "name": "Aurora Eidolon",
+  "faces": [
+    {
+      "name": "Aurora Eidolon",
+      "type_line": "Creature \u2014 Spirit",
+      "oracle_text": "{W}, Sacrifice this creature: Prevent the next 3 damage that would be dealt to any target this turn.\nWhenever you cast a multicolored spell, you may return this card from your graveyard to your hand.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a multicolored spell, you may return this card from your graveyard to your hand.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_subtypes_all": [
+                "Multicolored"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "move_card",
+              "player": "you",
+              "object": "self",
+              "source_zone": "graveyard",
+              "destination_zone": "hand"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{W}, Sacrifice this creature: Prevent the next 3 damage that would be dealt to any target this turn.",
+          "cost": "{W}, Sacrifice this creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Prevent the next 3 damage that would be dealt to any target this turn"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "8a825e4c-4a87-4b8d-84f7-3e50b896d7cb",
+  "name": "Lightfoot Rogue",
+  "faces": [
+    {
+      "name": "Lightfoot Rogue",
+      "type_line": "Creature \u2014 Halfling Rogue",
+      "oracle_text": "Sneak Attack \u2014 Whenever this creature attacks, roll a d20.\n1\u20149 | This creature gains deathtouch until end of turn.\n10\u201419 | It gets +1/+0 and gains deathtouch until end of turn.\n20 | It gets +3/+0 and gains first strike and deathtouch until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature attacks, roll a d20.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "roll a d20"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "1\u20149 | This creature gains deathtouch until end of turn.",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "19__self",
+              "keyword": "deathtouch"
+            }
+          ]
+        },
+        {
+          "raw_text": "10\u201419 | It gets +1/+0 and gains deathtouch until end of turn.",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "1019__it_gets_10_and",
+              "keyword": "deathtouch"
+            }
+          ]
+        },
+        {
+          "raw_text": "20 | It gets +3/+0 and gains first strike and deathtouch until end of turn.",
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "20__it_gets_30_and",
+              "keyword": "first_strike_and_deathtouch"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

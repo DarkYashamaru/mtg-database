@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "727ef984-1643-4a09-8283-a665508e85dd",
+  "name": "Vesuvan Drifter",
+  "faces": [
+    {
+      "name": "Vesuvan Drifter",
+      "type_line": "Creature \u2014 Shapeshifter",
+      "oracle_text": "Flying\nYou may look at the top card of your library any time.\nAt the beginning of each combat, you may reveal the top card of your library. If you reveal a creature card this way, this creature becomes a copy of that card until end of turn, except it has flying.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each combat, you may reveal the top card of your library. If you reveal a creature card this way, this creature becomes a copy of that card until end of turn, except it has flying.",
+          "trigger": {
+            "type": "beginning_of_each_combat"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "reveal_top_card",
+              "player": "you",
+              "zone": "library"
+            },
+            {
+              "action": "custom_effect",
+              "text": "this creature becomes a copy of that card until end of turn, except it has flying",
+              "condition": [
+                {
+                  "condition_text": "you reveal a creature card this way"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You may look at the top card of your library any time.",
+          "effects": [
+            {
+              "action": "look_at_top_card_any_time",
+              "player": "you",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

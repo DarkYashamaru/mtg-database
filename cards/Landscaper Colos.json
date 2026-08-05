@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "oracle_id": "144bef8b-3583-4e98-9285-a1965e7e17f8",
+  "name": "Landscaper Colos",
+  "faces": [
+    {
+      "name": "Landscaper Colos",
+      "type_line": "Creature \u2014 Goat Beast",
+      "oracle_text": "When this creature enters, put target card from an opponent's graveyard on the bottom of their library.\nBasic landcycling {1}{W} ({1}{W}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put target card from an opponent's graveyard on the bottom of their library.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put target card from an opponent's graveyard on the bottom of their library"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Basic landcycling {1}{W} ({1}{W}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)",
+          "cost": "Basic landcycling {1}{W} ({1}{W}, Discard this card",
+          "condition": [],
+          "effects": [
+            {
+              "action": "search_library",
+              "player": "you",
+              "filter": {
+                "card_types": [
+                  "Land"
+                ],
+                "supertypes": [
+                  "Basic"
+                ]
+              },
+              "reveal": true,
+              "destination": "hand"
+            },
+            {
+              "action": "shuffle_library",
+              "player": "you"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

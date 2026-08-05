@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "oracle_id": "03dafab4-841f-41cb-8f2e-8188f5177837",
+  "name": "Jace, the Perfected Mind",
+  "faces": [
+    {
+      "name": "Jace, the Perfected Mind",
+      "type_line": "Legendary Planeswalker \u2014 Jace",
+      "oracle_text": "Compleated ({U/P} can be paid with {U} or 2 life. If life was paid, this planeswalker enters with two fewer loyalty counters.)\n+1: Until your next turn, up to one target creature gets -3/-0.\n\u22122: Target player mills three cards. Then if a graveyard has twenty or more cards in it, you draw three cards. Otherwise, you draw a card.\n\u2212X: Target player mills three times X cards.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Until your next turn, up to one target creature gets -3/-0.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "modify_stats",
+              "target": "until_you_control_next_turn_up_to_one_target_creature",
+              "power_delta": -3,
+              "toughness_delta": 0
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22122: Target player mills three cards. Then if a graveyard has twenty or more cards in it, you draw three cards. Otherwise, you draw a card.",
+          "cost": "\u22122",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player mills three cards"
+            },
+            {
+              "action": "draw_cards",
+              "amount": 3,
+              "condition": [
+                {
+                  "condition_text": "a graveyard has twenty or more cards in it"
+                }
+              ]
+            },
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "condition": [
+                {
+                  "not": {
+                    "zone_count": {
+                      "zone": "hand",
+                      "owner": "you",
+                      "count_eq": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u2212X: Target player mills three times X cards.",
+          "cost": "\u2212X",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Target player mills three times X cards"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Compleated ({U/P} can be paid with {U} or 2 life. If life was paid, this planeswalker enters with two fewer loyalty counters.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Compleated"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

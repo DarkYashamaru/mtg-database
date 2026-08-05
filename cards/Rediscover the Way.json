@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "oracle_id": "680a8e14-053f-4cde-a060-e1b36873cf14",
+  "name": "Rediscover the Way",
+  "faces": [
+    {
+      "name": "Rediscover the Way",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II \u2014 Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.\nIII \u2014 Whenever you cast a noncreature spell this turn, target creature you control gains double strike until end of turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I, II \u2014 Look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I",
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "look_at_top_cards",
+              "player": "you",
+              "zone": "library",
+              "count": 3
+            },
+            {
+              "action": "move_selected_looked_at_cards",
+              "selected_count": 1,
+              "destination": "hand",
+              "remainder_destination": "bottom_of_library",
+              "remainder_order": "any"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Whenever you cast a noncreature spell this turn, target creature you control gains double strike until end of turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "whenever_you_cast_a_noncreature_spell_this_turn_target_creature_you_control",
+              "keyword": "double_strike"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

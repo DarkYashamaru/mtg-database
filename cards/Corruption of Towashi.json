@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "oracle_id": "242c39b4-5ef0-469a-a852-738f79d93bd6",
+  "name": "Corruption of Towashi",
+  "faces": [
+    {
+      "name": "Corruption of Towashi",
+      "type_line": "Enchantment",
+      "oracle_text": "When this enchantment enters, incubate 4. (Create an Incubator token with four +1/+1 counters on it and \"{2}: Transform this token.\" It transforms into a 0/0 Phyrexian artifact creature.)\nWhenever a permanent you control transforms or a permanent you control enters transformed, you may draw a card. Do this only once each turn.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this enchantment enters, incubate 4. (Create an Incubator token with four +1/+1 counters on it and \"{2}: Transform this token.\" It transforms into a 0/0 Phyrexian artifact creature.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "this_enchantment"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "incubate 4"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever a permanent you control transforms or a permanent you control enters transformed, you may draw a card. Do this only once each turn.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a permanent you control transforms or a permanent you control enters transformed"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "usage_limit",
+              "scope": "each_turn",
+              "max_uses": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

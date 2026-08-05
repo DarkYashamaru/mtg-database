@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "9d6a9a37-a245-4503-baeb-9488553798ab",
+  "name": "Gixian Puppeteer",
+  "faces": [
+    {
+      "name": "Gixian Puppeteer",
+      "type_line": "Creature \u2014 Phyrexian Warlock",
+      "oracle_text": "Whenever you draw your second card each turn, each opponent loses 2 life and you gain 2 life.\nWhen this creature dies, return another target creature card with mana value 3 or less from your graveyard to the battlefield.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever you draw your second card each turn, each opponent loses 2 life and you gain 2 life.",
+          "trigger": {
+            "type": "draw_card",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "draw_count_each_turn": 2
+            }
+          ],
+          "effects": [
+            {
+              "action": "lose_life",
+              "target": "each_opponent",
+              "amount": 2
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "When this creature dies, return another target creature card with mana value 3 or less from your graveyard to the battlefield.",
+          "trigger": {
+            "type": "dies",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "return another target creature card with mana value 3 or less from your graveyard to the battlefield"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3d98af5f-7a0b-4a5a-b3e4-f3c9d150c993",
+  "name": "Abomination of Gudul",
+  "faces": [
+    {
+      "name": "Abomination of Gudul",
+      "type_line": "Creature \u2014 Horror",
+      "oracle_text": "Flying\nWhenever this creature deals combat damage to a player, you may draw a card. If you do, discard a card.\nMorph {2}{B}{G}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature deals combat damage to a player, you may draw a card. If you do, discard a card.",
+          "trigger": {
+            "type": "deals_combat_damage_to_player",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Morph {2}{B}{G}{U} (You may cast this card face down as a 2/2 creature for {3}. Turn it face up any time for its morph cost.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Morph {2}{B}{G}{U}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

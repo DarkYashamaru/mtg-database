@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "af7db15c-93af-4c7e-a028-42181d91a923",
+  "name": "Runescale Stormbrood // Chilling Screech",
+  "faces": [
+    {
+      "name": "Chilling Screech",
+      "type_line": "Instant \u2014 Omen",
+      "oracle_text": "Counter target spell with mana value 2 or less. (Then shuffle this card into its owner's library.)",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Counter target spell with mana value 2 or less. (Then shuffle this card into its owner's library.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Counter target spell with mana value 2 or less"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Runescale Stormbrood",
+      "type_line": "Creature \u2014 Dragon",
+      "oracle_text": "Flying\nWhenever you cast a noncreature spell or a Dragon spell, this creature gets +2/+0 until end of turn.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a noncreature spell or a Dragon spell, this creature gets +2/+0 until end of turn.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "spell_types_any": [
+                "noncreature_spell",
+                "a_dragon"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 2,
+              "toughness_delta": 0
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

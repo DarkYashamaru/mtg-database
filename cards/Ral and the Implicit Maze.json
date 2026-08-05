@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "oracle_id": "3affd37a-d4f6-488a-b30f-8e824b640687",
+  "name": "Ral and the Implicit Maze",
+  "faces": [
+    {
+      "name": "Ral and the Implicit Maze",
+      "type_line": "Enchantment \u2014 Saga",
+      "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 This Saga deals 2 damage to each creature and planeswalker your opponents control.\nII \u2014 You may discard a card. If you do, exile the top two cards of your library. You may play them until the end of your next turn.\nIII \u2014 Create a Spellgorger Weird token. (It's a {2}{R} 2/2 Weird creature with \"Whenever you cast a noncreature spell, put a +1/+1 counter on Spellgorger Weird.\")",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "I \u2014 This Saga deals 2 damage to each creature and planeswalker your opponents control.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "I"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This Saga deals 2 damage to each creature and planeswalker your opponents control"
+            }
+          ]
+        },
+        {
+          "raw_text": "II \u2014 You may discard a card. If you do, exile the top two cards of your library. You may play them until the end of your next turn.",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "II"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "discard_cards",
+              "player": "you",
+              "amount": 1,
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile the top two cards of your library",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "You may play them until the end of your next turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "III \u2014 Create a Spellgorger Weird token. (It's a {2}{R} 2/2 Weird creature with \"Whenever you cast a noncreature spell, put a +1/+1 counter on Spellgorger Weird.\")",
+          "trigger": {
+            "type": "saga_chapter",
+            "chapters": [
+              "III"
+            ]
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "Spellgorger Weird token"
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "oracle_id": "06f09e5a-5cfb-437f-9dd1-1682d71f4e7f",
+  "name": "Aetherstorm Roc",
+  "faces": [
+    {
+      "name": "Aetherstorm Roc",
+      "type_line": "Creature \u2014 Bird",
+      "oracle_text": "Flying\nWhenever this creature or another creature you control enters, you get {E} (an energy counter).\nWhenever this creature attacks, you may pay {E}{E}. If you do, put a +1/+1 counter on it and tap up to one target creature defending player controls.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever this creature or another creature you control enters, you get {E} (an energy counter).",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "card_types": [
+                "Creature"
+              ],
+              "subtypes": [
+                "Self",
+                "Or",
+                "Another"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you get {E}"
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever this creature attacks, you may pay {E}{E}. If you do, put a +1/+1 counter on it and tap up to one target creature defending player controls.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may pay {E}{E}"
+            },
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "it_and_tap_up_to_one_target_creature_defending_player_controls",
+              "amount": 1,
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "oracle_id": "69658c2c-2c46-4d62-945e-1a5176869b05",
+  "name": "Circle of Affliction",
+  "faces": [
+    {
+      "name": "Circle of Affliction",
+      "type_line": "Enchantment",
+      "oracle_text": "As this enchantment enters, choose a color.\nWhenever a source of the chosen color deals damage to you, you may pay {1}. If you do, target player loses 1 life and you gain 1 life.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a source of the chosen color deals damage to you, you may pay {1}. If you do, target player loses 1 life and you gain 1 life.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a source of the chosen color deals damage to you"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{1}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "target player loses 1 life",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "As this enchantment enters, choose a color.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this enchantment enters, choose a color"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

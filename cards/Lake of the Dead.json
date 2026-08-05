@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bdf476e5-1d57-4b17-b45b-d52fd75aadeb",
+  "name": "Lake of the Dead",
+  "faces": [
+    {
+      "name": "Lake of the Dead",
+      "type_line": "Land",
+      "oracle_text": "If this land would enter, sacrifice a Swamp instead. If you do, put this land onto the battlefield. If you don't, put it into its owner's graveyard.\n{T}: Add {B}.\n{T}, Sacrifice a Swamp: Add {B}{B}{B}{B}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        },
+        {
+          "raw_text": "{T}, Sacrifice a Swamp: Add {B}{B}{B}{B}.",
+          "cost": "{T}, Sacrifice a Swamp",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Add {B}{B}{B}{B}"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "If this land would enter, sacrifice a Swamp instead. If you do, put this land onto the battlefield. If you don't, put it into its owner's graveyard.",
+          "effects": [
+            {
+              "action": "sacrifice",
+              "target": "a_swamp_instead",
+              "condition": [
+                {
+                  "condition_text": "this land would enter"
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put this land onto the battlefield",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "put it into its owner's graveyard",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

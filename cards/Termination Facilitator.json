@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "56edd306-8676-49c4-b3c3-5ff840536c3a",
+  "name": "Termination Facilitator",
+  "faces": [
+    {
+      "name": "Termination Facilitator",
+      "type_line": "Creature \u2014 Human Assassin",
+      "oracle_text": "{T}: Put a bounty counter on target creature or planeswalker. Activate only as a sorcery.\nWhenever a creature or planeswalker an opponent controls with a bounty counter on it is dealt damage, destroy it.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature or planeswalker an opponent controls with a bounty counter on it is dealt damage, destroy it.",
+          "trigger": {
+            "type": "dealt_damage",
+            "subject": "a_creature_or_planeswalker_an_opponent_controls_with_a_bounty_counter_on_it"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "destroy",
+              "target": "it"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{T}: Put a bounty counter on target creature or planeswalker. Activate only as a sorcery.",
+          "cost": "{T}",
+          "condition": [
+            {
+              "condition_text": "as a sorcery"
+            }
+          ],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Put a bounty counter on target creature or planeswalker"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

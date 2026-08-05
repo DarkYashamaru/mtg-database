@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "oracle_id": "dd06c11c-c4fd-414e-ac63-5556f31491f5",
+  "name": "Rowan, Scholar of Sparks // Will, Scholar of Frost",
+  "faces": [
+    {
+      "name": "Rowan, Scholar of Sparks",
+      "type_line": "Legendary Planeswalker \u2014 Rowan",
+      "oracle_text": "Instant and sorcery spells you cast cost {1} less to cast.\n+1: Rowan deals 1 damage to each opponent. If you've drawn three or more cards this turn, she deals 3 damage to each opponent instead.\n\u22124: You get an emblem with \"Whenever you cast an instant or sorcery spell, you may pay {2}. If you do, copy that spell. You may choose new targets for the copy.\"",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Rowan deals 1 damage to each opponent. If you've drawn three or more cards this turn, she deals 3 damage to each opponent instead.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "deal_damage",
+              "source": "self",
+              "target": "each_opponent",
+              "amount": 1
+            },
+            {
+              "action": "custom_effect",
+              "text": "she deals 3 damage to each opponent instead",
+              "condition": [
+                {
+                  "condition_text": "you've drawn three or more cards this turn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22124: You get an emblem with \"Whenever you cast an instant or sorcery spell, you may pay {2}. If you do, copy that spell. You may choose new targets for the copy.\"",
+          "cost": "\u22124",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You get an emblem with \"Whenever you cast an instant or sorcery spell, you may pay {2}"
+            },
+            {
+              "action": "custom_effect",
+              "text": "copy that spell",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "allow_new_targets",
+              "object": "copied_spell",
+              "optional": true
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Instant and sorcery spells you cast cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Instant and sorcery spells you cast cost {1} less to cast"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Will, Scholar of Frost",
+      "type_line": "Legendary Planeswalker \u2014 Will",
+      "oracle_text": "Instant and sorcery spells you cast cost {1} less to cast.\n+1: Up to one target creature has base power and toughness 0/2 until your next turn.\n\u22123: Draw two cards.\n\u22127: Exile up to five target permanents. For each permanent exiled this way, its controller creates a 4/4 blue and red Elemental creature token.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "+1: Up to one target creature has base power and toughness 0/2 until your next turn.",
+          "cost": "+1",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Up to one target creature has base power and toughness 0/2 until your next turn"
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22123: Draw two cards.",
+          "cost": "\u22123",
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "raw_text": "\u22127: Exile up to five target permanents. For each permanent exiled this way, its controller creates a 4/4 blue and red Elemental creature token.",
+          "cost": "\u22127",
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Exile up to five target permanents"
+            },
+            {
+              "action": "custom_effect",
+              "text": "For each permanent exiled this way, its controller creates a 4/4 blue and red Elemental creature token"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "Instant and sorcery spells you cast cost {1} less to cast.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Instant and sorcery spells you cast cost {1} less to cast"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

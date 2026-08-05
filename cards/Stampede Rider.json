@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "oracle_id": "580112bd-6804-4981-97ad-0f5e43627b22",
+  "name": "Stampede Rider",
+  "faces": [
+    {
+      "name": "Stampede Rider",
+      "type_line": "Creature \u2014 Satyr",
+      "oracle_text": "Trample\nAt the beginning of each combat, if you control a creature with power 4 or greater, this creature gets +1/+1 until end of turn.",
+      "static": [
+        {
+          "keyword": "trample"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "At the beginning of each combat, if you control a creature with power 4 or greater, this creature gets +1/+1 until end of turn.",
+          "trigger": {
+            "type": "beginning_of_each_combat"
+          },
+          "condition": [
+            {
+              "condition_text": "you control a creature with power 4 or greater"
+            }
+          ],
+          "effects": [
+            {
+              "action": "modify_stats_until_end_of_turn",
+              "target": "self",
+              "power_delta": 1,
+              "toughness_delta": 1
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

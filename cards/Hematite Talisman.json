@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "oracle_id": "586601dd-ac73-4451-848d-f21e64feb6a9",
+  "name": "Hematite Talisman",
+  "faces": [
+    {
+      "name": "Hematite Talisman",
+      "type_line": "Artifact",
+      "oracle_text": "Whenever a player casts a red spell, you may pay {3}. If you do, untap target permanent.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "Whenever a player casts a red spell, you may pay {3}. If you do, untap target permanent.",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever a player casts a red spell"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{3}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "untap target permanent",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

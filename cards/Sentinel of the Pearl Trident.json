@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "oracle_id": "2bddbd7d-9b6b-4166-88de-368d91c7fe4f",
+  "name": "Sentinel of the Pearl Trident",
+  "faces": [
+    {
+      "name": "Sentinel of the Pearl Trident",
+      "type_line": "Creature \u2014 Merfolk Soldier",
+      "oracle_text": "Flash\nWhen this creature enters, you may exile target historic permanent you control. If you do, return that card to the battlefield under its owner's control at the beginning of the next end step. (Artifacts, legendaries, and Sagas are historic.)",
+      "static": [
+        {
+          "keyword": "flash"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, you may exile target historic permanent you control. If you do, return that card to the battlefield under its owner's control at the beginning of the next end step. (Artifacts, legendaries, and Sagas are historic.)",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "you may exile target historic permanent you control"
+            },
+            {
+              "action": "custom_effect",
+              "text": "return that card to the battlefield under its owner's control at the beginning of the next end step",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

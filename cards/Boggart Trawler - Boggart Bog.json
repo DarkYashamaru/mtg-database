@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "oracle_id": "727f3201-1cfc-4ab2-9dfe-be4f7251f42f",
+  "name": "Boggart Trawler // Boggart Bog",
+  "faces": [
+    {
+      "name": "Boggart Bog",
+      "type_line": "Land",
+      "oracle_text": "As this land enters, you may pay 3 life. If you don't, it enters tapped.\n{T}: Add {B}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "As this land enters, you may pay 3 life. If you don't, it enters tapped.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "As this land enters, you may pay 3 life"
+            },
+            {
+              "action": "enters_tapped",
+              "target": "it",
+              "condition": [
+                {
+                  "condition_text": "you don't"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boggart Trawler",
+      "type_line": "Creature \u2014 Goblin",
+      "oracle_text": "When this creature enters, exile target player's graveyard.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, exile target player's graveyard.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "exile target player's graveyard"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

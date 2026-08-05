@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "oracle_id": "37783ce6-af58-4ef6-8ab4-587079970307",
+  "name": "Hagra Mauling // Hagra Broodpit",
+  "faces": [
+    {
+      "name": "Hagra Broodpit",
+      "type_line": "Land",
+      "oracle_text": "This land enters tapped.\n{T}: Add {B}.",
+      "static": [],
+      "triggered": [],
+      "activated": [
+        {
+          "raw_text": "{T}: Add {B}.",
+          "cost": "{T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "add_mana",
+              "amount": 1,
+              "colors_any_of": [
+                "{b}"
+              ],
+              "distribution": "fixed"
+            }
+          ]
+        }
+      ],
+      "static_abilities": [
+        {
+          "raw_text": "This land enters tapped.",
+          "effects": [
+            {
+              "action": "enters_tapped",
+              "target": "self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hagra Mauling",
+      "type_line": "Instant",
+      "oracle_text": "This spell costs {1} less to cast if an opponent controls no basic lands.\nDestroy target creature.",
+      "static": [],
+      "triggered": [],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "This spell costs {1} less to cast if an opponent controls no basic lands.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "This spell costs {1} less to cast if an opponent controls no basic lands"
+            }
+          ]
+        },
+        {
+          "raw_text": "Destroy target creature.",
+          "effects": [
+            {
+              "action": "destroy",
+              "target": {
+                "selector": "target_creature"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

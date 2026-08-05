@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "oracle_id": "b749e9e4-0f2a-4157-8cca-facd6b48157f",
+  "name": "Proft's Eidetic Memory",
+  "faces": [
+    {
+      "name": "Proft's Eidetic Memory",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "When Proft's Eidetic Memory enters, draw a card.\nYou have no maximum hand size.\nAt the beginning of combat on your turn, if you've drawn more than one card this turn, put X +1/+1 counters on target creature you control, where X is the number of cards you've drawn this turn minus one.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Proft's Eidetic Memory enters, draw a card.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "raw_text": "At the beginning of combat on your turn, if you've drawn more than one card this turn, put X +1/+1 counters on target creature you control, where X is the number of cards you've drawn this turn minus one.",
+          "trigger": {
+            "type": "beginning_of_combat_your_turn"
+          },
+          "condition": [
+            {
+              "condition_text": "you've drawn more than one card this turn"
+            }
+          ],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "target_creature_you_control_where_x_is_the_number_of_cards_youve_drawn_this_turn_minus_one"
+              },
+              "amount": "X"
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "You have no maximum hand size.",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "You have no maximum hand size"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

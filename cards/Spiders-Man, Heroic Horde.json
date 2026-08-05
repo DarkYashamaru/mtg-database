@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "oracle_id": "d21d7557-9702-46c1-8277-42a3442084c2",
+  "name": "Spiders-Man, Heroic Horde",
+  "faces": [
+    {
+      "name": "Spiders-Man, Heroic Horde",
+      "type_line": "Legendary Creature \u2014 Spider Hero",
+      "oracle_text": "Web-slinging {4}{G}{G} (You may cast this spell for {4}{G}{G} if you also return a tapped creature you control to its owner's hand.)\nWhen Spiders-Man enters, if they were cast using web-slinging, you gain 3 life and create two 2/1 green Spider creature tokens with reach.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When Spiders-Man enters, if they were cast using web-slinging, you gain 3 life and create two 2/1 green Spider creature tokens with reach.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [
+            {
+              "condition_text": "they were cast using web-slinging"
+            }
+          ],
+          "effects": [
+            {
+              "action": "gain_life",
+              "player": "you",
+              "amount": 3
+            },
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "two 2/1 green Spider creature tokens with reach",
+                "colors": [
+                  "green"
+                ],
+                "power_toughness": "2/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Spider"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": [
+        {
+          "raw_text": "Web-slinging {4}{G}{G} (You may cast this spell for {4}{G}{G} if you also return a tapped creature you control to its owner's hand.)",
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "Web-slinging {4}{G}{G}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

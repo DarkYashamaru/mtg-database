@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "oracle_id": "cb2d222c-df42-41a7-a517-0a41e47a4280",
+  "name": "Knightfisher",
+  "faces": [
+    {
+      "name": "Knightfisher",
+      "type_line": "Creature \u2014 Bird Knight",
+      "oracle_text": "Flying\nWhenever another nontoken Bird you control enters, create a 1/1 blue Fish creature token.",
+      "static": [
+        {
+          "keyword": "flying"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever another nontoken Bird you control enters, create a 1/1 blue Fish creature token.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": {
+              "selector": "creatures_you_control",
+              "exclude_self": true,
+              "subtypes": [
+                "Nontoken",
+                "Bird"
+              ]
+            }
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "create_token",
+              "amount": 1,
+              "token": {
+                "raw": "1/1 blue Fish creature token",
+                "colors": [
+                  "blue"
+                ],
+                "power_toughness": "1/1",
+                "card_types": [
+                  "creature"
+                ],
+                "subtypes": [
+                  "Fish"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

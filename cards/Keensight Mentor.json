@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "oracle_id": "500a17a0-8332-414c-9c3a-7157a7800887",
+  "name": "Keensight Mentor",
+  "faces": [
+    {
+      "name": "Keensight Mentor",
+      "type_line": "Creature \u2014 Human Cleric",
+      "oracle_text": "When this creature enters, put a vigilance counter on target non-Human creature you control.\n{1}{W}, {T}: Put a +1/+1 counter on each creature you control with vigilance.",
+      "static": [],
+      "triggered": [
+        {
+          "raw_text": "When this creature enters, put a vigilance counter on target non-Human creature you control.",
+          "trigger": {
+            "type": "enters_battlefield",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "put a vigilance counter on target non-Human creature you control"
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "{1}{W}, {T}: Put a +1/+1 counter on each creature you control with vigilance.",
+          "cost": "{1}{W}, {T}",
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": {
+                "selector": "each_creature_you_control_with_vigilance"
+              },
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

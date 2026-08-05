@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "oracle_id": "bd9d761f-79cc-4082-8375-51af582f1472",
+  "name": "Kozilek's Unsealing",
+  "faces": [
+    {
+      "name": "Kozilek's Unsealing",
+      "type_line": "Enchantment",
+      "oracle_text": "Devoid (This card has no color.)\nWhenever you cast a creature spell with mana value 4, 5, or 6, create two 0/1 colorless Eldrazi Spawn creature tokens with \"Sacrifice this token: Add {C}.\"\nWhenever you cast a creature spell with mana value 7 or greater, draw three cards.",
+      "static": [
+        {
+          "keyword": "devoid"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever you cast a creature spell with mana value 4, 5, or 6, create two 0/1 colorless Eldrazi Spawn creature tokens with \"Sacrifice this token: Add {C}.\"",
+          "trigger": {
+            "type": "custom",
+            "text": "Whenever you cast a creature spell with mana value 4"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "custom_effect",
+              "text": "5, or 6, create two 0/1 colorless Eldrazi Spawn creature tokens with \"Sacrifice this token: Add {C}.\""
+            }
+          ]
+        },
+        {
+          "raw_text": "Whenever you cast a creature spell with mana value 7 or greater, draw three cards.",
+          "trigger": {
+            "type": "cast_spell",
+            "subject": "you"
+          },
+          "condition": [
+            {
+              "mana_value_gte": 7
+            },
+            {
+              "spell_types_any": [
+                "Creature"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "action": "draw_cards",
+              "amount": 3
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "oracle_id": "fdba89eb-1cf5-46e6-9d09-1adb9bc40fcd",
+  "name": "Yahenni, Undying Partisan",
+  "faces": [
+    {
+      "name": "Yahenni, Undying Partisan",
+      "type_line": "Legendary Creature \u2014 Aetherborn Vampire",
+      "oracle_text": "Haste\nWhenever a creature an opponent controls dies, put a +1/+1 counter on Yahenni.\nSacrifice another creature: Yahenni gains indestructible until end of turn.",
+      "static": [
+        {
+          "keyword": "haste"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever a creature an opponent controls dies, put a +1/+1 counter on Yahenni.",
+          "trigger": {
+            "type": "dies",
+            "subject": "a_creature_an_opponent_controls"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "put_counters",
+              "counter_type": "+1/+1",
+              "target": "self",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "activated": [
+        {
+          "raw_text": "Sacrifice another creature: Yahenni gains indestructible until end of turn.",
+          "cost": "Sacrifice another creature",
+          "condition": [],
+          "effects": [
+            {
+              "action": "grant_keyword_until_end_of_turn",
+              "target": "self",
+              "keyword": "indestructible"
+            }
+          ]
+        }
+      ],
+      "static_abilities": []
+    }
+  ]
+}

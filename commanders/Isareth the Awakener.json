@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "oracle_id": "7af0e2da-9163-42d9-bf69-439cc61cd28d",
+  "name": "Isareth the Awakener",
+  "faces": [
+    {
+      "name": "Isareth the Awakener",
+      "type_line": "Legendary Creature \u2014 Human Wizard",
+      "oracle_text": "Deathtouch\nWhenever Isareth attacks, you may pay {X}. When you do, return target creature card with mana value X from your graveyard to the battlefield with a corpse counter on it. If that creature would leave the battlefield, exile it instead of putting it anywhere else.",
+      "static": [
+        {
+          "keyword": "deathtouch"
+        }
+      ],
+      "triggered": [
+        {
+          "raw_text": "Whenever Isareth attacks, you may pay {X}. When you do, return target creature card with mana value X from your graveyard to the battlefield with a corpse counter on it. If that creature would leave the battlefield, exile it instead of putting it anywhere else.",
+          "trigger": {
+            "type": "attacks",
+            "subject": "self"
+          },
+          "condition": [],
+          "effects": [
+            {
+              "action": "pay_mana",
+              "cost": "{x}",
+              "optional": true
+            },
+            {
+              "action": "custom_effect",
+              "text": "return target creature card with mana value x from your graveyard to the battlefield with a corpse counter on it",
+              "condition": [
+                {
+                  "previous_optional_payment_made": true
+                }
+              ]
+            },
+            {
+              "action": "custom_effect",
+              "text": "exile it instead of putting it anywhere else",
+              "condition": [
+                {
+                  "condition_text": "that creature would leave the battlefield"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "activated": [],
+      "static_abilities": []
+    }
+  ]
+}
