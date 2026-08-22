@@ -3,6 +3,7 @@ from database.session import engine
 
 # import all models
 from models.card import *
+from models.marker import *
 from models.tag import *
 from models.archetype import *
 from models.category import *

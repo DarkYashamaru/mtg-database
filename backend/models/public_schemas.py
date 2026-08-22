@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from models.archetype import Archetype
 from models.card import Card
 from models.category import Category
+from models.marker import Marker
 from models.tag import Tag
 from models.themes import Theme, ThemeCategory, CardTheme, CommanderTheme
 from sqlalchemy.orm import selectinload
@@ -32,6 +33,13 @@ class TagSchema(BaseModel):
 class TagCollectionSchema(BaseModel):
     direct: list[TagSchema]
     inherited: list[TagSchema]
+
+
+class MarkerSchema(BaseModel):
+    id: str
+    name: str
+    description: str | None = None
+
 
 class KeywordSchema(BaseModel):
     #id: str
@@ -64,6 +72,7 @@ class CardSchema(BaseModel):
     standard_legal: bool
 
     tags: TagCollectionSchema
+    markers: list[MarkerSchema]
     faces: list[FaceSchema]
     keywords: list[KeywordSchema]
     color_identity: list[ColorSchema]
@@ -115,6 +124,17 @@ def _tag_schemas(tags: Sequence[Tag]) -> list[TagSchema]:
     return [
         TagSchema(slug=tag.slug, description=tag.description)
         for tag in sorted(tags, key=lambda tag: tag.slug)
+    ]
+
+
+def _marker_schemas(markers: Sequence[Marker]) -> list[MarkerSchema]:
+    return [
+        MarkerSchema(
+            id=marker.id,
+            name=marker.name,
+            description=marker.description,
+        )
+        for marker in sorted(markers, key=lambda marker: marker.name)
     ]
 
 def card_to_schema(card: Card, inherited_tags_by_direct_id: Mapping[str, Sequence[Tag]] | None = None, themes_map = None,) -> CardSchema:
@@ -177,6 +197,8 @@ def card_to_schema(card: Card, inherited_tags_by_direct_id: Mapping[str, Sequenc
             inherited=_tag_schemas(list(inherited_tags_by_id.values())),
         ),
 
+        markers=_marker_schemas(card.markers),
+
         faces=[
             FaceSchema(
                 name=face.name,
@@ -211,6 +233,14 @@ def card_to_schema(card: Card, inherited_tags_by_direct_id: Mapping[str, Sequenc
 
 def tag_to_schema (tag: Tag):
     return TagSchema(slug=tag.slug, description=tag.description)
+
+
+def marker_to_schema(marker: Marker) -> MarkerSchema:
+    return MarkerSchema(
+        id=marker.id,
+        name=marker.name,
+        description=marker.description,
+    )
 
 
 def category_to_schema(category: Category) -> CategorySchema:

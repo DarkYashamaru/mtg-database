@@ -16,6 +16,7 @@ from database.base import Base
 
 if TYPE_CHECKING:
     from models.archetype import Archetype
+    from models.marker import CardMarker, Marker
     from models.tag import Tagging
     from models.category import Category
     from models.catalogs import Supertype, CardType, Subtype
@@ -38,6 +39,21 @@ class Card(Base):
         back_populates="card",
         cascade="all, delete-orphan",
         passive_deletes=True,
+    )
+
+    card_markers: Mapped[list["CardMarker"]] = relationship(
+        back_populates="card",
+        cascade="all, delete-orphan",
+        passive_deletes=True,
+        overlaps="markers,cards",
+    )
+
+    markers: Mapped[list["Marker"]] = relationship(
+        "Marker",
+        secondary="card_markers",
+        back_populates="cards",
+        viewonly=True,
+        overlaps="card_markers,marker",
     )
 
     color_identity: Mapped[list["Color_Identity"]] = relationship(

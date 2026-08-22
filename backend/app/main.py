@@ -13,6 +13,7 @@ from typing import Optional, List
 from models.card import *
 from models.archetype import *
 from models.color import *
+from models.marker import *
 from models.public_schemas import *
 from models.tag import *
 from models.category import *
@@ -31,6 +32,8 @@ class DecklistRequest(BaseModel):
 
 CARD_LOAD_OPTIONS = (
     selectinload(Card.taggings).selectinload(Tagging.tag),
+    selectinload(Card.card_markers).selectinload(CardMarker.marker),
+    selectinload(Card.markers),
     selectinload(Card.color_identity).selectinload(Color_Identity.color),
     selectinload(Card.keywords).selectinload(Card_Keyword.keyword),
     selectinload(Card.categories),
@@ -452,6 +455,8 @@ class SearchOptions(BaseModel):
 
     tags: Optional[List[str]] = Field(None, description="Included tags")
     exclude_tags: Optional[List[str]] = Field(None, description="Excluded tags")
+    markers: Optional[List[str]] = Field(None, description="Included markers")
+    exclude_markers: Optional[List[str]] = Field(None, description="Excluded markers")
 
     card_type: Optional[str] = Field(None, description="Type line match")
 
@@ -463,9 +468,12 @@ def advanced_search(
     name: str | None = None,
     colors: list[str] = Query(default_factory=list),
     exact_colors: bool = False,
+    colorless: bool = False,
 
     tags: list[str] = Query(default_factory=list),
     exclude_tags: list[str] = Query(default_factory=list),
+    markers: list[str] = Query(default_factory=list),
+    exclude_markers: list[str] = Query(default_factory=list),
 
     card_type: str | None = None,
 
@@ -475,7 +483,7 @@ def advanced_search(
     db: Session = Depends(get_db),
 ):
      
-    logger.info(f"Advanced Search: name: {name}\ncolors: {colors}\nexact_colors: {exact_colors}\ntags:{tags}\nexclude_tags: {exclude_tags}\ncard_type: {card_type}\noracle_text: {oracle_text}\nexclude_oracle_text: {exclude_oracle_text}")
+    logger.info(f"Advanced Search: name: {name}\ncolors: {colors}\nexact_colors: {exact_colors}\ncolorless: {colorless}\ntags:{tags}\nexclude_tags: {exclude_tags}\nmarkers:{markers}\nexclude_markers: {exclude_markers}\ncard_type: {card_type}\noracle_text: {oracle_text}\nexclude_oracle_text: {exclude_oracle_text}")
 
     stmt = select(Card).options(*CARD_LOAD_OPTIONS)
 
@@ -555,6 +563,38 @@ def advanced_search(
             )
         )
 
+    for marker_value in markers:
+        stmt = stmt.where(
+            exists(
+                select(1)
+                .select_from(CardMarker)
+                .join(Marker, CardMarker.marker_id == Marker.id)
+                .where(
+                    CardMarker.oracle_id == Card.oracle_id,
+                    or_(
+                        Marker.id == marker_value,
+                        Marker.name == marker_value,
+                    ),
+                )
+            )
+        )
+
+    for marker_value in exclude_markers:
+        stmt = stmt.where(
+            ~exists(
+                select(1)
+                .select_from(CardMarker)
+                .join(Marker, CardMarker.marker_id == Marker.id)
+                .where(
+                    CardMarker.oracle_id == Card.oracle_id,
+                    or_(
+                        Marker.id == marker_value,
+                        Marker.name == marker_value,
+                    ),
+                )
+            )
+        )
+
     if colors:
         allowed = {c.upper() for c in colors}
         valid = {"W", "U", "B", "R", "G"}
@@ -593,6 +633,36 @@ def advanced_search(
                 )
             )
 
+    if colorless:
+        stmt = stmt.where(
+            exists(
+                select(1)
+                .select_from(Card_Face)
+                .where(
+                    Card_Face.parent_id == Card.oracle_id,
+                    Card_Face.mana_cost.is_not(None),
+                    Card_Face.mana_cost != "",
+                )
+            )
+        )
+        stmt = stmt.where(
+            ~exists(
+                select(1)
+                .select_from(Card_Face)
+                .where(
+                    Card_Face.parent_id == Card.oracle_id,
+                    Card_Face.mana_cost.is_not(None),
+                    or_(
+                        Card_Face.mana_cost.ilike("%W%"),
+                        Card_Face.mana_cost.ilike("%U%"),
+                        Card_Face.mana_cost.ilike("%B%"),
+                        Card_Face.mana_cost.ilike("%R%"),
+                        Card_Face.mana_cost.ilike("%G%"),
+                    ),
+                )
+            )
+        )
+
     cards = db.execute(stmt.distinct()).scalars().all()
 
     inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
@@ -601,6 +671,51 @@ def advanced_search(
     )
 
     oracle_ids = list({card.oracle_id for card in cards if card.oracle_id})
+    themes_map = get_themes_for_cards_map(oracle_ids, db) if oracle_ids else {}
+
+    return [
+        card_to_schema(card, inherited_tags_by_direct_id, themes_map)
+        for card in cards
+    ]
+
+
+@router.get("/markers", response_model=list[MarkerSchema])
+def get_all_markers(db: Session = Depends(get_db)):
+    stmt = select(Marker).order_by(Marker.name)
+
+    markers = db.execute(stmt).scalars().all()
+
+    return [marker_to_schema(marker) for marker in markers]
+
+
+@router.get("/markers/{marker_id}/cards", response_model=list[CardSchema])
+def get_cards_for_marker(marker_id: str, db: Session = Depends(get_db)):
+    marker = db.execute(
+        select(Marker).where(Marker.id == marker_id)
+    ).scalar_one_or_none()
+
+    if marker is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Marker not found",
+        )
+
+    stmt = (
+        select(Card)
+        .options(*CARD_LOAD_OPTIONS)
+        .join(CardMarker, CardMarker.oracle_id == Card.oracle_id)
+        .where(CardMarker.marker_id == marker_id)
+        .order_by(Card.name)
+        .distinct()
+    )
+    cards = db.execute(stmt).scalars().all()
+
+    inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
+        db,
+        direct_tag_ids_for_cards(cards),
+    )
+
+    oracle_ids = [card.oracle_id for card in cards if card.oracle_id]
     themes_map = get_themes_for_cards_map(oracle_ids, db) if oracle_ids else {}
 
     return [
