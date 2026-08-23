@@ -35,6 +35,11 @@ class Card(Base):
     commander_legal: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False, index=True,)
     standard_legal: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False, index=True,)
 
+    # EDHREC Commander-deck adoption counts. These remain null until the
+    # EDHREC precompute has successfully processed the card.
+    num_decks: Mapped[int | None] = mapped_column(nullable=True)
+    potential_decks: Mapped[int | None] = mapped_column(nullable=True)
+
     taggings: Mapped[list["Tagging"]] = relationship(
         back_populates="card",
         cascade="all, delete-orphan",

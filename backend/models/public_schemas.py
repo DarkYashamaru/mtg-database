@@ -70,6 +70,8 @@ class CardSchema(BaseModel):
 
     commander_legal: bool
     standard_legal: bool
+    num_decks: int | None
+    potential_decks: int | None
 
     tags: TagCollectionSchema
     markers: list[MarkerSchema]
@@ -163,6 +165,8 @@ def card_to_schema(card: Card, inherited_tags_by_direct_id: Mapping[str, Sequenc
 
         commander_legal=card.commander_legal,
         standard_legal=card.standard_legal,
+        num_decks=card.num_decks,
+        potential_decks=card.potential_decks,
 
         keywords=[
             KeywordSchema(
