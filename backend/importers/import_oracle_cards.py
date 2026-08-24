@@ -25,7 +25,7 @@ from tools.logger import logger
 supertype_list: list[str] = []
 cardtype_list: list[str] = []
 subtype_list: list[str] = []
-SHARED_FRONT_IMAGE_LAYOUTS = {"prepare", "prepared", "room"}
+SHARED_FRONT_IMAGE_LAYOUTS = {"prepare", "prepared", "room", "adventure"}
 
 
 def parse_types(text: str, valid_subtypes: list[str]) -> list[str]:
