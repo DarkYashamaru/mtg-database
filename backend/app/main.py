@@ -25,6 +25,7 @@ from pydantic import BaseModel
 from scripts.precompute_card_theme_edhrec import precompute_card_theme_from_edhrec
 from scripts.precompute_commander_theme_edhrec import precompute_commander_theme_edhrec
 from tools.logger import logger
+from services.decklist_resolver import resolve_decklist_cards
 
 class DecklistRequest(BaseModel):
     decklist: str
@@ -330,6 +331,34 @@ def get_cards_bulk(request: DecklistRequest, db: Session = Depends(get_db)):
         card_to_schema(cards_by_name[name], inherited_tags_by_direct_id, themes_map)
         for name in names
     ]
+
+
+@router.post("/cards/bulk-resolve")
+def resolve_cards_bulk(request: DecklistRequest, db: Session = Depends(get_db)):
+    try:
+        names = parse_decklist(request.decklist)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+
+    resolved_cards, warnings = resolve_decklist_cards(names, db, CARD_LOAD_OPTIONS)
+    cards = [card for _, card in resolved_cards]
+    oracle_ids = list({card.oracle_id for card in cards if card.oracle_id})
+    themes_map = get_themes_for_cards_map(oracle_ids, db)
+    inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
+        db,
+        direct_tag_ids_for_cards(cards),
+    )
+
+    return {
+        "cards": [
+            {
+                "requested_name": requested_name,
+                "card": card_to_schema(card, inherited_tags_by_direct_id, themes_map),
+            }
+            for requested_name, card in resolved_cards
+        ],
+        "warnings": warnings,
+    }
 
 @router.get("/tags", response_model=list[TagSchema])
 def get_all_tags(db: Session = Depends(get_db)):
