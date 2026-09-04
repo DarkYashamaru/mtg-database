@@ -1,6 +1,12 @@
-from sqlalchemy import Integer, String, ForeignKey, UniqueConstraint
+from typing import TYPE_CHECKING
+
+from sqlalchemy import ForeignKey, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+
 from database.base import Base
+
+if TYPE_CHECKING:
+    from models.card import Card
 
 
 class Color(Base):
@@ -16,9 +22,35 @@ class Color(Base):
         back_populates="color"
     )
 
+    produced_mana: Mapped[list["CardProducedMana"]] = relationship(
+        back_populates="color",
+        cascade="all, delete-orphan",
+        passive_deletes=True,
+    )
+
     def __repr__(self) -> str:
         return f"Color(id={self.id!r}, name={self.name!r}, symbol={self.symbol!r})"
-    
+
+
+class CardProducedMana(Base):
+    """A color or colorless mana capability advertised by a card."""
+
+    __tablename__ = "card_produced_mana"
+
+    color_id: Mapped[int] = mapped_column(
+        ForeignKey("colors.id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+
+    card_id: Mapped[str] = mapped_column(
+        ForeignKey("cards.oracle_id", ondelete="CASCADE"),
+        primary_key=True,
+    )
+
+    card: Mapped["Card"] = relationship(back_populates="produced_mana")
+    color: Mapped["Color"] = relationship(back_populates="produced_mana")
+
+
 class Color_Identity(Base):
     __tablename__ = "color_identity"
 

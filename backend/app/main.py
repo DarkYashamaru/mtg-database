@@ -1,7 +1,6 @@
 from contextlib import asynccontextmanager
 from collections import defaultdict
 from collections.abc import Iterable
-import csv
 import uvicorn
 from fastapi import APIRouter, Depends, FastAPI, HTTPException, Query
 from sqlalchemy import func, select, exists, not_, or_, distinct
@@ -26,9 +25,24 @@ from scripts.precompute_card_theme_edhrec import precompute_card_theme_from_edhr
 from scripts.precompute_commander_theme_edhrec import precompute_commander_theme_edhrec
 from tools.logger import logger
 from services.decklist_resolver import resolve_decklist_cards
+from services.bulk_card_lookup import load_cards_by_oracle_ids
+from services.commander_validation import validate_commander_selection
+from services.search_filters import (
+    card_cmc_match_clauses,
+    card_tag_match_clause,
+    card_type_match_clause,
+    parse_search_terms,
+    parse_tag_search_terms,
+    resolve_tag_ids,
+)
+from app.commander_validation_schemas import CommanderValidationRequest
 
 class DecklistRequest(BaseModel):
     decklist: str
+
+
+class OracleIdsRequest(BaseModel):
+    oracle_ids: list[str] = Field(default_factory=list)
 
 
 CARD_LOAD_OPTIONS = (
@@ -36,6 +50,7 @@ CARD_LOAD_OPTIONS = (
     selectinload(Card.card_markers).selectinload(CardMarker.marker),
     selectinload(Card.markers),
     selectinload(Card.color_identity).selectinload(Color_Identity.color),
+    selectinload(Card.produced_mana).selectinload(CardProducedMana.color),
     selectinload(Card.keywords).selectinload(Card_Keyword.keyword),
     selectinload(Card.categories),
     selectinload(Card.archetypes),
@@ -267,6 +282,36 @@ def get_commanders(db: Session = Depends(get_db)):
     ]
 
 
+@router.post("/commanders/validate")
+def validate_commanders(request: CommanderValidationRequest, db: Session = Depends(get_db)):
+    oracle_ids = {
+        oracle_id
+        for selection in request.selections
+        for oracle_id in selection.oracle_ids
+    }
+    cards = db.execute(
+        select(Card)
+        .options(*CARD_LOAD_OPTIONS)
+        .where(Card.oracle_id.in_(oracle_ids))
+    ).scalars().all() if oracle_ids else []
+    cards_by_oracle_id = {card.oracle_id: card for card in cards}
+
+    return {
+        "results": [
+            {
+                "oracle_ids": result.oracle_ids,
+                "valid": result.valid,
+                "code": result.code,
+                "message": result.message,
+            }
+            for result in (
+                validate_commander_selection(cards_by_oracle_id, selection.oracle_ids)
+                for selection in request.selections
+            )
+        ]
+    }
+
+
 
 def get_themes_for_cards_map(oracle_ids: list[str], db) -> dict[str, list[CardThemeMinimalSchema]]:
 
@@ -330,6 +375,44 @@ def get_cards_bulk(request: DecklistRequest, db: Session = Depends(get_db)):
     return [
         card_to_schema(cards_by_name[name], inherited_tags_by_direct_id, themes_map)
         for name in names
+    ]
+
+
+@router.post("/cards/bulk-by-id", response_model=list[CardSchema])
+def get_cards_bulk_by_id(request: OracleIdsRequest, db: Session = Depends(get_db)):
+    try:
+        cards, missing_oracle_ids = load_cards_by_oracle_ids(
+            db,
+            request.oracle_ids,
+            load_options=CARD_LOAD_OPTIONS,
+        )
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=400,
+            detail={
+                "code": "invalid_oracle_ids",
+                "message": str(exc),
+            },
+        ) from exc
+
+    if missing_oracle_ids:
+        raise HTTPException(
+            status_code=400,
+            detail={
+                "code": "missing_oracle_ids",
+                "missing_oracle_ids": missing_oracle_ids,
+            },
+        )
+
+    oracle_ids = [card.oracle_id for card in cards]
+    themes_map = get_themes_for_cards_map(oracle_ids, db)
+    inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
+        db,
+        direct_tag_ids_for_cards(cards),
+    )
+    return [
+        card_to_schema(card, inherited_tags_by_direct_id, themes_map)
+        for card in cards
     ]
 
 
@@ -455,39 +538,22 @@ def get_theme_by_card(oracle_id: str, db: Session = Depends(get_db)):
         for row in results
     ]
 
-def parse_search_terms(text_list: list[str]) -> list[str]:
-    """
-    Parses search terms by splitting on commas, while keeping text inside 
-    double quotes completely intact as a single exact phrase.
-    """
-    if not text_list:
-        return []
-    
-    # Re-join incoming elements with commas to catch both array variations 
-    # and single raw query strings sent from the client
-    combined_string = ",".join(text_list)
-    
-    # skipinitialspace handles arbitrary whitespace gracefully after commas
-    reader = csv.reader([combined_string], skipinitialspace=True)
-    
-    try:
-        return [term.strip() for row in reader for term in row if term.strip()]
-    except Exception:
-        # Fallback to a basic string cleanup if an anomalous parsing error occurs
-        return [t.strip() for t in text_list if t.strip()]
-
-
 class SearchOptions(BaseModel):
     name: Optional[str] = Field(None, description="Partial name match")
     colors: Optional[List[str]] = Field(None, description="Color symbols, e.g. ['W', 'U']")
     exact_colors: bool = Field(False, description="Match exact color identity")
 
     tags: Optional[List[str]] = Field(None, description="Included tags")
+    cmc_min: Optional[float] = Field(None, ge=0, description="Minimum mana value")
+    cmc_max: Optional[float] = Field(None, ge=0, description="Maximum mana value")
     exclude_tags: Optional[List[str]] = Field(None, description="Excluded tags")
     markers: Optional[List[str]] = Field(None, description="Included markers")
     exclude_markers: Optional[List[str]] = Field(None, description="Excluded markers")
 
-    card_type: Optional[str] = Field(None, description="Type line match")
+    card_type: Optional[str] = Field(
+        None,
+        description="Comma-separated type line terms that must match one face",
+    )
 
     oracle_text: Optional[List[str]] = Field(None, description="Included oracle text terms")
     exclude_oracle_text: Optional[List[str]] = Field(None, description="Excluded oracle text terms")
@@ -497,6 +563,8 @@ def advanced_search(
     name: str | None = None,
     colors: list[str] = Query(default_factory=list),
     exact_colors: bool = False,
+    cmc_min: float | None = Query(default=None, ge=0),
+    cmc_max: float | None = Query(default=None, ge=0),
     colorless: bool = False,
 
     tags: list[str] = Query(default_factory=list),
@@ -514,7 +582,16 @@ def advanced_search(
      
     logger.info(f"Advanced Search: name: {name}\ncolors: {colors}\nexact_colors: {exact_colors}\ncolorless: {colorless}\ntags:{tags}\nexclude_tags: {exclude_tags}\nmarkers:{markers}\nexclude_markers: {exclude_markers}\ncard_type: {card_type}\noracle_text: {oracle_text}\nexclude_oracle_text: {exclude_oracle_text}")
 
+    if cmc_min is not None and cmc_max is not None and cmc_min > cmc_max:
+        raise HTTPException(
+            status_code=400,
+            detail="cmc_min cannot be greater than cmc_max",
+        )
+
     stmt = select(Card).options(*CARD_LOAD_OPTIONS)
+
+    for cmc_clause in card_cmc_match_clauses(cmc_min, cmc_max):
+        stmt = stmt.where(cmc_clause)
 
     if name:
         stmt = stmt.where(Card.name.ilike(f"%{name}%"))
@@ -549,48 +626,15 @@ def advanced_search(
         )
 
     if card_type:
-        stmt = stmt.where(
-            exists(
-                select(1)
-                .select_from(Card_Face)
-                .where(
-                    Card_Face.parent_id == Card.oracle_id,
-                    Card_Face.type_line.ilike(f"%{card_type}%"),
-                )
-            )
-        )
+        card_type_clause = card_type_match_clause(card_type)
+        if card_type_clause is not None:
+            stmt = stmt.where(card_type_clause)
 
-    for tag_value in tags:
-        stmt = stmt.where(
-            exists(
-                select(1)
-                .select_from(Tagging)
-                .join(Tag, Tagging.tag_id == Tag.id)
-                .where(
-                    Tagging.oracle_id == Card.oracle_id,
-                    or_(
-                        Tag.slug == tag_value,
-                        Tag.label == tag_value,
-                    ),
-                )
-            )
-        )
+    for tag_term in parse_tag_search_terms(tags):
+        stmt = stmt.where(card_tag_match_clause(resolve_tag_ids(db, tag_term)))
 
-    for tag_value in exclude_tags:
-        stmt = stmt.where(
-            ~exists(
-                select(1)
-                .select_from(Tagging)
-                .join(Tag, Tagging.tag_id == Tag.id)
-                .where(
-                    Tagging.oracle_id == Card.oracle_id,
-                    or_(
-                        Tag.slug == tag_value,
-                        Tag.label == tag_value,
-                    ),
-                )
-            )
-        )
+    for tag_term in parse_tag_search_terms(exclude_tags):
+        stmt = stmt.where(~card_tag_match_clause(resolve_tag_ids(db, tag_term)))
 
     for marker_value in markers:
         stmt = stmt.where(

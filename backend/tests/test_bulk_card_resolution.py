@@ -7,6 +7,7 @@ from pathlib import Path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
+from services.bulk_card_lookup import load_cards_by_oracle_ids
 from services.decklist_resolver import resolve_decklist_cards
 from models import archetype, catalogs, category, color, marker, tag, themes  # noqa: F401
 from models.card import Card
@@ -52,6 +53,58 @@ class BulkCardResolutionTests(unittest.TestCase):
                 'Skipped "Twin": multiple cards matched (Twin // One; Twin // Two).',
             ],
         )
+
+
+class BulkCardIdTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.temporary = tempfile.TemporaryDirectory()
+        database_path = Path(self.temporary.name) / "test.sqlite"
+        self.engine = create_engine(f"sqlite:///{database_path}")
+        Card.__table__.create(self.engine)
+        self.db = Session(self.engine)
+        self.db.add_all([
+            Card(oracle_id="first", name="Display Name Does Not Matter", cmc=1, layout="normal", commander_legal=True, standard_legal=False),
+            Card(oracle_id="second", name="Second", cmc=2, layout="normal", commander_legal=True, standard_legal=False),
+            Card(oracle_id="third", name="Third", cmc=3, layout="normal", commander_legal=True, standard_legal=False),
+        ])
+        self.db.commit()
+
+    def tearDown(self) -> None:
+        self.db.close()
+        self.engine.dispose()
+        self.temporary.cleanup()
+
+    def _lookup(self, oracle_ids: list[str]):
+        return load_cards_by_oracle_ids(
+            self.db,
+            oracle_ids,
+            chunk_size=1,
+        )
+
+    def test_resolves_in_request_order_and_deduplicates_across_chunks(self) -> None:
+        cards, missing = self._lookup(["third", "first", "third", "second"])
+
+        self.assertEqual(
+            [item.oracle_id for item in cards],
+            ["third", "first", "second"],
+        )
+        self.assertEqual(cards[1].name, "Display Name Does Not Matter")
+        self.assertEqual(missing, [])
+
+    def test_reports_every_missing_oracle_id_in_request_order(self) -> None:
+        cards, missing = self._lookup([
+            "missing-two", "first", "missing-one", "missing-two",
+        ])
+
+        self.assertEqual([item.oracle_id for item in cards], ["first"])
+        self.assertEqual(missing, ["missing-two", "missing-one"])
+
+    def test_rejects_blank_oracle_ids(self) -> None:
+        with self.assertRaisesRegex(ValueError, "blank values"):
+            self._lookup(["first", "  "])
+
+    def test_empty_request_returns_empty_list(self) -> None:
+        self.assertEqual(self._lookup([]), ([], []))
 
 
 if __name__ == "__main__":

@@ -48,6 +48,10 @@ class KeywordSchema(BaseModel):
 class ColorSchema(BaseModel):
     symbol: str
 
+
+MANA_SYMBOL_ORDER = {symbol: index for index, symbol in enumerate("WUBRGC")}
+
+
 class CardThemeMinimalSchema(BaseModel):
     theme_id: int
     name: str
@@ -78,6 +82,7 @@ class CardSchema(BaseModel):
     faces: list[FaceSchema]
     keywords: list[KeywordSchema]
     color_identity: list[ColorSchema]
+    produced_mana: list[ColorSchema]
     themes: list[CardThemeMinimalSchema]
     categories: list[CategorySchema]
     archetypes: list[ArchetypeSchema]
@@ -182,6 +187,18 @@ def card_to_schema(card: Card, inherited_tags_by_direct_id: Mapping[str, Sequenc
             )
             for ci in card.color_identity
             if ci.color is not None
+        ],
+
+        produced_mana=[
+            ColorSchema(symbol=capability.color.symbol)
+            for capability in sorted(
+                (
+                    capability
+                    for capability in card.produced_mana
+                    if capability.color is not None
+                ),
+                key=lambda capability: MANA_SYMBOL_ORDER.get(capability.color.symbol, 99),
+            )
         ],
 
         themes=card_themes,

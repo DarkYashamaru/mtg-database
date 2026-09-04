@@ -20,6 +20,7 @@ if TYPE_CHECKING:
     from models.tag import Tagging
     from models.category import Category
     from models.catalogs import Supertype, CardType, Subtype
+    from models.color import CardProducedMana, Color_Identity
 
 
 class Card(Base):
@@ -64,6 +65,12 @@ class Card(Base):
     color_identity: Mapped[list["Color_Identity"]] = relationship(
         back_populates="card",
         cascade="all, delete-orphan",
+    )
+
+    produced_mana: Mapped[list["CardProducedMana"]] = relationship(
+        back_populates="card",
+        cascade="all, delete-orphan",
+        passive_deletes=True,
     )
 
     faces: Mapped[list["Card_Face"]] = relationship(

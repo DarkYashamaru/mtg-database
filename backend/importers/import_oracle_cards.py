@@ -18,14 +18,16 @@ from models.card import (
     Face_Types,
 )
 from models.catalogs import CardType, Subtype, Supertype
-from models.color import Color, Color_Identity
-from sqlalchemy import select
+from models.color import CardProducedMana, Color, Color_Identity
+from sqlalchemy import delete, select
+from sqlalchemy.orm import Session
 from tools.logger import logger
 
 supertype_list: list[str] = []
 cardtype_list: list[str] = []
 subtype_list: list[str] = []
 SHARED_FRONT_IMAGE_LAYOUTS = {"prepare", "prepared", "room", "adventure"}
+MANA_SYMBOL_ORDER = ("W", "U", "B", "R", "G", "C")
 
 
 def parse_types(text: str, valid_subtypes: list[str]) -> list[str]:
@@ -53,6 +55,61 @@ def parse_types(text: str, valid_subtypes: list[str]) -> list[str]:
         raise ValueError(f"Could not parse: {text}")
 
     return list(result)
+
+
+def _produced_mana_symbols(
+    item: dict[str, Any],
+    color_dict: dict[str, int],
+) -> list[str]:
+    raw_symbols = item.get("produced_mana")
+    if not isinstance(raw_symbols, list):
+        return []
+
+    symbols = {
+        symbol
+        for symbol in raw_symbols
+        if isinstance(symbol, str)
+    }
+    unknown_symbols = sorted(symbols.difference(color_dict))
+    if unknown_symbols:
+        logger.warning(
+            "Ignoring unknown produced_mana symbols %s for Oracle card %s",
+            unknown_symbols,
+            item.get("oracle_id"),
+        )
+
+    return [
+        symbol
+        for symbol in MANA_SYMBOL_ORDER
+        if symbol in symbols and symbol in color_dict
+    ]
+
+
+def sync_produced_mana(
+    session: Session,
+    items: list[dict[str, Any]],
+    color_dict: dict[str, int],
+) -> int:
+    """Replace all stored mana capabilities with the current bulk-data values."""
+
+    session.execute(delete(CardProducedMana))
+    rows: list[CardProducedMana] = []
+    seen: set[tuple[str, str]] = set()
+
+    for item in items:
+        oracle_id = item.get("oracle_id")
+        if not oracle_id:
+            continue
+
+        for symbol in _produced_mana_symbols(item, color_dict):
+            key = (oracle_id, symbol)
+            if key in seen:
+                continue
+            seen.add(key)
+            rows.append(CardProducedMana(card_id=oracle_id, color_id=color_dict[symbol]))
+
+    session.add_all(rows)
+    return len(rows)
 
 
 def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
@@ -87,6 +144,7 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
     payload = load_scryfall_bulk_items(source_path)
 
     imported_count = 0
+    eligible_items: list[dict[str, Any]] = []
 
     with session_scope() as session:
         for item in payload:
@@ -94,11 +152,12 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
             if not oracle_id:
                 continue
 
-            if oracle_id in oracle_ids:
-                continue
-
             card = _card_from_scryfall(item)
             if not card:
+                continue
+            eligible_items.append(item)
+
+            if oracle_id in oracle_ids:
                 continue
 
             keywords = item.get("keywords")
@@ -140,6 +199,9 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
                     session.merge(type_)
 
             imported_count += 1
+
+        session.flush()
+        sync_produced_mana(session, eligible_items, color_dict)
 
         session.commit()
         session.expunge_all()

@@ -10,6 +10,7 @@ from models.tag import *
 from models.archetype import *
 from models.category import *
 from models.catalogs import *
+from models.color import *
 from models.themes import *
 
 
