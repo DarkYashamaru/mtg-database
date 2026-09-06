@@ -469,6 +469,16 @@ def get_all_archetypes(db: Session = Depends(get_db)):
 
     return [archetype_to_schema(archetype) for archetype in archetypes]
 
+
+@router.get("/themes", response_model=list[ThemeSummarySchema])
+def get_all_themes(db: Session = Depends(get_db)):
+    themes = db.scalars(select(Theme).order_by(Theme.name, Theme.id)).all()
+    return [
+        ThemeSummarySchema(id=theme.id, name=theme.name, curated=bool(theme.curated))
+        for theme in themes
+    ]
+
+
 @router.get("/themes/id/{archetype_id}", response_model=ThemeypeSchema,)
 def get_archetype(archetype_id: int, db: Session = Depends(get_db),):
 

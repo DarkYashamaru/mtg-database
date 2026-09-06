@@ -23,36 +23,56 @@ def _values(entries) -> set[str]:
     }
 
 
+def _faces(card: Card) -> list:
+    return list(getattr(card, "faces", []) or [])
+
+
+def _front_face(card: Card):
+    faces = _faces(card)
+    front_name = str(getattr(card, "name", "") or "").split("//", 1)[0].strip().casefold()
+    if front_name:
+        for face in faces:
+            if str(getattr(face, "name", "") or "").strip().casefold() == front_name:
+                return face
+    return faces[0] if len(faces) == 1 else None
+
+
+def _eligible_faces(card: Card) -> list:
+    faces = _faces(card)
+    if str(getattr(card, "layout", "") or "").strip().casefold() == "modal_dfc":
+        return faces
+    front_face = _front_face(card)
+    return [front_face] if front_face is not None else []
+
+
 def _texts(card: Card) -> str:
-    return "\n".join(face.oracle_text or "" for face in card.faces).casefold()
+    return "\n".join(face.oracle_text or "" for face in _eligible_faces(card)).casefold()
 
 
 def _keywords(card: Card) -> set[str]:
     return {
         entry.keyword.value.casefold()
-        for entry in card.keywords
-        if getattr(entry, "keyword", None) is not None and entry.keyword.value
+        for entry in getattr(card, "keywords", []) or []
+        if getattr(entry, "keyword", None) is not None and getattr(entry.keyword, "value", None)
     }
 
 
-def _is_legendary_creature(card: Card) -> bool:
-    return any(
-        "legendary" in _values(face.supertypes) and "creature" in _values(face.types)
-        for face in card.faces
-    )
+def _is_legendary_creature(face) -> bool:
+    return "legendary" in _values(face.supertypes) and "creature" in _values(face.types)
 
 
 def _is_background(card: Card) -> bool:
-    return any("background" in _values(face.subtypes) for face in card.faces)
+    return any("background" in _values(face.subtypes) for face in _eligible_faces(card))
 
 
 def _is_time_lord_doctor(card: Card) -> bool:
-    return any({"time lord", "doctor"} <= _values(face.subtypes) for face in card.faces)
+    return any({"time lord", "doctor"} <= _values(face.subtypes) for face in _eligible_faces(card))
 
 
 def _can_be_commander(card: Card) -> bool:
-    return card.commander_legal and (
-        _is_legendary_creature(card) or "can be your commander" in _texts(card)
+    return card.commander_legal and any(
+        _is_legendary_creature(face) or "can be your commander" in (face.oracle_text or "").casefold()
+        for face in _eligible_faces(card)
     )
 
 
@@ -97,8 +117,8 @@ def validate_commander_selection(
     if first_partner == second.name.casefold() and second_partner == first.name.casefold():
         return CommanderValidationResult(ids, True, "partner_with", "These cards are paired by Partner with.")
     if (
-        (_has_keyword_or_text(first, "partner") and not first_partner)
-        and (_has_keyword_or_text(second, "partner") and not second_partner)
+        _has_keyword_or_text(first, "partner") and not first_partner
+        and _has_keyword_or_text(second, "partner") and not second_partner
         and _can_be_commander(first) and _can_be_commander(second)
     ):
         return CommanderValidationResult(ids, True, "partner", "These cards can be paired through Partner.")

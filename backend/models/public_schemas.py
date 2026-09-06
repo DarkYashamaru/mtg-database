@@ -102,6 +102,12 @@ class ThemeypeSchema(BaseModel):
     name: str
     categories: list[ThemeCategorySchema]
 
+
+class ThemeSummarySchema(BaseModel):
+    id: int
+    name: str
+    curated: bool
+
 class CardThemeSchema(BaseModel):
     oracle_id: str
     theme_id: int

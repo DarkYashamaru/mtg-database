@@ -99,5 +99,80 @@ class CommanderValidationTests(unittest.TestCase):
             CommanderValidationRequest(selections=selections + [{"oracle_ids": ["too-many"]}])
 
 
+class PlayableFaceEligibilityTests(unittest.TestCase):
+    def validate(self, *cards):
+        return validate_commander_selection(
+            {candidate.oracle_id: candidate for candidate in cards},
+            [candidate.oracle_id for candidate in cards],
+        )
+
+    def _face(
+        self,
+        name: str,
+        *,
+        legendary_creature: bool = False,
+        card_type: str | None = None,
+        text: str = "",
+    ):
+        return SimpleNamespace(
+            name=name,
+            oracle_text=text,
+            supertypes=[_entry("Legendary")] if legendary_creature else [],
+            types=[_entry("Creature")] if legendary_creature else ([_entry(card_type)] if card_type else []),
+            subtypes=[],
+        )
+
+    def test_rejects_battle_and_saga_front_faces_with_legendary_creature_backs(self):
+        battle = card("battle", "Invasion of Fiora // Marchesa, Resolute Monarch", legendary_creature=False)
+        battle.layout = "transform"
+        battle.faces = [
+            self._face("Invasion of Fiora", card_type="Battle"),
+            self._face("Marchesa, Resolute Monarch", legendary_creature=True),
+        ]
+        saga = card("saga", "The Argent Etchings // Aclazotz, Deepest Betrayal", legendary_creature=False)
+        saga.layout = "transform"
+        saga.faces = [
+            self._face("The Argent Etchings", card_type="Enchantment"),
+            self._face("Aclazotz, Deepest Betrayal", legendary_creature=True),
+        ]
+
+        self.assertEqual(self.validate(battle).code, "not_eligible")
+        self.assertEqual(self.validate(saga).code, "not_eligible")
+
+    def test_accepts_transform_legendary_creature_front_and_modal_legendary_creature_back(self):
+        transform = card("transform", "Front Legend // Back Spell", legendary_creature=False)
+        transform.layout = "transform"
+        transform.faces = [
+            self._face("Front Legend", legendary_creature=True),
+            self._face("Back Spell", card_type="Sorcery"),
+        ]
+        modal = card("modal", "Front Spell // Back Legend", legendary_creature=False)
+        modal.layout = "modal_dfc"
+        modal.faces = [
+            self._face("Front Spell", card_type="Instant"),
+            self._face("Back Legend", legendary_creature=True),
+        ]
+
+        self.assertTrue(self.validate(transform).valid)
+        self.assertTrue(self.validate(modal).valid)
+
+    def test_uses_only_eligible_faces_for_explicit_commander_text(self):
+        transform = card("transform-text", "Front Spell // Back Commander", legendary_creature=False)
+        transform.layout = "transform"
+        transform.faces = [
+            self._face("Front Spell", card_type="Sorcery"),
+            self._face("Back Commander", text="This can be your commander."),
+        ]
+        modal = card("modal-text", "Front Spell // Back Commander", legendary_creature=False)
+        modal.layout = "modal_dfc"
+        modal.faces = [
+            self._face("Front Spell", card_type="Sorcery"),
+            self._face("Back Commander", text="This can be your commander."),
+        ]
+
+        self.assertEqual(self.validate(transform).code, "not_eligible")
+        self.assertTrue(self.validate(modal).valid)
+
+
 if __name__ == "__main__":
     unittest.main()
