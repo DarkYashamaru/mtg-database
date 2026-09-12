@@ -17,8 +17,6 @@ from models.public_schemas import *
 from models.tag import *
 from models.category import *
 from models.themes import *
-from scripts.download_all_data import download_from_scryfall
-from scripts.import_all import import_data_to_database
 import re
 from pydantic import BaseModel
 from scripts.precompute_card_theme_edhrec import precompute_card_theme_from_edhrec
@@ -76,19 +74,8 @@ async def lifespan(app: FastAPI):
 
     create_database()
 
-    # Uncomment ONLY when you want to refresh data
-    download_data()
-    import_data()
-
-    db: Session = next(get_db())
-
-    # try:
-
-    #     precompute_card_theme_from_edhrec(db)
-    #     precompute_commander_theme_edhrec(db)
-    
-    # except:
-    #     logger.exception("EDHREC imports failed")
+    # Data import and marker evaluation run only through the explicit
+    # maintenance workflow (scripts/refresh_mtg_data.py), never on startup.
 
     logger.info("Startup complete")
 
@@ -818,22 +805,6 @@ def get_cards_for_marker(marker_id: str, db: Session = Depends(get_db)):
 
 # Register router
 app.include_router(router)
-
-
-# --------------------------------------------------
-# Data management helpers
-# --------------------------------------------------
-
-def download_data():
-    logger.info("Downloading bulk data from Scryfall...")
-    download_from_scryfall()
-    logger.info("Download complete")
-
-
-def import_data():
-    logger.info("Importing data into database...")
-    import_data_to_database()
-    logger.info("Import complete")
 
 
 # --------------------------------------------------

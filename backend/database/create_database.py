@@ -24,3 +24,9 @@ def create_database():
         if column_name not in card_columns:
             with engine.begin() as connection:
                 connection.execute(text(f"ALTER TABLE cards ADD COLUMN {column_name} INTEGER"))
+
+
+def vacuum_database() -> None:
+    """Defragment the SQLite database during exclusive maintenance only."""
+    with engine.connect().execution_options(isolation_level="AUTOCOMMIT") as connection:
+        connection.execute(text("VACUUM"))
