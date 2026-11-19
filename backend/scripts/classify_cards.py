@@ -100,7 +100,7 @@ def load_inherited_tags_by_direct_id(
 
     tags_by_id = {
         tag.id: tag
-        for tag in db.execute(select(Tag)).scalars()
+        for tag in db.execute(select(Tag).where(Tag.is_active.is_(True))).scalars()
     }
     parents_by_child: dict[str, list[str]] = defaultdict(list)
 

@@ -49,6 +49,7 @@ CARD_LOAD_OPTIONS = (
     selectinload(Card.markers),
     selectinload(Card.color_identity).selectinload(Color_Identity.color),
     selectinload(Card.produced_mana).selectinload(CardProducedMana.color),
+    selectinload(Card.produced_mana_symbols),
     selectinload(Card.keywords).selectinload(Card_Keyword.keyword),
     selectinload(Card.categories),
     selectinload(Card.archetypes),
@@ -62,6 +63,8 @@ CARD_LOAD_OPTIONS = (
     .selectinload(Card_Face.subtypes)
     .selectinload(Face_Subtypes.type),
 )
+
+FULL_CARD_LOAD_OPTIONS = CARD_LOAD_OPTIONS + (selectinload(Card.rulings),)
 
 
 # --------------------------------------------------
@@ -119,7 +122,7 @@ def load_inherited_tags_by_direct_id(
 
     tags_by_id = {
         tag.id: tag
-        for tag in db.execute(select(Tag)).scalars()
+        for tag in db.execute(select(Tag).where(Tag.is_active.is_(True))).scalars()
     }
     parents_by_child: dict[str, list[str]] = defaultdict(list)
 
@@ -185,6 +188,15 @@ def card_to_full_schema(card: Card, db: Session) -> CardSchema:
     return card_to_schema(card, inherited_tags_by_direct_id, themes_map)
 
 
+def card_to_full_schema_with_rulings(card: Card, db: Session) -> CardWithRulingsSchema:
+    inherited_tags_by_direct_id = load_inherited_tags_by_direct_id(
+        db,
+        direct_tag_ids_for_cards([card]),
+    )
+    themes_map = get_themes_for_cards_map([card.oracle_id], db)
+    return card_to_schema_with_rulings(card, inherited_tags_by_direct_id, themes_map)
+
+
 def commanders_stmt():
     return (
         select(Card)
@@ -231,6 +243,37 @@ def get_card(oracle_id: str, db: Session = Depends(get_db)):
         )
 
     return card_to_full_schema(card, db)
+
+
+@router.get("/cards/id/{oracle_id}/full", response_model=CardWithRulingsSchema)
+def get_full_card(oracle_id: str, db: Session = Depends(get_db)):
+    card = db.execute(
+        select(Card)
+        .options(*FULL_CARD_LOAD_OPTIONS)
+        .where(Card.oracle_id == oracle_id)
+    ).scalar_one_or_none()
+    if card is None:
+        raise HTTPException(status_code=404, detail="Card not found")
+    return card_to_full_schema_with_rulings(card, db)
+
+
+@router.get("/cards/id/{oracle_id}/rulings", response_model=list[RulingSchema])
+def get_card_rulings(oracle_id: str, db: Session = Depends(get_db)):
+    card = db.get(Card, oracle_id)
+    if card is None:
+        raise HTTPException(status_code=404, detail="Card not found")
+    return [
+        RulingSchema(
+            source=ruling.source,
+            published_at=ruling.published_at,
+            comment=ruling.comment,
+        )
+        for ruling in db.scalars(
+            select(CardRuling)
+            .where(CardRuling.oracle_id == oracle_id)
+            .order_by(CardRuling.position)
+        )
+    ]
 
 @router.get("/cards/by-name", response_model=CardSchema)
 def get_card_by_name(name: str, db: Session = Depends(get_db)):
@@ -432,7 +475,7 @@ def resolve_cards_bulk(request: DecklistRequest, db: Session = Depends(get_db)):
 
 @router.get("/tags", response_model=list[TagSchema])
 def get_all_tags(db: Session = Depends(get_db)):
-    stmt = select(Tag)
+    stmt = select(Tag).where(Tag.is_active.is_(True))
 
     tags = db.execute(stmt).scalars().all()
 

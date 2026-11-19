@@ -9,7 +9,7 @@ class CardMetadataClassifierTest(unittest.TestCase):
     def test_marks_card_as_cantrip_when_tag_is_present(self) -> None:
         card = {
             "name": "Spirited Companion",
-            "tag_slugs": ["cantrip", "triggered-ability", "hand-neutral"],
+            "tag_ids": ["42313c19-8be2-47d9-9d3a-99c39725b87d", "other-tag"],
             "faces": [],
         }
 
@@ -19,12 +19,12 @@ class CardMetadataClassifierTest(unittest.TestCase):
         self.assertEqual(["cantrip"], metadata["deckbuilder"]["labels"])
         self.assertTrue(cantrip["matched"])
         self.assertEqual("tag", cantrip["source"])
-        self.assertEqual("cantrip", cantrip["tag_slug"])
+        self.assertEqual("42313c19-8be2-47d9-9d3a-99c39725b87d", cantrip["tag_id"])
 
     def test_does_not_mark_card_without_cantrip_tag(self) -> None:
         card = {
             "name": "Divination",
-            "tag_slugs": ["pure-draw", "hand-positive"],
+            "tag_ids": ["other-tag"],
             "faces": [],
         }
 
@@ -34,7 +34,7 @@ class CardMetadataClassifierTest(unittest.TestCase):
         self.assertEqual([], metadata["deckbuilder"]["labels"])
         self.assertFalse(cantrip["matched"])
         self.assertEqual("tag", cantrip["source"])
-        self.assertIsNone(cantrip["tag_slug"])
+        self.assertIsNone(cantrip["tag_id"])
 
     def test_handles_missing_tag_list(self) -> None:
         card = {

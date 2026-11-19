@@ -157,7 +157,9 @@ def resolve_tag_ids(db: Session, term: TagSearchTerm) -> tuple[str, ...]:
             Tag.label.ilike(pattern, escape="\\"),
         )
 
-    return tuple(db.scalars(select(Tag.id).where(predicate)))
+    return tuple(
+        db.scalars(select(Tag.id).where(Tag.is_active.is_(True), predicate))
+    )
 
 
 def card_tag_match_clause(tag_ids: tuple[str, ...]):

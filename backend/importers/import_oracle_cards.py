@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from functools import cache
 from pathlib import Path
 from typing import Any
 
@@ -18,7 +17,7 @@ from models.card import (
     Face_Types,
 )
 from models.catalogs import CardType, Subtype, Supertype
-from models.color import CardProducedMana, Color, Color_Identity
+from models.color import CardProducedMana, CardProducedManaSymbol, Color, Color_Identity
 from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
 from tools.logger import logger
@@ -26,35 +25,45 @@ from tools.logger import logger
 supertype_list: list[str] = []
 cardtype_list: list[str] = []
 subtype_list: list[str] = []
-SHARED_FRONT_IMAGE_LAYOUTS = {"prepare", "prepared", "room", "adventure"}
+# These layouts have multiple gameplay faces printed on one physical front.
+# Scryfall supplies their image URLs on the parent card rather than each face.
+SHARED_FRONT_IMAGE_LAYOUTS = {
+    "adventure",
+    "flip",
+    "prepare",
+    "prepared",
+    "room",
+    "split",
+}
 MANA_SYMBOL_ORDER = ("W", "U", "B", "R", "G", "C")
 
 
-def parse_types(text: str, valid_subtypes: list[str]) -> list[str]:
+def parse_types(text: str, valid_subtypes: list[str]) -> tuple[list[str], list[str]]:
     words = text.split()
+    valid = set(valid_subtypes)
+    recognized: list[str] = []
+    unresolved: list[str] = []
+    index = 0
 
-    @cache
-    def parse_from(i: int):
-        if i >= len(words):
-            return ()
+    while index < len(words):
+        match: str | None = None
+        match_end = index
+        for end in range(len(words), index, -1):
+            candidate = " ".join(words[index:end])
+            if candidate in valid:
+                match = candidate
+                match_end = end
+                break
 
-        for j in range(len(words), i, -1):
-            candidate = " ".join(words[i:j])
+        if match is None:
+            unresolved.append(words[index])
+            index += 1
+            continue
 
-            if candidate in valid_subtypes:
-                rest = parse_from(j)
+        recognized.append(match)
+        index = match_end
 
-                if rest is not None:
-                    return (candidate,) + rest
-
-        return None
-
-    result = parse_from(0)
-
-    if result is None:
-        raise ValueError(f"Could not parse: {text}")
-
-    return list(result)
+    return recognized, unresolved
 
 
 def _produced_mana_symbols(
@@ -112,6 +121,17 @@ def sync_produced_mana(
     return len(rows)
 
 
+def sync_produced_mana_symbols(session: Session, items: list[dict[str, Any]]) -> None:
+    session.execute(delete(CardProducedManaSymbol))
+    for item in items:
+        oracle_id = item.get("oracle_id")
+        values = item.get("produced_mana")
+        if isinstance(oracle_id, str) and isinstance(values, list):
+            for position, value in enumerate(values):
+                if isinstance(value, str):
+                    session.add(CardProducedManaSymbol(card_id=oracle_id, position=position, value=value))
+
+
 def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
     global supertype_list
     global cardtype_list
@@ -129,17 +149,10 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
         cardtypes = session.scalars(select(CardType)).all()
         subtypes = session.scalars(select(Subtype)).all()
 
-        all_cards = session.scalars(select(Card)).all()
-
     color_dict = {color.symbol: color.id for color in colors}
     supertype_list = [type_.value for type_ in supertypes]
     cardtype_list = [type_.value for type_ in cardtypes]
     subtype_list = [type_.value for type_ in subtypes]
-
-    oracle_ids = set()
-
-    for card in all_cards:
-        oracle_ids.add(card.oracle_id)
 
     payload = load_scryfall_bulk_items(source_path)
 
@@ -147,6 +160,14 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
     eligible_items: list[dict[str, Any]] = []
 
     with session_scope() as session:
+        session.execute(delete(Face_Subtypes))
+        session.execute(delete(Face_Types))
+        session.execute(delete(Face_Supertypes))
+        session.execute(delete(Card_Face))
+        session.execute(delete(Card_Keyword))
+        session.execute(delete(Color_Identity))
+        session.execute(delete(CardProducedManaSymbol))
+
         for item in payload:
             oracle_id = item.get("oracle_id")
             if not oracle_id:
@@ -156,9 +177,6 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
             if not card:
                 continue
             eligible_items.append(item)
-
-            if oracle_id in oracle_ids:
-                continue
 
             keywords = item.get("keywords")
             if keywords:
@@ -180,7 +198,6 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
 
             for face in card_faces:
                 session.merge(face)
-                logger.info(f"Importing {face.name}")
 
             types_to_add: list[Card_Type_Collection] = []
 
@@ -202,6 +219,7 @@ def import_oracle_cards(source_path: Path = ORACLE_CARDS_PATH) -> int:
 
         session.flush()
         sync_produced_mana(session, eligible_items, color_dict)
+        sync_produced_mana_symbols(session, eligible_items)
 
         session.commit()
         session.expunge_all()
@@ -227,10 +245,6 @@ def backfill_shared_front_face_images(source_path: Path = ORACLE_CARDS_PATH) -> 
 
             layout = (item.get("layout") or "").strip().lower()
             if layout not in SHARED_FRONT_IMAGE_LAYOUTS:
-                continue
-
-            legalities = item.get("legalities") or {}
-            if legalities.get("commander") != "legal":
                 continue
 
             root_image_uris = item.get("image_uris") or {}
@@ -275,11 +289,8 @@ def _card_from_scryfall(item: dict[str, Any]) -> Card | None:
     legalities = item.get("legalities") or {}
     commander_legal = legalities.get("commander") == "legal"
 
-    if not commander_legal:
-        return None
-
     card_layout = item.get("layout") or ""
-    if card_layout in {"", "art_series", "token", "scheme"}:
+    if not card_layout:
         return None
 
     return Card(
@@ -287,6 +298,7 @@ def _card_from_scryfall(item: dict[str, Any]) -> Card | None:
         name=item.get("name"),
         cmc=float(item.get("cmc") or 0),
         layout=card_layout,
+        rulings_uri=item.get("rulings_uri"),
         commander_legal=commander_legal,
         standard_legal=legalities.get("standard") == "legal",
     )
@@ -305,24 +317,31 @@ def parse_card_types(type_line: str, face: Card_Face) -> Card_Type_Collection:
     subtypes_result: list[str] = []
 
     if right:
-        subtypes_result = parse_types(right, subtype_list)
+        subtypes_result, unresolved_subtypes = parse_types(right, subtype_list)
+        if unresolved_subtypes:
+            logger.warning(
+                "Skipping uncatalogued subtypes %s for face %s of card %s",
+                " ".join(unresolved_subtypes),
+                face.name,
+                face.parent_id,
+            )
 
     if supertypes_result:
         for type_ in supertypes_result:
             result.super_types.append(
-                Face_Supertypes(card_id=face.parent_id, face_name=face.name, type_id=type_)
+                Face_Supertypes(card_id=face.parent_id, face_index=face.face_index, type_id=type_)
             )
 
     if cardtypes_result:
         for type_ in cardtypes_result:
             result.card_types.append(
-                Face_Types(card_id=face.parent_id, face_name=face.name, type_id=type_)
+                Face_Types(card_id=face.parent_id, face_index=face.face_index, type_id=type_)
             )
 
     if subtypes_result:
         for type_ in subtypes_result:
             result.sub_types.append(
-                Face_Subtypes(card_id=face.parent_id, face_name=face.name, type_id=type_)
+                Face_Subtypes(card_id=face.parent_id, face_index=face.face_index, type_id=type_)
             )
 
     return result
@@ -342,7 +361,7 @@ def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
             if isinstance(face, dict):
                 valid_faces.append(face)
 
-    for valid_face in valid_faces:
+    for face_index, valid_face in enumerate(valid_faces):
         image_uris = valid_face.get("image_uris") or {}
 
         if layout in SHARED_FRONT_IMAGE_LAYOUTS and root_image_uris:
@@ -354,7 +373,13 @@ def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
 
         face = Card_Face(
             parent_id=oracle_id,
+            face_index=face_index,
             mana_cost=valid_face.get("mana_cost"),
+            colors_present="colors" in valid_face and valid_face.get("colors") is not None,
+            color_indicator_present=(
+                "color_indicator" in valid_face
+                and valid_face.get("color_indicator") is not None
+            ),
             cmc=float(valid_face.get("cmc") or 0),
             name=valid_face.get("name"),
             oracle_text=valid_face.get("oracle_text"),
@@ -373,7 +398,13 @@ def get_card_faces(item: dict[str, Any]) -> list[Card_Face]:
 
         face = Card_Face(
             parent_id=oracle_id,
+            face_index=0,
             mana_cost=item.get("mana_cost"),
+            colors_present="colors" in item and item.get("colors") is not None,
+            color_indicator_present=(
+                "color_indicator" in item
+                and item.get("color_indicator") is not None
+            ),
             cmc=float(item.get("cmc") or 0),
             name=item.get("name"),
             oracle_text=item.get("oracle_text"),

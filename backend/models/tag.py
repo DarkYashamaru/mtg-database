@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from sqlalchemy import ForeignKey, String, Text
+from sqlalchemy import Boolean, ForeignKey, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from database.base import Base
@@ -20,6 +20,7 @@ class Tag(Base):
     slug: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
     label: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
     description: Mapped[str | None] = mapped_column(Text)
+    is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True, index=True)
 
     parents: Mapped[list["Tag"]] = relationship(
         "Tag",

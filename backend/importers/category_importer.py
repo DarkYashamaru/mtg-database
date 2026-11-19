@@ -37,20 +37,22 @@ def import_categories() -> int:
         session.execute(delete(CardCategory))
         session.flush()
 
-        tags_by_slug = {
-            tag.slug: tag
+        tags_by_id = {
+            tag.id: tag
             for tag in session.scalars(select(Tag)).all()
         }
 
         missing_tags: dict[str, list[str]] = {}
         inserted_category_tags = 0
 
-        for name, tag_slugs in CATEGORY_DATA.items():
+        for name, tag_ids in CATEGORY_DATA.items():
             category = categories_by_name[name]
-            for slug in tag_slugs:
-                tag = tags_by_slug.get(slug)
+            for tag_id in tag_ids:
+                tag = tags_by_id.get(tag_id)
                 if tag is None:
-                    missing_tags.setdefault(name, []).append(slug)
+                    missing_tags.setdefault(name, []).append(tag_id)
+                    continue
+                if not tag.is_active:
                     continue
                 session.add(CategoryTag(category_id=category.id, tag_id=tag.id))
                 inserted_category_tags += 1
@@ -65,10 +67,12 @@ def import_categories() -> int:
             )
 
         category_ids_by_tag_id: dict[str, set[int]] = {}
-        for name, tag_slugs in CATEGORY_DATA.items():
+        for name, tag_ids in CATEGORY_DATA.items():
             category_id = categories_by_name[name].id
-            for slug in tag_slugs:
-                tag = tags_by_slug[slug]
+            for tag_id in tag_ids:
+                tag = tags_by_id.get(tag_id)
+                if tag is None or not tag.is_active:
+                    continue
                 category_ids_by_tag_id.setdefault(tag.id, set()).add(category_id)
 
         existing_oracle_ids = set(session.scalars(select(Card.oracle_id)).all())

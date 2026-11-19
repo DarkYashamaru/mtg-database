@@ -1,4 +1,5 @@
 from collections.abc import Mapping, Sequence
+from datetime import date
 
 from pydantic import BaseModel
 from models.archetype import Archetype
@@ -27,6 +28,7 @@ class FaceSchema(BaseModel):
 
 
 class TagSchema(BaseModel):
+    id: str
     slug: str
     description: str | None = None
 
@@ -49,6 +51,10 @@ class ColorSchema(BaseModel):
     symbol: str
 
 
+class ProducedManaSymbolSchema(BaseModel):
+    symbol: str
+
+
 MANA_SYMBOL_ORDER = {symbol: index for index, symbol in enumerate("WUBRGC")}
 
 
@@ -66,6 +72,12 @@ class CategorySchema(BaseModel):
 class ArchetypeSchema(BaseModel):
     name: str
 
+
+class RulingSchema(BaseModel):
+    source: str
+    published_at: date
+    comment: str
+
 class CardSchema(BaseModel):
     oracle_id: str
     name: str
@@ -82,12 +94,17 @@ class CardSchema(BaseModel):
     faces: list[FaceSchema]
     keywords: list[KeywordSchema]
     color_identity: list[ColorSchema]
-    produced_mana: list[ColorSchema]
+    produced_mana: list[ProducedManaSymbolSchema]
     themes: list[CardThemeMinimalSchema]
     categories: list[CategorySchema]
     archetypes: list[ArchetypeSchema]
 
+
+class CardWithRulingsSchema(CardSchema):
+    rulings: list[RulingSchema]
+
 class ThemeTagSchema(BaseModel):
+    id: str
     slug: str
 
 
@@ -130,13 +147,15 @@ def commandertheme_to_schema(commanderTheme: CommanderTheme):
 
 def theme_tag_to_schema(tag: Tag) -> ThemeTagSchema:
     return ThemeTagSchema(
+        id=tag.id,
         slug=tag.slug
     )
 
 def _tag_schemas(tags: Sequence[Tag]) -> list[TagSchema]:
     return [
-        TagSchema(slug=tag.slug, description=tag.description)
+        TagSchema(id=tag.id, slug=tag.slug, description=tag.description)
         for tag in sorted(tags, key=lambda tag: tag.slug)
+        if tag.is_active
     ]
 
 
@@ -196,15 +215,8 @@ def card_to_schema(card: Card, inherited_tags_by_direct_id: Mapping[str, Sequenc
         ],
 
         produced_mana=[
-            ColorSchema(symbol=capability.color.symbol)
-            for capability in sorted(
-                (
-                    capability
-                    for capability in card.produced_mana
-                    if capability.color is not None
-                ),
-                key=lambda capability: MANA_SYMBOL_ORDER.get(capability.color.symbol, 99),
-            )
+            ProducedManaSymbolSchema(symbol=capability.value)
+            for capability in sorted(card.produced_mana_symbols, key=lambda value: value.position)
         ],
 
         themes=card_themes,
@@ -258,8 +270,26 @@ def card_to_schema(card: Card, inherited_tags_by_direct_id: Mapping[str, Sequenc
     )
 
 
+def card_to_schema_with_rulings(
+    card: Card,
+    inherited_tags_by_direct_id: Mapping[str, Sequence[Tag]] | None = None,
+    themes_map=None,
+) -> CardWithRulingsSchema:
+    return CardWithRulingsSchema(
+        **card_to_schema(card, inherited_tags_by_direct_id, themes_map).model_dump(),
+        rulings=[
+            RulingSchema(
+                source=ruling.source,
+                published_at=ruling.published_at,
+                comment=ruling.comment,
+            )
+            for ruling in sorted(card.rulings, key=lambda ruling: ruling.position)
+        ],
+    )
+
+
 def tag_to_schema (tag: Tag):
-    return TagSchema(slug=tag.slug, description=tag.description)
+    return TagSchema(id=tag.id, slug=tag.slug, description=tag.description)
 
 
 def marker_to_schema(marker: Marker) -> MarkerSchema:
@@ -299,6 +329,7 @@ def theme_to_schema(theme: Theme) -> ThemeypeSchema:
                         category.tags,
                         key=lambda t: t.label
                     )
+                    if tag.is_active
                 ]
             )
             for category in sorted(

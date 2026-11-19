@@ -5,6 +5,7 @@ from typing import Any
 
 CLASSIFIER_SCHEMA_VERSION = 1
 DECKBUILDER_NAMESPACE = "deckbuilder"
+CANTRIP_TAG_ID = "42313c19-8be2-47d9-9d3a-99c39725b87d"
 
 
 def classify_card_metadata(card: dict[str, Any]) -> dict[str, Any]:
@@ -26,12 +27,12 @@ def classify_card_metadata(card: dict[str, Any]) -> dict[str, Any]:
 
 
 def classify_cantrip(card: dict[str, Any]) -> dict[str, Any]:
-    tag_slugs = sorted(set(card.get("tag_slugs", [])))
-    matched = "cantrip" in tag_slugs
+    tag_ids = set(card.get("tag_ids", []))
+    matched = CANTRIP_TAG_ID in tag_ids
 
     return {
         "matched": matched,
         "source": "tag",
-        "tag_slug": "cantrip" if matched else None,
+        "tag_id": CANTRIP_TAG_ID if matched else None,
         "reason_codes": ["tag_present"] if matched else [],
     }

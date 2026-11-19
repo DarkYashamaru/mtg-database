@@ -26,7 +26,7 @@ def import_theme(theme_id: int, theme_name: str, categories_data: dict[str, list
 
         category_id = 1
 
-        for category_name, tag_slugs in categories_data.items():
+        for category_name, tag_ids in categories_data.items():
 
             category = (
                 session.query(ThemeCategory)
@@ -51,12 +51,12 @@ def import_theme(theme_id: int, theme_name: str, categories_data: dict[str, list
 
             tags = session.scalars(
                 select(Tag)
-                .where(Tag.slug.in_(tag_slugs))
+                .where(Tag.id.in_(tag_ids))
             ).all()
 
-            found_slugs = {tag.slug for tag in tags}
+            tags_by_id = {tag.id: tag for tag in tags}
 
-            missing = set(tag_slugs) - found_slugs
+            missing = set(tag_ids) - set(tags_by_id)
 
             if missing:
                 raise ValueError(
@@ -65,7 +65,7 @@ def import_theme(theme_id: int, theme_name: str, categories_data: dict[str, list
                     f"{sorted(missing)}"
                 )
 
-            category.tags.extend(tags)
+            category.tags.extend(tag for tag in tags if tag.is_active)
 
             imported_count += len(tags)
 

@@ -4,6 +4,9 @@ from importers.archetype_importer import import_archetypes
 from importers.import_tags import import_oracle_tags
 from importers.category_importer import import_categories
 from importers.import_catalogs import download_all_catalogs
+from importers.import_printings import import_default_card_printings
+from importers.import_symbology import import_symbology
+from importers.import_rulings import import_card_rulings
 from scripts.import_markers import import_markers
 from scripts.import_manual_themes import import_all_themes
 from scripts.compute_card_to_themes import import_card_themes
@@ -19,9 +22,21 @@ def import_data_to_database():
     imported = import_colors()
     logger.info(f"Imported {imported} colors")
 
+    logger.info("Importing symbology")
+    imported = import_symbology()
+    logger.info(f"Imported {imported} symbols")
+
     logger.info("Importing cards")
     imported = import_oracle_cards()
     logger.info(f"Imported {imported} cards")
+
+    logger.info("Importing card printings")
+    imported = import_default_card_printings()
+    logger.info(f"Imported {imported} card printings")
+
+    logger.info("Importing card rulings")
+    imported = import_card_rulings()
+    logger.info(f"Imported {imported} card rulings")
 
     logger.info("Backfilling shared-front card face images")
     updated_faces = backfill_shared_front_face_images()

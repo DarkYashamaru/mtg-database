@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING
 from sqlalchemy import (
     Boolean,
     Date,
+    DateTime,
     Float,
     String,
     Text,
@@ -20,7 +21,8 @@ if TYPE_CHECKING:
     from models.tag import Tagging
     from models.category import Category
     from models.catalogs import Supertype, CardType, Subtype
-    from models.color import CardProducedMana, Color_Identity
+    from models.color import CardProducedMana, CardProducedManaSymbol, Color_Identity
+    from models.printing import CardPrinting
 
 
 class Card(Base):
@@ -32,6 +34,10 @@ class Card(Base):
     name: Mapped[str] = mapped_column(String(255), nullable=False, index=True)
     cmc: Mapped[float] = mapped_column(Float, nullable=False)
     layout: Mapped[str] = mapped_column(String(50), nullable=False, index=True)
+    rulings_uri: Mapped[str | None] = mapped_column(Text)
+    # A successful rulings response, including an empty list, is cached so
+    # routine data refreshes need not request every Oracle card again.
+    rulings_fetched_at: Mapped[datetime | None] = mapped_column(DateTime)
 
     commander_legal: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False, index=True,)
     standard_legal: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False, index=True,)
@@ -72,6 +78,9 @@ class Card(Base):
         cascade="all, delete-orphan",
         passive_deletes=True,
     )
+    produced_mana_symbols: Mapped[list["CardProducedManaSymbol"]] = relationship(
+        back_populates="card", cascade="all, delete-orphan"
+    )
 
     faces: Mapped[list["Card_Face"]] = relationship(
         back_populates="parent",
@@ -95,6 +104,12 @@ class Card(Base):
         back_populates="cards",
     )
 
+    printings: Mapped[list["CardPrinting"]] = relationship(back_populates="card")
+
+    rulings: Mapped[list["CardRuling"]] = relationship(
+        back_populates="card", cascade="all, delete-orphan"
+    )
+
     def __repr__(self) -> str:
         return f"Card(oracle_id={self.oracle_id!r}, name={self.name!r})"
     
@@ -113,6 +128,22 @@ class Card_Keyword(Base):
     )
 
 
+class CardRuling(Base):
+    """One ordered Scryfall ruling attached to a logical Oracle card."""
+
+    __tablename__ = "card_rulings"
+
+    oracle_id: Mapped[str] = mapped_column(
+        ForeignKey("cards.oracle_id"), primary_key=True
+    )
+    position: Mapped[int] = mapped_column(primary_key=True)
+    source: Mapped[str] = mapped_column(String(32))
+    published_at: Mapped[date] = mapped_column(Date, index=True)
+    comment: Mapped[str] = mapped_column(Text)
+
+    card: Mapped["Card"] = relationship(back_populates="rulings")
+
+
 class Card_Face(Base):
     """Represents an individual face of a card."""
 
@@ -123,17 +154,22 @@ class Card_Face(Base):
         primary_key=True,
     )
 
+    face_index: Mapped[int] = mapped_column(primary_key=True, default=0)
+
     name: Mapped[str] = mapped_column(
         String(255),
-        primary_key=True,
     )
 
     mana_cost: Mapped[str | None] = mapped_column(String(100))
+    colors_present: Mapped[bool] = mapped_column(Boolean, default=False)
+    color_indicator_present: Mapped[bool] = mapped_column(Boolean, default=False)
     cmc: Mapped[float] = mapped_column(Float, nullable=False)
     oracle_text: Mapped[str | None] = mapped_column(Text)
     power: Mapped[str | None] = mapped_column(String(20))
     toughness: Mapped[str | None] = mapped_column(String(20))
-    type_line: Mapped[str] = mapped_column(String(255))
+    # Some valid Scryfall card faces (for example continuation faces) do not
+    # provide a type line.
+    type_line: Mapped[str | None] = mapped_column(String(255), nullable=True)
 
     small_image: Mapped[str | None] = mapped_column(String(255))
     normal_image: Mapped[str | None] = mapped_column(String(255))
@@ -162,7 +198,7 @@ class Card_Face(Base):
         return (
             f"Card_Face("
             f"parent_id={self.parent_id!r}, "
-            f"name={self.name!r})"
+            f"face_index={self.face_index!r}, name={self.name!r})"
         )
 
 
@@ -170,7 +206,7 @@ class Face_Supertypes(Base):
     __tablename__ = "face_supertypes"
 
     card_id: Mapped[str] = mapped_column(primary_key=True)
-    face_name: Mapped[str] = mapped_column(primary_key=True)
+    face_index: Mapped[int] = mapped_column(primary_key=True)
 
     type_id: Mapped[str] = mapped_column(
         ForeignKey("supertypes.value"),
@@ -179,8 +215,8 @@ class Face_Supertypes(Base):
 
     __table_args__ = (
         ForeignKeyConstraint(
-            ["card_id", "face_name"],
-            ["card_faces.parent_id", "card_faces.name"],
+            ["card_id", "face_index"],
+            ["card_faces.parent_id", "card_faces.face_index"],
         ),
     )
 
@@ -197,7 +233,7 @@ class Face_Types(Base):
     __tablename__ = "face_card_types"
 
     card_id: Mapped[str] = mapped_column(primary_key=True)
-    face_name: Mapped[str] = mapped_column(primary_key=True)
+    face_index: Mapped[int] = mapped_column(primary_key=True)
 
     type_id: Mapped[str] = mapped_column(
         ForeignKey("card_types.value"),
@@ -206,8 +242,8 @@ class Face_Types(Base):
 
     __table_args__ = (
         ForeignKeyConstraint(
-            ["card_id", "face_name"],
-            ["card_faces.parent_id", "card_faces.name"],
+            ["card_id", "face_index"],
+            ["card_faces.parent_id", "card_faces.face_index"],
         ),
     )
 
@@ -224,7 +260,7 @@ class Face_Subtypes(Base):
     __tablename__ = "face_subtypes"
 
     card_id: Mapped[str] = mapped_column(primary_key=True)
-    face_name: Mapped[str] = mapped_column(primary_key=True)
+    face_index: Mapped[int] = mapped_column(primary_key=True)
 
     type_id: Mapped[str] = mapped_column(
         ForeignKey("subtypes.value"),
@@ -233,8 +269,8 @@ class Face_Subtypes(Base):
 
     __table_args__ = (
         ForeignKeyConstraint(
-            ["card_id", "face_name"],
-            ["card_faces.parent_id", "card_faces.name"],
+            ["card_id", "face_index"],
+            ["card_faces.parent_id", "card_faces.face_index"],
         ),
     )
 

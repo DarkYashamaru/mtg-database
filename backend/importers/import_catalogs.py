@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import requests
-from sqlalchemy import delete
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 from database.session import session_scope
 from downloaders.scryfall_download_utility import BASE_URL, REQUEST_HEADERS
@@ -67,7 +67,6 @@ def download_catalog(endpoint: str, model: type) -> None:
         session.commit()
 
 def download_subtypes():
-
     all_types = []
 
     for endpoint in SUBTYPES_SOURCES:
@@ -81,16 +80,20 @@ def download_subtypes():
         for v in values:
             all_types.append(v)
 
-    
     with session_scope() as session:
+        # Scryfall's type-specific catalogs can overlap.  Deduplicate before
+        # constructing ORM objects because this session deliberately disables
+        # autoflush, so repeated ``merge`` calls otherwise create duplicate
+        # pending inserts that fail at commit time.
+        unique_types = dict.fromkeys([*all_types, "Plan"])
+        existing = set(session.scalars(select(Subtype.value)).all())
 
-        for type in all_types:
-            subtype = Subtype(value=type)
-            session.merge(subtype)
+        session.add_all(
+            Subtype(value=value)
+            for value in unique_types
+            if value not in existing
+        )
 
-
-        session.merge(Subtype(value="Plan")) # manual patch because scryfall catalogs are outdated
-        
         session.commit()
 
 def download_keywords():

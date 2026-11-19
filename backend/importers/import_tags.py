@@ -9,7 +9,7 @@ from downloaders.download_oracle_tags import ORACLE_TAGS_PATH  # noqa: E402
 from importers.scryfall_bulk_reader import load_scryfall_bulk_items  # noqa: E402
 from database.session import DATABASE_PATH, session_scope  # noqa: E402
 from models.tag import Tag, TagRelation, Tagging  # noqa: E402
-from sqlalchemy import select
+from sqlalchemy import delete, select, update
 
 DEFAULT_BATCH_SIZE = 500
 
@@ -29,110 +29,47 @@ def import_oracle_tags(
 
     payload = load_scryfall_bulk_items(source_path)
 
-    imported_count = 0
+    oracle_tags = [item for item in payload if item.get("type") == "oracle"]
+    imported_count = len(oracle_tags)
 
     with session_scope() as session:
+        tags_by_id = {tag.id: tag for tag in session.scalars(select(Tag)).all()}
+        session.execute(update(Tag).values(is_active=False))
 
-        #
-        # Pass 1: Tags
-        #
-
-        all_ids = set(session.scalars( select(Tag.id)).all() )
-
-        for item in payload:
-
-            id = item.get("id")
-
-            if id in all_ids:
-                continue
-
+        for item in oracle_tags:
             tag = _tag_from_scryfall(item)
-
             if tag is None:
                 continue
-
-            session.merge(tag)
-
-            imported_count += 1
-
-            if imported_count % batch_size == 0:
-                session.commit()
-                session.expunge_all()
-
-        session.commit()
-
-        #
-        # Pass 2: Relationships
-        #
-
-        existing_relations = {
-            (r.parent_id, r.child_id)
-            for r in session.scalars(select(TagRelation)).all()
-        }
-
-        existing_taggings = {
-            (t.tag_id, t.oracle_id)
-            for t in session.scalars(select(Tagging)).all()
-        }
-
-        processed = 0
-
-        for item in payload:
-            if item.get("type") != "oracle":
+            existing = tags_by_id.get(tag.id)
+            if existing is None:
+                session.add(tag)
                 continue
+            existing.slug = tag.slug
+            existing.label = tag.label
+            existing.description = tag.description
+            existing.is_active = True
 
+        session.flush()
+        session.execute(delete(TagRelation))
+        session.execute(delete(Tagging))
+
+        for item in oracle_tags:
             tag_id = item.get("id")
             if not tag_id:
                 continue
-
-            #
-            # Parent relationships
-            #
-            for parent_id in item.get("parent_ids") or []:
-
-                key = (parent_id, tag_id)
-
-                if key in existing_relations:
-                    continue
-
-                session.add(
-                    TagRelation(
-                        parent_id=parent_id,
-                        child_id=tag_id,
-                    )
+            session.add_all(
+                TagRelation(parent_id=parent_id, child_id=tag_id)
+                for parent_id in item.get("parent_ids") or []
+            )
+            session.add_all(
+                Tagging(
+                    tag_id=tag_id,
+                    oracle_id=tagging["oracle_id"],
+                    annotation=tagging.get("annotation"),
                 )
-
-                existing_relations.add(key)
-
-            #
-            # Card taggings
-            #
-            for tagging in item.get("taggings") or []:
-                oracle_id = tagging.get("oracle_id")
-
-                if not oracle_id:
-                    continue
-
-                key = (tag_id, oracle_id)
-
-                if key in existing_taggings:
-                    continue
-
-                session.add(
-                    Tagging(
-                        tag_id=tag_id,
-                        oracle_id=oracle_id,
-                        annotation=tagging.get("annotation"),
-                    )
-                )
-
-                existing_taggings.add(key)
-
-            processed += 1
-
-            if processed % batch_size == 0:
-                session.commit()
-                session.expunge_all()
+                for tagging in item.get("taggings") or []
+                if tagging.get("oracle_id")
+            )
 
     return imported_count
 
